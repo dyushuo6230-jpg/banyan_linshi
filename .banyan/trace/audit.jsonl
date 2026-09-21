@@ -1,0 +1,2 @@
+{"action_id":"stage17-project-instance-shadow","authorization_ref":"USER-STAGE17-PILOT-REQUEST","event_type":"PROJECT_INSTANCE_SHADOW_VALIDATION_PENDING","grants_authorization":false,"occurred_at":"2026-09-21T06:01:44Z","result":"SHADOW_CREATED","stage":"17"}
+{"action_id":"stage17-project-instance-shadow","authorization_ref":"USER-STAGE17-PILOT-REQUEST","event_type":"PROJECT_INSTANCE_SHADOW_VALIDATED","grants_authorization":false,"occurred_at":"2026-09-21T06:04:00Z","result":"PASS","stage":"17"}

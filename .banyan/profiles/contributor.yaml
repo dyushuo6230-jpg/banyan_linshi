@@ -1,0 +1,5 @@
+schema_version: stage17-v1
+state: UNKNOWN
+identity_values_persisted: false
+permission_role: NONE
+authorization_source: false

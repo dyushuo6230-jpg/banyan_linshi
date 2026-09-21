@@ -1,0 +1,7 @@
+schema_version: stage17-v1
+stable_id: project-profile-pilot-stage17
+state: PILOT
+layout_mode: PRESERVE_IN_PLACE
+canonical_authority: UNKNOWN
+con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+business_rules_embedded: false

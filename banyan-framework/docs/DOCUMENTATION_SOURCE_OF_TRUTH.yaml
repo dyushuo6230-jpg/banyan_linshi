@@ -1,0 +1,511 @@
+schema_version: banyan-docs-source-v1
+inventory_id: D0-DOCUMENTATION-SOURCE-OF-TRUTH
+inventory_date: "2026-09-21"
+scope: DOCUMENTATION_FACT_INVENTORY_ONLY
+evidence_basis:
+  framework_release: v1.10-additive.1
+  framework_release_state: RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT
+  governance_current_pointer: v1.9.1
+  governance_pointer_state: CURRENT_FINAL_FREEZE
+  stage20_run_id: stage20-20260921T073758Z
+  stage20_result: PASS_STAGE20_DOCUMENTATION_FRAMEWORK_RELEASE_FINAL_HANDOFF_WITH_PROJECT_ACTIVATION_BLOCKED
+  runtime_package_version: 0.1.0
+  source_precedence:
+    - current_implementation_source
+    - Stage_20_accepted_evidence
+    - earlier_frozen_contracts_referenced_by_Stage_20
+    - documentation_packaging_expectations
+  interpretation_rules:
+    - A frozen contract is recorded separately from an executable implementation.
+    - Documentation-planned behavior is not recorded as an implemented capability.
+    - Unknown, blocked, pilot, and not-authorized states remain explicit.
+
+runtime:
+  language: Python
+  root: banyan-framework/src/banyan/runtime
+  class: banyan.runtime.api.RuntimeAPI
+  architecture_role: policy_and_execution_core
+  actual_api:
+    - {name: evaluate_action, state: IMPLEMENTED, effect: permission_evaluation}
+    - {name: preflight_action, state: IMPLEMENTED, effect: permission_evaluation_alias}
+    - {name: preflight_pilot_creation, state: IMPLEMENTED, effect: pilot_scope_evaluation_only}
+    - {name: inspect_project, state: IMPLEMENTED, effect: read_only_git_inspection}
+    - {name: plan_commit, state: IMPLEMENTED, effect: plan_only}
+    - {name: execute_commit, state: IMPLEMENTED, effect: dry_run_or_isolated_fixture_only_under_gates}
+    - {name: dry_run_commit, state: IMPLEMENTED, effect: current_project_dry_run_only}
+    - {name: query_trace, state: IMPLEMENTED, effect: read_only_paginated_query}
+    - {name: emit_audit, state: IMPLEMENTED, effect: append_trace_when_configured}
+    - {name: list_provider_bindings, state: IMPLEMENTED, effect: read_only_binding_load}
+    - {name: status, state: IMPLEMENTED, effect: read_only_runtime_status}
+  execution_boundaries:
+    current_project: DRY_RUN_ONLY
+    isolated_fixture: AVAILABLE_WITH_GATES
+    authorized_project_execution: DISABLED
+    canonical_apply: NOT_IMPLEMENTED_AS_RUNTIME_API
+
+cli:
+  python_entrypoint: banyan
+  control_plane_entrypoints:
+    - banyan-control-plane
+    - banyan-control
+  actual_commands:
+    - command: banyan policy validate PATH
+      state: IMPLEMENTED
+    - command: banyan policy compile PATH
+      state: IMPLEMENTED
+    - command: banyan policy compile-stage14 PATH
+      state: IMPLEMENTED
+    - command: banyan runtime preflight REQUEST [--policy PATH]
+      state: IMPLEMENTED
+    - command: banyan git inspect REPOSITORY
+      state: IMPLEMENTED
+    - command: banyan commit plan REPOSITORY --classifications PATH [--groups PATH] [--messages PATH]
+      state: IMPLEMENTED
+    - command: banyan commit execute REPOSITORY --plan PATH [--policy PATH] [--authorization-ref REF] [--trace PATH] (--dry-run | --fixture-root PATH)
+      state: IMPLEMENTED_WITH_SAFETY_BOUNDARY
+    - command: banyan trace validate PATH
+      state: IMPLEMENTED
+    - command: banyan trace emit PATH EVENT
+      state: IMPLEMENTED
+    - command: banyan provider list PATH
+      state: IMPLEMENTED
+    - command: banyan-control-plane --repository PATH --policy PATH [--host HOST] [--port PORT] [--trace PATH] [--providers PATH] [--provenance PATH] [--stages PATH]
+      state: IMPLEMENTED_LEGACY_PYTHON_CONTROL_PLANE_ENTRY
+    - command: banyan-control --repository PATH --policy PATH [--host HOST] [--port PORT] [--trace PATH] [--providers PATH] [--provenance PATH] [--stages PATH]
+      state: IMPLEMENTED_CURRENT_GO_CONTROL_PLANE_ENTRY
+
+control_plane:
+  web_host: GO_GIN_GO_EMBED
+  bridge: LOCAL_STDIO
+  bridge_target: banyan.control_plane.bridge
+  bind_hosts: [127.0.0.1, localhost, "::1"]
+  public_bind_allowed: false
+  max_body_bytes: 1000000
+  runtime_timeout_seconds: 10
+  actual_http_api:
+    - {method: GET, path: /api/status, operation: status}
+    - {method: GET, path: /api/policy, operation: policy_status}
+    - {method: GET, path: /api/project-safety, operation: project_safety}
+    - {method: POST, path: /api/preflight, operation: preflight}
+    - {method: POST, path: /api/commit/plan, operation: commit_plan}
+    - {method: POST, path: /api/commit/dry-run, operation: commit_dry_run}
+    - {method: GET, path: /api/trace, operation: trace_query}
+    - {method: GET, path: "/api/provenance/:id", operation: provenance_query}
+    - {method: GET, path: /api/providers, operation: provider_status}
+    - {method: GET, path: /api/stages, operation: stage_query}
+    - {method: GET, path: /api/activation-readiness, operation: activation_readiness}
+    - {method: POST, path: "/api/adapters/:kind", operation: adapter_request}
+  forbidden_api_capabilities:
+    - current_project_git_mutation
+    - canonical_apply
+    - protected_write_execution
+    - provider_activation
+    - project_instance_final_activation
+
+webui:
+  framework: ANT_DESIGN_PRO_SIMPLE
+  root: banyan-framework/frontend
+  host: embedded_in_go_binary
+  actual_pages:
+    - {path: /dashboard, name: Dashboard, endpoint: /api/status}
+    - {path: /runtime-policy, name: Runtime / Policy, endpoint: /api/policy}
+    - {path: /project-safety, name: Project Safety, endpoint: /api/project-safety}
+    - {path: /gate-blockers, name: Gate / Blockers, endpoint: /api/status}
+    - {path: /preflight, name: Preflight, endpoint: /api/preflight}
+    - {path: /commit-plan, name: Commit Plan, endpoint: /api/commit/plan}
+    - {path: /dry-run-result, name: Dry-run Result, endpoint: /api/commit/dry-run}
+    - {path: /trace-audit, name: Trace / Audit, endpoint: "/api/trace?offset=0&limit=50"}
+    - {path: /provenance, name: Provenance, endpoint: /api/provenance/UNKNOWN}
+    - {path: /provider-bindings, name: Provider Bindings, endpoint: /api/providers}
+    - {path: /stage-run, name: Stage / Run, endpoint: "/api/stages?offset=0&limit=25"}
+    - {path: /activation-readiness, name: Activation Readiness, endpoint: /api/activation-readiness}
+  authority: NONE
+  current_project_git_mutation: DISABLED
+  help_center:
+    path: /help
+    state: NOT_IMPLEMENTED
+
+adapters:
+  actual_adapters:
+    - id: cursor
+      implementation: banyan.editor.adapters.CursorAdapter
+      request_shape: [request_id, command, arguments, context, evidence_refs]
+      state: IMPLEMENTED_VALIDATED
+    - id: codex
+      implementation: banyan.editor.adapters.CodexAdapter
+      request_shape: [id, operation, input, metadata, evidence_refs]
+      state: IMPLEMENTED_VALIDATED
+    - id: generic-editor
+      implementation: banyan.editor.adapters.GenericEditorAdapter
+      request_shape: [request_id, action, payload, provenance, evidence_refs]
+      state: IMPLEMENTED_VALIDATED
+    - id: cursor-pilot
+      implementation: banyan.cursor.adapter.CursorPilotAdapter
+      state: IMPLEMENTED_PILOT_SPECIFIC
+    - id: filesystem
+      implementation: banyan.adapters.filesystem.FilesystemAdapter
+      state: IMPLEMENTED_INTERNAL
+    - id: process
+      implementation: banyan.adapters.process.ProcessRunner
+      state: IMPLEMENTED_INTERNAL
+  editor_gateway: banyan.editor.protocol.AdapterGateway
+  supported_editor_actions:
+    - runtime_status
+    - project_safety
+    - preflight
+    - commit_plan
+    - commit_dry_run
+    - trace
+    - provenance
+  forbidden_editor_actions:
+    - git_mutation
+    - commit_execute
+    - canonical_write
+    - protected_write_execute
+    - activate
+    - identity_write
+    - secret_body_read
+  adapter_authority:
+    owns_permission_policy: false
+    owns_canonical_truth: false
+    direct_git_mutation: false
+    identity_modification: false
+    secret_body_access: false
+
+skills:
+  framework_native_skills: []
+  actual_skills:
+    - id: anydesign
+      canonical_path: tools/anydesign/SKILL.md
+      editor_entry: .cursor/skills/anydesign
+      editor_entry_kind: symlink
+      state: PRESERVED_IN_PLACE_PROVIDER_OWNED
+      framework_core_member: false
+    - id: visual-repair-loop
+      canonical_path: .cursor/skills/visual-repair-loop/SKILL.md
+      state: PRESERVED_IN_PLACE_COMPATIBILITY_LAYER
+      framework_core_member: false
+  note: The 35 CAP-* records below are frozen capability contracts, not 35 installed Skills.
+
+capabilities:
+  registry_state: FROZEN_CONTRACTS_IMPLEMENTATION_UNBOUND
+  total: 35
+  actual_contracts:
+    - {id: CAP-AUTH, name: 工作范围与授权, freeze: FROZEN_CONTRACT}
+    - {id: CAP-PROFILE, name: 项目变量与接入模式, freeze: FROZEN_CONTRACT}
+    - {id: CAP-INTAKE, name: 来源投放与冻结, freeze: FROZEN_CONTRACT}
+    - {id: CAP-PRD, name: PRD 生命周期与评审, freeze: FROZEN_CONTRACT}
+    - {id: CAP-IDP, name: 知情决策协议, freeze: FROZEN_CONTRACT}
+    - {id: CAP-ARCH, name: 架构和模块边界参与门禁, freeze: FROZEN_CONTRACT}
+    - {id: CAP-SCHEMA, name: 文档状态与编号, freeze: FROZEN_CONTRACT}
+    - {id: CAP-IDREF, name: 编号占用与在引用规则保护, freeze: FROZEN_CONTRACT}
+    - {id: CAP-TRACE, name: 全链路追踪, freeze: FROZEN_CONTRACT}
+    - {id: CAP-CHANGE, name: 变更与版本路由, freeze: FROZEN_CONTRACT}
+    - {id: CAP-PARALLEL, name: Parallel Draft 临时袋, freeze: FROZEN_CONTRACT}
+    - {id: CAP-RECONCILE, name: 36A 批次正式口径收口, freeze: FROZEN_CONTRACT}
+    - {id: CAP-TEST, name: 自测桩与验收口径完整性, freeze: FROZEN_CONTRACT}
+    - {id: CAP-PROGRESS, name: 证据驱动多轴进度, freeze: FROZEN_CONTRACT}
+    - {id: CAP-HANDOVER, name: 工作日志与接管, freeze: FROZEN_CONTRACT}
+    - {id: CAP-CONTEXT, name: 新窗口续做, freeze: FROZEN_CONTRACT}
+    - {id: CAP-UI_SCOPE, name: UI 逻辑范围与应用分闸, freeze: FROZEN_CONTRACT}
+    - {id: CAP-UI_CONTRACT, name: 分层 UI 合并与批次契约, freeze: FROZEN_CONTRACT}
+    - {id: CAP-UI_GATE, name: 素材→Draft→批准→点名换皮, freeze: FROZEN_CONTRACT}
+    - {id: CAP-VISUAL, name: 独立视觉修复循环, freeze: FROZEN_CONTRACT}
+    - {id: CAP-PUBLISH, name: 白话知识发布, freeze: FROZEN_CONTRACT}
+    - {id: CAP-EDITOR, name: Cursor 入口与项目覆盖, freeze: COMPATIBILITY_CONTRACT}
+    - {id: CAP-PORT, name: 项目端口绑定, freeze: PROJECT_OVERLAY_CONTRACT}
+    - {id: CAP-SQL, name: 增量 SQL 交付习惯, freeze: PROJECT_OVERLAY_CONTRACT}
+    - {id: CAP-COMMIT, name: 既有提交校验与授权, freeze: COMPATIBILITY_CONTRACT}
+    - {id: CAP-MERGE, name: 旧协作合码指导, freeze: COMPATIBILITY_CONTRACT}
+    - {id: CAP-DESIGN, name: AnyDesign 全量与单元素模式, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-CSS, name: CSS 变量提取与摘要, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-CAPTURE, name: 页面截图与计算样式采集, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-COLORS, name: 图像主色提取, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-A11Y, name: 对比度检查, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-LINT, name: 设计文档结构校验, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-TOKENS, name: 设计令牌生成, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-DRIFT, name: 令牌与线上设计漂移比较, freeze: PROVIDER_PORT_CONTRACT}
+    - {id: CAP-EXPORT, name: 设计交付包导出, freeze: PROVIDER_PORT_CONTRACT}
+  implementation_frozen: false
+  provider_selected: false
+
+workflows:
+  actual_workflows:
+    - id: banyan.workflow.adaptive.v1
+      state: FROZEN_POLICY_NOT_IMPLEMENTED
+      modes: [LIGHT, STANDARD, FULL]
+      routing_inputs: [task_class, risk, scope, confidence, governance_mode, project_stage, authorization, budget_state, change_state]
+    - id: stage05-workflow-state-machine
+      state: FROZEN_CONTRACT_PARTIALLY_REALIZED_BY_RUNTIME_SURFACES
+      states: [RECEIVED, ROUTED, INSPECTED, PROPOSED, WAITING_CONFIRMATION, BLOCKED, AUTHORIZED, PLANNED, VALIDATED, READY_FOR_EXECUTOR, EXECUTED_BY_FUTURE_STAGE, EVIDENCE_CAPTURED, COMPLETED]
+      stage05_terminal_state: READY_FOR_EXECUTOR_OR_BLOCKED
+    - id: stage06-change-lifecycle
+      state: FROZEN_CONTRACT_RUNTIME_CAN_PLAN_BUT_HAS_NO_CANONICAL_APPLY_API
+      states: [DISCUSSION, DRAFT, PROPOSED, IN_REVIEW, APPROVED_FOR_APPLY, APPLY_PLANNED, APPLIED, RECONCILING, RECONCILED, ARCHIVED, BLOCKED]
+      stage06_max_state: APPLY_PLANNED
+    - id: current-runtime-request-flow
+      state: IMPLEMENTED
+      sequence: [Editor, Adapter, Control Plane, Runtime API, Policy, Evidence Trace]
+    - id: semantic-commit-dry-run
+      state: IMPLEMENTED_CURRENT_PROJECT_DRY_RUN_ONLY
+      sequence: [inspect, plan_commit, preflight, dry_run, evidence]
+    - id: stage20-upgrade-lifecycle
+      state: DOCUMENTED_PROCESS_NOT_AUTOMATED_WORKFLOW
+      sequence: [Change, Impact, Migration, Preview, Validation, Apply, Rollback, Acceptance]
+
+roles:
+  actual_roles:
+    source_roles:
+      - DECISION_CHANGE_HISTORY
+      - DERIVED_PROJECTION
+      - OPERATIONAL_HISTORY
+      - PROJECT_CANONICAL_DOCUMENT
+      - PROJECT_GUIDE_DERIVED
+      - REQUIREMENT_SOURCE
+      - TECHNICAL_CONTRACT_SOURCE
+      - UI_DESIGN_DERIVED
+      - UI_SPEC_SOURCE
+    governance_roles:
+      - id: HUMAN_PROJECT_AUTHORITY
+        state: REQUIRED_CONCEPT_FOR_CON002_AND_ACTIVATION
+        runtime_enum: false
+    project_instance_contributor_role:
+      current_value: NONE
+      identity_values_persisted: false
+      grants_authorization: false
+  role_boundaries:
+    role_is_permission: false
+    role_is_git_identity: false
+    role_is_authentication: false
+
+statuses_and_enums:
+  contract_status: [DRAFT, FROZEN, DEPRECATED, SUPERSEDED, BLOCKED]
+  artifact_status: [DRAFT, IN_REVIEW, APPROVED, BASELINED, NEEDS_REVIEW, SUPERSEDED, DEPRECATED, ARCHIVED, UNKNOWN]
+  runtime_status: [PENDING, RUNNING, PAUSED, BLOCKED, SUCCEEDED, FAILED, CANCELLED, PARTIAL, UNKNOWN]
+  conflict_status: [OPEN, IN_REVIEW, RESOLVED, ACCEPTED_RISK, SUPERSEDED]
+  permission_result: [ALLOW, BLOCK, NEEDS_INPUT, NOT_APPLICABLE]
+  risk_class: [READ_ONLY, REVERSIBLE_WRITE, CANONICAL_WRITE, PROTECTED_WRITE, IRREVERSIBLE_OR_EXTERNAL]
+  execution_scope: [CURRENT_PROJECT_DRY_RUN, ISOLATED_FIXTURE, AUTHORIZED_PROJECT_EXECUTION]
+  work_mode: [LIGHT, STANDARD, FULL]
+  decision_level: [L0, L1, L2, L3, L4]
+  variable_resolution_status: [EXPLICIT, DERIVED, DEFAULTED, UNKNOWN, BLOCKED]
+  adapter_response_status: [OK, BLOCKED, FAILED]
+  project_instance_state: [PILOT_SHADOW, PROJECT_INSTANCE_SHADOW_PILOT]
+  project_instance_activation: [INACTIVE, PILOT, NOT_ACTIVATED, NOT_AUTHORIZED]
+  framework_release_state: [RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT]
+  governance_pointer_state: [CURRENT_FINAL_FREEZE, READY_FOR_HUMAN_APPROVAL]
+  blocker_state: [TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY]
+  ui_spec_status: [NOT_ENABLED, DRAFT, IN_REVIEW, APPROVED, PARTIAL_APPROVED, STALE, REVIEW_REQUIRED, SUPERSEDED, BLOCKED]
+  canonical_apply_state: [PREVIEWED, READY_FOR_DECISION, AUTHORIZED, APPLYING, APPLIED, VALIDATED, RECONCILED, FAILED, ROLLED_BACK]
+
+ids_and_variables:
+  stable_identifiers:
+    - capability_id
+    - contract_id
+    - artifact_id
+    - stable_id
+    - action_id
+    - target_id
+    - decision_id
+    - authorization_id
+    - change_id
+    - provider_change_id
+    - project_instance_id
+    - group_id
+    - binding_id
+    - port_id
+    - provider_id
+    - policy_id
+    - workflow_policy_id
+    - run_id
+    - pilot_id
+    - rollback_id
+  version_fields: [schema_version, artifact_version, contract_version, runtime_state_version]
+  runtime_bridge_environment:
+    - BANYAN_REPOSITORY
+    - BANYAN_POLICY
+    - BANYAN_TRACE
+    - BANYAN_PROVIDERS
+    - BANYAN_PROVENANCE
+    - BANYAN_STAGES
+  project_variables:
+    - {id: project_profile, status: EXPLICIT}
+    - {id: authorization_scope, status: UNKNOWN}
+    - {id: design_gate, status: UNKNOWN}
+    - {id: editor_entry, status: UNKNOWN}
+    - {id: project_endpoints, status: BLOCKED, blocker: CON-002}
+    - {id: delivery_convention, status: UNKNOWN}
+    - {id: commit_practice, status: UNKNOWN}
+
+document_types:
+  actual_key_types:
+    - {id: PRD, state: FROZEN_AUTHORITY_CONTRACT, authority: canonical_product_business_requirement_truth}
+    - {id: UI_SPEC, state: FROZEN_AUTHORITY_AND_LIFECYCLE_CONTRACT, authority: approved_application_scoped_ui_contract_projection}
+    - {id: DEC, state: PRESENT_IN_DECISION_CONTRACTS_AND_PROJECT_DOCUMENTS}
+    - {id: ADR, state: PRESENT_IN_DECISION_CONTRACTS_AND_ACCEPTED_STAGE_EVIDENCE}
+    - {id: CR, state: PRESENT_IN_DECISION_AND_CHANGE_CONTRACTS}
+    - {id: UI-DEC, state: PRESENT_IN_DECISION_AND_UI_CONTRACTS}
+    - {id: CHANGE, state: FROZEN_CHANGE_WORKSPACE_CONTRACT}
+    - {id: DRAFT_CHANGE_PACKAGE, state: FROZEN_DRAFT_PROMOTION_CONTRACT}
+    - {id: EVIDENCE, state: FROZEN_SCHEMA_AND_IMPLEMENTED_TRACE_SURFACE}
+    - {id: TRACE, state: IMPLEMENTED_JSONL_AUDIT_SURFACE}
+    - {id: PROJECT_GUIDE, state: FROZEN_DERIVED_KNOWLEDGE_SCHEMA}
+    - {id: HANDOVER, state: PRESENT_IN_FROZEN_CONTRACTS_AND_STAGE_EVIDENCE}
+    - {id: WORKLOG, state: PRESENT_IN_EXISTING_PROJECT_DOCUMENTS}
+    - {id: RFC, state: TERM_REQUIRED_BY_DOCUMENTATION_PLAN_NO_DEDICATED_FROZEN_SCHEMA_FOUND}
+  markers_not_document_types:
+    - {id: TBD, meaning: unresolved_value_marker}
+    - {id: TBC, meaning: documentation_term_requested_but_no_dedicated_frozen_enum_found}
+
+directories:
+  - {path: banyan-framework/src/banyan, role: PYTHON_RUNTIME_AND_ADAPTER_SOURCE, state: EXISTS}
+  - {path: banyan-framework/frontend, role: ANT_DESIGN_PRO_SIMPLE_SOURCE, state: EXISTS}
+  - {path: banyan-framework/control-plane-go, role: GO_GIN_CONTROL_PLANE, state: EXISTS}
+  - {path: banyan-framework/policies, role: DEFAULT_RUNTIME_POLICY, state: EXISTS}
+  - {path: banyan-framework/tests, role: FRAMEWORK_TESTS, state: EXISTS}
+  - {path: banyan-framework/docs, role: DOCUMENTATION_PACKAGING_TARGET, state: CREATED_FOR_D0}
+  - {path: .banyan, role: PROJECT_INSTANCE_SHADOW_PILOT, state: EXISTS_NOT_MODIFIED}
+  - {path: .banyan-refactor, role: TEMPORARY_BOOTSTRAP_AND_ACCEPTED_EVIDENCE, state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION_NOT_RETIRED}
+  - {path: docs/project, role: EXISTING_PROJECT_DOCUMENTATION, state: PRESERVE_IN_PLACE_NOT_MIGRATED}
+  - {path: tools/anydesign, role: PROVIDER_OWNED_SKILL_AND_TOOLS, state: PRESERVED_IN_PLACE}
+  - {path: .cursor/skills, role: EXISTING_EDITOR_SKILL_ENTRIES, state: PRESERVED_IN_PLACE}
+
+project_instance:
+  path: .banyan
+  state: PROJECT_INSTANCE_SHADOW_PILOT
+  concrete_schema_version: stage17-v1
+  final_activation: false
+  canonical_replacement: false
+  business_truth_source: false
+  existing_project_layout: PRESERVE_IN_PLACE
+  docs_project_migration: NOT_PERFORMED
+  git_mutation: NOT_AUTHORIZED
+  variable_bindings_state: UNKNOWN
+  feature_activation_default: INACTIVE
+  unknown_dependency: BLOCKED
+  current_project_git_execution: DRY_RUN_ONLY
+  canonical_write: BLOCKED
+  protected_business_write: BLOCKED
+  files:
+    - .banyan/PILOT_NOTICE.md
+    - .banyan/generated/README.md
+    - .banyan/index/manifest.yaml
+    - .banyan/instance/project-instance.yaml
+    - .banyan/mappings/source-mappings.yaml
+    - .banyan/migrations/rollback.yaml
+    - .banyan/overlays/bindings.yaml
+    - .banyan/pilot.yaml
+    - .banyan/profiles/contributor.yaml
+    - .banyan/profiles/project.yaml
+    - .banyan/providers/bindings.yaml
+    - .banyan/runtime/status.yaml
+    - .banyan/trace/audit.jsonl
+  schema_refs:
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_SCHEMA.yaml
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_LAYOUT_CONTRACT.yaml
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/PROJECT_PROFILE_SCHEMA.yaml
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/CONTRIBUTOR_PROFILE_SCHEMA.yaml
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/SOURCE_MAPPING_SCHEMA.yaml
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/VARIABLE_RESOLUTION_SCHEMA.yaml
+    - .banyan-refactor/stages/04/stage04-20260920T142517Z/PROVIDER_BINDING_SCHEMA.yaml
+
+git_and_permission_semantics:
+  runtime_is_fail_closed: true
+  unknown_action_default_risk: PROTECTED_WRITE
+  unknown_action_result: BLOCK
+  allow_means_executed: false
+  current_project_mutation_allowed: false
+  current_project_commit_mode: DRY_RUN_ONLY
+  isolated_fixture_mutation: AVAILABLE_WITH_GATES
+  authorization_required_for_mutation: true
+  commit_identity_required: true
+  ui_confirmation_is_authorization: false
+  adapter_request_is_authorization: false
+  trace_is_authorization: false
+  commit_plan_is_authorization: false
+  role_grants_permission: false
+  git_identity_grants_permission: false
+  secret_body_rendering: forbidden
+
+doc_gap_candidates:
+  - id: DOC-GAP-CANDIDATE-001
+    expected: WebUI Help Center at /help backed by banyan-framework/docs
+    actual: No /help page, docs API, or embedded documentation route exists.
+    disposition: D7_ENHANCEMENT_CANDIDATE
+  - id: DOC-GAP-CANDIDATE-002
+    expected: Natural-language editor is the primary complete Banyan workflow entry.
+    actual: Cursor, Codex, and Generic Editor adapters normalize a bounded machine request set; end-to-end natural-language orchestration is not implemented in Banyan Framework.
+    disposition: DOCUMENT_AS_LIMIT_AND_REVIEW_ENHANCEMENT
+  - id: DOC-GAP-CANDIDATE-003
+    expected: Adaptive workflow automatically selects the full user journey.
+    actual: banyan.workflow.adaptive.v1 is FROZEN_POLICY_NOT_IMPLEMENTED; only bounded runtime/control-plane flows are executable.
+    disposition: DOCUMENT_AS_CONTRACT_NOT_IMPLEMENTATION
+  - id: DOC-GAP-CANDIDATE-004
+    expected: Implementation Owner, Draft Contributor, Reviewer, and Project Authority are formal collaboration roles.
+    actual: Human Project Authority is referenced as a governance concept, but no runtime collaboration-role enum or binding schema for the four names exists.
+    disposition: D1_OR_D4_TERMINOLOGY_DECISION_OR_ENHANCEMENT
+  - id: DOC-GAP-CANDIDATE-005
+    expected: Canonical Apply and the complete Change lifecycle are usable framework workflows.
+    actual: Contracts are frozen, but current Runtime and Control Plane expose no canonical-apply endpoint and current-project mutation remains disabled.
+    disposition: DOCUMENT_AS_NOT_AVAILABLE
+  - id: DOC-GAP-CANDIDATE-006
+    expected: Framework-native Skill catalog corresponding to all CAP-* capabilities.
+    actual: No framework-native SKILL.md exists under banyan-framework; two existing project skills are preserved outside Core, while 35 CAP-* entries are contracts.
+    disposition: DOCUMENT_CONTRACT_SKILL_DISTINCTION
+  - id: DOC-GAP-CANDIDATE-007
+    expected: RFC and TBC have precise Banyan type/status definitions.
+    actual: They are required documentation vocabulary, but no dedicated frozen RFC artifact schema or TBC enum was found in the accepted evidence reviewed for D0.
+    disposition: DOCUMENTATION_DEFINITION_NEEDED_WITHOUT_INVENTING_RUNTIME_ENUM
+  - id: DOC-GAP-CANDIDATE-008
+    expected: One version number describes all current Banyan state.
+    actual: Additive framework release is v1.10-additive.1, governance CURRENT pointer is v1.9.1, and Python package/runtime reports 0.1.0.
+    disposition: DOCUMENT_VERSION_DIMENSIONS_SEPARATELY
+  - id: DOC-GAP-CANDIDATE-009
+    expected: Project Instance is fully activated after framework release.
+    actual: .banyan remains PROJECT_INSTANCE_SHADOW_PILOT; Final Activation is NOT_AUTHORIZED and CON-002 remains typed-blocked.
+    disposition: DOCUMENT_AS_BLOCKED_PILOT
+
+source_evidence:
+  - banyan-framework/src/banyan/cli.py
+  - banyan-framework/src/banyan/runtime/api.py
+  - banyan-framework/src/banyan/runtime/models.py
+  - banyan-framework/src/banyan/runtime/evaluator.py
+  - banyan-framework/src/banyan/control_plane/service.py
+  - banyan-framework/src/banyan/control_plane/bridge.py
+  - banyan-framework/src/banyan/editor/protocol.py
+  - banyan-framework/src/banyan/editor/adapters.py
+  - banyan-framework/control-plane-go/internal/controlplane/http/router.go
+  - banyan-framework/control-plane-go/cmd/banyan-control/main.go
+  - banyan-framework/frontend/src/main.tsx
+  - banyan-framework/policies/default-policy.yaml
+  - .banyan-refactor/stages/03/stage03-20260920T135702Z/CAPABILITY_CONTRACT_REGISTRY.yaml
+  - .banyan-refactor/stages/03/stage03-20260920T135702Z/SOURCE_ROLE_REGISTRY.yaml
+  - .banyan-refactor/stages/03/stage03-20260920T135702Z/VERSION_STATUS_PROVENANCE_RULES.yaml
+  - .banyan-refactor/stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_SCHEMA.yaml
+  - .banyan-refactor/stages/04/stage04-20260920T142517Z/VARIABLE_RESOLUTION_SCHEMA.yaml
+  - .banyan-refactor/stages/05/stage05-20260920T144623Z/ADAPTIVE_WORKFLOW_SCHEMA.yaml
+  - .banyan-refactor/stages/05/stage05-20260920T144623Z/WORKFLOW_STATE_TRANSITION_SCHEMA.yaml
+  - .banyan-refactor/stages/05/stage05-20260920T144623Z/DECISION_LEVEL_SCHEMA.yaml
+  - .banyan-refactor/stages/06/stage06-20260920T151243Z/CHANGE_LIFECYCLE_SCHEMA.yaml
+  - .banyan-refactor/stages/14/stage14-20260921T022241Z/ACTION_RISK_POLICY.yaml
+  - .banyan-refactor/stages/14/stage14-20260921T022241Z/PERMISSION_DECISION_SCHEMA.yaml
+  - .banyan-refactor/stages/16/stage16-20260921T034943Z/CONTROL_PLANE_API_CONTRACT.yaml
+  - .banyan-refactor/stages/18/stage18-20260921T062103Z/ADAPTER_VALIDATION_RESULT.yaml
+  - .banyan-refactor/stages/18.5/stage18_5-20260921T064132Z/CURRENT_IMPLEMENTATION_INVENTORY.yaml
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/ACCEPTED_FINAL_STATE.yaml
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/FRAMEWORK_RELEASE_MANIFEST.yaml
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/FINAL_HANDOFF.yaml
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/ACCEPTANCE_REPORT.md
+  - .banyan/instance/project-instance.yaml
+  - .banyan/pilot.yaml
+  - .banyan/runtime/status.yaml
+  - tools/anydesign/SKILL.md
+  - .cursor/skills/visual-repair-loop/SKILL.md
+
+scope_guard:
+  banyan_core_modified: false
+  dot_banyan_modified: false
+  docs_project_migrated: false
+  webui_help_center_started: false
+  version_pointer_changed: false
+  project_final_activation_performed: false

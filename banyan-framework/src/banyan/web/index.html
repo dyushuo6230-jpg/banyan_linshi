@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Banyan Control Plane</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><span class="mark">B</span><strong>Banyan Control Plane</strong></div>
+    <div class="top-status"><span class="dot"></span><span id="runtime-health">Connecting</span><span class="mode">LOCAL · DRY RUN</span></div>
+  </header>
+  <div class="layout">
+    <nav aria-label="Control Plane views">
+      <a href="#dashboard">Dashboard</a><a href="#runtime">Runtime / Policy</a><a href="#safety">Project Safety</a>
+      <a href="#gates">Gate / Blockers</a><a href="#preflight">Preflight</a><a href="#plan">Commit Plan</a>
+      <a href="#dryrun">Dry-run Result</a><a href="#trace">Trace / Audit</a><a href="#provenance">Provenance</a>
+      <a href="#providers">Provider Bindings</a><a href="#stages">Stage / Run</a><a href="#activation">Activation Readiness</a>
+    </nav>
+    <main>
+      <section id="dashboard">
+        <div class="eyebrow">STAGE 16 · OBSERVABILITY ONLY</div>
+        <h1>Runtime at a glance</h1>
+        <p class="lede">Every decision shown here comes from the Runtime API. This interface cannot mutate the current project.</p>
+        <div class="metric-grid">
+          <article><span>Runtime</span><strong id="metric-runtime">—</strong></article>
+          <article><span>Execution</span><strong id="metric-mode">—</strong></article>
+          <article><span>Policy</span><strong id="metric-policy">—</strong></article>
+          <article><span>Activation</span><strong id="metric-activation">—</strong></article>
+        </div>
+      </section>
+
+      <section id="runtime" class="panel"><header><div><div class="eyebrow">ENFORCEMENT</div><h2>Runtime / Policy</h2></div><span class="badge safe">Runtime owned</span></header><pre id="policy-output">Loading…</pre></section>
+      <section id="safety" class="panel"><header><div><div class="eyebrow">CURRENT PROJECT</div><h2>Project Safety</h2></div><span class="badge warn">Mutation disabled</span></header><pre id="safety-output">Loading…</pre><p class="note">Identity is reduced to present / ambiguous. Values are never rendered or persisted.</p></section>
+      <section id="gates" class="panel"><header><div><div class="eyebrow">DECISION SURFACE</div><h2>Gate / Blockers</h2></div></header><div id="blockers" class="chips"></div></section>
+
+      <section id="preflight" class="panel interactive"><header><div><div class="eyebrow">RUNTIME REQUEST</div><h2>Preflight</h2></div><span class="badge">Click ≠ authorization</span></header>
+        <div class="form-row"><label>Action ID<input id="action-id" value="ui-preflight-1"></label><label>Action type<select id="action-type"><option value="inspect">inspect</option><option value="commit">commit</option><option value="protected_write">protected_write</option></select></label><button id="preflight-button">Run preflight</button></div>
+        <pre id="preflight-output">No request yet.</pre>
+      </section>
+
+      <section id="plan" class="panel interactive"><header><div><div class="eyebrow">READ-ONLY ANALYSIS</div><h2>Semantic Commit Plan</h2></div><span class="badge">Plan ≠ execution</span></header>
+        <label>Path classifications (JSON object)<textarea id="classifications">{}</textarea></label><button id="plan-button">Build plan</button><pre id="plan-output">No plan yet.</pre>
+      </section>
+
+      <section id="dryrun" class="panel interactive"><header><div><div class="eyebrow">SIMULATION</div><h2>Dry-run Result</h2></div><span class="badge warn">No commit created</span></header>
+        <label>Formal authorization reference (optional)<input id="authorization-ref" placeholder="Reference only; a click does not create authorization"></label><button id="dryrun-button">Simulate dry-run</button><pre id="dryrun-output">Build a plan first.</pre>
+      </section>
+
+      <section id="trace" class="panel"><header><div><div class="eyebrow">APPEND-ONLY EVIDENCE</div><h2>Trace / Audit</h2></div><span class="badge">Trace ≠ authorization</span></header><pre id="trace-output">Loading…</pre></section>
+      <section id="provenance" class="panel interactive"><header><div><div class="eyebrow">SOURCE CONTEXT</div><h2>Provenance</h2></div><span class="badge">UNKNOWN stays visible</span></header><div class="form-row"><label>Stable ID<input id="provenance-id" value="artifact-1"></label><button id="provenance-button">Load provenance</button></div><pre id="provenance-output">No record loaded.</pre></section>
+      <section id="providers" class="panel"><header><div><div class="eyebrow">DECLARATIVE ONLY</div><h2>Provider Bindings</h2></div><span class="badge warn">Not activated</span></header><pre id="providers-output">Loading…</pre></section>
+      <section id="stages" class="panel"><header><div><div class="eyebrow">DELIVERY STATE</div><h2>Stage / Run</h2></div></header><pre id="stages-output">Loading…</pre></section>
+      <section id="activation" class="panel"><header><div><div class="eyebrow">STAGE 17 GATE</div><h2>Activation Readiness</h2></div><span class="badge blocked">Not activated</span></header><pre id="activation-output">Loading…</pre><p class="note">Stage 16 evaluates readiness only. It cannot create or activate <code>.banyan/</code>.</p></section>
+    </main>
+  </div>
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

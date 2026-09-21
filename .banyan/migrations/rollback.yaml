@@ -1,0 +1,13 @@
+schema_version: stage17-v1
+rollback_id: rollback-project-instance-pilot-stage17
+scope: .banyan/PILOT_ONLY
+precondition: PILOT_MANIFEST_HASHES_MATCH
+steps:
+  - remove_allowlisted_pilot_files
+  - remove_empty_pilot_directories
+  - verify_dot_banyan_absent
+  - verify_head_index_and_staged_count_match_checkpoint
+git_reset_required: false
+legacy_restore_required: false
+docs_restore_required: false
+rollback_test_mode: SHADOW_SIMULATION

@@ -1,0 +1,23 @@
+schema_version: stage17-v1
+provider_selection_state: PILOT_ADAPTER_ONLY
+bindings:
+  - binding_id: cursor-pilot-adapter
+    port_id: banyan.port.editor_entry_compatibility.v1
+    provider_id: cursor
+    scope: PROJECT_PILOT
+    capability_declaration:
+      - call_control_plane
+      - render_runtime_result
+    activation_state: PILOT
+    owns_permission_policy: false
+    owns_canonical_truth: false
+    direct_git_mutation: false
+  - binding_id: runtime-permission
+    port_id: banyan.port.action_authorization.v1
+    provider_id: stage15-runtime-api
+    scope: PROJECT_PILOT
+    capability_declaration:
+      - evaluate_action
+      - emit_audit
+    activation_state: PILOT
+    bypass_allowed: false

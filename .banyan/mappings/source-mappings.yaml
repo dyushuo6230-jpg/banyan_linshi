@@ -1,0 +1,24 @@
+schema_version: stage17-v1
+mode: REFERENCE_ONLY
+full_project_scan_performed: false
+mappings:
+  - stable_id: existing-project-root
+    source_role: LEGACY_PROJECT_ROOT
+    source_ref: ./
+    target_role: PROJECT_CONTEXT_REFERENCE
+    authority: EXISTING_PROJECT_PRESERVE_IN_PLACE
+    freshness: CURRENT_AT_CHECKPOINT
+    migration_action: NONE
+  - stable_id: existing-docs-root
+    source_role: LEGACY_DOCUMENTATION_ROOT
+    source_ref: docs/
+    target_role: DOCUMENTATION_REFERENCE
+    authority: UNKNOWN
+    freshness: UNKNOWN
+    migration_action: NONE
+secret_policy:
+  state: METADATA_ONLY
+  body_read: false
+  hash_content: false
+  copy: false
+  preview: false

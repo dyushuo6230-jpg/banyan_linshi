@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "banyan-framework"
+version = "0.1.0"
+description = "Generic fail-closed policy runtime and semantic commit executor"
+requires-python = ">=3.9"
+dependencies = ["PyYAML>=6"]
+
+[project.scripts]
+banyan = "banyan.cli:main"
+banyan-control-plane = "banyan.control_plane.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
