@@ -1,0 +1,50 @@
+stage_id: '01'
+run_id: stage01-20260920T091426Z
+kind: CONTROL_ARTIFACT_CHECKPOINT_AND_UPSTREAM_REFERENCE
+upstream_checkpoint: ../../00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+recovery:
+  coverage: PARTIAL_APPROVED
+  mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+secret_scope:
+- nunu-go-api/config/admin/local.yml
+- nunu-go-api/config/admin/test.yml
+- nunu-go-api/config/h5-online/local.yml
+- nunu-go-api/config/h5/local.yml
+- nunu-go-api/config/h5/test.yml
+- nunu-go-api/config/home/local.yml
+- nunu-go-api/config/mall-online/local.yml
+- nunu-go-api/config/mall-online/prod.yml
+- nunu-go-api/config/mall-online/test.yml
+- nunu-go-api/config/mall/local.yml
+- nunu-go-api/config/mall/test.yml
+- nunu-go-api/config/merchant/local.yml
+- nunu-go-api/config/merchant/test.yml
+secret_policy:
+  classification: SECRET_METADATA_ONLY
+  preserve_in_place: true
+  writable: false
+  deletable: false
+  content_read_allowed: false
+  content_hash_allowed: false
+  content_copy_allowed: false
+  checkpoint_content_copy_allowed: false
+  git_commit_allowed: false
+explicit_attestation:
+- 13 local config bodies not read
+- 13 local config bodies not copied
+- 13 local config bodies not hashed
+- 13 local config files not modified/deleted/moved/renamed
+- User accepted no independent Banyan Backup for these 13 only
+- Subsequent stages inherit metadata-only/no-write protection
+bootstrap_snapshots:
+- path: checkpoint/MIGRATION_REGISTER.bootstrap.yaml.snapshot.yaml
+  sha256: 3080a90fb8b11a594600de3d513ad6a9b4ff60a7bbde9a19d7b6bd5c24b763ee
+  historical_read_only: true
+  writable_truth: false
+- path: checkpoint/BANYAN_REFACTOR_TRACE.bootstrap.yaml.snapshot.yaml
+  sha256: 4fe9d5da1bd26d53570af635f8c5be4794452d5676bdbce7e7966a099a5bee21
+  historical_read_only: true
+  writable_truth: false
+rollback: Retain evidence. Do not restore business files automatically. Shared bootstrap
+  rollback requires comparing later work and explicit scoped action; snapshot is historical
+  evidence, not a second writable truth.

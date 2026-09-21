@@ -1,0 +1,24 @@
+schema_version: stage03-v1
+schema_status: FROZEN
+artifact_fields:
+- artifact_id
+- artifact_type
+- version
+- status
+- source_role
+- provenance
+- references
+- referenced_by
+- supersedes
+- superseded_by
+- immutability
+- migration_lineage
+identity_rules:
+  stable_id_required: true
+  id_reuse_for_different_subject: FORBIDDEN
+  subject_change_requires_new_id: true
+status_rules_reference: VERSION_STATUS_PROVENANCE_RULES.yaml
+source_role_reference: SOURCE_ROLE_SCHEMA.yaml
+reference_integrity_reference: REFERENCE_INTEGRITY_CONTRACT.yaml
+unknown_provenance_allowed: true
+unknown_provenance_must_be_explicit: true

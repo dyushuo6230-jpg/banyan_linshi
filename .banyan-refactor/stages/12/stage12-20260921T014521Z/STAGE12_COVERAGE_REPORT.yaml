@@ -1,0 +1,32 @@
+schema_version: stage12-v1
+stage: '12'
+run_id: stage12-20260921T014521Z
+overall: PASS_WITH_TYPED_BLOCKERS
+coverage:
+  query_first_precheck: COMPLETE
+  context_selection: COMPLETE
+  freshness_resolution: COMPLETE
+  con002_analysis: COMPLETE_TYPED_BLOCKED
+  memory_layer: COMPLETE
+  recovery_and_handover: COMPLETE
+  token_budget_and_compaction: COMPLETE
+  cache_and_reuse: COMPLETE
+  evidence_on_demand: COMPLETE
+  historical_reference_disposition: COMPLETE_KEEP_UNRESOLVED
+  runtime_cost_context: COMPLETE
+  stage13_query_handoff: COMPLETE_NOT_STARTED
+hard_metrics:
+  FRESHNESS_DECISION_BY_MTIME_ONLY: 0
+  FRESHNESS_CONFLICT_WITH_SILENT_WINNER: 0
+  CONTEXT_SUMMARY_WITHOUT_SOURCE_REFS: 0
+  CONTEXT_SUMMARY_WITHOUT_AS_OF_OR_FRESHNESS: 0
+  CONTEXT_COMPACTION_DROPPED_BLOCKER: 0
+  MEMORY_PROMOTED_TO_CANONICAL_TRUTH: 0
+  TOKEN_BUDGET_BYPASSED_REQUIRED_CONTEXT: 0
+  HISTORICAL_REFERENCE_WITH_INVENTED_TARGET: 0
+  SECRET_BODY_INCLUDED_IN_CONTEXT_INDEX: 0
+limitations:
+  - CON-002 lacks sufficient decision, version/status, supersession, and lineage evidence and remains TYPED_BLOCKED.
+  - Four historical references remain unresolved without invented targets.
+  - Stage 11 Shadow SQLite remains non-canonical and read-only for Stage 12.
+

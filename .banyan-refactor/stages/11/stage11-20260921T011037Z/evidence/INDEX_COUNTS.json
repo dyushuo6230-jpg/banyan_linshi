@@ -1,0 +1,23 @@
+{
+  "artifact_status_history": 425,
+  "artifact_versions": 425,
+  "artifacts": 1740,
+  "changes": 54,
+  "decisions": 130,
+  "entities": 1911,
+  "guides": 2,
+  "handover_records": 4,
+  "history_events": 324,
+  "index_metadata": 7,
+  "migration_ledger": 74,
+  "progress_records": 232,
+  "projections": 95,
+  "provenance": 1740,
+  "provider_bindings": 35,
+  "reference_edges": 108,
+  "relations": 807,
+  "secret_metadata": 13,
+  "source_roles": 9,
+  "trace_events": 28,
+  "unresolved_references": 4
+}

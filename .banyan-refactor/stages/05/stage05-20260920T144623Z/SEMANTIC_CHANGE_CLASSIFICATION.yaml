@@ -1,0 +1,23 @@
+schema_version: stage05-v1
+classes:
+  READY:
+    criteria: complete scoped change with required validation and no blocker
+    disposition: CANDIDATE_FOR_SEMANTIC_GROUP
+  INCOMPLETE:
+    criteria: partial implementation, missing dependency, validation, or decision
+    disposition: HOLD_BY_DEFAULT
+    exception: explicit_user_authorization_and_policy_allows_nonmisleading_partial_commit
+  UNRELATED:
+    criteria: outside current task or change intent
+    disposition: ISOLATE_AND_REPORT
+  LOCAL_ONLY:
+    criteria: machine-local state, bootstrap-only material, or explicitly noncommittable content
+    disposition: KEEP_LOCAL_AND_REPORT
+  SECRET_RISK:
+    criteria: credential, secret-bearing configuration, suspicious sensitive material, or unverified secret exposure
+    disposition: BLOCK
+    auto_stage: NEVER
+    auto_commit: NEVER
+top_level_extension_allowed: false
+subreason_extension_allowed: true
+

@@ -1,0 +1,34 @@
+schema_version: stage11-v1
+surfaces:
+  freshness:
+  - entity_freshness
+  - source_version_history
+  - conflict_state
+  context:
+  - current_progress
+  - latest_handover_with_as_of
+  - related_canonical_refs
+  - related_operational_refs
+  history:
+  - subject_state_history
+  - reverted_failed_stopped_blocked_events
+  reference:
+  - unresolved_references
+  - incoming_outgoing_edges
+  projection:
+  - projection_to_sources
+  - source_to_projections
+  trace:
+  - subject_trace
+  - run_trace
+authority_fields_required: true
+freshness_fields_required: true
+provenance_fields_required: true
+con002:
+  status: OPEN
+  owner_stage: '12'
+  resolved_in_stage11: false
+shadow_index:
+  path: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+  canonical_truth: false
+  rebuildable: true

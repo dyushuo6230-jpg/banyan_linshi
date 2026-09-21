@@ -1,0 +1,10 @@
+schema_version: stage13-v1
+default: MULTI_FACTOR_OR_UNKNOWN
+required_factors: [prompt_or_instruction_version, context_set, model_capability_class, execution_mode, provider_binding_if_known, capability_and_tools, human_intervention, repository_state, task_type_and_difficulty, validation, usage_telemetry]
+single_factor_allowed_only_when:
+  - controlled_comparison_exists
+  - competing_factors_are_held_constant
+  - mechanism_is_supported
+  - counterexample_review_passes
+unknown_factor_policy: PRESERVE_UNKNOWN
+

@@ -1,0 +1,43 @@
+upstream_stage: "06"
+run_id: stage06-20260920T151243Z
+acceptance_result: PASS_CHANGE_WORKSPACE_AND_CANONICAL_APPLY_CONTRACT_FREEZE
+change_workspace_contracts:
+  - CHANGE_WORKSPACE_SCHEMA.yaml
+  - CHANGE_LIFECYCLE_SCHEMA.yaml
+  - ARTIFACT_RELATIONSHIP_SCHEMA.yaml
+  - PARALLEL_DRAFT_CONTRACT.yaml
+  - DRAFT_PROMOTION_CONTRACT.yaml
+provider_contracts:
+  - CHANGE_WORKSPACE_PROVIDER_PORT.yaml
+  - OPENSPEC_PROVIDER_BINDING.yaml
+apply_contracts:
+  - APPLY_PREVIEW_CONTRACT.yaml
+  - CANONICAL_APPLY_CONTRACT.yaml
+  - DIVERGENCE_CONFLICT_CONTRACT.yaml
+  - REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml
+  - APPLY_AUTHORIZATION_BOUNDARY.yaml
+  - ROLLBACK_CONTRACT.yaml
+  - PROVIDER_NEUTRAL_ARCHIVE_HISTORY_CONTRACT.yaml
+provider_status:
+  openspec: DESIGN_ONLY_INACTIVE_NO_VERIFIED_LEGACY_INSTANCE
+con001: CONSUMED_RESOLVED_BY_LAYERED_CONTRACT
+con002: INHERITED_OPEN_OWNER_STAGE_12
+open_risks:
+  - {id: R03-PURITY, severity: HIGH, blocking_before_activation: true, owner_stage: "19"}
+  - {id: R03-SOURCE, severity: HIGH, blocking_before_activation: true, owner_stage: 09/10}
+  - {id: CON-002, severity: HIGH, blocking_before_activation: true, owner_stage: "12"}
+  - {id: R03-COST, severity: MEDIUM, blocking_before_activation: false, owner_stage: 15/16/19}
+  - {id: R03-SECRET, severity: HIGH, blocking_before_activation: true, owner_stage: ALL_LATER_STAGES}
+  - {id: R03-LOCAL, severity: MEDIUM, blocking_before_activation: false, owner_stage: ALL_LATER_STAGES}
+stage07_inputs:
+  - provider-neutral Change Workspace contracts
+  - inactive OpenSpec binding requiring later validation
+  - explicit Canonical Apply Preview Authorization Reconciliation and Rollback contracts
+  - reference integrity and no-loss rules
+  - inherited CON-002 without adjudication
+next_stage_entry_gate:
+  stage: "07"
+  result: PASS_FOR_STAGE07_REFERENCE_MIGRATION_DESIGN_WITH_INHERITED_BLOCKERS
+  execution_authorized: false
+stop_after_stage: "06"
+

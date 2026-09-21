@@ -1,0 +1,4 @@
+.banyan-refactor/stages/04/stage04-20260920T142517Z/**
+.banyan-refactor/MIGRATION_REGISTER.bootstrap.yaml
+.banyan-refactor/BANYAN_REFACTOR_TRACE.bootstrap.yaml
+

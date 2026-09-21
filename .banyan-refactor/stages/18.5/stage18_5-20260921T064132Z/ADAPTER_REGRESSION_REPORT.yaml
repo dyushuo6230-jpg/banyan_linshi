@@ -1,0 +1,22 @@
+schema_version: stage18.5-v1
+path: Editor Adapter -> Go/Gin -> LOCAL_STDIO Runtime Bridge -> Existing Control Plane
+  Service -> Stage15 Runtime API
+adapters:
+  cursor: PASS
+  codex: PASS
+  generic_editor: PASS
+checks:
+  single_runtime: PASS
+  permission_fail_closed: PASS
+  typed_failures: PASS
+  trace_continuity: PASS
+  evidence_refs: PASS
+  unknown_provenance_preserved: PASS
+  dry_run_boundary: PASS
+  git_mutation: 0
+formal_action: git_mutation
+formal_result: BLOCKED_BY_EXISTING_RUNTIME
+evidence:
+- evidence/RELEASE_SMOKE_RESULTS.yaml
+- evidence/GO_RUNTIME_TRACE.jsonl
+- evidence/TEST_RESULTS.txt

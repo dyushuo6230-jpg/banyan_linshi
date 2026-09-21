@@ -1,0 +1,36 @@
+schema_version: stage14-v1
+policy_id: banyan.action.risk.v1
+classes:
+  READ_ONLY:
+    minimum_decision_level: L0
+    required_evidence: [action_scope, target_scope, read_only_proof]
+    required_authorization: DECLARED_SCOPE
+    checkpoint: false
+    audit: STANDARD
+  REVERSIBLE_WRITE:
+    minimum_decision_level: L1
+    required_evidence: [before_state, after_plan, reversibility, validation_plan]
+    required_authorization: EXPLICIT_ACTION_SCOPE
+    checkpoint: WHEN_STATEFUL
+    audit: REQUIRED
+  CANONICAL_WRITE:
+    minimum_decision_level: L3
+    required_evidence: [authority, freshness, impact_review, human_confirmation, rollback_checkpoint]
+    required_authorization: EXPLICIT_TARGET_BOUND_AUTHORIZATION
+    checkpoint: true
+    audit: REQUIRED
+  PROTECTED_WRITE:
+    minimum_decision_level: L3
+    required_evidence: [protection_class, authority, freshness, impact_review, secret_check, human_confirmation, rollback_checkpoint]
+    required_authorization: EXPLICIT_PROTECTED_ACTION_AUTHORIZATION
+    checkpoint: true
+    audit: REQUIRED
+  IRREVERSIBLE_OR_EXTERNAL:
+    minimum_decision_level: L3
+    required_evidence: [external_target, irreversible_effect, impact_review, explicit_confirmation, rollback_or_nonrollback_disclosure]
+    required_authorization: EXPLICIT_EXTERNAL_ACTION_AUTHORIZATION
+    checkpoint: WHEN_APPLICABLE
+    audit: REQUIRED
+unknown_risk_result: NEEDS_INPUT
+risk_may_be_downgraded_by_work_mode: false
+

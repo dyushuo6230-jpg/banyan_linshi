@@ -1,0 +1,1 @@
+{"commits": ["e4aa150bc9d7c2309d81ec0cab71b85a94667232"], "dry_run": false, "leftovers": ["audit.jsonl", "classifications.json", "plan.json"], "permission_result": "ALLOW", "planned_groups": [{"group_id": "commit-1", "message": "chore: apply commit-1", "patch_count": 0, "paths": ["work.txt"]}], "reason_codes": [], "rolled_back": false, "status": "EXECUTED"}

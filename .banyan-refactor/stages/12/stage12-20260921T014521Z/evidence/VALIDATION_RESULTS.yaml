@@ -1,0 +1,40 @@
+schema_version: stage12-v1
+stage: '12'
+run_id: stage12-20260921T014521Z
+overall: PASS
+validations:
+  - {id: V12-01, result: PASS, evidence: Stage 11 seal, query surface, rebuildability, and read-only Shadow Index metadata are valid.}
+  - {id: V12-02, result: PASS, evidence: Query-first flow used the Shadow Index before bounded structured and exact-locator reads; no repository rediscovery or full Git history analysis occurred.}
+  - {id: V12-03, result: PASS, evidence: Seven context layers and four budget context classes are explicit.}
+  - {id: V12-04, result: PASS, evidence: Selection ranks authority and freshness before cost and makes blockers mandatory.}
+  - {id: V12-05, result: PASS, evidence: Freshness resolution forbids mtime-only, latest-file, proximity, and AI-confidence winners.}
+  - {id: V12-06, result: PASS, evidence: CON-002 is TYPED_BLOCKED with candidates, gaps, evidence, and required owner decision.}
+  - {id: V12-07, result: PASS, evidence: No silent winner was selected for CON-002.}
+  - {id: V12-08, result: PASS, evidence: Memory and summaries are explicitly derived or ephemeral and canonical_truth=false.}
+  - {id: V12-09, result: PASS, evidence: Memory schema requires non-empty source_refs.}
+  - {id: V12-10, result: PASS, evidence: Memory and compacted summaries require as_of and freshness.}
+  - {id: V12-11, result: PASS, evidence: Current, historical, superseded, stale, unknown, and typed-blocked states are distinct.}
+  - {id: V12-12, result: PASS, evidence: Handover selection uses validity gates; four UNKNOWN handovers cannot establish current state by filename order.}
+  - {id: V12-13, result: PASS, evidence: Mandatory context cannot be dropped or bypassed by a constrained budget.}
+  - {id: V12-14, result: PASS, evidence: Compaction must preserve blockers, decision state, unknowns, and open questions.}
+  - {id: V12-15, result: PASS, evidence: Compaction must preserve stable IDs, authority, freshness, source refs, and provenance.}
+  - {id: V12-16, result: PASS, evidence: Cache keys include subject IDs, source versions, freshness snapshot, projection rule, and policy version.}
+  - {id: V12-17, result: PASS, evidence: Evidence-on-demand reads are bounded, purpose-specific, logged, and stop when sufficient.}
+  - {id: V12-18, result: PASS, evidence: REF-039/041/043/044 are KEEP_UNRESOLVED_HISTORICAL after exact-locator and exact-path history checks; targets remain null.}
+  - {id: V12-19, result: PASS, evidence: REF-107 and REF-108 remain NOT_A_REFERENCE.}
+  - {id: V12-20, result: PASS, evidence: Thirteen secret records remain metadata-only; zero secret body reads or context inclusions.}
+  - {id: V12-21, result: PASS, evidence: Runtime cost contract uses abstract policy fields and contains no concrete provider, model, price, fixed percentage, or product selector.}
+  - {id: V12-22, result: PASS, evidence: Stage 13 handoff exposes authoritative, conflicted, blocker, change, reference, trace, history, and evidence-gap surfaces.}
+  - {id: V12-23, result: PASS, evidence: Writes are limited to the Stage 12 run and two bootstrap files; Stage 11 DB and source documents are unchanged.}
+  - {id: V12-24, result: PASS, evidence: Stage 13 handoff exists with execution_authorized=false and stage13_started=false.}
+hard_metrics:
+  FRESHNESS_DECISION_BY_MTIME_ONLY: 0
+  FRESHNESS_CONFLICT_WITH_SILENT_WINNER: 0
+  CONTEXT_SUMMARY_WITHOUT_SOURCE_REFS: 0
+  CONTEXT_SUMMARY_WITHOUT_AS_OF_OR_FRESHNESS: 0
+  CONTEXT_COMPACTION_DROPPED_BLOCKER: 0
+  MEMORY_PROMOTED_TO_CANONICAL_TRUTH: 0
+  TOKEN_BUDGET_BYPASSED_REQUIRED_CONTEXT: 0
+  HISTORICAL_REFERENCE_WITH_INVENTED_TARGET: 0
+  SECRET_BODY_INCLUDED_IN_CONTEXT_INDEX: 0
+

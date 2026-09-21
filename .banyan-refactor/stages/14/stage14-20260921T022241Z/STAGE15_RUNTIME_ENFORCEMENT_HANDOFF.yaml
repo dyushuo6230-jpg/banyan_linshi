@@ -1,0 +1,39 @@
+schema_version: stage14-v1
+stage14_run_id: stage14-20260921T022241Z
+required_inputs:
+  - ACTION_RISK_POLICY.yaml
+  - PERMISSION_DECISION_SCHEMA.yaml
+  - AUTHORIZATION_RECORD_SCHEMA.yaml
+  - WORK_MODE_PERMISSION_MATRIX.yaml
+  - PROTECTED_TARGET_SCHEMA.yaml
+  - PROTECTED_WRITE_GATE.yaml
+  - SECRET_SAFETY_GATE.yaml
+  - FRESHNESS_ROLLBACK_PRECONDITIONS.yaml
+  - HUMAN_CONFIRMATION_BINDING.yaml
+  - GIT_IDENTITY_SAFETY.yaml
+  - GIT_WORKTREE_SAFETY.yaml
+  - SEMANTIC_COMMIT_AUTHORIZATION.yaml
+  - GIT_OPERATION_PERMISSION_MATRIX.yaml
+  - EXTERNAL_IRREVERSIBLE_GATE.yaml
+  - AUDIT_EVENT_REQUIREMENTS.yaml
+  - LEARNING_GOVERNANCE_BINDING.yaml
+runtime_interface:
+  input_required: [action_id, action_type, target_id, target_state, work_mode, evidence_refs, impact_ref, decision_ref, authorization_ref, precondition_results]
+  output_required: [risk_class, decision_level, permission_result, failed_or_missing_preconditions, reason_codes, audit_event]
+  result_domain: [ALLOW, BLOCK, NEEDS_INPUT, NOT_APPLICABLE]
+enforcement_order: [risk, protection, evidence_impact, decision, human_confirmation, authorization, secret, freshness, checkpoint_rollback, git_identity_worktree, result_audit]
+compiler_requirements:
+  - reject_unknown_policy_fields
+  - preserve hard_blocks
+  - compile_unknown_or_blocked_to_BLOCK_OR_NEEDS_INPUT
+  - prohibit_profile_editor_or_identity_as_authorization
+  - prohibit_commit_plan_as_authorization
+  - prohibit_secret_risk_commit_path
+  - prohibit_runtime_policy_weakening
+executor_boundaries:
+  git_mutations: STAGE15_OR_LATER_WITH_EXPLICIT_AUTHORIZATION
+  protected_writes: STAGE15_OR_LATER_WITH_EXPLICIT_AUTHORIZATION
+  external_actions: STAGE15_OR_LATER_WITH_EXPLICIT_AUTHORIZATION
+stage14_executes_actions: false
+stage15_execution_authorized: false
+

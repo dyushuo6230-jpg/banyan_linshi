@@ -1,0 +1,20 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+mode: UI_GOVERNANCE_LOW_TOKEN
+full_repository_rescan: false
+full_design_doc_reload: false
+git_history_reanalysis: false
+prior_stage_rerun: false
+inputs:
+- Stage 07 to Stage 08 Gate Review
+- Stage 08 Low Token Input Index
+- Stage 08 execution pack and templates
+- Stage 07 handoff, compatibility map, and no-loss coverage
+- Stage 06 Change Workspace, Draft Promotion, and Canonical Apply contracts
+- Stage 05 Decision Level, Human Confirmation, and Adaptive Workflow contracts
+- Six indexed Stage 03 contracts
+- CAP-PRD, CAP-UI_SCOPE, CAP-UI_CONTRACT, CAP-UI_GATE, CAP-IDREF, and CAP-TRACE evidence
+- Targeted v3.1 paragraphs for enablement, G9.5, Partial, Draft/Approval, design materials, and visual repair
+evidence_on_demand_triggers_fired: []
+sensitive_body_access: false

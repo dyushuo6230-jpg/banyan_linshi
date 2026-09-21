@@ -1,0 +1,688 @@
+schema_version: stage11-v1
+run_id: stage11-20260921T011037Z
+mode: STRUCTURED_INPUT_FIRST
+sources:
+- source_id: SRC-001
+  source_stage: '07'
+  source_ref: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_ASSET_DISPOSITION_MATRIX.jsonl
+  source_hash: 3321b60c71512b4006e1552e2c93223e282456a9ab22825a7ae8facea9887f32
+  entity_types:
+  - Artifact
+  - Locator
+  expected_count: 1026
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-002
+  source_stage: '07'
+  source_ref: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_ARTIFACT_MIGRATION_MATRIX.jsonl
+  source_hash: a7271ae577807c373e03bbdc8ee0cef06087e68f020db428388fff1f7c358bd9
+  entity_types:
+  - Artifact
+  - Version
+  - Status
+  - Projection
+  expected_count: 425
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-003
+  source_stage: '07'
+  source_ref: .banyan-refactor/stages/07/stage07-20260920T152653Z/OPERATIONAL_PRESERVATION_MATRIX.jsonl
+  source_hash: 133de2c54a2412e93d5ab59e5a00ea7cdfb12234e11b69b59729d57d634e237a
+  entity_types:
+  - Artifact
+  - Progress
+  - Handover
+  - History
+  expected_count: 289
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-004
+  source_stage: '07'
+  source_ref: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_CAPABILITY_MIGRATION_MATRIX.yaml
+  source_hash: 457633c0de1f924849fe8fa22a73bc71ab5fbc01c7c9b249e5fa2b49b1c67bfe
+  entity_types:
+  - Capability
+  expected_count: 35
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-005
+  source_stage: '07'
+  source_ref: .banyan-refactor/stages/07/stage07-20260920T152653Z/REFERENCE_MIGRATION_MAP.jsonl
+  source_hash: eccfe4aaea8d8471e2d28e11b6e9f6ae95022d096e7d72a6d88977933e150378
+  entity_types:
+  - Reference
+  - UnresolvedReference
+  expected_count: 108
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-006
+  source_stage: '01'
+  source_ref: .banyan-refactor/stages/01/stage01-20260920T091426Z/AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+  source_hash: 061ecd5067ad3c1d58863725ed4ae58b4f66bb5b4c65242e5b8111e3aa490e97
+  entity_types:
+  - ProjectionSource
+  - Version
+  - Status
+  - Change
+  - Decision
+  expected_count: 425
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-007
+  source_stage: '01'
+  source_ref: .banyan-refactor/stages/01/stage01-20260920T091426Z/OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+  source_hash: f5db26dd36fd8785a1317a274f34b3f895a68da95db9bd3e307f6e0275d93e02
+  entity_types:
+  - Progress
+  - Handover
+  - History
+  expected_count: 289
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-008
+  source_stage: '03'
+  source_ref: .banyan-refactor/stages/03/stage03-20260920T135702Z/SOURCE_ROLE_REGISTRY.yaml
+  source_hash: 634b6bf9e5ec4b9b8f00e812e6d49c35219ba7e9f8e8c7d4c30e857b042cfa48
+  entity_types:
+  - SourceRole
+  expected_count: 9
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-009
+  source_stage: '04'
+  source_ref: .banyan-refactor/stages/04/stage04-20260920T142517Z/PROVIDER_BINDING_SCHEMA.yaml
+  source_hash: c15184a77ca8ad5eed14c990b0ac6a90a853b47f4f7cafa177550dd3a56861be
+  entity_types:
+  - ProviderBinding
+  expected_count: 35
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-010
+  source_stage: BOOTSTRAP
+  source_ref: .banyan-refactor/BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  source_hash: a88f04cecee3b307f27d670712106d1a463365fe91267a92e1f0e2175f1399e8
+  entity_types:
+  - TraceEvent
+  - HistoryEvent
+  expected_count: 28
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-011
+  source_stage: BOOTSTRAP
+  source_ref: .banyan-refactor/MIGRATION_REGISTER.bootstrap.yaml
+  source_hash: 5b4718816fa82f7b67de7cc9f775254484fbef21ebc178e14de686c929c58a96
+  entity_types:
+  - MigrationLedger
+  - HistoryEvent
+  expected_count: 11
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-012
+  source_stage: '00'
+  source_ref: .banyan-refactor/stages/00/stage00-precheck-20260920T083254Z/evidence/SECRET_METADATA.json
+  source_hash: null
+  entity_types:
+  - SecretMetadata
+  expected_count: 13
+  import_status: IMPORTED
+  qualification: SECRET_METADATA_SOURCE_UNHASHED
+- source_id: SRC-013
+  source_stage: '05'
+  source_ref: .banyan-refactor/stages/05/stage05-20260920T144623Z/WORKFLOW_POLICY_REGISTRY.yaml
+  source_hash: 062520c225f92476c6029f75a1ae1e8602734552b1c16892d5c14a3a0e1205b8
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-014
+  source_stage: '05'
+  source_ref: .banyan-refactor/stages/05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml
+  source_hash: 38f9127456607173484a5c5cb430cedea37c716cf3d28cf2c913531d8be90827
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-015
+  source_stage: '05'
+  source_ref: .banyan-refactor/stages/05/stage05-20260920T144623Z/SEMANTIC_COMMIT_POLICY.yaml
+  source_hash: e16857ef6205c897d2cb1e585312c139e243419403387c12efc79e11695b5f4e
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-016
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/APPLY_AUTHORIZATION_BOUNDARY.yaml
+  source_hash: 3f161c07563167600e4019ce509332f9e6bd54926c11ff557f623bb1320d1635
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-017
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/APPLY_PREVIEW_CONTRACT.yaml
+  source_hash: beaf02b313bcf21ff0ea878d8ab34c531bded46ed2e83d54e65b7a657dc47dc5
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-018
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/ARTIFACT_RELATIONSHIP_SCHEMA.yaml
+  source_hash: 88132b58c460aa0c4670d2309e58f3a245e9761812da68d73c632345fe46d0c0
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-019
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/CANONICAL_APPLY_CONTRACT.yaml
+  source_hash: 366cba01c68123acb60aa231e68e0c55a70e96eb5df89d7b9a968b20c2e7798f
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-020
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/CHANGE_LIFECYCLE_SCHEMA.yaml
+  source_hash: d937413d9109ed20d6f32f3d92e6c9fd224811243efd62c950436a2a409f06b8
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-021
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/CHANGE_WORKSPACE_PROVIDER_PORT.yaml
+  source_hash: 29e721f713495fb1bdaa009c06625c30b71414fe0c29db56ff055a828294be64
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-022
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/CHANGE_WORKSPACE_SCHEMA.yaml
+  source_hash: 0343ca685e35b5acf2d9acd321274b623c7d39cc19b5f5aba7310c443ed493aa
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-023
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/DIVERGENCE_CONFLICT_CONTRACT.yaml
+  source_hash: 97b3125f9869fd2753902bae56844cf38fcc92ae51f88f5e51566733a88b27e4
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-024
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/DRAFT_PROMOTION_CONTRACT.yaml
+  source_hash: a25a6dde49f550dedd3c9fb5666e3d7f9b60cf9c14fcfe80c398863781194f81
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-025
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/OPENSPEC_PROVIDER_BINDING.yaml
+  source_hash: 834ee4331862180198c330f52d8ae7829e73cbe52b4ffb2207c270141950c275
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-026
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/PARALLEL_DRAFT_CONTRACT.yaml
+  source_hash: 16e915206e901e54cd1c2b8543ec255e1c142b363c7001f879ec92bad606555e
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-027
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/PROVIDER_NEUTRAL_ARCHIVE_HISTORY_CONTRACT.yaml
+  source_hash: cc5a7b7401edfc8cc53b9f7903ccfd98cff5ed44c6eee0a8f58700e014e75fe5
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-028
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml
+  source_hash: 5470003eaf5339334a3323ee438ab2768956bc8a43e421f508810c067297ac48
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-029
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/ROLLBACK_CONTRACT.yaml
+  source_hash: 2e4df0c1790fca0a21f597e7cc5923ef5357bf065379a3b42c8407981df13a48
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-030
+  source_stage: '06'
+  source_ref: .banyan-refactor/stages/06/stage06-20260920T151243Z/STAGE06_COVERAGE_REPORT.yaml
+  source_hash: c2ca43a3972d1db977b687eb4fca2adc826bfc286002295457c05b722043c79f
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-031
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/DESIGN_EVIDENCE_SCHEMA.yaml
+  source_hash: 176d0a487727df2e5fabc703a3d4548e9897aa77579feed3164729f937fa1f97
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-032
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/PRD_AUTHORITY_CONTRACT.yaml
+  source_hash: bbb99ecd74c2bb37e9f02366240aa820cb46cb30db7a58bc0599d55d1ea0c459
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-033
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/PRD_UI_TRACE_VERSION_CONTRACT.yaml
+  source_hash: 0123081376933c82b4ab61c3a50ede890cfb7bafce22521271877d91a756e9c1
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-034
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_CHANGE_INTEGRATION_CONTRACT.yaml
+  source_hash: 5dbd9a699f0352739d25a626fd7d8763063da7e5d2116cd755b3629e9d48afb0
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-035
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_GOVERNANCE_SCOPE_SCHEMA.yaml
+  source_hash: e5caec03fd47bfd9c1b82c4a7d7f4f6077343d05f314eb5f5c6f55e953f1fdeb
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-036
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_IMPLEMENTATION_READINESS.yaml
+  source_hash: 3e347496e1fa9bbfb4186de0d9f4eab9904013f89b522728f1ad9fbfb432bae6
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-037
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_SPEC_AUTHORITY_CONTRACT.yaml
+  source_hash: 1c55d832f8bb08a29dc810aba37507b8aaa7a084d69f6908996166652fb614e5
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-038
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_SPEC_ENABLEMENT_CONTRACT.yaml
+  source_hash: 9064413f32bdaa32525f8055b2bd75193fdf32d99503a63cb8f0aeb8383719e2
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-039
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_SPEC_LIFECYCLE.yaml
+  source_hash: 33b164d8b05de874533eda9a4ba992f47f5a72ca7a519873208e2037d2e747da
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-040
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_SPEC_SCHEMA.yaml
+  source_hash: 85619267f256c2ab690e7e7ba5af54b27e8be02e7d076340390d4757a111199b
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-041
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/UI_VALIDATION_EVIDENCE_CONTRACT.yaml
+  source_hash: 9ddfbd887f53d93a8279c4f01fe7924f37b934028f363bf49d52cb3db617d6c2
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-042
+  source_stage: 08
+  source_ref: .banyan-refactor/stages/08/stage08-20260920T153936Z/V31_UI_COMPATIBILITY_MAP.yaml
+  source_hash: 2e5f907db9dcfe1883c2b74f553d8ae84c62f5150c1db1b6bd63c8ee4d593b67
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-043
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/BEHAVIOR_EVIDENCE_SCHEMA.yaml
+  source_hash: 91998648af2c2046ea5059cefe52eed8122fbaf98e1c732adec3ab923bdc3e23
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-044
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/CONFIDENCE_PROVENANCE_CONTRACT.yaml
+  source_hash: 765bcb385a0da757796aff25fa36ba21925479df1ebcc9e1776332c739c79179
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-045
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DATA_EVIDENCE_SCHEMA.yaml
+  source_hash: c23a3c1b40237e3e2b6a6a7a418a226205fcccff0bbabdca768f5bfba83d0f64
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-046
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DESIGN_DRIFT_SCHEMA.yaml
+  source_hash: 041e1067950432c91fda4c4cba9163715f6848a69e1ce4e77f7bc59dbd9ab7d3
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-047
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DESIGN_PACKAGE_CONTRACT.yaml
+  source_hash: a7fd9324403d7bc277f1201140a50d168a3ed6e51491406f62d3320d7f3c787e
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-048
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DESIGN_PROVIDER_PORT.yaml
+  source_hash: d4a4e260768a3720cdb7e718487d40e966e04d576d9d3a8248103c547a4c033c
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-049
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DESIGN_SOURCE_SCHEMA.yaml
+  source_hash: bc78ccfbc17ec5f392adb9fc5ffa121c07af786416ea4674b73cf58c6c474e7d
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-050
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DESIGN_TOKEN_SCHEMA.yaml
+  source_hash: 3aa1ebd3e8328b25e42224f6c8b86830f2b23435b7910334c1c2a544f1e966fd
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-051
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/DESIGN_TRUTH_CONTRACT.yaml
+  source_hash: 7eae490f2cdd2422159d857c665568383e19e21a7a9bb004bb708ca45d6b7e7a
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-052
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/GEOMETRY_SCHEMA.yaml
+  source_hash: a876c7b3ee3480cf0d778c46152a6f7162b625dbde6b448ae89fe0e12e4544a7
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-053
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/IMPLEMENTATION_IR_INPUT_CONTRACT.yaml
+  source_hash: 6bd0cd312e754951ea2dd71da447c8a27fa2e9b5fac26282f3cf53dad2a3452c
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-054
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/INTELLIGENCE_CLASSIFICATION_SCHEMA.yaml
+  source_hash: b6ebee8e6ba83c0cb248a6b476c0e1974990329a73f6e8528c3ba06573f72261
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-055
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/LEGACY_UI_DESIGN_INTELLIGENCE_COMPATIBILITY_MAP.yaml
+  source_hash: 62a7e0c0dbbb9203d21e182af3c3c3b0456eec0e46597aca665cd6fafac44c20
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-056
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/NORMALIZED_SCENE_SCHEMA.yaml
+  source_hash: e930e1df69634b4f022b349957b52ffe633927486ce8fba8cdb053f8299fa3a4
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-057
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/SEMANTIC_TREE_SCHEMA.yaml
+  source_hash: 4b0f0eb052fc295edc7c40946ac65db5973de6d0c94891f6a69eb817b910837f
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-058
+  source_stage: 09
+  source_ref: .banyan-refactor/stages/09/stage09-20260920T155444Z/VISUAL_VALIDATION_INPUT_SCHEMA.yaml
+  source_hash: cb33f3659d9ebb403a6e48e0495e3e1a6332128e31f2430c28bbd82a4fa38781
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-059
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/ARCHITECTURE_DIAGRAM_PROJECTION_CONTRACT.yaml
+  source_hash: 2e8fbee73048232a45bfc721c4437d8acc47999411fc14d7713f87d6a4e45aac
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-060
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/AUDIENCE_VIEW_SCHEMA.yaml
+  source_hash: 8a8999d02aed3d624116d97b80be21b2557b014dbefda2a48ebdf1bf493bc7fa
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-061
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/GENERATED_KNOWLEDGE_PROVENANCE_CONTRACT.yaml
+  source_hash: 50565e83fc988dbde354126ad9e2338bb0ebc306747af0870095ddd5a90523de
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-062
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/HANDOVER_CONTEXT_PROJECTION_CONTRACT.yaml
+  source_hash: c96d57ff5e924ad1bd8a3cfa2576d5e285db9cc78503bc21b43f34bcb9b93857
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-063
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/KNOWLEDGE_FRESHNESS_SCHEMA.yaml
+  source_hash: 881d0c0672a95c088817b68fdb822e42e7cf65de44a94d735966241ee834f022
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-064
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/KNOWLEDGE_NAVIGATION_CONTRACT.yaml
+  source_hash: 292929526ff93e37f8d6d3e062c585841fab00167bc4a0810d466474f94d1ac5
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-065
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/KNOWLEDGE_PROJECTION_CONTRACT.yaml
+  source_hash: ed345feddd2dabd09f1a8c7bf203887e3a72c833b2edf188cddd93b93513e1e0
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-066
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/KNOWLEDGE_PROVIDER_PORT.yaml
+  source_hash: d372267d3071e9f646b6dc9080cec00e6898473c95b0b26663713c65a341e6fc
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-067
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/KNOWLEDGE_PUBLISH_LIFECYCLE.yaml
+  source_hash: cb2436af8e1c233b9e0b090509f66ce448a3e30123d1b9f5b918d786f1997c08
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-068
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/KNOWLEDGE_SOURCE_AUTHORITY_CONTRACT.yaml
+  source_hash: 418bf70e022c30600c806e45d61ab31193d6d47328df3cafb071f8630cf4afdc
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-069
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/MEETING_PACK_CONTRACT.yaml
+  source_hash: bbc42e41e2cac04d0cda270bd361ab30c28069cf0ba06e034cb7c93e16642031
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-070
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/PLAIN_DOCUMENT_COMPATIBILITY_MAP.yaml
+  source_hash: 8ef8519a0f30a1656124db041e9e83939e8b79a25558518668868e578f6a4879
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-071
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/PROGRESS_WORKLOG_PROJECTION_CONTRACT.yaml
+  source_hash: 7c53ecd75884617f42e4706412b37112b485a0fdf0f2d4275e64b56a44c22925
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-072
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/PROJECTION_REBUILDABILITY_CONTRACT.yaml
+  source_hash: b01e706a8d91aa75396a5ec44296cc92bfe0f6dbe806f75b7fb06cc42ea7799d
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-073
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/PROJECT_GUIDE_SCHEMA.yaml
+  source_hash: d9fac1f362900046e84cc26fe71eb75c67283c8c4831799772a9b5314a1ab520
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+- source_id: SRC-074
+  source_stage: '10'
+  source_ref: .banyan-refactor/stages/10/stage10-20260920T161325Z/STAGE11_INDEX_REQUIREMENTS.yaml
+  source_hash: 0de6eefae080c181bc1fa767e13c38f29a295a9c53ecb40789925c8d66da628c
+  entity_types:
+  - Contract
+  expected_count: 1
+  import_status: IMPORTED
+  qualification: null
+body_inputs_loaded: 0
+git_history_reanalyzed: false

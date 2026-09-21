@@ -1,0 +1,26 @@
+schema_version: stage13-v1
+candidates:
+  - candidate_id: LC-13-001
+    candidate_type: WORKFLOW_CHANGE
+    scope: PROJECT
+    evidence_refs: [evidence/QUERY_FIRST_EVIDENCE.yaml, evidence/OFFLINE_SHADOW_ANALYSIS.yaml#EVID-13-004]
+    hypothesis: Query-first retrieval followed by bounded evidence-on-demand can preserve blockers and provenance while avoiding repository rediscovery.
+    expected_benefit: Lower context usage with maintained evidence quality.
+    risks: [STALE_INDEX, INCOMPLETE_QUERY_SURFACE, FALSE_CONFIDENCE_FROM_SINGLE_RUN]
+    evaluation_ref: LEARNING_EVALUATIONS.yaml#EVAL-13-001
+    status: EVALUATED
+    auto_apply: false
+    core_promotion_eligible: false
+  - candidate_id: LC-13-002
+    candidate_type: PROJECT_OVERLAY_CHANGE
+    scope: PROJECT
+    evidence_refs: [.banyan-refactor/stages/12/stage12-20260921T014521Z/CON002_RESOLUTION_RECORD.yaml]
+    hypothesis: Current project freshness claims should require an explicit authority decision and approved lineage record when canonical candidates conflict.
+    expected_benefit: Prevent silent freshness winners for CON-002.
+    risks: [OWNER_DECISION_DELAY, OVER_BLOCKING_IF_EVIDENCE_SCHEMA_IS_INCOMPLETE]
+    evaluation_ref: LEARNING_EVALUATIONS.yaml#EVAL-13-002
+    status: BLOCKED
+    auto_apply: false
+    core_promotion_eligible: false
+canonical_changes_applied: 0
+

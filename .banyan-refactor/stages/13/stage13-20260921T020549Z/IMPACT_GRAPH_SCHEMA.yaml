@@ -1,0 +1,13 @@
+schema_version: stage13-v1
+schema_id: banyan.impact.graph.v1
+impact_types: [DIRECT, TRANSITIVE, POTENTIAL, UNKNOWN, EXCLUDED]
+edge_required_fields: [edge_id, source_subject_id, target_subject_id, impact_type, basis, confidence, scope, evidence_refs]
+allowed_bases: [REFERENCE_EDGE, CHANGE_RELATIONSHIP, SUPERSESSION, DEPENDENCY, IMPLEMENTATION_TRACE, VALIDATION_RELATION, PROJECTION_SOURCE_LINK, PROVIDER_BINDING, EXPLICIT_SCOPE_MAPPING]
+rules:
+  - direct_requires_explicit_relationship_or_validation_evidence
+  - transitive_requires_complete_edge_path
+  - potential_must_not_be_reported_as_direct
+  - unknown_is_preserved_when_basis_is_incomplete
+  - keyword_or_path_similarity_alone_is_not_a_basis
+  - current_and_historical_state_are_evaluated_separately
+

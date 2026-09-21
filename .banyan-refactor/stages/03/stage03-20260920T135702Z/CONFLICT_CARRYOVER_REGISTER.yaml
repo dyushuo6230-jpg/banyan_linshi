@@ -1,0 +1,615 @@
+schema_version: stage03-v1
+status: OPEN_ROUTED
+count: 36
+conflicts:
+- conflict_id: DUP-001
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-001
+  stage03_winner_selected: false
+- conflict_id: DUP-002
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-002
+  stage03_winner_selected: false
+- conflict_id: DUP-003
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-003
+  stage03_winner_selected: false
+- conflict_id: DUP-004
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-004
+  stage03_winner_selected: false
+- conflict_id: DUP-005
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-005
+  stage03_winner_selected: false
+- conflict_id: DUP-006
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-006
+  stage03_winner_selected: false
+- conflict_id: DUP-007
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-007
+  stage03_winner_selected: false
+- conflict_id: DUP-008
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-008
+  stage03_winner_selected: false
+- conflict_id: DUP-009
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-009
+  stage03_winner_selected: false
+- conflict_id: DUP-010
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-010
+  stage03_winner_selected: false
+- conflict_id: DUP-011
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-011
+  stage03_winner_selected: false
+- conflict_id: DUP-012
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-012
+  stage03_winner_selected: false
+- conflict_id: DUP-013
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-013
+  stage03_winner_selected: false
+- conflict_id: DUP-014
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-014
+  stage03_winner_selected: false
+- conflict_id: DUP-015
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-015
+  stage03_winner_selected: false
+- conflict_id: DUP-016
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-016
+  stage03_winner_selected: false
+- conflict_id: DUP-017
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-017
+  stage03_winner_selected: false
+- conflict_id: DUP-018
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-018
+  stage03_winner_selected: false
+- conflict_id: DUP-019
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-019
+  stage03_winner_selected: false
+- conflict_id: DUP-020
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-020
+  stage03_winner_selected: false
+- conflict_id: DUP-021
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-021
+  stage03_winner_selected: false
+- conflict_id: DUP-022
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Exact identical bytes; copies may serve separate app/context consumers. This is not permission to merge/delete.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '07'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-022
+  stage03_winner_selected: false
+- conflict_id: CON-001
+  severity: HIGH
+  conflict_type: Conflict
+  subjects:
+  - Generic IDP HIGH one / LOW two differs from project DEC-042 max five and existing-code self-resolution. Keep explicit
+    project override separate; do not flatten into a universal Core policy.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: NO_WINNER_SELECTED; apply SOURCE_ROLE_SCHEMA within scope, otherwise BLOCKED
+  blocking_before_activation: true
+  owner_stage: '05'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#CON-001
+  stage03_winner_selected: false
+- conflict_id: CON-002
+  severity: HIGH
+  conflict_type: Conflict
+  subjects:
+  - Entry/guide retain older PRD v0.1.5/v0.1.7 and 72% descriptions; dashboard describes v0.1.44 Approved and 69%. README
+    both says mall-online not created and later says created. Do not use stale prose to authorize work or rewrite canonical
+    state.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: NO_WINNER_SELECTED; apply SOURCE_ROLE_SCHEMA within scope, otherwise BLOCKED
+  blocking_before_activation: true
+  owner_stage: '12'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#CON-002
+  stage03_winner_selected: false
+- conflict_id: GAP-001
+  severity: MEDIUM
+  conflict_type: Gap
+  subjects:
+  - pre-commit calls pnpm run lint:lint-staged, but current package scripts only dev/build/preview. Root core.hooksPath unset
+    and .git/hooks contains sample hooks only; cannot claim this nested enforcement is active.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '05'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#GAP-001
+  stage03_winner_selected: false
+- conflict_id: GAP-002
+  severity: MEDIUM
+  conflict_type: Gap
+  subjects:
+  - Four literal Markdown references point to absent CONTRIBUTING.md or CHANGELOG.en.md. Two additional regex-source matches
+    are not real links and excluded from broken-link findings.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '03'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#GAP-002
+  stage03_winner_selected: false
+- conflict_id: GAP-003
+  severity: MEDIUM
+  conflict_type: Gap
+  subjects:
+  - Derived publications and design outputs have governing sources, but exact per-file AI authorship and byte-reproducible
+    generation lineage are not proven. Preserve source files; cannot declare them safely rebuildable.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '10'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#GAP-003
+  stage03_winner_selected: false
+- conflict_id: GAP-004
+  severity: MEDIUM
+  conflict_type: Gap
+  subjects:
+  - Nearby run records in_progress and has no RESULT; tabbar RESULT records user-stop/revert. These are existing operational
+    states, not missing Stage 01 deliverables; do not upgrade to successful validation.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: 09
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#GAP-004
+  stage03_winner_selected: false
+- conflict_id: GAP-005
+  severity: MEDIUM
+  conflict_type: Gap
+  subjects:
+  - Reachable Git metadata contains 16 exact author identities, including placeholders and quoting variants. No identity aliases
+    merged; historical co-author AI markers do not establish physical operator.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '03'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#GAP-005
+  stage03_winner_selected: false
+- conflict_id: GAP-006
+  severity: LOW
+  conflict_type: Gap
+  subjects:
+  - Semantic ID and inline path scans include unresolved candidates and multi-file namespaces; examples/ranges/legacy references
+    are not automatically dangling current contracts. Stage 01 preserves every candidate for source-role review.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '03'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#GAP-006
+  stage03_winner_selected: false
+- conflict_id: DUP-SYMLINK
+  severity: INFO
+  conflict_type: Duplicate
+  subjects:
+  - Cursor AnyDesign entry is a symlink to provider directory, not a second content source. Link metadata and target real
+    path inventoried separately.
+  authority_candidates:
+  - scoped canonical source
+  - explicit decision evidence
+  - preserved legacy/evidence source
+  freshness: REQUIRE_VERSION_STATUS_AND_PROVENANCE; UNKNOWN remains UNKNOWN
+  precedence_rule: preserve all candidates until consumer and authority review
+  blocking_before_activation: false
+  owner_stage: '15'
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#DUP-SYMLINK
+  stage03_winner_selected: false
+- conflict_id: R02-PURITY-001
+  severity: HIGH
+  conflict_type: RISK
+  subjects:
+  - 21 Core semantic candidates have no independent cross-project execution proof; source-file keyword hits are overbroad
+    and cannot establish semantic dependence.
+  authority_candidates: []
+  freshness: inherit Stage 02 evidence; revalidate at owning stage
+  precedence_rule: risk treatment cannot be inferred as resolution
+  blocking_before_activation: true
+  owner_stage: 03/04/19
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#R02-PURITY-001
+  stage03_winner_selected: false
+- conflict_id: R02-SOURCE-002
+  severity: HIGH
+  conflict_type: RISK
+  subjects:
+  - Canonicality, AI authorship, exact generated lineage and rebuildability remain candidate/unknown for many artifacts.
+  authority_candidates: []
+  freshness: inherit Stage 02 evidence; revalidate at owning stage
+  precedence_rule: risk treatment cannot be inferred as resolution
+  blocking_before_activation: true
+  owner_stage: 03/09/10
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#R02-SOURCE-002
+  stage03_winner_selected: false
+- conflict_id: R02-COST-003
+  severity: MEDIUM
+  conflict_type: RISK
+  subjects:
+  - AI Runtime cost governance is conceptual; no model/price/token threshold or quality benchmark verified.
+  authority_candidates: []
+  freshness: inherit Stage 02 evidence; revalidate at owning stage
+  precedence_rule: risk treatment cannot be inferred as resolution
+  blocking_before_activation: false
+  owner_stage: 05/15/16/19
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#R02-COST-003
+  stage03_winner_selected: false
+- conflict_id: R02-SECRET-004
+  severity: HIGH
+  conflict_type: RISK
+  subjects:
+  - 13 user-approved local environment configurations have no independent Banyan backup; all 13 and other Secret candidates
+    remain metadata-only.
+  authority_candidates: []
+  freshness: inherit Stage 02 evidence; revalidate at owning stage
+  precedence_rule: risk treatment cannot be inferred as resolution
+  blocking_before_activation: true
+  owner_stage: ALL_LATER_STAGES
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#R02-SECRET-004
+  stage03_winner_selected: false
+- conflict_id: R02-LOCAL-005
+  severity: MEDIUM
+  conflict_type: RISK
+  subjects:
+  - Control artifacts are local uncommitted evidence, not independent off-machine backup. Stage 01 also recorded an externally
+    disappeared duplicate zip.
+  authority_candidates: []
+  freshness: inherit Stage 02 evidence; revalidate at owning stage
+  precedence_rule: risk treatment cannot be inferred as resolution
+  blocking_before_activation: false
+  owner_stage: ALL_LATER_STAGES
+  resolution_status: OPEN
+  evidence_refs:
+  - ../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#R02-LOCAL-005
+  stage03_winner_selected: false
+conflict_winners_selected: 0

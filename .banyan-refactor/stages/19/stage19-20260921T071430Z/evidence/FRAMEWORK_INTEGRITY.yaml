@@ -1,0 +1,8 @@
+schema_version: stage19-v1
+result: PASS
+pre_file_count: 76
+exit_file_count: 76
+missing_files: []
+unexpected_files: []
+hash_mismatches: []
+product_implementation_modified_by_stage19: false

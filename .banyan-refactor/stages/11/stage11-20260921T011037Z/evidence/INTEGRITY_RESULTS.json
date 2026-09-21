@@ -1,0 +1,19 @@
+{
+  "sqlite_integrity": "ok",
+  "foreign_key_violations": 0,
+  "index_mode": "SHADOW",
+  "rebuildability": "REBUILDABLE",
+  "canonical_truth": "false",
+  "final_runtime_db": "false",
+  "records_without_stable_id": 0,
+  "records_without_classification": 0,
+  "reference_edges": 108,
+  "unresolved_references": 4,
+  "not_a_reference": 2,
+  "invented_unresolved_targets": 0,
+  "trace_without_lineage": 0,
+  "trace_authorization_paths": 0,
+  "secret_metadata_records": 13,
+  "secret_body_or_hash_or_derived_indexed": 0,
+  "blocked_or_open_history_events": 7
+}

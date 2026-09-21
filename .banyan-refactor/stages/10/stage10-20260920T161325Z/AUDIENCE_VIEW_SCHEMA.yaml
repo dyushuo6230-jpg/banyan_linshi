@@ -1,0 +1,10 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+audiences: [BUSINESS, PRODUCT, DEVELOPER, TESTER, OPERATOR, NEW_CONTRIBUTOR, AI_AGENT]
+allowed_transformations: [FILTER, SUMMARIZE, REORGANIZE, LINK]
+required_fields: [view_id, audience, source_refs, source_versions, transformation, coverage, freshness, provenance]
+shared_underlying_truth_required: true
+separate_truth_per_audience: false
+views: []

@@ -1,0 +1,16 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+provider_neutral: true
+node_required_fields: [id, parent_id, type, bounds, visible, children, style, asset_ref, source_ref, confidence, provenance]
+node_types: [FRAME, GROUP, TEXT, IMAGE, VECTOR, COMPONENT, INSTANCE, UNKNOWN]
+bounds_required_fields: [x, y, width, height, rotation]
+rules:
+  provider_specific_required_fields: false
+  provider_payload_location: extensions.provider_namespace
+  source_ref_required: true
+  provenance_required: true
+  confidence_required: true
+  unknown_type_allowed: true
+nodes: []

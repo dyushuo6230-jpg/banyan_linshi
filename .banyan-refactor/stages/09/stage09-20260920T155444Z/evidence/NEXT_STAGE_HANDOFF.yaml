@@ -1,0 +1,38 @@
+upstream_stage: '09'
+run_id: stage09-20260920T155444Z
+acceptance_result: PASS_DESIGN_INTELLIGENCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+design_intelligence_contracts:
+- DESIGN_SOURCE_SCHEMA.yaml
+- DESIGN_TRUTH_CONTRACT.yaml
+- DESIGN_TOKEN_SCHEMA.yaml
+- BEHAVIOR_EVIDENCE_SCHEMA.yaml
+- DATA_EVIDENCE_SCHEMA.yaml
+- CONFIDENCE_PROVENANCE_CONTRACT.yaml
+- INTELLIGENCE_CLASSIFICATION_SCHEMA.yaml
+- IMPLEMENTATION_IR_INPUT_CONTRACT.yaml
+- DESIGN_PACKAGE_CONTRACT.yaml
+provider_contracts:
+- DESIGN_PROVIDER_PORT.yaml
+- LEGACY_UI_DESIGN_INTELLIGENCE_COMPATIBILITY_MAP.yaml
+scene_semantic_contracts:
+- NORMALIZED_SCENE_SCHEMA.yaml
+- GEOMETRY_SCHEMA.yaml
+- SEMANTIC_TREE_SCHEMA.yaml
+validation_contracts:
+- VISUAL_VALIDATION_INPUT_SCHEMA.yaml
+- DESIGN_DRIFT_SCHEMA.yaml
+carried_blockers:
+- CON-002 OPEN / owner Stage 12
+- four historical missing reference targets / owner Stage 12
+- R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, and R03-LOCAL
+stage10_inputs:
+- Provider-neutral normalized design model
+- Typed FACT, INFERENCE, and RECOMMENDATION boundaries
+- Design Truth and Design Package logical contracts
+- Versioned provenance and known unknowns
+next_stage_entry_gate:
+  stage: '10'
+  result: NOT_EVALUATED
+  execution_authorized: false
+  real_migration_readiness: MIGRATION_BLOCKED
+stop_after_stage: '09'

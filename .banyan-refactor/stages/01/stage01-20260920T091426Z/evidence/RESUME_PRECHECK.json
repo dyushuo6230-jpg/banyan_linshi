@@ -1,0 +1,37 @@
+{
+  "result": "PASS",
+  "case": "A",
+  "run_id": "stage01-20260920T091426Z",
+  "verified_steps": [
+    "01.0",
+    "01.1"
+  ],
+  "resume_step": "01.2",
+  "existing_artifacts": [],
+  "existing_evidence_hashes": {
+    "checkpoint/MIGRATION_REGISTER.bootstrap.yaml.snapshot.yaml": "3080a90fb8b11a594600de3d513ad6a9b4ff60a7bbde9a19d7b6bd5c24b763ee",
+    "checkpoint/BANYAN_REFACTOR_TRACE.bootstrap.yaml.snapshot.yaml": "4fe9d5da1bd26d53570af635f8c5be4794452d5676bdbce7e7966a099a5bee21",
+    "evidence/index.z": "429e50fcdc0a9df36e0a245d2bc7315256043d53c8ca2222929961c6fb63a80f",
+    "evidence/ignored.z": "fca472bb9be1e915b2eee24544a74e88baf5b1b05d71fa9584a999015604a746",
+    "evidence/untracked.z": "816fa1d333589de79169c1606753b2450b149effe28bb531fe77b9277365401f",
+    "evidence/UPSTREAM_INTEGRITY.json": "661d30ed7b394eb8518028dd1dcd91dbe658215a0a56ead40e556f744436ff9a",
+    "evidence/CURRENT_INPUTS.json": "9f8d2aa2ce1d2de8771fc3bd90b70065388374486eb28dee6c951f083668abd0",
+    "evidence/PRE_STAGE_GIT_STATUS.txt": "3f93dd645d425f2e9c2f53b887fa472be4947924d6e2f5d58fff11e5719ca208",
+    "evidence/BASELINE_FRESHNESS.json": "90276821d0a4e67f6dd992eed9a3de5dc4765bd5cb621611310fb620fd7f3f2e",
+    "evidence/PACK_CHECK.json": "f5c374444a16d2c27fa24f9f0c6703c418551b5a5e09b2b664fe0af5b651de24",
+    "evidence/PRE_STAGE_GIT_STATUS.z": "65975f6bb498f651d9c3bf6e3958613bacdca74b6ccf56fc8b2fc1be522d57df",
+    "evidence/tracked.z": "0bae6b97c386cbf673465137b846433a8161879a54f70fef59bf5342d4f398d9"
+  },
+  "head": "9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7",
+  "outside_control_path_drift": [],
+  "baseline_hashes_verified": 5835,
+  "secret_metadata_verified": 69,
+  "pack_entries_verified": 28,
+  "upstream_entries_verified": 58,
+  "bootstrap_matches_snapshots": true,
+  "notes": [
+    "Earlier unpersisted analysis not credited as completed discovery.",
+    "No second run; original evidence preserved.",
+    "rg AGENTS.md exit 1 means no matching repository instruction file."
+  ]
+}

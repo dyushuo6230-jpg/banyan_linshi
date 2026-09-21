@@ -1,0 +1,34 @@
+schema_version: stage16-v1
+browser: Codex In-app Browser
+url: http://127.0.0.1:8765/
+result: PASS
+observations:
+  dashboard_runtime_health: HEALTHY
+  execution_mode: DRY_RUN_ONLY
+  policy_hash_prefix: b788103381a1
+  activation_state: NOT_ACTIVATED
+  project_mutation_controls: DISABLED
+  preflight_permission_result: ALLOW
+  preflight_executed: false
+  ui_confirmation_is_authorization: false
+  commit_plan_is_authorization: false
+  dry_run_status: DRY_RUN
+  dry_run_actual_commit_created: false
+  provenance_authority_visible: true
+  provenance_freshness_visible: true
+  provider_activation_state: NOT_ACTIVATED
+  activation_readiness: BLOCKED
+required_views_visible:
+  - Dashboard
+  - Runtime / Policy
+  - Project Safety
+  - Gate / Blockers
+  - Preflight
+  - Commit Plan
+  - Dry-run Result
+  - Trace / Audit
+  - Provenance
+  - Provider Bindings
+  - Stage / Run
+  - Activation Readiness
+server_stopped_after_test: true

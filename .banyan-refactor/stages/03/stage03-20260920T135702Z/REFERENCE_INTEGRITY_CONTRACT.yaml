@@ -1,0 +1,20 @@
+schema_version: stage03-v1
+contract_status: FROZEN
+rules:
+  referenced_canonical_artifact_deletion: FORBIDDEN_UNTIL_REFERENCE_MIGRATED
+  id_reuse_for_different_subject: FORBIDDEN
+  whole_document_subject_swap: FORBIDDEN
+  broken_reference: BLOCK_ACTIVATION_AND_PRESERVE_EVIDENCE
+  unknown_target: RECORD_UNKNOWN_AND_REQUIRE_OWNER
+supersession_requires:
+- old_artifact
+- new_artifact
+- reason
+- effective_version
+- reference_migration_status
+deletion_preconditions:
+- all inbound references enumerated
+- replacement or archive decision approved
+- reference migration verified
+- rollback evidence retained
+no_regeneration_without_verified_lineage: true

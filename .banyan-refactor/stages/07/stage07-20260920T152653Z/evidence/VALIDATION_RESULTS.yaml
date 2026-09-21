@@ -1,0 +1,80 @@
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+overall: PASS
+validations:
+- id: V07-01
+  result: PASS
+  evidence: Stage 06 handoff gate and required frozen inputs are valid.
+- id: V07-02
+  result: PASS
+  evidence: Stage 01 inventories were reused; no repository rediscovery or Git history analysis occurred.
+- id: V07-03
+  result: PASS
+  evidence: 35/35 high-value capabilities have target contracts and allowed dispositions.
+- id: V07-04
+  result: PASS
+  evidence: 1026/1026 legacy assets have PRESERVE_IN_PLACE dispositions.
+- id: V07-05
+  result: PASS
+  evidence: 330/330 canonical artifacts are mapped and unchanged.
+- id: V07-06
+  result: PASS
+  evidence: 289/289 operational artifacts are indexed and retained historically.
+- id: V07-07
+  result: PASS
+  evidence: 425/425 generated and canonical artifacts have non-empty source roles.
+- id: V07-08
+  result: PASS
+  evidence: G0-G11, PROJECT_STAGE, TBD, informed decisions, PRD/DEC/ADR/CR/TRACE, UI governance, and handover semantics are mapped.
+- id: V07-09
+  result: PASS
+  evidence: Stage 05 decision levels, escalation, and human confirmation semantics are consumed by compatibility mappings.
+- id: V07-10
+  result: PASS
+  evidence: Stage 06 preview, apply authorization, reference reconciliation, and rollback semantics are consumed in simulation.
+- id: V07-11
+  result: PASS
+  evidence: 108/108 reference edges have KEEP, BLOCK, or IGNORE_AS_NON_REFERENCE strategies.
+- id: V07-12
+  result: PASS
+  evidence: No new target artifact identities were allocated; legacy IDs are foreign-key evidence references only and remain unique.
+- id: V07-13
+  result: PASS
+  evidence: Freshness and provenance values, including 132 UNKNOWN-bearing freshness states, remain unchanged.
+- id: V07-14
+  result: PASS
+  evidence: auto_regenerated=false for 425/425 artifacts, including all partial-or-unknown rebuildability records.
+- id: V07-15
+  result: PASS
+  evidence: Legacy-only semantics map to Core, Project Instance, Provider, Compatibility, or indexed historical ownership.
+- id: V07-16
+  result: PASS
+  evidence: OpenSpec, AnyDesign, and editor bindings remain outside provider-neutral Core and inactive.
+- id: V07-17
+  result: PASS
+  evidence: Shadow Project Instance accounts for all five Stage 01 inventory domains and keeps legacy authority.
+- id: V07-18
+  result: PASS
+  evidence: Shadow Apply is SIMULATED_ONLY; canonical_apply_executed=false.
+- id: V07-19
+  result: PASS
+  evidence: Baseline, checkpoint, five source hashes, mapping/reference snapshots, and rollback truth are recorded.
+- id: V07-20
+  result: PASS
+  evidence: All 13 sensitive path bodies remain unread and unhashed; recovery coverage remains PARTIAL_APPROVED.
+- id: V07-21
+  result: PASS
+  evidence: Writes are limited to the Stage 07 run directory and the two authorized bootstrap files; tracked, staged, and conflict diffs are zero.
+- id: V07-22
+  result: PASS
+  evidence: NEXT_STAGE_HANDOFF.yaml is complete and Stage 08 directory is absent.
+hard_metrics:
+  UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+  UNMAPPED_CANONICAL_ARTIFACT: 0
+  UNMAPPED_OPERATIONAL_ARTIFACT: 0
+  REFERENCE_EDGE_WITHOUT_MIGRATION_STRATEGY: 0
+  LEGACY_ASSET_WITHOUT_DISPOSITION: 0
+  UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+  LEGACY_DELETE_OR_RETIRE_WITHOUT_AUTHORIZATION: 0
+  CANONICAL_APPLY_EXECUTED_IN_STAGE07: 0

@@ -1,0 +1,27 @@
+schema_version: stage17-v1
+checkpoint_id: checkpoint-stage17-preflight-20260921T055911Z
+created_before_shadow: true
+created_before_dot_banyan: true
+current_project:
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+  staged_count: 0
+  unstaged_count: 0
+  conflicted_count: 0
+  dot_banyan_state: ABSENT
+  existing_project_layout: PRESERVE_IN_PLACE
+  docs_state: PRESERVE_IN_PLACE
+  project_path_state: ABSENT
+identity:
+  mutation_allowed: false
+secret:
+  body_access_allowed: false
+upstream_inputs:
+  stage17_handoff_sha256: b056a84767f7aba5fa0347eae7d8215bddd5b0744ca58841557e4b689cc3d910
+  activation_readiness_sha256: 7cf62ea7a6c7a0956145faa778c848d8e64812df0d6083f80777a8bc5f4b5ccf
+  control_plane_contract_sha256: 7ad2e628c198f10f686c31111d7215b6959d23c4aba2c1afd9fcfac58765052c
+  runtime_policy_sha256: 67823638d9d8fa2dcf026964b578380954c41812e7c1da0121a722bfb3e72032
+rollback:
+  action: REMOVE_ONLY_FILES_LISTED_IN_PILOT_MANIFEST_AND_REMOVE_EMPTY_PILOT_DIRECTORIES
+  git_reset_required: false
+  legacy_restore_required: false

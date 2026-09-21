@@ -1,0 +1,20 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_CONTRACT_NOT_INSTANTIATED
+sections: [verified_facts, approved_interpretations, approved_constraints, known_unknowns, conflicts]
+admission:
+  verified_fact_requires_direct_evidence: true
+  interpretation_requires_approval: true
+  constraint_requires_approved_ui_spec_or_decision: true
+  provenance_required: true
+  confidence_required: true
+prohibited_sources:
+  unmarked_inference: true
+  recommendation_without_approval: true
+  provider_raw_payload_without_normalization: true
+authority:
+  ui_governance_input: true
+  approved_ui_spec: false
+  canonical_business_truth: false
+auto_promote_to_ui_spec: false

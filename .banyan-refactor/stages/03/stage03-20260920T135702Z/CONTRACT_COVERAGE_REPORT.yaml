@@ -1,0 +1,19 @@
+schema_version: stage03-v1
+expected_high_value_capabilities: 35
+metrics:
+  UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+  UNOWNED_SCHEMA_COLLISION: 0
+  SOURCE_ROLE_WITHOUT_AUTHORITY_RULE: 0
+  CONTRACT_WITHOUT_FAILURE_SEMANTICS: 0
+  SILENT_CAPABILITY_DROP: 0
+  PROJECT_PATH_HARDCODED_IN_CORE_SCHEMA: 0
+coverage:
+  capability_contracts: 35/35
+  source_roles: 9/9
+  provider_ports: 35/35
+  project_overlays: 35/35
+  compatibility_contracts: 3/3
+  stage02_artifacts_accounted_by_role: 714/714
+  stage02_assets_preserved_in_mapping: 1026/1026
+qualification: contract/schema freeze only; no implementation, provider selection, physical migration, or final Core portability
+  acceptance

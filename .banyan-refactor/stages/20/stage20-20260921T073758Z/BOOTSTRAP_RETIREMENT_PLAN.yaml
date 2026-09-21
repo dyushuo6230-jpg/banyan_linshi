@@ -1,0 +1,39 @@
+schema_version: stage20-v1
+workspace: .banyan-refactor
+classification: BOOTSTRAP_CONSTRUCTION_WORKSPACE
+current_state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION
+target_state: ARCHIVED_WITH_VERIFIED_EVIDENCE_RETENTION
+retirement_executable_now: false
+archive_manifest: BOOTSTRAP_ARCHIVE_MANIFEST.yaml
+archive_input_manifest: evidence/BOOTSTRAP_ARCHIVE_FILE_MANIFEST.sha256
+preconditions:
+- id: FINAL_ACTIVATION_AUTHORIZED_AND_COMPLETED
+  satisfied: false
+- id: CON002_HUMAN_AUTHORITY_DECISION_RECORDED
+  satisfied: false
+- id: ARCHIVE_PACKAGE_CREATED_AND_HASH_VERIFIED
+  satisfied: false
+- id: ROLLBACK_AND_REQUIRED_HISTORY_RETENTION_VERIFIED
+  satisfied: true
+- id: FINAL_HANDOFF_ACKNOWLEDGED
+  satisfied: false
+- id: EXPLICIT_RETIREMENT_AUTHORIZATION
+  satisfied: false
+retention_requirements:
+- Stage acceptance reports and machine coverage
+- policy/governance contracts needed for audit
+- Pilot creation and rollback evidence
+- RC/release manifests and hashes
+- unresolved blockers and historical-reference dispositions
+retirement_sequence:
+- freeze workspace
+- build archive from manifest
+- verify hashes and restoration drill
+- record archive locator and retention
+- obtain explicit retirement authorization
+- remove only manifest-matched files
+- verify Git Project Instance and evidence state
+blind_delete_allowed: false
+delete_executed_in_stage20: false
+future_upgrades_recreate_bootstrap_workspace: false
+future_upgrade_mechanism: BANYAN_CHANGE_MIGRATION_VALIDATION_ROLLBACK

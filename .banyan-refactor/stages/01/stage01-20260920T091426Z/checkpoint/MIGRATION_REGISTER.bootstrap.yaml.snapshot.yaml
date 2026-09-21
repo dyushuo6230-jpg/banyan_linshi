@@ -1,0 +1,109 @@
+# Stage 00 actual execution evidence; no secret contents.
+schema_version: bootstrap-v1
+charter_version: 1.9.1
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  run_id: stage00-precheck-20260920T083254Z
+  future_canonical_path: .banyan/migrations/MIGRATION_REGISTER.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+  future_migration:
+    required: true
+    owner_stage: 02/04
+    sequence:
+    - capture bootstrap source hash and source run id
+    - migrate to frozen canonical .banyan/migrations paths
+    - record migration timestamp and target hash
+    - validate lineage and content
+    - make bootstrap READ_ONLY_ARCHIVE_OR_REFERENCE
+    source_hash_required: true
+    target_hash_required: true
+    validation_required: true
+    bootstrap_after_migration: READ_ONLY_ARCHIVE_OR_REFERENCE
+refactor:
+  current_stage: '00'
+stages:
+  '00':
+    status: COMPLETED
+    baseline_commit: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    sub_stages:
+      00-A: COMPLETED
+      00-B: COMPLETED
+    planned_artifacts:
+    - BASELINE_MANIFEST.yaml
+    - PROTECTED_PATHS_MANIFEST.yaml
+    - DISCOVERY_SCOPE_BASELINE.yaml
+    - CHECKPOINT_RECORD.yaml
+    - FILE_HASHES.sha256
+    - PRE_STAGE_GIT_STATUS.txt
+    - POST_STAGE_GIT_STATUS.txt
+    - BANYAN_REFACTOR_TRACE.bootstrap.yaml
+    actual_artifacts:
+    - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+    - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+    - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+    - stages/00/stage00-precheck-20260920T083254Z/ACCEPTANCE_REPORT.md
+    - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      results:
+        V00-01: PASS
+        V00-02: PASS
+        V00-03: PASS
+        V00-04: PASS
+        V00-05: PASS
+        V00-06: PASS
+        V00-07: PASS
+        V00-08: PASS
+        V00-09: PASS
+        V00-10: PASS
+        V00-11: PASS
+        V00-12: PASS
+        V00-13: PASS
+        V00-14: PASS
+        V00-15: PASS
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+      qualification: Exact user-approved PARTIAL_APPROVED recovery exception; final
+        sealing required
+    rollback_point: CHECKPOINT-stage00-precheck-20260920T083254Z
+    open_risks:
+    - id: R00-SECRET-001
+      status: USER_ACCEPTED
+      description: Only the 13 explicitly approved ignored local environment configurations
+        have no independent Banyan content backup. If lost, the Stage 00 checkpoint
+        cannot restore their contents.
+      scope:
+      - nunu-go-api/config/admin/local.yml
+      - nunu-go-api/config/admin/test.yml
+      - nunu-go-api/config/h5-online/local.yml
+      - nunu-go-api/config/h5/local.yml
+      - nunu-go-api/config/h5/test.yml
+      - nunu-go-api/config/home/local.yml
+      - nunu-go-api/config/mall-online/local.yml
+      - nunu-go-api/config/mall-online/prod.yml
+      - nunu-go-api/config/mall-online/test.yml
+      - nunu-go-api/config/mall/local.yml
+      - nunu-go-api/config/mall/test.yml
+      - nunu-go-api/config/merchant/local.yml
+      - nunu-go-api/config/merchant/test.yml
+    next_stage_handoff: stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: Stage 01 Entry Gate
+    recovery_coverage: PARTIAL_APPROVED
+    resume_history:
+    - event: PRECHECK_BLOCKED
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/PRECHECK_BLOCKED.md
+    - event: USER_APPROVED_EXACT_13_PATH_EXCEPTION
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+    - event: RESUMED_SAME_RUN
+      baseline_recaptured: false
+      original_state_unchanged: true

@@ -1,0 +1,78 @@
+schema_version: stage20-v1
+framework_release:
+  version: v1.10-additive.1
+  source_rc: stage19-rc.1
+  release_state: RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT
+  platform_binary: darwin/arm64
+  archive:
+    path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/banyan-framework-v1.10-additive.1-darwin-arm64.tar.gz
+    sha256: 1bddbfb1ac2edc23d7504f128f2193c964be73ca6a403280c3dbdb5330a2bc74
+    size_bytes: 10912205
+    reproducible: true
+  components:
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/README.md
+    sha256: 0c9a64d5ecf778bfd5935ef63645d469f09b053b01aa0e6b439cc3b76bc4f1bc
+    size_bytes: 270
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/SHA256SUMS
+    sha256: fff7c6574ba7bdf1498c0cfcbd1a21d6e4b0838777aaf2fd1b951a2bb5356f1c
+    size_bytes: 1460
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/bin/banyan-control
+    sha256: 156fa8bb5e60175faadf0e99b5a8f165a708a18965f62b1e76a9cd09aeda1a1d
+    size_bytes: 20719282
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/FINAL_ARCHITECTURE_GUIDE.md
+    sha256: 94b03396542de436c31ec8f01deadd70f82cf37d367e7b91fb4d2729fb527bef
+    size_bytes: 1668
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/FRAMEWORK_RELEASE_NOTES.md
+    sha256: cb34b55dbf0630680818ff5863c083f16e26183e66bb428ce68022c93e3a9abc
+    size_bytes: 1056
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/GOVERNANCE_SECURITY_GUIDE.md
+    sha256: b8b66a5efb188c47be08e67a5d73ae5d8ce31170b389ecc429c79138466d8d26
+    size_bytes: 1300
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/INSTALL_BUILD_RUN_GUIDE.md
+    sha256: 6da208562c02dce63aaabb4846cc9bb068ebc6f8d603f3225d4387b0e0a6a710
+    size_bytes: 1811
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/LEGACY_DOCUMENTATION_ADOPTION_GUIDE.md
+    sha256: 0c48eea9df0028f37a824b908c443f02eaceb134947f2d0799087ba2ca1cd5f9
+    size_bytes: 1231
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/OPERATIONS_TROUBLESHOOTING_GUIDE.md
+    sha256: e4c2119e371dbc6dc0d3504539d9fedfd5ccaaf6c71be08445b47d221e951a5d
+    size_bytes: 1331
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/POST_RELEASE_MAINTENANCE_MODEL.md
+    sha256: 1252f26ec58248a00f19673659f52036c0a7d72ece2df6492013cdbc047199e1
+    size_bytes: 844
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/PROJECT_INSTANCE_GUIDE.md
+    sha256: 0decaabd63bf24e97c5d23d36584e37860957dd8748e04d3b8ceaa4b420cabc7
+    size_bytes: 1217
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/RUNTIME_ADAPTER_GUIDE.md
+    sha256: 0cba68b040f6f375bf40557012a3b0069375462e8d393ebbfb5236084eebc142
+    size_bytes: 1298
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/UPGRADE_MIGRATION_GUIDE.md
+    sha256: fa4a1458368e9fa6bd5f25da29881e6f507ed5e37a7a6fc0a306260958e0a97d
+    size_bytes: 1205
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/docs/WEBUI_CONTROL_PLANE_GUIDE.md
+    sha256: 08335e3f9f44ec9836ff8b7d7e6d9ffe9cff9a2c7e6a41969a09dd71b9aa726e
+    size_bytes: 1248
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/source/banyan-framework-src.tar.gz
+    sha256: 3a433748a86a9f9778c2f9fb565054e523ae6e7a2bde2637544d975cbf95c713
+    size_bytes: 452973
+  - path: .banyan-refactor/stages/20/stage20-20260921T073758Z/release/package-root/banyan-framework-v1.10-additive.1/web/asset-manifest.json
+    sha256: 1e2b93184f639fb7ecac2eca1ce4e63877b5e48eb3deb354616768e8989edf08
+    size_bytes: 458
+  documentation:
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/FINAL_ARCHITECTURE_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/FRAMEWORK_RELEASE_NOTES.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/GOVERNANCE_SECURITY_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/INSTALL_BUILD_RUN_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/LEGACY_DOCUMENTATION_ADOPTION_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/OPERATIONS_TROUBLESHOOTING_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/POST_RELEASE_MAINTENANCE_MODEL.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/PROJECT_INSTANCE_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/RUNTIME_ADAPTER_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/UPGRADE_MIGRATION_GUIDE.md
+  - .banyan-refactor/stages/20/stage20-20260921T073758Z/docs/WEBUI_CONTROL_PLANE_GUIDE.md
+  accepted_evidence:
+  - stages/19/stage19-20260921T071430Z/RC_MANIFEST.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/FINAL_VERIFICATION.yaml
+governance_current_pointer: v1.9.1
+current_pointer_changed: false
+project_final_activation: NOT_AUTHORIZED

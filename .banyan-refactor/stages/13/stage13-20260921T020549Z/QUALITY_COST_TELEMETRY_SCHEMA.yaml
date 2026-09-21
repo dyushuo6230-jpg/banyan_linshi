@@ -1,0 +1,7 @@
+schema_version: stage13-v1
+fields: [task_profile, execution_mode, context_class, quality_result, validation_result, latency_class, usage_units, cache_hit, escalation_count, retry_count]
+unknown_values_allowed: true
+forbidden_generic_fields: [vendor_name, proprietary_model_name, fixed_price, fixed_token_percentage]
+telemetry_grants_authorization: false
+telemetry_alone_proves_causality: false
+

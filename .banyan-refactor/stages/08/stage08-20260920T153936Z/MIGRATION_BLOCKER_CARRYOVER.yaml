@@ -1,0 +1,16 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+real_migration_readiness: MIGRATION_BLOCKED
+blockers:
+- {id: CON-002, status: OPEN, owner_stage: '12', effect: GLOBAL_FRESHNESS_FINAL_ADJUDICATION_BLOCKED}
+- {id: REF-MISSING-HISTORICAL-4, status: OPEN, owner_stage: '12', count: 4, effect: HISTORICAL_REFERENCE_REPAIR_BLOCKED}
+- {id: R03-PURITY, status: OPEN, owner_stage: LATER_STAGE}
+- {id: R03-SOURCE, status: OPEN, owner_stage: LATER_STAGE}
+- {id: R03-COST, status: OPEN, owner_stage: LATER_STAGE}
+- {id: R03-SECRET, status: PARTIAL_APPROVED, owner_stage: LATER_EXPLICIT_AUTHORIZATION}
+- {id: R03-LOCAL, status: OPEN, owner_stage: LATER_STAGE}
+scanner_findings_not_blockers:
+- {id: REF-107, classification: REGEX_LITERAL_NOT_REFERENCE}
+- {id: REF-108, classification: REGEX_LITERAL_NOT_REFERENCE}
+stage08_may_claim_real_migration_ready: false

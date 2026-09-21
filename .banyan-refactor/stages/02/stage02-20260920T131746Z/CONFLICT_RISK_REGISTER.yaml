@@ -1,0 +1,599 @@
+stage: '02'
+status: OPEN_ROUTED
+inherited_issue_count: 31
+new_risk_count: 5
+inherited_issues:
+- issue_id: DUP-001
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-001
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#1b68c907dc21773580247e764751a985f375f6c802b1372bb53c314d3903b304
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-002
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-002
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#8c796ee954536df11c86714ddabf54432de846d816a77649f23a3a8c100481e7
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-003
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-003
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#17e181d052fa302d1ae4577f4c7948a8825aee8efedde4084b44ab077dc340d3
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-004
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-004
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#7fecd327f686e32900d502edc5493732fc04a7d4671bf8693771d283dc08c394
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-005
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-005
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#6a49685d30a5ff52566059d0cef303bcb7acdcaaa478c3f5213e575eb47ee71d
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-006
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-006
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#6d30f4141d62e6c477eba1ec4ed5f52a7f170253c83686bc90f0d23a947441bd
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-007
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-007
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#4d830817626e877b8eda36dd8d7b47c1ae0e1540d48481612b0b81f896ead706
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-008
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-008
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#aee6c07ea79d37a1faf97fef120afb2f445897013c9078ee438032f0bcea6a10
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-009
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-009
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#2968ed068362f9ecd5b0e70f06cce6cdd64f0d3d93bd04d69c9e41709b75ee50
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-010
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-010
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#fb14945eabf7ab5daf7732e2b0802d0ef77ca4be11a7ba285eb62cffea4a4d3c
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-011
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-011
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#2b969f5a9503c74006151862e9bbf8a9c666f7792dbb48f1e97e720d621e10d2
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-012
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-012
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#1951bcde103129e87c2d9da3e5783de9a09e25cada31c9eb2d03d561855b3c8e
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-013
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-013
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#316918693594fa78b558f9abedb3fbed3b7408ab9d9f23a388c4879ec1c3796e
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-014
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-014
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#b1218d90a01a376ff9c92d4de3185aa7e1b1072a5164a16a4148fcc5567ebcd6
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-015
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-015
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#733dbc9b17fd0b54ecb2f6bf9b8d1dcd048a71a5910ef5a87bae261d75b0018d
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-016
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-016
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#225da8c634ddf9bfe25edfd5671bbfbd330f001030501255f391b68493c81eda
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-017
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-017
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#38e35e2ba4b03752fa8b87af2f93ff86e3d26f994dc1285affbf6208a7e0557f
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-018
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-018
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#fdd0c0637840e8cb8b0816347c546a9a3d71d828d7c652aabdc4e74f1233f317
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-019
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-019
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#d2367590318f968dae20a5d29134d7f3422c2dbfbcd090e12dafd08cb5363c76
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-020
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-020
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#de43a700b2e0929fa94b5abf27865a6763b467f3657358ba6757c28e079acd87
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-021
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-021
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#695c56406bed4b86cab00473719d05b534f7ec4779ba1725b759094163f8ec0b
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-022
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-022
+  description: Exact identical bytes; copies may serve separate app/context consumers.
+    This is not permission to merge/delete.
+  evidence_refs:
+  - evidence/EXACT_DUPLICATES.json#3a948e5b0c3f71540a7c42c096e7996a6212624887dbff9517fa52bfef0a2f1f
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '07'
+  next_action: Review consumers and authority before any deduplication. Preserve every
+    source in place.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: CON-001
+  inherited_severity: HIGH
+  type: Conflict
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#CON-001
+  description: Generic IDP HIGH one / LOW two differs from project DEC-042 max five
+    and existing-code self-resolution. Keep explicit project override separate; do
+    not flatten into a universal Core policy.
+  evidence_refs:
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/AI_DOCUMENTATION_GUIDE.md
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: PROJECT_INSTANCE_POLICY_OVERLAY + CORE_PRECEDENCE_CONTRACT
+  candidate_owner_stage: '05'
+  next_action: Stage 02 map precedence and Stage 05 preserve decision authorization
+    semantics; Stage 07 regression covers project overrides.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: true
+- issue_id: CON-002
+  inherited_severity: HIGH
+  type: Conflict
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#CON-002
+  description: Entry/guide retain older PRD v0.1.5/v0.1.7 and 72% descriptions; dashboard
+    describes v0.1.44 Approved and 69%. README both says mall-online not created and
+    later says created. Do not use stale prose to authorize work or rewrite canonical
+    state.
+  evidence_refs:
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/README.md
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/AI_DOCUMENTATION_GUIDE.md
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROJECT_DASHBOARD.md
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROGRESS_REGISTER.yaml
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: PROJECT_SOURCE_FRESHNESS + REFERENCE_INTEGRITY
+  candidate_owner_stage: '12'
+  next_action: Stage 02 define freshness/source roles; Stage 12 use authoritative
+    register and scoped confirmed records; preserve mismatches as evidence.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: true
+- issue_id: GAP-001
+  inherited_severity: MEDIUM
+  type: Gap
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#GAP-001
+  description: pre-commit calls pnpm run lint:lint-staged, but current package scripts
+    only dev/build/preview. Root core.hooksPath unset and .git/hooks contains sample
+    hooks only; cannot claim this nested enforcement is active.
+  evidence_refs:
+  - evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/.husky/pre-commit
+  - evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/package.json
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '05'
+  next_action: Assess hook installation and missing command under explicit later scope;
+    do not run/install/repair now.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: GAP-002
+  inherited_severity: MEDIUM
+  type: Gap
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#GAP-002
+  description: Four literal Markdown references point to absent CONTRIBUTING.md or
+    CHANGELOG.en.md. Two additional regex-source matches are not real links and excluded
+    from broken-link findings.
+  evidence_refs:
+  - evidence/REFERENCE_EDGES.jsonl
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '03'
+  next_action: Review vendor/upstream documentation references; no automatic edits.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: GAP-003
+  inherited_severity: MEDIUM
+  type: Gap
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#GAP-003
+  description: Derived publications and design outputs have governing sources, but
+    exact per-file AI authorship and byte-reproducible generation lineage are not
+    proven. Preserve source files; cannot declare them safely rebuildable.
+  evidence_refs:
+  - AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '10'
+  next_action: Stage 10 audit publishing source graph; Stage 09 handle design lineage;
+    Stage 03 freeze source-role contracts.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: GAP-004
+  inherited_severity: MEDIUM
+  type: Gap
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#GAP-004
+  description: Nearby run records in_progress and has no RESULT; tabbar RESULT records
+    user-stop/revert. These are existing operational states, not missing Stage 01
+    deliverables; do not upgrade to successful validation.
+  evidence_refs:
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+  - evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: 09
+  next_action: Preserve failure/in-progress semantics in migration; do not resume
+    business visual loops during Stage 01.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: GAP-005
+  inherited_severity: MEDIUM
+  type: Gap
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#GAP-005
+  description: Reachable Git metadata contains 16 exact author identities, including
+    placeholders and quoting variants. No identity aliases merged; historical co-author
+    AI markers do not establish physical operator.
+  evidence_refs:
+  - GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+  - evidence/GIT_COMMIT_METADATA.jsonl
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '03'
+  next_action: Stage 03/05 map exact contribution identity and policy without rewriting
+    history.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: GAP-006
+  inherited_severity: LOW
+  type: Gap
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#GAP-006
+  description: Semantic ID and inline path scans include unresolved candidates and
+    multi-file namespaces; examples/ranges/legacy references are not automatically
+    dangling current contracts. Stage 01 preserves every candidate for source-role
+    review.
+  evidence_refs:
+  - evidence/REFERENCE_TOKEN_SCAN.jsonl
+  - evidence/ID_COLLISION_CANDIDATES.json
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '03'
+  next_action: Resolve effective-version/topic references at schema/reference-integrity
+    owner stage before migration.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- issue_id: DUP-SYMLINK
+  inherited_severity: INFO
+  type: Duplicate
+  source_stage01: ../../01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#DUP-SYMLINK
+  description: Cursor AnyDesign entry is a symlink to provider directory, not a second
+    content source. Link metadata and target real path inventoried separately.
+  evidence_refs:
+  - evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/skills/anydesign
+  - evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  stage02_treatment: Candidate boundary mapping only; no source edit or automatic
+    conflict winner
+  candidate_layer: COMPATIBILITY_OR_PROJECT_SOURCE_REVIEW
+  candidate_owner_stage: '15'
+  next_action: Preserve entry compatibility; do not recursively double-count symlink
+    contents.
+  status: OPEN_ROUTED
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+new_risks:
+- risk_id: R02-PURITY-001
+  severity: HIGH
+  description: 21 Core semantic candidates have no independent cross-project execution
+    proof; source-file keyword hits are overbroad and cannot establish semantic dependence.
+  candidate_owner_stage: 03/04/19
+  next_action: Stage 03 contract review plus second-project fixture and Stage 19 portability/no-loss
+    validation before final Core acceptance.
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: true
+- risk_id: R02-SOURCE-002
+  severity: HIGH
+  description: Canonicality, AI authorship, exact generated lineage and rebuildability
+    remain candidate/unknown for many artifacts.
+  candidate_owner_stage: 03/09/10
+  next_action: Freeze source-role schema, map provenance and test regeneration before
+    any replace/archive decision.
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: true
+- risk_id: R02-COST-003
+  severity: MEDIUM
+  description: AI Runtime cost governance is conceptual; no model/price/token threshold
+    or quality benchmark verified.
+  candidate_owner_stage: 05/15/16/19
+  next_action: Define cost/quality telemetry and benchmark real workloads, then set
+    thresholds with controlled configuration.
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+- risk_id: R02-SECRET-004
+  severity: HIGH
+  description: 13 user-approved local environment configurations have no independent
+    Banyan backup; all 13 and other Secret candidates remain metadata-only.
+  candidate_owner_stage: ALL_LATER_STAGES
+  next_action: Preserve in place, no body read/hash/copy/write/delete/commit; recovery
+    coverage remains PARTIAL_APPROVED.
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: true
+- risk_id: R02-LOCAL-005
+  severity: MEDIUM
+  description: Control artifacts are local uncommitted evidence, not independent off-machine
+    backup. Stage 01 also recorded an externally disappeared duplicate zip.
+  candidate_owner_stage: ALL_LATER_STAGES
+  next_action: Preserve sealed evidence and classify freshness before each new stage;
+    do not recreate or attribute zip deletion without proof.
+  blocks_stage02_design: false
+  blocks_activation_without_resolution: false
+conflict_winners_selected: []
+legacy_files_edited: false

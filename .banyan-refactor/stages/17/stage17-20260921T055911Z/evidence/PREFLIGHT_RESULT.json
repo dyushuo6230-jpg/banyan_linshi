@@ -1,0 +1,45 @@
+{
+  "adapter_capabilities": {
+    "calls_control_plane": true,
+    "direct_git_mutation": false,
+    "direct_project_write": false,
+    "owns_canonical_truth": false,
+    "owns_permission_policy": false
+  },
+  "runtime_result": {
+    "action_id": "stage17-project-instance-pilot-create",
+    "action_state": "PILOT_SCOPE_AVAILABLE",
+    "audit_event": {
+      "action_id": "stage17-project-instance-pilot-create",
+      "authorization_ref": "USER-STAGE17-PILOT-REQUEST",
+      "event_type": "PERMISSION_EVALUATED",
+      "evidence_refs": [
+        ".banyan-refactor/stages/17/stage17-20260921T055911Z/CHECKPOINT.yaml",
+        "stage17-explicit-gate"
+      ],
+      "grants_authorization": false,
+      "occurred_at": "2026-09-21T06:09:04.770586+00:00",
+      "permission_result": "ALLOW",
+      "result": "ALLOW",
+      "risk_class": "PROTECTED_WRITE",
+      "target_id": ".banyan"
+    },
+    "checkpoint_ref": ".banyan-refactor/stages/17/stage17-20260921T055911Z/CHECKPOINT.yaml",
+    "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+    "decision_level": "L3",
+    "executed": false,
+    "failed_or_missing_preconditions": [],
+    "final_activation_allowed": false,
+    "general_project_write_allowed": false,
+    "permission_result": "ALLOW",
+    "pilot_allowed_glob": ".banyan/**",
+    "pilot_allowed_root": ".banyan",
+    "pilot_scope_authorized": true,
+    "reason_codes": [
+      "CURRENT_PROJECT_DRY_RUN_ONLY"
+    ],
+    "risk_class": "PROTECTED_WRITE",
+    "stage_gate_ref": "stage17-explicit-gate",
+    "ui_confirmation_is_authorization": false
+  }
+}

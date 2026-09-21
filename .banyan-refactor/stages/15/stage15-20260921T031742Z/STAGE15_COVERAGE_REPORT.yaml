@@ -1,0 +1,21 @@
+schema_version: stage15-v1
+run_id: stage15-20260921T031742Z
+components:
+  policy_compiler: IMPLEMENTED_TESTED
+  runtime_permission_evaluator: IMPLEMENTED_TESTED
+  runtime_api: IMPLEMENTED_TESTED
+  cli: IMPLEMENTED_SMOKE_TESTED
+  filesystem_adapter: IMPLEMENTED
+  process_runner: IMPLEMENTED_TESTED
+  git_cli_adapter: IMPLEMENTED_TESTED
+  semantic_commit_planner: IMPLEMENTED_TESTED
+  semantic_commit_executor: IMPLEMENTED_TESTED
+  hunk_aware_staging: IMPLEMENTED_TESTED
+  index_checkpoint_verification: IMPLEMENTED_TESTED
+  trace_audit_emitter: IMPLEMENTED_TESTED
+  provider_binding_loader: IMPLEMENTED_TESTED
+  current_project_dry_run: PASS_NO_MUTATION
+  isolated_fixture_execution: PASS_REAL_COMMITS
+validation_range: V15-01..V15-28
+validation_result: 28_OF_28_PASS
+hard_metrics_result: 11_OF_11_ZERO

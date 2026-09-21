@@ -1,0 +1,29 @@
+schema_version: stage15-v1
+upstream_stage: "15"
+run_id: stage15-20260921T031742Z
+acceptance_result: PASS_STAGE15_RUNTIME_IMPLEMENTATION_ISOLATED_GIT_EXECUTION
+framework_source:
+  path: banyan-framework
+  generic_only: true
+runtime_components:
+  - Policy Compiler
+  - Permission Runtime Evaluator
+  - Runtime API and CLI
+  - Filesystem Process and Git Adapters
+  - Semantic Commit Planner and Executor
+  - Hunk-aware Staging and Index Rollback
+  - Trace Emitter and Provider Binding Loader
+test_results:
+  automated: 21_OF_21_PASS
+  validations: 28_OF_28_PASS
+  hard_metrics: 11_OF_11_ZERO
+current_project_git_mutation: false
+stage16_api_handoff: ../STAGE16_RUNTIME_API_HANDOFF.yaml
+carried_blockers:
+  - id: CON-002
+    state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+next_stage_entry_gate:
+  stage: "16"
+  result: READY_WITH_RUNTIME_ENFORCEMENT_CONTRACT
+  execution_authorized: false
+stop_after_stage: "15"

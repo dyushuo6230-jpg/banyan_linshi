@@ -1,0 +1,25 @@
+schema_version: stage06-v1
+mandatory_before_apply: true
+required_outputs:
+  - target_canonical_artifacts
+  - planned_creates
+  - planned_updates
+  - planned_supersessions
+  - preserved_artifacts
+  - reference_impacts
+  - derived_impacts
+  - conflicts
+  - freshness_warnings
+  - provenance_warnings
+  - protected_targets
+  - rollback_checkpoint
+  - required_decision_level
+  - required_authorization
+validity:
+  binds_provider_revision: true
+  binds_canonical_target_revisions: true
+  stale_on_input_change: true
+  incomplete_output_is_valid: false
+side_effects: NONE
+dry_run_only: true
+

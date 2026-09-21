@@ -1,0 +1,33 @@
+schema_version: stage14-v1
+stage: '14'
+run_id: stage14-20260921T022241Z
+overall: PASS_WITH_TYPED_BLOCKERS
+coverage:
+  action_risk: COMPLETE
+  permission_decision: COMPLETE
+  authorization_record: COMPLETE
+  work_mode_matrix: COMPLETE
+  protected_target_and_write: COMPLETE
+  secret_freshness_rollback: COMPLETE
+  human_confirmation_binding: COMPLETE
+  git_identity: COMPLETE
+  git_worktree: COMPLETE
+  semantic_commit: COMPLETE
+  git_operation_matrix: COMPLETE
+  external_irreversible_gate: COMPLETE
+  audit_and_learning_governance: COMPLETE
+  shadow_evaluation: 14_OF_14_PASS
+  stage15_runtime_handoff: COMPLETE_NOT_STARTED
+hard_metrics:
+  ACTION_WITHOUT_RISK_CLASS: 0
+  ACTION_WITHOUT_PERMISSION_DECISION: 0
+  AUTHORIZATION_RECORD_WITHOUT_SCOPE_OR_ACTOR: 0
+  PROFILE_OR_EDITOR_USED_AS_AUTHORIZATION: 0
+  PROTECTED_WRITE_WITHOUT_FRESHNESS_CHECK: 0
+  PROTECTED_WRITE_WITHOUT_ROLLBACK_CHECKPOINT: 0
+  GIT_COMMIT_PATH_WITHOUT_IDENTITY_PRECHECK: 0
+  GIT_IDENTITY_MUTATION_PATH: 0
+  SECRET_RISK_COMMIT_PATH: 0
+  COMMIT_PLAN_TREATED_AS_AUTHORIZATION: 0
+  UNKNOWN_PRECONDITION_ALLOWED_ACTION: 0
+

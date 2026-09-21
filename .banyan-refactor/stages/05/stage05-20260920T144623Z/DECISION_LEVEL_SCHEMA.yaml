@@ -1,0 +1,39 @@
+schema_version: stage05-v1
+levels:
+  - id: L0
+    name: AUTO_SAFE
+    entry_criteria: read-only or deterministic reversible action with no protected boundary
+    allowed_actions: [inspect, calculate, validate, reversible_local_design]
+    evidence_requirements: [input_scope, result]
+    escalation_rule: uncertainty, side effect, or boundary contact escalates to L1 or higher
+    fallback: L1
+  - id: L1
+    name: AUTO_WITH_TRACE
+    entry_criteria: authorized low-risk reversible action whose effects are fully traceable
+    allowed_actions: [perform_authorized_reversible_action, record_trace]
+    evidence_requirements: [authorization_basis, before_after, validation, trace]
+    escalation_rule: policy choice or material tradeoff escalates to L2; human-only trigger to L3
+    fallback: L2
+  - id: L2
+    name: PROPOSE_AND_CONTINUE_IF_POLICY_ALLOWS
+    entry_criteria: multiple safe approaches exist and declared policy permits a reversible default
+    allowed_actions: [propose, record_assumption, continue_only_when_policy_explicitly_allows]
+    evidence_requirements: [options, rationale, policy_clause, reversibility, trace]
+    escalation_rule: missing policy, disputed assumption, or material impact escalates to L3 or L4
+    fallback: L3
+  - id: L3
+    name: HUMAN_CONFIRMATION_REQUIRED
+    entry_criteria: human-only decision, high impact, irreversible action, approval, or state transition
+    allowed_actions: [explain, request_structured_confirmation, wait]
+    evidence_requirements: [decision_request, options, impacts, uncertainty, explicit_confirmation]
+    escalation_rule: no valid confirmation remains L3; authority mismatch or unresolved conflict escalates to L4
+    fallback: BLOCKED_WAITING_FOR_HUMAN
+  - id: L4
+    name: BLOCKED_OR_OWNER_DECISION_REQUIRED
+    entry_criteria: safety violation, missing authority, conflicting truth, secret risk, missing identity, or unknown critical input
+    allowed_actions: [diagnose, preserve_state, report_blocker, request_owner_decision]
+    evidence_requirements: [typed_blocker, owner, required_evidence, prohibited_actions]
+    escalation_rule: only explicit owner resolution plus revalidation may leave L4
+    fallback: REMAIN_BLOCKED
+safety_floor_applies_to_all_levels: true
+

@@ -1,0 +1,259 @@
+schema_version: stage03-v1
+schema_status: FROZEN
+overlay_fields:
+  project_variables: {}
+  source_mappings: {}
+  business_policy_overrides: {}
+  feature_activation: {}
+  provider_bindings: {}
+binding_records:
+- capability_id: CAP-AUTH
+  contract_id: banyan.contract.action_authorization.v1
+  overlay_key: overlay.cap_auth
+  stage02_candidate: project roles and protected paths
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-PROFILE
+  contract_id: banyan.contract.variable_resolution.v1
+  overlay_key: overlay.cap_profile
+  stage02_candidate: project variables and migration defaults
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-INTAKE
+  contract_id: banyan.contract.source_intake.v1
+  overlay_key: overlay.cap_intake
+  stage02_candidate: source batches and document roots
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-PRD
+  contract_id: banyan.contract.requirement_lifecycle.v1
+  overlay_key: overlay.cap_prd
+  stage02_candidate: PRD stages and local labels
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-IDP
+  contract_id: banyan.contract.decision_session.v1
+  overlay_key: overlay.cap_idp
+  stage02_candidate: DEC-042 five-question project overlay
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-ARCH
+  contract_id: banyan.contract.design_gate.v1
+  overlay_key: overlay.cap_arch
+  stage02_candidate: current G6/G7 labels and project baseline
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-SCHEMA
+  contract_id: banyan.contract.artifact_status_and_identity.v1
+  overlay_key: overlay.cap_schema
+  stage02_candidate: project numbering namespace
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-IDREF
+  contract_id: banyan.contract.reference_integrity.v1
+  overlay_key: overlay.cap_idref
+  stage02_candidate: DEC/ADR/CR/REQ local namespaces
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-TRACE
+  contract_id: banyan.contract.evidence_trace.v1
+  overlay_key: overlay.cap_trace
+  stage02_candidate: project trace vocabulary and document roots
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-CHANGE
+  contract_id: banyan.contract.change_application.v1
+  overlay_key: overlay.cap_change
+  stage02_candidate: project CR/PRD version policy
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-PARALLEL
+  contract_id: banyan.contract.draft_promotion.v1
+  overlay_key: overlay.cap_parallel
+  stage02_candidate: changes_temp path and PRD state
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-RECONCILE
+  contract_id: banyan.contract.batch_reconciliation.v1
+  overlay_key: overlay.cap_reconcile
+  stage02_candidate: 36A trigger and business-delta semantics
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-TEST
+  contract_id: banyan.contract.test_integrity.v1
+  overlay_key: overlay.cap_test
+  stage02_candidate: project test/acceptance rules
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-PROGRESS
+  contract_id: banyan.contract.progress_projection.v1
+  overlay_key: overlay.cap_progress
+  stage02_candidate: weights and applicability of project work
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-HANDOVER
+  contract_id: banyan.contract.operational_handover.v1
+  overlay_key: overlay.cap_handover
+  stage02_candidate: local log/handover format
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-CONTEXT
+  contract_id: banyan.contract.context_recovery.v1
+  overlay_key: overlay.cap_context
+  stage02_candidate: current project authority/freshness rules
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-UI_SCOPE
+  contract_id: banyan.contract.uiapplication_scope.v1
+  overlay_key: overlay.cap_ui_scope
+  stage02_candidate: application slugs and enabled list
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-UI_CONTRACT
+  contract_id: banyan.contract.effective_uicontract.v1
+  overlay_key: overlay.cap_ui_contract
+  stage02_candidate: application/page/device version map
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-UI_GATE
+  contract_id: banyan.contract.uiapproval_gate.v1
+  overlay_key: overlay.cap_ui_gate
+  stage02_candidate: project 25A/28A/29 steps and named pages
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-VISUAL
+  contract_id: banyan.contract.visual_repair_run.v1
+  overlay_key: overlay.cap_visual
+  stage02_candidate: page/allowed-files/viewport/exception overlay
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-PUBLISH
+  contract_id: banyan.contract.knowledge_projection.v1
+  overlay_key: overlay.cap_publish
+  stage02_candidate: plain-spec and PLAIN_SYNC mapping
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-EDITOR
+  contract_id: banyan.contract.editor_entry_compatibility.v1
+  overlay_key: overlay.cap_editor
+  stage02_candidate: Cursor rule precedence and symlink entry
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-PORT
+  contract_id: banyan.contract.project_endpoint_map.v1
+  overlay_key: overlay.cap_port
+  stage02_candidate: 8035/8037 and application-service binding
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-SQL
+  contract_id: banyan.contract.project_delivery_convention.v1
+  overlay_key: overlay.cap_sql
+  stage02_candidate: numbered incremental SQL practice
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-COMMIT
+  contract_id: banyan.contract.commit_practice_compatibility.v1
+  overlay_key: overlay.cap_commit
+  stage02_candidate: nested Husky/commitlint installation and policy
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-MERGE
+  contract_id: banyan.contract.legacy_collaboration_reference.v1
+  overlay_key: overlay.cap_merge
+  stage02_candidate: old branch names and ownership rules
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-DESIGN
+  contract_id: banyan.contract.design_analysis.v1
+  overlay_key: overlay.cap_design
+  stage02_candidate: source and approval status of project UI materials
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-CSS
+  contract_id: banyan.contract.css_token_extraction.v1
+  overlay_key: overlay.cap_css
+  stage02_candidate: project URL/input scope
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-CAPTURE
+  contract_id: banyan.contract.page_visual_capture.v1
+  overlay_key: overlay.cap_capture
+  stage02_candidate: project URL, viewport, allowed capture
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-COLORS
+  contract_id: banyan.contract.image_palette_extraction.v1
+  overlay_key: overlay.cap_colors
+  stage02_candidate: project source image identity
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-A11Y
+  contract_id: banyan.contract.contrast_evaluation.v1
+  overlay_key: overlay.cap_a11_y
+  stage02_candidate: project color pairs
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-LINT
+  contract_id: banyan.contract.design_document_lint.v1
+  overlay_key: overlay.cap_lint
+  stage02_candidate: project design.md inputs
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-TOKENS
+  contract_id: banyan.contract.design_token_build.v1
+  overlay_key: overlay.cap_tokens
+  stage02_candidate: project frontmatter and source revision
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-DRIFT
+  contract_id: banyan.contract.design_drift_check.v1
+  overlay_key: overlay.cap_drift
+  stage02_candidate: project URL and effective tokens
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+- capability_id: CAP-EXPORT
+  contract_id: banyan.contract.design_package_export.v1
+  overlay_key: overlay.cap_export
+  stage02_candidate: project export target and source revision
+  required_for_activation: true
+  may_weaken_core_safety_semantics: false
+  value_status: UNBOUND
+constraints:
+  may_weaken_core_safety_semantics: false
+  may_embed_secret_body: false
+  must_record_authority_and_provenance: true
+  unbound_value_status: UNBOUND

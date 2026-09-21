@@ -1,0 +1,47 @@
+schema_version: stage19-v1
+rc:
+  version: stage19-rc.1
+  run_id: stage19-20260921T071430Z
+  source_revision: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  architecture:
+    frontend: ANT_DESIGN_PRO_SIMPLE
+    web_host: GO_GIN_GO_EMBED
+    runtime_bridge: LOCAL_STDIO
+    runtime_core: PYTHON_STAGE15_RUNTIME
+  artifacts:
+  - kind: GO_EXECUTABLE
+    path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/banyan-control-a
+    sha256: 156fa8bb5e60175faadf0e99b5a8f165a708a18965f62b1e76a9cd09aeda1a1d
+    size_bytes: 20719282
+  - kind: SOURCE_ARCHIVE
+    path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/banyan-framework-src.tar.gz
+    sha256: 3a433748a86a9f9778c2f9fb565054e523ae6e7a2bde2637544d975cbf95c713
+    size_bytes: 452973
+  - kind: FRONTEND_MANIFEST
+    path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/frontend-build-b/asset-manifest.json
+    sha256: 1e2b93184f639fb7ecac2eca1ce4e63877b5e48eb3deb354616768e8989edf08
+    size_bytes: 458
+  embedded_frontend_assets:
+  - path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/frontend-build-b/asset-manifest.json
+    sha256: 1e2b93184f639fb7ecac2eca1ce4e63877b5e48eb3deb354616768e8989edf08
+    size_bytes: 458
+  - path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/frontend-build-b/assets/index--atBYdsd.js
+    sha256: d135a2ee0d26c39965985aac0ffffd20e164f34e1d146d83fe7c3fcaac2f7355
+    size_bytes: 1196563
+  - path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/frontend-build-b/assets/index-CfaHOHW_.css
+    sha256: 48e058c584d5ce86607ee1c562fca74475771cf3faaac8d0a17bd4469ad2e8da
+    size_bytes: 440
+  - path: .banyan-refactor/stages/19/stage19-20260921T071430Z/rc/frontend-build-b/index.html
+    sha256: c0191d631c53f0e58efaf370f0db61c654aa74ecfeb294ae1026f2958fe2839f
+    size_bytes: 373
+  tests:
+  - 36 critical Runtime/Policy/Git/Bridge/Adapter regressions PASS
+  - Go tests PASS
+  - npm audit 0 vulnerabilities
+  - RC release smoke PASS
+  - SQLite primary/rebuild verification PASS
+  - two frontend builds byte-identical
+  - two Go builds byte-identical
+  - two source archives byte-identical
+  reproducibility: PASS
+  final_activation: NOT_AUTHORIZED

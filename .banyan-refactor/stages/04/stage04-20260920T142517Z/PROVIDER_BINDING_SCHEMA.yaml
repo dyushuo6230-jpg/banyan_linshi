@@ -1,0 +1,48 @@
+schema_version: stage04-v1
+provider_selection_state: UNBOUND_BY_DEFAULT
+binding_defaults: &defaults
+  provider_id: null
+  scope: PROJECT
+  configuration_ref: null
+  capability_declaration: []
+  activation_state: INACTIVE
+  fallback_policy: BLOCK_IF_REQUIRED
+  health_policy: NOT_CONFIGURED
+bindings:
+  - {<<: *defaults, binding_id: bind-action-authorization, port_id: banyan.port.action_authorization.v1}
+  - {<<: *defaults, binding_id: bind-variable-resolution, port_id: banyan.port.variable_resolution.v1}
+  - {<<: *defaults, binding_id: bind-source-intake, port_id: banyan.port.source_intake.v1}
+  - {<<: *defaults, binding_id: bind-requirement-lifecycle, port_id: banyan.port.requirement_lifecycle.v1}
+  - {<<: *defaults, binding_id: bind-decision-session, port_id: banyan.port.decision_session.v1}
+  - {<<: *defaults, binding_id: bind-design-gate, port_id: banyan.port.design_gate.v1}
+  - {<<: *defaults, binding_id: bind-artifact-status-and-identity, port_id: banyan.port.artifact_status_and_identity.v1}
+  - {<<: *defaults, binding_id: bind-reference-integrity, port_id: banyan.port.reference_integrity.v1}
+  - {<<: *defaults, binding_id: bind-evidence-trace, port_id: banyan.port.evidence_trace.v1}
+  - {<<: *defaults, binding_id: bind-change-application, port_id: banyan.port.change_application.v1}
+  - {<<: *defaults, binding_id: bind-draft-promotion, port_id: banyan.port.draft_promotion.v1}
+  - {<<: *defaults, binding_id: bind-batch-reconciliation, port_id: banyan.port.batch_reconciliation.v1}
+  - {<<: *defaults, binding_id: bind-test-integrity, port_id: banyan.port.test_integrity.v1}
+  - {<<: *defaults, binding_id: bind-progress-projection, port_id: banyan.port.progress_projection.v1}
+  - {<<: *defaults, binding_id: bind-operational-handover, port_id: banyan.port.operational_handover.v1}
+  - {<<: *defaults, binding_id: bind-context-recovery, port_id: banyan.port.context_recovery.v1}
+  - {<<: *defaults, binding_id: bind-uiapplication-scope, port_id: banyan.port.uiapplication_scope.v1}
+  - {<<: *defaults, binding_id: bind-effective-uicontract, port_id: banyan.port.effective_uicontract.v1}
+  - {<<: *defaults, binding_id: bind-uiapproval-gate, port_id: banyan.port.uiapproval_gate.v1}
+  - {<<: *defaults, binding_id: bind-visual-repair-run, port_id: banyan.port.visual_repair_run.v1}
+  - {<<: *defaults, binding_id: bind-knowledge-projection, port_id: banyan.port.knowledge_projection.v1}
+  - {<<: *defaults, binding_id: bind-editor-entry-compatibility, port_id: banyan.port.editor_entry_compatibility.v1}
+  - {<<: *defaults, binding_id: bind-project-endpoint-map, port_id: banyan.port.project_endpoint_map.v1}
+  - {<<: *defaults, binding_id: bind-project-delivery-convention, port_id: banyan.port.project_delivery_convention.v1}
+  - {<<: *defaults, binding_id: bind-commit-practice-compatibility, port_id: banyan.port.commit_practice_compatibility.v1}
+  - {<<: *defaults, binding_id: bind-legacy-collaboration-reference, port_id: banyan.port.legacy_collaboration_reference.v1}
+  - {<<: *defaults, binding_id: bind-design-analysis, port_id: banyan.port.design_analysis.v1}
+  - {<<: *defaults, binding_id: bind-css-token-extraction, port_id: banyan.port.css_token_extraction.v1}
+  - {<<: *defaults, binding_id: bind-page-visual-capture, port_id: banyan.port.page_visual_capture.v1}
+  - {<<: *defaults, binding_id: bind-image-palette-extraction, port_id: banyan.port.image_palette_extraction.v1}
+  - {<<: *defaults, binding_id: bind-contrast-evaluation, port_id: banyan.port.contrast_evaluation.v1}
+  - {<<: *defaults, binding_id: bind-design-document-lint, port_id: banyan.port.design_document_lint.v1}
+  - {<<: *defaults, binding_id: bind-design-token-build, port_id: banyan.port.design_token_build.v1}
+  - {<<: *defaults, binding_id: bind-design-drift-check, port_id: banyan.port.design_drift_check.v1}
+  - {<<: *defaults, binding_id: bind-design-package-export, port_id: banyan.port.design_package_export.v1}
+coverage: {expected_ports: 35, accounted_ports: 35, provider_selected: 0, missing_ports: []}
+

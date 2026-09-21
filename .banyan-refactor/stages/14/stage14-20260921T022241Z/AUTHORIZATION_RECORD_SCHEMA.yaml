@@ -1,0 +1,13 @@
+schema_version: stage14-v1
+required_fields: [authorization_id, actor_identity_or_user, action_scope, target_scope, granted_actions, constraints, validity, evidence_refs, decision_ref]
+validity_fields: [issued_at_or_unknown, expires_at_or_condition, revocation_state]
+binding_rules:
+  action_must_match_granted_actions: true
+  target_must_match_target_scope: true
+  actor_or_user_must_be_explicit: true
+  constraints_must_be_satisfied: true
+  decision_ref_must_be_valid: true
+  expired_or_revoked_result: BLOCK
+not_authorization_sources: [CONTRIBUTOR_PROFILE, EDITOR_NAME, AI_ROLE, GIT_IDENTITY, HISTORICAL_COMMIT, EVIDENCE_RECORD, IMPACT_REPORT, COMMIT_PLAN, LEARNING_CANDIDATE]
+implicit_authorization_allowed: false
+

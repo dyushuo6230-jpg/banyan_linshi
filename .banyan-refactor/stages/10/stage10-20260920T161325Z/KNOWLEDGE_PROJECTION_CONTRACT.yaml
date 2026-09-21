@@ -1,0 +1,15 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_CONTRACT_NOT_INSTANTIATED
+projection_types: [SUMMARY, GUIDE, PLAIN_DOCUMENT, NAVIGATION, MEETING_PACK, HANDOVER, PROGRESS_VIEW, ARCHITECTURE_EXPLANATION, AI_CONTEXT_VIEW]
+required_fields: [projection_id, projection_type, audience, source_roles, source_refs, source_versions, coverage, freshness, rebuildability, provenance, generated_at]
+default_source_role: DERIVED_PROJECTION
+canonical_truth_by_default: false
+allowed_transformations: [FILTER, SUMMARIZE, REORGANIZE, LINK]
+prohibited:
+  create_business_rule: true
+  override_canonical_source: true
+  backwrite_canonical: true
+  hide_source_conflict: true
+new_rule_flow: [CHANGE_WORKSPACE, DECISION_OR_APPROVAL, CANONICAL_APPLY, PROJECTION_REFRESH]

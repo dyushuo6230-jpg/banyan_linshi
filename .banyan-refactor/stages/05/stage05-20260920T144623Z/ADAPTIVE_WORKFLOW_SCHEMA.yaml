@@ -1,0 +1,45 @@
+schema_version: stage05-v1
+status: FROZEN_POLICY_NOT_IMPLEMENTED
+routing_inputs:
+  - task_class
+  - risk
+  - scope
+  - confidence
+  - governance_mode
+  - project_stage
+  - authorization
+  - budget_state
+  - change_state
+routing_output:
+  required: [mode, required_gates, required_evidence, required_human_decisions, allowed_actions, blocked_actions, rationale]
+routing_rules:
+  - when: secret_risk_or_protected_write_violation
+    decision_level: L4
+    mode_floor: FULL
+    result: BLOCKED
+  - when: explicit_human_only_or_irreversible_high_risk
+    decision_level: L3
+    mode_floor: STANDARD
+    result: HUMAN_CONFIRMATION_REQUIRED
+  - when: uncertainty_or_policy_conflict
+    decision_level: L4
+    mode_floor: FULL
+    result: OWNER_DECISION_REQUIRED
+  - when: reversible_proposal_with_policy_continuation
+    decision_level: L2
+    mode_floor: STANDARD
+    result: PROPOSE
+  - when: safe_action_requiring_audit
+    decision_level: L1
+    mode_floor: LIGHT
+    result: TRACE_REQUIRED
+  - when: read_only_or_deterministic_safe_action
+    decision_level: L0
+    mode_floor: LIGHT
+    result: AUTO_SAFE
+invariants:
+  traceable: true
+  resumable: true
+  explainable: true
+  unresolved_input: BLOCK_OR_NEEDS_INPUT
+

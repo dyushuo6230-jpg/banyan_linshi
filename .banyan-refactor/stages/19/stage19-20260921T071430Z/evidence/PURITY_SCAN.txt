@@ -1,0 +1,6 @@
+=== OWNED SOURCE PROJECT LITERAL/PATH SCAN ===
+=== OWNED SOURCE IDENTITY VALUE SCAN ===
+banyan-framework/tests/test_executor_integration.py:31:        command(repo, "config", "--local", "user.email", "fixture@example.invalid")
+banyan-framework/tests/test_executor_integration.py:37:        command(repo, "-c", "user.name=Banyan Fixture", "-c", "user.email=fixture@example.invalid", "commit", "-q", "-m", "chore: baseline")
+=== GIN POLICY/GIT IMPLEMENTATION SCAN ===
+=== OWNED SOURCE ABSOLUTE HOME PATH SCAN ===

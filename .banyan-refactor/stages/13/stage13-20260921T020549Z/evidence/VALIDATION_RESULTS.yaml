@@ -1,0 +1,40 @@
+schema_version: stage13-v1
+stage: '13'
+run_id: stage13-20260921T020549Z
+overall: PASS
+validations:
+  - {id: V13-01, result: PASS, evidence: Stage 12 seal, typed blockers, and Stage 13 query handoff are valid.}
+  - {id: V13-02, result: PASS, evidence: Query-first read-only index queries preceded bounded contract reads; no repository rediscovery, corpus reload, Git history analysis, conversation mining, or DB rebuild occurred.}
+  - {id: V13-03, result: PASS, evidence: Every offline evidence record has non-empty source_refs.}
+  - {id: V13-04, result: PASS, evidence: Every evidence record has provenance and an allowed classification.}
+  - {id: V13-05, result: PASS, evidence: Every derived evidence-chain step names inputs, operation, output, classification, and provenance.}
+  - {id: V13-06, result: PASS, evidence: Impact types distinguish DIRECT, TRANSITIVE, POTENTIAL, UNKNOWN, and EXCLUDED.}
+  - {id: V13-07, result: PASS, evidence: Every offline impact edge has an explicit basis and evidence; similarity alone is forbidden.}
+  - {id: V13-08, result: PASS, evidence: HUMAN_DECISION remains a distinct evidence class requiring explicit confirmation.}
+  - {id: V13-09, result: PASS, evidence: OBSERVED_EVENT, DERIVED_EVENT, and CORRELATED_EVENT are distinct.}
+  - {id: V13-10, result: PASS, evidence: The sample PRECEDES relationship retains causal_claim=UNKNOWN; causal links require independent evidence.}
+  - {id: V13-11, result: PASS, evidence: Prompt observation is bound to the Stage 13 instruction SHA-256.}
+  - {id: V13-12, result: PASS, evidence: Outcome attribution defaults to MULTI_FACTOR_OR_UNKNOWN across prompt, context, capability, provider, tools, human, repository, and task factors.}
+  - {id: V13-13, result: PASS, evidence: Both learning candidates are proposals with auto_apply=false and zero canonical changes.}
+  - {id: V13-14, result: PASS, evidence: Evaluations include baseline, candidate, positive and negative cases, counterexamples, quality, regression, cost, scope, and limitations.}
+  - {id: V13-15, result: PASS, evidence: Promotion requires evidence, evaluation, impact, scope, decision, and change-workspace gates.}
+  - {id: V13-16, result: PASS, evidence: Project candidates are not Core-eligible and require cross-project purity, portability, independent validation, and a human gate.}
+  - {id: V13-17, result: PASS, evidence: Secret bodies and secret-derived values are forbidden and zero are present in the offline dataset.}
+  - {id: V13-18, result: PASS, evidence: CON-002 remains TYPED_BLOCKED / NO_WINNER_SELECTED and event frequency cannot resolve it.}
+  - {id: V13-19, result: PASS, evidence: Four references remain KEEP_UNRESOLVED_HISTORICAL and REF-107/108 remain NOT_A_REFERENCE.}
+  - {id: V13-20, result: PASS, evidence: Quality/cost telemetry uses abstract provider-neutral fields without model names, price, or fixed token percentages.}
+  - {id: V13-21, result: PASS, evidence: False positive, false negative, ambiguous, insufficient evidence, and regression classifications are supported; two typed examples are recorded.}
+  - {id: V13-22, result: PASS, evidence: Stage 14 handoff covers risk, evidence, impact, decision, protected targets, proposals, audit, and authorization preconditions.}
+  - {id: V13-23, result: PASS, evidence: Writes are limited to the Stage 13 run and two bootstrap files; Canonical Prompt/Rule/Skill and Stage 11 DB are unchanged.}
+  - {id: V13-24, result: PASS, evidence: Stage 14 handoff exists with execution_authorized=false and stage14_started=false.}
+hard_metrics:
+  EVIDENCE_RECORD_WITHOUT_SOURCE_REF: 0
+  EVIDENCE_RECORD_WITHOUT_PROVENANCE_OR_CLASSIFICATION: 0
+  CORRELATION_PROMOTED_TO_CAUSALITY_WITHOUT_EVIDENCE: 0
+  IMPACT_EDGE_WITHOUT_BASIS: 0
+  PROMPT_OUTCOME_WITH_SINGLE_FACTOR_ATTRIBUTION_BY_DEFAULT: 0
+  LEARNING_CANDIDATE_AUTO_APPLIED: 0
+  PROJECT_SPECIFIC_LEARNING_AUTO_PROMOTED_TO_CORE: 0
+  SECRET_OR_SECRET_DERIVED_LEARNING_RECORD: 0
+  CON002_RESOLVED_BY_LEARNING_OR_EVENT_FREQUENCY: 0
+

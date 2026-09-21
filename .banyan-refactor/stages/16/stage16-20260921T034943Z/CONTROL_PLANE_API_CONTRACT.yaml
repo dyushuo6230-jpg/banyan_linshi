@@ -1,0 +1,27 @@
+schema_version: stage16-v1
+bind:
+  default_host: 127.0.0.1
+  localhost_allowed: true
+  public_bind_allowed: false
+runtime_integration:
+  class: banyan.runtime.api.RuntimeAPI
+  control_plane_policy_logic: false
+  ui_confirmation_is_authorization: false
+endpoints:
+  - {method: GET, path: /api/status, capability: READ_ONLY}
+  - {method: GET, path: /api/policy, capability: READ_ONLY}
+  - {method: GET, path: /api/project-safety, capability: READ_ONLY}
+  - {method: POST, path: /api/preflight, capability: PREFLIGHT}
+  - {method: POST, path: /api/commit/plan, capability: PLAN}
+  - {method: POST, path: /api/commit/dry-run, capability: DRY_RUN}
+  - {method: GET, path: /api/trace, capability: READ_ONLY_PAGINATED}
+  - {method: GET, path: /api/provenance/:id, capability: READ_ONLY_ON_DEMAND}
+  - {method: GET, path: /api/providers, capability: READ_ONLY}
+  - {method: GET, path: /api/stages, capability: READ_ONLY_PAGINATED}
+  - {method: GET, path: /api/activation-readiness, capability: READINESS_ONLY}
+forbidden_endpoints:
+  - current_project_git_mutation
+  - canonical_apply
+  - protected_write
+  - provider_activation
+  - dot_banyan_activation

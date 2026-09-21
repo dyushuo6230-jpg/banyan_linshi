@@ -1,0 +1,25 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+result: PASS
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+stage07:
+  seal: PASS
+  acceptance: PASS_NOLOSS_SHADOW_DESIGN_WITH_TYPED_BLOCKERS
+  design_gate: PASS_FOR_STAGE08_PRD_UI_GOVERNANCE_DESIGN_WITH_TYPED_BLOCKERS
+  real_migration_readiness: MIGRATION_BLOCKED
+git_state:
+  tracked_changes: 0
+  staged_changes: 0
+  conflicts: 0
+scope:
+  design_only: true
+  repository_rescan: false
+  prior_stage_rerun: false
+  full_design_doc_reload: false
+  canonical_mutation: false
+  stage09_execution: false
+secret_scope:
+  paths: 13
+  body_access: false
+  recovery_coverage: PARTIAL_APPROVED

@@ -1,0 +1,27 @@
+stage: "06"
+run_id: stage06-20260920T151243Z
+timestamp_utc: "2026-09-20T15:12:43Z"
+head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+git_state: {tracked_changes: 0, staged_changes: 0, conflicts: 0}
+upstream:
+  stage05_run: stage05-20260920T144623Z
+  stage05_acceptance: PASS_WORKFLOW_AND_SEMANTIC_COMMIT_POLICY_FREEZE
+  stage06_gate: PASS_FOR_STAGE06_DESIGN_WITH_INHERITED_BLOCKERS
+  stage05_seal: PASS
+  relevant_stage03_frozen_artifacts: PASS
+  stage04_mapping_provider_design: LOADED
+  con001: RESOLVED_BY_LAYERED_CONTRACT
+  con002: OPEN_OWNER_STAGE_12
+bootstrap:
+  migration_register_exists: true
+  trace_exists: true
+  canonical_writable_truth_active: false
+secrets:
+  expected: 13
+  metadata_paths_present: 13
+  bodies_read: false
+  bodies_hashed: false
+  bodies_modified: false
+  recovery_coverage: PARTIAL_APPROVED
+result: PASS
+

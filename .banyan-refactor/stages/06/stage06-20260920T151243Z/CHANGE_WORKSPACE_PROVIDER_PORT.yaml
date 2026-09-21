@@ -1,0 +1,84 @@
+schema_version: stage06-v1
+port_id: banyan.port.change_workspace.v1
+implementation_in_stage06: false
+operation_contract_requires: &required
+  - request
+  - response
+  - failure_semantics
+  - timeout_cancel_semantics
+  - evidence
+  - side_effects
+operations:
+  create_workspace:
+    contract_fields: *required
+    request: [change_id, project_instance_id, provider_binding_id, initial_status]
+    response: [provider_workspace_identity, created_artifacts, outcome]
+    failure_semantics: no partial workspace may be reported as ready
+    timeout_cancel_semantics: return TIMEOUT_OR_CANCELLED and retain partial evidence
+    evidence: [provider_identity, request_ref, result_ref, timestamp]
+    side_effects: provider_workspace_only
+  load_workspace:
+    contract_fields: *required
+    request: [change_id, provider_binding_id]
+    response: [semantic_workspace_view, provider_revision, outcome]
+    failure_semantics: missing or ambiguous identity is BLOCKED
+    timeout_cancel_semantics: caller-visible with no implicit retry
+    evidence: [resolved_identity, provider_revision, timestamp]
+    side_effects: NONE
+  list_artifacts:
+    contract_fields: *required
+    request: [workspace_identity, filters]
+    response: [typed_artifact_refs, outcome]
+    failure_semantics: untyped or unreadable artifact is explicit UNKNOWN
+    timeout_cancel_semantics: partial list marked PARTIAL
+    evidence: [query, result_count, unknowns]
+    side_effects: NONE
+  write_draft_artifact:
+    contract_fields: *required
+    request: [workspace_identity, artifact_role, content_ref, expected_revision]
+    response: [artifact_identity, new_revision, outcome]
+    failure_semantics: revision conflict blocks; canonical target writes forbidden
+    timeout_cancel_semantics: uncertain write result requires provider reconciliation
+    evidence: [before_revision, after_revision_or_unknown, content_ref]
+    side_effects: DRAFT_WORKSPACE_ONLY
+  read_artifact:
+    contract_fields: *required
+    request: [artifact_identity, expected_role]
+    response: [content_ref, role, revision, provenance, outcome]
+    failure_semantics: role or provenance mismatch is BLOCKED
+    timeout_cancel_semantics: caller-visible with no mutation
+    evidence: [artifact_identity, revision, provenance]
+    side_effects: NONE
+  resolve_provider_identity:
+    contract_fields: *required
+    request: [change_id, provider_binding_id]
+    response: [provider_change_id, provider_workspace_identity, confidence, outcome]
+    failure_semantics: zero or multiple matches are BLOCKED
+    timeout_cancel_semantics: caller-visible with no guessed identity
+    evidence: [lookup_basis, candidates, selected_or_null]
+    side_effects: NONE
+  preview_apply:
+    contract_fields: *required
+    request: [change_id, provider_revision, canonical_target_refs]
+    response: [preview_contract, outcome]
+    failure_semantics: incomplete preview cannot advance apply state
+    timeout_cancel_semantics: preview remains invalid until complete
+    evidence: [provider_revision, target_revisions, preview_ref]
+    side_effects: NONE
+  record_apply_result:
+    contract_fields: *required
+    request: [apply_id, actual_result_ref, validation_ref]
+    response: [recorded_state, outcome]
+    failure_semantics: cannot infer APPLIED from provider state alone
+    timeout_cancel_semantics: result becomes UNKNOWN_PENDING_RECONCILIATION
+    evidence: [apply_id, result_ref, validation_ref]
+    side_effects: PROVIDER_HISTORY_ONLY
+  archive_workspace:
+    contract_fields: *required
+    request: [change_id, semantic_archive_state, authorization_ref]
+    response: [archive_record, outcome]
+    failure_semantics: physical delete or move is not implied
+    timeout_cancel_semantics: retain active state until verified
+    evidence: [prior_state, requested_state, resulting_state]
+    side_effects: SEMANTIC_STATE_ONLY_BY_DEFAULT
+

@@ -1,0 +1,79 @@
+schema_version: stage18.5-v1
+run_id: stage18_5-20260921T064132Z
+overall: PASS
+validations:
+  V18_5-01:
+    result: PASS
+  V18_5-02:
+    result: PASS
+  V18_5-03:
+    result: PASS
+  V18_5-04:
+    result: PASS
+  V18_5-05:
+    result: PASS
+  V18_5-06:
+    result: PASS
+  V18_5-07:
+    result: PASS
+  V18_5-08:
+    result: PASS
+  V18_5-09:
+    result: PASS
+  V18_5-10:
+    result: PASS
+  V18_5-11:
+    result: PASS
+  V18_5-12:
+    result: PASS
+  V18_5-13:
+    result: PASS
+  V18_5-14:
+    result: PASS
+  V18_5-15:
+    result: PASS
+  V18_5-16:
+    result: PASS
+  V18_5-17:
+    result: PASS
+  V18_5-18:
+    result: PASS
+  V18_5-19:
+    result: PASS
+  V18_5-20:
+    result: PASS
+  V18_5-21:
+    result: PASS
+  V18_5-22:
+    result: PASS
+  V18_5-23:
+    result: PASS
+  V18_5-24:
+    result: PASS
+  V18_5-25:
+    result: PASS
+  V18_5-26:
+    result: PASS
+  V18_5-27:
+    result: PASS
+  V18_5-28:
+    result: PASS
+  V18_5-29:
+    result: PASS
+  V18_5-30:
+    result: PASS
+hard_metrics:
+  FEATURE_LOST_WITHOUT_TYPED_DISPOSITION: 0
+  CONTROL_PLANE_CONTRACT_BREAK_WITHOUT_ADAPTER: 0
+  SECOND_PERMISSION_ENGINE_CREATED: 0
+  GIN_HANDLER_POLICY_REIMPLEMENTATION: 0
+  UI_AUTHORIZATION_BYPASS_PATH: 0
+  CURRENT_PROJECT_GIT_MUTATION: 0
+  PILOT_DOT_BANYAN_MUTATION: 0
+  SECRET_BODY_RENDER_OR_API_PATH: 0
+  PUBLIC_BIND_DEFAULT_PATH: 0
+  RELEASE_REQUIRES_NODE_TO_SERVE_UI: 0
+  EMBEDDED_ASSET_WITHOUT_HASH_MANIFEST: 0
+  ADAPTER_COMPATIBILITY_REGRESSION: 0
+validation_count: 30
+pass_count: 30

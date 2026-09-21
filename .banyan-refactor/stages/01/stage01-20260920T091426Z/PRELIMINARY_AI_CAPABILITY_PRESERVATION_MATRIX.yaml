@@ -1,0 +1,789 @@
+schema_version: stage01-preliminary-v1
+stage_id: '01'
+scope: CANDIDATES_ONLY; no final owner or activation
+matrix:
+- capability_id: CAP-AUTH
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/AI_DOCUMENTATION_GUIDE.md
+  value_level: HIGH
+  candidate_owner_stage: '14'
+  candidate_target_capability: PERMISSION_GOVERNANCE
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 465
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/AI_DOCUMENTATION_GUIDE.md
+    line: 37
+    source_sha256: f9b9d5eeeb1a94e45ed51fc3dca8476ab9011e7351ee1c253fd6f8e6827a4e9f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/AI_DOCUMENTATION_GUIDE.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-PROFILE
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/PROJECT_VARIABLES.md
+  value_level: HIGH
+  candidate_owner_stage: '04'
+  candidate_target_capability: PROJECT_VARIABLE_MIGRATION
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How are legacy variables mapped/derived/defaulted without silently
+    enabling capabilities?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 243
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/PROJECT_VARIABLES.md
+    line: 1
+    source_sha256: b34f4826eb47b652bbcc3efd61620a64ba9795c0d06ed91a3131c340cc0364b4
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/PROJECT_VARIABLES.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-INTAKE
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: '07'
+  candidate_target_capability: SOURCE_INTAKE_COMPATIBILITY
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1047
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1088
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-PRD
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: '07'
+  candidate_target_capability: PRD_GOVERNANCE
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1112
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1132
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1198
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-IDP
+  legacy_sources:
+  - .cursor/rules/collaboration-judgment.mdc
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  value_level: HIGH
+  candidate_owner_stage: '05'
+  candidate_target_capability: INTERACTION_DECISION_ROUTING
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How to preserve informed decisions while reconciling generic HIGH=1/LOW=2
+    and project max-five override?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 496
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 222
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-ARCH
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: '05'
+  candidate_target_capability: ARCHITECTURE_PARTICIPATION_WORKFLOW
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 987
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1229
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1329
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-SCHEMA
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: '03'
+  candidate_target_capability: ARTIFACT_CONTRACT_COMPATIBILITY
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 816
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-IDREF
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/decisions/ADR-049.md
+  value_level: HIGH
+  candidate_owner_stage: '03'
+  candidate_target_capability: REFERENCE_INTEGRITY
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 903
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/decisions/ADR-049.md
+    line: 1
+    source_sha256: 0e97b29bce9d78a8d486fc01e29e052b58afefdcefdab20ed95d6d40469218bc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/decisions/ADR-049.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-TRACE
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/acceptance/TRACE_MATRIX.md
+  value_level: HIGH
+  candidate_owner_stage: '13'
+  candidate_target_capability: EVIDENCE_TRACE
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1877
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/acceptance/TRACE_MATRIX.md
+    line: 1
+    source_sha256: b20cf34f1c81fc55794f24e334761b01c9400f5b6dd30e17f77a07bdbd3df077
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/acceptance/TRACE_MATRIX.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-CHANGE
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  value_level: HIGH
+  candidate_owner_stage: '06'
+  candidate_target_capability: CANONICAL_CHANGE_APPLY
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1918
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2474
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-PARALLEL
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - docs/project/changes/变更稿模式.md
+  value_level: HIGH
+  candidate_owner_stage: '06'
+  candidate_target_capability: PARALLEL_DRAFT_PROMOTION
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2362
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2397
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2440
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/changes/变更稿模式.md
+    line: 1
+    source_sha256: b651c19c5f1a0a5f02878aaae4a07cc1ba0d9453b5e8fe1a0b4c449e007d5e7e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/changes/变更稿模式.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-RECONCILE
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  value_level: HIGH
+  candidate_owner_stage: '06'
+  candidate_target_capability: BATCH_CANONICAL_RECONCILIATION
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1949
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2099
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-TEST
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  value_level: HIGH
+  candidate_owner_stage: '14'
+  candidate_target_capability: TEST_INTEGRITY
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2028
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2018
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-PROGRESS
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/progress/PROGRESS_REGISTER.yaml
+  value_level: HIGH
+  candidate_owner_stage: '16'
+  candidate_target_capability: PROGRESS_PROJECTION
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1972
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/PROGRESS_REGISTER.yaml
+    line: 1
+    source_sha256: 68eee304166630012f81b1148ee8ed4a2c5de0b89b627847ca4f100e03f99887
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROGRESS_REGISTER.yaml
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-HANDOVER
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/progress/HANDOVER_REGISTER.md
+  value_level: HIGH
+  candidate_owner_stage: '11'
+  candidate_target_capability: OPERATIONAL_HISTORY_INDEX
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2043
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/HANDOVER_REGISTER.md
+    line: 1
+    source_sha256: c89a2aae6eacc65021b60e53b4ad1395efa111e4692994164ed6bb14d3046a4d
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/HANDOVER_REGISTER.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-CONTEXT
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - docs/project/progress/PROJECT_DASHBOARD.md
+  value_level: HIGH
+  candidate_owner_stage: '12'
+  candidate_target_capability: CONTEXT_RECOVERY
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 145
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/progress/PROJECT_DASHBOARD.md
+    line: 1
+    source_sha256: 67742b0fbf293b25f8e368f24f716f3cd7c64b9c7bd8d559cfc171a349dae81b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROJECT_DASHBOARD.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-UI_SCOPE
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: 08
+  candidate_target_capability: UI_APPLICATION_GOVERNANCE
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 980
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1005
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-UI_CONTRACT
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: 08
+  candidate_target_capability: UI_CONTRACT_COMPILATION
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 939
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1792
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-UI_GATE
+  legacy_sources:
+  - .cursor/rules/ui-spec-gate.mdc
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  value_level: HIGH
+  candidate_owner_stage: 08
+  candidate_target_capability: UI_DESIGN_IMPLEMENTATION_GATE
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: .cursor/rules/ui-spec-gate.mdc
+    line: 1
+    source_sha256: b939dfcbd0cf8d5c0335cde76c5cefe6f7aa9c73c17f05a1c4802e26bc2fb8ba
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/ui-spec-gate.mdc
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-VISUAL
+  legacy_sources:
+  - .cursor/skills/visual-repair-loop/SKILL.md
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: VISUAL_REPAIR_WORKFLOW
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: .cursor/skills/visual-repair-loop/SKILL.md
+    line: 1
+    source_sha256: df37c0559b104122f03ca27c4e82f18dc3e690328e37dad2b86105ef19be1870
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/skills/visual-repair-loop/SKILL.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+    line: 1
+    source_sha256: abb8cef06df0ff94f416b6488de0044b96d4d49649f288beb837e06e195691cb
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+    line: 1
+    source_sha256: 712e79c6e1b5a6c7000a583c128cb5dbff4e6643d7944912c384bf48b06ce696
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-PUBLISH
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - docs/project/plain-spec/白话文档生成方案.md
+  - docs/project/progress/PLAIN_SYNC.yaml
+  value_level: HIGH
+  candidate_owner_stage: '10'
+  candidate_target_capability: KNOWLEDGE_PUBLISHING
+  candidate_action: GENERALIZE
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2150
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/plain-spec/白话文档生成方案.md
+    line: 1
+    source_sha256: f0a8e76c49ed4a43fc039f8544bf23366ab7264d7dbd349929aa9c824ea62d58
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/plain-spec/白话文档生成方案.md
+  - path: docs/project/progress/PLAIN_SYNC.yaml
+    line: 1
+    source_sha256: 47cfe1363efb221c3f300463e380cc02791247322c8154cce0349f5e47df5fdc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PLAIN_SYNC.yaml
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-EDITOR
+  legacy_sources:
+  - .cursor/rules/collaboration-judgment.mdc
+  - tools/anydesign/PROJECT_INSTALL.md
+  value_level: HIGH
+  candidate_owner_stage: '15'
+  candidate_target_capability: EDITOR_ADAPTER_CONTRACT
+  candidate_action: COMPATIBILITY_READ
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  - path: tools/anydesign/PROJECT_INSTALL.md
+    line: 1
+    source_sha256: 468912b83efeb9571c20513d7783f4d6800c3481c96643ca4d296522e61a1722
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/PROJECT_INSTALL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-PORT
+  legacy_sources:
+  - .cursor/rules/port-binding.mdc
+  value_level: HIGH
+  candidate_owner_stage: '04'
+  candidate_target_capability: PROJECT_ENDPOINT_MAPPING
+  candidate_action: PROJECT_ONLY
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: .cursor/rules/port-binding.mdc
+    line: 1
+    source_sha256: 72196ba0773f26bdefe41b7b004e439cf89aa58117b70031f271ffe6c0412e0e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/port-binding.mdc
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-SQL
+  legacy_sources:
+  - docs/开发指导.md
+  value_level: HIGH
+  candidate_owner_stage: '04'
+  candidate_target_capability: PROJECT_DELIVERY_CONVENTIONS
+  candidate_action: PROJECT_ONLY
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/开发指导.md
+    line: 92
+    source_sha256: b94a43e5715a8f4153364ac28c0b4367990fc4cd779ba3a1350cf57c1e674c10
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/开发指导.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-COMMIT
+  legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - nunu-go-api/app/admin/web/.husky/commit-msg
+  - nunu-go-api/app/admin/web/commitlint.config.cjs
+  value_level: HIGH
+  candidate_owner_stage: '05'
+  candidate_target_capability: SEMANTIC_COMMIT_PRACTICE
+  candidate_action: COMPATIBILITY_READ
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 479
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: nunu-go-api/app/admin/web/.husky/commit-msg
+    line: 1
+    source_sha256: e8fa05dcf9a02aa6c36204bbb258751c16b4793967968f4721215b788c9166be
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/.husky/commit-msg
+  - path: nunu-go-api/app/admin/web/commitlint.config.cjs
+    line: 1
+    source_sha256: 2a5704436bedce02b1a20ee6046cf3ee907dab5d3733ddb21cd60bcf3f4e232c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/commitlint.config.cjs
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-MERGE
+  legacy_sources:
+  - docs/temp/SassDesign/合并代码指导.md
+  value_level: HIGH
+  candidate_owner_stage: '07'
+  candidate_target_capability: LEGACY_COLLABORATION_REFERENCE
+  candidate_action: COMPATIBILITY_READ
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: docs/temp/SassDesign/合并代码指导.md
+    line: 24
+    source_sha256: 35f753b5e4d51c001bfa0b223272f1fce8d268416c2e1ed72f083f199f6e61cc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/temp/SassDesign/合并代码指导.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-DESIGN
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/references/element-copy.md
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_ANALYSIS_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  evidence_refs:
+  - path: tools/anydesign/SKILL.md
+    line: 1
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  - path: tools/anydesign/references/element-copy.md
+    line: 1
+    source_sha256: a4e2bd81e29cbc117daeaf0b6527ead693ab77bb63020e85cd84fce39847c256
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/references/element-copy.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-CSS
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/extract_css_vars.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_CSS_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_css_vars.py
+    line: 1
+    source_sha256: 41091ff0dec0ebdc16e89b910b12b0c1df0d036321a467afed072666073cd8d2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_css_vars.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-CAPTURE
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/capture_site.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_CAPTURE_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/capture_site.py
+    line: 1
+    source_sha256: 9a41c6e1ca1ca1f8c75aab482ca4d5297295970cdcb254b31b0d3fdfb2fefa05
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/capture_site.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-COLORS
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/extract_colors.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_COLORS_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_colors.py
+    line: 1
+    source_sha256: 9de38727e2f1fd78940b7a046024f76fa5f398458458585c8b64363cd5a744f7
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_colors.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-A11Y
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/check_contrast.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_A11Y_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/check_contrast.py
+    line: 1
+    source_sha256: b8f63d6704dae7483896bd40f305564d3bd185478db5d6acb9ee20ab89f8477f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/check_contrast.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-LINT
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/lint_design_md.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_LINT_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/lint_design_md.py
+    line: 1
+    source_sha256: 3b33714dd5b8ad4226cef209cbbe210c316a19cdc922084f2241f3bb70a187e6
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/lint_design_md.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-TOKENS
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/build_tokens_json.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_TOKENS_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/build_tokens_json.py
+    line: 1
+    source_sha256: 5e96c2c85c4b994c8c3bd70284820984fa7ba21f75112a9da1032f51ea4386da
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/build_tokens_json.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-DRIFT
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/verify_design.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_DRIFT_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/verify_design.py
+    line: 1
+    source_sha256: 631c535f4bedb492f9efc47309ef54cecb443bcf0137af27a42540d459ef6d0f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/verify_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false
+- capability_id: CAP-EXPORT
+  legacy_sources:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/export_for_claude_design.py
+  value_level: HIGH
+  candidate_owner_stage: 09
+  candidate_target_capability: DESIGN_EXPORT_PROVIDER
+  candidate_action: MAP
+  confidence: HIGH
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/export_for_claude_design.py
+    line: 1
+    source_sha256: 8f2a6237c053e95f83313c4188df1875a3535dc7ab61ecba2d5a4d0a505b5ad2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/export_for_claude_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  drop_approval_status: NOT_APPLICABLE
+  execution_allowed: false

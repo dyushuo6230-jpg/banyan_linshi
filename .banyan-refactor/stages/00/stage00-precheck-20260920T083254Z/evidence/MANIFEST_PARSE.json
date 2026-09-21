@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "parsed": [
+    "DISCOVERY_SCOPE_BASELINE.yaml",
+    "BASELINE_MANIFEST.yaml",
+    "PROTECTED_PATHS_MANIFEST.yaml",
+    "CHECKPOINT_RECORD.yaml",
+    "evidence/ROLLBACK_POINT.yaml",
+    "evidence/NEXT_STAGE_HANDOFF.yaml",
+    "evidence/PRE_ACCEPTANCE_VALIDATION.yaml",
+    "../../../MIGRATION_REGISTER.bootstrap.yaml",
+    "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  ],
+  "errors": [],
+  "resolved_baseline_references": [
+    "DISCOVERY_SCOPE_BASELINE.yaml",
+    "PROTECTED_PATHS_MANIFEST.yaml",
+    "CHECKPOINT_RECORD.yaml",
+    "FILE_HASHES.sha256",
+    "../../../MIGRATION_REGISTER.bootstrap.yaml",
+    "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  ]
+}

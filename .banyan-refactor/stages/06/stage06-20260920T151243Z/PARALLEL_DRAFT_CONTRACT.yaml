@@ -1,0 +1,22 @@
+schema_version: stage06-v1
+candidate_required_fields: [draft_group_id, candidate_id, intent, evidence_refs, impact, open_questions, status]
+cardinality:
+  minimum_candidates: 1
+  multiple_candidates_supported: true
+candidate_statuses: [DRAFT, PROPOSED, IN_REVIEW, SELECTED, MERGE_PLANNED, KEPT_PARALLEL, REJECTED, BLOCKED]
+allowed_resolution: [SELECT_ONE, MERGE_WITH_PLAN, KEEP_PARALLEL, REJECT, BLOCK]
+resolution_path:
+  - compare_evidence_and_impact
+  - detect_conflicts_and_open_questions
+  - invoke_stage05_decision_gate
+  - record_explicit_resolution
+  - promote_or_preserve_candidates
+  - reconcile_relationships_and_references
+forbidden_winner_rules:
+  last_write_wins: true
+  latest_file_wins: true
+  ai_auto_winner: true
+  provider_status_wins: true
+unresolved_behavior: KEEP_PARALLEL_OR_BLOCK
+reconciliation_ref: REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml
+

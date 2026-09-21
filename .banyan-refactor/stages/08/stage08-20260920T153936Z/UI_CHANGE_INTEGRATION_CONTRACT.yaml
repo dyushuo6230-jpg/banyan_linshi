@@ -1,0 +1,23 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_CONTRACT_NOT_EXECUTED
+ui_relevant_business_change_flow:
+- CHANGE_WORKSPACE
+- IMPACT_ANALYSIS
+- STAGE05_DECISION
+- CANONICAL_PRD_APPLY
+- UI_SPEC_DRAFT_OR_REFRESH
+- REVIEW
+- APPROVAL
+prohibited_paths:
+  ui_spec_only_business_change: true
+  design_only_business_override: true
+  draft_auto_promotes: true
+  provider_workspace_is_truth: true
+impact_output:
+  affected_application_ids: REQUIRED
+  affected_ui_spec_ids: REQUIRED
+  freshness_transition: REQUIRED
+  required_evidence: REQUIRED
+canonical_apply_executed_in_stage08: false

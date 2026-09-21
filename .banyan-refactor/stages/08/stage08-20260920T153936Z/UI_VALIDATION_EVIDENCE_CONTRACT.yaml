@@ -1,0 +1,25 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_CONTRACT_NOT_EXECUTED
+required_fields:
+- validation_id
+- implementation_ref
+- application_id
+- surface_scope
+- ui_spec_version
+- design_evidence_version
+- implementation_baseline
+- validation_baseline
+- viewport
+- state
+- interaction
+- visual_result
+- behavior_result
+- exceptions
+rules:
+  validation_may_change_business_truth: false
+  exception_requires_trace: true
+  partial_validation_may_claim_full_coverage: false
+  unknown_result: BLOCKED_OR_EXPLICIT_UNKNOWN
+visual_runtime_executed_in_stage08: false

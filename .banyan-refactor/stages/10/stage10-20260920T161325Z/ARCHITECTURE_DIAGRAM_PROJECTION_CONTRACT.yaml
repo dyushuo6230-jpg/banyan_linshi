@@ -1,0 +1,13 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_CONTRACT_NOT_INSTANTIATED
+diagram_roles: [CANONICAL_ARCHITECTURE_DIAGRAM, DERIVED_EXPLANATION_DIAGRAM, MEETING_PROJECTION_DIAGRAM]
+required_fields: [diagram_id, source_role, derived_from, version, freshness, coverage, provenance]
+rules:
+  derived_diagram_may_change_architecture_fact: false
+  meeting_diagram_is_canonical: false
+  ambiguous_role: BLOCKED
+  rendered_png_or_drawio_inherits_source_role: true
+  physical_format_does_not_define_authority: true
+diagrams: []

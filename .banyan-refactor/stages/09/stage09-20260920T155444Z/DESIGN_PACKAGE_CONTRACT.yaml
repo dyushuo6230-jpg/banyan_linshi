@@ -1,0 +1,13 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_LOGICAL_PACKAGE_NOT_EXPORTED
+logical_layers: [source, scene, semantic, design, behavior, data, implementation_ir, validation]
+required_metadata: [package_id, package_version, application_scope, source_refs, provenance, contract_versions, known_unknowns, conflicts]
+rules:
+  physical_directory_layout_mandatory: false
+  legacy_numbered_directories_are_projection: true
+  package_is_approved_ui_spec: false
+  package_is_frontend_implementation: false
+  export_requires_provider_port: true
+package_exported_in_stage09: false

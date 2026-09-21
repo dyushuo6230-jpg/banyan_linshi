@@ -1,0 +1,55 @@
+schema_version: stage12-v1
+run_id: stage12-20260921T014521Z
+shadow_db: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+access_mode: READ_ONLY
+query_surface: .banyan-refactor/stages/11/stage11-20260921T011037Z/STAGE12_QUERY_SURFACE.yaml
+queries:
+  - id: Q12-01
+    surface: index_metadata
+    result: SHADOW_REBUILDABLE_NOT_CANONICAL_NOT_FINAL_RUNTIME
+  - id: Q12-02
+    surface: subject_state_history
+    subject: CON-002
+    result: OPEN_WITHOUT_RESOLUTION_EVENT
+  - id: Q12-03
+    surface: decision_evidence
+    subject: CON-002
+    result: NO_APPROVED_DECISION_FOUND
+  - id: Q12-04
+    surface: entity_freshness
+    subjects: [ASSET-ab6ff0ccef6c4f, ASSET-b6851c3fc34037, ASSET-ecba0624d98758, ASSET-50cc39b8050a79]
+    result: ALL_VERSION_AND_FRESHNESS_UNKNOWN
+  - id: Q12-05
+    surface: source_role_and_authority
+    result: TWO_PRIMARY_CANONICAL_AND_TWO_EVIDENTIARY_LOW_OPERATIONAL
+  - id: Q12-06
+    surface: unresolved_references
+    result: FOUR_NULL_TARGETS_OWNER_STAGE12
+  - id: Q12-07
+    surface: reference_neighborhood
+    result: REF-107_AND_REF-108_NOT_A_REFERENCE
+  - id: Q12-08
+    surface: current_progress
+    result: NO_VERIFIED_CURRENT_STATUS_RECORD; HISTORICAL_AND_WORK_LOG_RECORDS_ONLY
+  - id: Q12-09
+    surface: latest_handover_with_as_of
+    result: FOUR_HANDOVERS_WITH_AS_OF_AND_FRESHNESS_UNKNOWN
+targeted_reads:
+  - purpose: CON002_EXACT_EVIDENCE_CHAIN
+    refs:
+      - .banyan-refactor/stages/01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#CON-002
+      - .banyan-refactor/stages/02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#CON-002
+      - .banyan-refactor/stages/03/stage03-20260920T135702Z/CONFLICT_CARRYOVER_REGISTER.yaml#CON-002
+      - .banyan-refactor/stages/04/stage04-20260920T142517Z/VARIABLE_RESOLUTION_SCHEMA.yaml#project_endpoints
+      - .banyan-refactor/stages/05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml#CON-002
+    stop_reason: SUFFICIENT_TO_TYPE_BLOCKER
+  - purpose: HISTORICAL_REFERENCE_EXACT_LOCATOR
+    refs:
+      - nunu-go-api/app/admin/web/CONTRIBUTING.md
+      - nunu-go-api/app/admin/web/CHANGELOG.en.md
+    current_tree_result: BOTH_ABSENT
+    exact_git_path_history_result: NO_RECORDS
+    full_history_analysis: false
+    stop_reason: SUFFICIENT_TO_KEEP_UNRESOLVED
+secret_body_reads: 0
+

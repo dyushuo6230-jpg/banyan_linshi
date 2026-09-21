@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "manifest": "ARTIFACT_HASHES.sha256",
+  "manifest_sha256": "a80ce60f7ea459a99b63fe01d0093dbfe9bf564bed0bb0f3f7d1e261cd69796e",
+  "verified_entries": 30,
+  "receipt_excluded_from_manifest": true,
+  "stage02_status": "COMPLETED",
+  "stage03_started": false
+}

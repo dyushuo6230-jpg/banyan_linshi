@@ -1,0 +1,15 @@
+schema_version: stage17-v1
+pilot_id: banyan-project-instance-pilot-stage17
+mode: PILOT_SHADOW
+status: SHADOW_VALIDATED
+final_activation: false
+canonical_truth: false
+existing_project_layout: PRESERVE_IN_PLACE
+docs_project_migration: NOT_PERFORMED
+legacy_deletion: NOT_PERFORMED
+git_mutation: NOT_AUTHORIZED
+authorization_ref: USER-STAGE17-PILOT-REQUEST
+checkpoint_ref: .banyan-refactor/stages/17/stage17-20260921T055911Z/CHECKPOINT.yaml
+runtime_policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+unknown_resolution: PRESERVE_UNKNOWN

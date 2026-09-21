@@ -1,0 +1,68 @@
+{
+  "result": "PASS",
+  "verified_at": "2026-09-20T08:49:52.386868+00:00",
+  "method": "Read archive members without extraction; verify path set, regular type and SHA-256 against baseline",
+  "backups": {
+    "untracked": {
+      "required": true,
+      "path": "checkpoint/untracked.tar",
+      "sha256": "d321195de0a4ab9b82157fd439c16fbb8dbe3b6c4ccf04ac2e7dc7363a680aa8",
+      "relative_paths_preserved": true,
+      "file_count": 21,
+      "validation": "PASS",
+      "members": [
+        "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+        "榕树ai改造落地相关文档/00_总纲与审计/AUDIT/榕树AI_v1.9冻结一致性审计报告_结论v1.9.1.md",
+        "榕树ai改造落地相关文档/00_总纲与审计/AUDIT/榕树AI冻结一致性审计提示词_v1.0.md",
+        "榕树ai改造落地相关文档/00_总纲与审计/CURRENT/榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.9.1.md",
+        "榕树ai改造落地相关文档/00_总纲与审计/CURRENT/榕树AI改造阶段文档生成清单_v1.9.1.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-A_Repository_Baseline与Protected_Paths.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-B_Snapshot_Hash_Checkpoint与Rollback.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00_改造安全基线与仓库保护.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/ACCEPTANCE_REPORT.template.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/EXECUTION_RUNBOOK.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/PACK_SHA256SUMS.txt",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/PRECHECK_AND_SCOPE.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/STAGE_MANIFEST.yaml",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/STAGE_PLAN.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/VALIDATION_AND_ROLLBACK.md",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/BANYAN_REFACTOR_TRACE.bootstrap.template.yaml",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/BASELINE_MANIFEST.template.yaml",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/CHECKPOINT_RECORD.template.yaml",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/DISCOVERY_SCOPE_BASELINE.template.yaml",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/MIGRATION_REGISTER.bootstrap.template.yaml",
+        "榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/PROTECTED_PATHS_MANIFEST.template.yaml"
+      ]
+    },
+    "ignored-governed": {
+      "required": true,
+      "path": "checkpoint/ignored-governed.tar",
+      "sha256": "0e4aa8b0838762192f7a2969b2d357d9d6f88024c2d8a4c91aad5a803354aada",
+      "relative_paths_preserved": true,
+      "file_count": 17,
+      "validation": "PASS",
+      "members": [
+        "docs/开发指导.md",
+        "docs/项目迭代开发文档指导v2.md",
+        "nunu-go-api/storage/uploads/nearby/banner-invite.png",
+        "nunu-go-api/storage/uploads/nearby/banner-local.png",
+        "nunu-go-api/storage/uploads/nearby/banner-shops.png",
+        "nunu-go-api/storage/uploads/nearby/cps-chongdian.png",
+        "nunu-go-api/storage/uploads/nearby/cps-dache.png",
+        "nunu-go-api/storage/uploads/nearby/cps-diandan.png",
+        "nunu-go-api/storage/uploads/nearby/cps-dianying.png",
+        "nunu-go-api/storage/uploads/nearby/cps-jiazheng.png",
+        "nunu-go-api/storage/uploads/nearby/cps-jiudian.png",
+        "nunu-go-api/storage/uploads/nearby/cps-maicai.png",
+        "nunu-go-api/storage/uploads/nearby/cps-more.png",
+        "nunu-go-api/storage/uploads/nearby/cps-waimai.png",
+        "nunu-go-api/storage/uploads/nearby/cps-xiche.png",
+        "nunu-go-api/storage/uploads/nearby/cps-xiyi.png",
+        "nunu-go-api/storage/uploads/nearby/cps-yanchu.png"
+      ]
+    }
+  },
+  "tracked_patches_required": false,
+  "tracked_binary_changes": 0,
+  "secret_contents_copied": false
+}

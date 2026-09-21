@@ -1,0 +1,33 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+overall: PASS
+validations:
+- {id: V08-01, result: PASS, evidence: Stage 07 seal passed and all typed blockers remain open with their owners.}
+- {id: V08-02, result: PASS, evidence: Indexed inputs and targeted legacy paragraphs only; no rediscovery.}
+- {id: V08-03, result: PASS, evidence: PRD authority explicitly owns product and business truth.}
+- {id: V08-04, result: PASS, evidence: UI_SPEC is an approved UI projection and all second-business-truth paths are forbidden.}
+- {id: V08-05, result: PASS, evidence: application_id and explicit surface/shared scope are mandatory.}
+- {id: V08-06, result: PASS, evidence: Enablement requires DISABLED, ENABLED, or PARTIAL; missing state blocks.}
+- {id: V08-07, result: PASS, evidence: PARTIAL requires explicit surfaces and cannot claim application-wide readiness.}
+- {id: V08-08, result: PASS, evidence: Design sources have EVIDENCE_ONLY authority with provenance.}
+- {id: V08-09, result: PASS, evidence: Unsupported static-design behavior remains UNKNOWN and cannot be promoted.}
+- {id: V08-10, result: PASS, evidence: Nine lifecycle states and guarded transitions are frozen.}
+- {id: V08-11, result: PASS, evidence: Approval requires scope, enablement, PRD/design trace, conflict check, and applicable Stage 05 gates.}
+- {id: V08-12, result: PASS, evidence: Approved UI_SPEC requires a non-empty PRD trace.}
+- {id: V08-13, result: PASS, evidence: Approved UI_SPEC requires non-empty design evidence references.}
+- {id: V08-14, result: PASS, evidence: PRD, UI_SPEC, evidence, implementation, and validation versions are tracked independently.}
+- {id: V08-15, result: PASS, evidence: PRD-relevant changes force STALE or REVIEW_REQUIRED; CON-002 remains owner of the global algorithm.}
+- {id: V08-16, result: PASS, evidence: UI business changes consume Change Workspace, decision, canonical apply, refresh, review, and approval.}
+- {id: V08-17, result: PASS, evidence: READY requires approval evidence; partial approval is surface-limited.}
+- {id: V08-18, result: PASS, evidence: Seven required v3.1 UI governance semantics have explicit generic and compatibility mappings.}
+- {id: V08-19, result: PASS, evidence: Writes are limited to the Stage 08 run and two bootstrap files; no canonical or legacy mutation.}
+- {id: V08-20, result: PASS, evidence: Stage 09 handoff exists with execution_authorized=false and Stage 09 is not started.}
+hard_metrics:
+  UI_SPEC_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+  UI_SPEC_WITHOUT_APPLICATION_SCOPE: 0
+  UI_SPEC_WITHOUT_EXPLICIT_ENABLEMENT_STATE: 0
+  APPROVED_UI_SPEC_WITHOUT_PRD_TRACE: 0
+  APPROVED_UI_SPEC_WITHOUT_DESIGN_EVIDENCE: 0
+  IMPLEMENTATION_READY_WITHOUT_APPROVAL_GATE: 0
+  PRD_RELEVANT_CHANGE_WITHOUT_UI_FRESHNESS_EFFECT: 0

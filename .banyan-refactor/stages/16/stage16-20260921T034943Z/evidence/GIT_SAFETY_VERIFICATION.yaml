@@ -1,0 +1,22 @@
+schema_version: stage16-v1
+current_project:
+  precheck:
+    head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+    staged_count: 0
+    dot_banyan_exists: false
+  exit:
+    head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+    staged_count: 0
+    dot_banyan_exists: false
+  head_unchanged: true
+  index_unchanged: true
+  staged_count_unchanged: true
+  git_mutations: 0
+  execution_mode: READ_ONLY_PREFLIGHT_PLAN_DRY_RUN
+control_plane:
+  mutation_endpoints: 0
+  canonical_apply_paths: 0
+  protected_write_paths: 0
+  dot_banyan_activation_paths: 0

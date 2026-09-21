@@ -1,0 +1,68 @@
+schema_version: stage17-v1
+run_id: stage17-20260921T055911Z
+activation:
+  mode: PILOT
+  activation_class: PROJECT_INSTANCE_SHADOW_PILOT
+  dot_banyan_created: true
+  activated: true
+  pilot_success: true
+  final_activation: false
+  formal_migration_complete: false
+  canonical_replacement: false
+  checkpoint: CHECKPOINT.yaml
+  validation: evidence/PILOT_VALIDATION.yaml
+  rollback_validation: evidence/ROLLBACK_VALIDATION.yaml
+  rollback_ready: true
+created_content:
+  root: .banyan
+  directories:
+    - instance
+    - mappings
+    - overlays
+    - profiles
+    - providers
+    - runtime
+    - trace
+    - index
+    - generated
+    - migrations
+  files:
+    - PILOT_NOTICE.md
+    - pilot.yaml
+    - instance/project-instance.yaml
+    - mappings/source-mappings.yaml
+    - overlays/bindings.yaml
+    - profiles/project.yaml
+    - profiles/contributor.yaml
+    - providers/bindings.yaml
+    - runtime/status.yaml
+    - trace/audit.jsonl
+    - index/manifest.yaml
+    - generated/README.md
+    - migrations/rollback.yaml
+runtime_chain:
+  order: [Cursor Adapter, Control Plane, Runtime API, Permission Policy, Evidence Trace]
+  policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+  preflight_result: ALLOW
+  preflight_executed: false
+  runtime_limit_preserved: CURRENT_PROJECT_DRY_RUN_ONLY
+  pilot_scope_authorized: true
+  pilot_allowed_glob: .banyan/**
+  general_project_write_allowed: false
+  final_activation_allowed: false
+  explicit_gate_authorization: USER-STAGE17-PILOT-REQUEST
+safety:
+  existing_project_layout: PRESERVE_IN_PLACE
+  docs_project_moved: false
+  legacy_deleted: false
+  canonical_overwritten: false
+  git_mutation: false
+  git_identity_modified: false
+  secret_body_read: false
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  unknown_auto_filled: false
+activation_review:
+  result: PASS_PILOT_ONLY
+  pilot_may_remain_installed: true
+  production_or_final_activation_authorized: false
+  stage18_execution_authorized: false

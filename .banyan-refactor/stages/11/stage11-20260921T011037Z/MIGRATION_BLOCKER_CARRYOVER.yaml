@@ -1,0 +1,16 @@
+schema_version: stage11-v1
+blockers:
+  - id: CON-002
+    status: OPEN
+    owner_stage: '12'
+    resolution_in_stage11: false
+  - id: HISTORICAL-MISSING-REFERENCES
+    status: OPEN
+    count: 4
+    representation: UNRESOLVED_REFERENCE
+    owner_stage: '12'
+  - id: R03-INHERITED
+    status: OPEN
+    members: [R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, R03-LOCAL]
+stage12_execution_authorized: false
+

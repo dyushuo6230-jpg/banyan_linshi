@@ -1,0 +1,15 @@
+schema_version: stage17-v1
+state: PILOT_CONNECTED
+chain:
+  - Cursor Adapter
+  - Control Plane
+  - Runtime API
+  - Permission Policy
+  - Evidence Trace
+runtime_version: 0.1.0
+policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+current_project_git_execution: DRY_RUN_ONLY
+pilot_metadata_write_scope: .banyan/**
+canonical_write: BLOCKED
+protected_business_write: BLOCKED
+trace_grants_authorization: false

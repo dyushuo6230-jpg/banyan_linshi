@@ -1,0 +1,19 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+mode: DESIGN_INTELLIGENCE_LOW_TOKEN
+repository_rediscovery: false
+full_design_corpus_reload: false
+full_image_analysis: false
+stage08_redesign: false
+prior_stage_rerun: false
+inputs:
+- Stage 08 to Stage 09 Gate Review
+- Stage 09 Low Token Input Index and execution pack
+- Seven indexed Stage 08 UI governance contracts and handoff
+- Targeted Stage 03 provider ports and version/status/provenance rules
+- Stage 04 inactive provider bindings, overlay bindings, and variable resolution
+- Nine targeted Legacy design capability records
+design_assets_opened_or_analyzed: 0
+evidence_on_demand_triggers_fired: []
+sensitive_body_access: false

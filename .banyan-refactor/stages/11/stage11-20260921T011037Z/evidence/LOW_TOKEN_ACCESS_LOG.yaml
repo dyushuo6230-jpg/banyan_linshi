@@ -1,0 +1,13 @@
+schema_version: stage11-v1
+mode: STRUCTURED_INPUT_FIRST_LOW_TOKEN
+repository_rescan: false
+git_full_history_reanalysis: false
+prior_stage_body_reload: false
+inputs:
+  structured_registries_and_matrices: true
+  stage_handoffs_and_bootstraps: true
+  targeted_contracts: true
+  secret_metadata_only: true
+  secret_bodies_or_hashes: false
+body_inputs_loaded: 0
+

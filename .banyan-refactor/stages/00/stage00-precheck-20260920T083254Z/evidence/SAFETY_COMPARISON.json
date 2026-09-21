@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-20T08:53:36.177491+00:00",
+  "hashed_files_rechecked": 5835,
+  "secret_metadata_rechecked": 69,
+  "secret_content_integrity_claimed": false,
+  "secret_assurance": "Stage performed no writes; lstat metadata unchanged. No claim of content-hash verification for secrets.",
+  "mismatched_paths": [],
+  "outside_control_git_status_identical": true,
+  "head_unchanged": true,
+  "index_entries_unchanged": true,
+  "ignored_membership_unchanged": true,
+  "git_identity_unchanged": true,
+  "git_config_file_metadata_unchanged": true,
+  "git_operations": {
+    "MERGE_HEAD": false,
+    "CHERRY_PICK_HEAD": false,
+    "REVERT_HEAD": false,
+    "rebase-merge": false,
+    "rebase-apply": false,
+    "sequencer": false
+  },
+  "unmerged_empty": true,
+  "canonical_banyan_absent": true,
+  "control_was_absent_before_this_stage": true,
+  "only_expected_new_paths": true,
+  "result": "PASS"
+}

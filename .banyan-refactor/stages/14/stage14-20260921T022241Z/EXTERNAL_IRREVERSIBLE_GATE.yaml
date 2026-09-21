@@ -1,0 +1,7 @@
+schema_version: stage14-v1
+required: [external_target_identity, effect_scope, irreversibility, impact_review, L3_or_L4_decision, explicit_human_confirmation, target_bound_authorization, audit_event, rollback_or_nonrollback_disclosure]
+unknown_external_target: BLOCK
+missing_confirmation: NEEDS_INPUT
+missing_authorization_or_impact: BLOCK
+stage14_executes_external_action: false
+

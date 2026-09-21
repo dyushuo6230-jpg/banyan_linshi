@@ -1,0 +1,19 @@
+schema_version: stage05-v1
+coverage:
+  high_value_capability_workflow_impacts: 35/35
+  decision_levels_complete: 5/5
+  decision_levels_with_escalation: 5/5
+  semantic_commit_classes_with_disposition: 5/5
+  editor_clients_using_single_policy: 4/4
+  secret_metadata_paths_preserved: 13/13
+con001: RESOLVED_BY_LAYERED_CONTRACT
+con002: INHERITED_OPEN_OWNER_STAGE_12
+hard_metrics:
+  UNACCOUNTED_HIGH_VALUE_CAPABILITY_WORKFLOW_IMPACT: 0
+  DECISION_LEVEL_WITHOUT_ESCALATION_RULE: 0
+  HUMAN_CONFIRMATION_BYPASS_PATH: 0
+  SEMANTIC_COMMIT_CLASS_WITHOUT_DISPOSITION: 0
+  COMMIT_POLICY_WITHOUT_IDENTITY_PRECHECK: 0
+  EDITOR_SPECIFIC_COMMIT_POLICY_BRANCH: 0
+  SECRET_RISK_AUTO_COMMIT_PATH: 0
+qualification: POLICY_FROZEN_EXECUTION_NOT_IMPLEMENTED

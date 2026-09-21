@@ -1,0 +1,29 @@
+=== FRONTEND RC CLEAN INSTALL ===
+
+added 211 packages, and audited 212 packages in 27s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+=== FRONTEND RC BUILD 1 ===
+
+> banyan-control-plane-web@0.1.0 build
+> tsc -b && vite build && node scripts/write-asset-manifest.mjs
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 9893 modules transformed.
+rendering chunks...
+computing gzip size...
+../control-plane-go/internal/webassets/dist/index.html                     0.37 kB │ gzip:   0.27 kB
+../control-plane-go/internal/webassets/dist/assets/index-CfaHOHW_.css      0.44 kB │ gzip:   0.29 kB
+../control-plane-go/internal/webassets/dist/assets/index--atBYdsd.js   1,196.56 kB │ gzip: 378.34 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 42.79s
+=== NPM AUDIT ===
+found 0 vulnerabilities

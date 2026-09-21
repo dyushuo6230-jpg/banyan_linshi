@@ -1,0 +1,209 @@
+stage: '03'
+run_id: stage03-20260920T135702Z
+overall: PASS
+passed: 20
+failed: 0
+results:
+- validation_id: V03-01
+  result: PASS
+  assertions:
+    stage02_seal_30: true
+    stage03_pack_verified: true
+    handoff_run_matches: true
+  evidence:
+  - evidence/PRECHECK.json
+  note: Upstream Handoff, fixed Stage 02 run, seal and Stage 03 Pack verified before writes.
+- validation_id: V03-02
+  result: PASS
+  assertions:
+    repository_rescan_false: true
+    stage01_rerun_false: true
+    stage02_rerun_false: true
+    legacy_body_reads_zero: true
+  evidence:
+  - evidence/LOW_TOKEN_ACCESS_LOG.json
+  note: Contract-first evidence-on-demand mode used; no rediscovery.
+- validation_id: V03-03
+  result: PASS
+  assertions:
+    accounted_35: true
+    status_sum_35: true
+    silent_drop_zero: true
+  evidence:
+  - CAPABILITY_CONTRACT_REGISTRY.yaml
+  - CONTRACT_COVERAGE_REPORT.yaml
+  note: All high-value capabilities have one explicit contract disposition.
+- validation_id: V03-04
+  result: PASS
+  assertions:
+    required_fields_present: true
+    schema_frozen: true
+  evidence:
+  - CANONICAL_CONTRACT_SCHEMA.yaml
+  - CAPABILITY_CONTRACT_REGISTRY.yaml
+  note: Canonical contract shape is complete and frozen.
+- validation_id: V03-05
+  result: PASS
+  assertions:
+    all_failure_semantics: true
+    metric_zero: true
+  evidence:
+  - CAPABILITY_CONTRACT_REGISTRY.yaml
+  - CONTRACT_COVERAGE_REPORT.yaml
+  note: Every contract exposes caller-visible failure semantics.
+- validation_id: V03-06
+  result: PASS
+  assertions:
+    no_known_project_literal: true
+    purity_policy_false: true
+    metric_zero: true
+  evidence:
+  - CANONICAL_CONTRACT_SCHEMA.yaml
+  - CONTRACT_COVERAGE_REPORT.yaml
+  note: Generic Core schema contains no current-project path/name/port binding.
+- validation_id: V03-07
+  result: PASS
+  assertions:
+    role_count_9: true
+    all_authority_fields: true
+    metric_zero: true
+  evidence:
+  - SOURCE_ROLE_SCHEMA.yaml
+  - SOURCE_ROLE_REGISTRY.yaml
+  note: Every observed Stage 02 source role has authority, freshness and conflict rules.
+- validation_id: V03-08
+  result: PASS
+  assertions:
+    artifact_fields_complete: true
+    identity_stable: true
+  evidence:
+  - ARTIFACT_REGISTRY_SCHEMA.yaml
+  note: Artifact identity/version/status/provenance/reference fields are frozen.
+- validation_id: V03-09
+  result: PASS
+  assertions:
+    referenced_delete_forbidden: true
+    id_reuse_forbidden: true
+    supersession_complete: true
+  evidence:
+  - REFERENCE_INTEGRITY_CONTRACT.yaml
+  note: Deletion and supersession require reference migration and lineage.
+- validation_id: V03-10
+  result: PASS
+  assertions:
+    ports_35: true
+    no_binding: true
+    no_vendor_selected: true
+    no_model_selected: true
+  evidence:
+  - PROVIDER_PORT_SCHEMA.yaml
+  note: Provider ports are generic and unbound.
+- validation_id: V03-11
+  result: PASS
+  assertions:
+    overlay_bindings_35: true
+    core_safety_not_weakened: true
+    secret_body_forbidden: true
+  evidence:
+  - PROJECT_OVERLAY_SCHEMA.yaml
+  note: Project-specific values are externalized through controlled overlay bindings.
+- validation_id: V03-12
+  result: PASS
+  assertions:
+    four_version_kinds: true
+    status_domains: true
+    explicit_transition: true
+  evidence:
+  - VERSION_STATUS_PROVENANCE_RULES.yaml
+  note: Version and status domains and transitions are controlled.
+- validation_id: V03-13
+  result: PASS
+  assertions:
+    unknown_explicit: true
+    inference_marked: true
+    fabrication_forbidden: true
+  evidence:
+  - VERSION_STATUS_PROVENANCE_RULES.yaml
+  note: Unknown provenance remains explicit and is never fabricated.
+- validation_id: V03-14
+  result: PASS
+  assertions:
+    con001_open: true
+    con002_open: true
+    both_activation_blockers: true
+    winner_zero: true
+    unowned_collision_zero: true
+  evidence:
+  - CONFLICT_CARRYOVER_REGISTER.yaml
+  - evidence/SCHEMA_COLLISION_ANALYSIS.json
+  note: Conflicts and typed collisions are represented without selecting a winner.
+- validation_id: V03-15
+  result: PASS
+  assertions:
+    single_bootstrap_pair: true
+    canonical_inactive: true
+    dual_write_forbidden: true
+    lineage_requirements: true
+  evidence:
+  - BOOTSTRAP_CANONICAL_STATE_CONTRACT.yaml
+  - checkpoint/*.snapshot.yaml
+  note: Bootstrap-to-canonical transition is frozen without activating a second writable truth.
+- validation_id: V03-16
+  result: PASS
+  assertions:
+    preserve_in_place: true
+    banyan_design_only: true
+    explicit_migration_only: true
+    layout_change_false: true
+  evidence:
+  - EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT.yaml
+  note: Existing project layout remains in place.
+- validation_id: V03-17
+  result: PASS
+  assertions:
+    interface_frozen: true
+    provider_model_unfrozen: true
+    threshold_unfrozen: true
+    price_unfrozen: true
+    token_percentage_unfrozen: true
+  evidence:
+  - AI_RUNTIME_GOVERNANCE_CONTRACT.yaml
+  note: Runtime cost interface and capability classes are frozen without vendor, price or numeric threshold.
+- validation_id: V03-18
+  result: PASS
+  assertions:
+    secret_count_13: true
+    all_preserved: true
+    content_not_read: true
+    content_not_hashed: true
+    content_not_copied: true
+  evidence:
+  - evidence/PRECHECK.json
+  note: Exact 13 protected paths were checked by metadata only and remain untouched.
+- validation_id: V03-19
+  result: PASS
+  assertions:
+    head_unchanged: true
+    tracked_diff_empty: true
+    staged_diff_empty: true
+    conflicts_empty: true
+    identity_unchanged: true
+    forbidden_layouts_absent: true
+  evidence:
+  - evidence/PRECHECK.json
+  - evidence/POST_STAGE_GIT_STATUS.txt
+  note: Writes remain limited to Stage 03 evidence plus the bootstrap pair; Git identity and layout are unchanged.
+- validation_id: V03-20
+  result: PASS
+  assertions:
+    register_stage03_complete: true
+    prior_register_stages_preserved: true
+    trace_prior_preserved: true
+    trace_stage03_six: true
+    handoff_exists: true
+    stage04_unauthorized: true
+  evidence:
+  - ../../../MIGRATION_REGISTER.bootstrap.yaml
+  - ../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  - evidence/NEXT_STAGE_HANDOFF.yaml
+  note: Register/Trace, Acceptance/Handoff contract and stop boundary are complete; Stage 04 was not started.

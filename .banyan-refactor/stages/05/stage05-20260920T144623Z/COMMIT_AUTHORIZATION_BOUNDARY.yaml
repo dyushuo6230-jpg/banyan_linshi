@@ -1,0 +1,30 @@
+schema_version: stage05-v1
+stage05_scope_end: AUTHORIZATION_GATE_POLICY
+execution_in_stage05: false
+plan_may_be_produced_when:
+  - classification_complete
+  - grouping_complete
+  - group_validation_declared
+  - identity_precheck_passed_or_typed_blocked
+execution_requires_future_stage:
+  - explicit_execution_authorization
+  - revalidated_worktree_and_group_plan
+  - available_git_identity
+  - no_secret_risk
+  - executor_safety_contract
+forbidden_in_stage05:
+  - git_add
+  - git_commit
+  - git_reset
+  - git_stash
+  - git_rebase
+  - git_push
+  - git_identity_mutation
+  - author_override
+authorization_is_not_implied_by:
+  - plan_creation
+  - clean_validation
+  - contributor_profile
+  - editor_choice
+  - prior_historical_commit
+

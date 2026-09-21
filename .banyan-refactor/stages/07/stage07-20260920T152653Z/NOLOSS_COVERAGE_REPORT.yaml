@@ -1,0 +1,42 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+status: PASS_NOLOSS_SHADOW_DESIGN_WITH_TYPED_BLOCKERS
+coverage:
+  high_value_capabilities:
+    expected: 35
+    accounted: 35
+  legacy_assets:
+    expected: 1026
+    accounted: 1026
+  canonical_artifacts:
+    expected: 330
+    accounted: 330
+  derived_artifacts:
+    expected: 95
+    accounted: 95
+  operational_artifacts:
+    expected: 289
+    accounted: 289
+  reference_edges:
+    expected: 108
+    accounted: 108
+    blocked: 4
+    non_reference_false_positives: 2
+hard_metrics:
+  UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+  UNMAPPED_CANONICAL_ARTIFACT: 0
+  UNMAPPED_OPERATIONAL_ARTIFACT: 0
+  REFERENCE_EDGE_WITHOUT_MIGRATION_STRATEGY: 0
+  LEGACY_ASSET_WITHOUT_DISPOSITION: 0
+  UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+  LEGACY_DELETE_OR_RETIRE_WITHOUT_AUTHORIZATION: 0
+  CANONICAL_APPLY_EXECUTED_IN_STAGE07: 0
+real_apply_readiness: MIGRATION_BLOCKED
+real_apply_blockers:
+- CON-002
+- 4 missing historical document targets
+- inherited Stage 03 risks
+openspec: NOT_OBSERVED_DESIGN_ONLY
+activation: 'OFF'

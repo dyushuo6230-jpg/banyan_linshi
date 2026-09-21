@@ -1,0 +1,955 @@
+schema_version: stage03-v1
+schema_status: FROZEN
+port_count: 35
+ports:
+- port_id: banyan.port.action_authorization.v1
+  capability_id: CAP-AUTH
+  contract_id: banyan.contract.action_authorization.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺授权停止目标动作，保留诊断
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.variable_resolution.v1
+  capability_id: CAP-PROFILE
+  contract_id: banyan.contract.variable_resolution.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 未知保持 TBD
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.source_intake.v1
+  capability_id: CAP-INTAKE
+  contract_id: banyan.contract.source_intake.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - P0/P1 阻塞后继必经阶段
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.requirement_lifecycle.v1
+  capability_id: CAP-PRD
+  contract_id: banyan.contract.requirement_lifecycle.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 阻塞项保留，不伪升状态
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.decision_session.v1
+  capability_id: CAP-IDP
+  contract_id: banyan.contract.decision_session.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 出现新权衡回评审；未确认保持 TBD
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.design_gate.v1
+  capability_id: CAP-ARCH
+  contract_id: banyan.contract.design_gate.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺决策停止对应生成
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.artifact_status_and_identity.v1
+  capability_id: CAP-SCHEMA
+  contract_id: banyan.contract.artifact_status_and_identity.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 状态证据不足保持原态
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.reference_integrity.v1
+  capability_id: CAP-IDREF
+  contract_id: banyan.contract.reference_integrity.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 引用含混阻塞自动改写
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.evidence_trace.v1
+  capability_id: CAP-TRACE
+  contract_id: banyan.contract.evidence_trace.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺边登记开放项
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.change_application.v1
+  capability_id: CAP-CHANGE
+  contract_id: banyan.contract.change_application.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 冲突未确认不 APPLY
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.draft_promotion.v1
+  capability_id: CAP-PARALLEL
+  contract_id: banyan.contract.draft_promotion.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 冲突/未确认保留袋；不创建第四条变更管道
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.batch_reconciliation.v1
+  capability_id: CAP-RECONCILE
+  contract_id: banyan.contract.batch_reconciliation.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 未确认差异保留待决
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.test_integrity.v1
+  capability_id: CAP-TEST
+  contract_id: banyan.contract.test_integrity.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 无拆桩/保留证据不得声明通过
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.progress_projection.v1
+  capability_id: CAP-PROGRESS
+  contract_id: banyan.contract.progress_projection.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 不能把建文件/合并当验收
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.operational_handover.v1
+  capability_id: CAP-HANDOVER
+  contract_id: banyan.contract.operational_handover.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 接管验证失败保持阻塞
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.context_recovery.v1
+  capability_id: CAP-CONTEXT
+  contract_id: banyan.contract.context_recovery.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 信息不一致说明并停在对应门禁
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.uiapplication_scope.v1
+  capability_id: CAP-UI_SCOPE
+  contract_id: banyan.contract.uiapplication_scope.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 未批准 UI 不作为约束
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.effective_uicontract.v1
+  capability_id: CAP-UI_CONTRACT
+  contract_id: banyan.contract.effective_uicontract.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 冲突进入 UI-DEC/CR
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.uiapproval_gate.v1
+  capability_id: CAP-UI_GATE
+  contract_id: banyan.contract.uiapproval_gate.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 未批准不能改页面
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.visual_repair_run.v1
+  capability_id: CAP-VISUAL
+  contract_id: banyan.contract.visual_repair_run.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 超轮数停止；用户叫停可回退；in_progress 不伪称成功
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.knowledge_projection.v1
+  capability_id: CAP-PUBLISH
+  contract_id: banyan.contract.knowledge_projection.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 无基线不能差异同步
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.editor_entry_compatibility.v1
+  capability_id: CAP-EDITOR
+  contract_id: banyan.contract.editor_entry_compatibility.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 适配未验证保留旧入口
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.project_endpoint_map.v1
+  capability_id: CAP-PORT
+  contract_id: banyan.contract.project_endpoint_map.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 映射未知先核对，不猜服务
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.project_delivery_convention.v1
+  capability_id: CAP-SQL
+  contract_id: banyan.contract.project_delivery_convention.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺交付 SQL 不宣称测试部署完成
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.commit_practice_compatibility.v1
+  capability_id: CAP-COMMIT
+  contract_id: banyan.contract.commit_practice_compatibility.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺脚本或授权停止，不补造已执行校验
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.legacy_collaboration_reference.v1
+  capability_id: CAP-MERGE
+  contract_id: banyan.contract.legacy_collaboration_reference.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 不把旧 reset/force 流程作为当前许可
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.design_analysis.v1
+  capability_id: CAP-DESIGN
+  contract_id: banyan.contract.design_analysis.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 输入不可用不虚构内容
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.css_token_extraction.v1
+  capability_id: CAP-CSS
+  contract_id: banyan.contract.css_token_extraction.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 网络/参数失败报错
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.page_visual_capture.v1
+  capability_id: CAP-CAPTURE
+  contract_id: banyan.contract.page_visual_capture.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺Playwright/捕获错误非成功
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.image_palette_extraction.v1
+  capability_id: CAP-COLORS
+  contract_id: banyan.contract.image_palette_extraction.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 缺Pillow/坏图失败
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.contrast_evaluation.v1
+  capability_id: CAP-A11Y
+  contract_id: banyan.contract.contrast_evaluation.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 参数格式错误报错
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.design_document_lint.v1
+  capability_id: CAP-LINT
+  contract_id: banyan.contract.design_document_lint.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 结构失败非零退出
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.design_token_build.v1
+  capability_id: CAP-TOKENS
+  contract_id: banyan.contract.design_token_build.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 解析错误失败
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.design_drift_check.v1
+  capability_id: CAP-DRIFT
+  contract_id: banyan.contract.design_drift_check.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 获取或比对失败输出错误
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+- port_id: banyan.port.design_package_export.v1
+  capability_id: CAP-EXPORT
+  contract_id: banyan.contract.design_package_export.v1
+  request_schema:
+    contract_version: required
+    inputs: typed according to contract
+    context: bounded, provenance-aware
+  response_schema:
+    outcome:
+    - SUCCESS
+    - PARTIAL
+    - BLOCKED
+    - FAILED
+    outputs: typed according to contract
+    evidence: required
+  failure_semantics:
+  - 输入/依赖不满足失败
+  timeout_cancel_semantics: caller-visible TIMEOUT or CANCELLED; partial evidence retained; no implicit retry
+  evidence_requirements:
+  - provider identity or UNKNOWN
+  - input reference
+  - output reference
+  - runtime state
+  - timestamp or UNKNOWN
+  optional_capabilities: []
+  provider_binding: null
+  concrete_vendor_or_model_frozen: false
+selection_policy:
+  provider_binding_required_before_activation: true
+  binding_location: project overlay or runtime configuration
+  contract_semantics_may_be_weakened: false
+concrete_provider_selected: false
+concrete_model_selected: false

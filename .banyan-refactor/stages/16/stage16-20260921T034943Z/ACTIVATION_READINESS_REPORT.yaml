@@ -1,0 +1,29 @@
+schema_version: stage16-v1
+run_id: stage16-20260921T034943Z
+readiness:
+  state: BLOCKED
+  activation_state: NOT_ACTIVATED
+  blockers:
+    - STAGE17_INDEPENDENT_GATE_REQUIRED
+    - CURRENT_PROJECT_DRY_RUN_ONLY
+    - CON-002_Typed_Blocked_Human_Project_Authority
+  required_preconditions:
+    - independent_stage17_gate
+    - explicit_pilot_scope
+    - project_instance_validation
+    - cursor_adapter_port_validation
+    - pilot_rollback_checkpoint
+  required_validations:
+    - runtime_policy_cannot_be_bypassed
+    - secret_metadata_only
+    - identity_presence_only
+    - project_git_safety
+    - pilot_dot_banyan_scope
+  pilot_stage: "17"
+runtime_permission_result: BLOCK
+dot_banyan:
+  exists: false
+  created_by_stage16: false
+  activated_by_stage16: false
+stage16_may_activate_dot_banyan: false
+stage17_execution_authorized: false

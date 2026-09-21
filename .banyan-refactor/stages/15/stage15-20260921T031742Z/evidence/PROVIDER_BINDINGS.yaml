@@ -1,0 +1,4 @@
+bindings:
+  - id: local-readonly
+    provider: local
+    enabled: true

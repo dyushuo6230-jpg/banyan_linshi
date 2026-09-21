@@ -1,0 +1,18 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_COMPATIBILITY_MAPPING_NOT_ACTIVATED
+entries:
+- {capability_id: CAP-DESIGN, legacy_semantic: Design analysis, target_port: banyan.port.design_analysis.v1, target_contract: DESIGN_PROVIDER_PORT, classification: PROVIDER}
+- {capability_id: CAP-CSS, legacy_semantic: CSS token extraction, target_port: banyan.port.css_token_extraction.v1, target_contract: DESIGN_TOKEN_SCHEMA, classification: PROVIDER}
+- {capability_id: CAP-CAPTURE, legacy_semantic: Page visual capture, target_port: banyan.port.page_visual_capture.v1, target_contract: DESIGN_SOURCE_SCHEMA, classification: PROVIDER}
+- {capability_id: CAP-COLORS, legacy_semantic: Image palette extraction, target_port: banyan.port.image_palette_extraction.v1, target_contract: DESIGN_TOKEN_SCHEMA, classification: PROVIDER}
+- {capability_id: CAP-A11Y, legacy_semantic: Contrast evaluation, target_port: banyan.port.contrast_evaluation.v1, target_contract: VISUAL_VALIDATION_INPUT_SCHEMA, classification: PROVIDER}
+- {capability_id: CAP-LINT, legacy_semantic: Design document lint, target_port: banyan.port.design_document_lint.v1, target_contract: DESIGN_PACKAGE_CONTRACT, classification: PROVIDER}
+- {capability_id: CAP-TOKENS, legacy_semantic: Design token build, target_port: banyan.port.design_token_build.v1, target_contract: DESIGN_TOKEN_SCHEMA, classification: PROVIDER}
+- {capability_id: CAP-DRIFT, legacy_semantic: Design drift check, target_port: banyan.port.design_drift_check.v1, target_contract: DESIGN_DRIFT_SCHEMA, classification: PROVIDER}
+- {capability_id: CAP-EXPORT, legacy_semantic: Design package export, target_port: banyan.port.design_package_export.v1, target_contract: DESIGN_PACKAGE_CONTRACT, classification: PROVIDER}
+provider_bindings_active: false
+generic_core_depends_on_anydesign_or_figma: false
+legacy_design_documents_mutated: false
+frontend_runtime_generated: false

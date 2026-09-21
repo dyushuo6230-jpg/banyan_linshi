@@ -1,0 +1,67 @@
+{
+  "root": "/Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server",
+  "topology": "MONOREPO",
+  "nested_repositories_outside_excluded_dependency_build_roots": [],
+  "symlinks": [
+    {
+      "path": ".cursor/skills/anydesign",
+      "target_followed": false
+    }
+  ],
+  "excluded_walk_roots": [
+    {
+      "path": "tools/anydesign/.venv",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "go-uni-app-online/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "go-uni-app-online/node_modules",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/app/h5-tob/web/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/app/admin/web/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/app/admin/web/node_modules",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/app/h5-online/web/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/app/merchant/web/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "nunu-go-api/app/merchant/web/node_modules",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "go-uni-app/dist",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    },
+    {
+      "path": "go-uni-app/node_modules",
+      "reason": "dependency, virtual environment or generated output; not a project repository boundary"
+    }
+  ],
+  "errors": [],
+  "worktree_evidence": "worktree.txt",
+  "submodule_evidence": "submodule.txt",
+  "sparse_checkout": false,
+  "lfs_cli_available": false,
+  "lfs_file_detection": "NOT_EXECUTED_BEFORE_STOP"
+}

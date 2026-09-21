@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "bootstrap_only": true,
+  "lineage": [
+    {
+      "path": "../../../MIGRATION_REGISTER.bootstrap.yaml",
+      "source_snapshot": "checkpoint/MIGRATION_REGISTER.bootstrap.yaml.snapshot.yaml",
+      "source_sha256": "3080a90fb8b11a594600de3d513ad6a9b4ff60a7bbde9a19d7b6bd5c24b763ee",
+      "target_sha256": "c51946912395a24a9a1901ec0206e0eb86a253e4a932e1883104bc92a7463910",
+      "source_run_id": "stage00-precheck-20260920T083254Z",
+      "target_run_id": "stage01-20260920T091426Z",
+      "timestamp": "2026-09-20T12:24:20.929618+00:00",
+      "source_snapshot_read_only": true,
+      "stage00_seal_resolution": "Use source snapshot for historical shared-file entries; all other Stage 00 seal paths resolve original files",
+      "active_writable_truth": "../../../MIGRATION_REGISTER.bootstrap.yaml"
+    },
+    {
+      "path": "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml",
+      "source_snapshot": "checkpoint/BANYAN_REFACTOR_TRACE.bootstrap.yaml.snapshot.yaml",
+      "source_sha256": "4fe9d5da1bd26d53570af635f8c5be4794452d5676bdbce7e7966a099a5bee21",
+      "target_sha256": "bcbea86c8ea1c307e9686a80f5791413105de8958db21d14d7d0f32aabe32c6d",
+      "source_run_id": "stage00-precheck-20260920T083254Z",
+      "target_run_id": "stage01-20260920T091426Z",
+      "timestamp": "2026-09-20T12:24:20.930336+00:00",
+      "source_snapshot_read_only": true,
+      "stage00_seal_resolution": "Use source snapshot for historical shared-file entries; all other Stage 00 seal paths resolve original files",
+      "active_writable_truth": "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+    }
+  ],
+  "no_canonical_instance_created": true
+}

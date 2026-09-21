@@ -1,0 +1,33 @@
+stage: "05"
+run_id: stage05-20260920T144623Z
+overall: PASS
+results:
+  V05-01: {status: PASS, evidence: Stage04 seal and Stage03 frozen artifacts valid}
+  V05-02: {status: PASS, evidence: no repository rediscovery or Git-history reanalysis}
+  V05-03: {status: PASS, evidence: adaptive routing schema has all required inputs and outputs}
+  V05-04: {status: PASS, evidence: safety responsibilities preserved in LIGHT STANDARD FULL}
+  V05-05: {status: PASS, evidence: five decision levels have complete criteria and fallbacks}
+  V05-06: {status: PASS, evidence: every decision level has escalation rule}
+  V05-07: {status: PASS, evidence: L3 and L4 cannot be bypassed by mode or token budget}
+  V05-08: {status: PASS, evidence: CON-001 resolved through Core Overlay Safety Floor separation}
+  V05-09: {status: PASS, evidence: commit plan lifecycle covers inspect through leftovers}
+  V05-10: {status: PASS, evidence: five classes have explicit dispositions}
+  V05-11: {status: PASS, evidence: grouping is semantic and path-only grouping is forbidden}
+  V05-12: {status: PASS, evidence: hunk-aware planning contract defined without staging execution}
+  V05-13: {status: PASS, evidence: message schema is editor-neutral}
+  V05-14: {status: PASS, evidence: missing or ambiguous identity blocks with NEEDS_INPUT}
+  V05-15: {status: PASS, evidence: identity mutation author override and invention forbidden}
+  V05-16: {status: PASS, evidence: SECRET_RISK is never auto-staged or committed}
+  V05-17: {status: PASS, evidence: Stage05 ends at authorization policy and future executor boundary}
+  V05-18: {status: PASS, evidence: planned blocked and leftover reporting is explicit}
+  V05-19: {status: PASS, evidence: writes limited to Stage05 run and two bootstrap files; no Git execution}
+  V05-20: {status: PASS, evidence: Stage06 handoff complete and Stage06 not started}
+hard_metrics:
+  UNACCOUNTED_HIGH_VALUE_CAPABILITY_WORKFLOW_IMPACT: 0
+  DECISION_LEVEL_WITHOUT_ESCALATION_RULE: 0
+  HUMAN_CONFIRMATION_BYPASS_PATH: 0
+  SEMANTIC_COMMIT_CLASS_WITHOUT_DISPOSITION: 0
+  COMMIT_POLICY_WITHOUT_IDENTITY_PRECHECK: 0
+  EDITOR_SPECIFIC_COMMIT_POLICY_BRANCH: 0
+  SECRET_RISK_AUTO_COMMIT_PATH: 0
+

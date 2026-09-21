@@ -1,0 +1,44 @@
+schema_version: stage14-v1
+stage: '14'
+run_id: stage14-20260921T022241Z
+overall: PASS
+validations:
+  - {id: V14-01, result: PASS, evidence: Stage 13 seal, governance requirements, typed blockers, and handoff are valid.}
+  - {id: V14-02, result: PASS, evidence: Low-token targeted contracts and permitted read-only Git metadata were used; no rediscovery or history reanalysis occurred.}
+  - {id: V14-03, result: PASS, evidence: Every policy action and all 14 shadow cases have one of five risk classes.}
+  - {id: V14-04, result: PASS, evidence: Every shadow action has a typed ALLOW, BLOCK, NEEDS_INPUT, or NOT_APPLICABLE decision.}
+  - {id: V14-05, result: PASS, evidence: Authorization schema requires explicit actor, action scope, target scope, granted actions, constraints, validity, evidence, and decision.}
+  - {id: V14-06, result: PASS, evidence: Contributor profile, editor, AI role, Git identity, history, evidence, plan, and learning candidates cannot authorize.}
+  - {id: V14-07, result: PASS, evidence: LIGHT, STANDARD, and FULL may change process weight but cannot weaken the shared safety floor.}
+  - {id: V14-08, result: PASS, evidence: Seven target protection classes and required target state fields are explicit.}
+  - {id: V14-09, result: PASS, evidence: Protected and canonical writes require authority, version/status, lineage, freshness observation, and conflict state.}
+  - {id: V14-10, result: PASS, evidence: Protected writes require a prior checkpoint and actionable rollback plan or explicit irreversibility handling.}
+  - {id: V14-11, result: PASS, evidence: Human confirmation binds decision, action, target, risk, impact, uncertainties, and explicit confirmation.}
+  - {id: V14-12, result: PASS, evidence: Thirteen Secret paths remain metadata-only; read, hash, copy, write, delete, move, rename, stage, commit, learning, and summary-body paths are blocked.}
+  - {id: V14-13, result: PASS, evidence: Git identity was checked read-only for name/email presence without recording values or inferring a permission role.}
+  - {id: V14-14, result: PASS, evidence: Missing or ambiguous Git identity returns NEEDS_INPUT.}
+  - {id: V14-15, result: PASS, evidence: Identity writes, author overrides, invented authors, alias merging, and operator inference have no allowed path.}
+  - {id: V14-16, result: PASS, evidence: Worktree gate covers staged, unstaged, untracked, ignored-governed, conflicted, secret-risk, unrelated, and local-only states.}
+  - {id: V14-17, result: PASS, evidence: READY, INCOMPLETE, UNRELATED, LOCAL_ONLY, and SECRET_RISK each have explicit dispositions.}
+  - {id: V14-18, result: PASS, evidence: Commit plan and historical author identity explicitly do not authorize commit.}
+  - {id: V14-19, result: PASS, evidence: SECRET_RISK is a hard block and cannot reach staging or commit.}
+  - {id: V14-20, result: PASS, evidence: All mutating Git operations have stage14_execute=false and are routed to an authorized Stage 15-or-later executor where eligible.}
+  - {id: V14-21, result: PASS, evidence: External and irreversible actions require explicit target, impact, human confirmation, authorization, audit, and rollback disclosure.}
+  - {id: V14-22, result: PASS, evidence: LC-13-001 and LC-13-002 have no authorization and cannot change Canonical Prompt/Rule/Skill.}
+  - {id: V14-23, result: PASS, evidence: Every reversible, canonical, protected, or external decision requires an audit event, including blocked and needs-input results.}
+  - {id: V14-24, result: PASS, evidence: CON-002 remains TYPED_BLOCKED / HUMAN_PROJECT_AUTHORITY and blocks CAP-PORT activation.}
+  - {id: V14-25, result: PASS, evidence: Writes are limited to the Stage 14 run and two bootstrap files; HEAD and Git index are unchanged and no Git mutation command ran.}
+  - {id: V14-26, result: PASS, evidence: Stage 15 enforcement handoff exists with execution_authorized=false and stage15_started=false.}
+hard_metrics:
+  ACTION_WITHOUT_RISK_CLASS: 0
+  ACTION_WITHOUT_PERMISSION_DECISION: 0
+  AUTHORIZATION_RECORD_WITHOUT_SCOPE_OR_ACTOR: 0
+  PROFILE_OR_EDITOR_USED_AS_AUTHORIZATION: 0
+  PROTECTED_WRITE_WITHOUT_FRESHNESS_CHECK: 0
+  PROTECTED_WRITE_WITHOUT_ROLLBACK_CHECKPOINT: 0
+  GIT_COMMIT_PATH_WITHOUT_IDENTITY_PRECHECK: 0
+  GIT_IDENTITY_MUTATION_PATH: 0
+  SECRET_RISK_COMMIT_PATH: 0
+  COMMIT_PLAN_TREATED_AS_AUTHORIZATION: 0
+  UNKNOWN_PRECONDITION_ALLOWED_ACTION: 0
+

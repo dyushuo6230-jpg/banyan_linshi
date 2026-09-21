@@ -1,0 +1,13 @@
+schema_version: stage18.5-v1
+result: PASS
+server: GO_BINARY_ONLY_NO_NODE_SERVER
+bind: 127.0.0.1
+checks:
+  status_runtime_backed: true
+  spa_deep_link: true
+  api_404_is_json: true
+  all_adapters_runtime_blocked: true
+adapters:
+  cursor: true
+  codex: true
+  generic-editor: true

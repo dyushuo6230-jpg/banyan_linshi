@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+observed_geometry_fields: [x, y, width, height, rotation, clip, z_order, viewport, source_ref]
+default_interpretation: OBSERVED_RENDERED_GEOMETRY
+fixed_implementation_constraint_by_default: false
+constraint_evidence_types: [MULTIPLE_STATES, MULTIPLE_VIEWPORTS, EXPLICIT_DESIGN_CONSTRAINT, APPROVED_TOKEN, APPROVED_COMPONENT_SEMANTIC, APPROVED_UI_SPEC]
+sizing_behavior: [FIXED, FLUID, CONTENT_DRIVEN, CONSTRAINED, UNKNOWN]
+promotion_rule:
+  explicit_evidence_required: true
+  confidence_required: true
+  source_refs_required: true
+  recommendation_may_promote_automatically: false
+unknown_evidence_result: UNKNOWN

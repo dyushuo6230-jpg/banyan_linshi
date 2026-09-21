@@ -1,0 +1,49 @@
+schema_version: stage15-v1
+run_id: stage15-20260921T031742Z
+overall: PASS
+validations:
+  V15-01: {result: PASS, evidence: Stage14 acceptance and runtime enforcement handoff consumed}
+  V15-02: {result: PASS, evidence: banyan-framework contains generic runtime source only}
+  V15-03: {result: PASS, evidence: core source literal scan found no current-project identifiers}
+  V15-04: {result: PASS, evidence: Stage14 bundle compiled with deterministic hash b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c}
+  V15-05: {result: PASS, evidence: unknown-field negative test passed}
+  V15-06: {result: PASS, evidence: missing and weakened hard-block negative tests passed}
+  V15-07: {result: PASS, evidence: failed and unknown preconditions cannot ALLOW}
+  V15-08: {result: PASS, evidence: CLI smoke results cover compiler runtime git commit trace and provider surfaces}
+  V15-09: {result: PASS, evidence: argv-only shell-false adapter and scope tests passed}
+  V15-10: {result: PASS, evidence: planner is read-only and current project plan changed no Git state}
+  V15-11: {result: PASS, evidence: READY INCOMPLETE UNRELATED LOCAL_ONLY SECRET_RISK test passed}
+  V15-12: {result: PASS, evidence: explicit path and isolated hunk patch tests passed}
+  V15-13: {result: PASS, evidence: blind-stage negative tests and production scan passed}
+  V15-14: {result: PASS, evidence: identity presence checked before fixture execution}
+  V15-15: {result: PASS, evidence: current-project identity is read-only and values were not recorded}
+  V15-16: {result: PASS, evidence: missing authorization blocks execution}
+  V15-17: {result: PASS, evidence: secret risk leaves index unchanged before staging}
+  V15-18: {result: PASS, evidence: isolated CLI and API real commits succeeded}
+  V15-19: {result: PASS, evidence: fixture identity configured with --local only}
+  V15-20: {result: PASS, evidence: Git adapter blocks network operations and tests used none}
+  V15-21: {result: PASS, evidence: fixture commit aebcff934272a519a3c99212e869a9d03da268aa captured}
+  V15-22: {result: PASS, evidence: fixture and dry-run JSONL traces validate}
+  V15-23: {result: PASS, evidence: index mismatch restores exact checkpoint digest}
+  V15-24: {result: PASS, evidence: current project execution result is DRY_RUN}
+  V15-25: {result: PASS, evidence: current HEAD unchanged}
+  V15-26: {result: PASS, evidence: current index hash and staged count unchanged}
+  V15-27: {result: PASS, evidence: STAGE16_RUNTIME_API_HANDOFF.yaml complete}
+  V15-28: {result: PASS, evidence: Stage16 implementation not started}
+hard_metrics:
+  POLICY_HARD_BLOCK_LOST_IN_COMPILATION: 0
+  UNKNOWN_POLICY_FIELD_ACCEPTED_SILENTLY: 0
+  RUNTIME_ALLOW_WITH_FAILED_PRECONDITION: 0
+  CURRENT_PROJECT_GIT_MUTATION: 0
+  BLIND_STAGE_ALL_PATH: 0
+  SECRET_RISK_EXECUTION_PATH: 0
+  COMMIT_EXECUTION_WITHOUT_IDENTITY_PRECHECK: 0
+  COMMIT_EXECUTION_WITHOUT_AUTHORIZATION: 0
+  COMMIT_CAPTURE_WITHOUT_TRACE: 0
+  FIXTURE_IDENTITY_LEAK_TO_PROJECT: 0
+  NETWORK_GIT_ACTION_IN_TESTS: 0
+tests:
+  automated: 21
+  passed: 21
+  failed: 0
+  conformance_smoke: PASS

@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+classes: [FACT, INFERENCE, RECOMMENDATION]
+required_fields: [classification, confidence, source_refs, reason, promotion_rule, provenance]
+admission_rules:
+  FACT: DIRECT_EVIDENCE_REQUIRED
+  INFERENCE: EXPLICIT_MARK_AND_EVIDENCE_REQUIRED
+  RECOMMENDATION: EXPLICIT_MARK_AND_RATIONALE_REQUIRED
+promotion:
+  automatic: false
+  inference_to_fact: NEW_DIRECT_EVIDENCE_AND_REVALIDATION
+  recommendation_to_constraint: STAGE08_APPROVAL_OR_APPROVED_DECISION
+misclassification_result: BLOCKED

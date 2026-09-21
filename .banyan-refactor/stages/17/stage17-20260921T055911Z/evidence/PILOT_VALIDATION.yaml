@@ -1,0 +1,46 @@
+schema_version: stage17-v1
+result: PASS
+pilot_root: .banyan
+file_count: 13
+exact_shadow_match: true
+unexpected_files: []
+missing_files: []
+files:
+- path: PILOT_NOTICE.md
+  sha256: a1f10e51eb49348a15783333ed8325b8ea409d518988db0e0faef1a59665a21f
+- path: generated/README.md
+  sha256: c93f134ef45bf6c5126222fe17b1133512e1ab02192aa8d19c5acf40fb07ba6f
+- path: index/manifest.yaml
+  sha256: c3bc637f2522f570c7efe6047ecab6af0a16fff1ca26a185e8e5185130a39597
+- path: instance/project-instance.yaml
+  sha256: f62f990d59ed96275768ecfa88da77c74391972c4310bcc3d8f28bdb869d8ec3
+- path: mappings/source-mappings.yaml
+  sha256: de82faa424633850fcc1782b16d6fd9e326a9a2f826cdeb30acb842dd9448a59
+- path: migrations/rollback.yaml
+  sha256: 8815ed3e317c0b4ec035d00ed6d0c44ef4d7969a4f91f07ef0e8d4166c3e0a50
+- path: overlays/bindings.yaml
+  sha256: 852720cc1a4691098cfbd1090906812ce23bfc40efea995de2638951bb3ccf5c
+- path: pilot.yaml
+  sha256: 2c33cf8979de322bdbd24f312c7ab9e85ca5e75c25457d4f35989400667a0b54
+- path: profiles/contributor.yaml
+  sha256: 3ab87df53f380fcf436a382c7280b1b3c16a36617e960dc010db7cddba06c739
+- path: profiles/project.yaml
+  sha256: 18564c519214cef1f5fbae571141b477605068eafcdc244d85411d6c4e3d0ed1
+- path: providers/bindings.yaml
+  sha256: b508509a157d345be36172119c4c02650e0f8f0fa977874d7514f781bd48c237
+- path: runtime/status.yaml
+  sha256: e7cd3dfeb4cd8f0ec3258a0fbe0caef0c78d3644c3d3420077c060b0a4a8a2fd
+- path: trace/audit.jsonl
+  sha256: f5520ed3bdb3d5b326965518383a2bad34d9607613cbc5c93e758fd78f7cd24a
+constraints:
+  pilot_only: true
+  final_activation: false
+  canonical_replacement: false
+  existing_project_layout: PRESERVE_IN_PLACE
+  docs_project_moved: false
+  legacy_deleted: false
+  secret_body_read: false
+  identity_modified: false
+  git_mutation: false
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  unknown_auto_filled: false

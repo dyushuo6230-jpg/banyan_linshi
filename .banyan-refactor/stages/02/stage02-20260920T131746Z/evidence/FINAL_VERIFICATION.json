@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "stage02_status": "COMPLETED",
+  "stage02_design_state": "CANDIDATE_ONLY",
+  "stage03_started": false,
+  "run_id": "stage02-20260920T131746Z",
+  "all_15_checks_pass": true,
+  "capability_mapping": "35/35",
+  "asset_mapping": "1026/1026",
+  "artifact_mapping": "425/425 + 289/289",
+  "source_stage01_seal_verified": 65,
+  "secret_recovery_coverage": "PARTIAL_APPROVED",
+  "head_unchanged": true,
+  "tracked_changes": false,
+  "business_files_written": false,
+  "limits": [
+    "No independent cross-project proof",
+    "No final Contract/Schema/Provider selection",
+    "No cost benchmarks or runtime execution"
+  ]
+}

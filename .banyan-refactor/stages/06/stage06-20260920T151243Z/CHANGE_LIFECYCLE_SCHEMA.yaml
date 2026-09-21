@@ -1,0 +1,22 @@
+schema_version: stage06-v1
+identity:
+  required: [change_id, provider_change_id, project_instance_id, status, created_from, supersedes, related_task_change_batch]
+  change_id_authority: BANYAN
+  provider_change_id_authority: PROVIDER_BINDING_ONLY
+  provider_change_id_may_replace_change_id: false
+statuses: [DISCUSSION, DRAFT, PROPOSED, IN_REVIEW, APPROVED_FOR_APPLY, APPLY_PLANNED, APPLIED, RECONCILING, RECONCILED, ARCHIVED, BLOCKED]
+transitions:
+  - {from: DISCUSSION, to: DRAFT, requires: stable_change_id}
+  - {from: DRAFT, to: PROPOSED, requires: promotion_precheck}
+  - {from: PROPOSED, to: IN_REVIEW, requires: review_evidence}
+  - {from: IN_REVIEW, to: APPROVED_FOR_APPLY, requires: stage05_decision_gate}
+  - {from: APPROVED_FOR_APPLY, to: APPLY_PLANNED, requires: valid_preview_and_authorization}
+  - {from: APPLY_PLANNED, to: APPLIED, requires: future_executor_result}
+  - {from: APPLIED, to: RECONCILING, requires: post_validation_start}
+  - {from: RECONCILING, to: RECONCILED, requires: all_reconciliation_checks_pass}
+  - {from: RECONCILED, to: ARCHIVED, requires: semantic_archive_authorization}
+  - {from: any, to: BLOCKED, requires: typed_failure_or_conflict}
+stage06_max_state: APPLY_PLANNED
+automatic_transition_by_file_timestamp: false
+automatic_transition_by_provider_status: false
+

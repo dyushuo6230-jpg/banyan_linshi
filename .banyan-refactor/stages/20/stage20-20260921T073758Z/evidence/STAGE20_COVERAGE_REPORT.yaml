@@ -1,0 +1,129 @@
+schema_version: stage20-v1
+run_id: stage20-20260921T073758Z
+overall: PASS_WITH_CARRIED_BLOCKERS
+summary:
+  passed: 24
+  failed: 0
+  total: 24
+validations:
+- id: V20-01
+  check: Stage19 seal valid
+  result: PASS
+  evidence: Stage19 acceptance, RC manifest, handoff, and final verification are present
+    and accepted.
+- id: V20-02
+  check: accepted-final-state registry complete
+  result: PASS
+  evidence: ACCEPTED_FINAL_STATE.yaml records architecture, release, Pilot, bootstrap,
+    version, and blockers.
+- id: V20-03
+  check: final architecture matches Stage19
+  result: PASS
+  evidence: Ant Design Pro Simple -> Go/Gin go:embed -> LOCAL_STDIO -> Python Stage15
+    Runtime.
+- id: V20-04
+  check: Python Runtime correctly documented
+  result: PASS
+  evidence: Python remains the Runtime Core and policy execution authority.
+- id: V20-05
+  check: Go/Gin role correctly documented
+  result: PASS
+  evidence: Go/Gin is the local web host and transport bridge, not a second Runtime.
+- id: V20-06
+  check: WebUI stack correctly documented
+  result: PASS
+  evidence: Ant Design Pro Simple static assets are embedded with go:embed.
+- id: V20-07
+  check: Project Instance structure documented
+  result: PASS
+  evidence: .banyan is documented as PROJECT_INSTANCE_SHADOW_PILOT.
+- id: V20-08
+  check: .banyan-refactor lifecycle documented
+  result: PASS
+  evidence: Temporary bootstrap lifecycle and conditional archive/retirement are explicit.
+- id: V20-09
+  check: install/build/run guide validated
+  result: PASS
+  evidence: Dependencies, source build, packaged run, preflight, and limits are documented.
+- id: V20-10
+  check: Runtime/adapter guide validated
+  result: PASS
+  evidence: Cursor, Codex, and Generic Editor remain request adapters through one
+    Runtime API.
+- id: V20-11
+  check: governance/security guide validated
+  result: PASS
+  evidence: Permission, authorization, protected write, evidence, and Git boundaries
+    are documented.
+- id: V20-12
+  check: Secret bodies absent
+  result: PASS
+  evidence: Documentation contains policy-level secret handling only; no secret body
+    was read or copied.
+- id: V20-13
+  check: Legacy adoption guide is non-executing
+  result: PASS
+  evidence: LEGACY_DOC_ADOPTION_PLAN is DOCUMENTED_NOT_EXECUTED.
+- id: V20-14
+  check: canonical docs preserve-in-place default
+  result: PASS
+  evidence: docs/project stays in place; no physical migration occurred.
+- id: V20-15
+  check: future upgrade mechanism documented
+  result: PASS
+  evidence: Change/impact/migration/preview/validation/apply/rollback/acceptance lifecycle
+    is documented.
+- id: V20-16
+  check: bootstrap retirement is conditional
+  result: PASS
+  evidence: Retirement requires activation, archive verification, human decisions,
+    and explicit authorization.
+- id: V20-17
+  check: framework release != project activation
+  result: PASS
+  evidence: Release is additive and project Final Activation remains NOT_AUTHORIZED.
+- id: V20-18
+  check: CON-002 preserved
+  result: PASS
+  evidence: CON-002 remains TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY.
+- id: V20-19
+  check: Pilot .banyan not silently promoted
+  result: PASS
+  evidence: Pilot hashes match checkpoint and canonical replacement remains false.
+- id: V20-20
+  check: version transition not silent
+  result: PASS
+  evidence: v1.9.1 remains CURRENT; v1.10 proposal awaits human approval.
+- id: V20-21
+  check: release manifest hashes/evidence valid
+  result: PASS
+  evidence: Archive, package components, internal SHA256SUMS, and reproducibility
+    checks pass.
+- id: V20-22
+  check: current project Git unchanged
+  result: PASS
+  evidence: HEAD, index, staged set, and tracked working tree match the checkpoint.
+- id: V20-23
+  check: final handoff complete
+  result: PASS
+  evidence: FINAL_HANDOFF.yaml carries release, blockers, lifecycle, version, and
+    human actions.
+- id: V20-24
+  check: no further stage auto-started
+  result: PASS
+  evidence: Stage 20 is terminal for this run; later_stage_auto_started is false.
+hard_metrics:
+  FINAL_DOC_CLAIM_WITHOUT_ACCEPTED_EVIDENCE: 0
+  FRAMEWORK_RELEASE_MISSTATED_AS_PROJECT_ACTIVATION: 0
+  CON002_SILENTLY_RESOLVED: 0
+  PILOT_DOT_BANYAN_SILENTLY_PROMOTED: 0
+  BOOTSTRAP_WORKSPACE_BLIND_DELETION: 0
+  VERSION_POINTER_SILENT_TRANSITION: 0
+  LEGACY_DOC_PHYSICAL_MIGRATION_EXECUTED: 0
+  CURRENT_PROJECT_GIT_MUTATION: 0
+  SECRET_BODY_EXPOSURE_IN_DOCS: 0
+  GENERIC_DOC_PROJECT_LITERAL_LEAK: 0
+hard_metrics_all_zero: true
+carried_blockers:
+  CON-002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  FINAL_ACTIVATION: NOT_AUTHORIZED

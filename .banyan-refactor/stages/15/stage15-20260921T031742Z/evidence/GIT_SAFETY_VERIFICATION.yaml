@@ -1,0 +1,26 @@
+schema_version: stage15-v1
+current_project:
+  precheck:
+    head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+    staged_count: 0
+  exit:
+    head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+    staged_count: 0
+    conflicted_count: 0
+  head_unchanged: true
+  index_unchanged: true
+  staged_count_unchanged: true
+  git_mutations: 0
+  execution_mode: DRY_RUN_ONLY
+identity:
+  current_project_presence_checked: true
+  values_recorded: false
+  current_project_identity_mutated: false
+  fixture_identity_scope: LOCAL_ONLY
+fixture:
+  root: .banyan-refactor/stages/15/stage15-20260921T031742Z/fixtures
+  real_git_mutations_performed: true
+  network_git_actions: 0
+  global_or_current_project_identity_writes: 0

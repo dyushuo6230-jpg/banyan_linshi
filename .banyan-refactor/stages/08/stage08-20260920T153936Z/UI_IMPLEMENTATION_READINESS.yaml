@@ -1,0 +1,22 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_GATE_NOT_EXECUTED
+results: [READY, PARTIAL_READY, BLOCKED, NOT_APPLICABLE]
+requirements:
+  explicit_enablement: true
+  application_scope: true
+  required_coverage: true
+  approved_or_partial_approved_ui_spec: true
+  valid_prd_trace: true
+  valid_design_evidence: true
+  approval_gate_evidence: true
+  no_blocking_conflict: true
+rules:
+  DISABLED: NOT_APPLICABLE
+  missing_approval: BLOCKED
+  stale_or_review_required: BLOCKED
+  partial_approved: PARTIAL_READY_ONLY_FOR_DECLARED_SURFACES
+  inherited_migration_blockers: BLOCK_REAL_MIGRATION_NOT_CONTRACT_DESIGN
+application_wide_ready_from_partial: false
+implementation_authorized_in_stage08: false

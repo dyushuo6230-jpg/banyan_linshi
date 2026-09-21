@@ -1,0 +1,19 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: PASS_KNOWLEDGE_PUBLISHING_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+owned_outcomes: {expected: 16, frozen: 16}
+legacy_knowledge_capabilities: {expected: 6, mapped: 6}
+targeted_knowledge_artifacts: {total: 89, canonical_or_authoritative: 18, derived: 71, derived_rebuildability: NOT_PROVEN_REBUILDABLE}
+knowledge_runtime_executed: false
+stage11_runtime_implemented: false
+real_migration_readiness: MIGRATION_BLOCKED
+hard_metrics:
+  KNOWLEDGE_PROJECTION_WITHOUT_SOURCE_AUTHORITY: 0
+  GUIDE_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+  STALE_PROJECTION_CLAIMING_CURRENT: 0
+  GENERATED_KNOWLEDGE_WITHOUT_PROVENANCE: 0
+  UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+  AUDIENCE_VIEW_WITH_SEPARATE_TRUTH: 0
+  PLAIN_DOCUMENT_PROMOTED_TO_CANONICAL: 0
+  PROGRESS_PROJECTION_WITHOUT_CURRENTNESS_STATE: 0

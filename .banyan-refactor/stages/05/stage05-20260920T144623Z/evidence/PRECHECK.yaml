@@ -1,0 +1,28 @@
+stage: "05"
+run_id: stage05-20260920T144623Z
+timestamp_utc: "2026-09-20T14:46:23Z"
+head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+git_state:
+  tracked_changes: 0
+  staged_changes: 0
+  conflicts: 0
+upstream:
+  stage04_run: stage04-20260920T142517Z
+  stage04_acceptance: PASS_PROJECT_INSTANCE_DESIGN
+  stage05_gate: PASS_FOR_STAGE05_DESIGN_WITH_INHERITED_BLOCKERS
+  stage04_seal: PASS
+  stage03_frozen_artifacts: PASS
+  stage03_mutable_bootstrap_hashes: EXPECTED_CHANGED_BY_STAGE04
+bootstrap:
+  migration_register_exists: true
+  trace_exists: true
+  canonical_writable_truth_active: false
+secrets:
+  expected: 13
+  metadata_paths_present: 13
+  bodies_read: false
+  bodies_hashed: false
+  bodies_modified: false
+  recovery_coverage: PARTIAL_APPROVED
+result: PASS
+

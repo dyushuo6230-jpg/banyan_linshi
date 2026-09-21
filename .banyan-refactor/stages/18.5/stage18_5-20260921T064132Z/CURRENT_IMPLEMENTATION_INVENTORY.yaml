@@ -1,0 +1,83 @@
+schema_version: stage18.5-v1
+inventory_mode: TARGETED_ONLY
+webui:
+  previous_root: banyan-framework/src/banyan/web
+  root: banyan-framework/frontend
+  previous_framework: VANILLA_HTML_JS
+  framework: ANT_DESIGN_PRO_SIMPLE
+  routes:
+  - /dashboard
+  - /runtime-policy
+  - /project-safety
+  - /gate-blockers
+  - /preflight
+  - /commit-plan
+  - /dry-run-result
+  - /trace-audit
+  - /provenance
+  - /provider-bindings
+  - /stage-run
+  - /activation-readiness
+  feature_surfaces:
+  - dashboard
+  - runtime_policy
+  - project_safety
+  - gate_blockers
+  - preflight
+  - commit_plan
+  - dry_run_result
+  - trace_audit
+  - provenance
+  - provider_bindings
+  - stage_run
+  - activation_readiness
+  build_command: cd banyan-framework/frontend && npm ci && npm run build
+  output_directory: banyan-framework/control-plane-go/internal/webassets/dist
+control_plane:
+  previous_root: banyan-framework/src/banyan/control_plane
+  root: banyan-framework/control-plane-go
+  previous_language: PYTHON
+  language: GO
+  entrypoint: banyan-framework/control-plane-go/cmd/banyan-control/main.go
+  routes:
+  - GET /api/status
+  - GET /api/policy
+  - GET /api/project-safety
+  - POST /api/preflight
+  - POST /api/commit/plan
+  - POST /api/commit/dry-run
+  - GET /api/trace
+  - GET /api/provenance/:id
+  - GET /api/providers
+  - GET /api/stages
+  - GET /api/activation-readiness
+  - POST /api/adapters/:kind
+runtime:
+  root: banyan-framework/src/banyan/runtime
+  language: PYTHON
+  entrypoint: banyan.runtime.api.RuntimeAPI
+  bridge_entrypoint: banyan.control_plane.bridge
+  stable_api_surface:
+  - status
+  - evaluate_action
+  - preflight_action
+  - inspect_project
+  - plan_commit
+  - dry_run_commit
+  - emit_audit
+  - list_provider_bindings
+  strategy: PRESERVE_EXISTING_STAGE15_RUNTIME
+adapters:
+  root: banyan-framework/src/banyan/editor
+  gateway: banyan.editor.protocol.AdapterGateway
+  kinds:
+  - cursor
+  - codex
+  - generic-editor
+tests:
+  commands:
+  - npm ci && npm run build
+  - go test ./...
+  - python3 tests/run_stage18_5_tests.py
+  - python3 tests/run_stage18_tests.py
+repo_wide_rediscovery: false

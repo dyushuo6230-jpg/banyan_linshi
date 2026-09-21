@@ -1,0 +1,19 @@
+schema_version: stage18.5-v1
+frontend_build:
+  command: cd banyan-framework/frontend && npm ci && npm run build
+  output_directory: banyan-framework/control-plane-go/internal/webassets/dist
+assets:
+- path: assets/index--atBYdsd.js
+  sha256: d135a2ee0d26c39965985aac0ffffd20e164f34e1d146d83fe7c3fcaac2f7355
+- path: assets/index-CfaHOHW_.css
+  sha256: 48e058c584d5ce86607ee1c562fca74475771cf3faaac8d0a17bd4469ad2e8da
+- path: index.html
+  sha256: c0191d631c53f0e58efaf370f0db61c654aa74ecfeb294ae1026f2958fe2839f
+go_embed:
+  source_directory: internal/webassets/dist
+  declaration: internal/webassets/embed.go
+  binary_path: banyan-framework/control-plane-go/bin/banyan-control
+  binary_sha256: 2eccb69e1c12eaf630c804daa4654abc08f8544d9f19b39f7a150e8e1c50f0d0
+  binary_size_bytes: 20719282
+node_required_to_serve_release_ui: false
+all_hashes_verified: true

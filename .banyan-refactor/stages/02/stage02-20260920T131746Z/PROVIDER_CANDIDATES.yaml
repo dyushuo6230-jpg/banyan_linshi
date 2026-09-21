@@ -1,0 +1,240 @@
+stage: '02'
+status: CANDIDATE_ONLY
+layer: PROVIDER_CANDIDATE
+count: 9
+items:
+- capability_id: CAP-DESIGN
+  name: AnyDesign 全量与单元素模式
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: DesignAnalysis
+  provider_port: AnyDesignAdapter
+  artifact_role: DesignAnalysisMaterial
+  runtime_phase: ENGINEERING
+  project_overlay: source and approval status of project UI materials
+  failure_semantics:
+  - 输入不可用不虚构内容
+  migration_risk: Visual extraction is evidence, not Approved UI_SPEC.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/SKILL.md
+    line: 1
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  - path: tools/anydesign/references/element-copy.md
+    line: 1
+    source_sha256: a4e2bd81e29cbc117daeaf0b6527ead693ab77bb63020e85cd84fce39847c256
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/references/element-copy.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-CSS
+  name: CSS 变量提取与摘要
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: CssTokenExtraction
+  provider_port: AnyDesignCssAdapter
+  artifact_role: CssTokenDigest
+  runtime_phase: BATCH_WORKER
+  project_overlay: project URL/input scope
+  failure_semantics:
+  - 网络/参数失败报错
+  migration_risk: Network/style access can fail; no invented tokens.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_css_vars.py
+    line: 1
+    source_sha256: 41091ff0dec0ebdc16e89b910b12b0c1df0d036321a467afed072666073cd8d2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_css_vars.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-CAPTURE
+  name: 页面截图与计算样式采集
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: PageVisualCapture
+  provider_port: AnyDesignCaptureAdapter
+  artifact_role: CaptureEvidence
+  runtime_phase: BATCH_WORKER
+  project_overlay: project URL, viewport, allowed capture
+  failure_semantics:
+  - 缺Playwright/捕获错误非成功
+  migration_risk: Playwright/network failure does not produce a valid screenshot.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/capture_site.py
+    line: 1
+    source_sha256: 9a41c6e1ca1ca1f8c75aab482ca4d5297295970cdcb254b31b0d3fdfb2fefa05
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/capture_site.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-COLORS
+  name: 图像主色提取
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: ImagePaletteExtraction
+  provider_port: AnyDesignColorAdapter
+  artifact_role: PaletteEvidence
+  runtime_phase: BATCH_WORKER
+  project_overlay: project source image identity
+  failure_semantics:
+  - 缺Pillow/坏图失败
+  migration_risk: Palette is an observation, not an accessibility/brand decision.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_colors.py
+    line: 1
+    source_sha256: 9de38727e2f1fd78940b7a046024f76fa5f398458458585c8b64363cd5a744f7
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_colors.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-A11Y
+  name: 对比度检查
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: ContrastEvaluation
+  provider_port: AnyDesignContrastAdapter
+  artifact_role: AccessibilityEvidence
+  runtime_phase: BATCH_WORKER
+  project_overlay: project color pairs
+  failure_semantics:
+  - 参数格式错误报错
+  migration_risk: A pass for selected color pairs is not UI acceptance.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/check_contrast.py
+    line: 1
+    source_sha256: b8f63d6704dae7483896bd40f305564d3bd185478db5d6acb9ee20ab89f8477f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/check_contrast.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-LINT
+  name: 设计文档结构校验
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: DesignDocumentLint
+  provider_port: AnyDesignLintAdapter
+  artifact_role: DesignLintResult
+  runtime_phase: BATCH_WORKER
+  project_overlay: project design.md inputs
+  failure_semantics:
+  - 结构失败非零退出
+  migration_risk: Structural lint cannot approve design semantics.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/lint_design_md.py
+    line: 1
+    source_sha256: 3b33714dd5b8ad4226cef209cbbe210c316a19cdc922084f2241f3bb70a187e6
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/lint_design_md.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-TOKENS
+  name: 设计令牌生成
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: DesignTokenBuild
+  provider_port: AnyDesignTokenAdapter
+  artifact_role: DesignTokenProjection
+  runtime_phase: BATCH_WORKER
+  project_overlay: project frontmatter and source revision
+  failure_semantics:
+  - 解析错误失败
+  migration_risk: Derived tokens need source revision and must not be hand-edited
+    as truth.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/build_tokens_json.py
+    line: 1
+    source_sha256: 5e96c2c85c4b994c8c3bd70284820984fa7ba21f75112a9da1032f51ea4386da
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/build_tokens_json.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-DRIFT
+  name: 令牌与线上设计漂移比较
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: DesignDriftCheck
+  provider_port: AnyDesignDriftAdapter
+  artifact_role: DesignDriftEvidence
+  runtime_phase: BATCH_WORKER
+  project_overlay: project URL and effective tokens
+  failure_semantics:
+  - 获取或比对失败输出错误
+  migration_risk: Live URL failure or stale source is not a clean comparison.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/verify_design.py
+    line: 1
+    source_sha256: 631c535f4bedb492f9efc47309ef54cecb443bcf0137af27a42540d459ef6d0f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/verify_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-EXPORT
+  name: 设计交付包导出
+  candidate_layer: PROVIDER_CANDIDATE
+  contract: DesignPackageExport
+  provider_port: AnyDesignExportAdapter
+  artifact_role: DesignExportBundle
+  runtime_phase: BATCH_WORKER
+  project_overlay: project export target and source revision
+  failure_semantics:
+  - 输入/依赖不满足失败
+  migration_risk: Exported DOCX/PPTX/CSS is derived; exact replay not proven.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: tools/anydesign/scripts/export_for_claude_design.py
+    line: 1
+    source_sha256: 8f2a6237c053e95f83313c4188df1875a3535dc7ab61ecba2d5a4d0a505b5ad2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/export_for_claude_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  approval: NOT_APPROVED
+  execution_allowed: false

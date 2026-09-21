@@ -1,0 +1,19 @@
+schema_version: stage14-v1
+results: [ALLOW, BLOCK, NEEDS_INPUT, NOT_APPLICABLE]
+required_fields: [decision_id, action_id, target_id, risk_class, work_mode, evidence_refs, impact_ref, decision_level, authorization_ref, preconditions, result, reason]
+evaluation_order:
+  - validate_action_and_target_identity
+  - classify_risk
+  - classify_protection
+  - validate_evidence_and_impact
+  - compute_decision_level
+  - validate_human_confirmation_if_required
+  - validate_authorization_record
+  - validate_secret_freshness_checkpoint_and_rollback
+  - validate_git_identity_and_worktree_when_applicable
+  - emit_typed_decision_and_audit_event
+unknown_or_blocked_precondition:
+  missing_resolvable_input: NEEDS_INPUT
+  policy_or_safety_violation: BLOCK
+profile_editor_identity_or_evidence_alone_may_allow: false
+

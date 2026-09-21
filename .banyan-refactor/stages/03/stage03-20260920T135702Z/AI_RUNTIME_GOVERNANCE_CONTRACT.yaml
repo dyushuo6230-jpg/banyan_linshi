@@ -1,0 +1,47 @@
+schema_version: stage03-v1
+contract_status: FROZEN_INTERFACE_ONLY
+execution_modes:
+- FULL_AUDIT
+- ENGINEERING
+- BATCH_WORKER
+- HUMAN_DECISION
+- PRE_AUTHORIZE
+- LOAD_CONTEXT
+model_capability_classes:
+- LOW_COST_WORKER
+- STANDARD_ENGINEERING
+- HIGH_REASONING
+- MAX_REASONING
+fields:
+- task_class
+- execution_mode
+- model_capability_class
+- budget_policy
+- batchability
+- cacheability
+- context_strategy
+- escalation_condition
+- quality_gate
+- telemetry
+interface_semantics:
+  budget_policy: named policy reference; numeric threshold remains controlled configuration
+  escalation_condition: quality/risk/context signals, not vendor identity
+  quality_gate: task-specific measurable acceptance
+  telemetry:
+  - input_units
+  - output_units
+  - latency
+  - retries
+  - cache_hit
+  - quality_result
+  - cost_value_or_UNKNOWN
+provider_or_model_name_frozen: false
+numeric_budget_threshold_frozen: false
+price_table_frozen: false
+fixed_token_percentage_frozen: false
+benchmark_status: DEFERRED_WITH_OWNER
+benchmark_owner_stages:
+- '05'
+- '15'
+- '16'
+- '19'

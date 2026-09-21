@@ -1,0 +1,36 @@
+schema_version: stage20-v1
+run_id: stage20-20260921T073758Z
+framework_release:
+  version: v1.10-additive.1
+  manifest: FRAMEWORK_RELEASE_MANIFEST.yaml
+  state: RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT
+final_architecture: ANT_DESIGN_PRO_SIMPLE -> GO_GIN_GO_EMBED -> LOCAL_STDIO -> PYTHON_STAGE15_RUNTIME
+installed_project_instance:
+  path: .banyan
+  state: PROJECT_INSTANCE_SHADOW_PILOT
+project_final_activation: NOT_AUTHORIZED
+con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+bootstrap_workspace:
+  state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION
+  retirement_plan: BOOTSTRAP_RETIREMENT_PLAN.yaml
+  retirement_executed: false
+legacy_doc_adoption:
+  guide: docs/LEGACY_DOCUMENTATION_ADOPTION_GUIDE.md
+  plan: LEGACY_DOC_ADOPTION_PLAN.yaml
+  executed: false
+  default: PRESERVE_IN_PLACE
+version_transition:
+  proposal: VERSION_TRANSITION_PROPOSAL.yaml
+  state: READY_FOR_HUMAN_APPROVAL
+  current_pointer: v1.9.1
+  replace_current_pointer: false
+run_guide: docs/INSTALL_BUILD_RUN_GUIDE.md
+upgrade_guide: docs/UPGRADE_MIGRATION_GUIDE.md
+evidence_root: .banyan-refactor/stages/20/stage20-20260921T073758Z/evidence
+post_stage20_required_human_actions:
+- Review and approve or reject v1.10 CURRENT-pointer transition
+- Resolve CON-002 through Human Project Authority
+- Authorize and execute Project Final Activation as a separate governed action
+- After activation verify archive package and authorize bootstrap retirement
+stage21_or_later_auto_started: false
+stop_after_stage: '20'

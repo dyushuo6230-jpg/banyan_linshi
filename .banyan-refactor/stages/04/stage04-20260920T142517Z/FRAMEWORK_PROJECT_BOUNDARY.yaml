@@ -1,0 +1,15 @@
+schema_version: stage04-v1
+framework_distribution:
+  content: GENERIC_CAPABILITIES_ONLY
+  candidate_forms: [independent_git, package, binary, plugin]
+  physical_creation_in_stage04: false
+  forbidden_content: [project_business_content, project_name, project_paths, project_ports, contributor_identities]
+project_instance:
+  candidate_root: .banyan
+  content: [project_identity, source_mappings, overlays, profiles, variable_bindings, provider_bindings, feature_activation, locations, lineage]
+  portable_as_other_project_truth: false
+  activation_in_stage04: false
+legacy_construction_workspace:
+  path: 榕树ai改造落地相关文档/
+  required_by_future_runtime: false
+

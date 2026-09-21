@@ -1,0 +1,13 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_EXECUTED
+required_fields: [validation_input_id, viewport, state, reference_evidence, reference_version, comparison_regions, tolerance_class, exclusions, application_scope, provenance]
+rules:
+  state_without_behavior_evidence: UNKNOWN
+  missing_reference_version: BLOCKED
+  exclusions_must_be_explicit: true
+  partial_region_may_claim_full_page: false
+  validation_result_is_business_truth: false
+visual_runtime_executed: false
+inputs: []

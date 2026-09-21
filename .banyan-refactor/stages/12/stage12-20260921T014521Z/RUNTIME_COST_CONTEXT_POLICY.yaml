@@ -1,0 +1,13 @@
+schema_version: stage12-v1
+policy_id: banyan.runtime.cost.context.v1
+fields: [task_profile, execution_mode, budget_class, context_priority, cache_policy, compaction_policy, escalation_policy, quality_gate, usage_telemetry_fields]
+task_profile_inputs: [scope, risk, required_decision, evidence_need, context_volatility]
+execution_modes: [QUERY_FIRST, CACHE_REUSE, COMPACT_CONTEXT, EVIDENCE_ON_DEMAND]
+quality_floor:
+  mandatory_context_complete: true
+  authority_and_freshness_preserved: true
+  blockers_and_unknowns_preserved: true
+  secret_body_excluded: true
+forbidden_in_generic_core: [vendor_name, proprietary_model_name, fixed_price, fixed_token_percentage, product_selector_name]
+telemetry_semantics: ABSTRACT_USAGE_DIMENSIONS_ONLY
+

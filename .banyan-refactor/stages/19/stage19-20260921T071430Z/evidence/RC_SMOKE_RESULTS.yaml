@@ -1,0 +1,24 @@
+schema_version: stage19-v1
+result: PASS
+server: RC_GO_BINARY_WITH_EMBEDDED_UI_NO_NODE_SERVER
+bind: 127.0.0.1
+checks:
+  runtime_status: true
+  policy: true
+  project_safety: true
+  preflight: true
+  commit_plan: true
+  dry_run: true
+  trace: true
+  secret_metadata_only: true
+  providers: true
+  stages: true
+  activation: true
+  spa_deep_link: true
+  embedded_asset: true
+  api_404_separation: true
+  adapters: true
+adapters:
+  cursor: true
+  codex: true
+  generic-editor: true

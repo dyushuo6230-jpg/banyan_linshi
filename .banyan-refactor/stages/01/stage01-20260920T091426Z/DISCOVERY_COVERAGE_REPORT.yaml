@@ -1,0 +1,111 @@
+schema_version: stage01-bootstrap-v1
+stage_id: '01'
+result: PASS
+coverage:
+  repository_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server
+  tracked_considered: 5855
+  relevant_untracked_considered: 1
+  governed_ignored_considered: 17
+  editor_roots_considered:
+  - path: .cursor
+    status: DISCOVERED
+  - path: .codex
+    status: ABSENT
+  - path: .claude
+    status: ABSENT
+  - path: .github
+    status: ABSENT
+  - path: .husky
+    status: ABSENT
+  - path: AGENTS.md
+    status: ABSENT
+  - path: CLAUDE.md
+    status: ABSENT
+  governance_roots_considered:
+  - docs/governance
+  - docs/project
+  - docs/temp
+  - docs/开发指导.md
+  - docs/项目迭代开发文档指导v2.md
+  tool_script_roots_considered:
+  - .
+  - go-uni-app
+  - go-uni-app-online
+  - go-uni-app-online/src/uni_modules/rt-uni-update
+  - go-uni-app-online/src/uni_modules/uni-popup
+  - go-uni-app-online/src/uni_modules/uni-scss
+  - go-uni-app-online/src/uni_modules/uni-transition
+  - go-uni-app-tob
+  - go-uni-app-tob/src/uni_modules/rt-uni-update
+  - go-uni-app-tob/src/uni_modules/uni-popup
+  - go-uni-app-tob/src/uni_modules/uni-scss
+  - go-uni-app-tob/src/uni_modules/uni-transition
+  - go-uni-app/src/uni_modules/rt-uni-update
+  - go-uni-app/src/uni_modules/uni-popup
+  - go-uni-app/src/uni_modules/uni-scss
+  - go-uni-app/src/uni_modules/uni-transition
+  - nunu-go-api
+  - nunu-go-api/app/admin/web
+  - nunu-go-api/app/merchant/web
+  - nunu-go-api/dist/mall-deploy-jwt
+  - nunu-go-api/mall-uniapp
+  - tools/anydesign/scripts
+  generated_operational_roots_considered:
+  - docs/project
+  - tools/anydesign/examples
+  - docs/project/ui-design/visual-loop/LOOP_RUNS
+  - docs/project/progress
+  git_history_considered:
+    reachable_commits: 477
+    deleted_events: 10
+    unique_historical_paths: 5
+  secret_policy_preserved: true
+isolation:
+  banyan_refactor_classified_as_upstream_evidence: true
+  construction_materials_excluded_from_legacy: true
+  upstream_zip_excluded: true
+universe:
+  total: 100115
+  coverage_classes:
+    EXCLUDED_WITH_REASON: 94094
+    COVERED_CONTENT: 4766
+    COVERED_METADATA_ONLY: 1255
+  candidate_paths: 1026
+  content_scan: 4766 full decoded text files; feature/Markdown/backtick/ID scans and
+    focused semantic review
+  binary_scan: Metadata/path/source registry and safe hashes only; no visual review
+    asserted
+  all_paths_ledger: evidence/DISCOVERY_UNIVERSE.jsonl
+  root_ledger: evidence/ROOT_COVERAGE.json
+  candidate_ledger: evidence/CANDIDATE_RECONCILIATION.jsonl
+metrics:
+  SILENTLY_IGNORED_ASSET: 0
+  UNSCANNED_GOVERNANCE_ROOT_WITHOUT_REASON: 0
+  HIGH_RISK_UNCLASSIFIED: 0
+metric_definitions:
+  SILENTLY_IGNORED_ASSET: Expected path/content candidates plus governed ignored/historical
+    candidates absent from actual asset inventory
+  UNSCANNED_GOVERNANCE_ROOT_WITHOUT_REASON: Discovered directory coverage records
+    without content/metadata/exclusion reason linkage
+  HIGH_RISK_UNCLASSIFIED: UNCLASSIFIED asset records with HIGH/CRITICAL risk
+unclassified:
+  total: 0
+  high_risk: 0
+exclusions:
+- path: .banyan-refactor/** and .banyan-refactor.zip
+  reason: UPSTREAM_REFACTOR_OPERATIONAL_EVIDENCE
+- path: 榕树ai改造落地相关文档/**
+  reason: REFRACTOR_CONSTRUCTION_MATERIAL
+- path: Inherited dependency/build/cache/log/OS/IDE paths
+  reason: Per-path Stage 00 exclusion carried forward; no migration candidates
+- path: 69 inherited secret candidates + ssh-tunnel-test.ps1
+  reason: Metadata only; no secret body needed to classify safety boundary
+limitations:
+- Coverage means every enumerated path has treatment, not every business file underwent
+  semantic code review.
+- AI authorship unknown per file; candidate generated corpus preserves formal sources
+  conservatively.
+- Derived reproducibility and full semantic reference integrity deferred with owner
+  to later stages.
+- No all-history content scan; all reachable commit metadata/message patterns and
+  targeted deleted governance path history only.

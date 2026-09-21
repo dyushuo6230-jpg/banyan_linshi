@@ -1,0 +1,1025 @@
+schema_version: bootstrap-v1
+charter_version: '1.10'
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  run_id: stage14-20260921T022241Z
+  future_canonical_path: .banyan/migrations/MIGRATION_REGISTER.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+  future_migration:
+    required: true
+    owner_stage: 02/04
+    sequence:
+    - capture bootstrap source hash and source run id
+    - migrate to frozen canonical .banyan/migrations paths
+    - record migration timestamp and target hash
+    - validate lineage and content
+    - make bootstrap READ_ONLY_ARCHIVE_OR_REFERENCE
+    source_hash_required: true
+    target_hash_required: true
+    validation_required: true
+    bootstrap_after_migration: READ_ONLY_ARCHIVE_OR_REFERENCE
+refactor:
+  current_stage: '14'
+stages:
+  '00':
+    status: COMPLETED
+    baseline_commit: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    sub_stages:
+      00-A: COMPLETED
+      00-B: COMPLETED
+    planned_artifacts:
+    - BASELINE_MANIFEST.yaml
+    - PROTECTED_PATHS_MANIFEST.yaml
+    - DISCOVERY_SCOPE_BASELINE.yaml
+    - CHECKPOINT_RECORD.yaml
+    - FILE_HASHES.sha256
+    - PRE_STAGE_GIT_STATUS.txt
+    - POST_STAGE_GIT_STATUS.txt
+    - BANYAN_REFACTOR_TRACE.bootstrap.yaml
+    actual_artifacts:
+    - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+    - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+    - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+    - stages/00/stage00-precheck-20260920T083254Z/ACCEPTANCE_REPORT.md
+    - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      results:
+        V00-01: PASS
+        V00-02: PASS
+        V00-03: PASS
+        V00-04: PASS
+        V00-05: PASS
+        V00-06: PASS
+        V00-07: PASS
+        V00-08: PASS
+        V00-09: PASS
+        V00-10: PASS
+        V00-11: PASS
+        V00-12: PASS
+        V00-13: PASS
+        V00-14: PASS
+        V00-15: PASS
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+      qualification: Exact user-approved PARTIAL_APPROVED recovery exception; final sealing required
+    rollback_point: CHECKPOINT-stage00-precheck-20260920T083254Z
+    open_risks:
+    - id: R00-SECRET-001
+      status: USER_ACCEPTED
+      description: Only the 13 explicitly approved ignored local environment configurations have no independent Banyan content
+        backup. If lost, the Stage 00 checkpoint cannot restore their contents.
+      scope:
+      - nunu-go-api/config/admin/local.yml
+      - nunu-go-api/config/admin/test.yml
+      - nunu-go-api/config/h5-online/local.yml
+      - nunu-go-api/config/h5/local.yml
+      - nunu-go-api/config/h5/test.yml
+      - nunu-go-api/config/home/local.yml
+      - nunu-go-api/config/mall-online/local.yml
+      - nunu-go-api/config/mall-online/prod.yml
+      - nunu-go-api/config/mall-online/test.yml
+      - nunu-go-api/config/mall/local.yml
+      - nunu-go-api/config/mall/test.yml
+      - nunu-go-api/config/merchant/local.yml
+      - nunu-go-api/config/merchant/test.yml
+    next_stage_handoff: stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: Stage 01 Entry Gate
+    recovery_coverage: PARTIAL_APPROVED
+    resume_history:
+    - event: PRECHECK_BLOCKED
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/PRECHECK_BLOCKED.md
+    - event: USER_APPROVED_EXACT_13_PATH_EXCEPTION
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+    - event: RESUMED_SAME_RUN
+      baseline_recaptured: false
+      original_state_unchanged: true
+  '01':
+    status: COMPLETED
+    run_id: stage01-20260920T091426Z
+    resume_case: A
+    resumed_from_step: '01.2'
+    actual_artifacts:
+    - stages/01/stage01-20260920T091426Z/AI_ASSET_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/LEGACY_CLASSIFICATION_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/DISCOVERY_COVERAGE_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml
+    - stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml
+    - stages/01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+    - stages/01/stage01-20260920T091426Z/CHECKPOINT_RECORD.yaml
+    - stages/01/stage01-20260920T091426Z/ACCEPTANCE_REPORT.md
+    - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      evidence: stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+      results:
+        V01-01: PASS
+        V01-02: PASS
+        V01-03: PASS
+        V01-04: PASS
+        V01-05: PASS
+        V01-06: PASS
+        V01-07: PASS
+        V01-08: PASS
+        V01-09: PASS
+        V01-10: PASS
+        V01-11: PASS
+        V01-12: PASS
+        V01-13: PASS
+        V01-14: PASS
+        V01-15: PASS
+        V01-16: PASS
+        V01-17: PASS
+        V01-18: PASS
+    open_risks:
+    - id: R00-SECRET-001
+      status: USER_ACCEPTED
+      recovery_coverage: PARTIAL_APPROVED
+      scope:
+      - nunu-go-api/config/admin/local.yml
+      - nunu-go-api/config/admin/test.yml
+      - nunu-go-api/config/h5-online/local.yml
+      - nunu-go-api/config/h5/local.yml
+      - nunu-go-api/config/h5/test.yml
+      - nunu-go-api/config/home/local.yml
+      - nunu-go-api/config/mall-online/local.yml
+      - nunu-go-api/config/mall-online/prod.yml
+      - nunu-go-api/config/mall-online/test.yml
+      - nunu-go-api/config/mall/local.yml
+      - nunu-go-api/config/mall/test.yml
+      - nunu-go-api/config/merchant/local.yml
+      - nunu-go-api/config/merchant/test.yml
+      description: No independent backup of these 13 secret bodies; preserved only in current local environment
+    - id: R01-PROVENANCE
+      status: ROUTED
+      owner_candidate: 03/09/10
+      description: Individual AI authorship, exact generation lineage and byte reproducibility not established; no delete/regenerate
+        authorization
+    - id: R01-PRECEDENCE
+      status: ROUTED
+      owner_candidate: 02/05/07/12
+      description: CON-001/002 require future architecture/freshness/override handling before compatibility activation; Stage
+        01 does not select winner
+    - id: R01-LOCAL-EVIDENCE
+      status: OPEN
+      description: Control artifacts remain uncommitted local evidence, not independent off-machine backup
+    - id: R01-EXTERNAL-ARCHIVE-DRIFT
+      status: SAFE_DISCOVERY_DRIFT
+      description: Root .banyan-refactor.zip disappeared after successful resume precheck; origin unknown, no executor deletion/move/write.
+        Original accepted Stage 00 artifacts and checkpoints still hash-verified.
+      evidence: evidence/EXTERNAL_ARCHIVE_DRIFT.json
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: Stage 02 Entry Gate; no execution authorization
+    next_stage_entry_gate: PASS
+    execution_stopped_after_stage: '01'
+  '02':
+    status: COMPLETED
+    run_id: stage02-20260920T131746Z
+    design_state: CANDIDATE_ONLY
+    actual_artifacts:
+    - stages/02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml
+    - stages/02/stage02-20260920T131746Z/CONTRACT_CHAIN_DESIGN.md
+    - stages/02/stage02-20260920T131746Z/CORE_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/CORE_BOUNDARY_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/PROJECT_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/PROJECT_INSTANCE_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/PROVIDER_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/PROVIDER_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/COMPATIBILITY_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/COMPATIBILITY_LAYER_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/ASSET_BOUNDARY_MAP.jsonl
+    - stages/02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl
+    - stages/02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml
+    - stages/02/stage02-20260920T131746Z/CONFLICT_RESOLUTION_PLAN.md
+    - stages/02/stage02-20260920T131746Z/ARCHITECTURE_DECISION_RECORDS.yaml
+    - stages/02/stage02-20260920T131746Z/AI_RUNTIME_COST_GOVERNANCE_DESIGN.md
+    - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+    - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      results:
+        V02-01: PASS
+        V02-02: PASS
+        V02-03: PASS
+        V02-04: PASS
+        V02-05: PASS
+        V02-06: PASS
+        V02-07: PASS
+        V02-08: PASS
+        V02-09: PASS
+        V02-10: PASS
+        V02-11: PASS
+        V02-12: PASS
+        V02-13: PASS
+        V02-14: PASS
+        V02-15: PASS
+      evidence: stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+    source_stage01_run: stage01-20260920T091426Z
+    source_stage01_gate: PASS
+    open_risks:
+    - id: R02-PURITY-001
+      severity: HIGH
+      owner_candidate: 03/04/19
+      next_action: Stage 03 contract review plus second-project fixture and Stage 19 portability/no-loss validation before
+        final Core acceptance.
+    - id: R02-SOURCE-002
+      severity: HIGH
+      owner_candidate: 03/09/10
+      next_action: Freeze source-role schema, map provenance and test regeneration before any replace/archive decision.
+    - id: R02-COST-003
+      severity: MEDIUM
+      owner_candidate: 05/15/16/19
+      next_action: Define cost/quality telemetry and benchmark real workloads, then set thresholds with controlled configuration.
+    - id: R02-SECRET-004
+      severity: HIGH
+      owner_candidate: ALL_LATER_STAGES
+      next_action: Preserve in place, no body read/hash/copy/write/delete/commit; recovery coverage remains PARTIAL_APPROVED.
+    - id: R02-LOCAL-005
+      severity: MEDIUM
+      owner_candidate: ALL_LATER_STAGES
+      next_action: Preserve sealed evidence and classify freshness before each new stage; do not recreate or attribute zip
+        deletion without proof.
+    - id: CON-001
+      severity: HIGH
+      owner_candidate: '05'
+      next_action: Stage 02 map precedence and Stage 05 preserve decision authorization semantics; Stage 07 regression covers
+        project overrides.
+    - id: CON-002
+      severity: HIGH
+      owner_candidate: '12'
+      next_action: Stage 02 define freshness/source roles; Stage 12 use authoritative register and scoped confirmed records;
+        preserve mismatches as evidence.
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 03: PASS_FOR_CONTRACT_DESIGN; execution not authorized'
+    activation_mode: 'OFF'
+    architecture_frozen: false
+  '03':
+    status: COMPLETED
+    run_id: stage03-20260920T135702Z
+    contract_state: FROZEN
+    implementation_state: NOT_STARTED
+    actual_artifacts:
+    - stages/03/stage03-20260920T135702Z/CANONICAL_CONTRACT_SCHEMA.yaml
+    - stages/03/stage03-20260920T135702Z/CAPABILITY_CONTRACT_REGISTRY.yaml
+    - stages/03/stage03-20260920T135702Z/SOURCE_ROLE_SCHEMA.yaml
+    - stages/03/stage03-20260920T135702Z/SOURCE_ROLE_REGISTRY.yaml
+    - stages/03/stage03-20260920T135702Z/ARTIFACT_REGISTRY_SCHEMA.yaml
+    - stages/03/stage03-20260920T135702Z/PROVIDER_PORT_SCHEMA.yaml
+    - stages/03/stage03-20260920T135702Z/PROJECT_OVERLAY_SCHEMA.yaml
+    - stages/03/stage03-20260920T135702Z/REFERENCE_INTEGRITY_CONTRACT.yaml
+    - stages/03/stage03-20260920T135702Z/VERSION_STATUS_PROVENANCE_RULES.yaml
+    - stages/03/stage03-20260920T135702Z/BOOTSTRAP_CANONICAL_STATE_CONTRACT.yaml
+    - stages/03/stage03-20260920T135702Z/EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT.yaml
+    - stages/03/stage03-20260920T135702Z/AI_RUNTIME_GOVERNANCE_CONTRACT.yaml
+    - stages/03/stage03-20260920T135702Z/CONTRACT_FREEZE_REGISTER.yaml
+    - stages/03/stage03-20260920T135702Z/CONTRACT_COVERAGE_REPORT.yaml
+    - stages/03/stage03-20260920T135702Z/CONFLICT_CARRYOVER_REGISTER.yaml
+    - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+    - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      results:
+        V03-01: PASS
+        V03-02: PASS
+        V03-03: PASS
+        V03-04: PASS
+        V03-05: PASS
+        V03-06: PASS
+        V03-07: PASS
+        V03-08: PASS
+        V03-09: PASS
+        V03-10: PASS
+        V03-11: PASS
+        V03-12: PASS
+        V03-13: PASS
+        V03-14: PASS
+        V03-15: PASS
+        V03-16: PASS
+        V03-17: PASS
+        V03-18: PASS
+        V03-19: PASS
+        V03-20: PASS
+      evidence: stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+    capability_coverage:
+      accounted: 35
+      expected: 35
+      freeze_status_counts:
+        FROZEN_CONTRACT: 21
+        COMPATIBILITY_CONTRACT: 3
+        PROJECT_OVERLAY_CONTRACT: 2
+        PROVIDER_PORT_CONTRACT: 9
+    hard_metrics:
+      UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+      UNOWNED_SCHEMA_COLLISION: 0
+      SOURCE_ROLE_WITHOUT_AUTHORITY_RULE: 0
+      CONTRACT_WITHOUT_FAILURE_SEMANTICS: 0
+      SILENT_CAPABILITY_DROP: 0
+      PROJECT_PATH_HARDCODED_IN_CORE_SCHEMA: 0
+    open_risks:
+    - id: R03-PURITY
+      severity: HIGH
+      owner_stage: 04/19
+      blocking_before_activation: true
+      reason: 21 Core boundary candidates still lack independent cross-project execution proof.
+    - id: R03-SOURCE
+      severity: HIGH
+      owner_stage: 09/10
+      blocking_before_activation: true
+      reason: Artifact authorship/rebuildability may remain UNKNOWN; no replacement or regeneration is authorized.
+    - id: CON-001
+      severity: HIGH
+      owner_stage: '05'
+      blocking_before_activation: true
+      reason: IDP/project override conflict remains OPEN; no winner selected.
+    - id: CON-002
+      severity: HIGH
+      owner_stage: '12'
+      blocking_before_activation: true
+      reason: Project source freshness conflict remains OPEN; no winner selected.
+    - id: R03-COST
+      severity: MEDIUM
+      owner_stage: 05/15/16/19
+      blocking_before_activation: false
+      reason: Runtime prices, numeric budgets and quality benchmarks are not frozen.
+    - id: R03-SECRET
+      severity: HIGH
+      owner_stage: ALL_LATER_STAGES
+      blocking_before_activation: true
+      reason: 13 local environment configurations remain preserve-in-place only with PARTIAL_APPROVED recovery.
+    - id: R03-LOCAL
+      severity: MEDIUM
+      owner_stage: ALL_LATER_STAGES
+      blocking_before_activation: false
+      reason: Control artifacts are local uncommitted evidence.
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 04: PASS_FOR_IMPLEMENTATION_DESIGN; execution not authorized'
+    activation_mode: 'OFF'
+    stage04_started: false
+  '04':
+    status: COMPLETED
+    run_id: stage04-20260920T142517Z
+    execution_mode: CONTRACT_FIRST_LOW_TOKEN
+    design_state: FROZEN_DESIGN_NOT_ACTIVATED
+    actual_artifacts:
+    - stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_SCHEMA.yaml
+    - stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_LAYOUT_CONTRACT.yaml
+    - stages/04/stage04-20260920T142517Z/SOURCE_MAPPING_SCHEMA.yaml
+    - stages/04/stage04-20260920T142517Z/SOURCE_MAPPING_REGISTRY.yaml
+    - stages/04/stage04-20260920T142517Z/PROJECT_OVERLAY_BINDINGS.yaml
+    - stages/04/stage04-20260920T142517Z/VARIABLE_RESOLUTION_SCHEMA.yaml
+    - stages/04/stage04-20260920T142517Z/PROJECT_PROFILE_SCHEMA.yaml
+    - stages/04/stage04-20260920T142517Z/CONTRIBUTOR_PROFILE_SCHEMA.yaml
+    - stages/04/stage04-20260920T142517Z/PROVIDER_BINDING_SCHEMA.yaml
+    - stages/04/stage04-20260920T142517Z/ADOPTION_READINESS_REPORT.yaml
+    - stages/04/stage04-20260920T142517Z/FRAMEWORK_PROJECT_BOUNDARY.yaml
+    - stages/04/stage04-20260920T142517Z/BOOTSTRAP_TO_CANONICAL_MIGRATION_PLAN.yaml
+    - stages/04/stage04-20260920T142517Z/LOCATION_CONTRACT.yaml
+    - stages/04/stage04-20260920T142517Z/STAGE04_COVERAGE_REPORT.yaml
+    - stages/04/stage04-20260920T142517Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/04/stage04-20260920T142517Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V04-01..V04-20
+    hard_metrics:
+      UNMAPPED_SOURCE_ROLE: 0
+      SOURCE_MAPPING_WITHOUT_ROLE: 0
+      PROJECT_SPECIFIC_VALUE_IN_GENERIC_CORE_SCHEMA: 0
+      PHYSICAL_RELAYOUT_REQUIRED_BY_DEFAULT: 0
+      PROFILE_FIELD_USED_AS_AUTHORIZATION: 0
+      UNKNOWN_VARIABLE_SILENTLY_DEFAULTED: 0
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/04/stage04-20260920T142517Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 05: PASS_FOR_STAGE05_DESIGN_WITH_INHERITED_BLOCKERS; execution not authorized'
+    activation_mode: 'OFF'
+    stage05_started: false
+  '05':
+    status: COMPLETED
+    run_id: stage05-20260920T144623Z
+    execution_mode: POLICY_FIRST_LOW_TOKEN
+    policy_state: FROZEN_POLICY_NOT_IMPLEMENTED
+    actual_artifacts:
+    - stages/05/stage05-20260920T144623Z/ADAPTIVE_WORKFLOW_SCHEMA.yaml
+    - stages/05/stage05-20260920T144623Z/WORK_MODE_CONTRACT.yaml
+    - stages/05/stage05-20260920T144623Z/DECISION_LEVEL_SCHEMA.yaml
+    - stages/05/stage05-20260920T144623Z/DECISION_ESCALATION_CONTRACT.yaml
+    - stages/05/stage05-20260920T144623Z/HUMAN_CONFIRMATION_CONTRACT.yaml
+    - stages/05/stage05-20260920T144623Z/WORKFLOW_STATE_TRANSITION_SCHEMA.yaml
+    - stages/05/stage05-20260920T144623Z/TASK_CHANGE_BATCH_RELATIONSHIP_CONTRACT.yaml
+    - stages/05/stage05-20260920T144623Z/CON001_RESOLUTION_RECORD.yaml
+    - stages/05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml
+    - stages/05/stage05-20260920T144623Z/WORKFLOW_POLICY_REGISTRY.yaml
+    - stages/05/stage05-20260920T144623Z/SEMANTIC_CHANGE_CLASSIFICATION.yaml
+    - stages/05/stage05-20260920T144623Z/SEMANTIC_GROUPING_HUNK_POLICY.yaml
+    - stages/05/stage05-20260920T144623Z/COMMIT_MESSAGE_POLICY.yaml
+    - stages/05/stage05-20260920T144623Z/GIT_IDENTITY_POLICY.yaml
+    - stages/05/stage05-20260920T144623Z/COMMIT_AUTHORIZATION_BOUNDARY.yaml
+    - stages/05/stage05-20260920T144623Z/LEFTOVER_REPORTING_CONTRACT.yaml
+    - stages/05/stage05-20260920T144623Z/SEMANTIC_COMMIT_POLICY.yaml
+    - stages/05/stage05-20260920T144623Z/STAGE05_COVERAGE_REPORT.yaml
+    - stages/05/stage05-20260920T144623Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/05/stage05-20260920T144623Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V05-01..V05-20
+    con001_result: RESOLVED_BY_LAYERED_CONTRACT
+    con002_result: INHERITED_OPEN_OWNER_STAGE_12
+    hard_metrics:
+      UNACCOUNTED_HIGH_VALUE_CAPABILITY_WORKFLOW_IMPACT: 0
+      DECISION_LEVEL_WITHOUT_ESCALATION_RULE: 0
+      HUMAN_CONFIRMATION_BYPASS_PATH: 0
+      SEMANTIC_COMMIT_CLASS_WITHOUT_DISPOSITION: 0
+      COMMIT_POLICY_WITHOUT_IDENTITY_PRECHECK: 0
+      EDITOR_SPECIFIC_COMMIT_POLICY_BRANCH: 0
+      SECRET_RISK_AUTO_COMMIT_PATH: 0
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/05/stage05-20260920T144623Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 06: PASS_FOR_STAGE06_DESIGN_WITH_INHERITED_BLOCKERS; execution not authorized'
+    activation_mode: 'OFF'
+    stage06_started: false
+  '06':
+    status: COMPLETED
+    run_id: stage06-20260920T151243Z
+    execution_mode: PROVIDER_NEUTRAL_LOW_TOKEN
+    contract_state: FROZEN_CONTRACTS_NOT_IMPLEMENTED
+    actual_artifacts:
+    - stages/06/stage06-20260920T151243Z/CHANGE_WORKSPACE_SCHEMA.yaml
+    - stages/06/stage06-20260920T151243Z/CHANGE_WORKSPACE_PROVIDER_PORT.yaml
+    - stages/06/stage06-20260920T151243Z/OPENSPEC_PROVIDER_BINDING.yaml
+    - stages/06/stage06-20260920T151243Z/CHANGE_LIFECYCLE_SCHEMA.yaml
+    - stages/06/stage06-20260920T151243Z/ARTIFACT_RELATIONSHIP_SCHEMA.yaml
+    - stages/06/stage06-20260920T151243Z/PARALLEL_DRAFT_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/DRAFT_PROMOTION_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/APPLY_PREVIEW_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/CANONICAL_APPLY_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/DIVERGENCE_CONFLICT_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/APPLY_AUTHORIZATION_BOUNDARY.yaml
+    - stages/06/stage06-20260920T151243Z/ROLLBACK_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/PROVIDER_NEUTRAL_ARCHIVE_HISTORY_CONTRACT.yaml
+    - stages/06/stage06-20260920T151243Z/STAGE06_COVERAGE_REPORT.yaml
+    - stages/06/stage06-20260920T151243Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/06/stage06-20260920T151243Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V06-01..V06-20
+    provider_status:
+      openspec: DESIGN_ONLY_INACTIVE_NO_VERIFIED_LEGACY_INSTANCE
+    con001: CONSUMED_RESOLVED_BY_LAYERED_CONTRACT
+    con002: INHERITED_OPEN_OWNER_STAGE_12
+    hard_metrics:
+      CHANGE_WORKSPACE_WITHOUT_PROVIDER_PORT: 0
+      PROVIDER_SPECIFIC_FIELD_IN_CORE_CHANGE_SCHEMA: 0
+      CANONICAL_APPLY_WITHOUT_PREVIEW: 0
+      CANONICAL_APPLY_WITHOUT_REFERENCE_CHECK: 0
+      PARALLEL_DRAFT_WITHOUT_RECONCILIATION_PATH: 0
+      SILENT_CONFLICT_WINNER_PATH: 0
+      APPLY_PATH_WITHOUT_AUTHORIZATION_GATE: 0
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/06/stage06-20260920T151243Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 07: PASS_FOR_STAGE07_REFERENCE_MIGRATION_DESIGN_WITH_INHERITED_BLOCKERS; execution not authorized'
+    activation_mode: 'OFF'
+    stage07_started: true
+  '07':
+    status: COMPLETED
+    run_id: stage07-20260920T152653Z
+    execution_mode: SHADOW_ONLY_LOW_TOKEN_NO_LOSS
+    migration_state: PASS_NOLOSS_SHADOW_DESIGN_WITH_TYPED_BLOCKERS
+    actual_artifacts:
+    - stages/07/stage07-20260920T152653Z/LEGACY_CAPABILITY_MIGRATION_MATRIX.yaml
+    - stages/07/stage07-20260920T152653Z/LEGACY_ASSET_DISPOSITION_MATRIX.jsonl
+    - stages/07/stage07-20260920T152653Z/LEGACY_ARTIFACT_MIGRATION_MATRIX.jsonl
+    - stages/07/stage07-20260920T152653Z/OPERATIONAL_PRESERVATION_MATRIX.jsonl
+    - stages/07/stage07-20260920T152653Z/REFERENCE_MIGRATION_MAP.jsonl
+    - stages/07/stage07-20260920T152653Z/V31_GOVERNANCE_COMPATIBILITY_MAP.yaml
+    - stages/07/stage07-20260920T152653Z/PROVIDER_COMPATIBILITY_MAPPING.yaml
+    - stages/07/stage07-20260920T152653Z/SHADOW_PROJECT_INSTANCE.yaml
+    - stages/07/stage07-20260920T152653Z/SHADOW_APPLY_REPORT.yaml
+    - stages/07/stage07-20260920T152653Z/MIGRATION_BLOCKER_REGISTER.yaml
+    - stages/07/stage07-20260920T152653Z/ROLLBACK_RECOVERY_READINESS.yaml
+    - stages/07/stage07-20260920T152653Z/NOLOSS_COVERAGE_REPORT.yaml
+    - stages/07/stage07-20260920T152653Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/07/stage07-20260920T152653Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V07-01..V07-22
+    inventory_coverage:
+      high_value_capabilities: 35/35
+      legacy_assets: 1026/1026
+      generated_and_canonical_artifacts: 425/425
+      operational_artifacts: 289/289
+      reference_edges: 108/108
+    hard_metrics:
+      UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+      UNMAPPED_CANONICAL_ARTIFACT: 0
+      UNMAPPED_OPERATIONAL_ARTIFACT: 0
+      REFERENCE_EDGE_WITHOUT_MIGRATION_STRATEGY: 0
+      LEGACY_ASSET_WITHOUT_DISPOSITION: 0
+      UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+      LEGACY_DELETE_OR_RETIRE_WITHOUT_AUTHORIZATION: 0
+      CANONICAL_APPLY_EXECUTED_IN_STAGE07: 0
+    real_apply_readiness: MIGRATION_BLOCKED
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/07/stage07-20260920T152653Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 08: NOT_STARTED; execution not authorized'
+    activation_mode: 'OFF'
+    canonical_apply_execution: 'OFF'
+    stage08_started: true
+  '08':
+    status: COMPLETED
+    run_id: stage08-20260920T153936Z
+    execution_mode: UI_GOVERNANCE_LOW_TOKEN
+    contract_state: PASS_UI_GOVERNANCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+    actual_artifacts:
+    - stages/08/stage08-20260920T153936Z/PRD_AUTHORITY_CONTRACT.yaml
+    - stages/08/stage08-20260920T153936Z/UI_SPEC_AUTHORITY_CONTRACT.yaml
+    - stages/08/stage08-20260920T153936Z/UI_GOVERNANCE_SCOPE_SCHEMA.yaml
+    - stages/08/stage08-20260920T153936Z/UI_SPEC_ENABLEMENT_CONTRACT.yaml
+    - stages/08/stage08-20260920T153936Z/DESIGN_EVIDENCE_SCHEMA.yaml
+    - stages/08/stage08-20260920T153936Z/UI_SPEC_LIFECYCLE.yaml
+    - stages/08/stage08-20260920T153936Z/UI_SPEC_SCHEMA.yaml
+    - stages/08/stage08-20260920T153936Z/PRD_UI_TRACE_VERSION_CONTRACT.yaml
+    - stages/08/stage08-20260920T153936Z/UI_CHANGE_INTEGRATION_CONTRACT.yaml
+    - stages/08/stage08-20260920T153936Z/UI_IMPLEMENTATION_READINESS.yaml
+    - stages/08/stage08-20260920T153936Z/UI_VALIDATION_EVIDENCE_CONTRACT.yaml
+    - stages/08/stage08-20260920T153936Z/V31_UI_COMPATIBILITY_MAP.yaml
+    - stages/08/stage08-20260920T153936Z/STAGE08_COVERAGE_REPORT.yaml
+    - stages/08/stage08-20260920T153936Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/08/stage08-20260920T153936Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V08-01..V08-20
+    hard_metrics:
+      UI_SPEC_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+      UI_SPEC_WITHOUT_APPLICATION_SCOPE: 0
+      UI_SPEC_WITHOUT_EXPLICIT_ENABLEMENT_STATE: 0
+      APPROVED_UI_SPEC_WITHOUT_PRD_TRACE: 0
+      APPROVED_UI_SPEC_WITHOUT_DESIGN_EVIDENCE: 0
+      IMPLEMENTATION_READY_WITHOUT_APPROVAL_GATE: 0
+      PRD_RELEVANT_CHANGE_WITHOUT_UI_FRESHNESS_EFFECT: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    con002: INHERITED_OPEN_OWNER_STAGE_12
+    activation_mode: 'OFF'
+    canonical_mutation: 'OFF'
+    next_stage_handoff: stages/08/stage08-20260920T153936Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 09: NOT_STARTED; execution not authorized'
+    stage09_started: true
+  '09':
+    status: COMPLETED
+    run_id: stage09-20260920T155444Z
+    execution_mode: DESIGN_INTELLIGENCE_LOW_TOKEN
+    contract_state: PASS_DESIGN_INTELLIGENCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+    actual_artifacts:
+    - stages/09/stage09-20260920T155444Z/DESIGN_SOURCE_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/DESIGN_PROVIDER_PORT.yaml
+    - stages/09/stage09-20260920T155444Z/NORMALIZED_SCENE_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/GEOMETRY_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/SEMANTIC_TREE_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/DESIGN_TRUTH_CONTRACT.yaml
+    - stages/09/stage09-20260920T155444Z/DESIGN_TOKEN_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/BEHAVIOR_EVIDENCE_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/DATA_EVIDENCE_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/CONFIDENCE_PROVENANCE_CONTRACT.yaml
+    - stages/09/stage09-20260920T155444Z/INTELLIGENCE_CLASSIFICATION_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/IMPLEMENTATION_IR_INPUT_CONTRACT.yaml
+    - stages/09/stage09-20260920T155444Z/VISUAL_VALIDATION_INPUT_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/DESIGN_DRIFT_SCHEMA.yaml
+    - stages/09/stage09-20260920T155444Z/DESIGN_PACKAGE_CONTRACT.yaml
+    - stages/09/stage09-20260920T155444Z/LEGACY_UI_DESIGN_INTELLIGENCE_COMPATIBILITY_MAP.yaml
+    - stages/09/stage09-20260920T155444Z/STAGE09_COVERAGE_REPORT.yaml
+    - stages/09/stage09-20260920T155444Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/09/stage09-20260920T155444Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V09-01..V09-22
+    legacy_provider_capabilities: 9/9_MAPPED_0_ACTIVATED
+    hard_metrics:
+      PROVIDER_SPECIFIC_FIELD_IN_NORMALIZED_SCENE: 0
+      UNMARKED_INFERENCE_AS_FACT: 0
+      UNMARKED_RECOMMENDATION_AS_FACT: 0
+      STATIC_IMAGE_INTERACTION_ASSUMPTION: 0
+      OBSERVED_GEOMETRY_FORCED_TO_FIXED_LAYOUT: 0
+      DESIGN_OUTPUT_AUTO_PROMOTED_TO_UI_SPEC: 0
+      DESIGN_ARTIFACT_WITHOUT_PROVENANCE: 0
+      DESIGN_PROVIDER_PORT_WITHOUT_FAILURE_SEMANTICS: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    provider_activation: 'OFF'
+    frontend_generation: 'OFF'
+    next_stage_handoff: stages/09/stage09-20260920T155444Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 10: NOT_STARTED; execution not authorized'
+    stage10_started: true
+  '10':
+    status: COMPLETED
+    run_id: stage10-20260920T161325Z
+    execution_mode: KNOWLEDGE_PROJECTION_LOW_TOKEN
+    contract_state: PASS_KNOWLEDGE_PUBLISHING_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+    actual_artifacts:
+    - stages/10/stage10-20260920T161325Z/KNOWLEDGE_SOURCE_AUTHORITY_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/KNOWLEDGE_PROJECTION_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/PROJECT_GUIDE_SCHEMA.yaml
+    - stages/10/stage10-20260920T161325Z/AUDIENCE_VIEW_SCHEMA.yaml
+    - stages/10/stage10-20260920T161325Z/KNOWLEDGE_NAVIGATION_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/KNOWLEDGE_FRESHNESS_SCHEMA.yaml
+    - stages/10/stage10-20260920T161325Z/PROJECTION_REBUILDABILITY_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/GENERATED_KNOWLEDGE_PROVENANCE_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/PLAIN_DOCUMENT_COMPATIBILITY_MAP.yaml
+    - stages/10/stage10-20260920T161325Z/PROGRESS_WORKLOG_PROJECTION_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/HANDOVER_CONTEXT_PROJECTION_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/ARCHITECTURE_DIAGRAM_PROJECTION_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/MEETING_PACK_CONTRACT.yaml
+    - stages/10/stage10-20260920T161325Z/KNOWLEDGE_PUBLISH_LIFECYCLE.yaml
+    - stages/10/stage10-20260920T161325Z/KNOWLEDGE_PROVIDER_PORT.yaml
+    - stages/10/stage10-20260920T161325Z/STAGE11_INDEX_REQUIREMENTS.yaml
+    - stages/10/stage10-20260920T161325Z/STAGE10_COVERAGE_REPORT.yaml
+    - stages/10/stage10-20260920T161325Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/10/stage10-20260920T161325Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V10-01..V10-22
+    knowledge_artifacts: 89_TARGETED_18_AUTHORITY_71_DERIVED_NOT_PROVEN_REBUILDABLE
+    hard_metrics:
+      KNOWLEDGE_PROJECTION_WITHOUT_SOURCE_AUTHORITY: 0
+      GUIDE_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+      STALE_PROJECTION_CLAIMING_CURRENT: 0
+      GENERATED_KNOWLEDGE_WITHOUT_PROVENANCE: 0
+      UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+      AUDIENCE_VIEW_WITH_SEPARATE_TRUTH: 0
+      PLAIN_DOCUMENT_PROMOTED_TO_CANONICAL: 0
+      PROGRESS_PROJECTION_WITHOUT_CURRENTNESS_STATE: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    knowledge_runtime: 'OFF'
+    stage11_runtime: 'OFF'
+    next_stage_handoff: stages/10/stage10-20260920T161325Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 11: NOT_STARTED; execution not authorized'
+    stage11_started: true
+  '11':
+    status: COMPLETED
+    run_id: stage11-20260921T011037Z
+    execution_mode: STRUCTURED_INPUT_FIRST_LOW_TOKEN
+    contract_state: PASS_STAGE11_SHADOW_INDEX_TRACE_HISTORY_WITH_INHERITED_BLOCKERS
+    actual_artifacts:
+    - stages/11/stage11-20260921T011037Z/schema.sql
+    - stages/11/stage11-20260921T011037Z/TRACE_EVENT_SCHEMA.yaml
+    - stages/11/stage11-20260921T011037Z/HISTORY_EVENT_SCHEMA.yaml
+    - stages/11/stage11-20260921T011037Z/QUERY_CONTRACT.yaml
+    - stages/11/stage11-20260921T011037Z/STABLE_ID_LOCATOR_CONTRACT.yaml
+    - stages/11/stage11-20260921T011037Z/INDEX_IMPORT_MANIFEST.yaml
+    - stages/11/stage11-20260921T011037Z/INDEX_MIGRATION_LEDGER.yaml
+    - stages/11/stage11-20260921T011037Z/UNRESOLVED_REFERENCE_REGISTRY.yaml
+    - stages/11/stage11-20260921T011037Z/REBUILDABILITY_REPORT.yaml
+    - stages/11/stage11-20260921T011037Z/STAGE12_QUERY_SURFACE.yaml
+    - stages/11/stage11-20260921T011037Z/STAGE11_COVERAGE_REPORT.yaml
+    - stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+    - stages/11/stage11-20260921T011037Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/11/stage11-20260921T011037Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V11-01..V11-24
+    shadow_index: SHADOW_REBUILDABLE_NOT_CANONICAL_TRUTH_NOT_FINAL_RUNTIME_DB
+    hard_metrics:
+      INDEX_RECORD_WITHOUT_STABLE_ID: 0
+      INDEX_RECORD_WITHOUT_SOURCE_ROLE_OR_CLASSIFICATION: 0
+      INDEX_AS_CANONICAL_TRUTH_PATH: 0
+      REFERENCE_EDGE_LOST_DURING_IMPORT: 0
+      UNRESOLVED_REFERENCE_WITH_INVENTED_TARGET: 0
+      HISTORY_NON_SUCCESS_STATE_NORMALIZED_TO_SUCCESS: 0
+      TRACE_EVENT_WITHOUT_LINEAGE: 0
+      SECRET_BODY_OR_HASH_INDEXED: 0
+      SHADOW_DB_NOT_REBUILDABLE_FROM_STRUCTURED_INPUTS: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    con002: OPEN_OWNER_STAGE12
+    next_stage_handoff: stages/11/stage11-20260921T011037Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 12: NOT_STARTED; execution not authorized'
+    stage12_started: true
+  '12':
+    status: COMPLETED
+    run_id: stage12-20260921T014521Z
+    execution_mode: QUERY_FIRST_LOW_TOKEN
+    contract_state: PASS_STAGE12_CONTEXT_MEMORY_FRESHNESS_WITH_TYPED_BLOCKERS
+    actual_artifacts:
+    - stages/12/stage12-20260921T014521Z/CONTEXT_SELECTION_POLICY.yaml
+    - stages/12/stage12-20260921T014521Z/FRESHNESS_RESOLUTION_SCHEMA.yaml
+    - stages/12/stage12-20260921T014521Z/CON002_RESOLUTION_RECORD.yaml
+    - stages/12/stage12-20260921T014521Z/MEMORY_RECORD_SCHEMA.yaml
+    - stages/12/stage12-20260921T014521Z/CONTEXT_RECOVERY_CONTRACT.yaml
+    - stages/12/stage12-20260921T014521Z/CURRENT_HISTORICAL_STATE_CONTRACT.yaml
+    - stages/12/stage12-20260921T014521Z/TOKEN_BUDGET_POLICY.yaml
+    - stages/12/stage12-20260921T014521Z/CONTEXT_COMPACTION_SCHEMA.yaml
+    - stages/12/stage12-20260921T014521Z/CACHE_REUSE_POLICY.yaml
+    - stages/12/stage12-20260921T014521Z/EVIDENCE_ON_DEMAND_POLICY.yaml
+    - stages/12/stage12-20260921T014521Z/HISTORICAL_REFERENCE_DISPOSITION.yaml
+    - stages/12/stage12-20260921T014521Z/RUNTIME_COST_CONTEXT_POLICY.yaml
+    - stages/12/stage12-20260921T014521Z/STAGE13_QUERY_HANDOFF.yaml
+    - stages/12/stage12-20260921T014521Z/STAGE12_COVERAGE_REPORT.yaml
+    - stages/12/stage12-20260921T014521Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/12/stage12-20260921T014521Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V12-01..V12-24
+    con002: TYPED_BLOCKED_NO_WINNER_SELECTED
+    historical_references: 4_KEEP_UNRESOLVED_HISTORICAL_2_NOT_A_REFERENCE
+    hard_metrics:
+      FRESHNESS_DECISION_BY_MTIME_ONLY: 0
+      FRESHNESS_CONFLICT_WITH_SILENT_WINNER: 0
+      CONTEXT_SUMMARY_WITHOUT_SOURCE_REFS: 0
+      CONTEXT_SUMMARY_WITHOUT_AS_OF_OR_FRESHNESS: 0
+      CONTEXT_COMPACTION_DROPPED_BLOCKER: 0
+      MEMORY_PROMOTED_TO_CANONICAL_TRUTH: 0
+      TOKEN_BUDGET_BYPASSED_REQUIRED_CONTEXT: 0
+      HISTORICAL_REFERENCE_WITH_INVENTED_TARGET: 0
+      SECRET_BODY_INCLUDED_IN_CONTEXT_INDEX: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    next_stage_handoff: stages/12/stage12-20260921T014521Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 13: NOT_STARTED; execution not authorized'
+    stage13_started: true
+  '13':
+    status: COMPLETED
+    run_id: stage13-20260921T020549Z
+    execution_mode: QUERY_FIRST_OFFLINE_LEARNING_LOW_TOKEN
+    contract_state: PASS_STAGE13_EVIDENCE_IMPACT_EVENT_OFFLINE_LEARNING_WITH_TYPED_BLOCKERS
+    actual_artifacts:
+    - stages/13/stage13-20260921T020549Z/EVIDENCE_RECORD_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/EVIDENCE_CHAIN_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/IMPACT_GRAPH_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/DECISION_CHANGE_EVIDENCE_CONTRACT.yaml
+    - stages/13/stage13-20260921T020549Z/EVENT_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/CAUSALITY_BOUNDARY.yaml
+    - stages/13/stage13-20260921T020549Z/PROMPT_OBSERVATION_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/OUTCOME_ATTRIBUTION_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/LEARNING_CANDIDATE_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/LEARNING_CANDIDATES.yaml
+    - stages/13/stage13-20260921T020549Z/LEARNING_EVALUATION_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/LEARNING_EVALUATIONS.yaml
+    - stages/13/stage13-20260921T020549Z/LEARNING_PROMOTION_GATE.yaml
+    - stages/13/stage13-20260921T020549Z/QUALITY_COST_TELEMETRY_SCHEMA.yaml
+    - stages/13/stage13-20260921T020549Z/FALSE_POSITIVE_NEGATIVE_REGISTER.yaml
+    - stages/13/stage13-20260921T020549Z/STAGE14_GOVERNANCE_REQUIREMENTS.yaml
+    - stages/13/stage13-20260921T020549Z/STAGE13_COVERAGE_REPORT.yaml
+    - stages/13/stage13-20260921T020549Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/13/stage13-20260921T020549Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V13-01..V13-24
+    learning_candidates: 1_EVALUATED_1_BLOCKED_0_APPLIED
+    canonical_prompt_rule_skill_mutations: 0
+    hard_metrics:
+      EVIDENCE_RECORD_WITHOUT_SOURCE_REF: 0
+      EVIDENCE_RECORD_WITHOUT_PROVENANCE_OR_CLASSIFICATION: 0
+      CORRELATION_PROMOTED_TO_CAUSALITY_WITHOUT_EVIDENCE: 0
+      IMPACT_EDGE_WITHOUT_BASIS: 0
+      PROMPT_OUTCOME_WITH_SINGLE_FACTOR_ATTRIBUTION_BY_DEFAULT: 0
+      LEARNING_CANDIDATE_AUTO_APPLIED: 0
+      PROJECT_SPECIFIC_LEARNING_AUTO_PROMOTED_TO_CORE: 0
+      SECRET_OR_SECRET_DERIVED_LEARNING_RECORD: 0
+      CON002_RESOLVED_BY_LEARNING_OR_EVENT_FREQUENCY: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    next_stage_handoff: stages/13/stage13-20260921T020549Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 14: NOT_STARTED; execution not authorized'
+    stage14_started: true
+  '14':
+    status: COMPLETED
+    run_id: stage14-20260921T022241Z
+    execution_mode: POLICY_FREEZE_SHADOW_EVALUATION_LOW_TOKEN
+    contract_state: PASS_STAGE14_PERMISSION_GOVERNANCE_GIT_SAFETY_POLICY_FREEZE_WITH_TYPED_BLOCKERS
+    actual_artifacts:
+    - stages/14/stage14-20260921T022241Z/POLICY_REGISTRY.yaml
+    - stages/14/stage14-20260921T022241Z/ACTION_RISK_POLICY.yaml
+    - stages/14/stage14-20260921T022241Z/PERMISSION_DECISION_SCHEMA.yaml
+    - stages/14/stage14-20260921T022241Z/AUTHORIZATION_RECORD_SCHEMA.yaml
+    - stages/14/stage14-20260921T022241Z/WORK_MODE_PERMISSION_MATRIX.yaml
+    - stages/14/stage14-20260921T022241Z/PROTECTED_TARGET_SCHEMA.yaml
+    - stages/14/stage14-20260921T022241Z/PROTECTED_WRITE_GATE.yaml
+    - stages/14/stage14-20260921T022241Z/SECRET_SAFETY_GATE.yaml
+    - stages/14/stage14-20260921T022241Z/FRESHNESS_ROLLBACK_PRECONDITIONS.yaml
+    - stages/14/stage14-20260921T022241Z/HUMAN_CONFIRMATION_BINDING.yaml
+    - stages/14/stage14-20260921T022241Z/GIT_IDENTITY_SAFETY.yaml
+    - stages/14/stage14-20260921T022241Z/GIT_WORKTREE_SAFETY.yaml
+    - stages/14/stage14-20260921T022241Z/SEMANTIC_COMMIT_AUTHORIZATION.yaml
+    - stages/14/stage14-20260921T022241Z/GIT_OPERATION_PERMISSION_MATRIX.yaml
+    - stages/14/stage14-20260921T022241Z/EXTERNAL_IRREVERSIBLE_GATE.yaml
+    - stages/14/stage14-20260921T022241Z/AUDIT_EVENT_REQUIREMENTS.yaml
+    - stages/14/stage14-20260921T022241Z/LEARNING_GOVERNANCE_BINDING.yaml
+    - stages/14/stage14-20260921T022241Z/STAGE15_RUNTIME_ENFORCEMENT_HANDOFF.yaml
+    - stages/14/stage14-20260921T022241Z/STAGE14_COVERAGE_REPORT.yaml
+    - stages/14/stage14-20260921T022241Z/ACCEPTANCE_REPORT.md
+    validation:
+      overall: PASS
+      evidence: stages/14/stage14-20260921T022241Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V14-01..V14-26
+    shadow_policy_cases: 14_OF_14_PASS_0_ACTIONS_EXECUTED
+    git_mutations: 0
+    hard_metrics:
+      ACTION_WITHOUT_RISK_CLASS: 0
+      ACTION_WITHOUT_PERMISSION_DECISION: 0
+      AUTHORIZATION_RECORD_WITHOUT_SCOPE_OR_ACTOR: 0
+      PROFILE_OR_EDITOR_USED_AS_AUTHORIZATION: 0
+      PROTECTED_WRITE_WITHOUT_FRESHNESS_CHECK: 0
+      PROTECTED_WRITE_WITHOUT_ROLLBACK_CHECKPOINT: 0
+      GIT_COMMIT_PATH_WITHOUT_IDENTITY_PRECHECK: 0
+      GIT_IDENTITY_MUTATION_PATH: 0
+      SECRET_RISK_COMMIT_PATH: 0
+      COMMIT_PLAN_TREATED_AS_AUTHORIZATION: 0
+      UNKNOWN_PRECONDITION_ALLOWED_ACTION: 0
+    real_migration_readiness: MIGRATION_BLOCKED
+    next_stage_handoff: stages/14/stage14-20260921T022241Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 15: NOT_STARTED; execution not authorized'
+    stage15_started: true
+  '15':
+    status: COMPLETED
+    run_id: stage15-20260921T031742Z
+    execution_mode: RUNTIME_IMPLEMENTATION_ISOLATED_GIT_EXECUTION_LOW_TOKEN
+    contract_state: PASS_STAGE15_RUNTIME_IMPLEMENTATION_ISOLATED_GIT_EXECUTION
+    framework_source: banyan-framework
+    validation:
+      overall: PASS
+      evidence: stages/15/stage15-20260921T031742Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V15-01..V15-28
+    tests: 21_OF_21_PASS
+    hard_metrics:
+      POLICY_HARD_BLOCK_LOST_IN_COMPILATION: 0
+      UNKNOWN_POLICY_FIELD_ACCEPTED_SILENTLY: 0
+      RUNTIME_ALLOW_WITH_FAILED_PRECONDITION: 0
+      CURRENT_PROJECT_GIT_MUTATION: 0
+      BLIND_STAGE_ALL_PATH: 0
+      SECRET_RISK_EXECUTION_PATH: 0
+      COMMIT_EXECUTION_WITHOUT_IDENTITY_PRECHECK: 0
+      COMMIT_EXECUTION_WITHOUT_AUTHORIZATION: 0
+      COMMIT_CAPTURE_WITHOUT_TRACE: 0
+      FIXTURE_IDENTITY_LEAK_TO_PROJECT: 0
+      NETWORK_GIT_ACTION_IN_TESTS: 0
+    next_stage_handoff: stages/15/stage15-20260921T031742Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 16: NOT_STARTED; execution not authorized'
+    stage16_started: true
+  '16':
+    status: COMPLETED
+    run_id: stage16-20260921T034943Z
+    execution_mode: LOCAL_CONTROL_PLANE_WEBUI_RUNTIME_ENFORCED
+    contract_state: PASS_STAGE16_CONTROL_PLANE_WEBUI_PROVENANCE_ACTIVATION_READINESS
+    framework_source: banyan-framework
+    validation:
+      overall: PASS
+      evidence: stages/16/stage16-20260921T034943Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V16-01..V16-26
+    tests: 12_OF_12_PASS_PLUS_BROWSER_AND_CONFORMANCE
+    hard_metrics:
+      CONTROL_PLANE_POLICY_BYPASS_PATH: 0
+      UI_CONFIRMATION_TREATED_AS_AUTHORIZATION_WITHOUT_BINDING: 0
+      CURRENT_PROJECT_MUTATION_FROM_WEBUI: 0
+      PUBLIC_BINDING_DEFAULT_PATH: 0
+      SECRET_BODY_RENDER_PATH: 0
+      GIT_IDENTITY_VALUE_PERSISTENCE_PATH: 0
+      PROVENANCE_VIEW_WITHOUT_AUTHORITY_OR_FRESHNESS: 0
+      BLOCKED_ACTION_RENDERED_AS_EXECUTABLE: 0
+      DRY_RUN_RESULT_RENDERED_AS_ACTUAL_COMMIT: 0
+      PILOT_DOT_BANYAN_ACTIVATED_IN_STAGE16: 0
+    activation_readiness: BLOCKED_PENDING_STAGE17_GATE
+    dot_banyan_created: false
+    next_stage_handoff: stages/16/stage16-20260921T034943Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 17: NOT_STARTED; execution not authorized'
+    stage17_started: true
+  '17':
+    status: COMPLETED
+    run_id: stage17-20260921T055911Z
+    execution_mode: CURSOR_PROJECT_INSTANCE_PILOT
+    contract_state: PASS_STAGE17_CURSOR_PROJECT_INSTANCE_PILOT
+    sequence: PREFLIGHT_CHECKPOINT_SHADOW_ADAPTER_PILOT_VALIDATION_ACTIVATION_REVIEW
+    pilot:
+      dot_banyan_created: true
+      mode: PILOT_SHADOW
+      success: true
+      final_activation: false
+      formal_migration_complete: false
+      rollback_ready: true
+    project_safety:
+      existing_project_layout: PRESERVE_IN_PLACE
+      git_mutations: 0
+      docs_project_moves: 0
+      legacy_deletions: 0
+      secret_body_reads: 0
+      identity_mutations: 0
+    validation:
+      overall: PASS
+      evidence: stages/17/stage17-20260921T055911Z/evidence/VALIDATION_RESULTS.yaml
+      validation_ids: V17-01..V17-28
+    tests: 10_OF_10_PASS
+    con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+    next_stage_handoff: stages/17/stage17-20260921T055911Z/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 18: NOT_STARTED; execution not authorized'
+    stage18_started: true
+  '18':
+    status: COMPLETED
+    run_id: stage18-20260921T062103Z
+    execution_mode: MULTI_EDITOR_ADAPTER_COMPATIBILITY_VALIDATION
+    contract_state: PASS_STAGE18_MULTI_EDITOR_ADAPTER_COMPATIBILITY
+    validated_adapters: [cursor, codex, generic-editor]
+    runtime:
+      single_runtime: true
+      permission_bypass_paths: 0
+      policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+    validation:
+      overall: PASS
+      evidence: stages/18/stage18-20260921T062103Z/evidence/VALIDATION_RESULTS.yaml
+      checks: C18-01..C18-18
+    tests: 11_OF_11_PASS
+    formal_matrix: 24_REQUESTS_18_OK_3_BLOCKED_3_TYPED_FAILURE
+    project_safety:
+      git_mutations: 0
+      canonical_writes: 0
+      dot_banyan_modified: false
+      project_document_migrations: 0
+    next_stage_handoff: stages/18/stage18-20260921T062103Z/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 19: NOT_STARTED; execution not authorized'
+    stage18_5_started: true
+    stage19_started: false
+  '18.5':
+    status: COMPLETED
+    run_id: stage18_5-20260921T064132Z
+    execution_mode: ANT_DESIGN_PRO_SIMPLE_GO_GIN_PRESERVED_RUNTIME
+    contract_state: PASS_STAGE18_5_ANT_DESIGN_PRO_GOGIN_ARCHITECTURE_MIGRATION
+    frontend: ANT_DESIGN_PRO_SIMPLE_TYPESCRIPT
+    control_plane: GO_GIN_TRANSPORT_ONLY
+    runtime_bridge: LOCAL_STDIO_PRESERVED_STAGE15_RUNTIME
+    validation:
+      overall: PASS
+      evidence: stages/18.5/stage18_5-20260921T064132Z/evidence/STAGE18_5_COVERAGE_REPORT.yaml
+      validation_ids: V18_5-01..V18_5-30
+    tests: FRONTEND_BUILD_GO_TESTS_5_BRIDGE_11_ADAPTER_RELEASE_SMOKE_PASS
+    hard_metrics_all_zero: true
+    project_safety:
+      git_mutations: 0
+      dot_banyan_modified: false
+      runtime_core_rewritten: false
+    next_stage_handoff: stages/18.5/stage18_5-20260921T064132Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 19: READY_FOR_INDEPENDENT_RC_REVIEW_WITH_BLOCKERS; execution not authorized'
+    stage19_started: true
+  '19':
+    status: COMPLETED
+    run_id: stage19-20260921T071430Z
+    execution_mode: EVIDENCE_DRIVEN_INDEPENDENT_ACCEPTANCE_RC
+    contract_state: PASS_STAGE19_INDEPENDENT_TECHNICAL_ACCEPTANCE_RC_WITH_CARRIED_BLOCKERS
+    rc_version: stage19-rc.1
+    architecture: ANT_DESIGN_PRO_SIMPLE_GO_GIN_LOCAL_STDIO_PYTHON_RUNTIME
+    validation:
+      overall: PASS_WITH_CARRIED_BLOCKERS
+      evidence: stages/19/stage19-20260921T071430Z/evidence/STAGE19_COVERAGE_REPORT.yaml
+      validation_ids: V19-01..V19-32
+    critical_regressions: 36_OF_36_PASS
+    hard_metrics_all_zero: true
+    project_safety:
+      git_mutations: 0
+      dot_banyan_modified: false
+      framework_modified: false
+    blockers:
+      CON-002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+      FINAL_ACTIVATION: NOT_AUTHORIZED
+    next_stage_handoff: stages/19/stage19-20260921T071430Z/STAGE20_HANDOFF.yaml
+    next_gate: 'Stage 20: READY_FOR_DOCUMENTATION_AND_RELEASE_PREPARATION_WITH_ACTIVATION_BLOCKED; execution not authorized'
+    stage20_started: true
+  '20':
+    status: COMPLETED
+    run_id: stage20-20260921T073758Z
+    execution_mode: DOCUMENTATION_FRAMEWORK_RELEASE_FINAL_HANDOFF
+    contract_state: PASS_STAGE20_DOCUMENTATION_FRAMEWORK_RELEASE_FINAL_HANDOFF_WITH_PROJECT_ACTIVATION_BLOCKED
+    framework_release:
+      version: v1.10-additive.1
+      state: RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT
+      manifest: stages/20/stage20-20260921T073758Z/FRAMEWORK_RELEASE_MANIFEST.yaml
+    documentation:
+      final_guides: 11
+      accepted_final_state: stages/20/stage20-20260921T073758Z/ACCEPTED_FINAL_STATE.yaml
+    validation:
+      overall: PASS_WITH_CARRIED_BLOCKERS
+      evidence: stages/20/stage20-20260921T073758Z/evidence/STAGE20_COVERAGE_REPORT.yaml
+      validation_ids: V20-01..V20-24
+    hard_metrics_all_zero: true
+    project_safety:
+      git_mutations: 0
+      dot_banyan_modified: false
+      docs_project_migrations: 0
+      final_activation: false
+    blockers:
+      CON-002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+      FINAL_ACTIVATION: NOT_AUTHORIZED
+    bootstrap_workspace: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION
+    version_pointer:
+      current: v1.9.1
+      changed: false
+    final_handoff: stages/20/stage20-20260921T073758Z/FINAL_HANDOFF.yaml
+    later_stage_auto_started: false

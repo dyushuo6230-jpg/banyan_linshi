@@ -1,0 +1,16 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields: [guide_id, version, source_refs, freshness, provenance, sections]
+logical_sections: [overview, applications_services, canonical_source_map, how_to_work, change_decision, ui_governance, testing_delivery, progress_handover, knowledge_navigation, freshness_notice]
+rules:
+  physical_layout_mandatory: false
+  duplicate_complete_prd: false
+  duplicate_complete_adr: false
+  duplicate_complete_api: false
+  duplicate_complete_ui_spec: false
+  canonical_source_map_required: true
+  freshness_notice_required: true
+  guide_is_second_truth: false
+guides: []

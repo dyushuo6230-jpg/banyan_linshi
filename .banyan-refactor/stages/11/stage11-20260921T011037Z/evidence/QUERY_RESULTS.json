@@ -1,0 +1,448 @@
+{
+  "overall": "PASS",
+  "queries": [
+    {
+      "query": "artifact_by_stable_id",
+      "status": "PASS",
+      "row_count": 1,
+      "sample": [
+        [
+          "ART-003356af9a6e67",
+          "CANONICAL",
+          "PRIMARY",
+          "STATUS_RECORDED_NOT_RECOMPUTED: Draft",
+          "INDEXED_FROM_STAGE01_AND_STAGE07"
+        ]
+      ]
+    },
+    {
+      "query": "current_locator_by_stable_id",
+      "status": "PASS",
+      "row_count": 5,
+      "sample": [
+        [
+          "ART-003356af9a6e67",
+          "docs/project/delivery/README.md",
+          "PRIMARY",
+          "STATUS_RECORDED_NOT_RECOMPUTED: Draft",
+          "INDEXED_FROM_STAGE01_AND_STAGE07"
+        ],
+        [
+          "ART-01908cae359ebf",
+          "docs/project/decisions/ADR-008.md",
+          "EVIDENTIARY",
+          "STATUS_RECORDED_NOT_RECOMPUTED: Approved",
+          "INDEXED_FROM_STAGE01_AND_STAGE07"
+        ],
+        [
+          "ART-0243a4eb6160d7",
+          "docs/project/design/modules/README.md",
+          "PRIMARY",
+          "STATUS_RECORDED_NOT_RECOMPUTED: Baselined",
+          "INDEXED_FROM_STAGE01_AND_STAGE07"
+        ],
+        [
+          "ART-02d45cc80afa3c",
+          "docs/project/baseline/DEC-020.md",
+          "EVIDENTIARY",
+          "STATUS_RECORDED_NOT_RECOMPUTED: Approved",
+          "INDEXED_FROM_STAGE01_AND_STAGE07"
+        ],
+        [
+          "ART-03ec32dc361074",
+          "docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景@2x.png",
+          "PRIMARY_SCOPED",
+          "STATUS_RECORDED_NOT_RECOMPUTED: UNKNOWN",
+          "INDEXED_FROM_STAGE01_AND_STAGE07"
+        ]
+      ]
+    },
+    {
+      "query": "incoming_references",
+      "status": "PASS",
+      "row_count": 5,
+      "sample": [
+        [
+          "ART-0c2a4f8ef88115",
+          1
+        ],
+        [
+          "ART-124cfd12d150a1",
+          1
+        ],
+        [
+          "ART-1d7faffc63687e",
+          1
+        ],
+        [
+          "ART-26ebd94691fe69",
+          1
+        ],
+        [
+          "ART-2f5dbd6b6c0c3d",
+          1
+        ]
+      ]
+    },
+    {
+      "query": "outgoing_references",
+      "status": "PASS",
+      "row_count": 5,
+      "sample": [
+        [
+          "ART-0243a4eb6160d7",
+          10
+        ],
+        [
+          "ART-0c2a4f8ef88115",
+          4
+        ],
+        [
+          "ART-40c408c2dbbffb",
+          33
+        ],
+        [
+          "ART-49e0ce7336d4d9",
+          5
+        ],
+        [
+          "ART-49f54f8e141cc4",
+          6
+        ]
+      ]
+    },
+    {
+      "query": "unresolved_references",
+      "status": "PASS",
+      "row_count": 4,
+      "sample": [
+        [
+          "REF-039",
+          "ASSET-e59ff227d050ad",
+          "nunu-go-api/app/admin/web/CONTRIBUTING.md",
+          "UNRESOLVED_REFERENCE",
+          "12"
+        ],
+        [
+          "REF-041",
+          "ASSET-444aafea22f7b3",
+          "nunu-go-api/app/admin/web/CONTRIBUTING.md",
+          "UNRESOLVED_REFERENCE",
+          "12"
+        ],
+        [
+          "REF-043",
+          "ASSET-444aafea22f7b3",
+          "nunu-go-api/app/admin/web/CHANGELOG.en.md",
+          "UNRESOLVED_REFERENCE",
+          "12"
+        ],
+        [
+          "REF-044",
+          "ASSET-81b227964743ef",
+          "nunu-go-api/app/admin/web/CHANGELOG.en.md",
+          "UNRESOLVED_REFERENCE",
+          "12"
+        ]
+      ]
+    },
+    {
+      "query": "source_role_and_authority",
+      "status": "PASS",
+      "row_count": 15,
+      "sample": [
+        [
+          "AUTHORITATIVE_REFERENCE",
+          "CONFIGURATION_INDEX",
+          35
+        ],
+        [
+          "AUTHORITATIVE_REFERENCE",
+          "FROZEN_CONTRACT",
+          97
+        ],
+        [
+          "AUTHORITATIVE_REFERENCE",
+          "LOCATOR_ONLY",
+          17
+        ],
+        [
+          "AUTHORITATIVE_REFERENCE",
+          "REFERENCE_ONLY",
+          290
+        ],
+        [
+          "DECISION_CHANGE_HISTORY",
+          "EVIDENTIARY",
+          187
+        ]
+      ]
+    },
+    {
+      "query": "version_status_history",
+      "status": "PASS",
+      "row_count": 5,
+      "sample": [
+        [
+          "ART-003356af9a6e67",
+          "UNKNOWN",
+          "Draft",
+          "INDEXED_FROM_STRUCTURED_RECORD"
+        ],
+        [
+          "ART-01908cae359ebf",
+          "UNKNOWN",
+          "Approved",
+          "INDEXED_FROM_STRUCTURED_RECORD"
+        ],
+        [
+          "ART-0243a4eb6160d7",
+          "UNKNOWN",
+          "Baselined",
+          "INDEXED_FROM_STRUCTURED_RECORD"
+        ],
+        [
+          "ART-02d45cc80afa3c",
+          "UNKNOWN",
+          "Approved",
+          "INDEXED_FROM_STRUCTURED_RECORD"
+        ],
+        [
+          "ART-03ec32dc361074",
+          "UNKNOWN",
+          "UNKNOWN",
+          "INDEXED_FROM_STRUCTURED_RECORD"
+        ]
+      ]
+    },
+    {
+      "query": "change_affected_artifacts",
+      "status": "PASS",
+      "row_count": 10,
+      "sample": [
+        [
+          "ART-07cebcc44e4e37",
+          "ART-b6851c3fc34037",
+          "INDEXED"
+        ],
+        [
+          "ART-0956ca7142bf6b",
+          "ART-b6851c3fc34037",
+          "INDEXED"
+        ],
+        [
+          "ART-0b7cfb524205dd",
+          "ART-b6851c3fc34037",
+          "INDEXED"
+        ],
+        [
+          "ART-13e063afb6411f",
+          "ART-b6851c3fc34037",
+          "INDEXED"
+        ],
+        [
+          "ART-1deb31e30938fb",
+          "ART-b6851c3fc34037",
+          "INDEXED"
+        ]
+      ]
+    },
+    {
+      "query": "decision_evidence",
+      "status": "PASS",
+      "row_count": 5,
+      "sample": [
+        [
+          "ART-01908cae359ebf",
+          "Approved",
+          "[\"evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/decisions/ADR-008.md\", \"evidence/CONTENT_FEATURES.jsonl#docs/project/decisions/ADR-008.md\"]"
+        ],
+        [
+          "ART-02d45cc80afa3c",
+          "Approved",
+          "[\"evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/baseline/DEC-020.md\", \"evidence/CONTENT_FEATURES.jsonl#docs/project/baseline/DEC-020.md\"]"
+        ],
+        [
+          "ART-05f229ce1da3f0",
+          "Approved",
+          "[\"evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/decisions/ADR-009.md\", \"evidence/CONTENT_FEATURES.jsonl#docs/project/decisions/ADR-009.md\"]"
+        ],
+        [
+          "ART-0749b799df0488",
+          "Approved",
+          "[\"evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/baseline/DEC-023.md\", \"evidence/CONTENT_FEATURES.jsonl#docs/project/baseline/DEC-023.md\"]"
+        ],
+        [
+          "ART-089bb02ebe3aeb",
+          "Approved",
+          "[\"evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/baseline/DEC-033.md\", \"evidence/CONTENT_FEATURES.jsonl#docs/project/baseline/DEC-033.md\"]"
+        ]
+      ]
+    },
+    {
+      "query": "projection_sources",
+      "status": "PASS",
+      "row_count": 10,
+      "sample": [
+        [
+          "ART-0a0363474df90f",
+          "ASSET-a9e2dbfcd8d39b",
+          "INDEXED"
+        ],
+        [
+          "ART-0ac04d26d90015",
+          "ASSET-a9e2dbfcd8d39b",
+          "INDEXED"
+        ],
+        [
+          "ART-0b2855f8481164",
+          "ASSET-a9e2dbfcd8d39b",
+          "INDEXED"
+        ],
+        [
+          "ART-0b69d6449035b9",
+          "ASSET-a9e2dbfcd8d39b",
+          "INDEXED"
+        ],
+        [
+          "ART-0c2a4f8ef88115",
+          "ART-752c3d48de8533",
+          "INDEXED"
+        ]
+      ]
+    },
+    {
+      "query": "source_projections",
+      "status": "PASS",
+      "row_count": 10,
+      "sample": [
+        [
+          "ART-0c2a4f8ef88115",
+          "ART-40c408c2dbbffb",
+          "INDEXED"
+        ],
+        [
+          "ART-124cfd12d150a1",
+          "ART-40c408c2dbbffb",
+          "INDEXED"
+        ],
+        [
+          "ART-2f5dbd6b6c0c3d",
+          "ART-40c408c2dbbffb",
+          "INDEXED"
+        ],
+        [
+          "ART-423e9ad4ad9d63",
+          "ART-40c408c2dbbffb",
+          "INDEXED"
+        ],
+        [
+          "ART-423e9ad4ad9d63",
+          "ART-49f54f8e141cc4",
+          "INDEXED"
+        ]
+      ]
+    },
+    {
+      "query": "stale_projections",
+      "status": "PASS",
+      "row_count": 0,
+      "sample": []
+    },
+    {
+      "query": "handover_canonical_refs",
+      "status": "PASS",
+      "row_count": 4,
+      "sample": [
+        [
+          "OP-32cea8f76ed03c",
+          "[]",
+          "[\"OP-32cea8f76ed03c\"]",
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ],
+        [
+          "OP-9f88da1475c7c2",
+          "[]",
+          "[\"OP-9f88da1475c7c2\"]",
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ],
+        [
+          "OP-c7f4475ba19d55",
+          "[]",
+          "[\"OP-c7f4475ba19d55\"]",
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ],
+        [
+          "OP-e35091733bf2e6",
+          "[]",
+          "[\"OP-e35091733bf2e6\"]",
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ]
+      ]
+    },
+    {
+      "query": "progress_current_historical",
+      "status": "PASS",
+      "row_count": 3,
+      "sample": [
+        [
+          "DERIVED_SUMMARY",
+          1,
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ],
+        [
+          "HISTORICAL_STATUS",
+          9,
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ],
+        [
+          "WORK_LOG",
+          222,
+          "UNKNOWN; recorded state only, not recomputed runtime success"
+        ]
+      ]
+    },
+    {
+      "query": "trace_by_stage_run_subject",
+      "status": "PASS",
+      "row_count": 28,
+      "sample": [
+        [
+          "00",
+          "stage00-precheck-20260920T083254Z",
+          "BANYAN-SAFE-001",
+          "SATISFIED",
+          "VERIFIED"
+        ],
+        [
+          "00",
+          "stage00-precheck-20260920T083254Z",
+          "BANYAN-SAFE-002",
+          "SATISFIED",
+          "VERIFIED"
+        ],
+        [
+          "00",
+          "stage00-precheck-20260920T083254Z",
+          "BANYAN-SAFE-003",
+          "SATISFIED",
+          "VERIFIED"
+        ],
+        [
+          "00",
+          "stage00-precheck-20260920T083254Z",
+          "BANYAN-SAFE-004",
+          "SATISFIED",
+          "VERIFIED"
+        ],
+        [
+          "00",
+          "stage00-precheck-20260920T083254Z",
+          "BANYAN-SAFE-005",
+          "SATISFIED",
+          "VERIFIED"
+        ]
+      ]
+    }
+  ]
+}

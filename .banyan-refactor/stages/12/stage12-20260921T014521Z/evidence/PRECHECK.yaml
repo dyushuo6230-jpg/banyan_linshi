@@ -1,0 +1,19 @@
+schema_version: stage12-v1
+stage: '12'
+run_id: stage12-20260921T014521Z
+result: PASS_FOR_STAGE12_QUERY_FIRST_CONTEXT_POLICY_WITH_TYPED_BLOCKERS
+upstream:
+  stage: '11'
+  run_id: stage11-20260921T011037Z
+  acceptance: PASS_STAGE11_SHADOW_INDEX_TRACE_HISTORY_WITH_INHERITED_BLOCKERS
+  shadow_index_mode: SHADOW
+  shadow_index_rebuildable: true
+  shadow_index_canonical_truth: false
+  integrity_check: ok
+query_first: true
+repository_rescan: false
+git_full_history_reanalysis: false
+prior_stage_rerun: false
+stage11_database_mutated: false
+stage13_started: false
+

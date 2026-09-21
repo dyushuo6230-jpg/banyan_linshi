@@ -1,0 +1,13 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields: [source_id, source_type, provider_id, source_ref, version, authority, provenance]
+source_types: [IMAGE, SVG, FIGMA, PROTOTYPE, ANYDESIGN, EXISTING_UI, DESIGN_TOKEN_FILE, OTHER_PROVIDER]
+authority: EVIDENCE_ONLY
+rules:
+  missing_provenance: BLOCKED
+  inaccessible_source: BLOCKED_OR_PARTIAL_WITH_EVIDENCE
+  source_is_product_truth: false
+  source_auto_approves_ui_spec: false
+sources: []

@@ -1,0 +1,248 @@
+# Stage 00 actual execution evidence; no secret contents.
+schema_version: stage00-discovery-scope-v1.9.1
+charter_version: 1.9.1
+stage_id: '00'
+repository_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server
+roots:
+- path: .DS_Store
+  mode: EXCLUDE_WITH_REASON
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: false
+  git_state: IGNORED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    EXCLUDE_WITH_REASON: 1
+- path: .cursor
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: READ_ONLY_DISCOVERY
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 4
+    METADATA_ONLY: 1
+- path: .gitignore
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: .htaccess
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: .idea
+  mode: EXCLUDE_WITH_REASON
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: false
+  git_state: IGNORED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    EXCLUDE_WITH_REASON: 6
+- path: .user.ini
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: LICENSE
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: README.md
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: cmd
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: false
+  git_state: EMPTY_DIRECTORY
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts: {}
+- path: docs
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: MIXED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 881
+    EXCLUDE_WITH_REASON: 17
+- path: go-uni-app
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: MIXED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1216
+    METADATA_ONLY: 58
+    EXCLUDE_WITH_REASON: 30264
+- path: go-uni-app-online
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: MIXED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 997
+    METADATA_ONLY: 58
+    EXCLUDE_WITH_REASON: 27349
+- path: go-uni-app-tob
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 351
+    METADATA_ONLY: 3
+- path: jenkinsfile
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: nunu-go-api
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: MIXED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 2310
+    METADATA_ONLY: 82
+    EXCLUDE_WITH_REASON: 34824
+- path: package-lock.json
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: storage
+  mode: EXCLUDE_WITH_REASON
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: false
+  git_state: IGNORED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    EXCLUDE_WITH_REASON: 1
+- path: tools
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: MIXED
+  protection_class: READ_ONLY_DISCOVERY
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 48
+    METADATA_ONLY: 4
+    EXCLUDE_WITH_REASON: 1504
+- path: upgrade.md
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: TRACKED
+  protection_class: IMMUTABLE_DURING_REFACTOR
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 1
+- path: 榕树ai改造落地相关文档
+  mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  governed: true
+  git_state: MIXED
+  protection_class: READ_ONLY_DISCOVERY
+  follow_symlinks: false
+  file_mode_counts:
+    SCAN: 20
+    EXCLUDE_WITH_REASON: 3
+coverage:
+  tracked_considered: true
+  untracked_considered: true
+  ignored_governed_considered: true
+  submodules_considered: true
+  nested_repositories_considered: true
+  worktrees_considered: true
+  symlinks_considered: true
+  secret_candidates_considered: true
+exclusions:
+- path: .git/**
+  reason: Only explicit read-only Git metadata commands; no raw credential-bearing
+    Git config/object dump
+- path: .banyan-refactor/**
+  reason: Stage-owned output excluded from original project baseline
+- path: per-file entries in evidence/FILE_INVENTORY.jsonl
+  reason: Each EXCLUDE_WITH_REASON record has its own path, Git state and reason
+assertions:
+  silently_ignored_governance_root_count: 0
+  unexplained_exclusion_count: 0
+  external_symlink_target_scanned_count: 0
+per_path_inventory_ref: evidence/FILE_INVENTORY.jsonl
+secret_content_access: DENY; includes tracked potential secrets; user waiver applies
+  only to the 13 exact approved paths
+scope: File safety/integrity scope only; no Stage 01 capability/AI asset inventory
+  performed
+conditional_read_roots:
+- path: 榕树ai改造落地相关文档/00_总纲与审计/AUDIT/**
+  rule: No default full-text loading; integrity hashing/backup only in Stage 00
+- path: 榕树ai改造落地相关文档/00_总纲与审计/ARCHIVE/**
+  rule: No default full-text loading; integrity only if present

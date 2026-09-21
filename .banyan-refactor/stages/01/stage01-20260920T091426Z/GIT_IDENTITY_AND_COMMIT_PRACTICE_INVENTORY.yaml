@@ -1,0 +1,442 @@
+schema_version: stage01-bootstrap-v1
+stage_id: '01'
+current_effective_identity:
+  name: dys6230
+  email: 5527950+dys6230@user.noreply.gitee.com
+  config_identity:
+    name: dys6230
+    email: 5527950+dys6230@user.noreply.gitee.com
+  modified_by_stage01: false
+history_analysis:
+  mode: ALL_REACHABLE_METADATA_AND_ALL_MESSAGES_PATTERN_ANALYSIS
+  commit_count_total_seen: 477
+  analysis_window:
+    first: '2026-07-08T15:59:32+09:00'
+    last: '2026-09-19T17:32:16+08:00'
+  limitations:
+  - Only reachable local refs; not reflog/dangling/remote-unfetched history.
+  - Messages analyzed in memory; no message bodies persisted. AI attribution markers
+    do not identify physical operator.
+  - Trailer-like keys are syntactic observations, not a frozen trailer contract.
+  - Hooks inspected as metadata; no hooks executed.
+identities:
+- name: dys6230
+  email: 5527950+dys6230@user.noreply.gitee.com
+  commit_count: 150
+  first_seen: '2026-08-17T18:32:51+08:00'
+  last_seen: '2026-09-19T17:32:16+08:00'
+- name: Administrator
+  email: lsauth@126.com
+  commit_count: 20
+  first_seen: '2026-08-24T16:40:19+09:00'
+  last_seen: '2026-09-17T09:43:24+08:00'
+- name: mifen
+  email: mifen@gmail.com
+  commit_count: 1
+  first_seen: '2026-09-17T09:43:24+08:00'
+  last_seen: '2026-09-17T09:43:24+08:00'
+- name: 你的名字
+  email: 你的邮箱@example.com
+  commit_count: 75
+  first_seen: '2026-07-29T19:52:24+08:00'
+  last_seen: '2026-09-17T09:30:19+08:00'
+- name: Chefuny
+  email: nhclei@gmail.com
+  commit_count: 2
+  first_seen: '2026-09-16T15:25:19+08:00'
+  last_seen: '2026-09-16T15:34:08+08:00'
+- name: “zhangqi”
+  email: “17330136057@163.com”
+  commit_count: 74
+  first_seen: '2026-07-27T09:38:45+08:00'
+  last_seen: '2026-09-16T09:16:32+08:00'
+- name: daiyushuo
+  email: dyushuo6230@gmail.com
+  commit_count: 2
+  first_seen: '2026-09-12T14:05:29+08:00'
+  last_seen: '2026-09-14T09:23:55+08:00'
+- name: ll ll
+  email: etatata@gmail.com
+  commit_count: 14
+  first_seen: '2026-07-08T15:59:32+09:00'
+  last_seen: '2026-09-03T11:24:00+08:00'
+- name: chongyang
+  email: chongyang@gmail.com
+  commit_count: 2
+  first_seen: '2026-08-19T15:34:48+09:00'
+  last_seen: '2026-09-03T11:24:00+08:00'
+- name: haidong
+  email: shd9241@163.com
+  commit_count: 15
+  first_seen: '2026-08-04T10:21:21+08:00'
+  last_seen: '2026-08-18T17:22:58+08:00'
+- name: Administrator
+  email: gitlab_admin_391810@example.com
+  commit_count: 5
+  first_seen: '2026-08-13T16:35:18+09:00'
+  last_seen: '2026-08-18T16:55:35+09:00'
+- name: zhang
+  email: 491892878.qq.com
+  commit_count: 28
+  first_seen: '2026-07-23T09:11:47+08:00'
+  last_seen: '2026-08-14T09:07:33+08:00'
+- name: hanyuanyuan
+  email: yuanyuan35@leju.com
+  commit_count: 3
+  first_seen: '2026-08-04T18:17:04+08:00'
+  last_seen: '2026-08-12T19:10:55+08:00'
+- name: qiqiqi
+  email: 17330136057@163.com
+  commit_count: 3
+  first_seen: '2026-07-13T15:58:44+09:00'
+  last_seen: '2026-08-07T13:10:58+09:00'
+- name: shaowei
+  email: 13521620025@163.com
+  commit_count: 54
+  first_seen: '2026-07-24T19:05:31+09:00'
+  last_seen: '2026-07-31T18:33:25+09:00'
+- name: 大飞的Mac
+  email: a1233@MacBook-Air.local
+  commit_count: 29
+  first_seen: '2026-07-24T10:19:56+08:00'
+  last_seen: '2026-07-29T17:33:58+08:00'
+committer_differences: 13
+commit_messages:
+  common_patterns:
+    NON_CONVENTIONAL: 413
+    chore: 9
+    fix: 10
+    merge: 3
+    feat: 21
+    refactor: 6
+    docs: 14
+    build: 1
+  type_scope_patterns:
+    NO_SCOPE: 459
+    go-uni-app: 2
+    saas-channel: 3
+    mall: 1
+    admin: 3
+    merchant: 1
+    magic push detail: 1
+    magic_push: 1
+    setactivity: 1
+    matrix-nav: 1
+    little_demon_pusher: 1
+    matrix-list: 1
+    little-demon-pusher: 1
+    merchant page: 1
+  trailer_patterns:
+    Co-authored-by: 164
+    chore: 10
+    fix: 5
+    merge: 3
+    feat: 12
+    refactor: 3
+    docs: 14
+    build: 1
+  languages:
+    NO_CHINESE: 231
+    MIXED_OR_CHINESE: 246
+  merge_count: 116
+  revert_count: 0
+  issue_reference_count: 24
+  ai_marker_count: 164
+hooks_and_checks:
+  core_hooks_path: null
+  hooks:
+  - path: .git/hooks/applypatch-msg.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/commit-msg.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/fsmonitor-watchman.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/post-update.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/pre-applypatch.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/pre-commit.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/pre-merge-commit.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/pre-push.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/pre-rebase.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/pre-receive.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/prepare-commit-msg.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/push-to-checkout.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/sendemail-validate.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  - path: .git/hooks/update.sample
+    sample: true
+    executable: true
+    body_read: false
+    executed: false
+  ci_checks:
+  - go-uni-app-online/package.json
+  - go-uni-app-online/src/uni_modules/rt-uni-update/package.json
+  - go-uni-app-online/src/uni_modules/uni-popup/package.json
+  - go-uni-app-online/src/uni_modules/uni-scss/package.json
+  - go-uni-app-online/src/uni_modules/uni-transition/package.json
+  - go-uni-app-tob/package.json
+  - go-uni-app-tob/src/uni_modules/rt-uni-update/package.json
+  - go-uni-app-tob/src/uni_modules/uni-popup/package.json
+  - go-uni-app-tob/src/uni_modules/uni-scss/package.json
+  - go-uni-app-tob/src/uni_modules/uni-transition/package.json
+  - go-uni-app/package.json
+  - go-uni-app/src/uni_modules/rt-uni-update/package.json
+  - go-uni-app/src/uni_modules/uni-popup/package.json
+  - go-uni-app/src/uni_modules/uni-scss/package.json
+  - go-uni-app/src/uni_modules/uni-transition/package.json
+  - jenkinsfile
+  - nunu-go-api/app/admin/web/package.json
+  - nunu-go-api/app/merchant/web/package.json
+  - nunu-go-api/mall-uniapp/package.json
+ai_commit_assets:
+  content_signal_files:
+  - path: docs/governance/common_prd_v3.1/生成白话文档方案相关文档/白话文档生成方案.md
+    lines:
+    - 18
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    lines:
+    - 52
+    - 812
+  - path: docs/project/baseline/DEC-054.md
+    lines:
+    - 43
+  - path: docs/project/plain-document/doc-desc/总览/本期做什么和不做什么.md
+    lines:
+    - 7
+  - path: docs/project/plain-spec/白话文档生成方案.md
+    lines:
+    - 18
+  - path: docs/project/prd/modules/M02-onboarding.md
+    lines:
+    - 36
+  - path: docs/project/prd/modules/M09-auth-session.md
+    lines:
+    - 47
+  - path: docs/temp/SassDesign/合并代码指导.md
+    lines:
+    - 72
+  - path: docs/temp/SassDesign/开工指导.md
+    lines:
+    - 108
+  - path: docs/temp/SassDesign/甲的开发计划-含每天开工的提示词.md
+    lines:
+    - 50
+  - path: docs/temp/deployReset/shop_20260901181414ibqq2.sql
+    lines:
+    - 157
+    - 375
+  - path: docs/temp/生成白话文档方案相关文档/白话文档生成方案.md
+    lines:
+    - 18
+  - path: nunu-go-api/app/admin/web/.husky/commit-msg
+    lines:
+    - 1
+  - path: nunu-go-api/app/admin/web/.husky/pre-commit
+    lines:
+    - 1
+  - path: nunu-go-api/app/admin/web/.stylelintignore
+    lines:
+    - 4
+  - path: nunu-go-api/app/admin/web/CHANGELOG.md
+    lines:
+    - 650
+  - path: nunu-go-api/app/admin/web/README.md
+    lines:
+    - 34
+  - path: nunu-go-api/app/admin/web/README.zh-CN.md
+    lines:
+    - 34
+  - path: nunu-go-api/app/admin/web/commitlint.config.cjs
+    lines:
+    - 2
+    - 4
+    - 10
+  - path: nunu-go-api/app/admin/web/pnpm-lock.yaml
+    lines:
+    - 89
+    - 92
+    - 134
+    - 137
+    - 469
+    - 477
+    - 484
+    - 491
+    - 498
+    - 505
+    - 512
+    - 519
+    - 526
+    - 533
+    - 540
+    - 547
+    - 554
+    - 561
+    - 568
+    - 575
+    - 582
+    - 589
+    - 596
+    - 603
+    - 610
+    - 617
+    - 3831
+    - 4374
+    - 6635
+    - 6637
+    - 6638
+    - 6639
+    - 6640
+    - 6641
+    - 6648
+    - 6650
+    - 6653
+    - 6655
+    - 6658
+    - 6660
+    - 6664
+    - 6666
+    - 6673
+    - 6675
+    - 6678
+    - 6680
+    - 6683
+    - 6685
+    - 6688
+    - 6690
+    - 6691
+    - 6692
+    - 6693
+    - 6695
+    - 6697
+    - 6698
+    - 6699
+    - 6700
+    - 6711
+    - 6713
+    - 6714
+    - 6715
+    - 6716
+    - 6728
+    - 6730
+    - 6732
+    - 6736
+    - 6738
+    - 6739
+    - 6744
+    - 6746
+    - 6747
+    - 6753
+    - 6755
+    - 6756
+    - 6763
+    - 6765
+    - 6766
+    - 6767
+    - 6768
+    - 6770
+    - 6772
+    - 6776
+    - 6781
+    - 8020
+    - 8695
+    - 8925
+  - path: nunu-go-api/deploy/admin/build/Dockerfile
+    lines:
+    - 13
+  - path: tools/anydesign/CHANGELOG.md
+    lines:
+    - 204
+  qualification: Signals require semantic review; build/deploy git commands are not
+    automatic AI commit permission.
+semantic_commit_policy_frozen: false
+identity_alias_merge_performed: false
+evidence_refs:
+- evidence/GIT_COMMIT_METADATA.jsonl
+- evidence/CONTENT_FEATURES.jsonl
+- evidence/HISTORICAL_ASSETS.jsonl
+semantic_review:
+  confirmed_nested_hooks:
+  - path: nunu-go-api/app/admin/web/.husky/commit-msg
+    command: pnpm dlx commitlint --edit $1
+    executed: false
+  - path: nunu-go-api/app/admin/web/.husky/pre-commit
+    command: pnpm run lint:lint-staged
+    target_script_exists: false
+    executed: false
+  commitlint:
+    path: nunu-go-api/app/admin/web/commitlint.config.cjs
+    extends: '@commitlint/config-conventional'
+    useAI: false
+    installation_effectiveness: NOT_VERIFIED; root hooksPath unset
+  ci:
+    path: jenkinsfile
+    stage_labels:
+    - CheckGit
+    - CheckCode
+    - Build
+    - Upload Nexus3
+    - Download Nexus3 admin-h5
+    - Download Nexus3 mall
+    - Download Nexus3 open
+    - start Docker admin
+    - start Docker home
+    - start Docker open
+    commit_enforcement_keywords_detected: false
+  actual_trailers:
+    Co-authored-by: 164
+  initial_trailer_field_qualification: Initial trailer_patterns is any line key including
+    subject prefixes. Use semantic_review.actual_trailers for parsed trailing blocks.
+  ai_commit_practice: Legacy main prompt prohibits unauthorized submit/push/merge/release.
+    Historical merge guide contains explicit project branch workflow, not current
+    permission. No dedicated all-repository AI batch-commit planner found in current
+    governance candidate corpus.
+  historical_identification: 164 attribution-marker commits reflect message assertions
+    only, not proven physical authorship.
+  final_policy_frozen: false

@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "run_id": "stage03-20260920T135702Z",
+  "head_unchanged": true,
+  "tracked_diff_empty": true,
+  "git_identity_unchanged": true,
+  "business_files_written": false,
+  "secret_metadata_only_count": 13,
+  "secret_content_read": false,
+  "secret_content_hash": false,
+  "secret_content_copy": false,
+  "secret_write_delete_move_rename": false,
+  "recovery_mode": "USER_ACCEPTED_PRESERVE_IN_PLACE",
+  "recovery_coverage": "PARTIAL_APPROVED",
+  "existing_layout_unchanged": true,
+  "canonical_banyan_active": false,
+  "stage04_started": false
+}

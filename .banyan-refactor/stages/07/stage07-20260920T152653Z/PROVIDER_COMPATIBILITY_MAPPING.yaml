@@ -1,0 +1,20 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+provider_neutral_core: true
+providers:
+- provider: OpenSpec
+  observation: NOT_OBSERVED
+  binding: DESIGN_ONLY_INACTIVE_NO_VERIFIED_LEGACY_INSTANCE
+  disposition: MAP_TO_PROVIDER
+- provider: AnyDesign
+  observation: LEGACY_ASSETS_OBSERVED
+  binding: SHADOW_REFERENCE_ONLY
+  disposition: MAP_TO_PROVIDER
+- provider: Editor conventions
+  observation: LEGACY_COMPATIBILITY_OBSERVED
+  binding: COMPATIBILITY_PROJECTION_ONLY
+  disposition: MAP_TO_COMPATIBILITY
+implicit_activation: false
+canonical_write: false

@@ -1,0 +1,30 @@
+schema_version: stage17-v1
+stable_id: project-instance-pilot-stage17
+state: PILOT_SHADOW
+project:
+  profile_ref: ../profiles/project.yaml
+source_mappings:
+  registry_ref: ../mappings/source-mappings.yaml
+overlays:
+  bindings_ref: ../overlays/bindings.yaml
+profiles:
+  contributor_ref: ../profiles/contributor.yaml
+variable_bindings:
+  state: UNKNOWN
+provider_bindings:
+  registry_ref: ../providers/bindings.yaml
+feature_activation:
+  default: INACTIVE
+  unknown_dependency: BLOCKED
+locations:
+  existing_project: PRESERVE_IN_PLACE
+  instance_root: .banyan
+lineage:
+  upstream_stage: "16"
+  upstream_run_id: stage16-20260921T034943Z
+  current_stage: "17"
+  current_run_id: stage17-20260921T055911Z
+constraints:
+  business_truth_source: false
+  existing_project_relayout_required: false
+  canonical_replacement: false

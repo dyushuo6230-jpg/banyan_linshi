@@ -1,0 +1,91 @@
+schema_version: stage03-v1
+schema_status: FROZEN
+roles:
+- role_id: DECISION_CHANGE_HISTORY
+  semantic_purpose: decision and change evidence
+  authority_level: EVIDENTIARY
+  canonicality: NON_CANONICAL_HISTORY
+  writable_policy: APPEND_ONLY
+  freshness_rule: event order plus effective-version metadata
+  conflict_rule: cannot silently replace current canonical truth
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: DERIVED_PROJECTION
+  semantic_purpose: generic projection of canonical facts
+  authority_level: DERIVED
+  canonicality: NON_CANONICAL
+  writable_policy: REGENERATE_WITH_LINEAGE
+  freshness_rule: fresh only when source hashes/versions match
+  conflict_rule: canonical source wins; unknown lineage blocks replacement
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: OPERATIONAL_HISTORY
+  semantic_purpose: runtime/worklog/test/output evidence
+  authority_level: EVIDENTIARY_LOW
+  canonicality: NON_CANONICAL_HISTORY
+  writable_policy: APPEND_OR_IMMUTABLE
+  freshness_rule: event timestamp/version; UNKNOWN remains explicit
+  conflict_rule: never authorizes current truth by itself
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: PROJECT_CANONICAL_DOCUMENT
+  semantic_purpose: approved project truth within declared scope
+  authority_level: PRIMARY
+  canonicality: CANONICAL
+  writable_policy: CONTROLLED_WRITE
+  freshness_rule: latest approved scoped version
+  conflict_rule: ambiguous peers block activation
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: PROJECT_GUIDE_DERIVED
+  semantic_purpose: human-oriented project guide projection
+  authority_level: DERIVED
+  canonicality: NON_CANONICAL
+  writable_policy: REGENERATE_WITH_LINEAGE
+  freshness_rule: fresh only when all input refs match
+  conflict_rule: canonical source wins; stale projection flagged
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: REQUIREMENT_SOURCE
+  semantic_purpose: requirement intent and acceptance source
+  authority_level: PRIMARY_SCOPED
+  canonicality: CANONICAL_CANDIDATE
+  writable_policy: CONTROLLED_WRITE
+  freshness_rule: latest approved requirement version
+  conflict_rule: explicit decision overrides only with trace
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: TECHNICAL_CONTRACT_SOURCE
+  semantic_purpose: technical interface and architecture contract
+  authority_level: PRIMARY_SCOPED
+  canonicality: CANONICAL_CANDIDATE
+  writable_policy: CONTROLLED_WRITE
+  freshness_rule: latest approved technical version
+  conflict_rule: scope conflict is BLOCKED
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: UI_DESIGN_DERIVED
+  semantic_purpose: derived UI design material
+  authority_level: DERIVED
+  canonicality: NON_CANONICAL
+  writable_policy: REGENERATE_WITH_LINEAGE
+  freshness_rule: fresh only when source UI spec and inputs match
+  conflict_rule: UI spec source wins unless explicit approved decision
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+- role_id: UI_SPEC_SOURCE
+  semantic_purpose: UI behavior and visual acceptance contract
+  authority_level: PRIMARY_SCOPED
+  canonicality: CANONICAL_CANDIDATE
+  writable_policy: CONTROLLED_WRITE
+  freshness_rule: latest approved UI version
+  conflict_rule: product/technical conflict requires decision evidence
+  provenance_required: true
+  mapping_strategy: map existing artifact metadata only; no move/rewrite/delete
+resolution_algorithm:
+- filter candidates by subject and declared scope
+- reject stale/superseded inputs when status is known
+- apply role authority only within its scope
+- require explicit decision evidence for override
+- return BLOCKED when authority or freshness remains ambiguous
+unknown_policy: UNKNOWN is valid metadata and cannot be upgraded by inference

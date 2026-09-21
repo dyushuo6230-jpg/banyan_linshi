@@ -1,0 +1,23 @@
+schema_version: stage06-v1
+coverage:
+  generic_workspace_contract: 1/1
+  provider_port_operations: 9/9
+  openspec_binding: 1/1_DESIGN_ONLY_INACTIVE
+  change_lifecycle_states: 11/11
+  artifact_relationship_types: 8/8
+  parallel_draft_resolution_paths: 5/5
+  apply_mandatory_gates: 10/10
+  reconciliation_checks: 9/9
+  secret_metadata_paths_preserved: 13/13
+con001: CONSUMED_RESOLVED_BY_LAYERED_CONTRACT
+con002: INHERITED_OPEN_OWNER_STAGE_12
+hard_metrics:
+  CHANGE_WORKSPACE_WITHOUT_PROVIDER_PORT: 0
+  PROVIDER_SPECIFIC_FIELD_IN_CORE_CHANGE_SCHEMA: 0
+  CANONICAL_APPLY_WITHOUT_PREVIEW: 0
+  CANONICAL_APPLY_WITHOUT_REFERENCE_CHECK: 0
+  PARALLEL_DRAFT_WITHOUT_RECONCILIATION_PATH: 0
+  SILENT_CONFLICT_WINNER_PATH: 0
+  APPLY_PATH_WITHOUT_AUTHORIZATION_GATE: 0
+qualification: CONTRACTS_FROZEN_NO_PROVIDER_OR_APPLY_RUNTIME
+

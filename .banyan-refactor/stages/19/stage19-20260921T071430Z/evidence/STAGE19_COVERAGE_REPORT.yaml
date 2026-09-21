@@ -1,0 +1,172 @@
+schema_version: stage19-v1
+run_id: stage19-20260921T071430Z
+overall: PASS_WITH_CARRIED_BLOCKERS
+domains:
+  architecture:
+    result: PASS
+    evidence:
+    - STAGE19_EVIDENCE_REGISTRY.yaml#architecture_final
+  purity:
+    result: PASS
+    evidence:
+    - evidence/PURITY_ACCEPTANCE.yaml
+  runtime_policy_git:
+    result: PASS
+    evidence:
+    - evidence/CRITICAL_REGRESSION_RESULTS.txt
+    - evidence/GIT_INTEGRITY.yaml
+  webui_gogin_bridge:
+    result: PASS
+    evidence:
+    - evidence/GO_TEST_RESULTS.txt
+    - evidence/RC_SMOKE_RESULTS.yaml
+  adapters:
+    result: PASS
+    evidence:
+    - evidence/CRITICAL_REGRESSION_RESULTS.txt
+    - evidence/RC_SMOKE_RESULTS.yaml
+  pilot:
+    result: PASS
+    evidence:
+    - evidence/PILOT_INTEGRITY.yaml
+  index_trace_provenance:
+    result: PASS
+    evidence:
+    - evidence/SQLITE_INDEX_VERIFICATION.yaml
+    - evidence/TRACE_PROVENANCE_FRESHNESS.yaml
+  freshness:
+    result: PASS_WITH_CARRIED_TYPED_BLOCKER
+    evidence:
+    - evidence/TRACE_PROVENANCE_FRESHNESS.yaml
+  noloss:
+    result: PASS
+    evidence:
+    - evidence/NOLOSS_RECONCILIATION.yaml
+  rc_build:
+    result: PASS
+    evidence:
+    - RC_MANIFEST.yaml
+    - evidence/RC_REPRODUCIBILITY.yaml
+    - evidence/RC_SMOKE_RESULTS.yaml
+validations:
+  V19-01:
+    result: PASS
+    check: Stage18.5 seal valid
+  V19-02:
+    result: PASS
+    check: evidence registry complete
+  V19-03:
+    result: PASS
+    check: generic Core purity
+  V19-04:
+    result: PASS
+    check: Project Instance separation
+  V19-05:
+    result: PASS
+    check: single Runtime truth
+  V19-06:
+    result: PASS
+    check: single Permission system
+  V19-07:
+    result: PASS
+    check: compiler unknown-field rejection
+  V19-08:
+    result: PASS
+    check: hard blocks preserved
+  V19-09:
+    result: PASS
+    check: Runtime fail closed
+  V19-10:
+    result: PASS
+    check: identity/authorization gates
+  V19-11:
+    result: PASS
+    check: semantic commit safety
+  V19-12:
+    result: PASS
+    check: Secret safety
+  V19-13:
+    result: PASS
+    check: current-project Git no mutation
+  V19-14:
+    result: PASS
+    check: Ant Design Pro feature equivalence
+  V19-15:
+    result: PASS
+    check: Go/Gin transport-only
+  V19-16:
+    result: PASS
+    check: Runtime Bridge fail closed
+  V19-17:
+    result: PASS
+    check: embedded assets/hash
+  V19-18:
+    result: PASS
+    check: release UI without Node server
+  V19-19:
+    result: PASS
+    check: local-only default
+  V19-20:
+    result: PASS
+    check: Cursor adapter
+  V19-21:
+    result: PASS
+    check: Codex adapter
+  V19-22:
+    result: PASS
+    check: Generic adapter
+  V19-23:
+    result: PASS
+    check: Pilot .banyan integrity
+  V19-24:
+    result: PASS
+    check: SQLite/index integrity
+  V19-25:
+    result: PASS
+    check: Trace/evidence continuity
+  V19-26:
+    result: PASS
+    check: Provenance UNKNOWN preserved
+  V19-27:
+    result: PASS
+    check: Freshness hierarchy / CON-002 preserved
+  V19-28:
+    result: PASS
+    check: unresolved historical refs preserved
+  V19-29:
+    result: PASS
+    check: No-Loss reconciliation
+  V19-30:
+    result: PASS
+    check: RC build / smoke
+  V19-31:
+    result: PASS
+    check: Stage20 handoff
+  V19-32:
+    result: PASS
+    check: Stage20 not started
+validation_count: 32
+pass_count: 32
+hard_metrics:
+  ACCEPTANCE_CLAIM_WITHOUT_EVIDENCE: 0
+  GENERIC_CORE_PROJECT_LITERAL_LEAK: 0
+  SECOND_PERMISSION_ENGINE_PRESENT: 0
+  POLICY_HARD_BLOCK_REGRESSION: 0
+  RUNTIME_FAIL_OPEN_PATH: 0
+  GOGIN_POLICY_REIMPLEMENTATION: 0
+  RUNTIME_BRIDGE_FAIL_OPEN_PATH: 0
+  WEBUI_FEATURE_REGRESSION: 0
+  ADAPTER_COMPATIBILITY_REGRESSION: 0
+  CURRENT_PROJECT_GIT_MUTATION: 0
+  PILOT_DOT_BANYAN_MUTATION: 0
+  SECRET_BODY_ACCESS_OR_EXPOSURE: 0
+  TRACE_WITHOUT_EVIDENCE_LINK_WHEN_REQUIRED: 0
+  PROVENANCE_UNKNOWN_SYNTHESIZED: 0
+  NOLOSS_COVERAGE_REGRESSION: 0
+  RC_REPRODUCIBILITY_FAILURE: 0
+hard_metrics_all_zero: true
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED

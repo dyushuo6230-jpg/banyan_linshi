@@ -1,0 +1,145 @@
+# Stage 00 actual execution evidence; no secret contents.
+schema_version: stage00-checkpoint-v1.9.1
+charter_version: 1.9.1
+stage_id: '00'
+checkpoint_id: CHECKPOINT-stage00-precheck-20260920T083254Z
+run_id: stage00-precheck-20260920T083254Z
+created_at: '2026-09-20T08:49:58.759878+00:00'
+baseline:
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  branch: feature/huanpipro
+  working_tree_dirty: true
+artifacts:
+  staged_patch:
+    required: false
+    path: null
+    sha256: null
+    binary_capable: true
+    reason: No tracked changes in original or resumed status; no patch created
+  unstaged_patch:
+    required: false
+    path: null
+    sha256: null
+    binary_capable: true
+    reason: No tracked changes in original or resumed status; no patch created
+  untracked_backup:
+    required: true
+    path: checkpoint/untracked.tar
+    sha256: d321195de0a4ab9b82157fd439c16fbb8dbe3b6c4ccf04ac2e7dc7363a680aa8
+    relative_paths_preserved: true
+    file_count: 21
+    validation: PASS
+    members:
+    - docs/temp/ai改造计划当前项目状态和ai使用统计说明.md
+    - 榕树ai改造落地相关文档/00_总纲与审计/AUDIT/榕树AI_v1.9冻结一致性审计报告_结论v1.9.1.md
+    - 榕树ai改造落地相关文档/00_总纲与审计/AUDIT/榕树AI冻结一致性审计提示词_v1.0.md
+    - 榕树ai改造落地相关文档/00_总纲与审计/CURRENT/榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.9.1.md
+    - 榕树ai改造落地相关文档/00_总纲与审计/CURRENT/榕树AI改造阶段文档生成清单_v1.9.1.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-A_Repository_Baseline与Protected_Paths.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-B_Snapshot_Hash_Checkpoint与Rollback.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00_改造安全基线与仓库保护.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/ACCEPTANCE_REPORT.template.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/EXECUTION_RUNBOOK.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/PACK_SHA256SUMS.txt
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/PRECHECK_AND_SCOPE.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/STAGE_MANIFEST.yaml
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/STAGE_PLAN.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/VALIDATION_AND_ROLLBACK.md
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/BANYAN_REFACTOR_TRACE.bootstrap.template.yaml
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/BASELINE_MANIFEST.template.yaml
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/CHECKPOINT_RECORD.template.yaml
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/DISCOVERY_SCOPE_BASELINE.template.yaml
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/MIGRATION_REGISTER.bootstrap.template.yaml
+    - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/templates/PROTECTED_PATHS_MANIFEST.template.yaml
+  ignored_governed_backup:
+    required: true
+    path: checkpoint/ignored-governed.tar
+    sha256: 0e4aa8b0838762192f7a2969b2d357d9d6f88024c2d8a4c91aad5a803354aada
+    relative_paths_preserved: true
+    file_count: 17
+    validation: PASS
+    members:
+    - docs/开发指导.md
+    - docs/项目迭代开发文档指导v2.md
+    - nunu-go-api/storage/uploads/nearby/banner-invite.png
+    - nunu-go-api/storage/uploads/nearby/banner-local.png
+    - nunu-go-api/storage/uploads/nearby/banner-shops.png
+    - nunu-go-api/storage/uploads/nearby/cps-chongdian.png
+    - nunu-go-api/storage/uploads/nearby/cps-dache.png
+    - nunu-go-api/storage/uploads/nearby/cps-diandan.png
+    - nunu-go-api/storage/uploads/nearby/cps-dianying.png
+    - nunu-go-api/storage/uploads/nearby/cps-jiazheng.png
+    - nunu-go-api/storage/uploads/nearby/cps-jiudian.png
+    - nunu-go-api/storage/uploads/nearby/cps-maicai.png
+    - nunu-go-api/storage/uploads/nearby/cps-more.png
+    - nunu-go-api/storage/uploads/nearby/cps-waimai.png
+    - nunu-go-api/storage/uploads/nearby/cps-xiche.png
+    - nunu-go-api/storage/uploads/nearby/cps-xiyi.png
+    - nunu-go-api/storage/uploads/nearby/cps-yanchu.png
+secret_recovery:
+  mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  user_managed_paths:
+  - nunu-go-api/config/admin/local.yml
+  - nunu-go-api/config/admin/test.yml
+  - nunu-go-api/config/h5-online/local.yml
+  - nunu-go-api/config/h5/local.yml
+  - nunu-go-api/config/h5/test.yml
+  - nunu-go-api/config/home/local.yml
+  - nunu-go-api/config/mall-online/local.yml
+  - nunu-go-api/config/mall-online/prod.yml
+  - nunu-go-api/config/mall-online/test.yml
+  - nunu-go-api/config/mall/local.yml
+  - nunu-go-api/config/mall/test.yml
+  - nunu-go-api/config/merchant/local.yml
+  - nunu-go-api/config/merchant/test.yml
+  approval_ref: evidence/USER_APPROVAL.json
+  content_copied_to_checkpoint: false
+  content_read: false
+  content_hashed: false
+  modified: false
+  deleted: false
+  moved: false
+  renamed: false
+  user_accepts_no_independent_banyan_backup: true
+  future_stages_preserve_metadata_only_and_deny_write: true
+  other_tracked_potential_secrets: 'Unmodified tracked paths: Git HEAD/index object
+    references only; no content access or waiver'
+  exception_applies_to_other_paths: false
+recovery:
+  coverage: PARTIAL_APPROVED
+  destructive_auto_restore_allowed: false
+  instructions:
+  - Create a restore plan against the then-current working tree.
+  - Detect post-baseline user work before restoring.
+  - Do not overwrite post-baseline user work.
+  - Require confirmation before destructive recovery.
+  exception: Only the 13 explicitly approved ignored local environment configurations
+    have no independent Banyan content backup. If lost, the Stage 00 checkpoint cannot
+    restore their contents.
+validation:
+  patch_artifacts_hashed: true
+  backup_artifacts_hashed: true
+  binary_changes_covered: true
+  recovery_instructions_present: true
+  patch_note: No staged/unstaged patch needed; status and index evidence prove no
+    tracked modifications
+notes:
+- User-supplied construction inputs preserved and safely archived, not labeled historical
+  project development state.
+- 17 ignored nonsecret governed files backed up, including 2 governance documents
+  and 15 local upload images.
+- Excluded dependency/build/log/OS/IDE files are not claimed to have independent backups;
+  per-path reasons recorded.
+- Archive content verification is non-destructive; no restore rehearsal performed
+  against the project.
+bootstrap:
+  control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  register_path: ../../../MIGRATION_REGISTER.bootstrap.yaml
+  trace_path: ../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  register_sha256: 3080a90fb8b11a594600de3d513ad6a9b4ff60a7bbde9a19d7b6bd5c24b763ee
+  trace_sha256: 4fe9d5da1bd26d53570af635f8c5be4794452d5676bdbce7e7966a099a5bee21
+  future_canonical_paths:
+  - .banyan/migrations/MIGRATION_REGISTER.yaml
+  - .banyan/migrations/BANYAN_REFACTOR_TRACE.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true

@@ -1,0 +1,32 @@
+upstream_stage: '11'
+run_id: stage11-20260921T011037Z
+acceptance_result: PASS_STAGE11_SHADOW_INDEX_TRACE_HISTORY_WITH_INHERITED_BLOCKERS
+shadow_index:
+  path: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+  mode: SHADOW
+  rebuildability: REBUILDABLE
+  canonical_truth: false
+  final_runtime_db: false
+  logical_hash: d4c1d6aa75fa9c3717b5a6e053b7bfacd817edd1e418c3c287a2885bab37b591
+query_surface: .banyan-refactor/stages/11/stage11-20260921T011037Z/STAGE12_QUERY_SURFACE.yaml
+unresolved_references:
+  count: 4
+  status: UNRESOLVED_REFERENCE
+  target_policy: NULL_OR_UNKNOWN
+  owner_stage: '12'
+not_a_reference_count: 2
+secret_metadata_records: 13
+con002:
+  status: OPEN
+  owner_stage: '12'
+carried_blockers:
+  - four historical missing reference targets / owner Stage 12
+  - R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, and R03-LOCAL
+next_stage_entry_gate:
+  stage: '12'
+  result: NOT_EVALUATED
+  execution_authorized: false
+  real_migration_readiness: MIGRATION_BLOCKED
+stage12_started: false
+stop_after_stage: '11'
+

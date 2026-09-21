@@ -1,0 +1,14 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields: [behavior_id, state, trigger, transition, response, source_refs, confidence, status, provenance]
+statuses: [SUPPORTED, INFERRED, UNKNOWN, CONFLICTED]
+valid_support_sources: [PROTOTYPE, EXPLICIT_UI_SPEC, MULTI_STATE_DESIGN, INTERACTION_SPEC, VERIFIED_IMPLEMENTATION, USER_CONFIRMED_RULE]
+static_image_unproven_behaviors: [HOVER, SELECTED, DISABLED, LOADING, DRAG, SCROLL, GESTURE, ANIMATION, API_BEHAVIOR]
+rules:
+  unsupported_behavior: UNKNOWN
+  static_image_alone_proves_interaction: false
+  inferred_behavior_must_be_marked: true
+  conflict_result: CONFLICTED
+behaviors: []

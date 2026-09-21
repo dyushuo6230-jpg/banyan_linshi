@@ -1,0 +1,26 @@
+schema_version: stage06-v1
+status: FROZEN_CONTRACT_NOT_EXECUTED
+states: [PREVIEWED, READY_FOR_DECISION, AUTHORIZED, APPLYING, APPLIED, VALIDATED, RECONCILED, FAILED, ROLLED_BACK]
+requirements:
+  preview: {required: true, ref: APPLY_PREVIEW_CONTRACT.yaml}
+  impact_analysis: true
+  reference_check: {required: true, ref: REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml}
+  freshness_divergence_check: {required: true, ref: DIVERGENCE_CONFLICT_CONTRACT.yaml}
+  decision_gate: {required: true, ref: "../../../05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml"}
+  authorization_gate: {required: true, ref: APPLY_AUTHORIZATION_BOUNDARY.yaml}
+  apply_plan: true
+  checkpoint: true
+  post_validation: true
+  evidence_trace: true
+  reconciliation: {required: true, ref: REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml}
+authority:
+  canonical_targets_resolved_by: [source_role, source_mapping, project_instance]
+  provider_workspace_is_truth: false
+  discussion_or_draft_auto_promotes: false
+transaction_semantics:
+  no_loss: true
+  partial_result: FAILED_OR_BLOCKED_WITH_EVIDENCE
+  dual_writable_truth: forbidden
+execution_in_stage06: false
+canonical_mutation_in_stage06: false
+

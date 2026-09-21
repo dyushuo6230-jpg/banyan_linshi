@@ -1,0 +1,34 @@
+{
+  "mode": "CONTRACT_FIRST_EVIDENCE_ON_DEMAND",
+  "repository_rescan": false,
+  "stage01_rerun": false,
+  "stage02_rerun": false,
+  "git_history_read": false,
+  "default_stage02_inputs": [
+    "evidence/NEXT_STAGE_HANDOFF.yaml",
+    "CAPABILITY_MAPPING_WORKBOOK.yaml",
+    "CONTRACT_CHAIN_DESIGN.md",
+    "ARCHITECTURE_DECISION_RECORDS.yaml",
+    "CONFLICT_RISK_REGISTER.yaml",
+    "AI_RUNTIME_COST_GOVERNANCE_DESIGN.md"
+  ],
+  "on_demand_reads": [
+    {
+      "path": "ARTIFACT_BOUNDARY_MAP.jsonl",
+      "reason": "freeze source-role authority and artifact/reference coverage",
+      "records": 714
+    },
+    {
+      "path": "ASSET_BOUNDARY_MAP.jsonl",
+      "reason": "validate existing role mapping remains accounted without rediscovery",
+      "records": 1026
+    },
+    {
+      "path": "Stage 01 FINAL_SAFETY_CHECK.json",
+      "reason": "compare metadata only for the exact 13 protected paths",
+      "content_body_read": false
+    }
+  ],
+  "legacy_source_body_reads": 0,
+  "secret_body_reads": 0
+}

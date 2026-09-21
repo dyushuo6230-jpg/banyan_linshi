@@ -1,0 +1,36 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+overall: PASS
+validations:
+- {id: V10-01, result: PASS, evidence: Stage 09 seal passed and all inherited blockers remain typed and open.}
+- {id: V10-02, result: PASS, evidence: Only indexed and targeted knowledge inputs were read; no docs/project rediscovery.}
+- {id: V10-03, result: PASS, evidence: Every projection requires source roles, references, versions, freshness, and provenance.}
+- {id: V10-04, result: PASS, evidence: Projections default to DERIVED_PROJECTION with canonical_truth=false.}
+- {id: V10-05, result: PASS, evidence: Project Guide forbids duplicate PRD, ADR, API, and UI_SPEC truth.}
+- {id: V10-06, result: PASS, evidence: Seven audiences share underlying truth and may only filter, summarize, reorganize, or link.}
+- {id: V10-07, result: PASS, evidence: Navigation requires view/source links, target roles, freshness, and provenance.}
+- {id: V10-08, result: PASS, evidence: FRESH, STALE, REVIEW_REQUIRED, BLOCKED, and UNKNOWN states are controlled.}
+- {id: V10-09, result: PASS, evidence: Four rebuildability states are explicit and all 71 Legacy derived knowledge artifacts default to NOT_PROVEN_REBUILDABLE.}
+- {id: V10-10, result: PASS, evidence: Generated knowledge requires source/version, rule, generator/time or UNKNOWN, coverage, confidence, freshness, and rebuildability.}
+- {id: V10-11, result: PASS, evidence: Unknown generator, timestamp, authority, or freshness remains UNKNOWN and cannot be guessed.}
+- {id: V10-12, result: PASS, evidence: Eight Plain Document structures map to generic projection types with canonical_truth=false.}
+- {id: V10-13, result: PASS, evidence: Plain sync is one-way, batch-scoped, conflict-ledgered, and cannot backwrite Canonical.}
+- {id: V10-14, result: PASS, evidence: CURRENT_STATUS, HISTORICAL_STATUS, WORK_LOG, and DERIVED_SUMMARY are distinct.}
+- {id: V10-15, result: PASS, evidence: Handover requires canonical and operational refs, freshness, as-of time, blockers, and provenance.}
+- {id: V10-16, result: PASS, evidence: Architecture diagrams require an explicit role, source lineage, version, freshness, coverage, and provenance.}
+- {id: V10-17, result: PASS, evidence: Meeting Packs are DISCUSSION or DERIVED and cannot make decisions effective.}
+- {id: V10-18, result: PASS, evidence: Publish and refresh follow source, freshness, conflict, projection, validation, and publish checks.}
+- {id: V10-19, result: PASS, evidence: Provider Port has generic operations, no provider-required fields, and explicit failure semantics.}
+- {id: V10-20, result: PASS, evidence: Stage 11 entities, query fields, relations, classifications, and rebuildability requirements are complete.}
+- {id: V10-21, result: PASS, evidence: Writes are limited to Stage 10 and two bootstrap files; no canonical, legacy, SQLite, or runtime implementation.}
+- {id: V10-22, result: PASS, evidence: Stage 11 handoff exists with execution_authorized=false and Stage 11 is not started.}
+hard_metrics:
+  KNOWLEDGE_PROJECTION_WITHOUT_SOURCE_AUTHORITY: 0
+  GUIDE_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+  STALE_PROJECTION_CLAIMING_CURRENT: 0
+  GENERATED_KNOWLEDGE_WITHOUT_PROVENANCE: 0
+  UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+  AUDIENCE_VIEW_WITH_SEPARATE_TRUTH: 0
+  PLAIN_DOCUMENT_PROMOTED_TO_CANONICAL: 0
+  PROGRESS_PROJECTION_WITHOUT_CURRENTNESS_STATE: 0

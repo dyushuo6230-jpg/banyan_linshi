@@ -1,0 +1,20 @@
+[
+  {
+    "path": "LEGACY_AI_CAPABILITY_INVENTORY.jsonl",
+    "before": "65a26ce28139e7148cfdd52f8cde08f4227642cd8ff7f2fcf064e5d4088caa5c",
+    "after": "e50dc6144e8505031d28bd451fe03f7651b191ab62de386e8d8014cb62c6f8e2",
+    "reason": "Precise source heading anchor review of Stage-owned drafts; semantics unchanged"
+  },
+  {
+    "path": "PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml",
+    "before": "8a8a32d7ce8cf2bc62c7f454ba80af247bf373e23819de6edd4b98df203b9669",
+    "after": "15241cbcd32053df074b0766ac8f73baa5b166c182f85dd36707434c2a6d8870",
+    "reason": "Precise source heading anchor review of Stage-owned drafts; semantics unchanged"
+  },
+  {
+    "path": "CORE_CANDIDATE_REPORT.yaml",
+    "before": "385cb86c1f8ff0aeba45b3a79a87258a8d288c34e7e5d1443c78d634ff23b707",
+    "after": "502bfccea49b961ff1d02a0e93cbc004ee4ce04800183149e33a8bdbc7516682",
+    "reason": "Precise source heading anchor review of Stage-owned drafts; semantics unchanged"
+  }
+]

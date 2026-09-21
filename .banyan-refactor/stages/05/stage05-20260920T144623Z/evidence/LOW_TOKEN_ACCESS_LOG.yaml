@@ -1,0 +1,25 @@
+mode: POLICY_FIRST_LOW_TOKEN
+repository_full_rescan: false
+git_history_full_reanalysis: false
+stage01_inventory_regenerated: false
+stage02_candidates_regenerated: false
+stage03_contracts_regenerated: false
+stage04_instance_redesigned: false
+default_inputs:
+  - Stage_04_to_Stage_05_Gate_Review_v1.0.md
+  - Stage_05_低Token输入索引_v1.0.md
+  - Stage 05 pack
+  - Stage 04 handoff and indexed designs
+  - Stage 03 indexed frozen contracts
+  - Stage 01 existing identity and commit-practice summary
+targeted_evidence_on_demand:
+  - trigger: DECISION_POLICY_CONFLICT
+    subject: CON-001
+    sources:
+      - Stage 02 CONFLICT_RISK_REGISTER.yaml#CON-001
+      - Stage 02 CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-IDP
+      - common IDP exact decision pacing lines
+      - project DEC-042 exact approved rules
+    result: sufficient_for_layered_resolution
+secret_body_access: false
+

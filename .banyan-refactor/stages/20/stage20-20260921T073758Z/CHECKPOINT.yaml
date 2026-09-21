@@ -1,0 +1,112 @@
+schema_version: stage20-v1
+run_id: stage20-20260921T073758Z
+created_before_documentation: true
+stage19_gate: PASS_FOR_STAGE20_DOCUMENTATION_FRAMEWORK_RELEASE_PREPARATION_WITH_PROJECT_ACTIVATION_BLOCKED
+git:
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+  staged_count: 0
+  unstaged_count: 0
+pilot:
+  file_count: 13
+  sha256:
+    .banyan/PILOT_NOTICE.md: a1f10e51eb49348a15783333ed8325b8ea409d518988db0e0faef1a59665a21f
+    .banyan/generated/README.md: c93f134ef45bf6c5126222fe17b1133512e1ab02192aa8d19c5acf40fb07ba6f
+    .banyan/index/manifest.yaml: c3bc637f2522f570c7efe6047ecab6af0a16fff1ca26a185e8e5185130a39597
+    .banyan/instance/project-instance.yaml: f62f990d59ed96275768ecfa88da77c74391972c4310bcc3d8f28bdb869d8ec3
+    .banyan/mappings/source-mappings.yaml: de82faa424633850fcc1782b16d6fd9e326a9a2f826cdeb30acb842dd9448a59
+    .banyan/migrations/rollback.yaml: 8815ed3e317c0b4ec035d00ed6d0c44ef4d7969a4f91f07ef0e8d4166c3e0a50
+    .banyan/overlays/bindings.yaml: 852720cc1a4691098cfbd1090906812ce23bfc40efea995de2638951bb3ccf5c
+    .banyan/pilot.yaml: 2c33cf8979de322bdbd24f312c7ab9e85ca5e75c25457d4f35989400667a0b54
+    .banyan/profiles/contributor.yaml: 3ab87df53f380fcf436a382c7280b1b3c16a36617e960dc010db7cddba06c739
+    .banyan/profiles/project.yaml: 18564c519214cef1f5fbae571141b477605068eafcdc244d85411d6c4e3d0ed1
+    .banyan/providers/bindings.yaml: b508509a157d345be36172119c4c02650e0f8f0fa977874d7514f781bd48c237
+    .banyan/runtime/status.yaml: e7cd3dfeb4cd8f0ec3258a0fbe0caef0c78d3644c3d3420077c060b0a4a8a2fd
+    .banyan/trace/audit.jsonl: f5520ed3bdb3d5b326965518383a2bad34d9607613cbc5c93e758fd78f7cd24a
+  state: PROJECT_INSTANCE_SHADOW_PILOT
+framework:
+  file_count: 76
+  sha256:
+    banyan-framework/README.md: 758984af90bb949029a9ed735522b1fbccc26c018f1ac81dad04c5de1645e7dc
+    banyan-framework/control-plane-go/bin/banyan-control: 2eccb69e1c12eaf630c804daa4654abc08f8544d9f19b39f7a150e8e1c50f0d0
+    banyan-framework/control-plane-go/cmd/banyan-control/main.go: aaad5697028e5177f01bd498bb234b99942bdfc4e7189ec24a971478d4d791c8
+    banyan-framework/control-plane-go/go.mod: 1c13b3232d06a67e70ce8541cbe10cc3261a70c5415ad8e476698bd1ec54abb3
+    banyan-framework/control-plane-go/go.sum: f5c48e466f1b1dac24757ef272ce6b281fc37acbbe13456fc5c258565c85439e
+    banyan-framework/control-plane-go/internal/controlplane/http/router.go: c4885fbc9f984a359c980c1536a41ea8779d3182c157a393b3d9ad6297fec073
+    banyan-framework/control-plane-go/internal/controlplane/http/router_test.go: 0f205f87a55fd9cf8fa0813e3bf1c6cb5b1ccfc67ad1d195848f6b57687d48e9
+    banyan-framework/control-plane-go/internal/runtimebridge/bridge.go: 4a7a3dd249e9b53d6f4c8d855c7fd0b792a185adf84c2cd49b1bb94dc6539949
+    banyan-framework/control-plane-go/internal/runtimebridge/bridge_test.go: 159f30a0b6e5b3769ab602293022ece57c865b356c980af72050ff4d4f10ee53
+    banyan-framework/control-plane-go/internal/webassets/dist/asset-manifest.json: 1e2b93184f639fb7ecac2eca1ce4e63877b5e48eb3deb354616768e8989edf08
+    banyan-framework/control-plane-go/internal/webassets/dist/assets/index--atBYdsd.js: d135a2ee0d26c39965985aac0ffffd20e164f34e1d146d83fe7c3fcaac2f7355
+    banyan-framework/control-plane-go/internal/webassets/dist/assets/index-CfaHOHW_.css: 48e058c584d5ce86607ee1c562fca74475771cf3faaac8d0a17bd4469ad2e8da
+    banyan-framework/control-plane-go/internal/webassets/dist/index.html: c0191d631c53f0e58efaf370f0db61c654aa74ecfeb294ae1026f2958fe2839f
+    banyan-framework/control-plane-go/internal/webassets/embed.go: bf1b223a516f4e46f1eae3f06d60d039d2e07845703e947356748c37e2ceade8
+    banyan-framework/control-plane-go/internal/webassets/embed_test.go: 756717ea5970f994a7d64fedc763a8bbd947eea73ce7d6727196834d2e8e1d4b
+    banyan-framework/frontend/index.html: 4b2292d63199830a766b7ed2713558cb2ef5e445235bb3e403f0e92f2c3d917d
+    banyan-framework/frontend/package-lock.json: 54c3f196ee3120139d356da1fe71c48eb22630320ef1420a6231b72e654cd5e9
+    banyan-framework/frontend/package.json: f9be29256a43e6159a694e5f0d34c3b645fd1b84f3351bc56162ab49d4991ac0
+    banyan-framework/frontend/scripts/write-asset-manifest.mjs: 557bc12d2f19dc23aa1340d9e973e29ef4822cbef9298763a1e2f9cdebe7fb84
+    banyan-framework/frontend/src/api.ts: 88efde0c6ff7f0f4d31d696f142c2cd057894ad73a034495077f42164de29d6b
+    banyan-framework/frontend/src/main.tsx: b995b26da0eb0edf10a06f11b0e33dd1e22eb0909075cded7c5d7c461b548dff
+    banyan-framework/frontend/src/styles.css: ea6c15a55d50954ba361e99ed4c4002f921394131790c258c9f02a25cb4afd34
+    banyan-framework/frontend/tsconfig.app.json: 67c7731e4e40a5905bb275eddb59c213ebeb27b92f05b89c6d5921d93e1fc6da
+    banyan-framework/frontend/tsconfig.json: b6d51d37a8d51b993bd758b7043fa9233eea24d34a4041198ff73c063d9ed66c
+    banyan-framework/frontend/vite.config.ts: cf9ac0b83b7c05256cf63c3bbdf0c10d03da5dd524a05a865cfc46effb729ced
+    banyan-framework/policies/default-policy.yaml: fc98ddffc205ff80dbd9adafdc516bf524dec9daa833f96ded8aab3c71e90b38
+    banyan-framework/pyproject.toml: 77cc0f013d95c3702fd81d4a0f333c148869f4847e6906d36cb1900cb515d675
+    banyan-framework/src/banyan/__init__.py: a36a359691dfe10ff4b2d6064459b9c07b24b4ca2874ffbab43cfd4e284196e9
+    banyan-framework/src/banyan/adapters/__init__.py: a47819d86ba312c220df8457e411862047be685944719ae23062b4bd578b89e0
+    banyan-framework/src/banyan/adapters/filesystem.py: 104417bceaa88953bae54f5741eb68226206dc036a5232a2fab3c16494c9b3e3
+    banyan-framework/src/banyan/adapters/process.py: b3920457dfbdce74d6bb0020eb1d03cfdb2e1a2ea50643beab058569f8db467e
+    banyan-framework/src/banyan/cli.py: 71cbcd959b6f817f5f4eab5018dda692ebae51138c4bf6f9974ffc7e5de3bbe3
+    banyan-framework/src/banyan/commit/__init__.py: efd3f669f9cb3536b77fdd6f5d37f23a176560161efd7a51eaa981412266cc70
+    banyan-framework/src/banyan/commit/executor.py: 2055e2ebb50f19c8db08384438cc92dab32772c9501dad4af903c11692a61cf1
+    banyan-framework/src/banyan/commit/planner.py: d478f27e848c8a71a33c58694d14141bf42e0de2e212e8ec72df6d6fcbff62fa
+    banyan-framework/src/banyan/control_plane/__init__.py: 2c9914482d47192014d0c875d3ea226933f95d98e59a181b7bc001cf193301c1
+    banyan-framework/src/banyan/control_plane/bridge.py: aeb421551f033956639572500da293ac20534d7ccc2559f5f739f79b0d25a0b2
+    banyan-framework/src/banyan/control_plane/main.py: a4546cdb8b5bfe4d1c5ba7205f76581deef503bccebdc2bc657e9faa55f560c0
+    banyan-framework/src/banyan/control_plane/server.py: 96dc9fc34129a3035c69dadfe78ffd5b912879a3f1915701858bfc9b5216ed80
+    banyan-framework/src/banyan/control_plane/service.py: 087b408ae8f60744035410afb25d8b4a6b2a7fc06ca0fc7acda861302044a55a
+    banyan-framework/src/banyan/cursor/__init__.py: 8861cd2fc0284b4b36a6046b1f5cb1b02a0b7fdc0cb388ca0f278f5c4527bf3a
+    banyan-framework/src/banyan/cursor/adapter.py: b230df01467703aff8373319165c6863dd22a996037c1578cacd24c59d170bc3
+    banyan-framework/src/banyan/editor/__init__.py: ef65bf37e2a97d9d8b7ae324a8854b67c61da858f945dffece5ec56bc2dd0e00
+    banyan-framework/src/banyan/editor/adapters.py: 0f40cd6cc79bcb3842f3e8b9576d468d8eeba04bf5c58e277f81d60b752ef728
+    banyan-framework/src/banyan/editor/protocol.py: 302863224fafac8962d215eca78be7cff3ac86addc8d2a72cb028e2ac704de74
+    banyan-framework/src/banyan/git/__init__.py: a2782c7a833117bcb2a8c2bb7704fa9a9ffc5f296b6019be442efe7067dac4c6
+    banyan-framework/src/banyan/git/adapter.py: 2e9512813449d701f3abf8452a94e1da91b55240db38b657c62f2a73205d2abe
+    banyan-framework/src/banyan/git/index.py: e8a30db5fc8e7434097bc84ec273c8a44987c6a80a28b3dd5f3e3c0dfde33a72
+    banyan-framework/src/banyan/pilot/__init__.py: 2d8df6110bb97282ad500c3431872e8dbf058878d2a99acee912d1049dda7e55
+    banyan-framework/src/banyan/pilot/instance.py: a09c007716d2c56d94a39027d2a42012246c0a9b8430965be59a2a74e87c6e26
+    banyan-framework/src/banyan/policy/__init__.py: 80422d49379476ded1e64aeb3af87bee953bc847531472a041e469abfff5e090
+    banyan-framework/src/banyan/policy/compiler.py: 7c264f7c0a4562f7635779462dbe86f4410b4698bdba7dd7356253b173710be4
+    banyan-framework/src/banyan/providers/__init__.py: eefa63d5e940940799ce4546d159a67b3221112ad392af7b7e7894c97641f846
+    banyan-framework/src/banyan/providers/loader.py: a09c0923d2ef247b58c0939f68a0c63a1ed27c4cb219d8a85b9edf93e8bf95ad
+    banyan-framework/src/banyan/runtime/__init__.py: 95d03995aca2d62d32a0a109c72f358a68349750bc2119aa840e7f7b38145099
+    banyan-framework/src/banyan/runtime/api.py: 351d2209f4e75409b9881b28e8ed405df6c8fea7c27a8a6daa57cfa98bc27b2f
+    banyan-framework/src/banyan/runtime/evaluator.py: 1f26396032a5ea97a1677623b73ca90195015fab7a50875216879c7e20ff163c
+    banyan-framework/src/banyan/runtime/models.py: 1b54ea798c0a146127fec98bbc33e16608c05ab22f35882e7be7a5717abef242
+    banyan-framework/src/banyan/trace/__init__.py: 85f235d7e333591c64fa563f30cebc4714090e18bf116ba203678ede6d15be6c
+    banyan-framework/src/banyan/trace/emitter.py: e826f876e392785ec94f3b82060c70190f7a59fc0bd297c0a1cb8ac300c3725f
+    banyan-framework/src/banyan/web/app.js: 3e603ac6df06b54c08cf1b739073bde732b2f4fa89ec47b88dea1b6076aeef7e
+    banyan-framework/src/banyan/web/index.html: 8b2b89cf0fa6631b0c72a444cc3eaabff2fe1b38e48118711dc339fdbe387304
+    banyan-framework/src/banyan/web/styles.css: 09bbb9e9e278ab39d669bc1331a6625b216987c704040e17f97d28300ad530cb
+    banyan-framework/tests/run_stage16_tests.py: 788abd94c122805e9793da661d539c231e032f90b070867b85e21468836ef6f3
+    banyan-framework/tests/run_stage17_tests.py: cd650856f5f97b9799ed3c98d7a51f27cf660e5186ad7f0151643f712549b0cc
+    banyan-framework/tests/run_stage18_5_tests.py: 5e79bc57983043f3f3fad85588893c2c990efa15992548871f98fb1367832547
+    banyan-framework/tests/run_stage18_tests.py: 1c8714da94cc0ec6cb8cbeb82fa934854f227c023dea7d83d00aa9b4016bcbc3
+    banyan-framework/tests/run_tests.py: 135f6d010ba1963706fe3c63125fa7242e14709c7b8aa3e5dc933829e524cf78
+    banyan-framework/tests/test_adapters_planner.py: 2f1eba08d177d5adad7f4a8e91289cbad170ac59ec936667e63afd7e54185ea2
+    banyan-framework/tests/test_executor_integration.py: bc33a116c1162a1d981e1a444abff2c6e0486211feda2d87c256ea235f1e9f0c
+    banyan-framework/tests/test_policy_runtime.py: 08a6ee8cd9ddef2ac48ccea0e8f3a48cec4ab3de1013a5b9f66ae0dd13da2f07
+    banyan-framework/tests/test_stage16_control_plane.py: 72afde7cceec641b03f3a9ad87d8630e12b90b61776d901b00e348b30131148e
+    banyan-framework/tests/test_stage17_pilot.py: 48d7b7baad17805d95fe0880e90b829eb2f065bf3139e6dc6b2cadc1ce98c655
+    banyan-framework/tests/test_stage18_5_bridge.py: 84c326f65b84ba1074a7995155f20ec5ec16d0a42f3b2e73e07995cca503f903
+    banyan-framework/tests/test_stage18_adapters.py: d7ac2b674968e39c2b6534d66147bd2b06c7ae5384f71ed9c6bc8eb18e34fd7b
+    banyan-framework/tests/test_trace_provider.py: a32a39803a52b714b11554198705fdd6ceba2492ec795ee5e4ae0c761b6edfed
+boundaries:
+  final_activation: false
+  con002_resolution: false
+  docs_project_migration: false
+  bootstrap_retirement_execution: false
+  version_pointer_change: false
+  project_git_mutation: false

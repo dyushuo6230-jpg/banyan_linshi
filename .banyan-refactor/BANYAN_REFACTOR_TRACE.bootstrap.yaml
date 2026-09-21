@@ -1,0 +1,889 @@
+schema_version: bootstrap-v1
+charter_version: '1.10'
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  run_id: stage14-20260921T022241Z
+  future_canonical_path: .banyan/migrations/BANYAN_REFACTOR_TRACE.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+  future_migration:
+    required: true
+    owner_stage: 02/04
+    sequence:
+    - capture bootstrap source hash and source run id
+    - migrate to frozen canonical .banyan/migrations paths
+    - record migration timestamp and target hash
+    - validate lineage and content
+    - make bootstrap READ_ONLY_ARCHIVE_OR_REFERENCE
+    source_hash_required: true
+    target_hash_required: true
+    validation_required: true
+    bootstrap_after_migration: READ_ONLY_ARCHIVE_OR_REFERENCE
+requirements:
+- requirement_id: BANYAN-SAFE-001
+  description: No migration starts before a verifiable repository safety baseline exists.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00_改造安全基线与仓库保护.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-SAFE-002
+  description: Business code, canonical truth and legacy governance are protected from Stage 00 writes.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-A_Repository_Baseline与Protected_Paths.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-SAFE-003
+  description: Dirty worktree state has a recoverable checkpoint before refactor work.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-B_Snapshot_Hash_Checkpoint与Rollback.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  acceptance_qualification: User-approved PARTIAL_APPROVED recovery; excluded 13 secret contents cannot be restored from Banyan
+    backup.
+- requirement_id: BANYAN-SAFE-004
+  description: Early refactor state uses a bootstrap-only Register/Trace with a future lineage-preserving migration to one
+    canonical writable truth.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00_改造安全基线与仓库保护.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-SAFE-005
+  description: Stage 00 does not modify Git identity and does not create automatic commits.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-B_Snapshot_Hash_Checkpoint与Rollback.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-S01-DISCOVERY
+  description: Full repository discovery including metadata exclusions
+  owner_stage:
+  - '01'
+  implementation_artifacts:
+  - stages/01/stage01-20260920T091426Z/AI_ASSET_INVENTORY.jsonl
+  - stages/01/stage01-20260920T091426Z/DISCOVERY_COVERAGE_REPORT.yaml
+  validation_artifacts:
+  - stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S01-CAPABILITY
+  description: Semantic capability preservation candidates
+  owner_stage:
+  - '01'
+  implementation_artifacts:
+  - stages/01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl
+  - stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml
+  validation_artifacts:
+  - stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S01-ARTIFACT
+  description: Canonical/derived/operational preservation candidates
+  owner_stage:
+  - '01'
+  implementation_artifacts:
+  - stages/01/stage01-20260920T091426Z/AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+  - stages/01/stage01-20260920T091426Z/OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+  - stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml
+  validation_artifacts:
+  - stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S01-BOUNDARY
+  description: Core purity and conflict/gap candidates
+  owner_stage:
+  - '01'
+  implementation_artifacts:
+  - stages/01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml
+  - stages/01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml
+  - stages/01/stage01-20260920T091426Z/LEGACY_CLASSIFICATION_REPORT.yaml
+  validation_artifacts:
+  - stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S01-GIT
+  description: Read-only identity/commit practice
+  owner_stage:
+  - '01'
+  implementation_artifacts:
+  - stages/01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+  validation_artifacts:
+  - stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S02-CHAIN
+  description: All 35 preserved capabilities mapped through five-layer candidate chain
+  owner_stage:
+  - '02'
+  implementation_artifacts:
+  - stages/02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml
+  - stages/02/stage02-20260920T131746Z/CONTRACT_CHAIN_DESIGN.md
+  validation_artifacts:
+  - stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+  - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED_DESIGN_CANDIDATE
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S02-BOUNDARY
+  description: Core/Project/Provider/Compatibility candidate boundaries with no project relayout
+  owner_stage:
+  - '02'
+  implementation_artifacts:
+  - stages/02/stage02-20260920T131746Z/CORE_CANDIDATES.yaml
+  - stages/02/stage02-20260920T131746Z/PROJECT_CANDIDATES.yaml
+  - stages/02/stage02-20260920T131746Z/PROVIDER_CANDIDATES.yaml
+  - stages/02/stage02-20260920T131746Z/COMPATIBILITY_CANDIDATES.yaml
+  validation_artifacts:
+  - stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+  - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED_DESIGN_CANDIDATE
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S02-MAPPING
+  description: 1026 asset and 714 artifact/operational boundaries retained in place
+  owner_stage:
+  - '02'
+  implementation_artifacts:
+  - stages/02/stage02-20260920T131746Z/ASSET_BOUNDARY_MAP.jsonl
+  - stages/02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl
+  validation_artifacts:
+  - stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+  - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED_DESIGN_CANDIDATE
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S02-RISK
+  description: 31 inherited issues and five new design risks routed
+  owner_stage:
+  - '02'
+  implementation_artifacts:
+  - stages/02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml
+  - stages/02/stage02-20260920T131746Z/CONFLICT_RESOLUTION_PLAN.md
+  validation_artifacts:
+  - stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+  - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED_DESIGN_CANDIDATE
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S02-COST
+  description: AI Runtime cost governance designed without implementation
+  owner_stage:
+  - '02'
+  implementation_artifacts:
+  - stages/02/stage02-20260920T131746Z/AI_RUNTIME_COST_GOVERNANCE_DESIGN.md
+  validation_artifacts:
+  - stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+  - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: VERIFIED_DESIGN_CANDIDATE
+  activation_mode: 'OFF'
+  status: SATISFIED
+  candidate_only: true
+- requirement_id: BANYAN-S03-CONTRACT
+  description: 35 high-value capabilities have frozen semantic contracts without implementation activation
+  owner_stage:
+  - '03'
+  implementation_artifacts:
+  - stages/03/stage03-20260920T135702Z/CAPABILITY_CONTRACT_REGISTRY.yaml
+  - stages/03/stage03-20260920T135702Z/CANONICAL_CONTRACT_SCHEMA.yaml
+  validation_artifacts:
+  - stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+  - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACT_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage04_started: false
+- requirement_id: BANYAN-S03-SOURCE
+  description: Source roles have scoped authority, freshness, conflict and UNKNOWN provenance rules
+  owner_stage:
+  - '03'
+  implementation_artifacts:
+  - stages/03/stage03-20260920T135702Z/SOURCE_ROLE_SCHEMA.yaml
+  - stages/03/stage03-20260920T135702Z/SOURCE_ROLE_REGISTRY.yaml
+  - stages/03/stage03-20260920T135702Z/VERSION_STATUS_PROVENANCE_RULES.yaml
+  validation_artifacts:
+  - stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+  - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACT_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage04_started: false
+- requirement_id: BANYAN-S03-ARTIFACT
+  description: Artifact identity, reference integrity, supersession and deletion contracts are frozen
+  owner_stage:
+  - '03'
+  implementation_artifacts:
+  - stages/03/stage03-20260920T135702Z/ARTIFACT_REGISTRY_SCHEMA.yaml
+  - stages/03/stage03-20260920T135702Z/REFERENCE_INTEGRITY_CONTRACT.yaml
+  validation_artifacts:
+  - stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+  - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACT_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage04_started: false
+- requirement_id: BANYAN-S03-BOUNDARY
+  description: Provider ports and project overlays externalize concrete bindings from generic contracts
+  owner_stage:
+  - '03'
+  implementation_artifacts:
+  - stages/03/stage03-20260920T135702Z/PROVIDER_PORT_SCHEMA.yaml
+  - stages/03/stage03-20260920T135702Z/PROJECT_OVERLAY_SCHEMA.yaml
+  validation_artifacts:
+  - stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+  - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACT_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage04_started: false
+- requirement_id: BANYAN-S03-STATE
+  description: Bootstrap-to-canonical and existing-layout preservation contracts prevent dual writable truth and implicit
+    relayout
+  owner_stage:
+  - '03'
+  implementation_artifacts:
+  - stages/03/stage03-20260920T135702Z/BOOTSTRAP_CANONICAL_STATE_CONTRACT.yaml
+  - stages/03/stage03-20260920T135702Z/EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT.yaml
+  validation_artifacts:
+  - stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+  - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACT_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage04_started: false
+- requirement_id: BANYAN-S03-GOVERNANCE
+  description: Runtime governance interface and conflict carry-over are frozen without selecting provider, model, threshold
+    or conflict winner
+  owner_stage:
+  - '03'
+  implementation_artifacts:
+  - stages/03/stage03-20260920T135702Z/AI_RUNTIME_GOVERNANCE_CONTRACT.yaml
+  - stages/03/stage03-20260920T135702Z/CONFLICT_CARRYOVER_REGISTER.yaml
+  validation_artifacts:
+  - stages/03/stage03-20260920T135702Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/03/stage03-20260920T135702Z/ACCEPTANCE_REPORT.md
+  - stages/03/stage03-20260920T135702Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACT_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage04_started: false
+- requirement_id: BANYAN-S04-INSTANCE
+  description: Project Instance, mapping, overlay, profile, variable and provider binding designs are complete without activation or physical relayout
+  owner_stage:
+  - '04'
+  implementation_artifacts:
+  - stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_SCHEMA.yaml
+  - stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_LAYOUT_CONTRACT.yaml
+  - stages/04/stage04-20260920T142517Z/SOURCE_MAPPING_REGISTRY.yaml
+  - stages/04/stage04-20260920T142517Z/PROJECT_OVERLAY_BINDINGS.yaml
+  - stages/04/stage04-20260920T142517Z/VARIABLE_RESOLUTION_SCHEMA.yaml
+  - stages/04/stage04-20260920T142517Z/PROJECT_PROFILE_SCHEMA.yaml
+  - stages/04/stage04-20260920T142517Z/CONTRIBUTOR_PROFILE_SCHEMA.yaml
+  - stages/04/stage04-20260920T142517Z/PROVIDER_BINDING_SCHEMA.yaml
+  - stages/04/stage04-20260920T142517Z/ADOPTION_READINESS_REPORT.yaml
+  - stages/04/stage04-20260920T142517Z/FRAMEWORK_PROJECT_BOUNDARY.yaml
+  - stages/04/stage04-20260920T142517Z/BOOTSTRAP_TO_CANONICAL_MIGRATION_PLAN.yaml
+  - stages/04/stage04-20260920T142517Z/LOCATION_CONTRACT.yaml
+  validation_artifacts:
+  - stages/04/stage04-20260920T142517Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/04/stage04-20260920T142517Z/ACCEPTANCE_REPORT.md
+  - stages/04/stage04-20260920T142517Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_DESIGN_NOT_ACTIVATED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  stage05_started: false
+- requirement_id: BANYAN-S05-WORKFLOW-COMMIT
+  description: Adaptive workflow, five-level decisions, human confirmation, CON-001 layered resolution, and editor-neutral semantic commit policy are frozen without Git execution
+  owner_stage:
+  - '05'
+  implementation_artifacts:
+  - stages/05/stage05-20260920T144623Z/ADAPTIVE_WORKFLOW_SCHEMA.yaml
+  - stages/05/stage05-20260920T144623Z/WORK_MODE_CONTRACT.yaml
+  - stages/05/stage05-20260920T144623Z/DECISION_LEVEL_SCHEMA.yaml
+  - stages/05/stage05-20260920T144623Z/DECISION_ESCALATION_CONTRACT.yaml
+  - stages/05/stage05-20260920T144623Z/HUMAN_CONFIRMATION_CONTRACT.yaml
+  - stages/05/stage05-20260920T144623Z/CON001_RESOLUTION_RECORD.yaml
+  - stages/05/stage05-20260920T144623Z/WORKFLOW_POLICY_REGISTRY.yaml
+  - stages/05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml
+  - stages/05/stage05-20260920T144623Z/SEMANTIC_COMMIT_POLICY.yaml
+  validation_artifacts:
+  - stages/05/stage05-20260920T144623Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/05/stage05-20260920T144623Z/ACCEPTANCE_REPORT.md
+  - stages/05/stage05-20260920T144623Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_POLICY_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  con001_result: RESOLVED_BY_LAYERED_CONTRACT
+  stage06_started: false
+- requirement_id: BANYAN-S06-CHANGE-APPLY
+  description: Provider-neutral Change Workspace, inactive OpenSpec binding, parallel draft promotion, explicit Canonical Apply, reconciliation, authorization, rollback, and archive contracts are frozen without canonical mutation
+  owner_stage:
+  - '06'
+  implementation_artifacts:
+  - stages/06/stage06-20260920T151243Z/CHANGE_WORKSPACE_SCHEMA.yaml
+  - stages/06/stage06-20260920T151243Z/CHANGE_WORKSPACE_PROVIDER_PORT.yaml
+  - stages/06/stage06-20260920T151243Z/OPENSPEC_PROVIDER_BINDING.yaml
+  - stages/06/stage06-20260920T151243Z/CHANGE_LIFECYCLE_SCHEMA.yaml
+  - stages/06/stage06-20260920T151243Z/ARTIFACT_RELATIONSHIP_SCHEMA.yaml
+  - stages/06/stage06-20260920T151243Z/PARALLEL_DRAFT_CONTRACT.yaml
+  - stages/06/stage06-20260920T151243Z/DRAFT_PROMOTION_CONTRACT.yaml
+  - stages/06/stage06-20260920T151243Z/APPLY_PREVIEW_CONTRACT.yaml
+  - stages/06/stage06-20260920T151243Z/CANONICAL_APPLY_CONTRACT.yaml
+  - stages/06/stage06-20260920T151243Z/REFERENCE_SAFE_RECONCILIATION_CONTRACT.yaml
+  - stages/06/stage06-20260920T151243Z/APPLY_AUTHORIZATION_BOUNDARY.yaml
+  - stages/06/stage06-20260920T151243Z/ROLLBACK_CONTRACT.yaml
+  validation_artifacts:
+  - stages/06/stage06-20260920T151243Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/06/stage06-20260920T151243Z/ACCEPTANCE_REPORT.md
+  - stages/06/stage06-20260920T151243Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACTS_NOT_IMPLEMENTED
+  provider_activation: 'OFF'
+  canonical_apply_execution: 'OFF'
+  status: SATISFIED
+  stage07_started: true
+- requirement_id: BANYAN-S07-REFERENCE-MIGRATION
+  description: Legacy v3.1 capabilities, assets, artifacts, references, provider compatibility, and operational history have complete shadow-only no-loss dispositions without canonical activation
+  owner_stage:
+  - '07'
+  implementation_artifacts:
+  - stages/07/stage07-20260920T152653Z/LEGACY_CAPABILITY_MIGRATION_MATRIX.yaml
+  - stages/07/stage07-20260920T152653Z/LEGACY_ASSET_DISPOSITION_MATRIX.jsonl
+  - stages/07/stage07-20260920T152653Z/LEGACY_ARTIFACT_MIGRATION_MATRIX.jsonl
+  - stages/07/stage07-20260920T152653Z/OPERATIONAL_PRESERVATION_MATRIX.jsonl
+  - stages/07/stage07-20260920T152653Z/REFERENCE_MIGRATION_MAP.jsonl
+  - stages/07/stage07-20260920T152653Z/SHADOW_PROJECT_INSTANCE.yaml
+  - stages/07/stage07-20260920T152653Z/SHADOW_APPLY_REPORT.yaml
+  - stages/07/stage07-20260920T152653Z/NOLOSS_COVERAGE_REPORT.yaml
+  validation_artifacts:
+  - stages/07/stage07-20260920T152653Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/07/stage07-20260920T152653Z/ACCEPTANCE_REPORT.md
+  - stages/07/stage07-20260920T152653Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: PASS_NOLOSS_SHADOW_DESIGN_WITH_TYPED_BLOCKERS
+  activation_mode: 'OFF'
+  canonical_apply_execution: 'OFF'
+  status: SATISFIED
+  stage08_started: true
+- requirement_id: BANYAN-S08-PRD-UI-GOVERNANCE
+  description: PRD authority, application-scoped UI_SPEC projection, explicit enablement, design evidence, lifecycle, trace, freshness, change integration, readiness, validation, and v3.1 compatibility contracts are frozen without implementation
+  owner_stage:
+  - '08'
+  implementation_artifacts:
+  - stages/08/stage08-20260920T153936Z/PRD_AUTHORITY_CONTRACT.yaml
+  - stages/08/stage08-20260920T153936Z/UI_SPEC_AUTHORITY_CONTRACT.yaml
+  - stages/08/stage08-20260920T153936Z/UI_GOVERNANCE_SCOPE_SCHEMA.yaml
+  - stages/08/stage08-20260920T153936Z/UI_SPEC_ENABLEMENT_CONTRACT.yaml
+  - stages/08/stage08-20260920T153936Z/DESIGN_EVIDENCE_SCHEMA.yaml
+  - stages/08/stage08-20260920T153936Z/UI_SPEC_LIFECYCLE.yaml
+  - stages/08/stage08-20260920T153936Z/UI_SPEC_SCHEMA.yaml
+  - stages/08/stage08-20260920T153936Z/PRD_UI_TRACE_VERSION_CONTRACT.yaml
+  - stages/08/stage08-20260920T153936Z/UI_CHANGE_INTEGRATION_CONTRACT.yaml
+  - stages/08/stage08-20260920T153936Z/UI_IMPLEMENTATION_READINESS.yaml
+  - stages/08/stage08-20260920T153936Z/UI_VALIDATION_EVIDENCE_CONTRACT.yaml
+  - stages/08/stage08-20260920T153936Z/V31_UI_COMPATIBILITY_MAP.yaml
+  validation_artifacts:
+  - stages/08/stage08-20260920T153936Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/08/stage08-20260920T153936Z/ACCEPTANCE_REPORT.md
+  - stages/08/stage08-20260920T153936Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACTS_NOT_IMPLEMENTED
+  activation_mode: 'OFF'
+  canonical_mutation: 'OFF'
+  real_migration_readiness: MIGRATION_BLOCKED
+  status: SATISFIED
+  stage09_started: true
+- requirement_id: BANYAN-S09-UI-DESIGN-INTELLIGENCE
+  description: Provider-neutral Design Source, Scene, Geometry, Semantic, Truth, Token, Behavior, Data, classification, IR, validation, drift, package, and legacy compatibility contracts are frozen without provider execution or code generation
+  owner_stage:
+  - '09'
+  implementation_artifacts:
+  - stages/09/stage09-20260920T155444Z/DESIGN_SOURCE_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/DESIGN_PROVIDER_PORT.yaml
+  - stages/09/stage09-20260920T155444Z/NORMALIZED_SCENE_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/GEOMETRY_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/SEMANTIC_TREE_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/DESIGN_TRUTH_CONTRACT.yaml
+  - stages/09/stage09-20260920T155444Z/DESIGN_TOKEN_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/BEHAVIOR_EVIDENCE_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/DATA_EVIDENCE_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/CONFIDENCE_PROVENANCE_CONTRACT.yaml
+  - stages/09/stage09-20260920T155444Z/INTELLIGENCE_CLASSIFICATION_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/IMPLEMENTATION_IR_INPUT_CONTRACT.yaml
+  - stages/09/stage09-20260920T155444Z/VISUAL_VALIDATION_INPUT_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/DESIGN_DRIFT_SCHEMA.yaml
+  - stages/09/stage09-20260920T155444Z/DESIGN_PACKAGE_CONTRACT.yaml
+  - stages/09/stage09-20260920T155444Z/LEGACY_UI_DESIGN_INTELLIGENCE_COMPATIBILITY_MAP.yaml
+  validation_artifacts:
+  - stages/09/stage09-20260920T155444Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/09/stage09-20260920T155444Z/ACCEPTANCE_REPORT.md
+  - stages/09/stage09-20260920T155444Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACTS_NOT_IMPLEMENTED
+  provider_activation: 'OFF'
+  frontend_generation: 'OFF'
+  real_migration_readiness: MIGRATION_BLOCKED
+  status: SATISFIED
+  stage10_started: true
+- requirement_id: BANYAN-S10-KNOWLEDGE-PUBLISHING
+  description: Knowledge authority, projection, Guide, audience, navigation, freshness, rebuildability, provenance, Plain Document, Progress, Handover, diagrams, meeting packs, publishing, provider, and Stage 11 index requirement contracts are frozen without publishing or index runtime
+  owner_stage:
+  - '10'
+  implementation_artifacts:
+  - stages/10/stage10-20260920T161325Z/KNOWLEDGE_SOURCE_AUTHORITY_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/KNOWLEDGE_PROJECTION_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/PROJECT_GUIDE_SCHEMA.yaml
+  - stages/10/stage10-20260920T161325Z/AUDIENCE_VIEW_SCHEMA.yaml
+  - stages/10/stage10-20260920T161325Z/KNOWLEDGE_NAVIGATION_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/KNOWLEDGE_FRESHNESS_SCHEMA.yaml
+  - stages/10/stage10-20260920T161325Z/PROJECTION_REBUILDABILITY_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/GENERATED_KNOWLEDGE_PROVENANCE_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/PLAIN_DOCUMENT_COMPATIBILITY_MAP.yaml
+  - stages/10/stage10-20260920T161325Z/PROGRESS_WORKLOG_PROJECTION_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/HANDOVER_CONTEXT_PROJECTION_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/ARCHITECTURE_DIAGRAM_PROJECTION_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/MEETING_PACK_CONTRACT.yaml
+  - stages/10/stage10-20260920T161325Z/KNOWLEDGE_PUBLISH_LIFECYCLE.yaml
+  - stages/10/stage10-20260920T161325Z/KNOWLEDGE_PROVIDER_PORT.yaml
+  - stages/10/stage10-20260920T161325Z/STAGE11_INDEX_REQUIREMENTS.yaml
+  validation_artifacts:
+  - stages/10/stage10-20260920T161325Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/10/stage10-20260920T161325Z/ACCEPTANCE_REPORT.md
+  - stages/10/stage10-20260920T161325Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACTS_NOT_IMPLEMENTED
+  knowledge_runtime: 'OFF'
+  stage11_runtime: 'OFF'
+  real_migration_readiness: MIGRATION_BLOCKED
+  status: SATISFIED
+  stage11_started: true
+- requirement_id: BANYAN-S11-SHADOW-INDEX-TRACE-HISTORY
+  description: Rebuildable shadow SQLite index, trace lineage, history preservation, and Stage 12 query surface are validated without creating canonical truth or a final runtime database
+  owner_stage:
+  - '11'
+  implementation_artifacts:
+  - stages/11/stage11-20260921T011037Z/schema.sql
+  - stages/11/stage11-20260921T011037Z/TRACE_EVENT_SCHEMA.yaml
+  - stages/11/stage11-20260921T011037Z/HISTORY_EVENT_SCHEMA.yaml
+  - stages/11/stage11-20260921T011037Z/QUERY_CONTRACT.yaml
+  - stages/11/stage11-20260921T011037Z/STABLE_ID_LOCATOR_CONTRACT.yaml
+  - stages/11/stage11-20260921T011037Z/INDEX_IMPORT_MANIFEST.yaml
+  - stages/11/stage11-20260921T011037Z/INDEX_MIGRATION_LEDGER.yaml
+  - stages/11/stage11-20260921T011037Z/UNRESOLVED_REFERENCE_REGISTRY.yaml
+  - stages/11/stage11-20260921T011037Z/REBUILDABILITY_REPORT.yaml
+  - stages/11/stage11-20260921T011037Z/STAGE12_QUERY_SURFACE.yaml
+  validation_artifacts:
+  - stages/11/stage11-20260921T011037Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/11/stage11-20260921T011037Z/ACCEPTANCE_REPORT.md
+  - stages/11/stage11-20260921T011037Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: SHADOW_INDEX_VALIDATED
+  shadow_index: REBUILDABLE_NOT_CANONICAL_TRUTH_NOT_FINAL_RUNTIME_DB
+  unresolved_references: 4_OWNER_STAGE12
+  con002: OPEN_OWNER_STAGE12
+  status: SATISFIED
+  stage12_started: true
+- requirement_id: BANYAN-S12-CONTEXT-MEMORY-TOKEN-FRESHNESS
+  description: Query-first context selection, freshness resolution, memory, recovery, token budget, compaction, cache, historical reference disposition, and Stage 13 query handoff contracts are frozen with material ambiguity typed rather than guessed
+  owner_stage:
+  - '12'
+  implementation_artifacts:
+  - stages/12/stage12-20260921T014521Z/CONTEXT_SELECTION_POLICY.yaml
+  - stages/12/stage12-20260921T014521Z/FRESHNESS_RESOLUTION_SCHEMA.yaml
+  - stages/12/stage12-20260921T014521Z/CON002_RESOLUTION_RECORD.yaml
+  - stages/12/stage12-20260921T014521Z/MEMORY_RECORD_SCHEMA.yaml
+  - stages/12/stage12-20260921T014521Z/CONTEXT_RECOVERY_CONTRACT.yaml
+  - stages/12/stage12-20260921T014521Z/TOKEN_BUDGET_POLICY.yaml
+  - stages/12/stage12-20260921T014521Z/CONTEXT_COMPACTION_SCHEMA.yaml
+  - stages/12/stage12-20260921T014521Z/CACHE_REUSE_POLICY.yaml
+  - stages/12/stage12-20260921T014521Z/EVIDENCE_ON_DEMAND_POLICY.yaml
+  - stages/12/stage12-20260921T014521Z/HISTORICAL_REFERENCE_DISPOSITION.yaml
+  - stages/12/stage12-20260921T014521Z/RUNTIME_COST_CONTEXT_POLICY.yaml
+  - stages/12/stage12-20260921T014521Z/STAGE13_QUERY_HANDOFF.yaml
+  validation_artifacts:
+  - stages/12/stage12-20260921T014521Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/12/stage12-20260921T014521Z/ACCEPTANCE_REPORT.md
+  - stages/12/stage12-20260921T014521Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACTS_NOT_IMPLEMENTED
+  con002: TYPED_BLOCKED_NO_WINNER_SELECTED
+  historical_references: 4_KEEP_UNRESOLVED_HISTORICAL
+  status: SATISFIED
+  stage13_started: true
+- requirement_id: BANYAN-S13-EVIDENCE-IMPACT-EVENT-OFFLINE-LEARNING
+  description: Query-first evidence, impact, decision/change, event, causality, prompt observation, offline learning evaluation, promotion, telemetry, and Stage 14 governance contracts are frozen without canonical mutation or runtime self-modification
+  owner_stage:
+  - '13'
+  implementation_artifacts:
+  - stages/13/stage13-20260921T020549Z/EVIDENCE_RECORD_SCHEMA.yaml
+  - stages/13/stage13-20260921T020549Z/EVIDENCE_CHAIN_SCHEMA.yaml
+  - stages/13/stage13-20260921T020549Z/IMPACT_GRAPH_SCHEMA.yaml
+  - stages/13/stage13-20260921T020549Z/DECISION_CHANGE_EVIDENCE_CONTRACT.yaml
+  - stages/13/stage13-20260921T020549Z/EVENT_SCHEMA.yaml
+  - stages/13/stage13-20260921T020549Z/CAUSALITY_BOUNDARY.yaml
+  - stages/13/stage13-20260921T020549Z/PROMPT_OBSERVATION_SCHEMA.yaml
+  - stages/13/stage13-20260921T020549Z/LEARNING_CANDIDATES.yaml
+  - stages/13/stage13-20260921T020549Z/LEARNING_EVALUATIONS.yaml
+  - stages/13/stage13-20260921T020549Z/LEARNING_PROMOTION_GATE.yaml
+  - stages/13/stage13-20260921T020549Z/STAGE14_GOVERNANCE_REQUIREMENTS.yaml
+  validation_artifacts:
+  - stages/13/stage13-20260921T020549Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/13/stage13-20260921T020549Z/ACCEPTANCE_REPORT.md
+  - stages/13/stage13-20260921T020549Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_CONTRACTS_AND_OFFLINE_EXAMPLES_NOT_IMPLEMENTED
+  learning_candidates: 1_EVALUATED_1_BLOCKED_0_APPLIED
+  canonical_prompt_rule_skill_mutations: 0
+  con002: TYPED_BLOCKED_NO_WINNER_SELECTED
+  status: SATISFIED
+  stage14_started: true
+- requirement_id: BANYAN-S14-PERMISSION-GOVERNANCE-GIT-SAFETY
+  description: Action-risk, permission, authorization, work-mode, protected-write, secret, freshness, rollback, identity, worktree, semantic-commit, Git-operation, audit, learning-governance, and Stage 15 enforcement contracts are frozen and shadow-evaluated without executing protected actions or Git mutations
+  owner_stage:
+  - '14'
+  implementation_artifacts:
+  - stages/14/stage14-20260921T022241Z/POLICY_REGISTRY.yaml
+  - stages/14/stage14-20260921T022241Z/ACTION_RISK_POLICY.yaml
+  - stages/14/stage14-20260921T022241Z/PERMISSION_DECISION_SCHEMA.yaml
+  - stages/14/stage14-20260921T022241Z/AUTHORIZATION_RECORD_SCHEMA.yaml
+  - stages/14/stage14-20260921T022241Z/WORK_MODE_PERMISSION_MATRIX.yaml
+  - stages/14/stage14-20260921T022241Z/PROTECTED_WRITE_GATE.yaml
+  - stages/14/stage14-20260921T022241Z/SECRET_SAFETY_GATE.yaml
+  - stages/14/stage14-20260921T022241Z/GIT_IDENTITY_SAFETY.yaml
+  - stages/14/stage14-20260921T022241Z/GIT_WORKTREE_SAFETY.yaml
+  - stages/14/stage14-20260921T022241Z/SEMANTIC_COMMIT_AUTHORIZATION.yaml
+  - stages/14/stage14-20260921T022241Z/GIT_OPERATION_PERMISSION_MATRIX.yaml
+  - stages/14/stage14-20260921T022241Z/STAGE15_RUNTIME_ENFORCEMENT_HANDOFF.yaml
+  validation_artifacts:
+  - stages/14/stage14-20260921T022241Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/14/stage14-20260921T022241Z/evidence/SHADOW_EVALUATION_RESULTS.yaml
+  evidence:
+  - stages/14/stage14-20260921T022241Z/ACCEPTANCE_REPORT.md
+  - stages/14/stage14-20260921T022241Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: FROZEN_POLICIES_SHADOW_EVALUATED_NOT_RUNTIME_ENFORCED
+  shadow_policy_cases: 14_OF_14_PASS_0_ACTIONS_EXECUTED
+  git_mutations: 0
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  status: SATISFIED
+  stage15_started: true
+- requirement_id: BANYAN-S15-RUNTIME-API-COMPILER-ADAPTER-SEMANTIC-COMMIT
+  description: Generic policy compiler, permission runtime, CLI, adapters, semantic commit planner and guarded executor are implemented with current-project dry-run and isolated real Git execution
+  owner_stage:
+  - '15'
+  implementation_artifacts:
+  - ../../banyan-framework/src/banyan/policy/compiler.py
+  - ../../banyan-framework/src/banyan/runtime/api.py
+  - ../../banyan-framework/src/banyan/cli.py
+  - ../../banyan-framework/src/banyan/git/adapter.py
+  - ../../banyan-framework/src/banyan/commit/planner.py
+  - ../../banyan-framework/src/banyan/commit/executor.py
+  - stages/15/stage15-20260921T031742Z/STAGE16_RUNTIME_API_HANDOFF.yaml
+  validation_artifacts:
+  - stages/15/stage15-20260921T031742Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/15/stage15-20260921T031742Z/evidence/GIT_SAFETY_VERIFICATION.yaml
+  evidence:
+  - stages/15/stage15-20260921T031742Z/ACCEPTANCE_REPORT.md
+  - stages/15/stage15-20260921T031742Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: IMPLEMENTED_AND_FIXTURE_VALIDATED_CURRENT_PROJECT_DRY_RUN_ONLY
+  current_project_git_mutations: 0
+  fixture_git_execution: PASS
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  status: SATISFIED
+  stage16_started: true
+- requirement_id: BANYAN-S16-CONTROL-PLANE-WEBUI-PROVENANCE
+  description: Generic loopback-only Control Plane and WebUI expose Stage 15 Runtime status, preflight, planning, dry-run, trace, provenance, provider, stage, safety, and activation-readiness surfaces without mutation or activation
+  owner_stage:
+  - '16'
+  implementation_artifacts:
+  - ../../banyan-framework/src/banyan/control_plane/service.py
+  - ../../banyan-framework/src/banyan/control_plane/server.py
+  - ../../banyan-framework/src/banyan/web/index.html
+  - ../../banyan-framework/src/banyan/web/app.js
+  - stages/16/stage16-20260921T034943Z/CONTROL_PLANE_API_CONTRACT.yaml
+  - stages/16/stage16-20260921T034943Z/ACTIVATION_READINESS_REPORT.yaml
+  - stages/16/stage16-20260921T034943Z/STAGE17_CURSOR_PILOT_HANDOFF.yaml
+  validation_artifacts:
+  - stages/16/stage16-20260921T034943Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/16/stage16-20260921T034943Z/evidence/BROWSER_SMOKE_RESULTS.yaml
+  evidence:
+  - stages/16/stage16-20260921T034943Z/ACCEPTANCE_REPORT.md
+  - stages/16/stage16-20260921T034943Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: IMPLEMENTED_LOCAL_ONLY_CURRENT_PROJECT_DRY_RUN_ACTIVATION_NOT_EXECUTED
+  current_project_git_mutations: 0
+  dot_banyan_created: false
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  status: SATISFIED
+  stage17_started: true
+- requirement_id: BANYAN-S17-CURSOR-PROJECT-INSTANCE-PILOT
+  description: Cursor Adapter and the first validated Project Instance Pilot are connected through Control Plane and Runtime policy while preserving the existing project layout and all typed blockers
+  owner_stage:
+  - '17'
+  implementation_artifacts:
+  - ../../banyan-framework/src/banyan/cursor/adapter.py
+  - ../../banyan-framework/src/banyan/pilot/instance.py
+  - ../../.banyan/pilot.yaml
+  - stages/17/stage17-20260921T055911Z/ACTIVATION_RESULT.yaml
+  validation_artifacts:
+  - stages/17/stage17-20260921T055911Z/evidence/PILOT_VALIDATION.yaml
+  - stages/17/stage17-20260921T055911Z/evidence/ROLLBACK_VALIDATION.yaml
+  - stages/17/stage17-20260921T055911Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/17/stage17-20260921T055911Z/ACCEPTANCE_REPORT.md
+  - stages/17/stage17-20260921T055911Z/NEXT_STAGE_HANDOFF.yaml
+  capability_state: PILOT_SHADOW_ACTIVE_FINAL_ACTIVATION_FALSE
+  existing_project_layout: PRESERVE_IN_PLACE
+  current_project_git_mutations: 0
+  rollback_ready: true
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  status: SATISFIED
+  stage18_started: true
+- requirement_id: BANYAN-S18-MULTI-EDITOR-ADAPTER-COMPATIBILITY
+  description: Cursor Codex and Generic Editor request shapes normalize into one Control Plane and Runtime contract with identical permission evidence provenance failure and Git-safety boundaries
+  owner_stage:
+  - '18'
+  implementation_artifacts:
+  - ../../banyan-framework/src/banyan/editor/protocol.py
+  - ../../banyan-framework/src/banyan/editor/adapters.py
+  - stages/18/stage18-20260921T062103Z/ADAPTER_VALIDATION_RESULT.yaml
+  validation_artifacts:
+  - stages/18/stage18-20260921T062103Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/18/stage18-20260921T062103Z/evidence/FORMAL_ADAPTER_RUN.json
+  - stages/18/stage18-20260921T062103Z/evidence/PILOT_INTEGRITY.yaml
+  evidence:
+  - stages/18/stage18-20260921T062103Z/ACCEPTANCE_REPORT.md
+  - stages/18/stage18-20260921T062103Z/NEXT_STAGE_HANDOFF.yaml
+  capability_state: THREE_ADAPTERS_VALIDATED_SINGLE_RUNTIME_NO_WRITE_AUTHORITY
+  current_project_git_mutations: 0
+  dot_banyan_modified: false
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  status: SATISFIED
+  stage19_started: false
+- requirement_id: BANYAN-S18_5-ANT-DESIGN-PRO-GO-GIN
+  description: Ant Design Pro Simple WebUI and Go Gin transport preserve the Stage15 Runtime Stage14 Permission and Stage18 Adapter contracts in an embedded local-only release
+  owner_stage:
+  - '18.5'
+  implementation_artifacts:
+  - ../../banyan-framework/frontend
+  - ../../banyan-framework/control-plane-go
+  - ../../banyan-framework/src/banyan/control_plane/bridge.py
+  - stages/18.5/stage18_5-20260921T064132Z/ADR_WEBUI_CONTROL_PLANE_STACK.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/RUNTIME_BRIDGE_CONTRACT.yaml
+  validation_artifacts:
+  - stages/18.5/stage18_5-20260921T064132Z/evidence/STAGE18_5_COVERAGE_REPORT.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/evidence/TEST_RESULTS.txt
+  - stages/18.5/stage18_5-20260921T064132Z/evidence/RELEASE_SMOKE_RESULTS.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/evidence/PILOT_INTEGRITY.yaml
+  evidence:
+  - stages/18.5/stage18_5-20260921T064132Z/ACCEPTANCE_REPORT.md
+  - stages/18.5/stage18_5-20260921T064132Z/STAGE19_RC_HANDOFF.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: EMBEDDED_GO_GIN_CONTROL_PLANE_PRESERVED_RUNTIME_CONTRACT
+  current_project_git_mutations: 0
+  dot_banyan_modified: false
+  hard_metrics_all_zero: true
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  status: SATISFIED
+  stage19_started: false
+- requirement_id: BANYAN-S19-INDEPENDENT-TECHNICAL-ACCEPTANCE-RC
+  description: Independent evidence-driven acceptance verifies final architecture purity Runtime policy Git safety WebUI bridge adapters Pilot index provenance No-Loss and reproducible RC artifacts
+  owner_stage:
+  - '19'
+  implementation_artifacts:
+  - stages/19/stage19-20260921T071430Z/RC_MANIFEST.yaml
+  - stages/19/stage19-20260921T071430Z/STAGE19_EVIDENCE_REGISTRY.yaml
+  validation_artifacts:
+  - stages/19/stage19-20260921T071430Z/evidence/STAGE19_COVERAGE_REPORT.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/CRITICAL_REGRESSION_RESULTS.txt
+  - stages/19/stage19-20260921T071430Z/evidence/RC_REPRODUCIBILITY.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/FINAL_VERIFICATION.yaml
+  evidence:
+  - stages/19/stage19-20260921T071430Z/ACCEPTANCE_REPORT.md
+  - stages/19/stage19-20260921T071430Z/STAGE20_HANDOFF.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  capability_state: RC_ACCEPTED_FINAL_ACTIVATION_BLOCKED
+  current_project_git_mutations: 0
+  dot_banyan_modified: false
+  hard_metrics_all_zero: true
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  final_activation: NOT_AUTHORIZED
+  status: SATISFIED
+  stage20_started: true
+- requirement_id: BANYAN-S20-DOCUMENTATION-FRAMEWORK-RELEASE-HANDOFF
+  description: Accepted architecture and governance evidence are published as final guides and a reproducible additive framework release without project activation, pointer transition, legacy migration, or bootstrap deletion
+  owner_stage:
+  - '20'
+  implementation_artifacts:
+  - stages/20/stage20-20260921T073758Z/ACCEPTED_FINAL_STATE.yaml
+  - stages/20/stage20-20260921T073758Z/FRAMEWORK_RELEASE_MANIFEST.yaml
+  - stages/20/stage20-20260921T073758Z/VERSION_TRANSITION_PROPOSAL.yaml
+  - stages/20/stage20-20260921T073758Z/BOOTSTRAP_RETIREMENT_PLAN.yaml
+  - stages/20/stage20-20260921T073758Z/LEGACY_DOC_ADOPTION_PLAN.yaml
+  validation_artifacts:
+  - stages/20/stage20-20260921T073758Z/evidence/STAGE20_COVERAGE_REPORT.yaml
+  - stages/20/stage20-20260921T073758Z/evidence/FINAL_VERIFICATION.yaml
+  evidence:
+  - stages/20/stage20-20260921T073758Z/ACCEPTANCE_REPORT.md
+  - stages/20/stage20-20260921T073758Z/FINAL_HANDOFF.yaml
+  capability_state: ADDITIVE_FRAMEWORK_RELEASED_FINAL_ACTIVATION_BLOCKED
+  current_project_git_mutations: 0
+  dot_banyan_modified: false
+  docs_project_migration_executed: false
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  final_activation: NOT_AUTHORIZED
+  status: SATISFIED
+  later_stage_auto_started: false
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+rollback_point: CHECKPOINT-stage00-precheck-20260920T083254Z
+verification_qualification: 'R00-SECRET-001: USER_ACCEPTED_PRESERVE_IN_PLACE for 13 paths; recovery PARTIAL_APPROVED, not
+  COMPLETE'

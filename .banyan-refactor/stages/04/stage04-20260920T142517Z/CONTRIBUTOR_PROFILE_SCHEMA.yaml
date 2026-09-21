@@ -1,0 +1,24 @@
+schema_version: stage04-v1
+identity_key: git_author_name_plus_email
+allowed_profile_fields: [display_name, status, note]
+profiles:
+  "dys6230 <5527950+dys6230@user.noreply.gitee.com>": {display_name: null, status: null, note: null}
+  "Administrator <lsauth@126.com>": {display_name: null, status: null, note: null}
+  "mifen <mifen@gmail.com>": {display_name: null, status: null, note: null}
+  "你的名字 <你的邮箱@example.com>": {display_name: null, status: null, note: null}
+  "Chefuny <nhclei@gmail.com>": {display_name: null, status: null, note: null}
+  "“zhangqi” <“17330136057@163.com”>": {display_name: null, status: null, note: null}
+  "daiyushuo <dyushuo6230@gmail.com>": {display_name: null, status: null, note: null}
+  "ll ll <etatata@gmail.com>": {display_name: null, status: null, note: null}
+  "chongyang <chongyang@gmail.com>": {display_name: null, status: null, note: null}
+  "haidong <shd9241@163.com>": {display_name: null, status: null, note: null}
+  "Administrator <gitlab_admin_391810@example.com>": {display_name: null, status: null, note: null}
+  "zhang <491892878.qq.com>": {display_name: null, status: null, note: null}
+  "hanyuanyuan <yuanyuan35@leju.com>": {display_name: null, status: null, note: null}
+  "qiqiqi <17330136057@163.com>": {display_name: null, status: null, note: null}
+  "shaowei <13521620025@163.com>": {display_name: null, status: null, note: null}
+  "大飞的Mac <a1233@MacBook-Air.local>": {display_name: null, status: null, note: null}
+forbidden: [authorization, automatic_identity_merge, inferred_physical_operator, permanent_role_assignment, module_ownership]
+identity_alias_merge_performed: false
+git_identity_modified: false
+evidence_ref: "../../01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml"

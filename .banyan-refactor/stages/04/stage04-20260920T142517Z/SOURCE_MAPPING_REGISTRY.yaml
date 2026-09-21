@@ -1,0 +1,112 @@
+schema_version: stage04-v1
+project_instance_owner: x_shop_server
+mapping_basis: EXISTING_STAGE02_METADATA_TARGETED_QUERY
+mappings:
+  - mapping_id: map-decision-change-history
+    role_id: DECISION_CHANGE_HISTORY
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: EVIDENTIARY
+    read_policy: READ_EXISTING
+    write_policy: APPEND_ONLY
+    freshness_rule: event order plus effective-version metadata
+    conflict_rule: cannot silently replace current canonical truth
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#DECISION_CHANGE_HISTORY"]
+  - mapping_id: map-derived-projection
+    role_id: DERIVED_PROJECTION
+    path_kind: MULTI_ROOT
+    path_expression: [docs/project/**, tools/anydesign/**]
+    authority: DERIVED
+    read_policy: READ_EXISTING
+    write_policy: REGENERATE_WITH_LINEAGE
+    freshness_rule: fresh only when source hashes/versions match
+    conflict_rule: canonical source wins; unknown lineage blocks replacement
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#DERIVED_PROJECTION"]
+  - mapping_id: map-operational-history
+    role_id: OPERATIONAL_HISTORY
+    path_kind: MULTI_ROOT
+    path_expression: [docs/project/**, docs/temp/**]
+    authority: EVIDENTIARY_LOW
+    read_policy: READ_EXISTING
+    write_policy: APPEND_OR_IMMUTABLE
+    freshness_rule: event timestamp/version; UNKNOWN remains explicit
+    conflict_rule: never authorizes current truth by itself
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#OPERATIONAL_HISTORY"]
+  - mapping_id: map-project-canonical-document
+    role_id: PROJECT_CANONICAL_DOCUMENT
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: PRIMARY
+    read_policy: READ_EXISTING
+    write_policy: CONTROLLED_WRITE
+    freshness_rule: latest approved scoped version
+    conflict_rule: ambiguous peers block activation
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#PROJECT_CANONICAL_DOCUMENT"]
+  - mapping_id: map-project-guide-derived
+    role_id: PROJECT_GUIDE_DERIVED
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: DERIVED
+    read_policy: READ_EXISTING
+    write_policy: REGENERATE_WITH_LINEAGE
+    freshness_rule: fresh only when all input refs match
+    conflict_rule: canonical source wins; stale projection flagged
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#PROJECT_GUIDE_DERIVED"]
+  - mapping_id: map-requirement-source
+    role_id: REQUIREMENT_SOURCE
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: PRIMARY_SCOPED
+    read_policy: READ_EXISTING
+    write_policy: CONTROLLED_WRITE
+    freshness_rule: latest approved requirement version
+    conflict_rule: explicit decision overrides only with trace
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#REQUIREMENT_SOURCE"]
+  - mapping_id: map-technical-contract-source
+    role_id: TECHNICAL_CONTRACT_SOURCE
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: PRIMARY_SCOPED
+    read_policy: READ_EXISTING
+    write_policy: CONTROLLED_WRITE
+    freshness_rule: latest approved technical version
+    conflict_rule: scope conflict is BLOCKED
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#TECHNICAL_CONTRACT_SOURCE"]
+  - mapping_id: map-ui-design-derived
+    role_id: UI_DESIGN_DERIVED
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: DERIVED
+    read_policy: READ_EXISTING
+    write_policy: REGENERATE_WITH_LINEAGE
+    freshness_rule: fresh only when source UI spec and inputs match
+    conflict_rule: UI spec source wins unless explicit approved decision
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#UI_DESIGN_DERIVED"]
+  - mapping_id: map-ui-spec-source
+    role_id: UI_SPEC_SOURCE
+    path_kind: GLOB
+    path_expression: docs/project/**
+    authority: PRIMARY_SCOPED
+    read_policy: READ_EXISTING
+    write_policy: CONTROLLED_WRITE
+    freshness_rule: latest approved UI version
+    conflict_rule: product/technical conflict requires decision evidence
+    optional: false
+    evidence_refs: ["../../02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl#UI_SPEC_SOURCE"]
+coverage:
+  expected_roles: 9
+  mapped_roles: 9
+  unmapped_roles: []
+  mappings_without_role: []
+notes:
+  - Shared path expressions are intentional and disambiguated by frozen role metadata.
+  - docs/agreements remains in place and may be selected by docs/project references; no relocation is implied.
+  - No source body was read to build this registry.

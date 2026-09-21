@@ -1,0 +1,13 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_CONTRACT_NOT_INSTANTIATED
+source_roles: [DISCUSSION, DERIVED_PROJECTION]
+required_fields: [pack_id, purpose, audience, source_refs, source_versions, freshness, temporary_until, provenance]
+rules:
+  canonical_truth: false
+  decision_in_pack_is_effective_decision: false
+  new_decision_route: CHANGE_WORKSPACE_DECISION_CANONICAL_APPLY
+  pack_may_override_source: false
+  expired_or_stale_pack_may_claim_current: false
+packs: []

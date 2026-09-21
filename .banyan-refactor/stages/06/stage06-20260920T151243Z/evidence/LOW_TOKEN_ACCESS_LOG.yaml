@@ -1,0 +1,21 @@
+mode: PROVIDER_NEUTRAL_LOW_TOKEN
+repository_full_rescan: false
+stage01_to_stage05_rerun: false
+asset_inventory_regenerated: false
+git_history_reanalyzed: false
+full_capability_reload: false
+default_inputs:
+  - Stage_05_to_Stage_06_Gate_Review_v1.0.md
+  - Stage_06_低Token输入索引_v1.0.md
+  - Stage 06 pack
+  - indexed Stage 05 policy contracts
+  - indexed Stage 03 frozen contracts
+  - indexed Stage 04 mapping and provider designs
+  - five relevant Stage 03 capabilities
+targeted_evidence_on_demand:
+  - trigger: PROVIDER_BINDING_GAP
+    query: OpenSpec identifiers in existing Stage01/02 metadata
+    result: no verified legacy OpenSpec instance
+    decision: binding remains DESIGN_ONLY_INACTIVE
+secret_body_access: false
+

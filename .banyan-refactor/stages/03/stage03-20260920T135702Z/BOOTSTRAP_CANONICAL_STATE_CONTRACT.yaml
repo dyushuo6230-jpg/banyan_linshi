@@ -1,0 +1,24 @@
+schema_version: stage03-v1
+contract_status: FROZEN
+bootstrap:
+  writable_truth: .banyan-refactor/*bootstrap*
+  current_mode: BOOTSTRAP_ONLY
+  current_run: stage03-20260920T135702Z
+canonical:
+  future_path: .banyan/**
+  active: false
+  created_by_stage03: false
+migration_requirements:
+- source_hash
+- source_run_lineage
+- target_hash
+- schema_validation
+- semantic_reconciliation
+- bootstrap_read_only_archive
+activation_preconditions:
+- later stage explicitly authorized
+- canonical schemas materialized and validated
+- single-writer cutover transaction recorded
+- rollback path verified
+dual_writable_truth_forbidden: true
+stage03_action: freeze transition contract only; do not create canonical state

@@ -1,0 +1,1206 @@
+schema_version: stage01-bootstrap-v1
+stage_id: '01'
+architecture_frozen: false
+summary:
+  GENERIC_CORE_CANDIDATE: 21
+  COMPATIBILITY_CANDIDATE: 3
+  PROJECT_ONLY_CANDIDATE: 2
+  PROVIDER_CANDIDATE: 9
+retirement_candidates: []
+retirement_reason: No retirement justified while references/compatibility remain;
+  no drop approval requested
+candidates:
+- capability_or_asset_id: CAP-AUTH
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 文档/代码/生产动作分离；授权不从旧提示词自动继承
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/PROJECT_VARIABLES.md
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - DEC-042
+  - gongyi_online
+  - mall-online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 465
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/AI_DOCUMENTATION_GUIDE.md
+    line: 37
+    source_sha256: f9b9d5eeeb1a94e45ed51fc3dca8476ab9011e7351ee1c253fd6f8e6827a4e9f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/AI_DOCUMENTATION_GUIDE.md
+- capability_or_asset_id: CAP-PROFILE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 当前基线与历史参考语义不同
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/rules/collaboration-judgment.mdc
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - '8035'
+  - DEC-042
+  - gongyi_online
+  - mall-online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How are legacy variables mapped/derived/defaulted without silently enabling capabilities?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 243
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/PROJECT_VARIABLES.md
+    line: 1
+    source_sha256: b34f4826eb47b652bbcc3efd61620a64ba9795c0d06ed91a3131c340cc0364b4
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/PROJECT_VARIABLES.md
+- capability_or_asset_id: CAP-INTAKE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 从来源登记到可审计需求输入
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1047
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1088
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+- capability_or_asset_id: CAP-PRD
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: Draft、Review、Approved、Baselined 不能混同
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1112
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1132
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1198
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+- capability_or_asset_id: CAP-IDP
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 解释、初选、影响复述、确认、受控应用分开
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/rules/port-binding.mdc
+  - .cursor/rules/ui-spec-gate.mdc
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - '8035'
+  - '8037'
+  - DEC-042
+  - gongyi_online
+  - mall-online
+  - 五端
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How to preserve informed decisions while reconciling generic HIGH=1/LOW=2 and
+    project max-five override?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 496
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 222
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+- capability_or_asset_id: CAP-ARCH
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: G6/G7 决策完成才生成，显式直接 Draft 允许 TBD
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 987
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1229
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1329
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+- capability_or_asset_id: CAP-SCHEMA
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 统一元信息、状态、结论标签
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 816
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+- capability_or_asset_id: CAP-IDREF
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 同编号不换题，按语义修复而非全局替换
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - mall-online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 903
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/decisions/ADR-049.md
+    line: 1
+    source_sha256: 0e97b29bce9d78a8d486fc01e29e052b58afefdcefdab20ed95d6d40469218bc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/decisions/ADR-049.md
+- capability_or_asset_id: CAP-TRACE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 从来源、决策到测试发布的证据关系
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1877
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/acceptance/TRACE_MATRIX.md
+    line: 1
+    source_sha256: b20cf34f1c81fc55794f24e334761b01c9400f5b6dd30e17f77a07bdbd3df077
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/acceptance/TRACE_MATRIX.md
+- capability_or_asset_id: CAP-CHANGE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 不同 PRD 状态决定 CR 应用路径
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1918
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2474
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+- capability_or_asset_id: CAP-PARALLEL
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 多人同分支错开正式真源写入
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/changes_temp/
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2362
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2397
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2440
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/changes/变更稿模式.md
+    line: 1
+    source_sha256: b651c19c5f1a0a5f02878aaae4a07cc1ba0d9453b5e8fe1a0b4c449e007d5e7e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/changes/变更稿模式.md
+- capability_or_asset_id: CAP-RECONCILE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 下一批之前逐条核对业务差异
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1949
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2099
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+- capability_or_asset_id: CAP-TEST
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 不以改规则获得测试通过
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2028
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2018
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+- capability_or_asset_id: CAP-PROGRESS
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 文档、开发、交付、测试各自计算
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/acceptance/TRACE_MATRIX.md
+  - docs/project/api/
+  - docs/project/architecture/MODULE_BOUNDARIES.md
+  - docs/project/architecture/OVERALL_ARCHITECTURE.md
+  - docs/project/baseline/01_SOURCE_INVENTORY.md
+  - docs/project/baseline/02_DECISION_BASELINE.md
+  - docs/project/baseline/03_VERSION_DIFF.md
+  - docs/project/baseline/04_CONFLICT_MATRIX.md
+  - docs/project/baseline/05_PENDING_QUESTIONS.md
+  - docs/project/baseline/06_REQUIREMENT_ALIGNMENT_AUDIT.md
+  - docs/project/database/
+  - docs/project/delivery/DEVELOPMENT_BATCHES.md
+  - docs/project/design/modules/
+  - docs/project/prd/PRODUCT_PRD.md
+  - docs/project/prd/modules/
+  - docs/project/sources/SOURCE_REGISTER.md
+  - docs/project/sources/batches/BATCH-001.md
+  - docs/project/sources/batches/BATCH-002.md
+  - docs/project/sources/inbox/
+  - docs/project/standards/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - DEC-042
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1972
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/PROGRESS_REGISTER.yaml
+    line: 1
+    source_sha256: 68eee304166630012f81b1148ee8ed4a2c5de0b89b627847ca4f100e03f99887
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROGRESS_REGISTER.yaml
+- capability_or_asset_id: CAP-HANDOVER
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 记录未完成、风险、Git 和下一步
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2043
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/HANDOVER_REGISTER.md
+    line: 1
+    source_sha256: c89a2aae6eacc65021b60e53b4ad1395efa111e4692994164ed6bb14d3046a4d
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/HANDOVER_REGISTER.md
+- capability_or_asset_id: CAP-CONTEXT
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 从真实文档进度恢复而非会话猜测
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  business_specific_terms:
+  - '8035'
+  - DEC-042
+  - gongyi_online
+  - mall-online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 145
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/progress/PROJECT_DASHBOARD.md
+    line: 1
+    source_sha256: 67742b0fbf293b25f8e368f24f716f3cd7c64b9c7bd8d559cfc171a349dae81b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROJECT_DASHBOARD.md
+- capability_or_asset_id: CAP-UI_SCOPE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: G5.5 逻辑范围与 G9.1 应用目录不同
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 980
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1005
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+- capability_or_asset_id: CAP-UI_CONTRACT
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 页面到 shared 的批准规范与 locked 规则
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 939
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1792
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+- capability_or_asset_id: CAP-UI_GATE
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 令牌确认不是开发批准
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: .cursor/rules/ui-spec-gate.mdc
+    line: 1
+    source_sha256: b939dfcbd0cf8d5c0335cde76c5cefe6f7aa9c73c17f05a1c4802e26bc2fb8ba
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/ui-spec-gate.mdc
+- capability_or_asset_id: CAP-VISUAL
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 指定页面和允许文件的小范围迭代
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - docs/project/PROJECT_VARIABLES.md
+  - docs/project/delivery/ui-contracts/gongyi_online-partial-001/EFFECTIVE_UI_CONTRACT.md
+  - docs/project/sources/inbox/BATCH-003/
+  - docs/project/ui-design/products/
+  - docs/project/ui-design/products/gongyi_online/materials/tokens/design-tokens.json
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  business_specific_terms:
+  - '8035'
+  - gongyi_online
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: .cursor/skills/visual-repair-loop/SKILL.md
+    line: 1
+    source_sha256: df37c0559b104122f03ca27c4e82f18dc3e690328e37dad2b86105ef19be1870
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/skills/visual-repair-loop/SKILL.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+    line: 1
+    source_sha256: abb8cef06df0ff94f416b6488de0044b96d4d49649f288beb837e06e195691cb
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+    line: 1
+    source_sha256: 712e79c6e1b5a6c7000a583c128cb5dbff4e6643d7944912c384bf48b06ce696
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+- capability_or_asset_id: CAP-PUBLISH
+  candidate_boundary: GENERIC_CORE_CANDIDATE
+  generic_semantics: 骨架、初次正文、差异同步三条明确路径
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/acceptance/TEST_STRATEGY.md
+  - docs/project/architecture/DEPLOYMENT_ARCHITECTURE.md
+  - docs/project/architecture/MODULE_BOUNDARIES.md
+  - docs/project/architecture/OVERALL_ARCHITECTURE.md
+  - docs/project/architecture/SECURITY_ARCHITECTURE.md
+  - docs/project/architecture/SYSTEM_CONTEXT.md
+  - docs/project/database/DATA_MODEL.md
+  - docs/project/design/modules/auth-session.md
+  - docs/project/design/modules/fulfillment.md
+  - docs/project/design/modules/goods.md
+  - docs/project/design/modules/group-seckill.md
+  - docs/project/design/modules/onboarding.md
+  - docs/project/design/modules/trade.md
+  - docs/project/design/modules/tree.md
+  - docs/project/design/modules/user.md
+  - docs/project/plain-document/
+  - docs/project/plain-document/doc-map.md
+  - docs/project/plain-spec/
+  - docs/project/plain-spec/plain-document
+  - docs/project/prd/
+  - docs/project/prd/PRODUCT_PRD.md
+  - docs/project/prd/modules/M01-business-type.md
+  - docs/project/prd/modules/M02-onboarding.md
+  - docs/project/prd/modules/M03-merchant-workspace.md
+  - docs/project/prd/modules/M04-goods.md
+  - docs/project/prd/modules/M05-local-life.md
+  - docs/project/prd/modules/M06-group-seckill.md
+  - docs/project/prd/modules/M07-online-mall.md
+  - docs/project/prd/modules/M08-user-pool.md
+  - docs/project/prd/modules/M09-auth-session.md
+  - docs/project/prd/modules/M10-order-settlement.md
+  - docs/project/prd/modules/M11-platform-ops.md
+  - docs/project/prd/modules/M12-promoter.md
+  - docs/project/progress/PLAIN_SYNC.yaml
+  - docs/project/progress/PLAIN_SYNC_GAPS.md
+  business_specific_terms:
+  - gongyi_online
+  - mall-online
+  - 五端
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2150
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/plain-spec/白话文档生成方案.md
+    line: 1
+    source_sha256: f0a8e76c49ed4a43fc039f8544bf23366ab7264d7dbd349929aa9c824ea62d58
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/plain-spec/白话文档生成方案.md
+  - path: docs/project/progress/PLAIN_SYNC.yaml
+    line: 1
+    source_sha256: 47cfe1363efb221c3f300463e380cc02791247322c8154cce0349f5e47df5fdc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PLAIN_SYNC.yaml
+- capability_or_asset_id: CAP-EDITOR
+  candidate_boundary: COMPATIBILITY_CANDIDATE
+  generic_semantics: 规则入口及 symlink provider 保持兼容
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/rules/port-binding.mdc
+  - .cursor/rules/ui-spec-gate.mdc
+  - .cursor/skills/anydesign
+  - docs/project/ui-design/products/
+  - tools/anydesign
+  business_specific_terms:
+  - '8035'
+  - '8037'
+  - DEC-042
+  - mall-online
+  - 五端
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  - path: tools/anydesign/PROJECT_INSTALL.md
+    line: 1
+    source_sha256: 468912b83efeb9571c20513d7783f4d6800c3481c96643ca4d296522e61a1722
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/PROJECT_INSTALL.md
+- capability_or_asset_id: CAP-PORT
+  candidate_boundary: PROJECT_ONLY_CANDIDATE
+  generic_semantics: 多前后端映射不能串用
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths: []
+  business_specific_terms:
+  - '8035'
+  - '8037'
+  - mall-online
+  - 五端
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: .cursor/rules/port-binding.mdc
+    line: 1
+    source_sha256: 72196ba0773f26bdefe41b7b004e439cf89aa58117b70031f271ffe6c0412e0e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/port-binding.mdc
+- capability_or_asset_id: CAP-SQL
+  candidate_boundary: PROJECT_ONLY_CANDIDATE
+  generic_semantics: 本地联调与测试交付不同
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/开发指导.md
+    line: 92
+    source_sha256: b94a43e5715a8f4153364ac28c0b4367990fc4cd779ba3a1350cf57c1e674c10
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/开发指导.md
+- capability_or_asset_id: CAP-COMMIT
+  candidate_boundary: COMPATIBILITY_CANDIDATE
+  generic_semantics: 项目级 commitlint/Husky 与通用提交禁令分开
+  project_specific_dependencies:
+  - Source mixes project policy/facts with reusable behavior; must parameterize or
+    retain project overlay
+  hardcoded_paths:
+  - .cursor/skills/anydesign/
+  - .cursor/skills/visual-repair-loop/
+  - docs/project
+  - docs/project/sources/inbox/
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/
+  - tools/anydesign
+  business_specific_terms:
+  - gongyi_online
+  - 四业态
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 479
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: nunu-go-api/app/admin/web/.husky/commit-msg
+    line: 1
+    source_sha256: e8fa05dcf9a02aa6c36204bbb258751c16b4793967968f4721215b788c9166be
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/.husky/commit-msg
+  - path: nunu-go-api/app/admin/web/commitlint.config.cjs
+    line: 1
+    source_sha256: 2a5704436bedce02b1a20ee6046cf3ee907dab5d3733ddb21cd60bcf3f4e232c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/commitlint.config.cjs
+- capability_or_asset_id: CAP-MERGE
+  candidate_boundary: COMPATIBILITY_CANDIDATE
+  generic_semantics: 特定分支与目录归属的历史合并流程
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence: []
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: docs/temp/SassDesign/合并代码指导.md
+    line: 24
+    source_sha256: 35f753b5e4d51c001bfa0b223272f1fce8d268416c2e1ed72f083f199f6e61cc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/temp/SassDesign/合并代码指导.md
+- capability_or_asset_id: CAP-DESIGN
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 从视觉输入提取设计语义，不制造正式业务规则
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - How will Stage 02 preserve these semantics without fixed project paths?
+  evidence_refs:
+  - path: tools/anydesign/SKILL.md
+    line: 1
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  - path: tools/anydesign/references/element-copy.md
+    line: 1
+    source_sha256: a4e2bd81e29cbc117daeaf0b6527ead693ab77bb63020e85cd84fce39847c256
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/references/element-copy.md
+- capability_or_asset_id: CAP-CSS
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_css_vars.py
+    line: 1
+    source_sha256: 41091ff0dec0ebdc16e89b910b12b0c1df0d036321a467afed072666073cd8d2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_css_vars.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-CAPTURE
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/capture_site.py
+    line: 1
+    source_sha256: 9a41c6e1ca1ca1f8c75aab482ca4d5297295970cdcb254b31b0d3fdfb2fefa05
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/capture_site.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-COLORS
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_colors.py
+    line: 1
+    source_sha256: 9de38727e2f1fd78940b7a046024f76fa5f398458458585c8b64363cd5a744f7
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_colors.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-A11Y
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/check_contrast.py
+    line: 1
+    source_sha256: b8f63d6704dae7483896bd40f305564d3bd185478db5d6acb9ee20ab89f8477f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/check_contrast.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-LINT
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/lint_design_md.py
+    line: 1
+    source_sha256: 3b33714dd5b8ad4226cef209cbbe210c316a19cdc922084f2241f3bb70a187e6
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/lint_design_md.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-TOKENS
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/build_tokens_json.py
+    line: 1
+    source_sha256: 5e96c2c85c4b994c8c3bd70284820984fa7ba21f75112a9da1032f51ea4386da
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/build_tokens_json.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-DRIFT
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/verify_design.py
+    line: 1
+    source_sha256: 631c535f4bedb492f9efc47309ef54cecb443bcf0137af27a42540d459ef6d0f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/verify_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+- capability_or_asset_id: CAP-EXPORT
+  candidate_boundary: PROVIDER_CANDIDATE
+  generic_semantics: 独立工具能力；源代码与函数/CLI静态审阅，未实际执行
+  project_specific_dependencies: []
+  hardcoded_paths: []
+  business_specific_terms: []
+  cross_project_evidence:
+  - tools/anydesign/examples contains multiple design exemplars; no independent cross-project
+    execution verified
+  purity_risk: 'MEDIUM: no independent portability verification; source paths and
+    legacy G numbers must not become Core constants'
+  required_abstraction: Separate semantic contract, project source mapping, editor/provider
+    interface; preserve existing layout
+  candidate_owner_stage: '02'
+  confidence: MEDIUM
+  open_questions:
+  - Which provider interface preserves input/output and failure semantics across projects?
+  evidence_refs:
+  - path: tools/anydesign/scripts/export_for_claude_design.py
+    line: 1
+    source_sha256: 8f2a6237c053e95f83313c4188df1875a3535dc7ab61ecba2d5a4d0a505b5ad2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/export_for_claude_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md

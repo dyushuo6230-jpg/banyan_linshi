@@ -1,0 +1,50 @@
+schema_version: stage17-v1
+run_id: stage17-20260921T055911Z
+overall: PASS
+validations:
+  V17-01: {result: PASS, check: Stage16 gate handoff and activation readiness consumed}
+  V17-02: {result: PASS, check: low-token inputs used without full project rescan}
+  V17-03: {result: PASS, check: Runtime preflight completed before Shadow or Pilot content}
+  V17-04: {result: PASS, check: checkpoint completed before Shadow and .banyan creation}
+  V17-05: {result: PASS, check: explicit user authorization bound to Pilot scope}
+  V17-06: {result: PASS, check: Existing Project Layout is PRESERVE_IN_PLACE}
+  V17-07: {result: PASS, check: Shadow Project Instance built before Pilot creation}
+  V17-08: {result: PASS, check: Shadow schema and 13-file allowlist validated}
+  V17-09: {result: PASS, check: Cursor Adapter calls Control Plane only}
+  V17-10: {result: PASS, check: Control Plane calls Runtime API and policy evaluation}
+  V17-11: {result: PASS, check: Cursor owns no permission decision capability}
+  V17-12: {result: PASS, check: Cursor owns no canonical modification capability}
+  V17-13: {result: PASS, check: Cursor and Pilot flow execute no Git mutation}
+  V17-14: {result: PASS, check: preflight and Pilot creation evidence trace validated}
+  V17-15: {result: PASS, check: .banyan created for Pilot Shadow only}
+  V17-16: {result: PASS, check: .banyan exactly matches validated Shadow hashes}
+  V17-17: {result: PASS, check: canonical files and business code not overwritten}
+  V17-18: {result: PASS, check: docs unchanged and project path remains absent}
+  V17-19: {result: PASS, check: no Legacy deletion performed}
+  V17-20: {result: PASS, check: Secret policy remains metadata-only with zero body reads}
+  V17-21: {result: PASS, check: Git identity not read as values or modified}
+  V17-22: {result: PASS, check: CON-002 remains typed blocked}
+  V17-23: {result: PASS, check: UNKNOWN authority freshness and variables preserved}
+  V17-24: {result: PASS, check: rollback simulation passed and actual reverse plan is actionable}
+  V17-25: {result: PASS, check: HEAD index staged unstaged and conflict state unchanged}
+  V17-26: {result: PASS, check: Activation Review passed for Pilot only}
+  V17-27: {result: PASS, check: Acceptance Activation Result and Next Stage Handoff complete}
+  V17-28: {result: PASS, check: Stage18 not started or authorized}
+tests:
+  automated: 10
+  passed: 10
+  failed: 0
+  structured_artifact_parse: PASS
+  evidence_trace_validation: PASS
+hard_invariants:
+  RUNTIME_POLICY_BYPASS: 0
+  CURSOR_PERMISSION_OWNERSHIP: 0
+  CURSOR_CANONICAL_WRITE_PATH: 0
+  CURSOR_DIRECT_GIT_MUTATION: 0
+  SECRET_BODY_READ: 0
+  GIT_IDENTITY_MUTATION: 0
+  LEGACY_FILE_DELETION: 0
+  DOCS_PROJECT_MOVE: 0
+  CON002_AUTO_RESOLUTION: 0
+  UNKNOWN_AUTO_FILL: 0
+  FINAL_ACTIVATION_IN_STAGE17: 0

@@ -1,0 +1,94 @@
+{
+  "stage": "02",
+  "run_id": "stage02-20260920T131746Z",
+  "stage01_run": "stage01-20260920T091426Z",
+  "stage01_handoff_result": "PASS",
+  "stage01_inputs": [
+    {
+      "path": "AI_ASSET_INVENTORY.jsonl",
+      "sha256": "7e3e1885e04621615ac311ee2b0aef16b414c1047d58283842b16f45ad4686ca",
+      "stage01_sealed": true
+    },
+    {
+      "path": "LEGACY_AI_CAPABILITY_INVENTORY.jsonl",
+      "sha256": "e50dc6144e8505031d28bd451fe03f7651b191ab62de386e8d8014cb62c6f8e2",
+      "stage01_sealed": true
+    },
+    {
+      "path": "AI_GENERATED_ARTIFACT_INVENTORY.jsonl",
+      "sha256": "061ecd5067ad3c1d58863725ed4ae58b4f66bb5b4c65242e5b8111e3aa490e97",
+      "stage01_sealed": true
+    },
+    {
+      "path": "PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml",
+      "sha256": "bc63b498639395182cc7091fd85b843c6350c6025c5390a1bccd41aaf84e60d4",
+      "stage01_sealed": true
+    },
+    {
+      "path": "CORE_CANDIDATE_REPORT.yaml",
+      "sha256": "502bfccea49b961ff1d02a0e93cbc004ee4ce04800183149e33a8bdbc7516682",
+      "stage01_sealed": true
+    },
+    {
+      "path": "GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml",
+      "sha256": "5871826ae834cad7fcaa4635c406ff848d00c9c29df4877151eb46d96018cbc2",
+      "stage01_sealed": true
+    },
+    {
+      "path": "CONFLICT_GAP_REPORT.yaml",
+      "sha256": "ec41f9fe57562948d85cc3c6564f6f5dcf2cf80f894c4edef65a75bc6a8b3575",
+      "stage01_sealed": true
+    },
+    {
+      "path": "PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml",
+      "sha256": "15241cbcd32053df074b0766ac8f73baa5b166c182f85dd36707434c2a6d8870",
+      "stage01_sealed": true
+    },
+    {
+      "path": "OPERATIONAL_ARTIFACT_INVENTORY.jsonl",
+      "sha256": "f5db26dd36fd8785a1317a274f34b3f895a68da95db9bd3e307f6e0275d93e02",
+      "stage01_sealed": true
+    },
+    {
+      "path": "DISCOVERY_COVERAGE_REPORT.yaml",
+      "sha256": "1d220a24211c14ae4c8e5fff7319573312619a59e22f9d6f9bea842c39ad04e5",
+      "stage01_sealed": true
+    }
+  ],
+  "pack": [
+    {
+      "path": "02-A_Capability_Mapping_Workbook.md",
+      "sha256": "f8df3ead62ed5ffc0b0be76008a4c4174eba26ab32bc4c89ef7ad7f00813ae69"
+    },
+    {
+      "path": "02-B_Architecture_Decision_Record_Template.md",
+      "sha256": "15139b6c1c877a218f1f898cc699a2175b2e2310c9890abe13b8ec243f09c2a2"
+    },
+    {
+      "path": "02-C_AI_Runtime_Governance_Design.md",
+      "sha256": "1d021ff8666c7619a9f02fcd976eacd5c26fd04305ecf5fb6cd38076839ec827"
+    },
+    {
+      "path": "02_Banyan_Core_Boundary_Design.md",
+      "sha256": "1135880e3f80e9a2d20e1baa4cf9f469cb6c9817c4711097e32de0220ae85bb5"
+    },
+    {
+      "path": "ACCEPTANCE_REPORT.template.md",
+      "sha256": "c1463410706a4ae619ac3e56653c7423b4691aa31b9567ab7429739012c8cffb"
+    },
+    {
+      "path": "EXECUTION_RUNBOOK.md",
+      "sha256": "d14f597b61994e9af31f785fa93ffe5786eb87d72fefec55f9d12443d432fcdd"
+    },
+    {
+      "path": "Stage_02_Pre_Design_Guidance_v1.10.md",
+      "sha256": "75ed4504db11df8a8eaa4396dc4a72f17f9fc31ce798c70c98f7a4c6a6d49544"
+    }
+  ],
+  "gate_review_sha256": "12a388480f0a910c6317403c4d8ecc5a76d748900cf01a93bd6b2e93132d4a5e",
+  "head": "9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7",
+  "branch": "feature/huanpipro",
+  "tracked_diff_empty": true,
+  "stage02_created_after_checks": true,
+  "source": "Stage01 sealed artifacts only; no repository rediscovery"
+}

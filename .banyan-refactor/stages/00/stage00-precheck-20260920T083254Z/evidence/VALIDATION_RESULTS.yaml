@@ -1,0 +1,125 @@
+# Stage 00 actual execution evidence; no secret contents.
+stage_id: '00'
+run_id: stage00-precheck-20260920T083254Z
+overall: PASS
+checked_at: '2026-09-20T08:53:35.090145+00:00'
+recovery_coverage: PARTIAL_APPROVED
+qualification: User-approved exact 13 secret path exception only
+results:
+- id: V00-01
+  result: PASS
+  evidence:
+  - evidence/repo_root.txt
+  - evidence/worktree.txt
+  - evidence/submodule.txt
+  - evidence/TOPOLOGY.json
+  notes: Monorepo boundary explicit; dependencies/generated roots excluded with reasons;
+    symlinks not followed.
+- id: V00-02
+  result: PASS
+  evidence:
+  - BASELINE_MANIFEST.yaml
+  - PRE_STAGE_GIT_STATUS.txt
+  - evidence/resume-git-evidence.json
+  notes: Original branch/HEAD/status retained; no tracked diff; 21 original untracked
+    files.
+- id: V00-03
+  result: PASS
+  evidence:
+  - evidence/git_operation.txt
+  - evidence/SAFETY_COMPARISON.json
+  notes: No unresolved merge/rebase/cherry-pick/revert/sequencer/conflict.
+- id: V00-04
+  result: PASS
+  evidence:
+  - DISCOVERY_SCOPE_BASELINE.yaml
+  - evidence/FILE_INVENTORY.jsonl
+  - evidence/EXCLUSIONS.json
+  notes: 100010 paths classified; per-file records override root defaults; no Stage
+    01 semantic inventory.
+- id: V00-05
+  result: PASS
+  evidence:
+  - evidence/IGNORED_GOVERNED.json
+  - checkpoint/ignored-governed.tar
+  notes: Ignored governance docs and local assets retained; ignored secret exception
+    kept separate.
+- id: V00-06
+  result: PASS
+  evidence:
+  - PROTECTED_PATHS_MANIFEST.yaml
+  - evidence/USER_APPROVAL.json
+  notes: Only bootstrap root writable; 13 exact secret paths remain metadata-only
+    through future stages; no waiver for others.
+- id: V00-07
+  result: PASS
+  evidence:
+  - evidence/SECRET_METADATA.json
+  - evidence/stage00_execution.py
+  - evidence/SAFETY_COMPARISON.json
+  notes: '69 conservatively classified potential-secret paths: no content I/O; 13
+    ignored exceptions, remaining clean tracked references. Secret content equality
+    is not claimed.'
+- id: V00-08
+  result: PASS
+  evidence:
+  - FILE_HASHES.sha256
+  - evidence/FILE_INVENTORY.jsonl
+  - evidence/HASH_SCOPE_REPORT.json
+  - evidence/SAFETY_COMPARISON.json
+  notes: 5835 regular-file SHA-256 values verified; symlink text and secret metadata
+    are recorded separately; exclusions explained.
+- id: V00-09
+  result: PASS
+  evidence:
+  - CHECKPOINT_RECORD.yaml
+  - evidence/USER_APPROVAL.json
+  - evidence/CHECKPOINT_INTEGRITY.json
+  notes: PASS under explicit user-approved partial recovery exception ONLY; 13 secret
+    contents have NO independent backup and cannot be restored from checkpoint. Not
+    COMPLETE.
+- id: V00-10
+  result: PASS
+  evidence:
+  - evidence/status.z
+  - evidence/index.z
+  - evidence/CHECKPOINT_INTEGRITY.json
+  notes: No tracked binary changes; no patch required. Non-secret untracked/ignored
+    binary assets verified inside tar.
+- id: V00-11
+  result: PASS
+  evidence:
+  - evidence/untracked.z
+  - checkpoint/untracked.tar
+  - evidence/CHECKPOINT_INTEGRITY.json
+  notes: All 21 relevant untracked files safely backed up, including preserved user-supplied
+    construction materials.
+- id: V00-12
+  result: PASS
+  evidence:
+  - PRE_STAGE_GIT_STATUS.txt
+  - POST_STAGE_GIT_STATUS.txt
+  - evidence/SAFETY_COMPARISON.json
+  notes: Outside-control Git status, HEAD, index, identity unchanged; managed hashes
+    and secret lstat metadata unchanged; no automatic commit or destructive operations.
+- id: V00-13
+  result: PASS
+  evidence:
+  - evidence/MANIFEST_PARSE.json
+  notes: Actual YAML documents parse; mandatory baseline links and checkpoint member
+    paths exist; future canonical paths are explicitly future, absent.
+- id: V00-14
+  result: PASS
+  evidence:
+  - ../../../MIGRATION_REGISTER.bootstrap.yaml
+  - ../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  - evidence/SAFETY_COMPARISON.json
+  notes: Single bootstrap writable Register/Trace pair; source/run lineage → canonical
+    target hash → validation → bootstrap read-only archive obligation recorded.
+- id: V00-15
+  result: PASS
+  evidence:
+  - ACCEPTANCE_REPORT.md
+  - evidence/NEXT_STAGE_HANDOFF.yaml
+  notes: Complete handoff with PARTIAL_APPROVED risk and exact scope; Stage 01 permission
+    gate is distinct from execution authorization.

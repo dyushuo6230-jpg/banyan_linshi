@@ -1,0 +1,20 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_COMPATIBILITY_MAPPING_NOT_REFRESHED
+entries:
+- {legacy_projection: doc-map, generic_projection_type: NAVIGATION, source_roles: [CANONICAL, AUTHORITATIVE_REFERENCE], one_way_sync: true, canonical_truth: false, refresh_policy: BATCH_SCOPED}
+- {legacy_projection: 总览, generic_projection_type: GUIDE, source_roles: [CANONICAL, AUTHORITATIVE_REFERENCE], one_way_sync: true, canonical_truth: false, refresh_policy: BATCH_SCOPED}
+- {legacy_projection: 功能需求, generic_projection_type: PLAIN_DOCUMENT, source_roles: [CANONICAL], one_way_sync: true, canonical_truth: false, refresh_policy: BATCH_SCOPED}
+- {legacy_projection: 分端页面, generic_projection_type: PLAIN_DOCUMENT, source_roles: [CANONICAL, AUTHORITATIVE_REFERENCE], one_way_sync: true, canonical_truth: false, refresh_policy: BATCH_SCOPED}
+- {legacy_projection: 技术设计, generic_projection_type: PLAIN_DOCUMENT, source_roles: [CANONICAL, AUTHORITATIVE_REFERENCE], one_way_sync: true, canonical_truth: false, refresh_policy: BATCH_SCOPED}
+- {legacy_projection: 架构图, generic_projection_type: ARCHITECTURE_EXPLANATION, source_roles: [CANONICAL, AUTHORITATIVE_REFERENCE], one_way_sync: true, canonical_truth: false, refresh_policy: BATCH_SCOPED}
+- {legacy_projection: PLAIN_SYNC, generic_projection_type: PROGRESS_VIEW, source_roles: [OPERATIONAL], one_way_sync: true, canonical_truth: false, refresh_policy: EXPLICIT_SOURCE_VERSION_CHECK}
+- {legacy_projection: PLAIN_SYNC_GAPS, generic_projection_type: PROGRESS_VIEW, source_roles: [OPERATIONAL, HISTORICAL], one_way_sync: true, canonical_truth: false, refresh_policy: CONFLICT_LEDGER}
+rules:
+  second_requirement_truth: false
+  direct_change_authority: false
+  reverse_sync_to_canonical: false
+  conflict_ledger_required: true
+  fixed_chinese_directory_names_in_generic_core: false
+legacy_documents_mutated: false

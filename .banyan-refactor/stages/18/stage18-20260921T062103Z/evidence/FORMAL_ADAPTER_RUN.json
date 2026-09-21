@@ -1,0 +1,1075 @@
+{
+  "adapters": [
+    "cursor",
+    "codex",
+    "generic-editor"
+  ],
+  "canonical_write_owned_by_adapter": false,
+  "direct_git_mutation": false,
+  "permission_owned_by_adapter": false,
+  "request_count": 24,
+  "results": [
+    {
+      "action": "runtime_status",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-status",
+      "result": {
+        "activation_state": "NOT_ACTIVATED",
+        "capabilities": {
+          "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+          "commit_dry_run": "AVAILABLE_DRY_RUN",
+          "commit_plan": "AVAILABLE_READ_ONLY",
+          "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+          "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+          "policy_status": "AVAILABLE_READ_ONLY",
+          "preflight": "AVAILABLE_READ_ONLY",
+          "project_safety": "AVAILABLE_READ_ONLY",
+          "runtime_status": "AVAILABLE_READ_ONLY"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "current_project_mutation_allowed": false,
+        "current_stage": "16",
+        "execution_mode": "DRY_RUN_ONLY",
+        "latest_run": "UNKNOWN",
+        "open_blockers": [
+          "STAGE17_GATE_REQUIRED",
+          "CURRENT_PROJECT_DRY_RUN_ONLY"
+        ],
+        "provider_status": [],
+        "runtime_health": "HEALTHY"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "preflight",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-preflight",
+      "result": {
+        "action_id": "cursor-preflight",
+        "action_state": "AVAILABLE_READ_ONLY",
+        "audit_event": {
+          "action_id": "cursor-preflight",
+          "authorization_ref": null,
+          "event_type": "PERMISSION_EVALUATED",
+          "evidence_refs": [],
+          "grants_authorization": false,
+          "occurred_at": "2026-09-21T06:24:46.952555+00:00",
+          "permission_result": "ALLOW",
+          "result": "ALLOW",
+          "risk_class": "READ_ONLY",
+          "target_id": "/Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "decision_level": "L0",
+        "executed": false,
+        "failed_or_missing_preconditions": [],
+        "permission_result": "ALLOW",
+        "reason_codes": [],
+        "risk_class": "READ_ONLY",
+        "ui_confirmation_is_authorization": false
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "commit_plan",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-plan",
+      "result": {
+        "blocked_paths": [],
+        "classifications": {
+          ".banyan-refactor/": "INCOMPLETE",
+          ".banyan/": "INCOMPLETE",
+          "banyan-framework/": "INCOMPLETE",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md": "INCOMPLETE",
+          "docs/temp/商品详情data和订单详情data.md": "INCOMPLETE",
+          "榕树ai改造落地相关文档/": "INCOMPLETE"
+        },
+        "execution_mode": "DRY_RUN_ONLY",
+        "groups": [],
+        "is_authorization": false,
+        "leftovers": [
+          ".banyan-refactor/",
+          ".banyan/",
+          "banyan-framework/",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+          "docs/temp/商品详情data和订单详情data.md",
+          "榕树ai改造落地相关文档/"
+        ]
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "commit_dry_run",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-dry",
+      "result": {
+        "action_state": "AVAILABLE_DRY_RUN",
+        "actual_commit_created": false,
+        "commits": [],
+        "display_label": "DRY_RUN_NOT_COMMIT",
+        "dry_run": true,
+        "leftovers": [
+          ".banyan-refactor/",
+          ".banyan/",
+          "banyan-framework/",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+          "docs/temp/商品详情data和订单详情data.md",
+          "榕树ai改造落地相关文档/"
+        ],
+        "permission_result": "ALLOW",
+        "planned_groups": [],
+        "reason_codes": [],
+        "rolled_back": false,
+        "status": "DRY_RUN"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "provenance",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-provenance",
+      "result": {
+        "authority": "STAGE17_ACCEPTED_OUTPUT",
+        "classification": "PILOT_EVIDENCE",
+        "freshness": "CURRENT_FOR_STAGE18",
+        "provenance": "Stage17 ACTIVATION_RESULT",
+        "related_refs": [
+          ".banyan"
+        ],
+        "source_refs": [
+          "stage17-20260921T055911Z"
+        ],
+        "source_role": "UPSTREAM_HANDOFF",
+        "stable_id": "stage17-pilot",
+        "status": "ACCEPTED",
+        "version": "stage17-v1"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "git_mutation",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-blocked",
+      "result": {
+        "error_code": "UNSUPPORTED_OR_FORBIDDEN_ACTION",
+        "runtime_decision": {
+          "action_id": "cursor-blocked",
+          "action_state": "BLOCK",
+          "audit_event": {
+            "action_id": "cursor-blocked",
+            "authorization_ref": null,
+            "event_type": "PERMISSION_EVALUATED",
+            "evidence_refs": [
+              "CHECKPOINT.yaml"
+            ],
+            "grants_authorization": false,
+            "occurred_at": "2026-09-21T06:24:47.232195+00:00",
+            "permission_result": "BLOCK",
+            "result": "BLOCK",
+            "risk_class": "PROTECTED_WRITE",
+            "target_id": "UNKNOWN"
+          },
+          "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+          "decision_level": "L3",
+          "executed": false,
+          "failed_or_missing_preconditions": [
+            "authorization_valid",
+            "evidence_complete",
+            "freshness_valid",
+            "impact_reviewed",
+            "known_action_type",
+            "rollback_ready",
+            "secret_check_passed"
+          ],
+          "permission_result": "BLOCK",
+          "reason_codes": [
+            "CURRENT_PROJECT_DRY_RUN_ONLY",
+            "MISSING_AUTHORIZATION",
+            "UNKNOWN_ACTION_FAIL_CLOSED",
+            "UNKNOWN_PRECONDITION"
+          ],
+          "risk_class": "PROTECTED_WRITE",
+          "ui_confirmation_is_authorization": false
+        }
+      },
+      "status": "BLOCKED",
+      "trace_recorded": true
+    },
+    {
+      "action": "runtime_status",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "UNKNOWN",
+        "freshness": "UNKNOWN",
+        "source_refs": [],
+        "source_role": "UNKNOWN",
+        "stable_id": "UNKNOWN"
+      },
+      "request_id": "cursor-unknown",
+      "result": {
+        "activation_state": "NOT_ACTIVATED",
+        "capabilities": {
+          "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+          "commit_dry_run": "AVAILABLE_DRY_RUN",
+          "commit_plan": "AVAILABLE_READ_ONLY",
+          "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+          "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+          "policy_status": "AVAILABLE_READ_ONLY",
+          "preflight": "AVAILABLE_READ_ONLY",
+          "project_safety": "AVAILABLE_READ_ONLY",
+          "runtime_status": "AVAILABLE_READ_ONLY"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "current_project_mutation_allowed": false,
+        "current_stage": "16",
+        "execution_mode": "DRY_RUN_ONLY",
+        "latest_run": "UNKNOWN",
+        "open_blockers": [
+          "STAGE17_GATE_REQUIRED",
+          "CURRENT_PROJECT_DRY_RUN_ONLY"
+        ],
+        "provider_status": [],
+        "runtime_health": "HEALTHY"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "trace",
+      "adapter_id": "cursor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "cursor-failure",
+      "result": {
+        "detail": "trace pagination is out of range",
+        "error_code": "INVALID_REQUEST"
+      },
+      "status": "FAILED",
+      "trace_recorded": true
+    },
+    {
+      "action": "runtime_status",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-status",
+      "result": {
+        "activation_state": "NOT_ACTIVATED",
+        "capabilities": {
+          "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+          "commit_dry_run": "AVAILABLE_DRY_RUN",
+          "commit_plan": "AVAILABLE_READ_ONLY",
+          "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+          "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+          "policy_status": "AVAILABLE_READ_ONLY",
+          "preflight": "AVAILABLE_READ_ONLY",
+          "project_safety": "AVAILABLE_READ_ONLY",
+          "runtime_status": "AVAILABLE_READ_ONLY"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "current_project_mutation_allowed": false,
+        "current_stage": "16",
+        "execution_mode": "DRY_RUN_ONLY",
+        "latest_run": "UNKNOWN",
+        "open_blockers": [
+          "STAGE17_GATE_REQUIRED",
+          "CURRENT_PROJECT_DRY_RUN_ONLY"
+        ],
+        "provider_status": [],
+        "runtime_health": "HEALTHY"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "preflight",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-preflight",
+      "result": {
+        "action_id": "codex-preflight",
+        "action_state": "AVAILABLE_READ_ONLY",
+        "audit_event": {
+          "action_id": "codex-preflight",
+          "authorization_ref": null,
+          "event_type": "PERMISSION_EVALUATED",
+          "evidence_refs": [],
+          "grants_authorization": false,
+          "occurred_at": "2026-09-21T06:24:47.232868+00:00",
+          "permission_result": "ALLOW",
+          "result": "ALLOW",
+          "risk_class": "READ_ONLY",
+          "target_id": "/Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "decision_level": "L0",
+        "executed": false,
+        "failed_or_missing_preconditions": [],
+        "permission_result": "ALLOW",
+        "reason_codes": [],
+        "risk_class": "READ_ONLY",
+        "ui_confirmation_is_authorization": false
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "commit_plan",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-plan",
+      "result": {
+        "blocked_paths": [],
+        "classifications": {
+          ".banyan-refactor/": "INCOMPLETE",
+          ".banyan/": "INCOMPLETE",
+          "banyan-framework/": "INCOMPLETE",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md": "INCOMPLETE",
+          "docs/temp/商品详情data和订单详情data.md": "INCOMPLETE",
+          "榕树ai改造落地相关文档/": "INCOMPLETE"
+        },
+        "execution_mode": "DRY_RUN_ONLY",
+        "groups": [],
+        "is_authorization": false,
+        "leftovers": [
+          ".banyan-refactor/",
+          ".banyan/",
+          "banyan-framework/",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+          "docs/temp/商品详情data和订单详情data.md",
+          "榕树ai改造落地相关文档/"
+        ]
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "commit_dry_run",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-dry",
+      "result": {
+        "action_state": "AVAILABLE_DRY_RUN",
+        "actual_commit_created": false,
+        "commits": [],
+        "display_label": "DRY_RUN_NOT_COMMIT",
+        "dry_run": true,
+        "leftovers": [
+          ".banyan-refactor/",
+          ".banyan/",
+          "banyan-framework/",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+          "docs/temp/商品详情data和订单详情data.md",
+          "榕树ai改造落地相关文档/"
+        ],
+        "permission_result": "ALLOW",
+        "planned_groups": [],
+        "reason_codes": [],
+        "rolled_back": false,
+        "status": "DRY_RUN"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "provenance",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-provenance",
+      "result": {
+        "authority": "STAGE17_ACCEPTED_OUTPUT",
+        "classification": "PILOT_EVIDENCE",
+        "freshness": "CURRENT_FOR_STAGE18",
+        "provenance": "Stage17 ACTIVATION_RESULT",
+        "related_refs": [
+          ".banyan"
+        ],
+        "source_refs": [
+          "stage17-20260921T055911Z"
+        ],
+        "source_role": "UPSTREAM_HANDOFF",
+        "stable_id": "stage17-pilot",
+        "status": "ACCEPTED",
+        "version": "stage17-v1"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "git_mutation",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-blocked",
+      "result": {
+        "error_code": "UNSUPPORTED_OR_FORBIDDEN_ACTION",
+        "runtime_decision": {
+          "action_id": "codex-blocked",
+          "action_state": "BLOCK",
+          "audit_event": {
+            "action_id": "codex-blocked",
+            "authorization_ref": null,
+            "event_type": "PERMISSION_EVALUATED",
+            "evidence_refs": [
+              "CHECKPOINT.yaml"
+            ],
+            "grants_authorization": false,
+            "occurred_at": "2026-09-21T06:24:47.406674+00:00",
+            "permission_result": "BLOCK",
+            "result": "BLOCK",
+            "risk_class": "PROTECTED_WRITE",
+            "target_id": "UNKNOWN"
+          },
+          "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+          "decision_level": "L3",
+          "executed": false,
+          "failed_or_missing_preconditions": [
+            "authorization_valid",
+            "evidence_complete",
+            "freshness_valid",
+            "impact_reviewed",
+            "known_action_type",
+            "rollback_ready",
+            "secret_check_passed"
+          ],
+          "permission_result": "BLOCK",
+          "reason_codes": [
+            "CURRENT_PROJECT_DRY_RUN_ONLY",
+            "MISSING_AUTHORIZATION",
+            "UNKNOWN_ACTION_FAIL_CLOSED",
+            "UNKNOWN_PRECONDITION"
+          ],
+          "risk_class": "PROTECTED_WRITE",
+          "ui_confirmation_is_authorization": false
+        }
+      },
+      "status": "BLOCKED",
+      "trace_recorded": true
+    },
+    {
+      "action": "runtime_status",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "UNKNOWN",
+        "freshness": "UNKNOWN",
+        "source_refs": [],
+        "source_role": "UNKNOWN",
+        "stable_id": "UNKNOWN"
+      },
+      "request_id": "codex-unknown",
+      "result": {
+        "activation_state": "NOT_ACTIVATED",
+        "capabilities": {
+          "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+          "commit_dry_run": "AVAILABLE_DRY_RUN",
+          "commit_plan": "AVAILABLE_READ_ONLY",
+          "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+          "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+          "policy_status": "AVAILABLE_READ_ONLY",
+          "preflight": "AVAILABLE_READ_ONLY",
+          "project_safety": "AVAILABLE_READ_ONLY",
+          "runtime_status": "AVAILABLE_READ_ONLY"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "current_project_mutation_allowed": false,
+        "current_stage": "16",
+        "execution_mode": "DRY_RUN_ONLY",
+        "latest_run": "UNKNOWN",
+        "open_blockers": [
+          "STAGE17_GATE_REQUIRED",
+          "CURRENT_PROJECT_DRY_RUN_ONLY"
+        ],
+        "provider_status": [],
+        "runtime_health": "HEALTHY"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "trace",
+      "adapter_id": "codex",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "codex-failure",
+      "result": {
+        "detail": "trace pagination is out of range",
+        "error_code": "INVALID_REQUEST"
+      },
+      "status": "FAILED",
+      "trace_recorded": true
+    },
+    {
+      "action": "runtime_status",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-status",
+      "result": {
+        "activation_state": "NOT_ACTIVATED",
+        "capabilities": {
+          "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+          "commit_dry_run": "AVAILABLE_DRY_RUN",
+          "commit_plan": "AVAILABLE_READ_ONLY",
+          "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+          "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+          "policy_status": "AVAILABLE_READ_ONLY",
+          "preflight": "AVAILABLE_READ_ONLY",
+          "project_safety": "AVAILABLE_READ_ONLY",
+          "runtime_status": "AVAILABLE_READ_ONLY"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "current_project_mutation_allowed": false,
+        "current_stage": "16",
+        "execution_mode": "DRY_RUN_ONLY",
+        "latest_run": "UNKNOWN",
+        "open_blockers": [
+          "STAGE17_GATE_REQUIRED",
+          "CURRENT_PROJECT_DRY_RUN_ONLY"
+        ],
+        "provider_status": [],
+        "runtime_health": "HEALTHY"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "preflight",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-preflight",
+      "result": {
+        "action_id": "generic-editor-preflight",
+        "action_state": "AVAILABLE_READ_ONLY",
+        "audit_event": {
+          "action_id": "generic-editor-preflight",
+          "authorization_ref": null,
+          "event_type": "PERMISSION_EVALUATED",
+          "evidence_refs": [],
+          "grants_authorization": false,
+          "occurred_at": "2026-09-21T06:24:47.407288+00:00",
+          "permission_result": "ALLOW",
+          "result": "ALLOW",
+          "risk_class": "READ_ONLY",
+          "target_id": "/Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "decision_level": "L0",
+        "executed": false,
+        "failed_or_missing_preconditions": [],
+        "permission_result": "ALLOW",
+        "reason_codes": [],
+        "risk_class": "READ_ONLY",
+        "ui_confirmation_is_authorization": false
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "commit_plan",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-plan",
+      "result": {
+        "blocked_paths": [],
+        "classifications": {
+          ".banyan-refactor/": "INCOMPLETE",
+          ".banyan/": "INCOMPLETE",
+          "banyan-framework/": "INCOMPLETE",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md": "INCOMPLETE",
+          "docs/temp/商品详情data和订单详情data.md": "INCOMPLETE",
+          "榕树ai改造落地相关文档/": "INCOMPLETE"
+        },
+        "execution_mode": "DRY_RUN_ONLY",
+        "groups": [],
+        "is_authorization": false,
+        "leftovers": [
+          ".banyan-refactor/",
+          ".banyan/",
+          "banyan-framework/",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+          "docs/temp/商品详情data和订单详情data.md",
+          "榕树ai改造落地相关文档/"
+        ]
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "commit_dry_run",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-dry",
+      "result": {
+        "action_state": "AVAILABLE_DRY_RUN",
+        "actual_commit_created": false,
+        "commits": [],
+        "display_label": "DRY_RUN_NOT_COMMIT",
+        "dry_run": true,
+        "leftovers": [
+          ".banyan-refactor/",
+          ".banyan/",
+          "banyan-framework/",
+          "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+          "docs/temp/商品详情data和订单详情data.md",
+          "榕树ai改造落地相关文档/"
+        ],
+        "permission_result": "ALLOW",
+        "planned_groups": [],
+        "reason_codes": [],
+        "rolled_back": false,
+        "status": "DRY_RUN"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "provenance",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-provenance",
+      "result": {
+        "authority": "STAGE17_ACCEPTED_OUTPUT",
+        "classification": "PILOT_EVIDENCE",
+        "freshness": "CURRENT_FOR_STAGE18",
+        "provenance": "Stage17 ACTIVATION_RESULT",
+        "related_refs": [
+          ".banyan"
+        ],
+        "source_refs": [
+          "stage17-20260921T055911Z"
+        ],
+        "source_role": "UPSTREAM_HANDOFF",
+        "stable_id": "stage17-pilot",
+        "status": "ACCEPTED",
+        "version": "stage17-v1"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "git_mutation",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-blocked",
+      "result": {
+        "error_code": "UNSUPPORTED_OR_FORBIDDEN_ACTION",
+        "runtime_decision": {
+          "action_id": "generic-editor-blocked",
+          "action_state": "BLOCK",
+          "audit_event": {
+            "action_id": "generic-editor-blocked",
+            "authorization_ref": null,
+            "event_type": "PERMISSION_EVALUATED",
+            "evidence_refs": [
+              "CHECKPOINT.yaml"
+            ],
+            "grants_authorization": false,
+            "occurred_at": "2026-09-21T06:24:47.579684+00:00",
+            "permission_result": "BLOCK",
+            "result": "BLOCK",
+            "risk_class": "PROTECTED_WRITE",
+            "target_id": "UNKNOWN"
+          },
+          "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+          "decision_level": "L3",
+          "executed": false,
+          "failed_or_missing_preconditions": [
+            "authorization_valid",
+            "evidence_complete",
+            "freshness_valid",
+            "impact_reviewed",
+            "known_action_type",
+            "rollback_ready",
+            "secret_check_passed"
+          ],
+          "permission_result": "BLOCK",
+          "reason_codes": [
+            "CURRENT_PROJECT_DRY_RUN_ONLY",
+            "MISSING_AUTHORIZATION",
+            "UNKNOWN_ACTION_FAIL_CLOSED",
+            "UNKNOWN_PRECONDITION"
+          ],
+          "risk_class": "PROTECTED_WRITE",
+          "ui_confirmation_is_authorization": false
+        }
+      },
+      "status": "BLOCKED",
+      "trace_recorded": true
+    },
+    {
+      "action": "runtime_status",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "UNKNOWN",
+        "freshness": "UNKNOWN",
+        "source_refs": [],
+        "source_role": "UNKNOWN",
+        "stable_id": "UNKNOWN"
+      },
+      "request_id": "generic-editor-unknown",
+      "result": {
+        "activation_state": "NOT_ACTIVATED",
+        "capabilities": {
+          "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+          "commit_dry_run": "AVAILABLE_DRY_RUN",
+          "commit_plan": "AVAILABLE_READ_ONLY",
+          "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+          "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+          "policy_status": "AVAILABLE_READ_ONLY",
+          "preflight": "AVAILABLE_READ_ONLY",
+          "project_safety": "AVAILABLE_READ_ONLY",
+          "runtime_status": "AVAILABLE_READ_ONLY"
+        },
+        "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+        "current_project_mutation_allowed": false,
+        "current_stage": "16",
+        "execution_mode": "DRY_RUN_ONLY",
+        "latest_run": "UNKNOWN",
+        "open_blockers": [
+          "STAGE17_GATE_REQUIRED",
+          "CURRENT_PROJECT_DRY_RUN_ONLY"
+        ],
+        "provider_status": [],
+        "runtime_health": "HEALTHY"
+      },
+      "status": "OK",
+      "trace_recorded": true
+    },
+    {
+      "action": "trace",
+      "adapter_id": "generic-editor",
+      "canonical_write_owned_by_adapter": false,
+      "direct_git_mutation": false,
+      "evidence_refs": [
+        "CHECKPOINT.yaml"
+      ],
+      "permission_owned_by_adapter": false,
+      "provenance": {
+        "authority": "DECLARED",
+        "freshness": "CURRENT",
+        "source_refs": [
+          "CHECKPOINT.yaml"
+        ],
+        "source_role": "ADAPTER_VALIDATION",
+        "stable_id": "stage18-request"
+      },
+      "request_id": "generic-editor-failure",
+      "result": {
+        "detail": "trace pagination is out of range",
+        "error_code": "INVALID_REQUEST"
+      },
+      "status": "FAILED",
+      "trace_recorded": true
+    }
+  ],
+  "schema_version": "stage18-v1",
+  "status_counts": {
+    "BLOCKED": 3,
+    "FAILED": 3,
+    "OK": 18
+  }
+}

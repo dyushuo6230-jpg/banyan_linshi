@@ -1,0 +1,58 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+blockers:
+- blocker_id: CON-002
+  status: OPEN
+  owner_stage: '12'
+  scope: freshness and current-state verification
+- blocker_id: R03-SECRET
+  status: PARTIAL_APPROVED
+  owner_stage: LATER_EXPLICIT_AUTHORIZATION
+  scope: 13 sensitive paths; existence metadata only
+- blocker_id: R03-PURITY
+  status: OPEN
+  owner_stage: LATER_STAGE
+  scope: canonical purity proof
+- blocker_id: R03-SOURCE
+  status: OPEN
+  owner_stage: LATER_STAGE
+  scope: source authority proof
+- blocker_id: R03-COST
+  status: OPEN
+  owner_stage: LATER_STAGE
+  scope: migration cost proof
+- blocker_id: R03-LOCAL
+  status: OPEN
+  owner_stage: LATER_STAGE
+  scope: local environment proof
+- blocker_id: REF-REF-039
+  status: OPEN
+  owner_stage: '12'
+  scope: missing target nunu-go-api/app/admin/web/CONTRIBUTING.md
+  source: nunu-go-api/app/admin/web/CHANGELOG.md
+  line: 642
+- blocker_id: REF-REF-041
+  status: OPEN
+  owner_stage: '12'
+  scope: missing target nunu-go-api/app/admin/web/CONTRIBUTING.md
+  source: nunu-go-api/app/admin/web/CHANGELOG.zh-CN.md
+  line: 642
+- blocker_id: REF-REF-043
+  status: OPEN
+  owner_stage: '12'
+  scope: missing target nunu-go-api/app/admin/web/CHANGELOG.en.md
+  source: nunu-go-api/app/admin/web/CHANGELOG.zh-CN.md
+  line: 654
+- blocker_id: REF-REF-044
+  status: OPEN
+  owner_stage: '12'
+  scope: missing target nunu-go-api/app/admin/web/CHANGELOG.en.md
+  source: nunu-go-api/app/admin/web/README.md
+  line: 48
+scanner_false_positives:
+- REF-107
+- REF-108
+real_apply_readiness: BLOCKED
+shadow_design_completion: ALLOWED

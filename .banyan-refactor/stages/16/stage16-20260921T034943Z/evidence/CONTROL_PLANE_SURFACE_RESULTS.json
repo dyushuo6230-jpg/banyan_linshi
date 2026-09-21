@@ -1,0 +1,189 @@
+{
+  "activation_readiness": {
+    "activation_state": "NOT_ACTIVATED",
+    "blockers": [
+      "STAGE17_GATE_REQUIRED",
+      "CURRENT_PROJECT_DRY_RUN_ONLY",
+      "FAILED_PRECONDITION",
+      "MISSING_AUTHORIZATION"
+    ],
+    "pilot_stage": "17",
+    "required_preconditions": [
+      "independent_stage17_gate",
+      "pilot_scope",
+      "project_instance_validation"
+    ],
+    "required_validations": [
+      "cursor_adapter_port",
+      "pilot_rollback",
+      "dot_banyan_scope"
+    ],
+    "runtime_permission_result": "BLOCK",
+    "stage16_may_activate_dot_banyan": false,
+    "state": "BLOCKED"
+  },
+  "commit_plan": {
+    "blocked_paths": [],
+    "classifications": {
+      ".banyan-refactor/": "INCOMPLETE",
+      "banyan-framework/": "INCOMPLETE",
+      "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md": "INCOMPLETE",
+      "docs/temp/商品详情data和订单详情data.md": "INCOMPLETE",
+      "榕树ai改造落地相关文档/": "INCOMPLETE"
+    },
+    "execution_mode": "DRY_RUN_ONLY",
+    "groups": [],
+    "is_authorization": false,
+    "leftovers": [
+      ".banyan-refactor/",
+      "banyan-framework/",
+      "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+      "docs/temp/商品详情data和订单详情data.md",
+      "榕树ai改造落地相关文档/"
+    ]
+  },
+  "dry_run": {
+    "action_state": "AVAILABLE_DRY_RUN",
+    "actual_commit_created": false,
+    "commits": [],
+    "display_label": "DRY_RUN_NOT_COMMIT",
+    "dry_run": true,
+    "leftovers": [
+      ".banyan-refactor/",
+      "banyan-framework/",
+      "docs/temp/ai改造计划当前项目状态和ai使用统计说明.md",
+      "docs/temp/商品详情data和订单详情data.md",
+      "榕树ai改造落地相关文档/"
+    ],
+    "permission_result": "ALLOW",
+    "planned_groups": [],
+    "reason_codes": [],
+    "rolled_back": false,
+    "status": "DRY_RUN"
+  },
+  "policy": {
+    "control_plane_may_bypass": false,
+    "current_project_mutation_allowed": false,
+    "hard_blocks": [
+      "CONFLICTED_WORKTREE",
+      "INDEX_SET_MISMATCH",
+      "MISSING_AUTHORIZATION",
+      "MISSING_IDENTITY_FOR_COMMIT",
+      "SECRET_RISK",
+      "UNKNOWN_PRECONDITION"
+    ],
+    "policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+    "policy_id": "banyan.runtime.default.v1",
+    "schema_version": "stage15-v1"
+  },
+  "preflight": {
+    "action_id": "stage16-formal-preflight",
+    "action_state": "AVAILABLE_READ_ONLY",
+    "audit_event": {
+      "action_id": "stage16-formal-preflight",
+      "authorization_ref": null,
+      "event_type": "PERMISSION_EVALUATED",
+      "evidence_refs": [],
+      "grants_authorization": false,
+      "occurred_at": "2026-09-21T03:56:12.715109+00:00",
+      "permission_result": "ALLOW",
+      "result": "ALLOW",
+      "risk_class": "READ_ONLY",
+      "target_id": "/Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server"
+    },
+    "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+    "decision_level": "L0",
+    "executed": false,
+    "failed_or_missing_preconditions": [],
+    "permission_result": "ALLOW",
+    "reason_codes": [],
+    "risk_class": "READ_ONLY",
+    "ui_confirmation_is_authorization": false
+  },
+  "project_safety": {
+    "branch": "feature/huanpipro",
+    "conflicted_count": 0,
+    "execution_mode": "DRY_RUN_ONLY",
+    "head": "9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7",
+    "identity_ambiguous": false,
+    "identity_present": true,
+    "identity_values_exposed": false,
+    "mutation_controls": "DISABLED",
+    "staged_count": 0,
+    "unstaged_count": 0,
+    "untracked_count": 5
+  },
+  "provenance": {
+    "authority": "STAGE15_ACCEPTED_OUTPUT",
+    "classification": "GOVERNANCE_ARTIFACT",
+    "freshness": "CURRENT_FOR_STAGE16",
+    "provenance": ".banyan-refactor/stages/15/stage15-20260921T031742Z/STAGE16_RUNTIME_API_HANDOFF.yaml",
+    "related_refs": [
+      "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c"
+    ],
+    "source_refs": [
+      "stage15-20260921T031742Z"
+    ],
+    "source_role": "RUNTIME_HANDOFF",
+    "stable_id": "stage15-runtime-handoff",
+    "status": "ACCEPTED",
+    "version": "stage15-v1"
+  },
+  "providers": [
+    {
+      "activation_state": "NOT_ACTIVATED",
+      "enabled": true,
+      "id": "local-runtime",
+      "provider": "filesystem"
+    }
+  ],
+  "stages": {
+    "has_more": false,
+    "items": [
+      {
+        "run_id": "stage15-20260921T031742Z",
+        "stage": "15",
+        "status": "COMPLETED"
+      },
+      {
+        "run_id": "stage16-20260921T034943Z",
+        "stage": "16",
+        "status": "RUNNING"
+      }
+    ],
+    "limit": 25,
+    "offset": 0
+  },
+  "status": {
+    "activation_state": "NOT_ACTIVATED",
+    "capabilities": {
+      "canonical_apply": "NOT_AUTHORIZED_IN_STAGE16",
+      "commit_dry_run": "AVAILABLE_DRY_RUN",
+      "commit_plan": "AVAILABLE_READ_ONLY",
+      "current_project_git_mutation": "NOT_AUTHORIZED_IN_STAGE16",
+      "dot_banyan_activation": "NOT_AUTHORIZED_IN_STAGE16",
+      "policy_status": "AVAILABLE_READ_ONLY",
+      "preflight": "AVAILABLE_READ_ONLY",
+      "project_safety": "AVAILABLE_READ_ONLY",
+      "runtime_status": "AVAILABLE_READ_ONLY"
+    },
+    "compiled_policy_hash": "b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c",
+    "current_project_mutation_allowed": false,
+    "current_stage": "16",
+    "execution_mode": "DRY_RUN_ONLY",
+    "latest_run": "stage16-20260921T034943Z",
+    "open_blockers": [
+      "STAGE17_GATE_REQUIRED",
+      "CURRENT_PROJECT_DRY_RUN_ONLY"
+    ],
+    "provider_status": [
+      {
+        "activation_state": "NOT_ACTIVATED",
+        "enabled": true,
+        "id": "local-runtime",
+        "provider": "filesystem"
+      }
+    ],
+    "runtime_health": "HEALTHY"
+  }
+}

@@ -1,0 +1,20 @@
+schema_version: stage18.5-v1
+run_id: stage18_5-20260921T064132Z
+frontend_stack: ANT_DESIGN_PRO_SIMPLE_TYPESCRIPT_ANT_DESIGN_PROCOMPONENTS
+control_plane_stack: GO_GIN_TRANSPORT_ONLY
+runtime_bridge: LOCAL_STDIO_TO_PRESERVED_STAGE15_PYTHON_RUNTIME
+embedded_distribution: PRODUCTION_ASSETS_SHA256_MANIFEST_GO_EMBED_SINGLE_BINARY
+feature_equivalence_report: FEATURE_EQUIVALENCE_MATRIX.yaml
+api_contract_report: evidence/HTTP_CONTRACT_TEST_REPORT.yaml
+adapter_regression_report: ADAPTER_REGRESSION_REPORT.yaml
+pilot_integrity_report: evidence/PILOT_INTEGRITY.yaml
+security_report: evidence/SECURITY_LOCAL_ONLY_REPORT.yaml
+test_summary: evidence/TEST_RESULTS.txt
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED
+stage19_entry_gate:
+  result: READY_FOR_INDEPENDENT_RC_REVIEW_WITH_BLOCKERS
+  execution_authorized: false

@@ -1,0 +1,11 @@
+{
+  "event": "FINAL_CHECK_DETECTED_EXTERNAL_PATH_DRIFT",
+  "path": ".banyan-refactor.zip",
+  "change": "ABSENT_FROM_CURRENT_UNTRACKED_PATHS",
+  "classification": "SAFE_DISCOVERY_DRIFT",
+  "provenance": "UNKNOWN; no agent command writes/moves/deletes this archive",
+  "reason": "Excluded upstream evidence duplicate. Original Stage 00 seal (58 entries), checkpoint archives, 5834 content hashes and 70 metadata-only paths verified unchanged; no safety boundary depends on this duplicate.",
+  "failed_attempt": "prepare_closeout.py stopped at safety assertion before checkpoint/handoff/bootstrap writes",
+  "completed_step_preserved": "evidence/FINAL_ROLE_ALIGNMENT.json",
+  "action": "Continue original Run closeout; do not recreate/delete/restore anything"
+}

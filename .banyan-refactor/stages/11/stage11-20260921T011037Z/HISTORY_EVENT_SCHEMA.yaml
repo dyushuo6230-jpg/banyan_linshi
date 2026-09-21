@@ -1,0 +1,5 @@
+schema_version: stage11-v1
+required_fields: [history_id, subject_id, event_type, from_state, to_state, occurred_at_or_unknown, source_ref, evidence_ref]
+preserve_states: [failed, stopped, reverted, blocked, archived, superseded]
+normalize_non_success_to_success: false
+latest_only: false

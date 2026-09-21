@@ -1,0 +1,1668 @@
+# Stage 00 actual execution evidence; no secret contents.
+schema_version: stage00-protected-paths-v1.9.1
+charter_version: 1.9.1
+stage_id: '00'
+default_policy:
+  read: true
+  write: false
+  delete: false
+classes:
+  IMMUTABLE_DURING_REFACTOR:
+    read: true
+    write: false
+    delete: false
+  READ_ONLY_DISCOVERY:
+    read: true
+    write: false
+    delete: false
+  STAGE_WRITABLE:
+    read: true
+    write: true
+    delete: stage_owned_only
+  CONDITIONAL_WRITE_LATER:
+    read: true
+    write: false
+    delete: false
+  SECRET_METADATA_ONLY:
+    read: metadata_only
+    write: false
+    delete: false
+  EXCLUDED_WITH_REASON:
+    read: false
+    write: false
+    delete: false
+rules:
+- path: .DS_Store
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: EXCLUDE_WITH_REASON
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: .cursor/**
+  class: READ_ONLY_DISCOVERY
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: .gitignore
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: .htaccess
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: .idea/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: EXCLUDE_WITH_REASON
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: .user.ini
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: LICENSE
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: README.md
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: cmd/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: docs/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: go-uni-app/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: go-uni-app-online/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: go-uni-app-tob/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: jenkinsfile
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: nunu-go-api/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: package-lock.json
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: storage/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: EXCLUDE_WITH_REASON
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: tools/**
+  class: READ_ONLY_DISCOVERY
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: upgrade.md
+  class: IMMUTABLE_DURING_REFACTOR
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: 榕树ai改造落地相关文档/**
+  class: READ_ONLY_DISCOVERY
+  read: true
+  write: false
+  delete: false
+  discovery_mode: SCAN
+  reason: Actual top-level root; per-file overrides in evidence/FILE_INVENTORY.jsonl
+    are authoritative for sensitive/excluded descendants
+  owner_stage: 00 protection; later unlock requires owner-stage gate
+  source: repository_discovery
+- path: go-uni-app-online/.env.development
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app-online/.env.production
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app-online/.env.test
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app-tob/.env.development
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app-tob/.env.production
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app-tob/.env.test
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app/.env.development
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app/.env.production
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: go-uni-app/.env.test
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/app/admin/internal/middleware/token.go
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/app/admin/web/.env
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/app/admin/web/.env.development
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/app/admin/web/.env.production
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/app/merchant/web/.env.development
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/app/merchant/web/.env.production
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/admin/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/admin/prod.yml.bak
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/admin/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/admin/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-online/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-online/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-online/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-tob/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-tob/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-tob/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5/prod.yml.bak
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/home/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/home/prod.yml.bak
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-online/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-online/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-online/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-tob/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-tob/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-tob/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall/prod.yml.bak
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/merchant/local.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/merchant/prod.yml.bak
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/merchant/prod.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/merchant/test.yml.example
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/go-backends-linux-amd64/config/admin/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/go-backends-linux-amd64/config/h5/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/go-backends-linux-amd64/config/home/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/go-backends-linux-amd64/config/mall/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/go-backends-linux-amd64/config/merchant/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/home-server/config/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/home-server/config/prod.yml.bak
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/mall-deploy-jwt/config/mall/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/dist/mall-deploy-numeric/config/mall/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/pkg/utils/secret.go
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: tools/anydesign/examples/vercel-landing/claude-design-bundle/tokens.css
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: CLEAN_TRACKED_GIT_OBJECT_REFERENCE_ONLY
+  approval_ref: null
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/admin/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/admin/test.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5-online/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/h5/test.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/home/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-online/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-online/prod.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall-online/test.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/mall/test.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/merchant/local.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: nunu-go-api/config/merchant/test.yml
+  class: SECRET_METADATA_ONLY
+  read: metadata_only
+  write: false
+  delete: false
+  writable: false
+  deletable: false
+  preserve_in_place: true
+  move_allowed: false
+  rename_allowed: false
+  content_read_allowed: false
+  checkpoint_content_copy_allowed: false
+  secret_content_hash_allowed: false
+  git_commit_allowed: false
+  discovery_mode: METADATA_ONLY
+  reason: Potential credential-bearing path; no content read/copy/hash
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  approval_ref: evidence/USER_APPROVAL.json
+  owner_stage: all stages preserve; no implied waiver
+  source: path_metadata
+- path: .banyan-refactor/**
+  class: STAGE_WRITABLE
+  read: true
+  write: true
+  delete: false
+  discovery_mode: EXCLUDE_WITH_REASON
+  reason: Bootstrap control only; not original project baseline; deletion not authorized
+  owner_stage: '00'
+  source: Stage Pack default, verified absent before create
+- path: .banyan/**
+  class: CONDITIONAL_WRITE_LATER
+  read: true
+  write: false
+  delete: false
+  discovery_mode: METADATA_ONLY
+  reason: Future Project Instance is not initialized in Stage 00
+  owner_stage: 02/04
+  source: charter
+- path: .banyan/migrations/**
+  class: CONDITIONAL_WRITE_LATER
+  read: true
+  write: false
+  delete: false
+  discovery_mode: METADATA_ONLY
+  reason: Future canonical Register/Trace; no current writable truth
+  owner_stage: 02/04
+  source: charter
+- path: .git/**
+  class: IMMUTABLE_DURING_REFACTOR
+  read: explicit read-only Git metadata only
+  write: false
+  delete: false
+  discovery_mode: METADATA_ONLY
+  reason: No identity/index/history mutation; no credential config dump
+  owner_stage: '00'
+  source: user instruction
+assertions:
+  whole_repo_writable: false
+  secret_values_allowed: false
+  stage00_business_code_write_allowed: false
+  stage00_canonical_truth_write_allowed: false
+  git_identity_write_allowed: false
+  future_canonical_migrations_write_allowed: false
+  bootstrap_control_root_is_only_default_repo_write_scope: true
+classification_precedence:
+- SECRET_METADATA_ONLY
+- IMMUTABLE_DURING_REFACTOR
+- READ_ONLY_DISCOVERY
+- CONDITIONAL_WRITE_LATER
+- STAGE_WRITABLE
+- EXCLUDED_WITH_REASON
+per_path_inventory_ref: evidence/FILE_INVENTORY.jsonl
+note: Discovery exclusion never grants write/delete. Exact secret rules override root
+  read permissions. All paths outside bootstrap control default deny write/delete.

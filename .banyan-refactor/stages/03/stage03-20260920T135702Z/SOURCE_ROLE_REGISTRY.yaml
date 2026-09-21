@@ -1,0 +1,57 @@
+schema_version: stage03-v1
+stage02_artifact_mapping_count: 714
+registered_roles: 9
+roles:
+- role_id: DECISION_CHANGE_HISTORY
+  mapped_artifact_count: 186
+  authority_rule: EVIDENTIARY
+  freshness_rule: event order plus effective-version metadata
+  conflict_rule: cannot silently replace current canonical truth
+- role_id: DERIVED_PROJECTION
+  mapped_artifact_count: 21
+  authority_rule: DERIVED
+  freshness_rule: fresh only when source hashes/versions match
+  conflict_rule: canonical source wins; unknown lineage blocks replacement
+- role_id: OPERATIONAL_HISTORY
+  mapped_artifact_count: 289
+  authority_rule: EVIDENTIARY_LOW
+  freshness_rule: event timestamp/version; UNKNOWN remains explicit
+  conflict_rule: never authorizes current truth by itself
+- role_id: PROJECT_CANONICAL_DOCUMENT
+  mapped_artifact_count: 51
+  authority_rule: PRIMARY
+  freshness_rule: latest approved scoped version
+  conflict_rule: ambiguous peers block activation
+- role_id: PROJECT_GUIDE_DERIVED
+  mapped_artifact_count: 71
+  authority_rule: DERIVED
+  freshness_rule: fresh only when all input refs match
+  conflict_rule: canonical source wins; stale projection flagged
+- role_id: REQUIREMENT_SOURCE
+  mapped_artifact_count: 16
+  authority_rule: PRIMARY_SCOPED
+  freshness_rule: latest approved requirement version
+  conflict_rule: explicit decision overrides only with trace
+- role_id: TECHNICAL_CONTRACT_SOURCE
+  mapped_artifact_count: 9
+  authority_rule: PRIMARY_SCOPED
+  freshness_rule: latest approved technical version
+  conflict_rule: scope conflict is BLOCKED
+- role_id: UI_DESIGN_DERIVED
+  mapped_artifact_count: 3
+  authority_rule: DERIVED
+  freshness_rule: fresh only when source UI spec and inputs match
+  conflict_rule: UI spec source wins unless explicit approved decision
+- role_id: UI_SPEC_SOURCE
+  mapped_artifact_count: 68
+  authority_rule: PRIMARY_SCOPED
+  freshness_rule: latest approved UI version
+  conflict_rule: product/technical conflict requires decision evidence
+stage02_asset_role_summary:
+  CANONICAL: 337
+  DERIVED: 108
+  LEGACY: 5
+  OPERATIONAL: 286
+  REFERENCE: 290
+mapping_is_metadata_only: true
+source_artifacts_modified: false

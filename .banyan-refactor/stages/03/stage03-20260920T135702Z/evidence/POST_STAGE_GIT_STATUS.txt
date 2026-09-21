@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "head": "9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7",
+  "branch": "feature/huanpipro",
+  "tracked_diff": [],
+  "staged_diff": [],
+  "conflicts": [],
+  "identity_unchanged": true,
+  "forbidden_layouts": {
+    ".banyan": false,
+    "banyan-framework": false,
+    "project-sources": false
+  },
+  "stage04_started": false
+}

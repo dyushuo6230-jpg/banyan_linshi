@@ -1,0 +1,201 @@
+stage: '02'
+run_id: stage02-20260920T131746Z
+overall: PASS
+design_state: CANDIDATE_ONLY
+results:
+- id: V02-01
+  result: PASS
+  tests:
+    stage01_completed: true
+    handoff_pass: true
+    gate_review_read: true
+    same_head: true
+  failed: []
+  evidence:
+  - evidence/PRECHECK.json
+  - ../../01/stage01-20260920T091426Z/ACCEPTANCE_REPORT.md
+  - ../../01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  note: Stage 01 accepted Gate and current authorized Stage 02 request used; no Stage
+    01 rerun.
+- id: V02-02
+  result: PASS
+  tests:
+    stage01_65_seal: true
+    consumed_inputs: true
+    pack_7_unchanged: true
+    gate_unchanged: true
+  failed: []
+  evidence:
+  - evidence/PRECHECK.json
+  - checkpoint/*.snapshot.yaml
+  - ../../01/stage01-20260920T091426Z/ARTIFACT_HASHES.sha256
+  note: Stage 01 shared-bootstrap historical hashes resolve to Stage 02 read-only
+    snapshots; only sealed Stage 01 outputs consumed.
+- id: V02-03
+  result: PASS
+  tests:
+    all_35: true
+    one_each: true
+    five_layer_fields: true
+    source_and_owner: true
+  failed: []
+  evidence:
+  - CAPABILITY_MAPPING_WORKBOOK.yaml
+  - ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl
+  note: Every high-value capability mapped to five-layer candidate with inputs/outputs/guards/failures.
+- id: V02-04
+  result: PASS
+  tests:
+    count: true
+    ids_match: true
+    candidate_only: true
+    design_document: true
+  failed: []
+  evidence:
+  - CORE_CANDIDATES.yaml
+  - CAPABILITY_MAPPING_WORKBOOK.yaml
+  note: Boundary class preserved as candidate; no legacy capability dropped.
+- id: V02-05
+  result: PASS
+  tests:
+    count: true
+    ids_match: true
+    candidate_only: true
+    design_document: true
+  failed: []
+  evidence:
+  - PROJECT_CANDIDATES.yaml
+  - CAPABILITY_MAPPING_WORKBOOK.yaml
+  note: Boundary class preserved as candidate; no legacy capability dropped.
+- id: V02-06
+  result: PASS
+  tests:
+    count: true
+    ids_match: true
+    candidate_only: true
+    design_document: true
+  failed: []
+  evidence:
+  - PROVIDER_CANDIDATES.yaml
+  - CAPABILITY_MAPPING_WORKBOOK.yaml
+  note: Boundary class preserved as candidate; no legacy capability dropped.
+- id: V02-07
+  result: PASS
+  tests:
+    count: true
+    ids_match: true
+    candidate_only: true
+    design_document: true
+  failed: []
+  evidence:
+  - COMPATIBILITY_CANDIDATES.yaml
+  - CAPABILITY_MAPPING_WORKBOOK.yaml
+  note: Boundary class preserved as candidate; no legacy capability dropped.
+- id: V02-08
+  result: PASS
+  tests:
+    asset_map_complete: true
+    all_preserved: true
+    no_physical_core: true
+    artifact_map_complete: true
+    all_artifacts_preserved: true
+  failed: []
+  evidence:
+  - ASSET_BOUNDARY_MAP.jsonl
+  - ARTIFACT_BOUNDARY_MAP.jsonl
+  - ../../01/stage01-20260920T091426Z/AI_ASSET_INVENTORY.jsonl
+  note: All Stage 01 assets/artifacts mapped without moving or auto-promoting files
+    to Core.
+- id: V02-09
+  result: PASS
+  tests:
+    all_31_carried: true
+    high_routed: true
+    new_risk_owners: true
+    no_winner: true
+  failed: []
+  evidence:
+  - CONFLICT_RISK_REGISTER.yaml
+  - CONFLICT_RESOLUTION_PLAN.md
+  note: Two HIGH conflicts have concrete routes; they are open for activation, no
+    source winner selected.
+- id: V02-10
+  result: PASS
+  tests:
+    four_modes: true
+    cost_axes: true
+    no_runtime_execution: true
+  failed: []
+  evidence:
+  - AI_RUNTIME_COST_GOVERNANCE_DESIGN.md
+  - CONTRACT_CHAIN_DESIGN.md
+  note: Cost design contains routing/model/budget/execution/batch/fallback, no actual
+    model selection or runtime.
+- id: V02-11
+  result: PASS
+  tests:
+    six_draft_decisions: true
+    no_final_schema: true
+    no_unauthorized_target_dirs: true
+  failed: []
+  evidence:
+  - ARCHITECTURE_DECISION_RECORDS.yaml
+  - CONTRACT_CHAIN_DESIGN.md
+  note: Design candidate completion does not claim approved/frozen architecture or
+    create target layout.
+- id: V02-12
+  result: PASS
+  tests:
+    thirteen_inherited: true
+    partial_recovery: true
+    no_secret_asset_content: true
+    snapshots_unchanged: true
+  failed: []
+  evidence:
+  - ../../01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  - checkpoint/*.snapshot.yaml
+  note: Stage 02 only reads Stage 01 metadata; no secret body read/hash/copy and no
+    backup claim.
+- id: V02-13
+  result: PASS
+  tests:
+    head_unchanged: true
+    branch_unchanged: true
+    tracked_clean: true
+    no_conflicts: true
+    identity_unchanged: true
+    no_stage03: true
+  failed: []
+  evidence:
+  - evidence/PRECHECK.json
+  - ../../01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+  note: HEAD/index/Git identity unchanged; no business file modification or Stage
+    03 run.
+- id: V02-14
+  result: PASS
+  tests:
+    register_stage2: true
+    stage1_preserved: true
+    trace_stage2: true
+    trace_stage1_preserved: true
+    bootstrap_only: true
+    lineage_exists: true
+  failed: []
+  evidence:
+  - ../../../MIGRATION_REGISTER.bootstrap.yaml
+  - ../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  - evidence/BOOTSTRAP_LINEAGE.json
+  note: Single bootstrap writable pair; Stage 01 entries and old shared hashes preserved
+    via snapshots.
+- id: V02-15
+  result: PASS
+  tests:
+    acceptance_exists: true
+    handoff_complete: true
+    secret_handoff: true
+    stage03_not_started: true
+  failed: []
+  evidence:
+  - ACCEPTANCE_REPORT.md
+  - evidence/NEXT_STAGE_HANDOFF.yaml
+  note: Actual acceptance and complete handoff; Stage 03 not started or authorized.

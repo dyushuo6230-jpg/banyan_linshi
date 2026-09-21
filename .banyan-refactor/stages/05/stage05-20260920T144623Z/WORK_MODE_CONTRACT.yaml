@@ -1,0 +1,28 @@
+schema_version: stage05-v1
+responsibilities_preserved_in_all_modes:
+  - secret_protection
+  - protected_write_boundary
+  - git_identity_safety
+  - human_confirmation_gate
+  - reference_integrity
+  - authorization_check
+  - evidence_and_leftover_reporting
+modes:
+  LIGHT:
+    purpose: low-risk narrow work
+    may_reduce: [document_volume, optional_review_detail, noncritical_check_depth]
+    may_remove_safety_responsibility: false
+  STANDARD:
+    purpose: normal scoped change with explicit validation
+    may_reduce: []
+    may_remove_safety_responsibility: false
+  FULL:
+    purpose: high-risk cross-boundary or ambiguous work
+    adds: [expanded_evidence, owner_review, rollback_plan, explicit_gate_record]
+    may_remove_safety_responsibility: false
+selection:
+  risk_or_scope_increase: only_escalate_weight
+  insufficient_evidence: FULL_OR_BLOCKED
+  mode_may_downgrade_decision_level: false
+  light_may_bypass_L3_L4: false
+

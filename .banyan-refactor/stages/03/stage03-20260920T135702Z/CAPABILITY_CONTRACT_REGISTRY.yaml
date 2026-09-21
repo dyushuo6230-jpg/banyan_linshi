@@ -1,0 +1,1364 @@
+schema_version: stage03-v1
+stage: '03'
+run_id: stage03-20260920T135702Z
+status: FROZEN_CONTRACTS_IMPLEMENTATION_UNBOUND
+expected_capabilities: 35
+accounted_capabilities: 35
+freeze_status_counts:
+  FROZEN_CONTRACT: 21
+  COMPATIBILITY_CONTRACT: 3
+  PROJECT_OVERLAY_CONTRACT: 2
+  PROVIDER_PORT_CONTRACT: 9
+contracts:
+- capability_id: CAP-AUTH
+  capability_name: 工作范围与授权
+  contract_id: banyan.contract.action_authorization.v1
+  contract_name: ActionAuthorization
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 用户范围
+  - 批次状态
+  outputs:
+  - 允许动作与阻塞说明
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不写凭证
+  - 不把现码当未来需求
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺授权停止目标动作，保留诊断
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-AUTH
+  extension_points:
+    provider_port: banyan.port.action_authorization.v1
+    project_overlay: overlay.cap_auth
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '14'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-PROFILE
+  capability_name: 项目变量与接入模式
+  contract_id: banyan.contract.variable_resolution.v1
+  contract_name: VariableResolution
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 项目变量
+  - 仓库事实
+  outputs:
+  - 项目配置候选
+  - 变量迁移关系
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 新项目与已有项目区分
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 未知保持 TBD
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-PROFILE
+  extension_points:
+    provider_port: banyan.port.variable_resolution.v1
+    project_overlay: overlay.cap_profile
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '04'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-INTAKE
+  capability_name: 来源投放与冻结
+  contract_id: banyan.contract.source_intake.v1
+  contract_name: SourceIntake
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 原始资料
+  - 来源批次
+  outputs:
+  - 来源索引
+  - 问题/决策/冲突清单
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 原件不改写
+  - 不从静态设计推断后端
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - P0/P1 阻塞后继必经阶段
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-INTAKE
+  extension_points:
+    provider_port: banyan.port.source_intake.v1
+    project_overlay: overlay.cap_intake
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '07'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-PRD
+  capability_name: PRD 生命周期与评审
+  contract_id: banyan.contract.requirement_lifecycle.v1
+  contract_name: RequirementLifecycle
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 来源/DEC
+  - 验收场景
+  outputs:
+  - PRD
+  - Given/When/Then
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - PRD 不混技术细节
+  - 未批准不得写 Approved
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 阻塞项保留，不伪升状态
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-PRD
+  extension_points:
+    provider_port: banyan.port.requirement_lifecycle.v1
+    project_overlay: overlay.cap_prd
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '07'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-IDP
+  capability_name: 知情决策协议
+  contract_id: banyan.contract.decision_session.v1
+  contract_name: DecisionSession
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 决策背景
+  - 选择
+  - 约束
+  outputs:
+  - 确认记录
+  - DEC/ADR/CR/UI-DEC
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 取消/沉默不当确认
+  - 项目 DEC-042 与通用题数规则分开记录
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 出现新权衡回评审；未确认保持 TBD
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-IDP
+  extension_points:
+    provider_port: banyan.port.decision_session.v1
+    project_overlay: overlay.cap_idp
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '05'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts:
+  - CON-001
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-ARCH
+  capability_name: 架构和模块边界参与门禁
+  contract_id: banyan.contract.design_gate.v1
+  contract_name: DesignGate
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - PRD
+  - 参与模式
+  - 应用结构
+  outputs:
+  - 架构
+  - MODULE_BOUNDARIES
+  - 技术设计
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 口令不自动改参与模式
+  - DIRECT_DRAFT 必须伴随允许 TBD
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺决策停止对应生成
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-ARCH
+  extension_points:
+    provider_port: banyan.port.design_gate.v1
+    project_overlay: overlay.cap_arch
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '05'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-SCHEMA
+  capability_name: 文档状态与编号
+  contract_id: banyan.contract.artifact_status_and_identity.v1
+  contract_name: ArtifactStatusAndIdentity
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 文档类型
+  - 状态证据
+  outputs:
+  - 元信息与编号
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不能仅因文件存在视为完成
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 状态证据不足保持原态
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-SCHEMA
+  extension_points:
+    provider_port: banyan.port.artifact_status_and_identity.v1
+    project_overlay: overlay.cap_schema
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '03'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-IDREF
+  capability_name: 编号占用与在引用规则保护
+  contract_id: banyan.contract.reference_integrity.v1
+  contract_name: ReferenceIntegrity
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - ID/标题引用
+  - Git 历史
+  outputs:
+  - 引用对照
+  - 替代链
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 仍被引用不能删除/清空
+  - 修复先确认
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 引用含混阻塞自动改写
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-IDREF
+  extension_points:
+    provider_port: banyan.port.reference_integrity.v1
+    project_overlay: overlay.cap_idref
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '03'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-TRACE
+  capability_name: 全链路追踪
+  contract_id: banyan.contract.evidence_trace.v1
+  contract_name: EvidenceTrace
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 工程产物
+  - Git/测试证据
+  outputs:
+  - TRACE_MATRIX
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - UI 可空但不得伪造
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺边登记开放项
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-TRACE
+  extension_points:
+    provider_port: banyan.port.evidence_trace.v1
+    project_overlay: overlay.cap_trace
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '13'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-CHANGE
+  capability_name: 变更与版本路由
+  contract_id: banyan.contract.change_application.v1
+  contract_name: ChangeApplication
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 新诉求
+  - PRD 状态
+  outputs:
+  - CR
+  - 新版本 Draft
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不静默覆盖基线
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 冲突未确认不 APPLY
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-CHANGE
+  extension_points:
+    provider_port: banyan.port.change_application.v1
+    project_overlay: overlay.cap_change
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '06'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-PARALLEL
+  capability_name: Parallel Draft 临时袋
+  contract_id: banyan.contract.draft_promotion.v1
+  contract_name: DraftPromotion
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - INDEX/BAG/DRAFT
+  - 当前正式最大号
+  outputs:
+  - 草稿袋
+  - 晋升对照表
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不改正式文档/看板/代码
+  - 全部迁完且用户说纳入完成才清袋
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 冲突/未确认保留袋；不创建第四条变更管道
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-PARALLEL
+  extension_points:
+    provider_port: banyan.port.draft_promotion.v1
+    project_overlay: overlay.cap_parallel
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '06'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-RECONCILE
+  capability_name: 36A 批次正式口径收口
+  contract_id: banyan.contract.batch_reconciliation.v1
+  contract_name: BatchReconciliation
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 本批改动
+  - 现行 PRD
+  outputs:
+  - 收口记录
+  - CR/PRD 关系
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 收口未完成不启动下一批
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 未确认差异保留待决
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-RECONCILE
+  extension_points:
+    provider_port: banyan.port.batch_reconciliation.v1
+    project_overlay: overlay.cap_reconcile
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '06'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-TEST
+  capability_name: 自测桩与验收口径完整性
+  contract_id: banyan.contract.test_integrity.v1
+  contract_name: TestIntegrity
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 测试计划
+  - 临时桩
+  - 真实缺陷
+  outputs:
+  - 拆桩/修复证据
+  - 验收结果
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不得为过验收修改口径
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 无拆桩/保留证据不得声明通过
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-TEST
+  extension_points:
+    provider_port: banyan.port.test_integrity.v1
+    project_overlay: overlay.cap_test
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '14'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-PROGRESS
+  capability_name: 证据驱动多轴进度
+  contract_id: banyan.contract.progress_projection.v1
+  contract_name: ProgressProjection
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 权重/状态
+  - 证据
+  outputs:
+  - 进度登记
+  - 看板
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 没有证据不提高进度
+  - 范围未冻结 N/A
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 不能把建文件/合并当验收
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-PROGRESS
+  extension_points:
+    provider_port: banyan.port.progress_projection.v1
+    project_overlay: overlay.cap_progress
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '16'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts:
+  - CON-002
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-HANDOVER
+  capability_name: 工作日志与接管
+  contract_id: banyan.contract.operational_handover.v1
+  contract_name: OperationalHandover
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 工作差异
+  - 批次
+  - 测试结果
+  outputs:
+  - WORKLOG
+  - HANDOVER
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 未提交/未推送不隐瞒
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 接管验证失败保持阻塞
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-HANDOVER
+  extension_points:
+    provider_port: banyan.port.operational_handover.v1
+    project_overlay: overlay.cap_handover
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '11'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-CONTEXT
+  capability_name: 新窗口续做
+  contract_id: banyan.contract.context_recovery.v1
+  contract_name: ContextRecovery
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 项目事实
+  - 当前 Git
+  outputs:
+  - 恢复点
+  - 下一步
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 以实际产物为准
+  - 不自动提高阶段
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 信息不一致说明并停在对应门禁
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-CONTEXT
+  extension_points:
+    provider_port: banyan.port.context_recovery.v1
+    project_overlay: overlay.cap_context
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '12'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts:
+  - CON-002
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-UI_SCOPE
+  capability_name: UI 逻辑范围与应用分闸
+  contract_id: banyan.contract.uiapplication_scope.v1
+  contract_name: UIApplicationScope
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - PRD
+  - 应用架构
+  - 启用名单
+  outputs:
+  - UI_SCOPE_MAP
+  - UI_APPLICATION_MAPPING
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不从 PRD 提前猜代码目录
+  - 空名单全关
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 未批准 UI 不作为约束
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-UI_SCOPE
+  extension_points:
+    provider_port: banyan.port.uiapplication_scope.v1
+    project_overlay: overlay.cap_ui_scope
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 08
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-UI_CONTRACT
+  capability_name: 分层 UI 合并与批次契约
+  contract_id: banyan.contract.effective_uicontract.v1
+  contract_name: EffectiveUIContract
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - UI_SPEC
+  - PRD
+  - 批次
+  outputs:
+  - EFFECTIVE_UI_CONTRACT
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 业务/权限/安全不可覆盖
+  - 同层双有效版本不按日期猜
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 冲突进入 UI-DEC/CR
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-UI_CONTRACT
+  extension_points:
+    provider_port: banyan.port.effective_uicontract.v1
+    project_overlay: overlay.cap_ui_contract
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 08
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-UI_GATE
+  capability_name: 素材→Draft→批准→点名换皮
+  contract_id: banyan.contract.uiapproval_gate.v1
+  contract_name: UIApprovalGate
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 设计图
+  - tokens
+  - 用户点名范围
+  outputs:
+  - Draft UI_SPEC
+  - 批准证据
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 预定页只 Partial
+  - 禁止 /v2 旁路
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 未批准不能改页面
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-UI_GATE
+  extension_points:
+    provider_port: banyan.port.uiapproval_gate.v1
+    project_overlay: overlay.cap_ui_gate
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 08
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-VISUAL
+  capability_name: 独立视觉修复循环
+  contract_id: banyan.contract.visual_repair_run.v1
+  contract_name: VisualRepairRun
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 应用/页面/图
+  - viewport
+  - allowed_files
+  outputs:
+  - RUN
+  - DIFF
+  - RESULT
+  - 截图
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 用户未点名不执行
+  - 不改 API/权限或扩大页面
+  - 不改变批准规范
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 超轮数停止；用户叫停可回退；in_progress 不伪称成功
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-VISUAL
+  extension_points:
+    provider_port: banyan.port.visual_repair_run.v1
+    project_overlay: overlay.cap_visual
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-PUBLISH
+  capability_name: 白话知识发布
+  contract_id: banyan.contract.knowledge_projection.v1
+  contract_name: KnowledgeProjection
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  freeze_status: FROZEN_CONTRACT
+  boundary_activation_status: BLOCKED_PENDING_LATER_STAGE_PROOF
+  inputs:
+  - 正式规则
+  - 页面事实
+  - PLAIN_SYNC
+  outputs:
+  - 白话说明
+  - 同步状态
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 派生文档不反向决定 PRD
+  - 不得全量重写71篇
+  - 架构图用业务话
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 无基线不能差异同步
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-PUBLISH
+  extension_points:
+    provider_port: banyan.port.knowledge_projection.v1
+    project_overlay: overlay.cap_publish
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '10'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-EDITOR
+  capability_name: Cursor 入口与项目覆盖
+  contract_id: banyan.contract.editor_entry_compatibility.v1
+  contract_name: EditorEntryCompatibility
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  freeze_status: COMPATIBILITY_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - rules
+  - skills
+  - 项目事实
+  outputs:
+  - 编辑器行为候选映射
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不把 .cursor 当 Generic Core 固定路径
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 适配未验证保留旧入口
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-EDITOR
+  extension_points:
+    provider_port: banyan.port.editor_entry_compatibility.v1
+    project_overlay: overlay.cap_editor
+  compatibility: EXPLICIT_ADAPTER_REQUIRED
+  owner_stage: '15'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: true
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-PORT
+  capability_name: 项目端口绑定
+  contract_id: banyan.contract.project_endpoint_map.v1
+  contract_name: ProjectEndpointMap
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROJECT_INSTANCE_CANDIDATE
+  freeze_status: PROJECT_OVERLAY_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - 项目应用映射
+  outputs:
+  - 正确联调目标
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 端口与项目业务只留 project instance
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 映射未知先核对，不猜服务
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-PORT
+  extension_points:
+    provider_port: banyan.port.project_endpoint_map.v1
+    project_overlay: overlay.cap_port
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '04'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-SQL
+  capability_name: 增量 SQL 交付习惯
+  contract_id: banyan.contract.project_delivery_convention.v1
+  contract_name: ProjectDeliveryConvention
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROJECT_INSTANCE_CANDIDATE
+  freeze_status: PROJECT_OVERLAY_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - 表结构变更
+  - 部署环境
+  outputs:
+  - SQL交付清单
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不把 local.env 作为交付
+  - 不在本阶段运行 SQL
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺交付 SQL 不宣称测试部署完成
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-SQL
+  extension_points:
+    provider_port: banyan.port.project_delivery_convention.v1
+    project_overlay: overlay.cap_sql
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: '04'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-COMMIT
+  capability_name: 既有提交校验与授权
+  contract_id: banyan.contract.commit_practice_compatibility.v1
+  contract_name: CommitPracticeCompatibility
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  freeze_status: COMPATIBILITY_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - 暂存差异
+  - 提交说明
+  - 授权
+  outputs:
+  - 提交计划/校验结果
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - Git Author 是事实身份，不推断物理操作者
+  - 当前未安装为根 hooksPath 不等于全面生效
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺脚本或授权停止，不补造已执行校验
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-COMMIT
+  extension_points:
+    provider_port: banyan.port.commit_practice_compatibility.v1
+    project_overlay: overlay.cap_commit
+  compatibility: EXPLICIT_ADAPTER_REQUIRED
+  owner_stage: '05'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: true
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-MERGE
+  capability_name: 旧协作合码指导
+  contract_id: banyan.contract.legacy_collaboration_reference.v1
+  contract_name: LegacyCollaborationReference
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  freeze_status: COMPATIBILITY_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - 旧分支拓扑
+  - 路径归属
+  outputs:
+  - 合码记录
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 不得偷偷 stash
+  - lease失败停止
+  - 禁止猜 ours 整文件
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 不把旧 reset/force 流程作为当前许可
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-MERGE
+  extension_points:
+    provider_port: banyan.port.legacy_collaboration_reference.v1
+    project_overlay: overlay.cap_merge
+  compatibility: EXPLICIT_ADAPTER_REQUIRED
+  owner_stage: '07'
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: true
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-DESIGN
+  capability_name: AnyDesign 全量与单元素模式
+  contract_id: banyan.contract.design_analysis.v1
+  contract_name: DesignAnalysis
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - 截图/URL/Figma
+  - 范围/强调
+  outputs:
+  - design.md/element.md
+  - tokens/a11y
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 输出是素材，未经批准非正式 UI_SPEC
+  - 不绕访问保护
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 输入不可用不虚构内容
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-DESIGN
+  extension_points:
+    provider_port: banyan.port.design_analysis.v1
+    project_overlay: overlay.cap_design
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-CSS
+  capability_name: CSS 变量提取与摘要
+  contract_id: banyan.contract.css_token_extraction.v1
+  contract_name: CssTokenExtraction
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - URL样式表
+  - CSS变量
+  outputs:
+  - 变量JSON
+  - 摘要
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 区分显式token与推断
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 网络/参数失败报错
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-CSS
+  extension_points:
+    provider_port: banyan.port.css_token_extraction.v1
+    project_overlay: overlay.cap_css
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-CAPTURE
+  capability_name: 页面截图与计算样式采集
+  contract_id: banyan.contract.page_visual_capture.v1
+  contract_name: PageVisualCapture
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - URL
+  - viewports/selector
+  outputs:
+  - 截图
+  - computed-style digest
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 限制帧数与元素范围
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺Playwright/捕获错误非成功
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-CAPTURE
+  extension_points:
+    provider_port: banyan.port.page_visual_capture.v1
+    project_overlay: overlay.cap_capture
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-COLORS
+  capability_name: 图像主色提取
+  contract_id: banyan.contract.image_palette_extraction.v1
+  contract_name: ImagePaletteExtraction
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - 图像
+  - 颜色数量
+  outputs:
+  - 颜色与面积占比
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 结果仅视觉证据
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 缺Pillow/坏图失败
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-COLORS
+  extension_points:
+    provider_port: banyan.port.image_palette_extraction.v1
+    project_overlay: overlay.cap_colors
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-A11Y
+  capability_name: 对比度检查
+  contract_id: banyan.contract.contrast_evaluation.v1
+  contract_name: ContrastEvaluation
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - FG/BG颜色对
+  outputs:
+  - WCAG对比度报告
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 检查结果不替代业务验收
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 参数格式错误报错
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-A11Y
+  extension_points:
+    provider_port: banyan.port.contrast_evaluation.v1
+    project_overlay: overlay.cap_a11_y
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-LINT
+  capability_name: 设计文档结构校验
+  contract_id: banyan.contract.design_document_lint.v1
+  contract_name: DesignDocumentLint
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - design.md
+  outputs:
+  - lint报告
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - frontmatter/引用/组件/章节规则
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 结构失败非零退出
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-LINT
+  extension_points:
+    provider_port: banyan.port.design_document_lint.v1
+    project_overlay: overlay.cap_lint
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-TOKENS
+  capability_name: 设计令牌生成
+  contract_id: banyan.contract.design_token_build.v1
+  contract_name: DesignTokenBuild
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - design.md frontmatter
+  outputs:
+  - DTCG tokens JSON
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 机器派生不手工编造
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 解析错误失败
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-TOKENS
+  extension_points:
+    provider_port: banyan.port.design_token_build.v1
+    project_overlay: overlay.cap_tokens
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-DRIFT
+  capability_name: 令牌与线上设计漂移比较
+  contract_id: banyan.contract.design_drift_check.v1
+  contract_name: DesignDriftCheck
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - tokens JSON
+  - URL
+  outputs:
+  - drift报告
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 与正式批准状态分开
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 获取或比对失败输出错误
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-DRIFT
+  extension_points:
+    provider_port: banyan.port.design_drift_check.v1
+    project_overlay: overlay.cap_drift
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false
+- capability_id: CAP-EXPORT
+  capability_name: 设计交付包导出
+  contract_id: banyan.contract.design_package_export.v1
+  contract_name: DesignPackageExport
+  version: 1.0.0
+  status: FROZEN
+  contract_version: 1.0.0
+  contract_status: FROZEN
+  candidate_layer: PROVIDER_CANDIDATE
+  freeze_status: PROVIDER_PORT_CONTRACT
+  boundary_activation_status: CONTRACT_ONLY_NOT_IMPLEMENTED
+  inputs:
+  - design.md
+  - tokens
+  outputs:
+  - CSS
+  - Tailwind
+  - DOCX/PPTX品牌包
+  preconditions:
+  - declared inputs are available or caller receives a typed missing-input failure
+  guards:
+  - 保留源关联
+  - 不等同 Codex Adapter
+  side_effect_policy: DENY_UNDECLARED
+  failure_semantics:
+  - 输入/依赖不满足失败
+  authority: RESOLVE_BY_SOURCE_ROLE_AND_SCOPE; unresolved conflict yields BLOCKED
+  evidence_lineage:
+  - ../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-EXPORT
+  extension_points:
+    provider_port: banyan.port.design_package_export.v1
+    project_overlay: overlay.cap_export
+  compatibility: NO_IMPLICIT_LEGACY_OVERRIDE
+  owner_stage: 09
+  provider_port_required: true
+  project_overlay_required: true
+  compatibility_required: false
+  open_conflicts: []
+  implementation_frozen: false
+  provider_selected: false

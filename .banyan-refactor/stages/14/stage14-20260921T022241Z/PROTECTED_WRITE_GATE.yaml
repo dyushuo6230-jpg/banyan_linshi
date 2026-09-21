@@ -1,0 +1,12 @@
+schema_version: stage14-v1
+required: [target_stable_id, protection_class, authority, freshness, impact_review, decision_level, human_confirmation_if_required, authorization_record, rollback_checkpoint, rollback_plan, secret_check]
+rules:
+  target_and_authorization_scope_must_match: true
+  freshness_must_be_sufficient_for_write: true
+  impact_review_must_be_current: true
+  checkpoint_must_precede_write: true
+  rollback_plan_must_be_actionable_or_irreversibility_explicit: true
+  con002_or_other_authority_blocker_must_remain_blocking: true
+unknown_or_blocked_precondition: BLOCK
+stage14_executes_protected_write: false
+

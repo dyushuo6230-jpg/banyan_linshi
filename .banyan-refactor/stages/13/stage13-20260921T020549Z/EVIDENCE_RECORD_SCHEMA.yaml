@@ -1,0 +1,13 @@
+schema_version: stage13-v1
+schema_id: banyan.evidence.record.v1
+required_fields: [evidence_id, evidence_type, subject_id, source_refs, as_of, authority, provenance, freshness, confidence, scope, result, classification]
+allowed_classifications: [OBSERVED_FACT, DERIVED_FACT, INFERENCE, RECOMMENDATION, VALIDATION_RESULT, HUMAN_DECISION]
+rules:
+  - source_refs_must_not_be_empty
+  - provenance_and_classification_are_mandatory
+  - summary_is_not_original_evidence
+  - inference_or_recommendation_cannot_be_recorded_as_observed_fact
+  - unknown_values_remain_unknown
+  - evidence_never_grants_authorization
+secret_body_or_secret_derived_value_allowed: false
+

@@ -1,0 +1,149 @@
+upstream_stage: '02'
+run_id: stage02-20260920T131746Z
+acceptance_result: PASS_CANDIDATE_DESIGN
+actual_artifacts_to_consume:
+- CAPABILITY_MAPPING_WORKBOOK.yaml
+- CONTRACT_CHAIN_DESIGN.md
+- CORE_CANDIDATES.yaml
+- CORE_BOUNDARY_CANDIDATE.md
+- PROJECT_CANDIDATES.yaml
+- PROJECT_INSTANCE_CANDIDATE.md
+- PROVIDER_CANDIDATES.yaml
+- PROVIDER_CANDIDATE.md
+- COMPATIBILITY_CANDIDATES.yaml
+- COMPATIBILITY_LAYER_CANDIDATE.md
+- ASSET_BOUNDARY_MAP.jsonl
+- ARTIFACT_BOUNDARY_MAP.jsonl
+- CONFLICT_RISK_REGISTER.yaml
+- CONFLICT_RESOLUTION_PLAN.md
+- ARCHITECTURE_DECISION_RECORDS.yaml
+- AI_RUNTIME_COST_GOVERNANCE_DESIGN.md
+- ACCEPTANCE_REPORT.md
+source_stage01:
+  run_id: stage01-20260920T091426Z
+  gate_review: 榕树ai改造落地相关文档/Stage_01_AI资产全量盘点与方案裁剪/reviews/Stage_01_to_Stage_02_Gate_Review_v1.0.md
+  sealed_inputs:
+  - AI_ASSET_INVENTORY.jsonl
+  - LEGACY_AI_CAPABILITY_INVENTORY.jsonl
+  - AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+  - PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml
+  - CORE_CANDIDATE_REPORT.yaml
+  - GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+  - CONFLICT_GAP_REPORT.yaml
+  - PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml
+  - OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+  - DISCOVERY_COVERAGE_REPORT.yaml
+  source_hash_evidence: evidence/PRECHECK.json
+boundary_summary:
+  capabilities: 35
+  core_candidates: 21
+  project_candidates: 2
+  provider_candidates: 9
+  compatibility_candidates: 3
+  assets_mapped: 1026
+  generated_artifacts_mapped: 425
+  operational_artifacts_mapped: 289
+  conflicts_carried: 31
+  high_conflicts_open: 2
+evidence_to_trust:
+- evidence/PRECHECK.json
+- evidence/VALIDATION_RESULTS.yaml
+- evidence/BOOTSTRAP_LINEAGE.json
+- evidence/FINAL_VERIFICATION.json
+- ARTIFACT_HASHES.sha256
+- evidence/SEAL_VERIFICATION.json
+open_architecture_decisions:
+- S02-ADR-001
+- S02-ADR-002
+- S02-ADR-003
+- S02-ADR-004
+- S02-ADR-005
+- S02-ADR-006
+open_risks:
+- id: R02-PURITY-001
+  severity: HIGH
+  owner_candidate: 03/04/19
+  next_action: Stage 03 contract review plus second-project fixture and Stage 19 portability/no-loss
+    validation before final Core acceptance.
+- id: R02-SOURCE-002
+  severity: HIGH
+  owner_candidate: 03/09/10
+  next_action: Freeze source-role schema, map provenance and test regeneration before
+    any replace/archive decision.
+- id: R02-COST-003
+  severity: MEDIUM
+  owner_candidate: 05/15/16/19
+  next_action: Define cost/quality telemetry and benchmark real workloads, then set
+    thresholds with controlled configuration.
+- id: R02-SECRET-004
+  severity: HIGH
+  owner_candidate: ALL_LATER_STAGES
+  next_action: Preserve in place, no body read/hash/copy/write/delete/commit; recovery
+    coverage remains PARTIAL_APPROVED.
+- id: R02-LOCAL-005
+  severity: MEDIUM
+  owner_candidate: ALL_LATER_STAGES
+  next_action: Preserve sealed evidence and classify freshness before each new stage;
+    do not recreate or attribute zip deletion without proof.
+- id: CON-001
+  severity: HIGH
+  owner_candidate: '05'
+  next_action: Stage 02 map precedence and Stage 05 preserve decision authorization
+    semantics; Stage 07 regression covers project overrides.
+- id: CON-002
+  severity: HIGH
+  owner_candidate: '12'
+  next_action: Stage 02 define freshness/source roles; Stage 12 use authoritative
+    register and scoped confirmed records; preserve mismatches as evidence.
+inherited_constraints:
+  secret_metadata_only_paths:
+  - nunu-go-api/config/admin/local.yml
+  - nunu-go-api/config/admin/test.yml
+  - nunu-go-api/config/h5-online/local.yml
+  - nunu-go-api/config/h5/local.yml
+  - nunu-go-api/config/h5/test.yml
+  - nunu-go-api/config/home/local.yml
+  - nunu-go-api/config/mall-online/local.yml
+  - nunu-go-api/config/mall-online/prod.yml
+  - nunu-go-api/config/mall-online/test.yml
+  - nunu-go-api/config/mall/local.yml
+  - nunu-go-api/config/mall/test.yml
+  - nunu-go-api/config/merchant/local.yml
+  - nunu-go-api/config/merchant/test.yml
+  secret_policy:
+    content_read: false
+    content_copy: false
+    content_hash: false
+    write: false
+    delete: false
+    move: false
+    rename: false
+    git_commit: false
+  recovery_mode: USER_ACCEPTED_PRESERVE_IN_PLACE
+  recovery_coverage: PARTIAL_APPROVED
+  other_secrets: Stage 01 inherited 69 potential candidates plus tunnel metadata-only
+    boundary; no user waiver extension
+  existing_project_layout_preservation_contract_candidate:
+    existing_project: PRESERVE_IN_PLACE
+    banyan: DISCOVER + MAP + DESIGN
+    relayout: EXPLICIT_MIGRATION_ONLY
+  prior_stage01_mapping: DISCOVER + MAP + CLASSIFY remains discovery outcome
+  refactor_evidence: .banyan-refactor/** excluded from Legacy
+  construction_materials: 榕树ai改造落地相关文档/** excluded from Legacy
+  capabilities_preserved: true
+  final_architecture_frozen: false
+  legacy_migration_executed: false
+stage03_inputs:
+- 35 capability chain candidates
+- 21/2/9/3 boundary lists
+- 1026 asset and 714 artifact/operational mappings
+- 31 carried issues plus 5 new risks
+- six DRAFT architecture decisions
+- AI Runtime Cost Governance design
+next_stage_entry_gate:
+  stage: '03'
+  result: PASS_FOR_CONTRACT_DESIGN
+  qualification: Stage 02 candidate design accepted; Stage 03 must validate/freeze
+    Schema and Source Roles; open HIGH risks block activation, not this design handoff
+  execution_authorized: false
+stop_after_stage: '02'

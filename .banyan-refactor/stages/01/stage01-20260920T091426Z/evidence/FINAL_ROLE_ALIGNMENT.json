@@ -1,0 +1,5 @@
+{
+  "prior_inventory_sha256": "78dc4bae38149b0ea72eecb4987855e5b45fca26760b834d0b7267832945ff7c",
+  "final_inventory_sha256": "7e3e1885e04621615ac311ee2b0aef16b414c1047d58283842b16f45ad4686ca",
+  "reason": "Align derived publication/design/compiled-contract roles across inventories; no source files modified"
+}

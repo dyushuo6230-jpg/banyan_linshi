@@ -1,0 +1,32 @@
+schema_version: stage18.5-v1
+run_id: stage18_5-20260921T064132Z
+created_before_implementation: true
+stage18_seal: PASS
+stage19_started: false
+git:
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+  staged_count: 0
+  unstaged_count: 0
+pilot:
+  file_count: 13
+  sha256:
+    .banyan/PILOT_NOTICE.md: a1f10e51eb49348a15783333ed8325b8ea409d518988db0e0faef1a59665a21f
+    .banyan/generated/README.md: c93f134ef45bf6c5126222fe17b1133512e1ab02192aa8d19c5acf40fb07ba6f
+    .banyan/index/manifest.yaml: c3bc637f2522f570c7efe6047ecab6af0a16fff1ca26a185e8e5185130a39597
+    .banyan/instance/project-instance.yaml: f62f990d59ed96275768ecfa88da77c74391972c4310bcc3d8f28bdb869d8ec3
+    .banyan/mappings/source-mappings.yaml: de82faa424633850fcc1782b16d6fd9e326a9a2f826cdeb30acb842dd9448a59
+    .banyan/migrations/rollback.yaml: 8815ed3e317c0b4ec035d00ed6d0c44ef4d7969a4f91f07ef0e8d4166c3e0a50
+    .banyan/overlays/bindings.yaml: 852720cc1a4691098cfbd1090906812ce23bfc40efea995de2638951bb3ccf5c
+    .banyan/pilot.yaml: 2c33cf8979de322bdbd24f312c7ab9e85ca5e75c25457d4f35989400667a0b54
+    .banyan/profiles/contributor.yaml: 3ab87df53f380fcf436a382c7280b1b3c16a36617e960dc010db7cddba06c739
+    .banyan/profiles/project.yaml: 18564c519214cef1f5fbae571141b477605068eafcdc244d85411d6c4e3d0ed1
+    .banyan/providers/bindings.yaml: b508509a157d345be36172119c4c02650e0f8f0fa977874d7514f781bd48c237
+    .banyan/runtime/status.yaml: e7cd3dfeb4cd8f0ec3258a0fbe0caef0c78d3644c3d3420077c060b0a4a8a2fd
+    .banyan/trace/audit.jsonl: f5520ed3bdb3d5b326965518383a2bad34d9607613cbc5c93e758fd78f7cd24a
+  mode: READ_VERIFY_ONLY
+scope:
+  legacy_scan: false
+  prior_stage_rerun: false
+  runtime_core_rewrite: false
+  git_mutation: false

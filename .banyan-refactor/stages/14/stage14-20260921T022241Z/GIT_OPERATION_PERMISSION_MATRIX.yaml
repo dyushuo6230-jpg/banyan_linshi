@@ -1,0 +1,16 @@
+schema_version: stage14-v1
+operations:
+  status: {risk: READ_ONLY, stage14_execute: true, mutation: false, stage15_executor_candidate: false}
+  diff_metadata: {risk: READ_ONLY, stage14_execute: true, mutation: false, stage15_executor_candidate: false}
+  config_read: {risk: READ_ONLY, stage14_execute: true, mutation: false, stage15_executor_candidate: false}
+  symbolic_ref_or_rev_parse: {risk: READ_ONLY, stage14_execute: true, mutation: false, stage15_executor_candidate: false}
+  add_or_hunk_stage: {risk: REVERSIBLE_WRITE, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  commit: {risk: PROTECTED_WRITE, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  reset: {risk: PROTECTED_WRITE, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  stash: {risk: REVERSIBLE_WRITE, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  rebase: {risk: PROTECTED_WRITE, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  push: {risk: IRREVERSIBLE_OR_EXTERNAL, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  force_push: {risk: IRREVERSIBLE_OR_EXTERNAL, stage14_execute: false, mutation: true, stage15_executor_candidate: true}
+  config_write: {risk: PROTECTED_WRITE, stage14_execute: false, mutation: true, stage15_executor_candidate: false}
+stage14_git_mutations_executed: 0
+

@@ -1,0 +1,19 @@
+schema_version: stage06-v1
+states: [PROMOTION_REQUESTED, PRECHECK, CONFLICT_CHECK, WAITING_DECISION, PROMOTED, VALIDATED, BLOCKED]
+requirements:
+  stable_candidate_identity: true
+  source_and_target_roles_known: true
+  conflicts_enumerated: true
+  stage05_decision_gate: true
+  explicit_resolution: true
+  references_checked: true
+  provenance_preserved: true
+  validation_required: true
+promotion_is_canonical_apply: false
+promotion_may_modify_canonical: false
+failure_semantics:
+  ambiguous_winner: BLOCKED
+  missing_evidence: BLOCKED
+  reference_risk: BLOCKED
+  cancelled_confirmation: WAITING_DECISION
+

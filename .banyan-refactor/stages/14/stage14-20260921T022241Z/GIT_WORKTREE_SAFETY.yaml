@@ -1,0 +1,11 @@
+schema_version: stage14-v1
+must_classify: [staged, unstaged, untracked, ignored_governed, conflicted, secret_risk, unrelated, local_only]
+pre_execution_checks: [status, staged_diff, unstaged_diff, conflicts, untracked, ignored_governed, secret_risk, semantic_groups, leftovers, identity, authorization]
+blind_stage_all_allowed: false
+forbidden_commands: [git_add_dot, git_add_all]
+hunk_aware_staging_required_for_mixed_files: true
+unrelated_changes_must_be_isolated: true
+local_only_never_staged: true
+secret_risk_never_staged: true
+stage14_executes_staging: false
+

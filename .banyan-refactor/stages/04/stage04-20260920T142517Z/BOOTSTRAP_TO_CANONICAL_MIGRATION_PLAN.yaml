@@ -1,0 +1,27 @@
+schema_version: stage04-v1
+source: .banyan-refactor
+target: .banyan
+execute_now: false
+preconditions:
+  - activation_gate_approved
+  - all_blocking_risks_resolved_or_explicitly_accepted
+steps:
+  - snapshot_bootstrap
+  - record_source_hashes_and_run_lineage
+  - create_target_in_isolated_mode
+  - validate_schema
+  - validate_semantic_equivalence
+  - record_target_hashes
+  - switch_writable_truth_once
+  - mark_bootstrap_read_only_or_archive
+  - retain_rollback
+invariants:
+  dual_writable_truth_forbidden: true
+  source_hash_required: true
+  target_hash_required: true
+  rollback_required: true
+rollback:
+  allowed_before_switch: discard_isolated_target
+  allowed_after_switch: restore_verified_snapshot_and_reverse_single_truth_pointer
+  requires_recorded_validation: true
+

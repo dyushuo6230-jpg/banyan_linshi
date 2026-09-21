@@ -1,0 +1,12 @@
+schema_version: stage12-v1
+must_preserve: [stable_ids, source_refs, authority, freshness, as_of, provenance, blocker_state, decision_state, unknowns, open_questions]
+may_compact: [long_prose, irrelevant_history, distant_reference_graph, redundant_projection_text]
+methods: [STRUCTURED_SUMMARY, INDEX_ONLY_REFERENCE, STRUCTURED_EXTRACTION, LOCAL_RELATION_GRAPH, VALIDATED_CACHED_PROJECTION]
+output_required_fields: [source_refs, as_of, freshness, coverage, confidence]
+loss_gate:
+  dropped_blocker_allowed: false
+  dropped_authority_allowed: false
+  dropped_provenance_allowed: false
+  dropped_unknown_allowed: false
+  failed_gate_result: REJECT_COMPACTION
+

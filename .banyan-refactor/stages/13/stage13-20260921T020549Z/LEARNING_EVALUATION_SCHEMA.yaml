@@ -1,0 +1,11 @@
+schema_version: stage13-v1
+required_fields: [evaluation_id, candidate_id, baseline_ref, candidate_ref, test_cases, negative_cases, counterexamples, quality_result, regression_result, cost_result, scope, limitations, conclusion]
+minimum_gates:
+  test_cases_nonempty: true
+  negative_cases_nonempty: true
+  counterexamples_nonempty: true
+  single_success_sufficient_for_core: false
+  regression_review_required: true
+  scope_and_limitations_required: true
+outcomes: [PASS_FOR_PROPOSAL, NEEDS_MORE_EVIDENCE, REJECTED, BLOCKED]
+

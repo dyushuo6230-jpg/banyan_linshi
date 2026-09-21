@@ -1,0 +1,12 @@
+schema_version: stage13-v1
+default_attribution: MULTI_FACTOR_OR_UNKNOWN
+factors: [PROMPT, CONTEXT, MODEL_CAPABILITY_CLASS, PROVIDER_BINDING, CAPABILITY, TOOL, HUMAN_INTERVENTION, REPOSITORY_STATE, TASK_DIFFICULTY]
+causal_claim_required_fields: [claim_id, cause_subject_id, effect_subject_id, mechanism, counterfactual_or_control, evidence_refs, confidence, scope]
+correlated_only_when:
+  - temporal_sequence_only
+  - shared_run_only
+  - shared_actor_or_editor_only
+  - frequency_only
+  - missing_mechanism_or_counterexample
+unsupported_causal_claim_result: CORRELATED_ONLY_OR_UNKNOWN
+

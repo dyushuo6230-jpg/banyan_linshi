@@ -1,0 +1,42 @@
+schema_version: stage11-v1
+entries:
+- reference_id: REF-039
+  source_id: ASSET-e59ff227d050ad
+  relationship: DOCUMENT_LINK
+  missing_target_locator: nunu-go-api/app/admin/web/CONTRIBUTING.md
+  target_id: null
+  status: UNRESOLVED_REFERENCE
+  owner_stage: '12'
+  evidence_ref: nunu-go-api/app/admin/web/CHANGELOG.md:642
+- reference_id: REF-041
+  source_id: ASSET-444aafea22f7b3
+  relationship: DOCUMENT_LINK
+  missing_target_locator: nunu-go-api/app/admin/web/CONTRIBUTING.md
+  target_id: null
+  status: UNRESOLVED_REFERENCE
+  owner_stage: '12'
+  evidence_ref: nunu-go-api/app/admin/web/CHANGELOG.zh-CN.md:642
+- reference_id: REF-043
+  source_id: ASSET-444aafea22f7b3
+  relationship: DOCUMENT_LINK
+  missing_target_locator: nunu-go-api/app/admin/web/CHANGELOG.en.md
+  target_id: null
+  status: UNRESOLVED_REFERENCE
+  owner_stage: '12'
+  evidence_ref: nunu-go-api/app/admin/web/CHANGELOG.zh-CN.md:654
+- reference_id: REF-044
+  source_id: ASSET-81b227964743ef
+  relationship: DOCUMENT_LINK
+  missing_target_locator: nunu-go-api/app/admin/web/CHANGELOG.en.md
+  target_id: null
+  status: UNRESOLVED_REFERENCE
+  owner_stage: '12'
+  evidence_ref: nunu-go-api/app/admin/web/README.md:48
+not_a_reference:
+- reference_id: REF-107
+  status: NOT_A_REFERENCE
+  reason: regex literal detected by lexical scanner; not a repository reference
+- reference_id: REF-108
+  status: NOT_A_REFERENCE
+  reason: regex literal detected by lexical scanner; not a repository reference
+invent_target_allowed: false

@@ -1,0 +1,26 @@
+schema_version: stage05-v1
+required_fields:
+  - decision_id
+  - question
+  - context
+  - known_facts
+  - uncertainties
+  - options
+  - neutral_summary
+  - impacts
+  - reversible
+  - deadline_if_any
+  - default_if_no_answer
+  - blocking
+  - evidence_refs
+valid_confirmation:
+  must_be_explicit: true
+  must_match_decision_id_or_unambiguous_question: true
+  silence_is_confirmation: false
+  cancellation_is_confirmation: false
+  initial_preference_is_final_confirmation: false
+no_answer_behavior:
+  L3: REMAIN_BLOCKED_WAITING_FOR_HUMAN
+  L4: REMAIN_BLOCKED_WAITING_FOR_OWNER
+ai_recommendation_may_be_recorded_as_user_decision: false
+

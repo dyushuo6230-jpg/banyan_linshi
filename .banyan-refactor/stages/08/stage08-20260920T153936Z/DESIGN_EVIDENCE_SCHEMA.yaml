@@ -1,0 +1,24 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields:
+- evidence_id
+- source_type
+- source_ref
+- version
+- captured_at
+- application_scope
+- confidence
+- authority
+- provenance
+allowed_source_types: [RASTER_IMAGE, SVG, DESIGN_TOOL, PROTOTYPE, SCREENSHOT, DESIGN_TOKEN, COMPONENT_LIBRARY, PROVIDER_OUTPUT]
+authority: EVIDENCE_ONLY
+rules:
+  may_be_product_requirement_truth: false
+  may_directly_override_prd: false
+  may_directly_become_approved_ui_spec: false
+  unknown_interaction_from_static_source: UNKNOWN
+  unsupported_behavior_promotion: FORBIDDEN
+  missing_provenance: BLOCKED
+provider_runtime_implemented: false

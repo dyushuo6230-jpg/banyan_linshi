@@ -1,0 +1,33 @@
+schema_version: stage19-v1
+result: PASS
+scope:
+- banyan-framework/src
+- banyan-framework/tests
+- banyan-framework/frontend/src
+- banyan-framework/frontend/scripts
+- frontend package/build manifests
+- banyan-framework/control-plane-go owned source
+excluded_generated_or_vendor:
+- frontend/node_modules
+- embedded minified dist
+- compiled Go binaries
+checks:
+  current_project_business_literals: 0
+  hardcoded_current_project_paths: 0
+  project_ports: 0
+  current_project_identity_values: 0
+  current_project_secret_values: 0
+  project_specific_authority_semantics: 0
+  gin_policy_implementation: 0
+  second_runtime: 0
+typed_false_positives:
+- match: fixture@example.invalid / Banyan Fixture
+  location: tests/test_executor_integration.py
+  classification: GENERIC_ISOLATED_GIT_FIXTURE_SENTINEL
+  project_specific: false
+- match: permission_result / secret_body_rendered
+  location: control-plane-go/internal/controlplane/http/router_test.go
+  classification: GENERIC_TRANSPORT_TEST_RESPONSE
+  policy_implementation: false
+project_instance_separation: PASS_DOT_BANYAN_OUTSIDE_GENERIC_FRAMEWORK
+evidence: evidence/PURITY_SCAN.txt

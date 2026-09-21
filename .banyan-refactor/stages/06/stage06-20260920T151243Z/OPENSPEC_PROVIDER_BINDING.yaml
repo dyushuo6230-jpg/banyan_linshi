@@ -1,0 +1,32 @@
+schema_version: stage06-v1
+provider_id: openspec
+binding_id: change-workspace-openspec-v1
+activation_state: DESIGN_ONLY_INACTIVE
+legacy_instance_verified: false
+workspace_mapping:
+  banyan_change_id: provider_metadata.banyan_change_id
+  provider_change_id: openspec_change_id
+  provider_path_template: openspec/changes/{provider_change_id}
+artifact_role_map:
+  CHANGE_PROPOSAL: proposal.md
+  CHANGE_TASKS: tasks.md
+  CHANGE_DESIGN: design.md
+  SPEC_DELTA: specs/
+lifecycle_map:
+  provider_draft: DRAFT
+  provider_proposed: PROPOSED
+  provider_review: IN_REVIEW
+  provider_apply_ready: APPROVED_FOR_APPLY
+  provider_archived: ARCHIVED
+apply_operation_map:
+  provider_preview: preview_apply
+  provider_apply_intent: APPLY_PLANNED
+  provider_archive_intent: ARCHIVE_REQUESTED
+constraints:
+  may_bypass_banyan_decision_gate: false
+  may_directly_modify_canonical: false
+  may_become_canonical_by_provider_name: false
+  auto_delete_after_apply: false
+  provider_status_is_banyan_authority: false
+  activation_requires_later_provider_validation: true
+

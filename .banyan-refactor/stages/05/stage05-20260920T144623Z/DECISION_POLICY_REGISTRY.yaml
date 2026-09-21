@@ -1,0 +1,19 @@
+schema_version: stage05-v1
+policy_id: banyan.decision.policy.v1
+generic_core:
+  level_schema: DECISION_LEVEL_SCHEMA.yaml
+  escalation_contract: DECISION_ESCALATION_CONTRACT.yaml
+  confirmation_contract: HUMAN_CONFIRMATION_CONTRACT.yaml
+  safety_floor:
+    overridable: false
+    blockers: [SECRET_RISK, PROTECTED_WRITE_VIOLATION, MISSING_REQUIRED_IDENTITY, MISSING_AUTHORITY, EXPLICIT_HUMAN_ONLY]
+project_overlay:
+  may_configure: [trigger_thresholds, batch_size, confirmation_density, governance_weight, self_resolution_eligibility]
+  may_lower_safety_floor: false
+mode_interaction:
+  work_mode_changes_process_weight_only: true
+  LIGHT_bypass_L3_L4: false
+conflicts:
+  CON-001: RESOLVED_BY_LAYERED_CONTRACT
+  CON-002: INHERITED_OPEN_OWNER_STAGE_12
+

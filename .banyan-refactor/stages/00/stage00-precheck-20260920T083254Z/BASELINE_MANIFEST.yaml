@@ -1,0 +1,68 @@
+# Stage 00 actual execution evidence; no secret contents.
+schema_version: stage00-baseline-v1.9.1
+charter_version: 1.9.1
+stage_id: '00'
+baseline_id: BASELINE-stage00-precheck-20260920T083254Z
+run_id: stage00-precheck-20260920T083254Z
+generated_at: '2026-09-20T08:49:52.450989+00:00'
+repository:
+  root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server
+  topology: MONOREPO
+  branch: feature/huanpipro
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  detached: false
+  git_operation: NONE
+  dirty: true
+  upstream_present: true
+  worktrees:
+  - path: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server
+    head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    branch: refs/heads/feature/huanpipro
+  submodules: []
+  nested_repositories: []
+  sparse_checkout: false
+  lfs:
+    available: false
+    files_detected: false
+    evidence: evidence/resume-git-evidence.json
+working_tree:
+  staged_count: 0
+  unstaged_count: 0
+  untracked_count: 21
+  ignored_governed_count: 17
+  ignored_secret_exception_count: 13
+  deleted_count: 0
+  renamed_count: 0
+  binary_changed_count: 0
+  unmerged_count: 0
+control:
+  refactor_control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  stage_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor/stages/00/stage00-precheck-20260920T083254Z
+  bootstrap_only: true
+  stage_owned_write_only: true
+bootstrap_state:
+  migration_register: ../../../MIGRATION_REGISTER.bootstrap.yaml
+  refactor_trace: ../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  future_canonical_paths:
+  - .banyan/migrations/MIGRATION_REGISTER.yaml
+  - .banyan/migrations/BANYAN_REFACTOR_TRACE.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+discovery_scope_ref: DISCOVERY_SCOPE_BASELINE.yaml
+protected_paths_ref: PROTECTED_PATHS_MANIFEST.yaml
+checkpoint_ref: CHECKPOINT_RECORD.yaml
+file_hashes_ref: FILE_HASHES.sha256
+git_identity_policy:
+  identity_modified_by_stage00: false
+  commit_created_by_stage00: false
+secret_policy:
+  content_captured: false
+  note: Record metadata only; never serialize secret values.
+notes:
+- Continuation of original external precheck run; original HEAD/index/status unchanged
+  at resume.
+- 'User-authorized 13-path exception: recovery coverage PARTIAL_APPROVED, never COMPLETE.'
+- Governance input Pack remains unchanged; its NOT_STARTED status is a plan/template,
+  not runtime truth.
+- Hash baseline generated after metadata-only precheck; timestamps are retained separately,
+  not misrepresented as atomic filesystem snapshot.

@@ -1,0 +1,34 @@
+schema_version: stage04-v1
+status: FROZEN_DESIGN_NOT_ACTIVATED
+instance:
+  required:
+    - project
+    - source_mappings
+    - overlays
+    - profiles
+    - variable_bindings
+    - provider_bindings
+    - feature_activation
+    - locations
+    - lineage
+  project: {ref: PROJECT_PROFILE_SCHEMA.yaml}
+  source_mappings: {ref: SOURCE_MAPPING_REGISTRY.yaml}
+  overlays: {ref: PROJECT_OVERLAY_BINDINGS.yaml}
+  profiles:
+    contributor_ref: CONTRIBUTOR_PROFILE_SCHEMA.yaml
+  variable_bindings: {ref: VARIABLE_RESOLUTION_SCHEMA.yaml}
+  provider_bindings: {ref: PROVIDER_BINDING_SCHEMA.yaml}
+  feature_activation:
+    default: INACTIVE
+    unknown_dependency: BLOCKED
+  locations: {ref: LOCATION_CONTRACT.yaml}
+  lineage:
+    upstream_stage: "03"
+    upstream_run_id: stage03-20260920T135702Z
+    current_run_id: stage04-20260920T142517Z
+    bootstrap_only: true
+constraints:
+  business_truth_source: false
+  existing_project_relayout_required: false
+  activated_in_stage04: false
+

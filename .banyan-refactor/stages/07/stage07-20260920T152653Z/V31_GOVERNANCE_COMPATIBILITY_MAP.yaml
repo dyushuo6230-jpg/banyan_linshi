@@ -1,0 +1,61 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+mode: LEGACY_SEMANTIC_COMPATIBILITY_SHADOW_ONLY
+legacy_version: v3.1
+mappings:
+- legacy_semantic: G0-G11 governance stages
+  target_contract: WorkflowPolicyRegistry
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: PROJECT_STAGE
+  target_contract: ProjectInstance.lifecycle
+  disposition: MAP_TO_PROJECT_INSTANCE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: TBD and unknown variables
+  target_contract: VariableResolution.typed_unknown
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: Informed Decision
+  target_contract: DecisionPolicyRegistry.L1-L5
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: PRD
+  target_contract: ArtifactRegistry.source_role=PRODUCT_REQUIREMENT
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: DEC
+  target_contract: ArtifactRegistry.source_role=DECISION_RECORD
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: ADR
+  target_contract: ArtifactRegistry.source_role=ARCHITECTURE_DECISION
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: CR
+  target_contract: ChangeWorkspace.change_record
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: TRACE_MATRIX
+  target_contract: TraceabilityRegistry
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: UI Contract / UI_SPEC
+  target_contract: CompatibilityProjection.ui_contract
+  disposition: MAP_TO_COMPATIBILITY
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: Progress / Worklog / Handover
+  target_contract: OperationalArtifactIndex
+  disposition: INDEX_ONLY
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: Plain Document
+  target_contract: ArtifactRegistry.source_role=PLAIN_DOCUMENT
+  disposition: MAP_TO_CORE
+  status: MAPPED_DESIGN_ONLY
+- legacy_semantic: AnyDesign / UI governance
+  target_contract: ProviderBinding.anydesign + compatibility projection
+  disposition: MAP_TO_PROVIDER
+  status: MAPPED_DESIGN_ONLY
+legacy_content_mutated: false
+legacy_authority_promoted: false

@@ -1,0 +1,9 @@
+schema_version: stage14-v1
+protected_write_freshness_required: [authority, explicit_version_status, supersession_state, approved_change_lineage, freshness_observation, conflict_state]
+rollback_required: [checkpoint_id, captured_before_action, target_revision_or_hash, restoration_plan, validation_plan, retention_state]
+mtime_only_freshness_allowed: false
+unknown_freshness_for_write: BLOCK
+missing_checkpoint_for_protected_write: BLOCK
+irreversible_action_without_rollback:
+  required: [explicit_nonrollback_disclosure, L3_or_L4_decision, explicit_human_authorization]
+

@@ -1,0 +1,28 @@
+schema_version: stage12-v1
+stage12_run_id: stage12-20260921T014521Z
+source_index:
+  path: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+  access: READ_ONLY_QUERY_SURFACE
+  canonical_truth: false
+surfaces:
+  authoritative_current_context:
+    fields: [stable_id, current_locator, source_role, authority, version, status, freshness, provenance_state]
+    gate: current_claim_requires_sufficient_version_status_and_freshness
+  stale_or_conflicted_context:
+    sources: [CON002_RESOLUTION_RECORD.yaml, FRESHNESS_RESOLUTION_SCHEMA.yaml]
+  decision_blockers:
+    sources: [CON002_RESOLUTION_RECORD.yaml, HISTORICAL_REFERENCE_DISPOSITION.yaml]
+  change_affected_context:
+    stage11_query: change_affected_artifacts
+  reference_neighborhood:
+    stage11_queries: [incoming_references, outgoing_references, unresolved_references]
+  trace_neighborhood:
+    stage11_query: trace_by_stage_run_subject
+  historical_transitions:
+    stage11_query: version_status_history
+  evidence_gaps:
+    fields: [subject_id, missing_evidence_type, owner, blocker_state, required_next_evidence]
+mandatory_result_fields: [source_refs, as_of, freshness, coverage, confidence, authority, provenance, blocker_state]
+stage13_runtime_implemented: false
+stage13_execution_authorized: false
+

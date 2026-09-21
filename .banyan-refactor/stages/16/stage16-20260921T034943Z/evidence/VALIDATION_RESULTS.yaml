@@ -1,0 +1,41 @@
+schema_version: stage16-v1
+run_id: stage16-20260921T034943Z
+overall: PASS
+validations:
+  V16-01: {result: PASS, evidence: Stage15 acceptance and API handoff validated}
+  V16-02: {result: PASS, evidence: Control Plane composes RuntimeAPI only}
+  V16-03: {result: PASS, evidence: no Control Plane policy engine or bypass route}
+  V16-04: {result: PASS, evidence: implementation is generic-only under banyan-framework}
+  V16-05: {result: PASS, evidence: default bind is 127.0.0.1}
+  V16-06: {result: PASS, evidence: public and non-loopback bind negative tests pass}
+  V16-07: {result: PASS, evidence: browser shows policy execution mode blockers providers and activation}
+  V16-08: {result: PASS, evidence: browser preflight renders typed Runtime result}
+  V16-09: {result: PASS, evidence: ui_confirmed does not create authorization}
+  V16-10: {result: PASS, evidence: commit plan declares is_authorization false}
+  V16-11: {result: PASS, evidence: dry-run labeled DRY_RUN_NOT_COMMIT and creates no commit}
+  V16-12: {result: PASS, evidence: no mutation endpoint and current project fingerprint unchanged}
+  V16-13: {result: PASS, evidence: provenance renders authority freshness provenance and refs}
+  V16-14: {result: PASS, evidence: missing provenance fields render UNKNOWN}
+  V16-15: {result: PASS, evidence: trace_is_authorization false and validated JSONL}
+  V16-16: {result: PASS, evidence: project safety exposes identity present and ambiguous only}
+  V16-17: {result: PASS, evidence: Secret view allowlist excludes body hash preview diff copy and download}
+  V16-18: {result: PASS, evidence: provider bindings visible with NOT_ACTIVATED state}
+  V16-19: {result: PASS, evidence: trace and stage views enforce bounded pagination}
+  V16-20: {result: PASS, evidence: Stage 15 and Stage 16 run status visible}
+  V16-21: {result: PASS, evidence: Activation Readiness is BLOCKED and readiness-only}
+  V16-22: {result: PASS, evidence: .banyan absent before and after}
+  V16-23: {result: PASS, evidence: 12 automated tests plus real browser smoke and conformance pass}
+  V16-24: {result: PASS, evidence: HEAD index hash and staged count unchanged}
+  V16-25: {result: PASS, evidence: Stage17 Cursor Pilot handoff complete}
+  V16-26: {result: PASS, evidence: Stage17 not started and execution not authorized}
+hard_metrics:
+  CONTROL_PLANE_POLICY_BYPASS_PATH: 0
+  UI_CONFIRMATION_TREATED_AS_AUTHORIZATION_WITHOUT_BINDING: 0
+  CURRENT_PROJECT_MUTATION_FROM_WEBUI: 0
+  PUBLIC_BINDING_DEFAULT_PATH: 0
+  SECRET_BODY_RENDER_PATH: 0
+  GIT_IDENTITY_VALUE_PERSISTENCE_PATH: 0
+  PROVENANCE_VIEW_WITHOUT_AUTHORITY_OR_FRESHNESS: 0
+  BLOCKED_ACTION_RENDERED_AS_EXECUTABLE: 0
+  DRY_RUN_RESULT_RENDERED_AS_ACTUAL_COMMIT: 0
+  PILOT_DOT_BANYAN_ACTIVATED_IN_STAGE16: 0

@@ -1,0 +1,36 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+overall: PASS
+validations:
+- {id: V09-01, result: PASS, evidence: Stage 08 seal and entry gate passed.}
+- {id: V09-02, result: PASS, evidence: Indexed contracts and nine capability records only; no repository rediscovery or design corpus load.}
+- {id: V09-03, result: PASS, evidence: Every design source has EVIDENCE_ONLY authority and required provenance.}
+- {id: V09-04, result: PASS, evidence: Provider port uses normalized requests/results and explicit PARTIAL/BLOCKED/FAILED/TIMEOUT/CANCELLED semantics.}
+- {id: V09-05, result: PASS, evidence: Normalized Scene has only generic required fields; provider data is namespaced extension content.}
+- {id: V09-06, result: PASS, evidence: Geometry defaults to OBSERVED_RENDERED_GEOMETRY and cannot imply fixed layout without stronger evidence.}
+- {id: V09-07, result: PASS, evidence: Semantic nodes require confidence, evidence, source nodes, provenance, alternatives, and explicit status.}
+- {id: V09-08, result: PASS, evidence: Design Truth admits verified facts and approved interpretations/constraints while retaining unknowns and conflicts.}
+- {id: V09-09, result: PASS, evidence: SOURCE_TOKEN, DERIVED_TOKEN, and RECOMMENDED_TOKEN have separate authority rules.}
+- {id: V09-10, result: PASS, evidence: Unsupported hover, selected, disabled, loading, drag, scroll, gesture, animation, and API behavior remain UNKNOWN.}
+- {id: V09-11, result: PASS, evidence: Design text, numbers, and records default to DEMO_CONTENT and cannot become business/API/database truth.}
+- {id: V09-12, result: PASS, evidence: FACT requires direct evidence.}
+- {id: V09-13, result: PASS, evidence: INFERENCE requires explicit classification, evidence, confidence, and reason.}
+- {id: V09-14, result: PASS, evidence: RECOMMENDATION requires explicit classification and rationale and cannot promote automatically.}
+- {id: V09-15, result: PASS, evidence: Implementation IR boundary is framework-neutral and forbids framework-specific code outputs.}
+- {id: V09-16, result: PASS, evidence: Design outputs remain Stage 08 governance inputs and never auto-promote to UI_SPEC.}
+- {id: V09-17, result: PASS, evidence: Visual validation requires reference and version, scope, viewport, state, regions, tolerance, exclusions, and provenance.}
+- {id: V09-18, result: PASS, evidence: Source, UI_SPEC, implementation, and validation baseline drift have distinct types and routes.}
+- {id: V09-19, result: PASS, evidence: Nine Legacy UI design capabilities map to inactive provider ports and generic contracts.}
+- {id: V09-20, result: PASS, evidence: Thirteen protected secret bodies were not accessed.}
+- {id: V09-21, result: PASS, evidence: Writes are limited to Stage 09 and two bootstrap files; no canonical, code, or provider implementation.}
+- {id: V09-22, result: PASS, evidence: Stage 10 handoff exists with execution_authorized=false and Stage 10 is not started.}
+hard_metrics:
+  PROVIDER_SPECIFIC_FIELD_IN_NORMALIZED_SCENE: 0
+  UNMARKED_INFERENCE_AS_FACT: 0
+  UNMARKED_RECOMMENDATION_AS_FACT: 0
+  STATIC_IMAGE_INTERACTION_ASSUMPTION: 0
+  OBSERVED_GEOMETRY_FORCED_TO_FIXED_LAYOUT: 0
+  DESIGN_OUTPUT_AUTO_PROMOTED_TO_UI_SPEC: 0
+  DESIGN_ARTIFACT_WITHOUT_PROVENANCE: 0
+  DESIGN_PROVIDER_PORT_WITHOUT_FAILURE_SEMANTICS: 0

@@ -1,0 +1,10 @@
+schema_version: stage17-v1
+result: PASS_PILOT_ONLY
+pilot_scope_authorized: true
+exact_shadow_match: true
+file_count: 13
+final_activation: false
+general_project_write_allowed: false
+con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+formal_migration_complete: false
+stage18_execution_authorized: false

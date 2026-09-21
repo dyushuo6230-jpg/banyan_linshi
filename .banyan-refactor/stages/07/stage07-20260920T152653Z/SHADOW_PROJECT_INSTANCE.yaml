@@ -1,0 +1,20 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+instance_id: shadow.x_shop_server.v31_legacy_migration
+state: SHADOW_ONLY_NOT_ACTIVATED
+canonical_root_created: false
+references:
+  project_instance_schema: ".banyan-refactor/stages/04/stage04-20260920T142517Z/PROJECT_INSTANCE_SCHEMA.yaml"
+  source_mapping_registry: ".banyan-refactor/stages/04/stage04-20260920T142517Z/SOURCE_MAPPING_REGISTRY.yaml"
+  overlay_bindings: ".banyan-refactor/stages/04/stage04-20260920T142517Z/PROJECT_OVERLAY_BINDINGS.yaml"
+  provider_binding_schema: ".banyan-refactor/stages/04/stage04-20260920T142517Z/PROVIDER_BINDING_SCHEMA.yaml"
+shadow_registry_counts:
+  capabilities: 35
+  assets: 1026
+  generated_and_canonical_artifacts: 425
+  operational_artifacts: 289
+  reference_edges: 108
+source_of_truth: LEGACY_REPOSITORY_REMAINS_AUTHORITATIVE
+activation: 'OFF'

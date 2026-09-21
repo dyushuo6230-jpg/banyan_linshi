@@ -1,0 +1,16 @@
+artifact-1:
+  stable_id: stage15-runtime-handoff
+  classification: GOVERNANCE_ARTIFACT
+  source_role: RUNTIME_HANDOFF
+  authority: STAGE15_ACCEPTED_OUTPUT
+  version: stage15-v1
+  status: ACCEPTED
+  freshness: CURRENT_FOR_STAGE16
+  provenance: .banyan-refactor/stages/15/stage15-20260921T031742Z/STAGE16_RUNTIME_API_HANDOFF.yaml
+  source_refs:
+    - stage15-20260921T031742Z
+  related_refs:
+    - b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+unknown-example:
+  stable_id: unknown-example
+  classification: UNKNOWN

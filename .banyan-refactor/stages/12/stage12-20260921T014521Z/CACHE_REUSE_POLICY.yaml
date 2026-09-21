@@ -1,0 +1,16 @@
+schema_version: stage12-v1
+policy_id: banyan.context.cache.v1
+cache_key_required: [subject_ids, source_versions, freshness_snapshot, projection_rule, policy_version]
+reuse_gate:
+  - all_subject_ids_match
+  - all_source_versions_match
+  - freshness_snapshot_is_valid
+  - projection_rule_matches
+  - policy_version_matches
+  - no_new_blocker_or_decision_change
+on_key_change: INVALIDATE_OR_REVIEW_REQUIRED
+path_only_key_allowed: false
+mtime_only_key_allowed: false
+unknown_freshness_reuse: REVIEW_REQUIRED
+secret_body_cache_allowed: false
+

@@ -1,0 +1,40 @@
+schema_version: stage20-v1
+run_id: stage20-20260921T073758Z
+documentation_files:
+- docs/FINAL_ARCHITECTURE_GUIDE.md
+- docs/FRAMEWORK_RELEASE_NOTES.md
+- docs/GOVERNANCE_SECURITY_GUIDE.md
+- docs/INSTALL_BUILD_RUN_GUIDE.md
+- docs/LEGACY_DOCUMENTATION_ADOPTION_GUIDE.md
+- docs/OPERATIONS_TROUBLESHOOTING_GUIDE.md
+- docs/POST_RELEASE_MAINTENANCE_MODEL.md
+- docs/PROJECT_INSTANCE_GUIDE.md
+- docs/RUNTIME_ADAPTER_GUIDE.md
+- docs/UPGRADE_MIGRATION_GUIDE.md
+- docs/WEBUI_CONTROL_PLANE_GUIDE.md
+documentation_file_count: 11
+checks:
+- id: REQUIRED_DOCUMENT_SET
+  result: PASS
+  detail: 11 of 11 required guides/notes present
+- id: ARCHITECTURE_TERMS
+  result: PASS
+  detail: Python Runtime, Go/Gin transport, Ant Design Pro Simple, go:embed, and LOCAL_STDIO
+    are documented
+- id: BOUNDARY_TERMS
+  result: PASS
+  detail: Pilot, activation, CON-002, preserve-in-place, and version-transition boundaries
+    are explicit
+- id: ABSOLUTE_PROJECT_PATH_LEAK
+  result: PASS
+  matches: 0
+- id: PROJECT_SPECIFIC_LITERAL_LEAK
+  result: PASS
+  matches: 0
+- id: SECRET_BODY_EXPOSURE
+  result: PASS
+  matches: 0
+- id: UNSUPPORTED_ACTIVATION_OR_RESOLUTION_CLAIM
+  result: PASS
+  matches: 0
+result: PASS

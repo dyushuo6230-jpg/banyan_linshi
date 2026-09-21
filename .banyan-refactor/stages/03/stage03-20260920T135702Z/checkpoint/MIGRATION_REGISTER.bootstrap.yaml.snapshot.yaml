@@ -1,0 +1,280 @@
+schema_version: bootstrap-v1
+charter_version: 1.9.1
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  run_id: stage02-20260920T131746Z
+  future_canonical_path: .banyan/migrations/MIGRATION_REGISTER.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+  future_migration:
+    required: true
+    owner_stage: 02/04
+    sequence:
+    - capture bootstrap source hash and source run id
+    - migrate to frozen canonical .banyan/migrations paths
+    - record migration timestamp and target hash
+    - validate lineage and content
+    - make bootstrap READ_ONLY_ARCHIVE_OR_REFERENCE
+    source_hash_required: true
+    target_hash_required: true
+    validation_required: true
+    bootstrap_after_migration: READ_ONLY_ARCHIVE_OR_REFERENCE
+refactor:
+  current_stage: '02'
+stages:
+  '00':
+    status: COMPLETED
+    baseline_commit: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    sub_stages:
+      00-A: COMPLETED
+      00-B: COMPLETED
+    planned_artifacts:
+    - BASELINE_MANIFEST.yaml
+    - PROTECTED_PATHS_MANIFEST.yaml
+    - DISCOVERY_SCOPE_BASELINE.yaml
+    - CHECKPOINT_RECORD.yaml
+    - FILE_HASHES.sha256
+    - PRE_STAGE_GIT_STATUS.txt
+    - POST_STAGE_GIT_STATUS.txt
+    - BANYAN_REFACTOR_TRACE.bootstrap.yaml
+    actual_artifacts:
+    - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+    - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+    - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+    - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+    - stages/00/stage00-precheck-20260920T083254Z/ACCEPTANCE_REPORT.md
+    - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+    - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      results:
+        V00-01: PASS
+        V00-02: PASS
+        V00-03: PASS
+        V00-04: PASS
+        V00-05: PASS
+        V00-06: PASS
+        V00-07: PASS
+        V00-08: PASS
+        V00-09: PASS
+        V00-10: PASS
+        V00-11: PASS
+        V00-12: PASS
+        V00-13: PASS
+        V00-14: PASS
+        V00-15: PASS
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+      qualification: Exact user-approved PARTIAL_APPROVED recovery exception; final
+        sealing required
+    rollback_point: CHECKPOINT-stage00-precheck-20260920T083254Z
+    open_risks:
+    - id: R00-SECRET-001
+      status: USER_ACCEPTED
+      description: Only the 13 explicitly approved ignored local environment configurations
+        have no independent Banyan content backup. If lost, the Stage 00 checkpoint
+        cannot restore their contents.
+      scope:
+      - nunu-go-api/config/admin/local.yml
+      - nunu-go-api/config/admin/test.yml
+      - nunu-go-api/config/h5-online/local.yml
+      - nunu-go-api/config/h5/local.yml
+      - nunu-go-api/config/h5/test.yml
+      - nunu-go-api/config/home/local.yml
+      - nunu-go-api/config/mall-online/local.yml
+      - nunu-go-api/config/mall-online/prod.yml
+      - nunu-go-api/config/mall-online/test.yml
+      - nunu-go-api/config/mall/local.yml
+      - nunu-go-api/config/mall/test.yml
+      - nunu-go-api/config/merchant/local.yml
+      - nunu-go-api/config/merchant/test.yml
+    next_stage_handoff: stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: Stage 01 Entry Gate
+    recovery_coverage: PARTIAL_APPROVED
+    resume_history:
+    - event: PRECHECK_BLOCKED
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/PRECHECK_BLOCKED.md
+    - event: USER_APPROVED_EXACT_13_PATH_EXCEPTION
+      evidence: stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+    - event: RESUMED_SAME_RUN
+      baseline_recaptured: false
+      original_state_unchanged: true
+  '01':
+    status: COMPLETED
+    run_id: stage01-20260920T091426Z
+    resume_case: A
+    resumed_from_step: '01.2'
+    actual_artifacts:
+    - stages/01/stage01-20260920T091426Z/AI_ASSET_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/LEGACY_CLASSIFICATION_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+    - stages/01/stage01-20260920T091426Z/DISCOVERY_COVERAGE_REPORT.yaml
+    - stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml
+    - stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml
+    - stages/01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+    - stages/01/stage01-20260920T091426Z/CHECKPOINT_RECORD.yaml
+    - stages/01/stage01-20260920T091426Z/ACCEPTANCE_REPORT.md
+    - stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      evidence: stages/01/stage01-20260920T091426Z/evidence/VALIDATION_RESULTS.yaml
+      results:
+        V01-01: PASS
+        V01-02: PASS
+        V01-03: PASS
+        V01-04: PASS
+        V01-05: PASS
+        V01-06: PASS
+        V01-07: PASS
+        V01-08: PASS
+        V01-09: PASS
+        V01-10: PASS
+        V01-11: PASS
+        V01-12: PASS
+        V01-13: PASS
+        V01-14: PASS
+        V01-15: PASS
+        V01-16: PASS
+        V01-17: PASS
+        V01-18: PASS
+    open_risks:
+    - id: R00-SECRET-001
+      status: USER_ACCEPTED
+      recovery_coverage: PARTIAL_APPROVED
+      scope:
+      - nunu-go-api/config/admin/local.yml
+      - nunu-go-api/config/admin/test.yml
+      - nunu-go-api/config/h5-online/local.yml
+      - nunu-go-api/config/h5/local.yml
+      - nunu-go-api/config/h5/test.yml
+      - nunu-go-api/config/home/local.yml
+      - nunu-go-api/config/mall-online/local.yml
+      - nunu-go-api/config/mall-online/prod.yml
+      - nunu-go-api/config/mall-online/test.yml
+      - nunu-go-api/config/mall/local.yml
+      - nunu-go-api/config/mall/test.yml
+      - nunu-go-api/config/merchant/local.yml
+      - nunu-go-api/config/merchant/test.yml
+      description: No independent backup of these 13 secret bodies; preserved only
+        in current local environment
+    - id: R01-PROVENANCE
+      status: ROUTED
+      owner_candidate: 03/09/10
+      description: Individual AI authorship, exact generation lineage and byte reproducibility
+        not established; no delete/regenerate authorization
+    - id: R01-PRECEDENCE
+      status: ROUTED
+      owner_candidate: 02/05/07/12
+      description: CON-001/002 require future architecture/freshness/override handling
+        before compatibility activation; Stage 01 does not select winner
+    - id: R01-LOCAL-EVIDENCE
+      status: OPEN
+      description: Control artifacts remain uncommitted local evidence, not independent
+        off-machine backup
+    - id: R01-EXTERNAL-ARCHIVE-DRIFT
+      status: SAFE_DISCOVERY_DRIFT
+      description: Root .banyan-refactor.zip disappeared after successful resume precheck;
+        origin unknown, no executor deletion/move/write. Original accepted Stage 00
+        artifacts and checkpoints still hash-verified.
+      evidence: evidence/EXTERNAL_ARCHIVE_DRIFT.json
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/01/stage01-20260920T091426Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: Stage 02 Entry Gate; no execution authorization
+    next_stage_entry_gate: PASS
+    execution_stopped_after_stage: '01'
+  '02':
+    status: COMPLETED
+    run_id: stage02-20260920T131746Z
+    design_state: CANDIDATE_ONLY
+    actual_artifacts:
+    - stages/02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml
+    - stages/02/stage02-20260920T131746Z/CONTRACT_CHAIN_DESIGN.md
+    - stages/02/stage02-20260920T131746Z/CORE_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/CORE_BOUNDARY_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/PROJECT_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/PROJECT_INSTANCE_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/PROVIDER_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/PROVIDER_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/COMPATIBILITY_CANDIDATES.yaml
+    - stages/02/stage02-20260920T131746Z/COMPATIBILITY_LAYER_CANDIDATE.md
+    - stages/02/stage02-20260920T131746Z/ASSET_BOUNDARY_MAP.jsonl
+    - stages/02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl
+    - stages/02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml
+    - stages/02/stage02-20260920T131746Z/CONFLICT_RESOLUTION_PLAN.md
+    - stages/02/stage02-20260920T131746Z/ARCHITECTURE_DECISION_RECORDS.yaml
+    - stages/02/stage02-20260920T131746Z/AI_RUNTIME_COST_GOVERNANCE_DESIGN.md
+    - stages/02/stage02-20260920T131746Z/ACCEPTANCE_REPORT.md
+    - stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    validation:
+      overall: PASS
+      results:
+        V02-01: PASS
+        V02-02: PASS
+        V02-03: PASS
+        V02-04: PASS
+        V02-05: PASS
+        V02-06: PASS
+        V02-07: PASS
+        V02-08: PASS
+        V02-09: PASS
+        V02-10: PASS
+        V02-11: PASS
+        V02-12: PASS
+        V02-13: PASS
+        V02-14: PASS
+        V02-15: PASS
+      evidence: stages/02/stage02-20260920T131746Z/evidence/VALIDATION_RESULTS.yaml
+    source_stage01_run: stage01-20260920T091426Z
+    source_stage01_gate: PASS
+    open_risks:
+    - id: R02-PURITY-001
+      severity: HIGH
+      owner_candidate: 03/04/19
+      next_action: Stage 03 contract review plus second-project fixture and Stage
+        19 portability/no-loss validation before final Core acceptance.
+    - id: R02-SOURCE-002
+      severity: HIGH
+      owner_candidate: 03/09/10
+      next_action: Freeze source-role schema, map provenance and test regeneration
+        before any replace/archive decision.
+    - id: R02-COST-003
+      severity: MEDIUM
+      owner_candidate: 05/15/16/19
+      next_action: Define cost/quality telemetry and benchmark real workloads, then
+        set thresholds with controlled configuration.
+    - id: R02-SECRET-004
+      severity: HIGH
+      owner_candidate: ALL_LATER_STAGES
+      next_action: Preserve in place, no body read/hash/copy/write/delete/commit;
+        recovery coverage remains PARTIAL_APPROVED.
+    - id: R02-LOCAL-005
+      severity: MEDIUM
+      owner_candidate: ALL_LATER_STAGES
+      next_action: Preserve sealed evidence and classify freshness before each new
+        stage; do not recreate or attribute zip deletion without proof.
+    - id: CON-001
+      severity: HIGH
+      owner_candidate: '05'
+      next_action: Stage 02 map precedence and Stage 05 preserve decision authorization
+        semantics; Stage 07 regression covers project overrides.
+    - id: CON-002
+      severity: HIGH
+      owner_candidate: '12'
+      next_action: Stage 02 define freshness/source roles; Stage 12 use authoritative
+        register and scoped confirmed records; preserve mismatches as evidence.
+    recovery_coverage: PARTIAL_APPROVED
+    next_stage_handoff: stages/02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+    next_gate: 'Stage 03: PASS_FOR_CONTRACT_DESIGN; execution not authorized'
+    activation_mode: 'OFF'
+    architecture_frozen: false

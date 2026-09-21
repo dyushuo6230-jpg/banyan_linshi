@@ -1,0 +1,37 @@
+schema_version: stage17-v1
+result: PASS
+adapter: banyan.cursor.adapter.CursorPilotAdapter
+chain:
+  - Cursor Adapter
+  - Control Plane
+  - Runtime API
+  - Permission Policy
+  - Evidence Trace
+capabilities:
+  owns_permission_policy: false
+  owns_canonical_truth: false
+  direct_git_mutation: false
+  direct_project_write: false
+  calls_control_plane: true
+runtime_preflight:
+  result: ALLOW
+  executed: false
+  risk_class: PROTECTED_WRITE
+  decision_level: L3
+  limitation: CURRENT_PROJECT_DRY_RUN_ONLY
+  pilot_scope_authorized: true
+  pilot_allowed_glob: .banyan/**
+  general_project_write_allowed: false
+  final_activation_allowed: false
+  stage_gate_ref: stage17-explicit-gate
+  checkpoint_bound: true
+  trace_emitted: true
+authorization:
+  source: USER-STAGE17-PILOT-REQUEST
+  ui_click_used_as_authorization: false
+static_checks:
+  cursor_direct_runtime_import: 0
+  cursor_git_adapter_import: 0
+  cursor_subprocess_path: 0
+  cursor_filesystem_write_path: 0
+runtime_scoped_gate_owns_pilot_decision: true

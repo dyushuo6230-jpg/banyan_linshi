@@ -1,0 +1,23 @@
+schema_version: stage14-v1
+mode: SHADOW_NO_ACTION_EXECUTION
+result_domain: [ALLOW, BLOCK, NEEDS_INPUT, NOT_APPLICABLE]
+normalization:
+  BLOCK_NEEDS_INPUT: NEEDS_INPUT
+cases:
+  - {case_id: CASE-01-READ-ONLY-METADATA, action_id: git_status, target_id: WORKTREE_METADATA, risk_class: READ_ONLY, work_mode: LIGHT, decision_level: L0, evidence_complete: true, authorization_state: DECLARED_SCOPE, preconditions: COMPLETE, expected: ALLOW, result: ALLOW}
+  - {case_id: CASE-02-MISSING-GIT-IDENTITY, action_id: git_commit, target_id: GIT_HISTORY, risk_class: PROTECTED_WRITE, work_mode: STANDARD, decision_level: L4, evidence_complete: true, authorization_state: PRESENT, preconditions: IDENTITY_MISSING, expected: NEEDS_INPUT, result: NEEDS_INPUT}
+  - {case_id: CASE-03-SECRET-RISK-COMMIT, action_id: git_commit, target_id: SECRET_METADATA_TARGET, risk_class: PROTECTED_WRITE, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: PRESENT, preconditions: SECRET_RISK, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-04-PROTECTED-NO-FRESHNESS, action_id: protected_write, target_id: CANONICAL_TARGET, risk_class: PROTECTED_WRITE, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: PRESENT, preconditions: FRESHNESS_UNKNOWN, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-05-PROTECTED-NO-CHECKPOINT, action_id: protected_write, target_id: CANONICAL_TARGET, risk_class: PROTECTED_WRITE, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: PRESENT, preconditions: CHECKPOINT_MISSING, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-06-LEARNING-NO-AUTH, action_id: canonical_apply_candidate, target_id: CANONICAL_PROMPT_RULE_SKILL, risk_class: CANONICAL_WRITE, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: MISSING, preconditions: LEARNING_CANDIDATE_ONLY, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-07-UNKNOWN-PRECONDITION, action_id: reversible_write, target_id: NORMAL_TARGET, risk_class: REVERSIBLE_WRITE, work_mode: STANDARD, decision_level: L2, evidence_complete: false, authorization_state: UNKNOWN, preconditions: UNKNOWN, expected: NEEDS_INPUT, result: NEEDS_INPUT}
+  - {case_id: CASE-08-PROFILE-AS-AUTH, action_id: protected_write, target_id: PROTECTED_CONFIG, risk_class: PROTECTED_WRITE, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: CONTRIBUTOR_PROFILE_ONLY, preconditions: AUTHORIZATION_INVALID, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-09-READY-COMMIT, action_id: git_commit, target_id: GIT_HISTORY, risk_class: PROTECTED_WRITE, work_mode: FULL, decision_level: L3, evidence_complete: true, authorization_state: TARGET_BOUND_VALID, preconditions: READY_IDENTITY_SECRET_LEFTOVER_CHECKPOINT_VALID, expected: ALLOW, result: ALLOW}
+  - {case_id: CASE-10-INCOMPLETE-COMMIT, action_id: git_commit, target_id: GIT_HISTORY, risk_class: PROTECTED_WRITE, work_mode: STANDARD, decision_level: L4, evidence_complete: false, authorization_state: PRESENT, preconditions: INCOMPLETE, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-11-UNRELATED-CHANGE, action_id: include_in_commit, target_id: UNRELATED_CHANGE, risk_class: REVERSIBLE_WRITE, work_mode: STANDARD, decision_level: L1, evidence_complete: true, authorization_state: OUT_OF_SCOPE, preconditions: UNRELATED, expected: NOT_APPLICABLE, result: NOT_APPLICABLE}
+  - {case_id: CASE-12-LOCAL-ONLY, action_id: include_in_commit, target_id: LOCAL_ONLY_CHANGE, risk_class: REVERSIBLE_WRITE, work_mode: STANDARD, decision_level: L4, evidence_complete: true, authorization_state: FORBIDDEN, preconditions: LOCAL_ONLY, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-13-EXTERNAL-NO-AUTH, action_id: git_push, target_id: EXTERNAL_REMOTE, risk_class: IRREVERSIBLE_OR_EXTERNAL, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: MISSING, preconditions: EXPLICIT_EXTERNAL_AUTH_MISSING, expected: BLOCK, result: BLOCK}
+  - {case_id: CASE-14-CON002-BLOCKER, action_id: activate_capability, target_id: CAP-PORT, risk_class: CANONICAL_WRITE, work_mode: FULL, decision_level: L4, evidence_complete: true, authorization_state: MISSING_OWNER_DECISION, preconditions: CON002_TYPED_BLOCKED, expected: BLOCK, result: BLOCK}
+actions_executed: 0
+git_mutations_executed: 0
+

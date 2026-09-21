@@ -1,0 +1,239 @@
+{
+  "result": "PASS",
+  "upstream_run": "stage00-precheck-20260920T083254Z",
+  "entries": [
+    {
+      "path": "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml",
+      "sha256": "4fe9d5da1bd26d53570af635f8c5be4794452d5676bdbce7e7966a099a5bee21"
+    },
+    {
+      "path": "../../../MIGRATION_REGISTER.bootstrap.yaml",
+      "sha256": "3080a90fb8b11a594600de3d513ad6a9b4ff60a7bbde9a19d7b6bd5c24b763ee"
+    },
+    {
+      "path": "ACCEPTANCE_REPORT.md",
+      "sha256": "c4331970c99b28b25e61ef3e8ca5bfa8863f079e8ff7ba5ab60bc12eda2229a0"
+    },
+    {
+      "path": "BASELINE_MANIFEST.yaml",
+      "sha256": "3928acbd5d2e7c7323a2044543edb34c084b051faed1dc750cf61b7d0a989721"
+    },
+    {
+      "path": "CHECKPOINT_RECORD.yaml",
+      "sha256": "973be81a863508b549dd20b7d39c391407b29f46aed74603d9c669d60cd8d0c7"
+    },
+    {
+      "path": "DISCOVERY_SCOPE_BASELINE.yaml",
+      "sha256": "a10f3d05f24ebf3712f6dd46f4b5c8adcbbd1e9331c456c524ea9cb90f737067"
+    },
+    {
+      "path": "FILE_HASHES.sha256",
+      "sha256": "9b9bf001a03004f9cbfe55b6c077b153a001e014fb719e44ee772f150398a930"
+    },
+    {
+      "path": "POST_STAGE_GIT_STATUS.txt",
+      "sha256": "f2f77bbbe837513065a1082f4047a410bc24ce16446a84e94b897fba78c05293"
+    },
+    {
+      "path": "PRE_STAGE_GIT_STATUS.txt",
+      "sha256": "cb9f47cc0f2dec1ae02ecb47032c8fccc1c792c1d1cedfcc908a018ddc0f769d"
+    },
+    {
+      "path": "PROTECTED_PATHS_MANIFEST.yaml",
+      "sha256": "99a7e35598b63becac04548e6ee7417c860ff9a5a7244dab0dc1dcdc7632e73d"
+    },
+    {
+      "path": "checkpoint/RESTORE_INSTRUCTIONS.md",
+      "sha256": "afee22ed4bb13d94d7085b8bc17a4e80d83b74bb726452f3613b5ce3738638d8"
+    },
+    {
+      "path": "checkpoint/ignored-governed.tar",
+      "sha256": "0e4aa8b0838762192f7a2969b2d357d9d6f88024c2d8a4c91aad5a803354aada"
+    },
+    {
+      "path": "checkpoint/untracked.tar",
+      "sha256": "d321195de0a4ab9b82157fd439c16fbb8dbe3b6c4ccf04ac2e7dc7363a680aa8"
+    },
+    {
+      "path": "evidence/ACTUAL_WRITES.txt",
+      "sha256": "6d83fc421832062d0b2c803a949214668ca230150206cc7ab8c9c2b6cab11a53"
+    },
+    {
+      "path": "evidence/CHECKPOINT_INTEGRITY.json",
+      "sha256": "e6801b350bf6d713a15ae8ee38dbc3affb82fc0ab9f7824bf7eda9ce5c93e3b1"
+    },
+    {
+      "path": "evidence/EXCLUSIONS.json",
+      "sha256": "a3f86bc49e5e9efc1b9114fb2dcf5e29b7852947d0a0568ad4ee22ca9e2c0fad"
+    },
+    {
+      "path": "evidence/FILE_HASHES.sha256",
+      "sha256": "9b9bf001a03004f9cbfe55b6c077b153a001e014fb719e44ee772f150398a930"
+    },
+    {
+      "path": "evidence/FILE_INVENTORY.jsonl",
+      "sha256": "1d5c862fcf37a7f2886b5875ab5e6e6f9c0d3ee970e257846a8439611c762312"
+    },
+    {
+      "path": "evidence/FINAL_VERIFICATION.json",
+      "sha256": "9ad627cd8489340bb01f3f5a68f3c07db592aa5b45d34a508cdeeef2e748d63b"
+    },
+    {
+      "path": "evidence/HASH_SCOPE_REPORT.json",
+      "sha256": "e2a66d78713b8e855689b2bf7737e30d3c8582bde13d05c44d4bddbff3b65ae6"
+    },
+    {
+      "path": "evidence/IGNORED_GOVERNED.json",
+      "sha256": "075d814211085f77e826fb73b166c4100fb0aaf39110e6478a20cbf18b840ce2"
+    },
+    {
+      "path": "evidence/MANIFEST_PARSE.json",
+      "sha256": "b9b298b355be1b9061da33a95712cb29d9ce619b0c13ffdf2e3ab3a9389d92c7"
+    },
+    {
+      "path": "evidence/NEXT_STAGE_HANDOFF.yaml",
+      "sha256": "b6d53d2da38713ecd4856e037a7b74813e3bacdbbf28415e27b9ef476aeab609"
+    },
+    {
+      "path": "evidence/POST_PRECHECK_GIT_STATUS.raw",
+      "sha256": "cb9f47cc0f2dec1ae02ecb47032c8fccc1c792c1d1cedfcc908a018ddc0f769d"
+    },
+    {
+      "path": "evidence/PRECHECK_BLOCKED.md",
+      "sha256": "d1dca31ffc0160cf7a5f517d123a5bd1168d6ca2ae84d59d65487122a34ebe24"
+    },
+    {
+      "path": "evidence/PRE_ACCEPTANCE_VALIDATION.yaml",
+      "sha256": "410d7820a9f8e7e1f1a228e603f73d4f051c0607edd9ffe3ae694a9e4006b4fb"
+    },
+    {
+      "path": "evidence/PRE_STAGE_GIT_STATUS.raw",
+      "sha256": "cb9f47cc0f2dec1ae02ecb47032c8fccc1c792c1d1cedfcc908a018ddc0f769d"
+    },
+    {
+      "path": "evidence/ROLLBACK_POINT.yaml",
+      "sha256": "cfac569518cf1f26630dd3cf9ea49d0ef78a51d6be5df4c389b9a9a3fdc9dcaa"
+    },
+    {
+      "path": "evidence/SAFETY_COMPARISON.json",
+      "sha256": "c1dc0c6ad011871bedfa6dd203811af44529178c905c95216bfeaf92c7696498"
+    },
+    {
+      "path": "evidence/SECRET_METADATA.json",
+      "sha256": "57d1f2e84ad90a44ed9907489f26ad017e2c782175ae6c1224397f5006d77692"
+    },
+    {
+      "path": "evidence/TOPOLOGY.json",
+      "sha256": "45f3b9ab5dcece922c1b9cf6d95cb2370d8b985badfcd368e9ab8bd93f566a46"
+    },
+    {
+      "path": "evidence/USER_APPROVAL.json",
+      "sha256": "bfeb47694231e94d4dec30dc65ceb3edd218adfeddf3a52a89eef07d01f0f41d"
+    },
+    {
+      "path": "evidence/VALIDATION_PRECHECK.json",
+      "sha256": "0531ad10cfab4e57755f5bb368f619d2c845f24c2f6f8a363a83d33d1d1cacc1"
+    },
+    {
+      "path": "evidence/VALIDATION_RESULTS.yaml",
+      "sha256": "4cec944fcfa38da63d36e0af96cfa80ec8746a6d2aea8f6f4f4bd1847f8d2639"
+    },
+    {
+      "path": "evidence/branch.txt",
+      "sha256": "c9d51eacfe347d70a2101dd42c29d1ef13690a99d7e6a9dd537a955af3e2e909"
+    },
+    {
+      "path": "evidence/git_operation.txt",
+      "sha256": "652faf8687b25a69858d9901451d6210e2c74c7036708d3457b8ab932673964d"
+    },
+    {
+      "path": "evidence/head.txt",
+      "sha256": "bd808fc952cb4838fcc11343c2401f30fd26e3872692c2701d592d771e374bbd"
+    },
+    {
+      "path": "evidence/ignored-governed-candidates.json",
+      "sha256": "bc0aebdfe822fc104280b09a4997f2ae10b383e39379a36eecf65bd5facd002a"
+    },
+    {
+      "path": "evidence/ignored.z",
+      "sha256": "92499163256b4949c4cd9d77de89a5d766b218fd6317fd3bd156c6425cdf4274"
+    },
+    {
+      "path": "evidence/index.z",
+      "sha256": "429e50fcdc0a9df36e0a245d2bc7315256043d53c8ca2222929961c6fb63a80f"
+    },
+    {
+      "path": "evidence/lfs-version.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/pack-check.json",
+      "sha256": "6cdf75bccbf0ac24e6a220d6ae641fa435b4c5fd32359dc91e7bd27c38aa17dd"
+    },
+    {
+      "path": "evidence/pack-resume-check.json",
+      "sha256": "437a7675b6c80e26c49cade868388f9aa938fbab9b19a53c104c6493b239ce05"
+    },
+    {
+      "path": "evidence/precheck.json",
+      "sha256": "215588b2e949d145033f30f543f92491e20e31b9518a5ff8212b27a79c833d1b"
+    },
+    {
+      "path": "evidence/prepare-summary.json",
+      "sha256": "e2a66d78713b8e855689b2bf7737e30d3c8582bde13d05c44d4bddbff3b65ae6"
+    },
+    {
+      "path": "evidence/remotes.txt",
+      "sha256": "4a2dfa4847cc3e691abb38d206f62c5059c81da77246258010d54f2703883be7"
+    },
+    {
+      "path": "evidence/repo_root.txt",
+      "sha256": "4848e0cd2dcffb8c1cddbac2149cbf798a1b9328037d057b9582ac5c8809c7f1"
+    },
+    {
+      "path": "evidence/resume-git-evidence.json",
+      "sha256": "2966c94e7522f77d78deeeb56046c81403871e4b585bdd7a10ecb229bc561b9d"
+    },
+    {
+      "path": "evidence/secret-recovery-metadata.json",
+      "sha256": "e5f4cf3d21ca23733d8c7b2752dd73cc80ff9a0daa0ba38a4345c8b81fc6b678"
+    },
+    {
+      "path": "evidence/sparse.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/stage00_execution.py",
+      "sha256": "658b7e1bb87fadffd3678342461785d9ecfec80244c88ea247ae7817dfb60fc2"
+    },
+    {
+      "path": "evidence/status.z",
+      "sha256": "3d4aecc8e3c2196ec084814a24fc789470d603ddbc2e6886ed55b5869453a3e0"
+    },
+    {
+      "path": "evidence/submodule.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/topology-precheck.json",
+      "sha256": "0863d2a8c62b9a37a2574c70cde75cd7c5ba37e48ab9f2e749d81d376dcb6211"
+    },
+    {
+      "path": "evidence/tracked.z",
+      "sha256": "0bae6b97c386cbf673465137b846433a8161879a54f70fef59bf5342d4f398d9"
+    },
+    {
+      "path": "evidence/unmerged.z",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/untracked.z",
+      "sha256": "f6b0b6a279488b05906a9cb26933d42740a07a31cd1772701bd05ec109ca23f3"
+    },
+    {
+      "path": "evidence/worktree.txt",
+      "sha256": "6192f3f4e0a7f4e62c75aeba62608223f619b03d4822ef0cd18bf6da43ce45b9"
+    }
+  ],
+  "note": "Shared bootstrap pre-update bytes are preserved in checkpoint/*.snapshot.yaml for later Stage00 hash resolution; Stage00 evidence is never rewritten."
+}

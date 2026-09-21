@@ -1,0 +1,68 @@
+schema_version: stage18-v1
+run_id: stage18-20260921T062103Z
+result: PASS_STAGE18_MULTI_EDITOR_ADAPTER_COMPATIBILITY
+runtime:
+  implementation: SINGLE_STAGE15_RUNTIME_API
+  policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+  second_runtime_created: false
+  permission_governance_bypassed: false
+protocol:
+  normalized_request: banyan.editor.protocol.AdapterRequest
+  normalized_response: banyan.editor.protocol.AdapterResponse
+  gateway: banyan.editor.protocol.AdapterGateway
+  chain: [Editor, Adapter, Control Plane, Runtime API, Policy, Evidence Trace]
+adapters:
+  cursor:
+    implementation: banyan.editor.adapters.CursorAdapter
+    request_shape: [request_id, command, arguments, context, evidence_refs]
+    result: PASS
+  codex:
+    implementation: banyan.editor.adapters.CodexAdapter
+    request_shape: [id, operation, input, metadata, evidence_refs]
+    result: PASS
+  generic_editor:
+    implementation: banyan.editor.adapters.GenericEditorAdapter
+    request_shape: [request_id, action, payload, provenance, evidence_refs]
+    result: PASS
+compatibility:
+  request_transformation: PASS
+  equivalent_runtime_status: PASS
+  runtime_call: PASS
+  trace: PASS_36_EVENTS_VALID
+  evidence_refs: PASS
+  provenance: PASS_UNKNOWN_PRESERVED
+  typed_failure_handling: PASS
+  permission_boundary: PASS_RUNTIME_FAIL_CLOSED
+  semantic_commit_plan_boundary: PASS_PLAN_NOT_AUTHORIZATION
+  dry_run_boundary: PASS_NO_COMMIT
+  git_safety: PASS_NO_MUTATION
+formal_matrix:
+  requests: 24
+  ok: 18
+  blocked: 3
+  failed_as_designed: 3
+  blocked_action: git_mutation
+  failure_case: invalid_trace_pagination
+adapter_authority:
+  policy_permission_owned: false
+  canonical_modification_owned: false
+  direct_git_mutation: false
+  identity_modification: false
+  secret_body_access: false
+safety:
+  head_unchanged: true
+  index_unchanged: true
+  staged_count_unchanged: true
+  unstaged_count_unchanged: true
+  dot_banyan_modified: false
+  project_documents_migrated: false
+  legacy_rescanned: false
+tests:
+  automated: 11
+  passed: 11
+  failed: 0
+evidence:
+  formal_run: evidence/FORMAL_ADAPTER_RUN.json
+  trace: evidence/EVIDENCE_TRACE.jsonl
+  tests: evidence/TEST_RESULTS.txt
+  pilot_integrity: evidence/PILOT_INTEGRITY.yaml

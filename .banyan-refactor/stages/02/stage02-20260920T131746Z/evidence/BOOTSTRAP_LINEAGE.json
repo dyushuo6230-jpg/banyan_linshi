@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "bootstrap_only": true,
+  "history_preserved": true,
+  "stage01_shared_seal_resolves_to": "checkpoint/*.snapshot.yaml",
+  "lineage": [
+    {
+      "path": "../../../MIGRATION_REGISTER.bootstrap.yaml",
+      "source_run_id": "stage01-20260920T091426Z",
+      "target_run_id": "stage02-20260920T131746Z",
+      "source_snapshot": "checkpoint/MIGRATION_REGISTER.bootstrap.yaml.snapshot.yaml",
+      "source_sha256": "c51946912395a24a9a1901ec0206e0eb86a253e4a932e1883104bc92a7463910",
+      "target_sha256": "2ccb6147e052ac532a15e6c252fe3424d854dfd413c880da91be0d8066c3db4f",
+      "source_snapshot_read_only": true,
+      "active_writable_truth": "../../../MIGRATION_REGISTER.bootstrap.yaml"
+    },
+    {
+      "path": "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml",
+      "source_run_id": "stage01-20260920T091426Z",
+      "target_run_id": "stage02-20260920T131746Z",
+      "source_snapshot": "checkpoint/BANYAN_REFACTOR_TRACE.bootstrap.yaml.snapshot.yaml",
+      "source_sha256": "bcbea86c8ea1c307e9686a80f5791413105de8958db21d14d7d0f32aabe32c6d",
+      "target_sha256": "0844a376fb74742af6b502c6705598a6f0032de935b9863cd43d122d3471c69e",
+      "source_snapshot_read_only": true,
+      "active_writable_truth": "../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+    }
+  ],
+  "canonical_writable_truth_active": false,
+  "stage03_started": false
+}

@@ -1,0 +1,23 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+execution: SIMULATED_ONLY
+canonical_apply_executed: false
+preview:
+  capability_mappings: 35
+  asset_dispositions: 1026
+  artifact_mappings: 425
+  operational_indexes: 289
+  reference_edges: 108
+reference_check:
+  keep: 102
+  blocked: 4
+  ignored_non_references: 2
+  strategy_missing: 0
+freshness:
+  status: BLOCKED_BY_CON_002_FOR_REAL_APPLY
+  shadow_evaluation: COMPLETE
+authorization: NO_CANONICAL_APPLY_AUTHORIZATION_IN_STAGE07
+reconciliation: NO_SOURCE_CHANGES; SHADOW OUTPUTS ONLY
+rollback: DELETE_STAGE07_SHADOW_RUN_AND_RESTORE_BOOTSTRAP_POINTERS_IF_REQUIRED

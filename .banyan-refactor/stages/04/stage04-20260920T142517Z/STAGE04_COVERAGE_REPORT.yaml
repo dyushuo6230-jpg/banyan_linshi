@@ -1,0 +1,18 @@
+schema_version: stage04-v1
+coverage:
+  source_roles: 9/9
+  capability_overlays: 35/35
+  provider_ports: 35/35
+  contributor_identity_keys: 16/16
+  secret_metadata_paths_present: 13/13
+collisions:
+  shared_path_role_bindings: EXPLICIT
+  unresolved_mapping_collisions: 0
+hard_metrics:
+  UNMAPPED_SOURCE_ROLE: 0
+  SOURCE_MAPPING_WITHOUT_ROLE: 0
+  PROJECT_SPECIFIC_VALUE_IN_GENERIC_CORE_SCHEMA: 0
+  PHYSICAL_RELAYOUT_REQUIRED_BY_DEFAULT: 0
+  PROFILE_FIELD_USED_AS_AUTHORIZATION: 0
+  UNKNOWN_VARIABLE_SILENTLY_DEFAULTED: 0
+qualification: DESIGN_COMPLETE_NOT_ACTIVATED

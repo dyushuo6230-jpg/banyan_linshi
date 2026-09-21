@@ -1,0 +1,25 @@
+---
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+checkpoint: CHECKPOINT-stage00-precheck-20260920T083254Z
+source_snapshots:
+- path: ".banyan-refactor/stages/01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl"
+  sha256: e50dc6144e8505031d28bd451fe03f7651b191ab62de386e8d8014cb62c6f8e2
+- path: ".banyan-refactor/stages/01/stage01-20260920T091426Z/AI_ASSET_INVENTORY.jsonl"
+  sha256: 7e3e1885e04621615ac311ee2b0aef16b414c1047d58283842b16f45ad4686ca
+- path: ".banyan-refactor/stages/01/stage01-20260920T091426Z/AI_GENERATED_ARTIFACT_INVENTORY.jsonl"
+  sha256: 061ecd5067ad3c1d58863725ed4ae58b4f66bb5b4c65242e5b8111e3aa490e97
+- path: ".banyan-refactor/stages/01/stage01-20260920T091426Z/OPERATIONAL_ARTIFACT_INVENTORY.jsonl"
+  sha256: f5db26dd36fd8785a1317a274f34b3f895a68da95db9bd3e307f6e0275d93e02
+- path: ".banyan-refactor/stages/01/stage01-20260920T091426Z/evidence/REFERENCE_EDGES.jsonl"
+  sha256: 7a0e0c264a1fb87b58ff7d0b4b6d74fbfa3fe540ec2b42a88de3cec8587b1631
+mapping_snapshot: LEGACY_CAPABILITY_MIGRATION_MATRIX.yaml
+reference_graph_snapshot: REFERENCE_MIGRATION_MAP.jsonl
+legacy_source_mutation: false
+canonical_apply_executed: false
+recovery_coverage: PARTIAL_APPROVED
+qualification: 13 sensitive paths remain metadata-only and excluded from content/hash
+  proof
+single_truth_after_rollback: LEGACY_REPOSITORY

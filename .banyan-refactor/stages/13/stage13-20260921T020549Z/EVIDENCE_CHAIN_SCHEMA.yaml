@@ -1,0 +1,16 @@
+schema_version: stage13-v1
+schema_id: banyan.evidence.chain.v1
+chain_required_fields: [chain_id, subject_id, steps, terminal_claim, terminal_classification]
+step_required_fields: [step_id, input_evidence_refs, operation, output_evidence_ref, classification, provenance]
+allowed_transitions:
+  - SOURCE_TO_OBSERVATION
+  - OBSERVATION_TO_DERIVED_FACT
+  - OBSERVATION_TO_VALIDATION
+  - VALIDATION_TO_RECOMMENDATION
+  - EVIDENCE_TO_HUMAN_DECISION
+forbidden_transitions:
+  - INFERENCE_DIRECTLY_TO_OBSERVED_FACT
+  - RECOMMENDATION_TO_HUMAN_DECISION_WITHOUT_EXPLICIT_DECISION
+  - EVIDENCE_TO_AUTHORIZATION
+every_derived_step_traceable: true
+

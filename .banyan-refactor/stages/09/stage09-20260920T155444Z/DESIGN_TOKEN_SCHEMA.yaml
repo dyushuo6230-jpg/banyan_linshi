@@ -1,0 +1,16 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+token_types: [SOURCE_TOKEN, DERIVED_TOKEN, RECOMMENDED_TOKEN]
+required_fields: [token_id, token_type, category, value, source_refs, confidence, authority, scope, provenance]
+authority_by_type:
+  SOURCE_TOKEN: SOURCE_EVIDENCE
+  DERIVED_TOKEN: INFERENCE
+  RECOMMENDED_TOKEN: RECOMMENDATION
+rules:
+  sampled_color_is_canonical_token: false
+  derived_token_must_identify_derivation: true
+  recommended_token_must_be_marked: true
+  project_canonical_promotion_requires_stage08_governance: true
+tokens: []

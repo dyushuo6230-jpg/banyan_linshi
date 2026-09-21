@@ -1,0 +1,2007 @@
+schema_version: stage02-design-candidate-v1
+stage: '02'
+run_id: stage02-20260920T131746Z
+source_stage01_run: stage01-20260920T091426Z
+status: CANDIDATE_ONLY
+not_frozen:
+- final contract schema
+- physical layout
+- runtime implementation
+- provider selection
+- source role
+- migration
+count: 35
+capabilities:
+- capability_id: CAP-AUTH
+  name: 工作范围与授权
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/AI_DOCUMENTATION_GUIDE.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-b6851c3fc34037
+  current_behavior:
+  - 文档阶段限制写域
+  - 代码需 ALLOW_CODE_CHANGES 与 Ready 批次
+  - 提交、推送、发布需要授权
+  inputs: &id001
+  - 用户范围
+  - 批次状态
+  outputs: &id002
+  - 允许动作与阻塞说明
+  guards: &id003
+  - 不写凭证
+  - 不把现码当未来需求
+  failure_semantics: &id004
+  - 缺授权停止目标动作，保留诊断
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: ActionAuthorization
+    inputs: *id001
+    outputs: *id002
+    guards: *id003
+    failure_semantics: *id004
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: HumanApprovalEvidence
+  artifact_role_candidate: DecisionEvidence
+  runtime_phase_candidate: PRE_AUTHORIZE
+  project_overlay_candidate: project roles and protected paths
+  migration_risk: Do not infer permission from a legacy prompt or an earlier choice.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '14'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-AUTH
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-AUTH
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 465
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/AI_DOCUMENTATION_GUIDE.md
+    line: 37
+    source_sha256: f9b9d5eeeb1a94e45ed51fc3dca8476ab9011e7351ee1c253fd6f8e6827a4e9f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/AI_DOCUMENTATION_GUIDE.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-PROFILE
+  name: 项目变量与接入模式
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/PROJECT_VARIABLES.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-a193954b4b2e1e
+  current_behavior:
+  - 收集变量而不填造 TBD
+  - CURRENT_BASELINE 保护现状兼容
+  - HISTORICAL_REFERENCE 不绑定旧架构
+  inputs: &id005
+  - 项目变量
+  - 仓库事实
+  outputs: &id006
+  - 项目配置候选
+  - 变量迁移关系
+  guards: &id007
+  - 新项目与已有项目区分
+  failure_semantics: &id008
+  - 未知保持 TBD
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: VariableResolution
+    inputs: *id005
+    outputs: *id006
+    guards: *id007
+    failure_semantics: *id008
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ProjectFactReader
+  artifact_role_candidate: ProjectVariableMap
+  runtime_phase_candidate: LOAD_CONTEXT
+  project_overlay_candidate: project variables and migration defaults
+  migration_risk: TBD values cannot be silently defaulted.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '04'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-PROFILE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-PROFILE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 243
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/PROJECT_VARIABLES.md
+    line: 1
+    source_sha256: b34f4826eb47b652bbcc3efd61620a64ba9795c0d06ed91a3131c340cc0364b4
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/PROJECT_VARIABLES.md
+  candidate_action: GENERALIZE
+  open_question: How are legacy variables mapped/derived/defaulted without silently
+    enabling capabilities?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-INTAKE
+  name: 来源投放与冻结
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - 登记批次/来源/冲突
+  - 区分事实、推断、候选
+  - 冻结范围后才允许 PRD 准入
+  inputs: &id009
+  - 原始资料
+  - 来源批次
+  outputs: &id010
+  - 来源索引
+  - 问题/决策/冲突清单
+  guards: &id011
+  - 原件不改写
+  - 不从静态设计推断后端
+  failure_semantics: &id012
+  - P0/P1 阻塞后继必经阶段
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: SourceIntake
+    inputs: *id009
+    outputs: *id010
+    guards: *id011
+    failure_semantics: *id012
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ProjectSourceReader
+  artifact_role_candidate: SourceRecord
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: source batches and document roots
+  migration_risk: Historic source status needs a project mapping.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '07'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-INTAKE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-INTAKE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1047
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1088
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-PRD
+  name: PRD 生命周期与评审
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - 准入审计
+  - 按模块起草
+  - 明确批准
+  - 保留历史基线
+  inputs: &id013
+  - 来源/DEC
+  - 验收场景
+  outputs: &id014
+  - PRD
+  - Given/When/Then
+  guards: &id015
+  - PRD 不混技术细节
+  - 未批准不得写 Approved
+  failure_semantics: &id016
+  - 阻塞项保留，不伪升状态
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: RequirementLifecycle
+    inputs: *id013
+    outputs: *id014
+    guards: *id015
+    failure_semantics: *id016
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: CanonicalDocumentReader
+  artifact_role_candidate: RequirementDocument
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: PRD stages and local labels
+  migration_risk: Approval status cannot be inferred from a file path.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '07'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-PRD
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-PRD
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1112
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1132
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1198
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-IDP
+  name: 知情决策协议
+  legacy_source:
+  - .cursor/rules/collaboration-judgment.mdc
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  legacy_asset_ids:
+  - ASSET-32cec01e79dc47
+  - ASSET-03892fdf7d55ec
+  - ASSET-781d67be72a5dd
+  current_behavior:
+  - 解释真实方案与影响
+  - 问题呈现在会话正文
+  - 首次选择不等于应用批准
+  - 已确认项不重复问，失效则复核
+  inputs: &id017
+  - 决策背景
+  - 选择
+  - 约束
+  outputs: &id018
+  - 确认记录
+  - DEC/ADR/CR/UI-DEC
+  guards: &id019
+  - 取消/沉默不当确认
+  - 项目 DEC-042 与通用题数规则分开记录
+  failure_semantics: &id020
+  - 出现新权衡回评审；未确认保持 TBD
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: DecisionSession
+    inputs: *id017
+    outputs: *id018
+    guards: *id019
+    failure_semantics: *id020
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: HumanDecisionChannel
+  artifact_role_candidate: DecisionEvidence
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: DEC-042 five-question project overlay
+  migration_risk: Generic HIGH=1/LOW=2 and project overlay conflict; no winner selected.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '05'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-IDP
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-IDP
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 496
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 222
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  candidate_action: GENERALIZE
+  open_question: How to preserve informed decisions while reconciling generic HIGH=1/LOW=2
+    and project max-five override?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-ARCH
+  name: 架构和模块边界参与门禁
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - 评审状态和应用状态双门禁
+  - 模块边界继承参与模式
+  - Draft 独立批准后进入细化
+  inputs: &id021
+  - PRD
+  - 参与模式
+  - 应用结构
+  outputs: &id022
+  - 架构
+  - MODULE_BOUNDARIES
+  - 技术设计
+  guards: &id023
+  - 口令不自动改参与模式
+  - DIRECT_DRAFT 必须伴随允许 TBD
+  failure_semantics: &id024
+  - 缺决策停止对应生成
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: DesignGate
+    inputs: *id021
+    outputs: *id022
+    guards: *id023
+    failure_semantics: *id024
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: DecisionRegistryReader
+  artifact_role_candidate: ArchitectureDecision
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: current G6/G7 labels and project baseline
+  migration_risk: DIRECT_DRAFT must not bypass approval.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '05'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-ARCH
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-ARCH
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 987
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1229
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1329
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-SCHEMA
+  name: 文档状态与编号
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - 保留负责人、来源、版本、替代关系
+  - 禁止把候选写已确认
+  inputs: &id025
+  - 文档类型
+  - 状态证据
+  outputs: &id026
+  - 元信息与编号
+  guards: &id027
+  - 不能仅因文件存在视为完成
+  failure_semantics: &id028
+  - 状态证据不足保持原态
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: ArtifactStatusAndIdentity
+    inputs: *id025
+    outputs: *id026
+    guards: *id027
+    failure_semantics: *id028
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ArtifactRegistryReader
+  artifact_role_candidate: ArtifactMetadata
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: project numbering namespace
+  migration_risk: ID ownership and Approved/Baselined status need proof.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '03'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-SCHEMA
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-SCHEMA
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 816
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-IDREF
+  name: 编号占用与在引用规则保护
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/decisions/ADR-049.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-688946681e6107
+  current_behavior:
+  - 新题最大号+1
+  - 在引用正文保持可读
+  - 历史日志不改写
+  - 旧主题恢复时语义分类引用
+  inputs: &id029
+  - ID/标题引用
+  - Git 历史
+  outputs: &id030
+  - 引用对照
+  - 替代链
+  guards: &id031
+  - 仍被引用不能删除/清空
+  - 修复先确认
+  failure_semantics: &id032
+  - 引用含混阻塞自动改写
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: ReferenceIntegrity
+    inputs: *id029
+    outputs: *id030
+    guards: *id031
+    failure_semantics: *id032
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: DocumentReferenceReader
+  artifact_role_candidate: ReferenceGraph
+  runtime_phase_candidate: FULL_AUDIT
+  project_overlay_candidate: DEC/ADR/CR/REQ local namespaces
+  migration_risk: Never change meaning of an occupied ID or replace referenced body.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '03'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-IDREF
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-IDREF
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 903
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/decisions/ADR-049.md
+    line: 1
+    source_sha256: 0e97b29bce9d78a8d486fc01e29e052b58afefdcefdab20ed95d6d40469218bc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/decisions/ADR-049.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-TRACE
+  name: 全链路追踪
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/acceptance/TRACE_MATRIX.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-589aa42ebc301f
+  current_behavior:
+  - 连接来源→DEC→PRD→设计→API/数据→UI→批次→Commit→测试→发布
+  inputs: &id033
+  - 工程产物
+  - Git/测试证据
+  outputs: &id034
+  - TRACE_MATRIX
+  guards: &id035
+  - UI 可空但不得伪造
+  failure_semantics: &id036
+  - 缺边登记开放项
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: EvidenceTrace
+    inputs: *id033
+    outputs: *id034
+    guards: *id035
+    failure_semantics: *id036
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: SourceGraphReader
+  artifact_role_candidate: TraceEdge
+  runtime_phase_candidate: FULL_AUDIT
+  project_overlay_candidate: project trace vocabulary and document roots
+  migration_risk: Missing edges must remain explicit, not fabricated.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '13'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-TRACE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-TRACE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1877
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/acceptance/TRACE_MATRIX.md
+    line: 1
+    source_sha256: b20cf34f1c81fc55794f24e334761b01c9400f5b6dd30e17f77a07bdbd3df077
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/acceptance/TRACE_MATRIX.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-CHANGE
+  name: 变更与版本路由
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-781d67be72a5dd
+  current_behavior:
+  - 区分缺陷、业务改变、技术改变、纯 UI
+  - Approved/Baselined 保留旧版
+  - 变更影响扩散到设计/批次/测试
+  inputs: &id037
+  - 新诉求
+  - PRD 状态
+  outputs: &id038
+  - CR
+  - 新版本 Draft
+  guards: &id039
+  - 不静默覆盖基线
+  failure_semantics: &id040
+  - 冲突未确认不 APPLY
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: ChangeApplication
+    inputs: *id037
+    outputs: *id038
+    guards: *id039
+    failure_semantics: *id040
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: CanonicalDocumentWriter
+  artifact_role_candidate: ChangeRecord
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: project CR/PRD version policy
+  migration_risk: Only confirmed scope can cross the canonical write boundary.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '06'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-CHANGE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-CHANGE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1918
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2474
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-PARALLEL
+  name: Parallel Draft 临时袋
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - docs/project/changes/变更稿模式.md
+  legacy_asset_ids:
+  - ASSET-781d67be72a5dd
+  - ASSET-8ded7fd021cf08
+  current_behavior:
+  - 一次初始化说明入口与 ignore
+  - 只写 DRAFT-* 不预占正式编号
+  - 纳入先出对照表
+  - 按 PRD 状态走现有 CR 通道
+  inputs: &id041
+  - INDEX/BAG/DRAFT
+  - 当前正式最大号
+  outputs: &id042
+  - 草稿袋
+  - 晋升对照表
+  guards: &id043
+  - 不改正式文档/看板/代码
+  - 全部迁完且用户说纳入完成才清袋
+  failure_semantics: &id044
+  - 冲突/未确认保留袋；不创建第四条变更管道
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: DraftPromotion
+    inputs: *id041
+    outputs: *id042
+    guards: *id043
+    failure_semantics: *id044
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: DraftWorkspaceReader
+  artifact_role_candidate: PromotionPlan
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: changes_temp path and PRD state
+  migration_risk: Draft cannot become canonical or reserve final IDs automatically.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '06'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-PARALLEL
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-PARALLEL
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2362
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2397
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2440
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/changes/变更稿模式.md
+    line: 1
+    source_sha256: b651c19c5f1a0a5f02878aaae4a07cc1ba0d9453b5e8fe1a0b4c449e007d5e7e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/changes/变更稿模式.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-RECONCILE
+  name: 36A 批次正式口径收口
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-781d67be72a5dd
+  current_behavior:
+  - 业务差异→CR→收入 PRD
+  - 纯实现不造 CR
+  - 无差异记录无待收口
+  - 发布投影标 stale 后再同步
+  inputs: &id045
+  - 本批改动
+  - 现行 PRD
+  outputs: &id046
+  - 收口记录
+  - CR/PRD 关系
+  guards: &id047
+  - 收口未完成不启动下一批
+  failure_semantics: &id048
+  - 未确认差异保留待决
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: BatchReconciliation
+    inputs: *id045
+    outputs: *id046
+    guards: *id047
+    failure_semantics: *id048
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: BatchEvidenceReader
+  artifact_role_candidate: ReconciliationRecord
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: 36A trigger and business-delta semantics
+  migration_risk: Incomplete reconciliation cannot silently start the next batch.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '06'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-RECONCILE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-RECONCILE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1949
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2099
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-TEST
+  name: 自测桩与验收口径完整性
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-781d67be72a5dd
+  current_behavior:
+  - 临时桩测后拆除
+  - 产品修复留下
+  - 灌测试数据不等于改业务规则
+  inputs: &id049
+  - 测试计划
+  - 临时桩
+  - 真实缺陷
+  outputs: &id050
+  - 拆桩/修复证据
+  - 验收结果
+  guards: &id051
+  - 不得为过验收修改口径
+  failure_semantics: &id052
+  - 无拆桩/保留证据不得声明通过
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: TestIntegrity
+    inputs: *id049
+    outputs: *id050
+    guards: *id051
+    failure_semantics: *id052
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: TestEvidenceReader
+  artifact_role_candidate: TestIntegrityEvidence
+  runtime_phase_candidate: FULL_AUDIT
+  project_overlay_candidate: project test/acceptance rules
+  migration_risk: Temporary stubs cannot remain or redefine success.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '14'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-TEST
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-TEST
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2028
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2018
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-PROGRESS
+  name: 证据驱动多轴进度
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/progress/PROGRESS_REGISTER.yaml
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-50cc39b8050a79
+  current_behavior:
+  - 登记是真源，看板是总览
+  - 范围变化重算分母
+  - 关闭 UI/视觉循环不入文档分母
+  - Blocked 不清原进度
+  inputs: &id053
+  - 权重/状态
+  - 证据
+  outputs: &id054
+  - 进度登记
+  - 看板
+  guards: &id055
+  - 没有证据不提高进度
+  - 范围未冻结 N/A
+  failure_semantics: &id056
+  - 不能把建文件/合并当验收
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: ProgressProjection
+    inputs: *id053
+    outputs: *id054
+    guards: *id055
+    failure_semantics: *id056
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ProgressRegistryReader
+  artifact_role_candidate: ProgressProjection
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: weights and applicability of project work
+  migration_risk: Stale summaries must not override the register or imply completion.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '16'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-PROGRESS
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-PROGRESS
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1972
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/PROGRESS_REGISTER.yaml
+    line: 1
+    source_sha256: 68eee304166630012f81b1148ee8ed4a2c5de0b89b627847ca4f100e03f99887
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROGRESS_REGISTER.yaml
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-HANDOVER
+  name: 工作日志与接管
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/project/progress/HANDOVER_REGISTER.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-9f88da1475c7c2
+  current_behavior:
+  - 实质工作后日志
+  - 核对 Git/文档/测试
+  - 交接保留配置需求但不写凭证
+  inputs: &id057
+  - 工作差异
+  - 批次
+  - 测试结果
+  outputs: &id058
+  - WORKLOG
+  - HANDOVER
+  guards: &id059
+  - 未提交/未推送不隐瞒
+  failure_semantics: &id060
+  - 接管验证失败保持阻塞
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: OperationalHandover
+    inputs: *id057
+    outputs: *id058
+    guards: *id059
+    failure_semantics: *id060
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: WorklogReader
+  artifact_role_candidate: HandoverRecord
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: local log/handover format
+  migration_risk: Missing work/risks must not be dropped from recovery context.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '11'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-HANDOVER
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-HANDOVER
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2043
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/HANDOVER_REGISTER.md
+    line: 1
+    source_sha256: c89a2aae6eacc65021b60e53b4ad1395efa111e4692994164ed6bb14d3046a4d
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/HANDOVER_REGISTER.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-CONTEXT
+  name: 新窗口续做
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - docs/project/progress/PROJECT_DASHBOARD.md
+  legacy_asset_ids:
+  - ASSET-781d67be72a5dd
+  - ASSET-ecba0624d98758
+  current_behavior:
+  - 看板→登记→相关 DEC/CR
+  - 推荐一个下一步
+  - 不重跑 G0/G1
+  - 识别草稿袋与 PLAIN_SYNC stale
+  inputs: &id061
+  - 项目事实
+  - 当前 Git
+  outputs: &id062
+  - 恢复点
+  - 下一步
+  guards: &id063
+  - 以实际产物为准
+  - 不自动提高阶段
+  failure_semantics: &id064
+  - 信息不一致说明并停在对应门禁
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: ContextRecovery
+    inputs: *id061
+    outputs: *id062
+    guards: *id063
+    failure_semantics: *id064
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ProjectStateReader
+  artifact_role_candidate: RecoveryContext
+  runtime_phase_candidate: LOAD_CONTEXT
+  project_overlay_candidate: current project authority/freshness rules
+  migration_risk: README/dashboard conflicts require source/freshness resolution.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '12'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-CONTEXT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-CONTEXT
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 145
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/progress/PROJECT_DASHBOARD.md
+    line: 1
+    source_sha256: 67742b0fbf293b25f8e368f24f716f3cd7c64b9c7bd8d559cfc171a349dae81b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROJECT_DASHBOARD.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-UI_SCOPE
+  name: UI 逻辑范围与应用分闸
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - 应用来自实际架构映射
+  - 总闸加应用名单
+  - 未启用应用不阻断开发
+  - 部分页面允许 Partial
+  inputs: &id065
+  - PRD
+  - 应用架构
+  - 启用名单
+  outputs: &id066
+  - UI_SCOPE_MAP
+  - UI_APPLICATION_MAPPING
+  guards: &id067
+  - 不从 PRD 提前猜代码目录
+  - 空名单全关
+  failure_semantics: &id068
+  - 未批准 UI 不作为约束
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: UIApplicationScope
+    inputs: *id065
+    outputs: *id066
+    guards: *id067
+    failure_semantics: *id068
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ApplicationMapReader
+  artifact_role_candidate: UIScopeMap
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: application slugs and enabled list
+  migration_risk: Disabled applications must not count as active UI constraints.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 08
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-UI_SCOPE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-UI_SCOPE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 980
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1005
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-UI_CONTRACT
+  name: 分层 UI 合并与批次契约
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - 筛适用范围
+  - 低到高继承
+  - 只取批准版本
+  - 批次绑定有效 contract
+  inputs: &id069
+  - UI_SPEC
+  - PRD
+  - 批次
+  outputs: &id070
+  - EFFECTIVE_UI_CONTRACT
+  guards: &id071
+  - 业务/权限/安全不可覆盖
+  - 同层双有效版本不按日期猜
+  failure_semantics: &id072
+  - 冲突进入 UI-DEC/CR
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: EffectiveUIContract
+    inputs: *id069
+    outputs: *id070
+    guards: *id071
+    failure_semantics: *id072
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: UISpecReader
+  artifact_role_candidate: EffectiveUIContract
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: application/page/device version map
+  migration_risk: Only Approved/Baselined applicable UI rules may constrain a batch.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 08
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-UI_CONTRACT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-UI_CONTRACT
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 939
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1792
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-UI_GATE
+  name: 素材→Draft→批准→点名换皮
+  legacy_source:
+  - .cursor/rules/ui-spec-gate.mdc
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  legacy_asset_ids:
+  - ASSET-adf6421a86591a
+  - ASSET-03892fdf7d55ec
+  current_behavior:
+  - anydesign 产物登记为素材
+  - 28A Draft 后 29 批准
+  - 每步汇报当前节/下一口令/禁止误称
+  inputs: &id073
+  - 设计图
+  - tokens
+  - 用户点名范围
+  outputs: &id074
+  - Draft UI_SPEC
+  - 批准证据
+  guards: &id075
+  - 预定页只 Partial
+  - 禁止 /v2 旁路
+  failure_semantics: &id076
+  - 未批准不能改页面
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: UIApprovalGate
+    inputs: *id073
+    outputs: *id074
+    guards: *id075
+    failure_semantics: *id076
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: DesignEvidenceReader
+  artifact_role_candidate: UIGateDecision
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: project 25A/28A/29 steps and named pages
+  migration_risk: Design tokens and Draft do not authorize implementation.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 08
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-UI_GATE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-UI_GATE
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: .cursor/rules/ui-spec-gate.mdc
+    line: 1
+    source_sha256: b939dfcbd0cf8d5c0335cde76c5cefe6f7aa9c73c17f05a1c4802e26bc2fb8ba
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/ui-spec-gate.mdc
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-VISUAL
+  name: 独立视觉修复循环
+  legacy_source:
+  - .cursor/skills/visual-repair-loop/SKILL.md
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+  - docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  legacy_asset_ids:
+  - ASSET-2747284c976e9c
+  - ASSET-7a7a000efd1458
+  - ASSET-577d20287f94b4
+  current_behavior:
+  - Round0 RUN
+  - 截图→DIFF→范围内修复
+  - 最多声明轮数
+  - 覆盖豁免高于截图
+  inputs: &id077
+  - 应用/页面/图
+  - viewport
+  - allowed_files
+  outputs: &id078
+  - RUN
+  - DIFF
+  - RESULT
+  - 截图
+  guards: &id079
+  - 用户未点名不执行
+  - 不改 API/权限或扩大页面
+  - 不改变批准规范
+  failure_semantics: &id080
+  - 超轮数停止；用户叫停可回退；in_progress 不伪称成功
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: VisualRepairRun
+    inputs: *id077
+    outputs: *id078
+    guards: *id079
+    failure_semantics: *id080
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ScreenshotCapture
+  artifact_role_candidate: VisualRunEvidence
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: page/allowed-files/viewport/exception overlay
+  migration_risk: In-progress and user-stopped/reverted runs are not successes.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-VISUAL
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-VISUAL
+  evidence_refs:
+  - path: .cursor/skills/visual-repair-loop/SKILL.md
+    line: 1
+    source_sha256: df37c0559b104122f03ca27c4e82f18dc3e690328e37dad2b86105ef19be1870
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/skills/visual-repair-loop/SKILL.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+    line: 1
+    source_sha256: abb8cef06df0ff94f416b6488de0044b96d4d49649f288beb837e06e195691cb
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+    line: 1
+    source_sha256: 712e79c6e1b5a6c7000a583c128cb5dbff4e6643d7944912c384bf48b06ce696
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-PUBLISH
+  name: 白话知识发布
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - docs/project/plain-spec/白话文档生成方案.md
+  - docs/project/progress/PLAIN_SYNC.yaml
+  legacy_asset_ids:
+  - ASSET-781d67be72a5dd
+  - ASSET-19e1f2d441d22f
+  - ASSET-a9e2dbfcd8d39b
+  current_behavior:
+  - 先有映射再写正文
+  - 按用户文件清单生成
+  - 只同步 stale 关联内容
+  - 业务规则与实际菜单来源分开
+  inputs: &id081
+  - 正式规则
+  - 页面事实
+  - PLAIN_SYNC
+  outputs: &id082
+  - 白话说明
+  - 同步状态
+  guards: &id083
+  - 派生文档不反向决定 PRD
+  - 不得全量重写71篇
+  - 架构图用业务话
+  failure_semantics: &id084
+  - 无基线不能差异同步
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  secondary_boundary:
+  - PROJECT_INSTANCE_POLICY_OR_DATA
+  contract_need:
+    name: KnowledgeProjection
+    inputs: *id081
+    outputs: *id082
+    guards: *id083
+    failure_semantics: *id084
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: CanonicalFactReader
+  artifact_role_candidate: ProjectGuideProjection
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: plain-spec and PLAIN_SYNC mapping
+  migration_risk: Derived guide cannot become PRD truth or be rebuilt without lineage.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '10'
+  stage02_design_owner: '02'
+  stage01_boundary: GENERIC_CORE_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-PUBLISH
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-PUBLISH
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2150
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/plain-spec/白话文档生成方案.md
+    line: 1
+    source_sha256: f0a8e76c49ed4a43fc039f8544bf23366ab7264d7dbd349929aa9c824ea62d58
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/plain-spec/白话文档生成方案.md
+  - path: docs/project/progress/PLAIN_SYNC.yaml
+    line: 1
+    source_sha256: 47cfe1363efb221c3f300463e380cc02791247322c8154cce0349f5e47df5fdc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PLAIN_SYNC.yaml
+  candidate_action: GENERALIZE
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-EDITOR
+  name: Cursor 入口与项目覆盖
+  legacy_source:
+  - .cursor/rules/collaboration-judgment.mdc
+  - tools/anydesign/PROJECT_INSTALL.md
+  legacy_asset_ids:
+  - ASSET-32cec01e79dc47
+  - ASSET-16014334fe0d61
+  current_behavior:
+  - 按路径发现规则/skill
+  - 入口引用工具真身
+  - 记录项目特定覆盖
+  inputs: &id085
+  - rules
+  - skills
+  - 项目事实
+  outputs: &id086
+  - 编辑器行为候选映射
+  guards: &id087
+  - 不把 .cursor 当 Generic Core 固定路径
+  failure_semantics: &id088
+  - 适配未验证保留旧入口
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  secondary_boundary: []
+  contract_need:
+    name: EditorEntryCompatibility
+    inputs: *id085
+    outputs: *id086
+    guards: *id087
+    failure_semantics: *id088
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: EditorRuleAdapter
+  artifact_role_candidate: AdapterProjection
+  runtime_phase_candidate: LOAD_CONTEXT
+  project_overlay_candidate: Cursor rule precedence and symlink entry
+  migration_risk: Cursor path/format cannot become a Core invariant.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '15'
+  stage02_design_owner: '02'
+  stage01_boundary: COMPATIBILITY_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-EDITOR
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-EDITOR
+  evidence_refs:
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  - path: tools/anydesign/PROJECT_INSTALL.md
+    line: 1
+    source_sha256: 468912b83efeb9571c20513d7783f4d6800c3481c96643ca4d296522e61a1722
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/PROJECT_INSTALL.md
+  candidate_action: COMPATIBILITY_READ
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-PORT
+  name: 项目端口绑定
+  legacy_source:
+  - .cursor/rules/port-binding.mdc
+  legacy_asset_ids:
+  - ASSET-620fb6f6177ec5
+  current_behavior:
+  - 页面/服务对应固定本地端口
+  - 源品8035与ToB8037区别
+  inputs: &id089
+  - 项目应用映射
+  outputs: &id090
+  - 正确联调目标
+  guards: &id091
+  - 端口与项目业务只留 project instance
+  failure_semantics: &id092
+  - 映射未知先核对，不猜服务
+  candidate_layer: PROJECT_INSTANCE_CANDIDATE
+  secondary_boundary: []
+  contract_need:
+    name: ProjectEndpointMap
+    inputs: *id089
+    outputs: *id090
+    guards: *id091
+    failure_semantics: *id092
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ProjectConfigReader
+  artifact_role_candidate: ProjectEndpointConfig
+  runtime_phase_candidate: LOAD_CONTEXT
+  project_overlay_candidate: 8035/8037 and application-service binding
+  migration_risk: Ports and business application names remain project data.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '04'
+  stage02_design_owner: '02'
+  stage01_boundary: PROJECT_ONLY_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-PORT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-PORT
+  evidence_refs:
+  - path: .cursor/rules/port-binding.mdc
+    line: 1
+    source_sha256: 72196ba0773f26bdefe41b7b004e439cf89aa58117b70031f271ffe6c0412e0e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/port-binding.mdc
+  candidate_action: PROJECT_ONLY
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-SQL
+  name: 增量 SQL 交付习惯
+  legacy_source:
+  - docs/开发指导.md
+  legacy_asset_ids:
+  - ASSET-2afbbf0341e75c
+  current_behavior:
+  - 结构改动编号增量 SQL
+  - SQL可重复执行
+  - 数据调整先确认
+  inputs: &id093
+  - 表结构变更
+  - 部署环境
+  outputs: &id094
+  - SQL交付清单
+  guards: &id095
+  - 不把 local.env 作为交付
+  - 不在本阶段运行 SQL
+  failure_semantics: &id096
+  - 缺交付 SQL 不宣称测试部署完成
+  candidate_layer: PROJECT_INSTANCE_CANDIDATE
+  secondary_boundary: []
+  contract_need:
+    name: ProjectDeliveryConvention
+    inputs: *id093
+    outputs: *id094
+    guards: *id095
+    failure_semantics: *id096
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: ProjectSQLReader
+  artifact_role_candidate: ProjectDeliveryRecord
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: numbered incremental SQL practice
+  migration_risk: No SQL execution or new universal SQL policy implied.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '04'
+  stage02_design_owner: '02'
+  stage01_boundary: PROJECT_ONLY_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-SQL
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-SQL
+  evidence_refs:
+  - path: docs/开发指导.md
+    line: 92
+    source_sha256: b94a43e5715a8f4153364ac28c0b4367990fc4cd779ba3a1350cf57c1e674c10
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/开发指导.md
+  candidate_action: PROJECT_ONLY
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+- capability_id: CAP-COMMIT
+  name: 既有提交校验与授权
+  legacy_source:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - nunu-go-api/app/admin/web/.husky/commit-msg
+  - nunu-go-api/app/admin/web/commitlint.config.cjs
+  legacy_asset_ids:
+  - ASSET-03892fdf7d55ec
+  - ASSET-68d73abb39cf4d
+  - ASSET-8a10160f3be5c4
+  current_behavior:
+  - commit-msg 调 commitlint
+  - 可选 type/scope 提示
+  - useAI=false
+  - 仅授权后提交
+  inputs: &id097
+  - 暂存差异
+  - 提交说明
+  - 授权
+  outputs: &id098
+  - 提交计划/校验结果
+  guards: &id099
+  - Git Author 是事实身份，不推断物理操作者
+  - 当前未安装为根 hooksPath 不等于全面生效
+  failure_semantics: &id100
+  - 缺脚本或授权停止，不补造已执行校验
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  secondary_boundary: []
+  contract_need:
+    name: CommitPracticeCompatibility
+    inputs: *id097
+    outputs: *id098
+    guards: *id099
+    failure_semantics: *id100
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: GitCommitMetadataReader
+  artifact_role_candidate: CommitEvidence
+  runtime_phase_candidate: HUMAN_DECISION
+  project_overlay_candidate: nested Husky/commitlint installation and policy
+  migration_risk: Missing lint:lint-staged and exact author identities; never commit
+    automatically.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '05'
+  stage02_design_owner: '02'
+  stage01_boundary: COMPATIBILITY_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-COMMIT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-COMMIT
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 479
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: nunu-go-api/app/admin/web/.husky/commit-msg
+    line: 1
+    source_sha256: e8fa05dcf9a02aa6c36204bbb258751c16b4793967968f4721215b788c9166be
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/.husky/commit-msg
+  - path: nunu-go-api/app/admin/web/commitlint.config.cjs
+    line: 1
+    source_sha256: 2a5704436bedce02b1a20ee6046cf3ee907dab5d3733ddb21cd60bcf3f4e232c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/commitlint.config.cjs
+  candidate_action: COMPATIBILITY_READ
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+  project_dependency_warning: Stage 01 source file contains project facts; Stage 02
+    maps these to overlay, not automatically to this capability semantics.
+- capability_id: CAP-MERGE
+  name: 旧协作合码指导
+  legacy_source:
+  - docs/temp/SassDesign/合并代码指导.md
+  legacy_asset_ids:
+  - ASSET-087233ca8fb79c
+  current_behavior:
+  - 先检查工作区
+  - 合并前核对远程提交
+  - 冲突按目录语义
+  - 合并后构建
+  inputs: &id101
+  - 旧分支拓扑
+  - 路径归属
+  outputs: &id102
+  - 合码记录
+  guards: &id103
+  - 不得偷偷 stash
+  - lease失败停止
+  - 禁止猜 ours 整文件
+  failure_semantics: &id104
+  - 不把旧 reset/force 流程作为当前许可
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  secondary_boundary: []
+  contract_need:
+    name: LegacyCollaborationReference
+    inputs: *id101
+    outputs: *id102
+    guards: *id103
+    failure_semantics: *id104
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: LegacyGuideReader
+  artifact_role_candidate: LegacyMergeReference
+  runtime_phase_candidate: FULL_AUDIT
+  project_overlay_candidate: old branch names and ownership rules
+  migration_risk: Historic reset/force instructions are not current authorization.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: '07'
+  stage02_design_owner: '02'
+  stage01_boundary: COMPATIBILITY_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-MERGE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-MERGE
+  evidence_refs:
+  - path: docs/temp/SassDesign/合并代码指导.md
+    line: 24
+    source_sha256: 35f753b5e4d51c001bfa0b223272f1fce8d268416c2e1ed72f083f199f6e61cc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/temp/SassDesign/合并代码指导.md
+  candidate_action: COMPATIBILITY_READ
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+- capability_id: CAP-DESIGN
+  name: AnyDesign 全量与单元素模式
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/references/element-copy.md
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-c354c39aad4aa1
+  current_behavior:
+  - Full 输出 design.md
+  - Element 输出 element.md
+  - 来源失败明确说明
+  - art direction 与重建建议
+  inputs: &id105
+  - 截图/URL/Figma
+  - 范围/强调
+  outputs: &id106
+  - design.md/element.md
+  - tokens/a11y
+  guards: &id107
+  - 输出是素材，未经批准非正式 UI_SPEC
+  - 不绕访问保护
+  failure_semantics: &id108
+  - 输入不可用不虚构内容
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: DesignAnalysis
+    inputs: *id105
+    outputs: *id106
+    guards: *id107
+    failure_semantics: *id108
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignAdapter
+  artifact_role_candidate: DesignAnalysisMaterial
+  runtime_phase_candidate: ENGINEERING
+  project_overlay_candidate: source and approval status of project UI materials
+  migration_risk: Visual extraction is evidence, not Approved UI_SPEC.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-DESIGN
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-DESIGN
+  evidence_refs:
+  - path: tools/anydesign/SKILL.md
+    line: 1
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  - path: tools/anydesign/references/element-copy.md
+    line: 1
+    source_sha256: a4e2bd81e29cbc117daeaf0b6527ead693ab77bb63020e85cd84fce39847c256
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/references/element-copy.md
+  candidate_action: MAP
+  open_question: How will Stage 02 preserve these semantics without fixed project
+    paths?
+- capability_id: CAP-CSS
+  name: CSS 变量提取与摘要
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/extract_css_vars.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-53c7939bf9e274
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id109
+  - URL样式表
+  - CSS变量
+  outputs: &id110
+  - 变量JSON
+  - 摘要
+  guards: &id111
+  - 区分显式token与推断
+  failure_semantics: &id112
+  - 网络/参数失败报错
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: CssTokenExtraction
+    inputs: *id109
+    outputs: *id110
+    guards: *id111
+    failure_semantics: *id112
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignCssAdapter
+  artifact_role_candidate: CssTokenDigest
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project URL/input scope
+  migration_risk: Network/style access can fail; no invented tokens.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-CSS
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-CSS
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_css_vars.py
+    line: 1
+    source_sha256: 41091ff0dec0ebdc16e89b910b12b0c1df0d036321a467afed072666073cd8d2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_css_vars.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-CAPTURE
+  name: 页面截图与计算样式采集
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/capture_site.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-3c41459d728ad3
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id113
+  - URL
+  - viewports/selector
+  outputs: &id114
+  - 截图
+  - computed-style digest
+  guards: &id115
+  - 限制帧数与元素范围
+  failure_semantics: &id116
+  - 缺Playwright/捕获错误非成功
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: PageVisualCapture
+    inputs: *id113
+    outputs: *id114
+    guards: *id115
+    failure_semantics: *id116
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignCaptureAdapter
+  artifact_role_candidate: CaptureEvidence
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project URL, viewport, allowed capture
+  migration_risk: Playwright/network failure does not produce a valid screenshot.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-CAPTURE
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-CAPTURE
+  evidence_refs:
+  - path: tools/anydesign/scripts/capture_site.py
+    line: 1
+    source_sha256: 9a41c6e1ca1ca1f8c75aab482ca4d5297295970cdcb254b31b0d3fdfb2fefa05
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/capture_site.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-COLORS
+  name: 图像主色提取
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/extract_colors.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-20be74970ec50d
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id117
+  - 图像
+  - 颜色数量
+  outputs: &id118
+  - 颜色与面积占比
+  guards: &id119
+  - 结果仅视觉证据
+  failure_semantics: &id120
+  - 缺Pillow/坏图失败
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: ImagePaletteExtraction
+    inputs: *id117
+    outputs: *id118
+    guards: *id119
+    failure_semantics: *id120
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignColorAdapter
+  artifact_role_candidate: PaletteEvidence
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project source image identity
+  migration_risk: Palette is an observation, not an accessibility/brand decision.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-COLORS
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-COLORS
+  evidence_refs:
+  - path: tools/anydesign/scripts/extract_colors.py
+    line: 1
+    source_sha256: 9de38727e2f1fd78940b7a046024f76fa5f398458458585c8b64363cd5a744f7
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/extract_colors.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-A11Y
+  name: 对比度检查
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/check_contrast.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-0b7e67a7f8171f
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id121
+  - FG/BG颜色对
+  outputs: &id122
+  - WCAG对比度报告
+  guards: &id123
+  - 检查结果不替代业务验收
+  failure_semantics: &id124
+  - 参数格式错误报错
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: ContrastEvaluation
+    inputs: *id121
+    outputs: *id122
+    guards: *id123
+    failure_semantics: *id124
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignContrastAdapter
+  artifact_role_candidate: AccessibilityEvidence
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project color pairs
+  migration_risk: A pass for selected color pairs is not UI acceptance.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-A11Y
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-A11Y
+  evidence_refs:
+  - path: tools/anydesign/scripts/check_contrast.py
+    line: 1
+    source_sha256: b8f63d6704dae7483896bd40f305564d3bd185478db5d6acb9ee20ab89f8477f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/check_contrast.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-LINT
+  name: 设计文档结构校验
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/lint_design_md.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-bc543c279141fe
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id125
+  - design.md
+  outputs: &id126
+  - lint报告
+  guards: &id127
+  - frontmatter/引用/组件/章节规则
+  failure_semantics: &id128
+  - 结构失败非零退出
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: DesignDocumentLint
+    inputs: *id125
+    outputs: *id126
+    guards: *id127
+    failure_semantics: *id128
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignLintAdapter
+  artifact_role_candidate: DesignLintResult
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project design.md inputs
+  migration_risk: Structural lint cannot approve design semantics.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-LINT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-LINT
+  evidence_refs:
+  - path: tools/anydesign/scripts/lint_design_md.py
+    line: 1
+    source_sha256: 3b33714dd5b8ad4226cef209cbbe210c316a19cdc922084f2241f3bb70a187e6
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/lint_design_md.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-TOKENS
+  name: 设计令牌生成
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/build_tokens_json.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-1490088f15b3fc
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id129
+  - design.md frontmatter
+  outputs: &id130
+  - DTCG tokens JSON
+  guards: &id131
+  - 机器派生不手工编造
+  failure_semantics: &id132
+  - 解析错误失败
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: DesignTokenBuild
+    inputs: *id129
+    outputs: *id130
+    guards: *id131
+    failure_semantics: *id132
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignTokenAdapter
+  artifact_role_candidate: DesignTokenProjection
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project frontmatter and source revision
+  migration_risk: Derived tokens need source revision and must not be hand-edited
+    as truth.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-TOKENS
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-TOKENS
+  evidence_refs:
+  - path: tools/anydesign/scripts/build_tokens_json.py
+    line: 1
+    source_sha256: 5e96c2c85c4b994c8c3bd70284820984fa7ba21f75112a9da1032f51ea4386da
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/build_tokens_json.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-DRIFT
+  name: 令牌与线上设计漂移比较
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/verify_design.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-8fcbfa36c55a3f
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id133
+  - tokens JSON
+  - URL
+  outputs: &id134
+  - drift报告
+  guards: &id135
+  - 与正式批准状态分开
+  failure_semantics: &id136
+  - 获取或比对失败输出错误
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: DesignDriftCheck
+    inputs: *id133
+    outputs: *id134
+    guards: *id135
+    failure_semantics: *id136
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignDriftAdapter
+  artifact_role_candidate: DesignDriftEvidence
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project URL and effective tokens
+  migration_risk: Live URL failure or stale source is not a clean comparison.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-DRIFT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-DRIFT
+  evidence_refs:
+  - path: tools/anydesign/scripts/verify_design.py
+    line: 1
+    source_sha256: 631c535f4bedb492f9efc47309ef54cecb443bcf0137af27a42540d459ef6d0f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/verify_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?
+- capability_id: CAP-EXPORT
+  name: 设计交付包导出
+  legacy_source:
+  - tools/anydesign/SKILL.md
+  - tools/anydesign/scripts/export_for_claude_design.py
+  legacy_asset_ids:
+  - ASSET-dd68cc70e24e7b
+  - ASSET-0b38e340216f03
+  current_behavior:
+  - 以显式输入生成可定位派生结果
+  inputs: &id137
+  - design.md
+  - tokens
+  outputs: &id138
+  - CSS
+  - Tailwind
+  - DOCX/PPTX品牌包
+  guards: &id139
+  - 保留源关联
+  - 不等同 Codex Adapter
+  failure_semantics: &id140
+  - 输入/依赖不满足失败
+  candidate_layer: PROVIDER_CANDIDATE
+  secondary_boundary:
+  - GENERIC_PORT
+  contract_need:
+    name: DesignPackageExport
+    inputs: *id137
+    outputs: *id138
+    guards: *id139
+    failure_semantics: *id140
+    status: DESIGN_CANDIDATE_NOT_FROZEN
+  provider_port_candidate: AnyDesignExportAdapter
+  artifact_role_candidate: DesignExportBundle
+  runtime_phase_candidate: BATCH_WORKER
+  project_overlay_candidate: project export target and source revision
+  migration_risk: Exported DOCX/PPTX/CSS is derived; exact replay not proven.
+  purity_risk: NO_INDEPENDENT_CROSS_PROJECT_EXECUTION_PROOF
+  decision_owner_stage: 09
+  stage02_design_owner: '02'
+  stage01_boundary: PROVIDER_CANDIDATE
+  stage01_core_candidate_ref: ../../01/stage01-20260920T091426Z/CORE_CANDIDATE_REPORT.yaml#CAP-EXPORT
+  stage01_capability_ref: ../../01/stage01-20260920T091426Z/LEGACY_AI_CAPABILITY_INVENTORY.jsonl#CAP-EXPORT
+  evidence_refs:
+  - path: tools/anydesign/scripts/export_for_claude_design.py
+    line: 1
+    source_sha256: 8f2a6237c053e95f83313c4188df1875a3535dc7ab61ecba2d5a4d0a505b5ad2
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/scripts/export_for_claude_design.py
+  - path: tools/anydesign/SKILL.md
+    line: 100
+    source_sha256: 111b7b76bf2d2490d3ac786c10fe5bacc616330be152696b551a0f2c64e7562b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/SKILL.md
+  candidate_action: MAP
+  open_question: Which provider interface preserves input/output and failure semantics
+    across projects?

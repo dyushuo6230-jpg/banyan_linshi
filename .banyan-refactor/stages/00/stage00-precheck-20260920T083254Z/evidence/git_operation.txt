@@ -1,0 +1,9 @@
+{
+  "MERGE_HEAD": false,
+  "CHERRY_PICK_HEAD": false,
+  "REVERT_HEAD": false,
+  "rebase-merge": false,
+  "rebase-apply": false,
+  "sequencer": false,
+  "BISECT_LOG": false
+}

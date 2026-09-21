@@ -1,0 +1,50 @@
+schema_version: stage19-v1
+run_id: stage19-20260921T071430Z
+overall: PASS_WITH_CARRIED_BLOCKERS
+domains:
+  architecture:
+    result: PASS
+    evidence:
+    - STAGE19_EVIDENCE_REGISTRY.yaml#architecture_final
+  purity:
+    result: PASS
+    evidence:
+    - evidence/PURITY_ACCEPTANCE.yaml
+  runtime_policy_git:
+    result: PASS
+    evidence:
+    - evidence/CRITICAL_REGRESSION_RESULTS.txt
+    - evidence/GIT_INTEGRITY.yaml
+  webui_gogin_bridge:
+    result: PASS
+    evidence:
+    - evidence/GO_TEST_RESULTS.txt
+    - evidence/RC_SMOKE_RESULTS.yaml
+  adapters:
+    result: PASS
+    evidence:
+    - evidence/CRITICAL_REGRESSION_RESULTS.txt
+    - evidence/RC_SMOKE_RESULTS.yaml
+  pilot:
+    result: PASS
+    evidence:
+    - evidence/PILOT_INTEGRITY.yaml
+  index_trace_provenance:
+    result: PASS
+    evidence:
+    - evidence/SQLITE_INDEX_VERIFICATION.yaml
+    - evidence/TRACE_PROVENANCE_FRESHNESS.yaml
+  freshness:
+    result: PASS_WITH_CARRIED_TYPED_BLOCKER
+    evidence:
+    - evidence/TRACE_PROVENANCE_FRESHNESS.yaml
+  noloss:
+    result: PASS
+    evidence:
+    - evidence/NOLOSS_RECONCILIATION.yaml
+  rc_build:
+    result: PASS
+    evidence:
+    - RC_MANIFEST.yaml
+    - evidence/RC_REPRODUCIBILITY.yaml
+    - evidence/RC_SMOKE_RESULTS.yaml

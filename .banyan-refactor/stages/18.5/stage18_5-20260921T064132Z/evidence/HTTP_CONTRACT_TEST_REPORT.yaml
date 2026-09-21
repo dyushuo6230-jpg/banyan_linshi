@@ -1,0 +1,13 @@
+schema_version: stage18.5-v1
+result: PASS
+gin_route_contract: PASS
+runtime_bridge_success: PASS
+runtime_bridge_typed_failure: PASS
+api_compatibility: PASS
+spa_deep_link: PASS
+api_404_separation: PASS
+embedded_asset_hashes: PASS
+release_without_node_server: PASS
+local_only_bind: PASS
+secret_negative: PASS
+permission_bypass_negative: PASS

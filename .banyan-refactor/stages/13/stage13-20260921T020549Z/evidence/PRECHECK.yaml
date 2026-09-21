@@ -1,0 +1,20 @@
+schema_version: stage13-v1
+stage: '13'
+run_id: stage13-20260921T020549Z
+result: PASS_FOR_STAGE13_QUERY_FIRST_OFFLINE_LEARNING_WITH_TYPED_BLOCKERS
+upstream:
+  stage: '12'
+  run_id: stage12-20260921T014521Z
+  acceptance: PASS_STAGE12_CONTEXT_MEMORY_FRESHNESS_WITH_TYPED_BLOCKERS
+  query_handoff: .banyan-refactor/stages/12/stage12-20260921T014521Z/STAGE13_QUERY_HANDOFF.yaml
+query_first: true
+offline_only: true
+repository_rescan: false
+prompt_rule_skill_corpus_reload: false
+git_full_history_reanalysis: false
+conversation_history_mining: false
+prior_stage_rerun: false
+stage11_database_rebuilt_or_mutated: false
+canonical_prompt_rule_skill_mutated: false
+stage14_started: false
+

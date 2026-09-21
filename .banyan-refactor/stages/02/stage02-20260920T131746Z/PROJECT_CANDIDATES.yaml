@@ -1,0 +1,49 @@
+stage: '02'
+status: CANDIDATE_ONLY
+layer: PROJECT_INSTANCE_CANDIDATE
+count: 2
+items:
+- capability_id: CAP-PORT
+  name: 项目端口绑定
+  candidate_layer: PROJECT_INSTANCE_CANDIDATE
+  contract: ProjectEndpointMap
+  provider_port: ProjectConfigReader
+  artifact_role: ProjectEndpointConfig
+  runtime_phase: LOAD_CONTEXT
+  project_overlay: 8035/8037 and application-service binding
+  failure_semantics:
+  - 映射未知先核对，不猜服务
+  migration_risk: Ports and business application names remain project data.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '04'
+  evidence_refs:
+  - path: .cursor/rules/port-binding.mdc
+    line: 1
+    source_sha256: 72196ba0773f26bdefe41b7b004e439cf89aa58117b70031f271ffe6c0412e0e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/port-binding.mdc
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-SQL
+  name: 增量 SQL 交付习惯
+  candidate_layer: PROJECT_INSTANCE_CANDIDATE
+  contract: ProjectDeliveryConvention
+  provider_port: ProjectSQLReader
+  artifact_role: ProjectDeliveryRecord
+  runtime_phase: ENGINEERING
+  project_overlay: numbered incremental SQL practice
+  failure_semantics:
+  - 缺交付 SQL 不宣称测试部署完成
+  migration_risk: No SQL execution or new universal SQL policy implied.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '04'
+  evidence_refs:
+  - path: docs/开发指导.md
+    line: 92
+    source_sha256: b94a43e5715a8f4153364ac28c0b4367990fc4cd779ba3a1350cf57c1e674c10
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/开发指导.md
+  approval: NOT_APPROVED
+  execution_allowed: false

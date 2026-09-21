@@ -1,0 +1,57 @@
+schema_version: stage05-v1
+conflict_id: CON-001
+status: RESOLVED_BY_LAYERED_CONTRACT
+resolution_type: SEMANTIC_SEPARATION_WITH_NON_OVERRIDABLE_SAFETY_FLOOR
+generic_core:
+  decision_semantics:
+    - classify impact and authority before action
+    - informed review precedes selection
+    - initial selection is not final confirmation
+    - restate impacts before explicit confirmation
+    - apply only after authorization
+    - unresolved or newly changed tradeoff remains blocked
+  fixed_project_batch_size: null
+  fixed_project_self_resolution_rule: null
+project_overlay:
+  configurable_parameters:
+    - trigger_thresholds
+    - batch_size
+    - confirmation_density
+    - governance_weight
+    - self_resolution_eligibility
+  current_project_binding:
+    decision_batch_max: 5
+    high_impact_batch_max: 1
+    self_resolution:
+      decision_level: L1
+      allowed_only_when:
+        - existing behavior is explicit
+        - no conflict with approved decision or requirement
+        - change is narrow and reversible
+        - no new number list acceptance criterion or business meaning is invented
+      required_trace: worklog_and_after_action_list
+non_overridable_safety_floor:
+  - secret_risk_is_L4
+  - protected_write_violation_is_L4
+  - missing_git_identity_before_commit_is_L4
+  - explicit_human_only_decision_is_L3_or_higher
+  - high_impact_decision_requires_explicit_human_confirmation
+  - silence_or_cancellation_is_not_confirmation
+  - overlay_cannot_weaken_core_safety
+interpretation:
+  generic_high_one_low_two: reusable conservative pacing evidence, not universal project data
+  project_max_five: project pacing parameter for eligible decisions, not permission to batch or auto-resolve high-impact decisions
+  existing_code_self_resolution: traceable L1 exception under listed eligibility, not authority to invent or alter business truth
+evidence_refs:
+  - "../../../03/stage03-20260920T135702Z/CAPABILITY_CONTRACT_REGISTRY.yaml#CAP-IDP"
+  - "../../../03/stage03-20260920T135702Z/CONFLICT_CARRYOVER_REGISTER.yaml#CON-001"
+  - "../../../02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#CON-001"
+  - "../../../02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml#CAP-IDP"
+  - "../../../../../docs/governance/common_prd_v3.1/通用文档提示词v3.1.md#INFORMED_DECISION_PROTOCOL"
+  - "../../../../../docs/project/baseline/DEC-042.md"
+  - "../../../../../.cursor/rules/collaboration-judgment.mdc#DEC-042"
+remaining_blockers: []
+activation_qualification: policy_resolved; runtime enforcement and regression remain owned by later stages
+owner_stage: "05"
+con002_changed: false
+

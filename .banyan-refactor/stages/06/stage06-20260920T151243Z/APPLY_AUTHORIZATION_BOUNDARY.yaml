@@ -1,0 +1,25 @@
+schema_version: stage06-v1
+required_preconditions:
+  - valid_apply_preview
+  - required_decision_level_computed
+  - stage05_human_confirmation_if_required
+  - protected_write_authorization
+  - secret_risk_check
+  - freshness_and_divergence_check
+  - reference_integrity_check
+  - rollback_checkpoint
+  - explicit_apply_plan
+authorization_sources:
+  decision_policy: "../../../05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml"
+  human_confirmation: "../../../05/stage05-20260920T144623Z/HUMAN_CONFIRMATION_CONTRACT.yaml"
+  protected_write: future_executor_safety_contract
+blocked_when:
+  - any_required_precondition_missing
+  - L3_without_valid_confirmation
+  - L4_without_owner_resolution
+  - secret_risk
+  - unknown_canonical_authority
+  - stale_preview
+stage06_may_authorize_real_apply: false
+stage06_may_execute_apply: false
+

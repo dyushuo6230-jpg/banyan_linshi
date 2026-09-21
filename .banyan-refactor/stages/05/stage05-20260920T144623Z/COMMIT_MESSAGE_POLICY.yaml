@@ -1,0 +1,16 @@
+schema_version: stage05-v1
+core_schema:
+  required: [summary]
+  optional: [type, scope, body, trailers]
+  neutral_rendering_example: "type(scope): summary"
+project_overlay:
+  may_choose: [conventional_like, free_form, custom_validated_format]
+  may_require_fields: [type, scope, body, trailers]
+core_requires_conventional_commit: false
+editor_specific_branch: false
+rules:
+  summary_describes_semantic_intent: true
+  body_may_explain_reason_and_material_constraints: true
+  trailers_must_reflect_actual_evidence: true
+  fabricated_issue_or_coauthor: forbidden
+

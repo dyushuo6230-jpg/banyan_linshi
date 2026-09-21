@@ -1,0 +1,85 @@
+schema_version: stage20-v1
+run_id: stage20-20260921T073758Z
+overall: PASS_WITH_CARRIED_BLOCKERS
+checks:
+  pack_checksums:
+    result: PASS
+    note: All 24 listed files OK; checksum file contains one accepted comment/header
+      line reported by shasum as formatting warning.
+  conformance_spec: PASS
+  yaml_json_parse:
+    result: PASS
+    files_parsed: 11
+  documentation_validation: PASS
+  validation_coverage: 24_OF_24_PASS
+  hard_metrics: 10_OF_10_ZERO
+  release_archive:
+    result: PASS
+    sha256: 1bddbfb1ac2edc23d7504f128f2193c964be73ca6a403280c3dbdb5330a2bc74
+    size_bytes: 10912205
+    component_count: 16
+    internal_sha256s: PASS
+    reproducible: true
+  git_integrity:
+    result: PASS
+    head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+    index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+    staged_tracked_count: 0
+    unstaged_tracked_count: 0
+  pilot_integrity:
+    result: PASS
+    file_count: 13
+    modified: false
+    state: PROJECT_INSTANCE_SHADOW_PILOT
+  framework_source_integrity:
+    result: PASS
+    file_count: 76
+    modified: false
+  legacy_docs:
+    result: PASS
+    docs_project_migration_executed: false
+    default: PRESERVE_IN_PLACE
+  bootstrap_workspace:
+    result: PASS
+    exists: true
+    archive_manifest_ready: true
+    archive_created: false
+    deletion_executed: false
+    state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION
+  version_transition:
+    result: PASS
+    current: v1.9.1
+    candidate: v1.10
+    pointer_changed: false
+    approval_required: true
+  final_activation:
+    result: PASS
+    state: NOT_AUTHORIZED
+    executed: false
+  con002:
+    result: PASS
+    state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+    resolved: false
+  later_stage_auto_start:
+    result: PASS
+    started: false
+  stage19_rc_identity:
+    result: PASS
+    source_rc: stage19-rc.1
+    go_executable_sha256: 156fa8bb5e60175faadf0e99b5a8f165a708a18965f62b1e76a9cd09aeda1a1d
+    go_executable_matches_rc: true
+    source_archive_sha256: 3a433748a86a9f9778c2f9fb565054e523ae6e7a2bde2637544d975cbf95c713
+    source_archive_matches_rc: true
+    frontend_manifest_sha256: 1e2b93184f639fb7ecac2eca1ce4e63877b5e48eb3deb354616768e8989edf08
+    frontend_manifest_matches_rc: true
+forbidden_actions:
+  project_git_mutation: false
+  pilot_dot_banyan_mutation_or_promotion: false
+  secret_body_read_or_exposure: false
+  runtime_rewrite: false
+  webui_redesign: false
+  legacy_migration_execution: false
+  con002_winner_selection: false
+  final_activation: false
+errors: []
+acceptance: PASS_STAGE20_DOCUMENTATION_FRAMEWORK_RELEASE_FINAL_HANDOFF_WITH_PROJECT_ACTIVATION_BLOCKED

@@ -1,0 +1,23 @@
+schema_version: stage20-v1
+current_governance:
+  current: v1.9.1
+  status: FINAL_FREEZE
+candidate:
+  version: v1.10
+  role: ADDITIVE_SUPPLEMENT
+  technical_acceptance: PASS_WITH_CARRIED_BLOCKERS
+  framework_release: v1.10-additive.1
+proposal:
+  state: READY_FOR_HUMAN_APPROVAL
+  replace_current_pointer: false
+  rationale:
+  - Stage19 accepted the final architecture and reproducible RC.
+  - v1.10 adds WebUI/Go host/adapter transport while preserving the Python Runtime
+    and governance contracts.
+  prerequisites:
+  - Human version-governance approval
+  - Explicit effective date and rollback pointer
+  - Communication of compatibility and carried blockers
+  - Confirmation that pointer transition does not imply project Final Activation
+human_approval_record: null
+mutation_executed: false

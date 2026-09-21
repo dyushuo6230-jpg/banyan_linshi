@@ -1,0 +1,23 @@
+upstream_stage: '13'
+run_id: stage13-20260921T020549Z
+acceptance_result: PASS_STAGE13_EVIDENCE_IMPACT_EVENT_OFFLINE_LEARNING_WITH_TYPED_BLOCKERS
+evidence_contracts: [EVIDENCE_RECORD_SCHEMA.yaml, EVIDENCE_CHAIN_SCHEMA.yaml, DECISION_CHANGE_EVIDENCE_CONTRACT.yaml]
+impact_contracts: [IMPACT_GRAPH_SCHEMA.yaml]
+event_contracts: [EVENT_SCHEMA.yaml, CAUSALITY_BOUNDARY.yaml]
+learning_contracts: [PROMPT_OBSERVATION_SCHEMA.yaml, OUTCOME_ATTRIBUTION_SCHEMA.yaml, LEARNING_CANDIDATE_SCHEMA.yaml, LEARNING_EVALUATION_SCHEMA.yaml, LEARNING_PROMOTION_GATE.yaml]
+offline_candidates:
+  - {id: LC-13-001, status: EVALUATED, scope: PROJECT, applied: false}
+  - {id: LC-13-002, status: BLOCKED, scope: PROJECT, applied: false}
+stage14_governance_requirements: [STAGE14_GOVERNANCE_REQUIREMENTS.yaml]
+carried_blockers:
+  - CON-002 TYPED_BLOCKED / NO_WINNER_SELECTED
+  - REF-039/041/043/044 KEEP_UNRESOLVED_HISTORICAL
+  - R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, R03-LOCAL
+next_stage_entry_gate:
+  stage: '14'
+  result: NOT_EVALUATED
+  execution_authorized: false
+  real_migration_readiness: MIGRATION_BLOCKED
+stage14_started: false
+stop_after_stage: '13'
+

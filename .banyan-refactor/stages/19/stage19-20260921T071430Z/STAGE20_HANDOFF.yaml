@@ -1,0 +1,24 @@
+schema_version: stage19-v1
+upstream_stage: '19'
+run_id: stage19-20260921T071430Z
+acceptance: PASS_STAGE19_INDEPENDENT_TECHNICAL_ACCEPTANCE_RC_WITH_CARRIED_BLOCKERS
+rc_manifest: RC_MANIFEST.yaml
+final_architecture: ANT_DESIGN_PRO_SIMPLE -> GO_GIN_GO_EMBED -> LOCAL_STDIO -> PYTHON_STAGE15_RUNTIME
+documentation_inputs:
+- ACCEPTANCE_REPORT.md
+- STAGE19_EVIDENCE_REGISTRY.yaml
+- RC_MANIFEST.yaml
+- evidence/STAGE19_COVERAGE_REPORT.yaml
+upgrade_migration_requirements:
+  bootstrap_refactor_workspace_retirement: true
+  future_framework_upgrades_use_banyan_migration_mechanism: true
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED
+documentation_and_release_preparation_may_proceed: true
+final_activation_may_proceed: false
+stage20_entry_gate:
+  result: READY_FOR_DOCUMENTATION_AND_RELEASE_PREPARATION_WITH_ACTIVATION_BLOCKED
+  execution_authorized: false

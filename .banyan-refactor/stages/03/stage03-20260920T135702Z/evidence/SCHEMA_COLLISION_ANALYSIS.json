@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "detected": 4,
+  "unowned": 0,
+  "collisions": [
+    {
+      "term": "DecisionEvidence",
+      "uses": [
+        {
+          "namespace": "artifact_role",
+          "owner": "CAP-AUTH"
+        },
+        {
+          "namespace": "artifact_role",
+          "owner": "CAP-IDP"
+        }
+      ],
+      "owner": "Stage 03 typed schema",
+      "resolution": "namespace-qualified IDs; shared semantic type allowed only through explicit reference",
+      "status": "OWNED"
+    },
+    {
+      "term": "EffectiveUIContract",
+      "uses": [
+        {
+          "namespace": "contract",
+          "owner": "banyan.contract.effective_uicontract.v1"
+        },
+        {
+          "namespace": "artifact_role",
+          "owner": "CAP-UI_CONTRACT"
+        }
+      ],
+      "owner": "Stage 03 typed schema",
+      "resolution": "namespace-qualified IDs; shared semantic type allowed only through explicit reference",
+      "status": "OWNED"
+    },
+    {
+      "term": "ProgressProjection",
+      "uses": [
+        {
+          "namespace": "contract",
+          "owner": "banyan.contract.progress_projection.v1"
+        },
+        {
+          "namespace": "artifact_role",
+          "owner": "CAP-PROGRESS"
+        }
+      ],
+      "owner": "Stage 03 typed schema",
+      "resolution": "namespace-qualified IDs; shared semantic type allowed only through explicit reference",
+      "status": "OWNED"
+    },
+    {
+      "term": "截图",
+      "uses": [
+        {
+          "namespace": "contract_output",
+          "owner": "banyan.contract.visual_repair_run.v1"
+        },
+        {
+          "namespace": "contract_output",
+          "owner": "banyan.contract.page_visual_capture.v1"
+        }
+      ],
+      "owner": "Stage 03 typed schema",
+      "resolution": "namespace-qualified IDs; shared semantic type allowed only through explicit reference",
+      "status": "OWNED"
+    }
+  ]
+}

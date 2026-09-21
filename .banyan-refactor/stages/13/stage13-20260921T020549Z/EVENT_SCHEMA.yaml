@@ -1,0 +1,12 @@
+schema_version: stage13-v1
+event_classes: [OBSERVED_EVENT, DERIVED_EVENT, CORRELATED_EVENT]
+event_required_fields: [event_id, event_class, event_type, subject_id, occurred_at, source_refs, actor_identity_or_unknown, result, evidence_refs]
+event_relationships: [PRECEDES, CORRELATED_WITH, TRIGGERED_BY, CAUSED_BY, DERIVED_FROM]
+rules:
+  - occurred_at_may_be_UNKNOWN
+  - actor_may_be_UNKNOWN
+  - temporal_order_does_not_establish_causality
+  - shared_run_or_actor_does_not_establish_common_intent
+  - caused_by_requires_independent_causal_evidence
+  - event_frequency_does_not_resolve_authority_conflict
+

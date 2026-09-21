@@ -1,0 +1,20 @@
+schema_version: stage05-v1
+identity_truth:
+  name_source: git_config_user_name
+  email_source: git_config_user_email
+  key: author.name_plus_author.email
+pre_execution_check:
+  name_and_email_present: CONTINUE_TO_AUTHORIZATION_GATE
+  either_missing: BLOCK_NEEDS_INPUT
+  ambiguous_or_untrusted: BLOCK_NEEDS_INPUT
+ai_may_modify_identity: false
+ai_may_use_author_override: false
+ai_may_invent_author: false
+automatic_alias_merge: false
+profile_grants_authorization: false
+historical_identity_proves_physical_operator: false
+current_precheck_evidence:
+  identity_available: true
+  value_recording_policy: evidence_only_not_generic_core
+  source_ref: "../../../01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml"
+

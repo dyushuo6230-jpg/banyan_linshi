@@ -1,0 +1,17 @@
+upstream_stage: '19'
+run_id: stage19-20260921T071430Z
+acceptance_result: PASS_STAGE19_INDEPENDENT_TECHNICAL_ACCEPTANCE_RC_WITH_CARRIED_BLOCKERS
+rc_result: PASS_STAGE19_RC_1_REPRODUCIBLE
+hard_metrics_all_zero: true
+current_project_git_mutation: false
+pilot_dot_banyan_mutation: false
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED
+next_stage_entry_gate:
+  stage: '20'
+  result: READY_FOR_DOCUMENTATION_AND_RELEASE_PREPARATION_WITH_ACTIVATION_BLOCKED
+  execution_authorized: false
+stop_after_stage: '19'

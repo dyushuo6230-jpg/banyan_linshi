@@ -1,0 +1,14 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_EXECUTED
+drift_types: [SOURCE_DRIFT, UI_SPEC_DRIFT, IMPLEMENTATION_DRIFT, VALIDATION_BASELINE_DRIFT]
+required_fields: [drift_id, drift_type, left_ref, left_version, right_ref, right_version, scope, evidence_refs, confidence, status]
+statuses: [DETECTED, NEEDS_REVIEW, ACCEPTED, RESOLVED, UNKNOWN]
+routing:
+  SOURCE_DRIFT: REFRESH_DESIGN_EVIDENCE
+  UI_SPEC_DRIFT: STAGE08_REVIEW_REQUIRED
+  IMPLEMENTATION_DRIFT: IMPLEMENTATION_RECONCILIATION
+  VALIDATION_BASELINE_DRIFT: REBASE_VALIDATION_WITH_APPROVAL
+untyped_page_mismatch_allowed: false
+drift_check_executed: false

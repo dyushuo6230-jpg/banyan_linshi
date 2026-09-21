@@ -1,0 +1,16 @@
+schema_version: stage13-v1
+records:
+  - telemetry_id: TEL-13-001
+    task_profile: STAGE13_CONTRACT_FREEZE
+    execution_mode: QUERY_FIRST_OFFLINE_LEARNING
+    context_class: MANDATORY_PLUS_BOUNDED_ON_DEMAND
+    quality_result: PASS
+    validation_result: V13_01_TO_24_PASS
+    latency_class: LOW
+    usage_units: UNKNOWN
+    cache_hit: false
+    escalation_count: 0
+    retry_count: 1
+provider_or_model_identity_recorded: false
+price_recorded: false
+fixed_token_percentage_recorded: false

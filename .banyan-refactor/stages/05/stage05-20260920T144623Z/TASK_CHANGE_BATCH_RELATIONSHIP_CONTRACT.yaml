@@ -1,0 +1,15 @@
+schema_version: stage05-v1
+entities:
+  task: user_intent_and_authorized_scope
+  change: coherent_semantic_delta_serving_a_task
+  batch: execution_or_delivery_unit_containing_ordered_changes
+  commit_group: atomic_reviewable_subset_of_changes
+relationships:
+  task_to_change: one_to_many
+  change_to_batch: many_to_many_with_explicit_refs
+  change_to_commit_group: one_or_many_when_hunk_split_is_justified
+rules:
+  every_commit_group_requires_task_or_change_ref: true
+  batch_boundary_may_not_hide_unrelated_change: true
+  dependency_order_must_be_explicit: true
+  incomplete_change_may_not_be_promoted_by_grouping: true

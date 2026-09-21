@@ -1,0 +1,38 @@
+schema_version: stage16-v1
+upstream_stage: "16"
+run_id: stage16-20260921T034943Z
+acceptance_result: PASS_STAGE16_CONTROL_PLANE_WEBUI_PROVENANCE_ACTIVATION_READINESS
+required_inputs:
+  control_plane_api: CONTROL_PLANE_API_CONTRACT.yaml
+  runtime_status_surface: /api/status
+  project_safety_surface: /api/project-safety
+  preflight_surface: /api/preflight
+  semantic_commit_plan_surface: /api/commit/plan
+  dry_run_surface: /api/commit/dry-run
+  trace_provenance_surface: [/api/trace, /api/provenance/:id]
+  activation_readiness: ACTIVATION_READINESS_REPORT.yaml
+  pilot_activation_preconditions:
+    - independent_stage17_gate
+    - explicit_pilot_scope
+    - project_instance_validation
+    - rollback_checkpoint
+  cursor_adapter_port_requirements:
+    - adapter_calls_control_plane_or_runtime_api
+    - no_direct_git_mutation
+    - no_ui_click_as_authorization
+    - preserve_typed_permission_results
+    - preserve_secret_metadata_only
+    - preserve_identity_presence_only
+runtime:
+  policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+  current_project_execution: DRY_RUN_ONLY
+  control_plane_may_bypass_policy: false
+control_plane:
+  implementation: banyan.control_plane
+  bind_default: 127.0.0.1
+  public_bind_allowed: false
+  mutation_endpoints: 0
+stage16_implements_cursor_adapter: false
+pilot_dot_banyan_activation_stage: "17"
+dot_banyan_created: false
+stage17_execution_authorized: false

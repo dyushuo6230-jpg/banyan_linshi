@@ -1,0 +1,17 @@
+schema_version: stage18.5-v1
+result: PASS
+default_bind: 127.0.0.1
+public_bind_default: false
+limits:
+  body_bytes: 1000000
+  read_header_seconds: 5
+  read_seconds: 15
+  write_seconds: 15
+  idle_seconds: 30
+  bridge_seconds: 10
+panic_recovery: true
+shell_interpolation: false
+secret_body_api_or_render_path: false
+identity_value_persistence: false
+permission_bypass_path: false
+git_mutation_path: false

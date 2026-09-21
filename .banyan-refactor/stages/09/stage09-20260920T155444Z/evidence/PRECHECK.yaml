@@ -1,0 +1,21 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+result: PASS
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+stage08:
+  seal: PASS
+  acceptance: PASS_UI_GOVERNANCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+  entry_gate: PASS_FOR_STAGE09_UI_DESIGN_INTELLIGENCE_DESIGN_WITH_INHERITED_BLOCKERS
+real_migration_readiness: MIGRATION_BLOCKED
+git_state: {tracked_changes: 0, staged_changes: 0, conflicts: 0}
+scope:
+  design_contracts_only: true
+  repository_rescan: false
+  full_design_corpus_analysis: false
+  image_analysis: false
+  prior_stage_rerun: false
+  canonical_mutation: false
+  frontend_generation: false
+  stage10_execution: false
+secret_scope: {paths: 13, body_access: false, recovery_coverage: PARTIAL_APPROVED}

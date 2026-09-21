@@ -1,0 +1,15 @@
+schema_version: stage04-v1
+resolution_status: [EXPLICIT, DERIVED, DEFAULTED, UNKNOWN, BLOCKED]
+required_fields: [variable_id, value, status, source, confidence, sensitivity, required_for, fallback, block_when_unknown]
+rules:
+  critical_unknown_behavior: BLOCKED
+  silent_default_allowed_for_critical: false
+  default_must_be_declared: true
+bindings:
+  - {variable_id: project_profile, value: PROJECT_PROFILE_SCHEMA.yaml, status: EXPLICIT, source: stage04-design, confidence: HIGH, sensitivity: PUBLIC_METADATA, required_for: [CAP-PROFILE], fallback: null, block_when_unknown: true}
+  - {variable_id: authorization_scope, value: null, status: UNKNOWN, source: null, confidence: UNKNOWN, sensitivity: GOVERNANCE, required_for: [CAP-AUTH], fallback: null, block_when_unknown: true}
+  - {variable_id: design_gate, value: null, status: UNKNOWN, source: null, confidence: UNKNOWN, sensitivity: GOVERNANCE, required_for: [CAP-ARCH], fallback: null, block_when_unknown: true}
+  - {variable_id: editor_entry, value: null, status: UNKNOWN, source: null, confidence: UNKNOWN, sensitivity: PROJECT, required_for: [CAP-EDITOR], fallback: null, block_when_unknown: true}
+  - {variable_id: project_endpoints, value: null, status: BLOCKED, source: "conflicts://CON-002", confidence: UNKNOWN, sensitivity: PROJECT, required_for: [CAP-PORT], fallback: null, block_when_unknown: true}
+  - {variable_id: delivery_convention, value: null, status: UNKNOWN, source: null, confidence: UNKNOWN, sensitivity: PROJECT, required_for: [CAP-SQL], fallback: null, block_when_unknown: true}
+  - {variable_id: commit_practice, value: null, status: UNKNOWN, source: stage01-git-metadata, confidence: LOW, sensitivity: GOVERNANCE, required_for: [CAP-COMMIT], fallback: null, block_when_unknown: true}

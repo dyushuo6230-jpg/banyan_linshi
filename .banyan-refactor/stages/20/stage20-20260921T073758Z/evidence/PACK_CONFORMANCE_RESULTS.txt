@@ -1,0 +1,28 @@
+PACK_CHECKSUMS
+20-A_Final_Architecture_Guide.md: OK
+20-B_Install_Build_Run_Guide.md: OK
+20-C_WebUI_Control_Plane_Guide.md: OK
+20-D_Runtime_Adapter_Guide.md: OK
+20-E_Project_Instance_Guide.md: OK
+20-F_Governance_Security_Guide.md: OK
+20-G_Upgrade_Migration_Guide.md: OK
+20-H_Legacy_Documentation_Adoption_Guide.md: OK
+20-I_Bootstrap_Retirement_Plan.md: OK
+20-J_Version_Transition_and_Release.md: OK
+20-K_Final_Handoff.md: OK
+20_Documentation_Framework_Release.md: OK
+ACCEPTANCE_REPORT.template.md: OK
+STAGE_MANIFEST.yaml: OK
+STAGE_PLAN.md: OK
+Stage_20_v1.10_Codex正式开始提示词.md: OK
+VALIDATION_AND_ROLLBACK.md: OK
+templates/ACCEPTED_FINAL_STATE.template.yaml: OK
+templates/BOOTSTRAP_RETIREMENT_PLAN.template.yaml: OK
+templates/FINAL_HANDOFF.template.yaml: OK
+templates/FRAMEWORK_RELEASE_MANIFEST.template.yaml: OK
+templates/LEGACY_DOC_ADOPTION_PLAN.template.yaml: OK
+templates/VERSION_TRANSITION_PROPOSAL.template.yaml: OK
+tests/stage20_conformance_spec.py: OK
+shasum: WARNING: 1 line is improperly formatted
+CONFORMANCE_SPEC
+PASS Stage20 conformance spec

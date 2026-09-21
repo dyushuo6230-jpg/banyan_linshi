@@ -1,0 +1,600 @@
+stage: '02'
+status: CANDIDATE_ONLY
+layer: BANYAN_CORE_CANDIDATE
+count: 21
+items:
+- capability_id: CAP-AUTH
+  name: 工作范围与授权
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: ActionAuthorization
+  provider_port: HumanApprovalEvidence
+  artifact_role: DecisionEvidence
+  runtime_phase: PRE_AUTHORIZE
+  project_overlay: project roles and protected paths
+  failure_semantics:
+  - 缺授权停止目标动作，保留诊断
+  migration_risk: Do not infer permission from a legacy prompt or an earlier choice.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '14'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 465
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/AI_DOCUMENTATION_GUIDE.md
+    line: 37
+    source_sha256: f9b9d5eeeb1a94e45ed51fc3dca8476ab9011e7351ee1c253fd6f8e6827a4e9f
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/AI_DOCUMENTATION_GUIDE.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-PROFILE
+  name: 项目变量与接入模式
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: VariableResolution
+  provider_port: ProjectFactReader
+  artifact_role: ProjectVariableMap
+  runtime_phase: LOAD_CONTEXT
+  project_overlay: project variables and migration defaults
+  failure_semantics:
+  - 未知保持 TBD
+  migration_risk: TBD values cannot be silently defaulted.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '04'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 243
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/PROJECT_VARIABLES.md
+    line: 1
+    source_sha256: b34f4826eb47b652bbcc3efd61620a64ba9795c0d06ed91a3131c340cc0364b4
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/PROJECT_VARIABLES.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-INTAKE
+  name: 来源投放与冻结
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: SourceIntake
+  provider_port: ProjectSourceReader
+  artifact_role: SourceRecord
+  runtime_phase: ENGINEERING
+  project_overlay: source batches and document roots
+  failure_semantics:
+  - P0/P1 阻塞后继必经阶段
+  migration_risk: Historic source status needs a project mapping.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '07'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1047
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1088
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-PRD
+  name: PRD 生命周期与评审
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: RequirementLifecycle
+  provider_port: CanonicalDocumentReader
+  artifact_role: RequirementDocument
+  runtime_phase: HUMAN_DECISION
+  project_overlay: PRD stages and local labels
+  failure_semantics:
+  - 阻塞项保留，不伪升状态
+  migration_risk: Approval status cannot be inferred from a file path.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '07'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1112
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1132
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1198
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-IDP
+  name: 知情决策协议
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: DecisionSession
+  provider_port: HumanDecisionChannel
+  artifact_role: DecisionEvidence
+  runtime_phase: HUMAN_DECISION
+  project_overlay: DEC-042 five-question project overlay
+  failure_semantics:
+  - 出现新权衡回评审；未确认保持 TBD
+  migration_risk: Generic HIGH=1/LOW=2 and project overlay conflict; no winner selected.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '05'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 496
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 222
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-ARCH
+  name: 架构和模块边界参与门禁
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: DesignGate
+  provider_port: DecisionRegistryReader
+  artifact_role: ArchitectureDecision
+  runtime_phase: HUMAN_DECISION
+  project_overlay: current G6/G7 labels and project baseline
+  failure_semantics:
+  - 缺决策停止对应生成
+  migration_risk: DIRECT_DRAFT must not bypass approval.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '05'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 987
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1229
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1329
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-SCHEMA
+  name: 文档状态与编号
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: ArtifactStatusAndIdentity
+  provider_port: ArtifactRegistryReader
+  artifact_role: ArtifactMetadata
+  runtime_phase: ENGINEERING
+  project_overlay: project numbering namespace
+  failure_semantics:
+  - 状态证据不足保持原态
+  migration_risk: ID ownership and Approved/Baselined status need proof.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '03'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 816
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-IDREF
+  name: 编号占用与在引用规则保护
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: ReferenceIntegrity
+  provider_port: DocumentReferenceReader
+  artifact_role: ReferenceGraph
+  runtime_phase: FULL_AUDIT
+  project_overlay: DEC/ADR/CR/REQ local namespaces
+  failure_semantics:
+  - 引用含混阻塞自动改写
+  migration_risk: Never change meaning of an occupied ID or replace referenced body.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '03'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 903
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/decisions/ADR-049.md
+    line: 1
+    source_sha256: 0e97b29bce9d78a8d486fc01e29e052b58afefdcefdab20ed95d6d40469218bc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/decisions/ADR-049.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-TRACE
+  name: 全链路追踪
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: EvidenceTrace
+  provider_port: SourceGraphReader
+  artifact_role: TraceEdge
+  runtime_phase: FULL_AUDIT
+  project_overlay: project trace vocabulary and document roots
+  failure_semantics:
+  - 缺边登记开放项
+  migration_risk: Missing edges must remain explicit, not fabricated.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '13'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1877
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/acceptance/TRACE_MATRIX.md
+    line: 1
+    source_sha256: b20cf34f1c81fc55794f24e334761b01c9400f5b6dd30e17f77a07bdbd3df077
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/acceptance/TRACE_MATRIX.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-CHANGE
+  name: 变更与版本路由
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: ChangeApplication
+  provider_port: CanonicalDocumentWriter
+  artifact_role: ChangeRecord
+  runtime_phase: HUMAN_DECISION
+  project_overlay: project CR/PRD version policy
+  failure_semantics:
+  - 冲突未确认不 APPLY
+  migration_risk: Only confirmed scope can cross the canonical write boundary.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '06'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1918
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2474
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-PARALLEL
+  name: Parallel Draft 临时袋
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: DraftPromotion
+  provider_port: DraftWorkspaceReader
+  artifact_role: PromotionPlan
+  runtime_phase: HUMAN_DECISION
+  project_overlay: changes_temp path and PRD state
+  failure_semantics:
+  - 冲突/未确认保留袋；不创建第四条变更管道
+  migration_risk: Draft cannot become canonical or reserve final IDs automatically.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '06'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2362
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2397
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2440
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/changes/变更稿模式.md
+    line: 1
+    source_sha256: b651c19c5f1a0a5f02878aaae4a07cc1ba0d9453b5e8fe1a0b4c449e007d5e7e
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/changes/变更稿模式.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-RECONCILE
+  name: 36A 批次正式口径收口
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: BatchReconciliation
+  provider_port: BatchEvidenceReader
+  artifact_role: ReconciliationRecord
+  runtime_phase: ENGINEERING
+  project_overlay: 36A trigger and business-delta semantics
+  failure_semantics:
+  - 未确认差异保留待决
+  migration_risk: Incomplete reconciliation cannot silently start the next batch.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '06'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1949
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2099
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-TEST
+  name: 自测桩与验收口径完整性
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: TestIntegrity
+  provider_port: TestEvidenceReader
+  artifact_role: TestIntegrityEvidence
+  runtime_phase: FULL_AUDIT
+  project_overlay: project test/acceptance rules
+  failure_semantics:
+  - 无拆桩/保留证据不得声明通过
+  migration_risk: Temporary stubs cannot remain or redefine success.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '14'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2028
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2018
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-PROGRESS
+  name: 证据驱动多轴进度
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: ProgressProjection
+  provider_port: ProgressRegistryReader
+  artifact_role: ProgressProjection
+  runtime_phase: ENGINEERING
+  project_overlay: weights and applicability of project work
+  failure_semantics:
+  - 不能把建文件/合并当验收
+  migration_risk: Stale summaries must not override the register or imply completion.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '16'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1972
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/PROGRESS_REGISTER.yaml
+    line: 1
+    source_sha256: 68eee304166630012f81b1148ee8ed4a2c5de0b89b627847ca4f100e03f99887
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROGRESS_REGISTER.yaml
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-HANDOVER
+  name: 工作日志与接管
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: OperationalHandover
+  provider_port: WorklogReader
+  artifact_role: HandoverRecord
+  runtime_phase: ENGINEERING
+  project_overlay: local log/handover format
+  failure_semantics:
+  - 接管验证失败保持阻塞
+  migration_risk: Missing work/risks must not be dropped from recovery context.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '11'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 2043
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/project/progress/HANDOVER_REGISTER.md
+    line: 1
+    source_sha256: c89a2aae6eacc65021b60e53b4ad1395efa111e4692994164ed6bb14d3046a4d
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/HANDOVER_REGISTER.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-CONTEXT
+  name: 新窗口续做
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: ContextRecovery
+  provider_port: ProjectStateReader
+  artifact_role: RecoveryContext
+  runtime_phase: LOAD_CONTEXT
+  project_overlay: current project authority/freshness rules
+  failure_semantics:
+  - 信息不一致说明并停在对应门禁
+  migration_risk: README/dashboard conflicts require source/freshness resolution.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '12'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 145
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/progress/PROJECT_DASHBOARD.md
+    line: 1
+    source_sha256: 67742b0fbf293b25f8e368f24f716f3cd7c64b9c7bd8d559cfc171a349dae81b
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PROJECT_DASHBOARD.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-UI_SCOPE
+  name: UI 逻辑范围与应用分闸
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: UIApplicationScope
+  provider_port: ApplicationMapReader
+  artifact_role: UIScopeMap
+  runtime_phase: ENGINEERING
+  project_overlay: application slugs and enabled list
+  failure_semantics:
+  - 未批准 UI 不作为约束
+  migration_risk: Disabled applications must not count as active UI constraints.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 08
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 980
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1005
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-UI_CONTRACT
+  name: 分层 UI 合并与批次契约
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: EffectiveUIContract
+  provider_port: UISpecReader
+  artifact_role: EffectiveUIContract
+  runtime_phase: ENGINEERING
+  project_overlay: application/page/device version map
+  failure_semantics:
+  - 冲突进入 UI-DEC/CR
+  migration_risk: Only Approved/Baselined applicable UI rules may constrain a batch.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 08
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 939
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1792
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-UI_GATE
+  name: 素材→Draft→批准→点名换皮
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: UIApprovalGate
+  provider_port: DesignEvidenceReader
+  artifact_role: UIGateDecision
+  runtime_phase: HUMAN_DECISION
+  project_overlay: project 25A/28A/29 steps and named pages
+  failure_semantics:
+  - 未批准不能改页面
+  migration_risk: Design tokens and Draft do not authorize implementation.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 08
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 1014
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: .cursor/rules/ui-spec-gate.mdc
+    line: 1
+    source_sha256: b939dfcbd0cf8d5c0335cde76c5cefe6f7aa9c73c17f05a1c4802e26bc2fb8ba
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/ui-spec-gate.mdc
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-VISUAL
+  name: 独立视觉修复循环
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: VisualRepairRun
+  provider_port: ScreenshotCapture
+  artifact_role: VisualRunEvidence
+  runtime_phase: ENGINEERING
+  project_overlay: page/allowed-files/viewport/exception overlay
+  failure_semantics:
+  - 超轮数停止；用户叫停可回退；in_progress 不伪称成功
+  migration_risk: In-progress and user-stopped/reverted runs are not successes.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: 09
+  evidence_refs:
+  - path: .cursor/skills/visual-repair-loop/SKILL.md
+    line: 1
+    source_sha256: df37c0559b104122f03ca27c4e82f18dc3e690328e37dad2b86105ef19be1870
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/skills/visual-repair-loop/SKILL.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+    line: 1
+    source_sha256: abb8cef06df0ff94f416b6488de0044b96d4d49649f288beb837e06e195691cb
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-tabbar/RESULT.md
+  - path: docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+    line: 1
+    source_sha256: 712e79c6e1b5a6c7000a583c128cb5dbff4e6643d7944912c384bf48b06ce696
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/ui-design/visual-loop/LOOP_RUNS/20260919-gongyi_online-nearby/RUN.yaml
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-PUBLISH
+  name: 白话知识发布
+  candidate_layer: BANYAN_CORE_CANDIDATE
+  contract: KnowledgeProjection
+  provider_port: CanonicalFactReader
+  artifact_role: ProjectGuideProjection
+  runtime_phase: BATCH_WORKER
+  project_overlay: plain-spec and PLAIN_SYNC mapping
+  failure_semantics:
+  - 无基线不能差异同步
+  migration_risk: Derived guide cannot become PRD truth or be rebuilt without lineage.
+  required_validation:
+  - Cross-project fixture with another repository; no hardcoded x_shop_server path
+  - Stage 03 contract/schema review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '10'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    line: 2150
+    source_sha256: 3bc34bb96deaaf9e15c4982fd677927082dd4579e964722cb5f4d9d197ad397c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+  - path: docs/project/plain-spec/白话文档生成方案.md
+    line: 1
+    source_sha256: f0a8e76c49ed4a43fc039f8544bf23366ab7264d7dbd349929aa9c824ea62d58
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/plain-spec/白话文档生成方案.md
+  - path: docs/project/progress/PLAIN_SYNC.yaml
+    line: 1
+    source_sha256: 47cfe1363efb221c3f300463e380cc02791247322c8154cce0349f5e47df5fdc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/project/progress/PLAIN_SYNC.yaml
+  approval: NOT_APPROVED
+  execution_allowed: false

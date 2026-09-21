@@ -1,0 +1,9 @@
+schema_version: stage14-v1
+learning_states_not_authorization: [PROPOSED, EVALUATING, EVALUATED, APPROVED_FOR_CHANGE, BLOCKED]
+required_before_canonical_change: [complete_evidence, evaluation_pass, impact_review, scope_classification, human_decision_gate, approved_change_workspace, target_bound_authorization, protected_write_gate]
+project_to_core_extra: [cross_project_evidence, purity_check, portability_check, independent_validation, human_governance_approval]
+stage13_candidates:
+  - {id: LC-13-001, state: EVALUATED, authorization: NONE, canonical_apply: BLOCKED}
+  - {id: LC-13-002, state: BLOCKED, authorization: NONE, canonical_apply: BLOCKED}
+stage14_applies_learning_candidate: false
+

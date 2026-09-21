@@ -1,0 +1,37 @@
+schema_version: stage17-v1
+upstream_stage: "17"
+run_id: stage17-20260921T055911Z
+acceptance_result: PASS_STAGE17_CURSOR_PROJECT_INSTANCE_PILOT
+pilot:
+  dot_banyan_created: true
+  root: .banyan
+  mode: PILOT_SHADOW
+  success: true
+  final_activation: false
+  formal_migration_complete: false
+  exact_validated_shadow_match: true
+  rollback_ready: true
+runtime_integration:
+  chain: [Cursor Adapter, Control Plane, Runtime API, Permission Policy, Evidence Trace]
+  policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+  bypass_paths: 0
+project_safety:
+  existing_project_layout: PRESERVE_IN_PLACE
+  current_project_git_mutations: 0
+  docs_project_moves: 0
+  legacy_deletions: 0
+  git_identity_mutations: 0
+  secret_body_reads: 0
+carried_blockers:
+  - {id: CON-002, state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY}
+  - {id: FINAL_ACTIVATION, state: NOT_AUTHORIZED}
+required_next_review:
+  - pilot_observation_results
+  - final_activation_authority
+  - con002_human_project_authority
+  - rollback_checkpoint_freshness
+next_stage_entry_gate:
+  stage: "18"
+  result: READY_FOR_INDEPENDENT_REVIEW_WITH_BLOCKERS
+  execution_authorized: false
+stop_after_stage: "17"

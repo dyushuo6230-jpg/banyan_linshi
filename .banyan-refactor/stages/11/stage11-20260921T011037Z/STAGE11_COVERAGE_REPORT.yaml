@@ -1,0 +1,33 @@
+schema_version: stage11-v1
+stage: '11'
+run_id: stage11-20260921T011037Z
+overall: PASS
+coverage:
+  sqlite_schema: COMPLETE
+  stable_id_and_locator_separation: COMPLETE
+  source_role_authority_freshness_provenance: COMPLETE
+  reference_graph: COMPLETE
+  unresolved_reference_preservation: COMPLETE
+  trace_lineage: COMPLETE
+  history_state_preservation: COMPLETE
+  projection_and_source_links: COMPLETE
+  progress_and_handover_views: COMPLETE
+  provider_bindings: COMPLETE
+  metadata_only_secret_handling: COMPLETE
+  query_surface: COMPLETE
+  isolated_rebuildability: COMPLETE
+counts:
+  entities: 1911
+  artifacts: 1740
+  reference_edges: 108
+  unresolved_references: 4
+  not_a_reference: 2
+  projections: 95
+  trace_events: 28
+  history_events: 324
+  secret_metadata: 13
+limitations:
+  - Shadow SQLite is rebuildable evidence and is not canonical truth or the final runtime database.
+  - Four historical references remain unresolved and owned by Stage 12.
+  - CON-002 remains OPEN and owned by Stage 12.
+

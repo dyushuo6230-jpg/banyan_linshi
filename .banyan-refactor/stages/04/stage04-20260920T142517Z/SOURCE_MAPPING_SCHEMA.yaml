@@ -1,0 +1,21 @@
+schema_version: stage04-v1
+required_fields:
+  - mapping_id
+  - role_id
+  - path_expression
+  - path_kind
+  - authority
+  - read_policy
+  - write_policy
+  - freshness_rule
+  - conflict_rule
+  - optional
+  - evidence_refs
+path_kinds: [FILE, DIRECTORY, GLOB, MULTI_ROOT, VIRTUAL, EXTERNAL]
+rules:
+  path_is_role: false
+  role_may_have_multiple_paths: true
+  path_may_have_multiple_roles_only_when_explicit: true
+  implicit_role_inference: false
+  existing_sources_move_required: false
+

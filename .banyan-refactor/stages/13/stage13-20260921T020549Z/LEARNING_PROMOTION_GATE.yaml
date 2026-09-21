@@ -1,0 +1,8 @@
+schema_version: stage13-v1
+requirements: [evidence_complete, evaluation_complete, impact_reviewed, scope_classified, decision_gate_satisfied, change_workspace_created_before_canonical_apply]
+project_to_core_extra_requirements: [cross_project_evidence, purity_check, portability_check, independent_validation, human_governance_approval]
+canonical_apply_in_stage13: false
+canonical_prompt_rule_skill_mutation_in_stage13: false
+promotion_is_authorization: false
+missing_requirement_result: BLOCKED
+

@@ -1,0 +1,12 @@
+{
+  "initial_inventory_sha256": "80998ce0dce131f17c5e7a8e7a2dcb864fc328350979ad16fc17159693325e6c",
+  "initial_retained_at": "evidence/AI_ASSET_DISCOVERY_DRAFT.jsonl",
+  "final_inventory_sha256": "78dc4bae38149b0ea72eecb4987855e5b45fca26760b834d0b7267832945ff7c",
+  "refinements": [
+    "Visual runs are operational, not canonical",
+    "Placeholders ignored without deletion",
+    "Publishing policy copies are MERGE candidates only",
+    "15 governed ignored resources retained explicitly",
+    "5 historical-only paths from 10 deletion events retained explicitly"
+  ]
+}

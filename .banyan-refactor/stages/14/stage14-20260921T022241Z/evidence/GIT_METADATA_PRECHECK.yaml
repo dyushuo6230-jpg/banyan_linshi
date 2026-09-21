@@ -1,0 +1,21 @@
+schema_version: stage14-v1
+inspection_mode: READ_ONLY_METADATA_ONLY
+head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+branch: feature/huanpipro
+identity:
+  name_present: true
+  email_present: true
+  values_recorded: false
+  ambiguity_from_history_evaluated: false
+  permission_role_inferred: false
+worktree:
+  staged: 0
+  unstaged: 0
+  untracked: 4
+  conflicted: 0
+  tracked_diff_stat_lines: 0
+  cached_diff_stat_lines: 0
+git_index_sha256_before: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+commit_authorized: false
+git_mutation_executed: false
+

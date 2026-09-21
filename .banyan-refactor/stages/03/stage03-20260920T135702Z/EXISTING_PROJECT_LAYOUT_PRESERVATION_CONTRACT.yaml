@@ -1,0 +1,19 @@
+schema_version: stage03-v1
+contract_status: FROZEN
+existing_project: PRESERVE_IN_PLACE
+banyan: DISCOVER + MAP + CLASSIFY/DESIGN
+relayout: EXPLICIT_MIGRATION_ONLY
+forbidden_without_explicit_migration:
+- move
+- rename
+- delete
+- overwrite
+- replace authority by location
+- create final target layout
+stage03_physical_layout_change: false
+future_migration_requires:
+- separate authorization
+- source and target mapping
+- reference migration
+- rollback evidence
+- post-migration validation

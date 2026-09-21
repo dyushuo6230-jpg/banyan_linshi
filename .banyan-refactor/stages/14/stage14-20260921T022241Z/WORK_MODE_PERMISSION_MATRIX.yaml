@@ -1,0 +1,22 @@
+schema_version: stage14-v1
+safety_floor: [SECRET_GATE, PROTECTED_TARGET_GATE, GIT_IDENTITY_GATE, HUMAN_CONFIRMATION_GATE, UNKNOWN_BLOCKER_BEHAVIOR, AUTHORIZATION_GATE]
+modes:
+  LIGHT:
+    evidence_depth: MINIMUM_SUFFICIENT
+    process_verbosity: LOW
+    review_density: TARGETED
+    may_weaken_safety_floor: false
+  STANDARD:
+    evidence_depth: STANDARD
+    process_verbosity: STANDARD
+    review_density: STANDARD
+    may_weaken_safety_floor: false
+  FULL:
+    evidence_depth: EXPANDED
+    process_verbosity: HIGH
+    review_density: HIGH
+    may_weaken_safety_floor: false
+mode_grants_authorization: false
+mode_may_lower_decision_level: false
+token_budget_may_bypass_gate: false
+

@@ -1,0 +1,19 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_CONTRACT_NOT_IMPLEMENTED
+authority:
+  artifact_role: PRODUCT_REQUIREMENT
+  truth_scope: [business_requirement, product_scope, acceptance_intent, business_rule, product_behavior]
+  canonical_truth: true
+  authority_resolution: SOURCE_ROLE_AND_PROJECT_SCOPE
+ui_spec_relation:
+  may_reference_prd: true
+  may_duplicate_complete_business_rules: false
+  may_override_prd: false
+  minimal_context_only: true
+conflict_policy:
+  design_or_ui_spec_conflicts_with_prd: BLOCK_AND_OPEN_CHANGE_WORKSPACE
+  implementation_may_rewrite_prd: false
+  required_flow: [CHANGE_WORKSPACE, DECISION, CANONICAL_PRD_APPLY, UI_SPEC_REFRESH, UI_SPEC_REAPPROVAL]
+canonical_mutation_in_stage08: false

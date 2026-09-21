@@ -1,0 +1,50 @@
+=== FRONTEND PRODUCTION BUILD ===
+
+> banyan-control-plane-web@0.1.0 build
+> tsc -b && vite build && node scripts/write-asset-manifest.mjs
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 9893 modules transformed.
+rendering chunks...
+computing gzip size...
+../control-plane-go/internal/webassets/dist/index.html                     0.37 kB │ gzip:   0.27 kB
+../control-plane-go/internal/webassets/dist/assets/index-CfaHOHW_.css      0.44 kB │ gzip:   0.29 kB
+../control-plane-go/internal/webassets/dist/assets/index--atBYdsd.js   1,196.56 kB │ gzip: 378.34 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 19.85s
+=== FRONTEND SECURITY AUDIT ===
+found 0 vulnerabilities
+=== GO TESTS ===
+?   	github.com/banyan-framework/control-plane/cmd/banyan-control	[no test files]
+ok  	github.com/banyan-framework/control-plane/internal/controlplane/http	(cached)
+ok  	github.com/banyan-framework/control-plane/internal/runtimebridge	(cached)
+ok  	github.com/banyan-framework/control-plane/internal/webassets	(cached)
+=== GO RELEASE BUILD ===
+PASS release build
+=== STAGE18.5 PYTHON BRIDGE TESTS ===
+PASS test_bridge_calls_preserved_runtime
+PASS test_bridge_failure_is_typed_and_fail_closed
+PASS test_go_transport_contains_no_policy_or_git_implementation
+PASS test_secret_negative_and_unknown_provenance
+PASS test_three_adapters_regress_through_bridge
+RESULT passed=5 failed=0
+=== STAGE18 ADAPTER CONTRACT REGRESSION ===
+PASS test_adapter_capabilities_never_own_policy_canonical_or_git
+PASS test_adapter_source_has_no_runtime_or_git_bypass_import
+PASS test_all_adapters_call_same_runtime_status
+PASS test_commit_plan_is_not_authorization_and_dry_run_is_not_commit
+PASS test_evidence_trace_and_provenance_are_preserved
+PASS test_forbidden_git_mutation_is_runtime_blocked_for_all_adapters
+PASS test_malformed_requests_fail_typed_and_are_traced
+PASS test_permission_boundary_is_identical_across_adapters
+PASS test_request_transformation_is_equivalent
+PASS test_trace_query_is_paginated
+PASS test_unknown_provenance_is_visible_not_filled
+RESULT passed=11 failed=0
+=== DELIVERY PACK CONFORMANCE SPEC ===
+PASS Stage18.5 architecture conformance spec

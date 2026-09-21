@@ -1,0 +1,228 @@
+upstream_stage: '03'
+run_id: stage03-20260920T135702Z
+acceptance_result: PASS_CONTRACT_FREEZE
+frozen_contracts:
+- banyan.contract.action_authorization.v1
+- banyan.contract.variable_resolution.v1
+- banyan.contract.source_intake.v1
+- banyan.contract.requirement_lifecycle.v1
+- banyan.contract.decision_session.v1
+- banyan.contract.design_gate.v1
+- banyan.contract.artifact_status_and_identity.v1
+- banyan.contract.reference_integrity.v1
+- banyan.contract.evidence_trace.v1
+- banyan.contract.change_application.v1
+- banyan.contract.draft_promotion.v1
+- banyan.contract.batch_reconciliation.v1
+- banyan.contract.test_integrity.v1
+- banyan.contract.progress_projection.v1
+- banyan.contract.operational_handover.v1
+- banyan.contract.context_recovery.v1
+- banyan.contract.uiapplication_scope.v1
+- banyan.contract.effective_uicontract.v1
+- banyan.contract.uiapproval_gate.v1
+- banyan.contract.visual_repair_run.v1
+- banyan.contract.knowledge_projection.v1
+- banyan.contract.editor_entry_compatibility.v1
+- banyan.contract.project_endpoint_map.v1
+- banyan.contract.project_delivery_convention.v1
+- banyan.contract.commit_practice_compatibility.v1
+- banyan.contract.legacy_collaboration_reference.v1
+- banyan.contract.design_analysis.v1
+- banyan.contract.css_token_extraction.v1
+- banyan.contract.page_visual_capture.v1
+- banyan.contract.image_palette_extraction.v1
+- banyan.contract.contrast_evaluation.v1
+- banyan.contract.design_document_lint.v1
+- banyan.contract.design_token_build.v1
+- banyan.contract.design_drift_check.v1
+- banyan.contract.design_package_export.v1
+frozen_schemas:
+- CANONICAL_CONTRACT_SCHEMA.yaml
+- CAPABILITY_CONTRACT_REGISTRY.yaml
+- SOURCE_ROLE_SCHEMA.yaml
+- SOURCE_ROLE_REGISTRY.yaml
+- ARTIFACT_REGISTRY_SCHEMA.yaml
+- PROVIDER_PORT_SCHEMA.yaml
+- PROJECT_OVERLAY_SCHEMA.yaml
+- REFERENCE_INTEGRITY_CONTRACT.yaml
+- VERSION_STATUS_PROVENANCE_RULES.yaml
+- BOOTSTRAP_CANONICAL_STATE_CONTRACT.yaml
+- EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT.yaml
+- AI_RUNTIME_GOVERNANCE_CONTRACT.yaml
+deferred_with_owner:
+- id: R03-PURITY
+  severity: HIGH
+  owner_stage: 04/19
+  blocking_before_activation: true
+  reason: 21 Core boundary candidates still lack independent cross-project execution proof.
+- id: R03-SOURCE
+  severity: HIGH
+  owner_stage: 09/10
+  blocking_before_activation: true
+  reason: Artifact authorship/rebuildability may remain UNKNOWN; no replacement or regeneration is authorized.
+- id: CON-001
+  severity: HIGH
+  owner_stage: '05'
+  blocking_before_activation: true
+  reason: IDP/project override conflict remains OPEN; no winner selected.
+- id: CON-002
+  severity: HIGH
+  owner_stage: '12'
+  blocking_before_activation: true
+  reason: Project source freshness conflict remains OPEN; no winner selected.
+- id: R03-COST
+  severity: MEDIUM
+  owner_stage: 05/15/16/19
+  blocking_before_activation: false
+  reason: Runtime prices, numeric budgets and quality benchmarks are not frozen.
+- id: R03-SECRET
+  severity: HIGH
+  owner_stage: ALL_LATER_STAGES
+  blocking_before_activation: true
+  reason: 13 local environment configurations remain preserve-in-place only with PARTIAL_APPROVED recovery.
+- id: R03-LOCAL
+  severity: MEDIUM
+  owner_stage: ALL_LATER_STAGES
+  blocking_before_activation: false
+  reason: Control artifacts are local uncommitted evidence.
+open_risks:
+- id: R03-PURITY
+  severity: HIGH
+  owner_stage: 04/19
+  blocking_before_activation: true
+  reason: 21 Core boundary candidates still lack independent cross-project execution proof.
+- id: R03-SOURCE
+  severity: HIGH
+  owner_stage: 09/10
+  blocking_before_activation: true
+  reason: Artifact authorship/rebuildability may remain UNKNOWN; no replacement or regeneration is authorized.
+- id: CON-001
+  severity: HIGH
+  owner_stage: '05'
+  blocking_before_activation: true
+  reason: IDP/project override conflict remains OPEN; no winner selected.
+- id: CON-002
+  severity: HIGH
+  owner_stage: '12'
+  blocking_before_activation: true
+  reason: Project source freshness conflict remains OPEN; no winner selected.
+- id: R03-COST
+  severity: MEDIUM
+  owner_stage: 05/15/16/19
+  blocking_before_activation: false
+  reason: Runtime prices, numeric budgets and quality benchmarks are not frozen.
+- id: R03-SECRET
+  severity: HIGH
+  owner_stage: ALL_LATER_STAGES
+  blocking_before_activation: true
+  reason: 13 local environment configurations remain preserve-in-place only with PARTIAL_APPROVED recovery.
+- id: R03-LOCAL
+  severity: MEDIUM
+  owner_stage: ALL_LATER_STAGES
+  blocking_before_activation: false
+  reason: Control artifacts are local uncommitted evidence.
+contract_coverage:
+  high_value_capabilities: 35/35
+  freeze_status_counts:
+    FROZEN_CONTRACT: 21
+    COMPATIBILITY_CONTRACT: 3
+    PROJECT_OVERLAY_CONTRACT: 2
+    PROVIDER_PORT_CONTRACT: 9
+  hard_metrics:
+    UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+    UNOWNED_SCHEMA_COLLISION: 0
+    SOURCE_ROLE_WITHOUT_AUTHORITY_RULE: 0
+    CONTRACT_WITHOUT_FAILURE_SEMANTICS: 0
+    SILENT_CAPABILITY_DROP: 0
+    PROJECT_PATH_HARDCODED_IN_CORE_SCHEMA: 0
+inherited_constraints:
+  existing_project: PRESERVE_IN_PLACE
+  banyan: DISCOVER + MAP + CLASSIFY/DESIGN
+  relayout: EXPLICIT_MIGRATION_ONLY
+  secret_recovery_coverage: PARTIAL_APPROVED
+  secret_paths:
+  - nunu-go-api/config/admin/local.yml
+  - nunu-go-api/config/admin/test.yml
+  - nunu-go-api/config/h5-online/local.yml
+  - nunu-go-api/config/h5/local.yml
+  - nunu-go-api/config/h5/test.yml
+  - nunu-go-api/config/home/local.yml
+  - nunu-go-api/config/mall-online/local.yml
+  - nunu-go-api/config/mall-online/prod.yml
+  - nunu-go-api/config/mall-online/test.yml
+  - nunu-go-api/config/mall/local.yml
+  - nunu-go-api/config/mall/test.yml
+  - nunu-go-api/config/merchant/local.yml
+  - nunu-go-api/config/merchant/test.yml
+  secret_policy:
+    content_read: false
+    content_copy: false
+    content_hash: false
+    write: false
+    delete: false
+    move: false
+    rename: false
+    git_commit: false
+  refactor_evidence: .banyan-refactor/**
+  construction_materials: 榕树ai改造落地相关文档/**
+stage04_inputs:
+- banyan.contract.action_authorization.v1
+- banyan.contract.variable_resolution.v1
+- banyan.contract.source_intake.v1
+- banyan.contract.requirement_lifecycle.v1
+- banyan.contract.decision_session.v1
+- banyan.contract.design_gate.v1
+- banyan.contract.artifact_status_and_identity.v1
+- banyan.contract.reference_integrity.v1
+- banyan.contract.evidence_trace.v1
+- banyan.contract.change_application.v1
+- banyan.contract.draft_promotion.v1
+- banyan.contract.batch_reconciliation.v1
+- banyan.contract.test_integrity.v1
+- banyan.contract.progress_projection.v1
+- banyan.contract.operational_handover.v1
+- banyan.contract.context_recovery.v1
+- banyan.contract.uiapplication_scope.v1
+- banyan.contract.effective_uicontract.v1
+- banyan.contract.uiapproval_gate.v1
+- banyan.contract.visual_repair_run.v1
+- banyan.contract.knowledge_projection.v1
+- banyan.contract.editor_entry_compatibility.v1
+- banyan.contract.project_endpoint_map.v1
+- banyan.contract.project_delivery_convention.v1
+- banyan.contract.commit_practice_compatibility.v1
+- banyan.contract.legacy_collaboration_reference.v1
+- banyan.contract.design_analysis.v1
+- banyan.contract.css_token_extraction.v1
+- banyan.contract.page_visual_capture.v1
+- banyan.contract.image_palette_extraction.v1
+- banyan.contract.contrast_evaluation.v1
+- banyan.contract.design_document_lint.v1
+- banyan.contract.design_token_build.v1
+- banyan.contract.design_drift_check.v1
+- banyan.contract.design_package_export.v1
+- CANONICAL_CONTRACT_SCHEMA.yaml
+- CAPABILITY_CONTRACT_REGISTRY.yaml
+- SOURCE_ROLE_SCHEMA.yaml
+- SOURCE_ROLE_REGISTRY.yaml
+- ARTIFACT_REGISTRY_SCHEMA.yaml
+- PROVIDER_PORT_SCHEMA.yaml
+- PROJECT_OVERLAY_SCHEMA.yaml
+- REFERENCE_INTEGRITY_CONTRACT.yaml
+- VERSION_STATUS_PROVENANCE_RULES.yaml
+- BOOTSTRAP_CANONICAL_STATE_CONTRACT.yaml
+- EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT.yaml
+- AI_RUNTIME_GOVERNANCE_CONTRACT.yaml
+- CONFLICT_CARRYOVER_REGISTER.yaml
+- CONTRACT_COVERAGE_REPORT.yaml
+stage04_rules:
+- consume Stage 03 frozen contracts rather than Stage 02 candidate assumptions
+- do not activate unresolved boundary/provider/project values
+- preserve existing layout and secret policy
+next_stage_entry_gate:
+  stage: '04'
+  result: PASS_FOR_IMPLEMENTATION_DESIGN
+  qualification: Contract surface is frozen; listed blockers remain mandatory before activation or migration.
+  execution_authorized: false
+stop_after_stage: '03'

@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "stage_status": "COMPLETED",
+  "run_id": "stage01-20260920T091426Z",
+  "resume_case": "A",
+  "all_18_validation_pass": true,
+  "coverage_metrics": {
+    "SILENTLY_IGNORED_ASSET": 0,
+    "UNSCANNED_GOVERNANCE_ROOT_WITHOUT_REASON": 0,
+    "HIGH_RISK_UNCLASSIFIED": 0
+  },
+  "preliminary_no_loss": "PASS",
+  "stage02_entry_gate": "PASS",
+  "stage02_started": false,
+  "recovery_coverage": "PARTIAL_APPROVED",
+  "original_evidence_preserved": true,
+  "external_archive_drift": "Documented SAFE_DISCOVERY_DRIFT; original upstream evidence intact",
+  "limitations": [
+    "No business execution or tool smoke tests",
+    "No per-file AI authorship or exact derived replay proof",
+    "No secret body comparison or independent secret backup"
+  ]
+}

@@ -1,0 +1,29 @@
+schema_version: stage12-v1
+policy_id: banyan.context.selection.v1
+context_layers:
+  - CANONICAL_CONTEXT
+  - APPROVED_CONTRACT_CONTEXT
+  - CURRENT_OPERATIONAL_CONTEXT
+  - DERIVED_PROJECTION_CONTEXT
+  - HISTORICAL_CONTEXT
+  - EPHEMERAL_TASK_CONTEXT
+  - AI_WORKING_SUMMARY
+ranking:
+  - authority
+  - freshness
+  - relevance
+  - dependency
+  - blocker_importance
+  - provenance_quality
+  - cost
+context_classes: [MANDATORY, OPTIONAL, ON_DEMAND, EXCLUDED]
+mandatory_fields: [stable_id, source_refs, authority, freshness, provenance, decision_state, blocker_state, unknowns]
+selection_explanation_required: true
+exclusion_explanation_required: true
+rules:
+  - authority_and_freshness_precede_cost
+  - unresolved_blockers_are_mandatory
+  - unknown_is_preserved_not_inferred
+  - historical_or_derived_context_cannot_override_current_authoritative_context
+  - token_pressure_cannot_remove_mandatory_context
+

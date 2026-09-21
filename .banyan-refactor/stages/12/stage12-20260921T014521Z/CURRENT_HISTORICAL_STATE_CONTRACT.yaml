@@ -1,0 +1,13 @@
+schema_version: stage12-v1
+states:
+  CURRENT: Requires authoritative source plus explicit version/status and sufficient freshness evidence.
+  HISTORICAL: Preserved evidence that cannot authorize current state.
+  SUPERSEDED: Requires explicit supersession linkage.
+  STALE: Previously usable context whose source version or freshness no longer matches.
+  UNKNOWN: Required state evidence is absent.
+  TYPED_BLOCKED: Ambiguity is material and requires named evidence or owner decision.
+rules:
+  - timestamps_are_observations_not_authority
+  - failed_stopped_reverted_blocked_and_open_are_never_normalized_to_success
+  - derived_summary_never_changes_subject_state
+

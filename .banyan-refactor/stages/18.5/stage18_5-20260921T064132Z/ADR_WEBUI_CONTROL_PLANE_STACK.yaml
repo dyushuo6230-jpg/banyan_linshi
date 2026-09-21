@@ -1,0 +1,39 @@
+schema_version: stage18.5-v1
+status: ACCEPTED
+decision:
+  frontend:
+    baseline: ANT_DESIGN_PRO_SIMPLE
+    language: TYPESCRIPT
+    component_system: ANT_DESIGN_AND_PROCOMPONENTS
+    demo_business_removed: true
+    mock_business_services: false
+  control_plane:
+    language: GO
+    http_framework: GIN
+    role: TRANSPORT_ONLY
+    policy_engine: EXTERNAL_EXISTING_RUNTIME
+  distribution:
+    frontend_production_build: true
+    embedded_in_go_binary: true
+    node_runtime_required: false
+    asset_hash_manifest: true
+  runtime_core:
+    default_strategy: PRESERVE_EXISTING_STAGE15_RUNTIME
+    bridge: SINGLE_LOCAL_STDIO
+    full_language_rewrite_in_stage18_5: false
+  binding:
+    default_host: 127.0.0.1
+    public_default: false
+rationale:
+- Preserve the Stage15 Runtime and Stage14 permission semantics.
+- Keep Gin limited to DTO validation, transport, routing, and embedded asset serving.
+- Ship one local executable whose UI requires no production Node server.
+tradeoffs:
+- Each bridge request starts a local Python process; lifecycle optimization is deferred
+  because it does not alter Runtime semantics.
+- Frontend bundle prioritizes audited feature equivalence over initial chunk size
+  optimization.
+evidence_refs:
+- CURRENT_IMPLEMENTATION_INVENTORY.yaml
+- RUNTIME_BRIDGE_CONTRACT.yaml
+- evidence/TEST_RESULTS.txt

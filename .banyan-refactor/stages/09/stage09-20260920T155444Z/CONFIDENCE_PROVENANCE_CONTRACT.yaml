@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_CONTRACT_NOT_IMPLEMENTED
+confidence_levels: [HIGH, MEDIUM, LOW, UNKNOWN]
+provenance_required_fields: [source_refs, source_version, provider_or_tool, captured_at_or_unknown, transformation, classification]
+rules:
+  missing_provenance: BLOCKED
+  fabricated_timestamp: FORBIDDEN
+  unknown_value: UNKNOWN
+  inference_requires_reason: true
+  recommendation_requires_rationale: true
+  promotion_requires_explicit_event: true
+  provider_identity_may_be_unknown: true
+  provider_identity_may_be_omitted: false

@@ -1,0 +1,22 @@
+schema_version: stage14-v1
+registry_id: banyan.permission.governance.git-safety.v1
+policies:
+  action_risk: ACTION_RISK_POLICY.yaml
+  permission_decision: PERMISSION_DECISION_SCHEMA.yaml
+  authorization_record: AUTHORIZATION_RECORD_SCHEMA.yaml
+  work_mode: WORK_MODE_PERMISSION_MATRIX.yaml
+  protected_target: PROTECTED_TARGET_SCHEMA.yaml
+  protected_write: PROTECTED_WRITE_GATE.yaml
+  secret_safety: SECRET_SAFETY_GATE.yaml
+  freshness_rollback: FRESHNESS_ROLLBACK_PRECONDITIONS.yaml
+  human_confirmation: HUMAN_CONFIRMATION_BINDING.yaml
+  git_identity: GIT_IDENTITY_SAFETY.yaml
+  git_worktree: GIT_WORKTREE_SAFETY.yaml
+  semantic_commit: SEMANTIC_COMMIT_AUTHORIZATION.yaml
+  git_operations: GIT_OPERATION_PERMISSION_MATRIX.yaml
+  external_irreversible: EXTERNAL_IRREVERSIBLE_GATE.yaml
+  audit: AUDIT_EVENT_REQUIREMENTS.yaml
+  learning_governance: LEARNING_GOVERNANCE_BINDING.yaml
+runtime_may_weaken_policy: false
+stage14_policy_state: FROZEN_NOT_ENFORCED_RUNTIME
+

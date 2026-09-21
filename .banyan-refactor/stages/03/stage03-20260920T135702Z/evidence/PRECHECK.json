@@ -1,0 +1,193 @@
+{
+  "result": "PASS",
+  "run_id": "stage03-20260920T135702Z",
+  "mode": "LOW_TOKEN_CONTRACT_FIRST_EVIDENCE_ON_DEMAND",
+  "stage02_run_id": "stage02-20260920T131746Z",
+  "stage02_seal": {
+    "verified_entries": 30,
+    "all_pass": true
+  },
+  "stage03_pack": {
+    "verified_entries": 31,
+    "all_pass": true
+  },
+  "git": {
+    "head": "9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7",
+    "branch": "feature/huanpipro",
+    "tracked_diff_empty": true,
+    "staged_diff_empty": true,
+    "conflicts": [],
+    "identity_unchanged": true,
+    "identity_metadata": {
+      "name": "dys6230",
+      "email": "5527950+dys6230@user.noreply.gitee.com"
+    }
+  },
+  "bootstrap": {
+    "register_stage": "02",
+    "register_run_id": "stage02-20260920T131746Z",
+    "trace_run_id": "stage02-20260920T131746Z",
+    "stage02_satisfied_requirements": 5
+  },
+  "stage02_inputs": [
+    {
+      "path": "CAPABILITY_MAPPING_WORKBOOK.yaml",
+      "sha256": "343f714ac9da1700b25db77b2573857aac13838443769603bca87b33d81c25f5"
+    },
+    {
+      "path": "CONTRACT_CHAIN_DESIGN.md",
+      "sha256": "b864f61ad5f37a24c4c549c10e80398965966b973d60dd3a0f400c7cb693d8a1"
+    },
+    {
+      "path": "ARCHITECTURE_DECISION_RECORDS.yaml",
+      "sha256": "c1fc985ee407c9eece250fc9a49ba3c20db48bfdeb8400db08440d65ecca3431"
+    },
+    {
+      "path": "CONFLICT_RISK_REGISTER.yaml",
+      "sha256": "34184eed705d49ed52b7f39e0dd616c420dea1b16c6e3c774b563865fd165a48"
+    },
+    {
+      "path": "AI_RUNTIME_COST_GOVERNANCE_DESIGN.md",
+      "sha256": "282979a3f43fe8dc67974d65bf58fb36b90de33f4b97d26477e9525a62852bb5"
+    },
+    {
+      "path": "ARTIFACT_BOUNDARY_MAP.jsonl",
+      "sha256": "b487b762d1e2d7d9ee7b1bdbd698e983c884c681fe89694af1f4e208ccd83617"
+    },
+    {
+      "path": "ASSET_BOUNDARY_MAP.jsonl",
+      "sha256": "e101eec9814085e2b9e27aaf5f6d6f62c77efb8834bcb36170435ded94ce25a6"
+    },
+    {
+      "path": "evidence/NEXT_STAGE_HANDOFF.yaml",
+      "sha256": "707174161a27e26e49e33eae655e0a332f8291fce985776ef70b11067ffacc0f"
+    },
+    {
+      "path": "ACCEPTANCE_REPORT.md",
+      "sha256": "d42130a06b7c8d2899fa7c0f70c3421ec3ad09558a3cfbf5b079ab1ada837e8e"
+    }
+  ],
+  "secret_metadata_only": {
+    "count": 13,
+    "all_preserved": true,
+    "content_read": false,
+    "content_hash": false,
+    "content_copy": false,
+    "entries": [
+      {
+        "path": "nunu-go-api/config/admin/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/admin/test.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/h5-online/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/h5/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/h5/test.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/home/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/mall-online/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/mall-online/prod.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/mall-online/test.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/mall/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/mall/test.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/merchant/local.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      },
+      {
+        "path": "nunu-go-api/config/merchant/test.yml",
+        "exists": true,
+        "metadata_unchanged": true,
+        "content_read": false,
+        "content_hash": false,
+        "content_copy": false
+      }
+    ]
+  },
+  "scope": {
+    "repository_rediscovery": false,
+    "stage01_rerun": false,
+    "stage02_rerun": false,
+    "git_history_read": false,
+    "point_evidence_reads": [
+      "Stage 01 FINAL_SAFETY_CHECK.json metadata records only",
+      "Stage 02 ARTIFACT_BOUNDARY_MAP.jsonl and ASSET_BOUNDARY_MAP.jsonl for source-role/reference coverage"
+    ]
+  }
+}

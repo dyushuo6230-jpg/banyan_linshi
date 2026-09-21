@@ -1,0 +1,49 @@
+schema_version: stage15-v1
+upstream_stage: "15"
+run_id: stage15-20260921T031742Z
+acceptance_result: PASS_STAGE15_RUNTIME_IMPLEMENTATION_ISOLATED_GIT_EXECUTION
+framework_source:
+  path: banyan-framework
+  generic_only: true
+compiled_policy:
+  source: Stage14 frozen policy bundle
+  policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+  hard_blocks_preserved: true
+surfaces:
+  - runtime_status
+  - compiled_policy_status
+  - preflight_action
+  - inspect_git
+  - plan_semantic_commit
+  - dry_run_commit_execution
+  - isolated_fixture_commit_execution
+  - audit_trace_result
+  - provider_binding_status
+runtime_api:
+  class: banyan.runtime.api.RuntimeAPI
+  methods: [status, evaluate_action, preflight_action, inspect_project, plan_commit, execute_commit, emit_audit, list_provider_bindings]
+cli:
+  entrypoint: banyan
+  commands: [policy_validate, policy_compile, policy_compile_stage14, runtime_preflight, git_inspect, commit_plan, commit_execute_dry_run, commit_execute_fixture, trace_validate, trace_emit, provider_list]
+enforcement:
+  mutating_actions_require_runtime_enforcement: true
+  control_plane_may_bypass_policy: false
+  current_project_execution: DRY_RUN_ONLY
+  fixture_execution: EXPLICIT_AUTHORIZATION_IDENTITY_TRACE_AND_INDEX_VERIFICATION_REQUIRED
+  network_git_actions: BLOCKED
+  trace_grants_authorization: false
+stable_contracts:
+  action_request: banyan.runtime.models.ActionRequest
+  action_result: banyan.runtime.models.ActionResult
+  commit_plan: banyan.commit.planner.CommitPlan
+  commit_execution_result: banyan.commit.executor.CommitExecutionResult
+evidence:
+  tests: evidence/TEST_RESULTS.txt
+  compiled_policy: evidence/COMPILED_STAGE14_POLICY.json
+  fixture_execution: evidence/STAGE14_POLICY_FIXTURE_EXECUTION_RESULT.json
+  current_project_dry_run: evidence/CURRENT_PROJECT_DRY_RUN_RESULT.json
+  git_safety: evidence/GIT_SAFETY_VERIFICATION.yaml
+stage16_entry:
+  result: READY_WITH_RUNTIME_ENFORCEMENT_CONTRACT
+  execution_authorized: false
+  implementation_started: false

@@ -1,0 +1,38 @@
+schema_version: stage20-v1
+run_id: stage20-20260921T073758Z
+architecture:
+  frontend: ANT_DESIGN_PRO_SIMPLE
+  web_host: GO_GIN_GO_EMBED
+  runtime_bridge: LOCAL_STDIO
+  runtime_core: PYTHON_STAGE15_RUNTIME
+  adapters:
+  - CURSOR
+  - CODEX
+  - GENERIC_EDITOR
+framework:
+  path: banyan-framework
+  release: v1.10-additive.1
+  release_state: RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT
+project_instance:
+  path: .banyan
+  state: PROJECT_INSTANCE_SHADOW_PILOT
+  final_activation: false
+  canonical_replacement: false
+bootstrap_workspace:
+  path: .banyan-refactor
+  lifecycle: TEMPORARY_BOOTSTRAP
+  state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION
+  retired: false
+governance_version:
+  current: v1.9.1
+  status: CURRENT_FINAL_FREEZE
+  candidate: v1.10
+  pointer_changed: false
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED
+evidence:
+- stages/19/stage19-20260921T071430Z/ACCEPTANCE_REPORT.md
+- stages/19/stage19-20260921T071430Z/RC_MANIFEST.yaml

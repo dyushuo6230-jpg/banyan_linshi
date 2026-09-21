@@ -1,0 +1,14 @@
+schema_version: stage12-v1
+memory_types: [PROJECT_SEMANTIC_CACHE, TASK_WORKING_MEMORY, HANDOVER_MEMORY, USER_CONFIRMED_PREFERENCE, DERIVED_SUMMARY]
+required_fields: [memory_id, memory_type, subject_ids, summary, source_refs, as_of, freshness, coverage, confidence, rebuildability]
+canonical_truth: false
+authority: DERIVED_OR_EPHEMERAL
+lifecycle: [CREATE, VALIDATE, USE, MARK_STALE, INVALIDATE, REFRESH, ARCHIVE]
+rules:
+  - source_refs_must_not_be_empty
+  - as_of_and_freshness_are_mandatory
+  - unknown_values_remain_explicit
+  - stale_memory_cannot_claim_current
+  - memory_cannot_authorize_or_supersede_source_truth
+  - secret_body_or_secret_derived_value_is_forbidden
+

@@ -1,0 +1,17 @@
+schema_version: stage13-v1
+decision_edges: [DECISION_TO_EVIDENCE, DECISION_TO_OPTIONS, DECISION_TO_IMPACT]
+change_edges: [CHANGE_TO_AFFECTED_ARTIFACT, CHANGE_TO_VALIDATION, CHANGE_TO_RESULT]
+human_decision:
+  classification: HUMAN_DECISION
+  explicit_confirmation_required: true
+  ai_summary_may_substitute: false
+  recommendation_may_substitute: false
+apply_boundary:
+  preview_required: true
+  impact_analysis_required: true
+  reference_check_required: true
+  decision_gate_required: true
+  authorization_gate_required: true
+  stage13_may_apply: false
+  stage13_may_authorize: false
+

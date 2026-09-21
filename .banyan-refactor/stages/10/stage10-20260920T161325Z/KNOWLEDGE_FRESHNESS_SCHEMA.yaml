@@ -1,0 +1,18 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_LOCAL_FRESHNESS_NOT_GLOBAL_ADJUDICATION
+freshness_states: [FRESH, STALE, REVIEW_REQUIRED, BLOCKED, UNKNOWN]
+required_fields: [projection_id, state, evaluated_against, source_versions, evaluated_at_or_unknown, reason, provenance]
+transitions:
+- {trigger: relevant_canonical_change, result: STALE_OR_REVIEW_REQUIRED}
+- {trigger: relevant_ui_spec_change, result: STALE_OR_REVIEW_REQUIRED}
+- {trigger: relevant_architecture_change, result: STALE_OR_REVIEW_REQUIRED}
+- {trigger: relevant_change_apply, result: STALE_OR_REVIEW_REQUIRED}
+- {trigger: missing_source_version, result: UNKNOWN_OR_BLOCKED}
+rules:
+  stale_may_claim_current: false
+  review_required_may_claim_current: false
+  unknown_may_claim_current: false
+  global_freshness_owner: '12'
+  con002_status: OPEN

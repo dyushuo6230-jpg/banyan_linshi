@@ -1,0 +1,11 @@
+schema_version: stage18.5-v1
+result: PASS
+mode: READ_VERIFY_ONLY
+pre_file_count: 13
+exit_file_count: 13
+missing_files: []
+unexpected_files: []
+hash_mismatches: []
+modified_by_stage18_5: false
+truth_switched: false
+migration_performed: false

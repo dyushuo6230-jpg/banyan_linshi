@@ -1,0 +1,21 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+result: PASS
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+stage09:
+  seal: PASS
+  acceptance: PASS_DESIGN_INTELLIGENCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+  entry_gate: PASS_FOR_STAGE10_KNOWLEDGE_PUBLISHING_DESIGN_WITH_INHERITED_BLOCKERS
+real_migration_readiness: MIGRATION_BLOCKED
+git_state: {tracked_changes: 0, staged_changes: 0, conflicts: 0}
+scope:
+  contract_design_only: true
+  repository_rescan: false
+  full_docs_project_read: false
+  full_plain_document_read: false
+  prior_stage_rerun: false
+  canonical_mutation: false
+  sqlite_or_runtime_implementation: false
+  stage11_execution: false
+secret_scope: {paths: 13, body_access: false, recovery_coverage: PARTIAL_APPROVED}

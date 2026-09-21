@@ -1,0 +1,170 @@
+# Stage 00 actual execution evidence; no secret contents.
+schema_version: bootstrap-v1
+charter_version: 1.9.1
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server/.banyan-refactor
+  run_id: stage00-precheck-20260920T083254Z
+  future_canonical_path: .banyan/migrations/BANYAN_REFACTOR_TRACE.yaml
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+  future_migration:
+    required: true
+    owner_stage: 02/04
+    sequence:
+    - capture bootstrap source hash and source run id
+    - migrate to frozen canonical .banyan/migrations paths
+    - record migration timestamp and target hash
+    - validate lineage and content
+    - make bootstrap READ_ONLY_ARCHIVE_OR_REFERENCE
+    source_hash_required: true
+    target_hash_required: true
+    validation_required: true
+    bootstrap_after_migration: READ_ONLY_ARCHIVE_OR_REFERENCE
+requirements:
+- requirement_id: BANYAN-SAFE-001
+  description: No migration starts before a verifiable repository safety baseline
+    exists.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00_改造安全基线与仓库保护.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-SAFE-002
+  description: Business code, canonical truth and legacy governance are protected
+    from Stage 00 writes.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-A_Repository_Baseline与Protected_Paths.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-SAFE-003
+  description: Dirty worktree state has a recoverable checkpoint before refactor work.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-B_Snapshot_Hash_Checkpoint与Rollback.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+  acceptance_qualification: User-approved PARTIAL_APPROVED recovery; excluded 13 secret
+    contents cannot be restored from Banyan backup.
+- requirement_id: BANYAN-SAFE-004
+  description: Early refactor state uses a bootstrap-only Register/Trace with a future
+    lineage-preserving migration to one canonical writable truth.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00_改造安全基线与仓库保护.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+- requirement_id: BANYAN-SAFE-005
+  description: Stage 00 does not modify Git identity and does not create automatic
+    commits.
+  owner_stage:
+  - '00'
+  design_artifacts:
+  - 榕树ai改造落地相关文档/Stage_00_改造安全基线与仓库保护/00-B_Snapshot_Hash_Checkpoint与Rollback.md
+  implementation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/BASELINE_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/PROTECTED_PATHS_MANIFEST.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/DISCOVERY_SCOPE_BASELINE.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/CHECKPOINT_RECORD.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/FILE_HASHES.sha256
+  - stages/00/stage00-precheck-20260920T083254Z/PRE_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/POST_STAGE_GIT_STATUS.txt
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/untracked.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/ignored-governed.tar
+  - stages/00/stage00-precheck-20260920T083254Z/checkpoint/RESTORE_INSTRUCTIONS.md
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  validation_artifacts:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/VALIDATION_RESULTS.yaml
+  evidence:
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/USER_APPROVAL.json
+  - stages/00/stage00-precheck-20260920T083254Z/evidence/CHECKPOINT_INTEGRITY.json
+  capability_state: VERIFIED
+  activation_mode: 'OFF'
+  status: SATISFIED
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+rollback_point: CHECKPOINT-stage00-precheck-20260920T083254Z
+verification_qualification: 'R00-SECRET-001: USER_ACCEPTED_PRESERVE_IN_PLACE for 13
+  paths; recovery PARTIAL_APPROVED, not COMPLETE'

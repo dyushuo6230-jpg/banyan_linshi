@@ -1,0 +1,6 @@
+schema_version: stage11-v1
+identity_not_path: true
+required_fields: [stable_id, entity_type, classification, current_locator, locator_kind, source_role, authority]
+rename_or_move_changes_identity: false
+missing_stable_id: BLOCKED
+path_is_locator_only: true

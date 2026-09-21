@@ -1,0 +1,14 @@
+schema_version: stage13-v1
+stage: '13'
+run_id: stage13-20260921T020549Z
+real_migration_readiness: MIGRATION_BLOCKED
+blockers:
+  - {id: CON-002, status: TYPED_BLOCKED, resolution: NO_WINNER_SELECTED, owner: HUMAN_PROJECT_AUTHORITY}
+  - {id: REF-MISSING-HISTORICAL-4, status: KEEP_UNRESOLVED_HISTORICAL, count: 4, owner_stage: LATER_EXPLICIT_EVIDENCE}
+  - {id: R03-PURITY, status: OPEN, owner_stage: LATER_STAGE}
+  - {id: R03-SOURCE, status: OPEN, owner_stage: LATER_STAGE}
+  - {id: R03-COST, status: OPEN, owner_stage: LATER_STAGE}
+  - {id: R03-SECRET, status: PARTIAL_APPROVED, owner_stage: LATER_EXPLICIT_AUTHORIZATION}
+  - {id: R03-LOCAL, status: OPEN, owner_stage: LATER_STAGE}
+learning_or_event_frequency_may_resolve_blocker: false
+

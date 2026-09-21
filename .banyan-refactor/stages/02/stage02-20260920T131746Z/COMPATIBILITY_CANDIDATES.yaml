@@ -1,0 +1,84 @@
+stage: '02'
+status: CANDIDATE_ONLY
+layer: COMPATIBILITY_LAYER_CANDIDATE
+count: 3
+items:
+- capability_id: CAP-EDITOR
+  name: Cursor 入口与项目覆盖
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  contract: EditorEntryCompatibility
+  provider_port: EditorRuleAdapter
+  artifact_role: AdapterProjection
+  runtime_phase: LOAD_CONTEXT
+  project_overlay: Cursor rule precedence and symlink entry
+  failure_semantics:
+  - 适配未验证保留旧入口
+  migration_risk: Cursor path/format cannot become a Core invariant.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '15'
+  evidence_refs:
+  - path: .cursor/rules/collaboration-judgment.mdc
+    line: 1
+    source_sha256: cf826f108dee6f93cbf353b3d50aecb6a5879950fd27c5d78bfe4892f1f539e5
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#.cursor/rules/collaboration-judgment.mdc
+  - path: tools/anydesign/PROJECT_INSTALL.md
+    line: 1
+    source_sha256: 468912b83efeb9571c20513d7783f4d6800c3481c96643ca4d296522e61a1722
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#tools/anydesign/PROJECT_INSTALL.md
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-COMMIT
+  name: 既有提交校验与授权
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  contract: CommitPracticeCompatibility
+  provider_port: GitCommitMetadataReader
+  artifact_role: CommitEvidence
+  runtime_phase: HUMAN_DECISION
+  project_overlay: nested Husky/commitlint installation and policy
+  failure_semantics:
+  - 缺脚本或授权停止，不补造已执行校验
+  migration_risk: Missing lint:lint-staged and exact author identities; never commit
+    automatically.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '05'
+  evidence_refs:
+  - path: docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    line: 479
+    source_sha256: 88257b305d7404463b3860c627efdf605151e53d0a90e4fbca01673befa37a85
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - path: nunu-go-api/app/admin/web/.husky/commit-msg
+    line: 1
+    source_sha256: e8fa05dcf9a02aa6c36204bbb258751c16b4793967968f4721215b788c9166be
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/.husky/commit-msg
+  - path: nunu-go-api/app/admin/web/commitlint.config.cjs
+    line: 1
+    source_sha256: 2a5704436bedce02b1a20ee6046cf3ee907dab5d3733ddb21cd60bcf3f4e232c
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#nunu-go-api/app/admin/web/commitlint.config.cjs
+  approval: NOT_APPROVED
+  execution_allowed: false
+- capability_id: CAP-MERGE
+  name: 旧协作合码指导
+  candidate_layer: COMPATIBILITY_LAYER_CANDIDATE
+  contract: LegacyCollaborationReference
+  provider_port: LegacyGuideReader
+  artifact_role: LegacyMergeReference
+  runtime_phase: FULL_AUDIT
+  project_overlay: old branch names and ownership rules
+  failure_semantics:
+  - 不把旧 reset/force 流程作为当前许可
+  migration_risk: Historic reset/force instructions are not current authorization.
+  required_validation:
+  - Provider/compatibility/project scope review
+  - Stage 19 no-loss regression
+  decision_owner_stage: '07'
+  evidence_refs:
+  - path: docs/temp/SassDesign/合并代码指导.md
+    line: 24
+    source_sha256: 35f753b5e4d51c001bfa0b223272f1fce8d268416c2e1ed72f083f199f6e61cc
+    evidence: evidence/DISCOVERY_UNIVERSE.jsonl#docs/temp/SassDesign/合并代码指导.md
+  approval: NOT_APPROVED
+  execution_allowed: false

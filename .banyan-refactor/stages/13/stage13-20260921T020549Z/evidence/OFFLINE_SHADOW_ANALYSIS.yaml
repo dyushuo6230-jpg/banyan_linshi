@@ -1,0 +1,167 @@
+schema_version: stage13-v1
+mode: SHADOW_OFFLINE_ONLY
+canonical_mutation: false
+authorization_granted: false
+evidence_records:
+  - evidence_id: EVID-13-001
+    evidence_type: CONFLICT_DISPOSITION
+    subject_id: CON-002
+    source_refs: [.banyan-refactor/stages/12/stage12-20260921T014521Z/CON002_RESOLUTION_RECORD.yaml]
+    as_of: stage12-20260921T014521Z
+    authority: EVIDENTIARY
+    provenance: STAGE12_TYPED_ANALYSIS
+    freshness: CURRENT_FOR_STAGE12_HANDOFF
+    confidence: HIGH_FOR_BLOCKED_STATE
+    scope: PROJECT
+    result: TYPED_BLOCKED_NO_WINNER_SELECTED
+    classification: DERIVED_FACT
+  - evidence_id: EVID-13-002
+    evidence_type: REFERENCE_DISPOSITION
+    subject_id: REF-MISSING-HISTORICAL-4
+    source_refs: [.banyan-refactor/stages/12/stage12-20260921T014521Z/HISTORICAL_REFERENCE_DISPOSITION.yaml]
+    as_of: stage12-20260921T014521Z
+    authority: EVIDENTIARY
+    provenance: EXACT_LOCATOR_AND_EXACT_PATH_HISTORY_VALIDATION
+    freshness: HISTORICAL_DISPOSITION_CURRENT_AT_HANDOFF
+    confidence: HIGH_FOR_UNRESOLVED_STATE
+    scope: PROJECT
+    result: FOUR_KEEP_UNRESOLVED_HISTORICAL
+    classification: VALIDATION_RESULT
+  - evidence_id: EVID-13-003
+    evidence_type: REFERENCE_EDGE
+    subject_id: REF-003
+    source_refs: [.banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite#reference_edges/REF-003]
+    as_of: stage11-20260921T011037Z
+    authority: SHADOW_INDEX_EVIDENCE
+    provenance: STRUCTURED_IMPORT
+    freshness: UNKNOWN
+    confidence: HIGH_FOR_RECORDED_EDGE
+    scope: PROJECT
+    result: ART-ab6ff0ccef6c4f_REFERENCES_ASSET-ecba0624d98758
+    classification: OBSERVED_FACT
+  - evidence_id: EVID-13-004
+    evidence_type: EXECUTION_INSTRUCTION_VERSION
+    subject_id: PROMPT-STAGE13-V1.10
+    source_refs: [/Users/mac/Downloads/Stage_13_v1.10_Codex正式开始提示词.md]
+    as_of: stage13-20260921T020549Z
+    authority: USER_AUTHORIZED_EXECUTION_INPUT
+    provenance: SHA256_515a794ac33523f4a3d2a965a77a9dea1e92a3137f3624db9a20d54f498a733f
+    freshness: CURRENT_FOR_THIS_RUN
+    confidence: HIGH
+    scope: TASK
+    result: QUERY_FIRST_OFFLINE_LOW_TOKEN_BOUNDARY
+    classification: OBSERVED_FACT
+  - evidence_id: EVID-13-005
+    evidence_type: PRESERVED_BLOCKER_STATE
+    subject_id: CON-002
+    source_refs: [EVID-13-001]
+    as_of: stage13-20260921T020549Z
+    authority: DERIVED_EVIDENCE_ONLY
+    provenance: CHAIN-13-CON002/S1
+    freshness: CURRENT_FOR_STAGE13_HANDOFF
+    confidence: HIGH
+    scope: PROJECT
+    result: TYPED_BLOCKED_NO_WINNER_SELECTED
+    classification: DERIVED_FACT
+  - evidence_id: EVID-13-006
+    evidence_type: CAUSALITY_VALIDATION
+    subject_id: CON-002
+    source_refs: [EVID-13-005, CAUSALITY_BOUNDARY.yaml]
+    as_of: stage13-20260921T020549Z
+    authority: VALIDATION_ONLY
+    provenance: CHAIN-13-CON002/S2
+    freshness: CURRENT_FOR_STAGE13_HANDOFF
+    confidence: HIGH
+    scope: PROJECT
+    result: EVENT_FREQUENCY_DOES_NOT_RESOLVE_AUTHORITY_CONFLICT
+    classification: VALIDATION_RESULT
+  - evidence_id: EVID-13-007
+    evidence_type: GOVERNANCE_RECOMMENDATION
+    subject_id: CON-002
+    source_refs: [EVID-13-006, STAGE14_GOVERNANCE_REQUIREMENTS.yaml]
+    as_of: stage13-20260921T020549Z
+    authority: RECOMMENDATION_ONLY
+    provenance: CHAIN-13-CON002/S3
+    freshness: CURRENT_FOR_STAGE13_HANDOFF
+    confidence: HIGH
+    scope: PROJECT
+    result: REQUIRE_HUMAN_PROJECT_AUTHORITY_AND_REVALIDATION
+    classification: RECOMMENDATION
+evidence_chains:
+  - chain_id: CHAIN-13-CON002
+    subject_id: CON-002
+    steps:
+      - {step_id: S1, input_evidence_refs: [EVID-13-001], operation: PRESERVE_TYPED_RESULT, output_evidence_ref: EVID-13-005, classification: DERIVED_FACT, provenance: STAGE13_OFFLINE_RULE}
+      - {step_id: S2, input_evidence_refs: [EVID-13-005], operation: CHECK_EVENT_FREQUENCY_NOT_AUTHORITY, output_evidence_ref: EVID-13-006, classification: VALIDATION_RESULT, provenance: CAUSALITY_BOUNDARY}
+      - {step_id: S3, input_evidence_refs: [EVID-13-006], operation: FORM_GOVERNANCE_RECOMMENDATION, output_evidence_ref: EVID-13-007, classification: RECOMMENDATION, provenance: STAGE14_HANDOFF}
+    terminal_claim: CON002_REMAINS_TYPED_BLOCKED_PENDING_HUMAN_PROJECT_AUTHORITY
+    terminal_classification: RECOMMENDATION
+impact_edges:
+  - edge_id: IMP-13-001
+    source_subject_id: ART-ab6ff0ccef6c4f
+    target_subject_id: ASSET-ecba0624d98758
+    impact_type: DIRECT
+    basis: REFERENCE_EDGE_REF-003
+    confidence: HIGH
+    scope: PROJECT_DOCUMENTATION
+    evidence_refs: [EVID-13-003]
+  - edge_id: IMP-13-002
+    source_subject_id: ART-07cebcc44e4e37
+    target_subject_id: ART-b6851c3fc34037
+    impact_type: DIRECT
+    basis: CHANGE_RELATIONSHIP
+    confidence: HIGH_FOR_INDEXED_RELATION
+    scope: PROJECT_DOCUMENTATION
+    evidence_refs: [.banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite#relations/change_to_affected_artifact]
+  - edge_id: IMP-13-003
+    source_subject_id: CON-002
+    target_subject_id: CAP-PORT
+    impact_type: POTENTIAL
+    basis: EXPLICIT_SCOPE_MAPPING_PROJECT_ENDPOINTS_REQUIRED_FOR_CAP-PORT
+    confidence: MEDIUM
+    scope: PROJECT_ACTIVATION
+    evidence_refs: [.banyan-refactor/stages/04/stage04-20260920T142517Z/VARIABLE_RESOLUTION_SCHEMA.yaml#project_endpoints]
+  - edge_id: IMP-13-004
+    source_subject_id: LC-13-001
+    target_subject_id: CANONICAL_PROMPT_RULE_SKILL
+    impact_type: EXCLUDED
+    basis: STAGE13_CANONICAL_APPLY_FORBIDDEN
+    confidence: HIGH
+    scope: CANONICAL_POLICY
+    evidence_refs: [LEARNING_PROMOTION_GATE.yaml]
+events:
+  - event_id: EVT-13-001
+    event_class: OBSERVED_EVENT
+    event_type: SHADOW_QUERY_EXECUTED
+    subject_id: STAGE11_QUERY_SURFACE
+    occurred_at: stage13-20260921T020549Z
+    source_refs: [QUERY_FIRST_EVIDENCE.yaml]
+    actor_identity_or_unknown: CODEX_STAGE13_RUN
+    result: LOCAL_IMPACT_TRACE_HISTORY_EVIDENCE_OBTAINED
+    evidence_refs: [QUERY_FIRST_EVIDENCE.yaml]
+  - event_id: EVT-13-002
+    event_class: DERIVED_EVENT
+    event_type: OFFLINE_CANDIDATE_EVALUATED
+    subject_id: LC-13-001
+    occurred_at: stage13-20260921T020549Z
+    source_refs: [LEARNING_EVALUATIONS.yaml]
+    actor_identity_or_unknown: CODEX_STAGE13_RUN
+    result: PASS_FOR_PROPOSAL_ONLY
+    evidence_refs: [LEARNING_EVALUATIONS.yaml]
+event_relationships:
+  - {source_event_id: EVT-13-001, target_event_id: EVT-13-002, relationship: PRECEDES, causal_claim: UNKNOWN}
+prompt_observations:
+  - observation_id: POBS-13-001
+    artifact_id: PROMPT-STAGE13-V1.10
+    artifact_version_ref: SHA256_515a794ac33523f4a3d2a965a77a9dea1e92a3137f3624db9a20d54f498a733f
+    task_profile: STAGE13_CONTRACT_FREEZE
+    context_profile_ref: .banyan-refactor/stages/12/stage12-20260921T014521Z/STAGE13_QUERY_HANDOFF.yaml
+    execution_mode: QUERY_FIRST_OFFLINE_LEARNING_LOW_TOKEN
+    provider_binding_ref: UNKNOWN
+    tool_refs: [SQLITE_READ_ONLY_QUERY, TARGETED_FILESYSTEM_READ, YAML_VALIDATION]
+    human_intervention: USER_AUTHORIZED_STAGE13_SCOPE
+    outcome: CONTRACTS_FROZEN_PENDING_FINAL_VALIDATION
+    validation_refs: [VALIDATION_RESULTS.yaml]
+    usage_telemetry_ref: QUALITY_COST_TELEMETRY_RECORDS.yaml#TEL-13-001
+    attribution: MULTI_FACTOR_OR_UNKNOWN
+secret_records_in_dataset: 0

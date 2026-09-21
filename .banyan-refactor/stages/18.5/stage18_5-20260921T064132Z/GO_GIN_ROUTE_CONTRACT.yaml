@@ -1,0 +1,61 @@
+schema_version: stage18.5-v1
+transport: GO_GIN
+routes:
+- method: GET
+  path: /api/status
+  operation: status
+  runtime_bridge_required: true
+- method: GET
+  path: /api/policy
+  operation: policy_status
+  runtime_bridge_required: true
+- method: GET
+  path: /api/project-safety
+  operation: project_safety
+  runtime_bridge_required: true
+- method: POST
+  path: /api/preflight
+  operation: preflight
+  runtime_bridge_required: true
+- method: POST
+  path: /api/commit/plan
+  operation: commit_plan
+  runtime_bridge_required: true
+- method: POST
+  path: /api/commit/dry-run
+  operation: commit_dry_run
+  runtime_bridge_required: true
+- method: GET
+  path: /api/trace
+  operation: trace_query
+  runtime_bridge_required: true
+- method: GET
+  path: /api/provenance/:id
+  operation: provenance_query
+  runtime_bridge_required: true
+- method: GET
+  path: /api/providers
+  operation: provider_status
+  runtime_bridge_required: true
+- method: GET
+  path: /api/stages
+  operation: stage_query
+  runtime_bridge_required: true
+- method: GET
+  path: /api/activation-readiness
+  operation: activation_readiness
+  runtime_bridge_required: true
+- method: POST
+  path: /api/adapters/:kind
+  operation: adapter_request
+  runtime_bridge_required: true
+static:
+  embedded: true
+  spa_fallback_excludes:
+  - /api/
+  - /events/
+limits:
+  max_body_bytes: 1000000
+  runtime_timeout_seconds: 10
+policy_logic_in_handler_allowed: false
+git_implementation_in_handler_allowed: false

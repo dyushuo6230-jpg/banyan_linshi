@@ -1,0 +1,22 @@
+upstream_stage: '18.5'
+run_id: stage18_5-20260921T064132Z
+acceptance_result: PASS_STAGE18_5_ANT_DESIGN_PRO_GOGIN_ARCHITECTURE_MIGRATION
+architecture:
+  frontend: ANT_DESIGN_PRO_SIMPLE
+  backend: GO_GIN
+  frontend_embedded_in_go_binary: true
+runtime_contract_preserved: true
+adapter_compatibility_preserved: true
+pilot_dot_banyan_unchanged: true
+current_project_git_mutation: false
+stage19_rc_handoff: STAGE19_RC_HANDOFF.yaml
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED
+next_stage_entry_gate:
+  stage: '19'
+  result: READY_FOR_INDEPENDENT_RC_REVIEW_WITH_BLOCKERS
+  execution_authorized: false
+stop_after_stage: '18.5'

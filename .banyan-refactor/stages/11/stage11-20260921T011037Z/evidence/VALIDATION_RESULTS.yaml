@@ -1,0 +1,40 @@
+schema_version: stage11-v1
+stage: '11'
+run_id: stage11-20260921T011037Z
+overall: PASS
+validations:
+  - {id: V11-01, result: PASS, evidence: Stage 10 seal and structured handoff passed with inherited blockers preserved.}
+  - {id: V11-02, result: PASS, evidence: Structured Input First low-token access used; no repository rescan, full Git history analysis, or prior-stage body reload.}
+  - {id: V11-03, result: PASS, evidence: schema.sql initialized both the primary shadow database and isolated rebuild database.}
+  - {id: V11-04, result: PASS, evidence: index_metadata marks SHADOW, REBUILDABLE, NOT_CANONICAL_TRUTH, and NOT_FINAL_RUNTIME_DB.}
+  - {id: V11-05, result: PASS, evidence: All 1911 entity records have stable IDs.}
+  - {id: V11-06, result: PASS, evidence: Stable identity and current locator are stored as separate fields.}
+  - {id: V11-07, result: PASS, evidence: All entities retain a source role or explicit classification plus authority, freshness, and provenance state.}
+  - {id: V11-08, result: PASS, evidence: All 108 classified reference edges were imported without loss.}
+  - {id: V11-09, result: PASS, evidence: Four missing historical targets remain UNRESOLVED_REFERENCE with NULL targets and Stage 12 ownership.}
+  - {id: V11-10, result: PASS, evidence: Two regex literals remain NOT_A_REFERENCE.}
+  - {id: V11-11, result: PASS, evidence: Provenance is indexed; unavailable actor or time remains UNKNOWN.}
+  - {id: V11-12, result: PASS, evidence: All 28 trace events have input/output/decision/change/evidence lineage envelopes.}
+  - {id: V11-13, result: PASS, evidence: Trace authorization paths equal zero.}
+  - {id: V11-14, result: PASS, evidence: OPEN, BLOCKED, FAILED, STOPPED, and REVERTED semantics remain non-success history states.}
+  - {id: V11-15, result: PASS, evidence: Projection-to-source and source-to-projection relations are queryable.}
+  - {id: V11-16, result: PASS, evidence: Current status, historical status, work log, and derived summary are distinguishable in progress records.}
+  - {id: V11-17, result: PASS, evidence: Four handover records expose canonical and operational references with freshness.}
+  - {id: V11-18, result: PASS, evidence: Thirty-five provider bindings retain activation and availability states without activation.}
+  - {id: V11-19, result: PASS, evidence: Thirteen protected paths are metadata-only; no secret body, body hash, derived value, or copy is indexed.}
+  - {id: V11-20, result: PASS, evidence: All 15 required query categories executed successfully.}
+  - {id: V11-21, result: PASS, evidence: Isolated structured-input rebuild completed without manual database patching.}
+  - {id: V11-22, result: PASS, evidence: Primary and rebuilt table counts, logical hash, and byte hash match.}
+  - {id: V11-23, result: PASS, evidence: Writes are limited to the Stage 11 run directory and two bootstrap files; no .banyan or Stage 12 runtime was created.}
+  - {id: V11-24, result: PASS, evidence: Stage 12 query surface and handoff exist with execution_authorized=false and stage12_started=false.}
+hard_metrics:
+  INDEX_RECORD_WITHOUT_STABLE_ID: 0
+  INDEX_RECORD_WITHOUT_SOURCE_ROLE_OR_CLASSIFICATION: 0
+  INDEX_AS_CANONICAL_TRUTH_PATH: 0
+  REFERENCE_EDGE_LOST_DURING_IMPORT: 0
+  UNRESOLVED_REFERENCE_WITH_INVENTED_TARGET: 0
+  HISTORY_NON_SUCCESS_STATE_NORMALIZED_TO_SUCCESS: 0
+  TRACE_EVENT_WITHOUT_LINEAGE: 0
+  SECRET_BODY_OR_HASH_INDEXED: 0
+  SHADOW_DB_NOT_REBUILDABLE_FROM_STRUCTURED_INPUTS: 0
+

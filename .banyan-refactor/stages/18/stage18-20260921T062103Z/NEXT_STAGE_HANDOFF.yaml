@@ -1,0 +1,34 @@
+schema_version: stage18-v1
+upstream_stage: "18"
+run_id: stage18-20260921T062103Z
+acceptance_result: PASS_STAGE18_MULTI_EDITOR_ADAPTER_COMPATIBILITY
+validated_adapters:
+  - cursor
+  - codex
+  - generic-editor
+adapter_contract:
+  normalized_request: banyan.editor.protocol.AdapterRequest
+  normalized_response: banyan.editor.protocol.AdapterResponse
+  gateway: banyan.editor.protocol.AdapterGateway
+  runtime_required: true
+  permission_owned_by_adapter: false
+  canonical_write_owned_by_adapter: false
+  direct_git_mutation: false
+runtime:
+  single_runtime: true
+  policy_hash: b788103381a1b009da9d25b00a0a463a187d26103eecca13e2ebdd127b30bb4c
+  bypass_paths: 0
+project_state:
+  existing_project_layout: PRESERVE_IN_PLACE
+  pilot_dot_banyan_preserved: true
+  dot_banyan_modified_by_stage18: false
+  git_mutations: 0
+  project_document_migrations: 0
+carried_blockers:
+  - {id: CON-002, state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY}
+  - {id: FINAL_ACTIVATION, state: NOT_AUTHORIZED}
+next_stage_entry_gate:
+  stage: "19"
+  result: READY_FOR_INDEPENDENT_REVIEW_WITH_BLOCKERS
+  execution_authorized: false
+stop_after_stage: "18"

@@ -1,0 +1,11 @@
+schema_version: stage13-v1
+observation_required_fields: [observation_id, artifact_id, artifact_version_ref, task_profile, context_profile_ref, execution_mode, provider_binding_ref, tool_refs, human_intervention, outcome, validation_refs, usage_telemetry_ref, attribution]
+artifact_kinds: [PROMPT, RULE, SKILL, WORKFLOW_INSTRUCTION]
+attribution_default: MULTI_FACTOR_OR_UNKNOWN
+rules:
+  - version_or_hash_reference_required
+  - provider_binding_may_be_UNKNOWN
+  - success_or_failure_cannot_be_attributed_to_prompt_text_alone
+  - observation_does_not_modify_artifact
+  - secret_content_must_not_enter_observation
+

@@ -1,0 +1,11 @@
+schema_version: stage04-v1
+project_profile:
+  project_id: x_shop_server
+  display_name: x_shop_server
+  description: Existing project adopted by logical mapping
+  lifecycle_status: EXISTING
+  governance_mode: BOOTSTRAP_DESIGN_ONLY
+  technology_hints: []
+  feature_activation: INACTIVE_BY_DEFAULT
+authorization_fields_allowed: false
+

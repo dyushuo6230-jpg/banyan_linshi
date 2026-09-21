@@ -1,0 +1,42 @@
+upstream_stage: "05"
+run_id: stage05-20260920T144623Z
+acceptance_result: PASS_WORKFLOW_AND_SEMANTIC_COMMIT_POLICY_FREEZE
+workflow_contracts:
+  - ADAPTIVE_WORKFLOW_SCHEMA.yaml
+  - WORK_MODE_CONTRACT.yaml
+  - WORKFLOW_POLICY_REGISTRY.yaml
+  - WORKFLOW_STATE_TRANSITION_SCHEMA.yaml
+  - TASK_CHANGE_BATCH_RELATIONSHIP_CONTRACT.yaml
+decision_contracts:
+  - DECISION_LEVEL_SCHEMA.yaml
+  - DECISION_ESCALATION_CONTRACT.yaml
+  - HUMAN_CONFIRMATION_CONTRACT.yaml
+  - DECISION_POLICY_REGISTRY.yaml
+semantic_commit_contracts:
+  - SEMANTIC_COMMIT_POLICY.yaml
+  - SEMANTIC_CHANGE_CLASSIFICATION.yaml
+  - SEMANTIC_GROUPING_HUNK_POLICY.yaml
+  - COMMIT_MESSAGE_POLICY.yaml
+  - GIT_IDENTITY_POLICY.yaml
+  - COMMIT_AUTHORIZATION_BOUNDARY.yaml
+  - LEFTOVER_REPORTING_CONTRACT.yaml
+con001_result: RESOLVED_BY_LAYERED_CONTRACT
+con002_result: INHERITED_OPEN_OWNER_STAGE_12
+open_risks:
+  - {id: R03-PURITY, severity: HIGH, blocking_before_activation: true, owner_stage: "19"}
+  - {id: R03-SOURCE, severity: HIGH, blocking_before_activation: true, owner_stage: 09/10}
+  - {id: CON-002, severity: HIGH, blocking_before_activation: true, owner_stage: "12"}
+  - {id: R03-COST, severity: MEDIUM, blocking_before_activation: false, owner_stage: 15/16/19}
+  - {id: R03-SECRET, severity: HIGH, blocking_before_activation: true, owner_stage: ALL_LATER_STAGES}
+  - {id: R03-LOCAL, severity: MEDIUM, blocking_before_activation: false, owner_stage: ALL_LATER_STAGES}
+stage06_inputs:
+  - frozen adaptive workflow and decision contracts
+  - frozen semantic commit policy and authorization boundary
+  - CON-001 layered resolution
+  - inherited CON-002 without adjudication
+next_stage_entry_gate:
+  stage: "06"
+  result: PASS_FOR_STAGE06_DESIGN_WITH_INHERITED_BLOCKERS
+  execution_authorized: false
+stop_after_stage: "05"
+

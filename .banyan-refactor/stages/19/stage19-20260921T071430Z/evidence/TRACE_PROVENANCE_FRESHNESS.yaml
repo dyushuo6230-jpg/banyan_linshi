@@ -1,0 +1,31 @@
+schema_version: stage19-v1
+result: PASS
+trace:
+  events: 9
+  valid: true
+  grants_authorization_count: 0
+  adapter_events: 3
+  adapter_events_with_evidence_refs: 3
+provenance:
+  unknown_preserved: true
+  unknown_synthesized: 0
+  secret_metadata_only: true
+freshness:
+  resolution_order:
+  - authority
+  - explicit_version_status
+  - explicit_supersession
+  - approved_change_lineage
+  - source_role
+  - freshness_observation
+  - conflict_state
+  - human_owner_decision
+  con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  winner_selected: false
+historical_refs:
+  keep_unresolved:
+  - REF-039
+  - REF-041
+  - REF-043
+  - REF-044
+  invented_targets: 0

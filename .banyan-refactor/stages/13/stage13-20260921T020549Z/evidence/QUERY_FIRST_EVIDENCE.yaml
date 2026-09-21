@@ -1,0 +1,22 @@
+schema_version: stage13-v1
+run_id: stage13-20260921T020549Z
+source_index: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+access_mode: READ_ONLY
+queries:
+  - {id: Q13-01, surface: change_affected_context, result: EXPLICIT_INDEXED_RELATIONS_AVAILABLE}
+  - {id: Q13-02, surface: projection_context, result: BIDIRECTIONAL_INDEXED_RELATIONS_AVAILABLE}
+  - {id: Q13-03, surface: con002_reference_neighborhood, result: REF-003_EXPLICIT_README_TO_DASHBOARD_EDGE}
+  - {id: Q13-04, surface: trace_neighborhood, result: STAGE_RUN_SUBJECT_LINEAGE_AVAILABLE_WITHOUT_AUTHORIZATION}
+  - {id: Q13-05, surface: history_transitions, result: CON002_OPEN_AND_INHERITED_BLOCKERS_PRESERVED}
+  - {id: Q13-06, surface: decision_evidence, result: DECISION_RECORDS_AVAILABLE_BUT_NONE_RESOLVES_CON002}
+  - {id: Q13-07, surface: provider_binding_summary, result: 35_INACTIVE}
+targeted_contract_reads:
+  stage06: [CHANGE_WORKSPACE_SCHEMA, CHANGE_LIFECYCLE_SCHEMA, ARTIFACT_RELATIONSHIP_SCHEMA, APPLY_PREVIEW_CONTRACT, CANONICAL_APPLY_CONTRACT, REFERENCE_SAFE_RECONCILIATION_CONTRACT, APPLY_AUTHORIZATION_BOUNDARY]
+  stage05: [DECISION_LEVEL_SCHEMA, DECISION_ESCALATION_CONTRACT, HUMAN_CONFIRMATION_CONTRACT, SEMANTIC_COMMIT_POLICY]
+  stage03: [ARTIFACT_REGISTRY_SCHEMA, REFERENCE_INTEGRITY_CONTRACT, VERSION_STATUS_PROVENANCE_RULES, AI_RUNTIME_GOVERNANCE_CONTRACT]
+prompt_rule_skill_body_reads:
+  execution_instruction_only: /Users/mac/Downloads/Stage_13_v1.10_Codex正式开始提示词.md
+  execution_instruction_sha256: 515a794ac33523f4a3d2a965a77a9dea1e92a3137f3624db9a20d54f498a733f
+  corpus_reads: 0
+secret_body_reads: 0
+

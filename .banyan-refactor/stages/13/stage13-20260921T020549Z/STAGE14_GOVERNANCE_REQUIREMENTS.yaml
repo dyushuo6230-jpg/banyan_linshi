@@ -1,0 +1,33 @@
+schema_version: stage13-v1
+required_surfaces:
+  action_risk_class:
+    values: [READ_ONLY, REVERSIBLE_WRITE, CANONICAL_WRITE, PROTECTED_WRITE, IRREVERSIBLE_OR_EXTERNAL]
+  required_evidence_class:
+    values: [OBSERVED_FACT, VALIDATION_RESULT, HUMAN_DECISION, IMPACT_REVIEW, AUTHORIZATION_RECORD]
+  impact_scope:
+    values: [LOCAL_ARTIFACT, PROJECT, PROVIDER_BOUNDARY, GENERIC_CORE, PROTECTED_TARGET]
+  decision_level:
+    source: .banyan-refactor/stages/05/stage05-20260920T144623Z/DECISION_LEVEL_SCHEMA.yaml
+  protected_target_state:
+    required: [target_id, protection_class, current_state, authority, freshness, rollback_state]
+  learning_proposal_state:
+    allowed: [PROPOSED, EVALUATING, EVALUATED, REJECTED, APPROVED_FOR_CHANGE, BLOCKED]
+    applied_is_not_a_stage13_state: true
+  event_audit_requirement:
+    required: [event_id, source_refs, actor_or_unknown, occurred_at_or_unknown, action, result, evidence_refs]
+  authorization_preconditions:
+    required: [complete_evidence, reviewed_impact, decision_gate, explicit_authorization, protected_write_check, secret_check, freshness_check, rollback_checkpoint]
+governance_rules:
+  - evidence_does_not_grant_authorization
+  - learning_proposal_does_not_grant_authorization
+  - correlation_or_event_frequency_does_not_grant_authorization
+  - canonical_prompt_rule_skill_change_requires_approved_change_workspace
+  - project_to_core_requires_cross_project_purity_and_portability_evidence
+  - blocked_or_unknown_precondition_prevents_action
+carried_blockers:
+  - CON-002 TYPED_BLOCKED / HUMAN_PROJECT_AUTHORITY
+  - REF-039/041/043/044 KEEP_UNRESOLVED_HISTORICAL
+  - R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, R03-LOCAL
+stage13_grants_authorization: false
+stage14_execution_authorized: false
+

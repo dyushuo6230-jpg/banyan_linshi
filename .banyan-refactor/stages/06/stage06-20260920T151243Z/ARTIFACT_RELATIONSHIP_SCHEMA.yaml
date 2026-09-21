@@ -1,0 +1,18 @@
+schema_version: stage06-v1
+artifact_required_fields: [artifact_id, artifact_role, status, provenance, source_role, provider_artifact_ref, revision]
+relationship_types:
+  DERIVED_FROM: directional
+  PROPOSES_CHANGE_TO: directional
+  SUPERSEDES: directional_requires_reference_migration
+  DEPENDS_ON: directional
+  IMPLEMENTS: directional
+  VALIDATES: directional
+  REFERENCES: directional
+  CONFLICTS_WITH: symmetric
+rules:
+  stable_artifact_id_required: true
+  provider_identity_may_replace_artifact_id: false
+  subject_change_requires_new_id: true
+  unknown_provenance_must_remain_explicit: true
+  relationship_evidence_required: true
+  supersedes_requires: [old_artifact, new_artifact, reason, effective_version, reference_migration_status]

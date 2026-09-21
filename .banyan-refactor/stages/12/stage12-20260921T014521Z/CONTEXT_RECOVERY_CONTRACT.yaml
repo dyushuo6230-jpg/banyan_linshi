@@ -1,0 +1,21 @@
+schema_version: stage12-v1
+policy_id: banyan.context.recovery.v1
+recovery_order:
+  - current_canonical_refs
+  - approved_decisions_and_changes
+  - current_progress
+  - latest_valid_handover
+  - current_source_mapping
+  - relevant_trace_and_evidence
+  - historical_context
+  - derived_projections
+handover_required_fields: [as_of, freshness, canonical_refs, operational_refs, open_blockers, next_actions, provenance]
+valid_handover_gate:
+  - source_refs_resolve
+  - freshness_is_not_stale_or_unknown_for_current_claims
+  - blocker_state_is_preserved
+  - no_unapproved_authority_claim
+latest_file_only_selection_allowed: false
+stage11_observation: Four indexed handovers have UNKNOWN as_of and freshness and therefore cannot establish current state without further evidence.
+recovery_failure_result: REVIEW_REQUIRED_OR_TYPED_BLOCKED
+

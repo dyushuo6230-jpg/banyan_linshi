@@ -1,0 +1,35 @@
+schema_version: stage19-v1
+run_id: stage19-20260921T071430Z
+result: PASS_WITH_CARRIED_BLOCKERS
+checks:
+  machine_artifacts_parse: true
+  evidence_registry_complete: true
+  coverage_32_of_32_metrics_zero: true
+  rc_artifact_hashes: true
+  rc_reproducibility: true
+  critical_regressions_36_of_36: true
+  go_tests: true
+  release_smoke: true
+  sqlite_index: true
+  noloss: true
+  purity: true
+  framework_unchanged: true
+  pilot_unchanged: true
+  git_unchanged: true
+  con002_preserved: true
+  final_activation_not_authorized: true
+  stage20_not_started: true
+missing_evidence_refs: []
+git_exit:
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+  staged_count: 0
+  unstaged_count: 0
+framework_file_count: 76
+pilot_file_count: 13
+carried_blockers:
+- id: CON-002
+  state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+- id: FINAL_ACTIVATION
+  state: NOT_AUTHORIZED
+stage20_started: false

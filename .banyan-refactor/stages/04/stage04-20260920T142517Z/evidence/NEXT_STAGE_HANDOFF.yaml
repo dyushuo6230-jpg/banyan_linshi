@@ -1,0 +1,39 @@
+upstream_stage: "04"
+run_id: stage04-20260920T142517Z
+acceptance_result: PASS_PROJECT_INSTANCE_DESIGN
+project_instance_contracts:
+  - PROJECT_INSTANCE_SCHEMA.yaml
+  - PROJECT_INSTANCE_LAYOUT_CONTRACT.yaml
+  - FRAMEWORK_PROJECT_BOUNDARY.yaml
+  - LOCATION_CONTRACT.yaml
+source_mapping_contracts:
+  - SOURCE_MAPPING_SCHEMA.yaml
+  - SOURCE_MAPPING_REGISTRY.yaml
+profile_contracts:
+  - PROJECT_PROFILE_SCHEMA.yaml
+  - CONTRIBUTOR_PROFILE_SCHEMA.yaml
+  - VARIABLE_RESOLUTION_SCHEMA.yaml
+provider_binding_contracts:
+  - PROVIDER_BINDING_SCHEMA.yaml
+  - PROJECT_OVERLAY_BINDINGS.yaml
+adoption_and_migration:
+  - ADOPTION_READINESS_REPORT.yaml
+  - BOOTSTRAP_TO_CANONICAL_MIGRATION_PLAN.yaml
+open_risks:
+  - {id: R03-PURITY, severity: HIGH, blocking_before_activation: true, owner_stage: 19}
+  - {id: R03-SOURCE, severity: HIGH, blocking_before_activation: true, owner_stage: 09/10}
+  - {id: CON-001, severity: HIGH, blocking_before_activation: true, owner_stage: "05"}
+  - {id: CON-002, severity: HIGH, blocking_before_activation: true, owner_stage: "12"}
+  - {id: R03-COST, severity: MEDIUM, blocking_before_activation: false, owner_stage: 05/15/16/19}
+  - {id: R03-SECRET, severity: HIGH, blocking_before_activation: true, owner_stage: ALL_LATER_STAGES}
+  - {id: R03-LOCAL, severity: MEDIUM, blocking_before_activation: false, owner_stage: ALL_LATER_STAGES}
+stage05_inputs:
+  - Stage 03 frozen contracts
+  - Stage 04 project instance and binding design
+  - unresolved CON-001 ownership
+next_stage_entry_gate:
+  stage: "05"
+  result: PASS_FOR_STAGE05_DESIGN_WITH_INHERITED_BLOCKERS
+  execution_authorized: false
+stop_after_stage: "04"
+

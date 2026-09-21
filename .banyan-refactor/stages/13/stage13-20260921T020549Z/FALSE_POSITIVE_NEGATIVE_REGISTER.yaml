@@ -1,0 +1,19 @@
+schema_version: stage13-v1
+allowed_classifications: [FALSE_POSITIVE, FALSE_NEGATIVE, AMBIGUOUS, INSUFFICIENT_EVIDENCE, EVALUATION_REGRESSION]
+entries:
+  - record_id: FPN-13-001
+    subject_id: REF-107_REF-108
+    classification: FALSE_POSITIVE
+    observed_result: Lexical scanner classified two regex literals as candidate references.
+    expected_result: NOT_A_REFERENCE
+    evidence_refs: [.banyan-refactor/stages/12/stage12-20260921T014521Z/HISTORICAL_REFERENCE_DISPOSITION.yaml]
+    disposition: EXCLUDE_FROM_REFERENCE_LEARNING_EXAMPLES
+  - record_id: FPN-13-002
+    subject_id: CON-002
+    classification: INSUFFICIENT_EVIDENCE
+    observed_result: Repeated conflict events exist without authority resolution evidence.
+    expected_result: TYPED_BLOCKED_NO_WINNER_SELECTED
+    evidence_refs: [.banyan-refactor/stages/12/stage12-20260921T014521Z/CON002_RESOLUTION_RECORD.yaml]
+    disposition: DO_NOT_INFER_RESOLUTION_FROM_FREQUENCY
+records_trigger_policy_change_automatically: false
+

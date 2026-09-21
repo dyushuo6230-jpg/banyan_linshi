@@ -1,0 +1,21 @@
+schema_version: stage18.5-v1
+run_id: stage18_5-20260921T064132Z
+result: PASS
+checks:
+  machine_artifacts_parse: true
+  feature_equivalence_12_of_12: true
+  validations_30_of_30_and_metrics_zero: true
+  embedded_asset_hashes: true
+  embedded_binary_hash: true
+  release_smoke: true
+  tests: true
+  pilot_unchanged: true
+  git_unchanged: true
+  stage19_not_started: true
+git_exit:
+  head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+  index_sha256: 3d09518893a2614bcec619c71dcd2d7a8f1242ee90adb66f144683ee8c397862
+  staged_count: 0
+  unstaged_count: 0
+pilot_file_count: 13
+stage19_started: false

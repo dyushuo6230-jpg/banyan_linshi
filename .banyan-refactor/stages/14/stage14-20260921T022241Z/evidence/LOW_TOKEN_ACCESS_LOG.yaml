@@ -1,0 +1,15 @@
+schema_version: stage14-v1
+inputs:
+  stage13_governance_and_handoff: true
+  stage05_decision_workmode_commit_identity: true
+  stage04_profile_overlay_variables: true
+  stage03_runtime_source_reference_provenance: true
+  stage00_secret_protection_metadata: true
+  read_only_git_metadata: true
+repository_rediscovery: false
+git_full_history_analysis: false
+git_mutation: false
+secret_metadata_records: 13
+secret_bodies_read: 0
+secret_hashes_computed: 0
+

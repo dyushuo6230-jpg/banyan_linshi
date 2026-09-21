@@ -1,0 +1,7 @@
+schema_version: stage14-v1
+required_for: [REVERSIBLE_WRITE, CANONICAL_WRITE, PROTECTED_WRITE, IRREVERSIBLE_OR_EXTERNAL]
+required_fields: [event_id, action_id, target_id, actor_or_unknown, risk_class, permission_decision, authorization_ref, evidence_refs, occurred_at_or_unknown, precondition_results, result]
+blocked_and_needs_input_decisions_are_audited: true
+audit_event_grants_authorization: false
+immutable_or_append_only: true
+

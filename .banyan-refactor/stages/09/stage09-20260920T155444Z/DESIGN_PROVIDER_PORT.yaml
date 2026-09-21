@@ -1,0 +1,24 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_PORT_NOT_BOUND
+provider_neutral: true
+operations: [intake, parse, extract_scene, extract_assets, extract_tokens, extract_states, report_confidence, report_failure]
+request_required: [contract_version, bounded_inputs, source_refs, context, requested_operations]
+response_required: [outcome, normalized_outputs, evidence_refs, confidence, provenance, failures]
+outcomes: [SUCCESS, PARTIAL, BLOCKED, FAILED, TIMEOUT, CANCELLED]
+failure_semantics:
+  failure_is_success: false
+  partial_evidence_retained: true
+  implicit_retry: false
+  missing_dependency: BLOCKED
+  inaccessible_input: BLOCKED
+  parse_error: FAILED
+  unknown_provider_state: UNKNOWN
+core_forbidden_required_fields: [anydesign_payload, figma_node, vendor_model, vendor_file_key, provider_specific_geometry]
+provider_extensions:
+  allowed: true
+  namespace_required: true
+  may_replace_normalized_core: false
+provider_selected: false
+runtime_implemented: false

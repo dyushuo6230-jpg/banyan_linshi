@@ -1,0 +1,46 @@
+schema_version: stage19-v1
+result: PASS
+coverage:
+  high_value_capabilities: 35/35
+  legacy_assets: 1026/1026
+  canonical_and_derived: 425/425
+  operational_assets: 289/289
+  reference_edges: 108/108
+source_hash_checks:
+- source_id: SRC-001
+  path: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_ASSET_DISPOSITION_MATRIX.jsonl
+  expected_sha256: 3321b60c71512b4006e1552e2c93223e282456a9ab22825a7ae8facea9887f32
+  actual_sha256: 3321b60c71512b4006e1552e2c93223e282456a9ab22825a7ae8facea9887f32
+  match: true
+  expected_count: 1026
+- source_id: SRC-002
+  path: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_ARTIFACT_MIGRATION_MATRIX.jsonl
+  expected_sha256: a7271ae577807c373e03bbdc8ee0cef06087e68f020db428388fff1f7c358bd9
+  actual_sha256: a7271ae577807c373e03bbdc8ee0cef06087e68f020db428388fff1f7c358bd9
+  match: true
+  expected_count: 425
+- source_id: SRC-003
+  path: .banyan-refactor/stages/07/stage07-20260920T152653Z/OPERATIONAL_PRESERVATION_MATRIX.jsonl
+  expected_sha256: 133de2c54a2412e93d5ab59e5a00ea7cdfb12234e11b69b59729d57d634e237a
+  actual_sha256: 133de2c54a2412e93d5ab59e5a00ea7cdfb12234e11b69b59729d57d634e237a
+  match: true
+  expected_count: 289
+- source_id: SRC-004
+  path: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_CAPABILITY_MIGRATION_MATRIX.yaml
+  expected_sha256: 457633c0de1f924849fe8fa22a73bc71ab5fbc01c7c9b249e5fa2b49b1c67bfe
+  actual_sha256: 457633c0de1f924849fe8fa22a73bc71ab5fbc01c7c9b249e5fa2b49b1c67bfe
+  match: true
+  expected_count: 35
+- source_id: SRC-005
+  path: .banyan-refactor/stages/07/stage07-20260920T152653Z/REFERENCE_MIGRATION_MAP.jsonl
+  expected_sha256: eccfe4aaea8d8471e2d28e11b6e9f6ae95022d096e7d72a6d88977933e150378
+  actual_sha256: eccfe4aaea8d8471e2d28e11b6e9f6ae95022d096e7d72a6d88977933e150378
+  match: true
+  expected_count: 108
+unresolved_historical_refs:
+- REF-039
+- REF-041
+- REF-043
+- REF-044
+invented_targets: 0
+full_legacy_rescan: false

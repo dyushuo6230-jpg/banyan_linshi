@@ -1,0 +1,24 @@
+schema_version: stage12-v1
+policy_id: banyan.token.budget.v1
+budget_classes: [CONSTRAINED, STANDARD, EXPANDED, EVIDENCE_ESCALATION]
+context_classes: [MANDATORY, OPTIONAL, ON_DEMAND, EXCLUDED]
+mandatory_context:
+  - stable_ids
+  - authority_and_source_role
+  - freshness_and_as_of
+  - provenance_and_source_refs
+  - decision_state
+  - blockers
+  - unknowns
+  - safety_and_secret_constraints
+budget_actions:
+  CONSTRAINED: [compact_optional, reuse_valid_cache, defer_low_value_evidence, retrieve_on_demand_if_gate_fails]
+  STANDARD: [include_mandatory, include_relevant_optional, use_local_reference_subgraph]
+  EXPANDED: [include_mandatory, expand_relevant_history, expand_trace_and_evidence]
+  EVIDENCE_ESCALATION: [retrieve_bounded_authority_evidence, retrieve_bounded_freshness_evidence, stop_when_sufficient]
+quality_gate:
+  mandatory_context_complete: REQUIRED
+  unresolved_safety_or_authority_gap: BLOCK
+  low_budget_bypass_allowed: false
+fixed_token_percentages: false
+

@@ -1,0 +1,42 @@
+schema_version: stage04-v1
+policy:
+  allowed_content: [policy_override, feature_activation, project_variable, provider_binding, source_mapping, delivery_convention]
+  may_weaken_core_safety: false
+  unresolved_conflict_behavior: BLOCKED
+bindings:
+  - {binding_id: overlay-cap-auth, capability_id: CAP-AUTH, project_value_ref: "variables://authorization_scope", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-profile, capability_id: CAP-PROFILE, project_value_ref: "variables://project_profile", activation_state: DESIGN_ONLY}
+  - {binding_id: overlay-cap-intake, capability_id: CAP-INTAKE, project_value_ref: "mappings://source_intake", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-prd, capability_id: CAP-PRD, project_value_ref: "mappings://requirement_source", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-idp, capability_id: CAP-IDP, project_value_ref: "conflicts://CON-001", activation_state: BLOCKED}
+  - {binding_id: overlay-cap-arch, capability_id: CAP-ARCH, project_value_ref: "variables://design_gate", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-schema, capability_id: CAP-SCHEMA, project_value_ref: "mappings://project_canonical_document", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-idref, capability_id: CAP-IDREF, project_value_ref: "mappings://project_canonical_document", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-trace, capability_id: CAP-TRACE, project_value_ref: "locations://trace", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-change, capability_id: CAP-CHANGE, project_value_ref: "mappings://decision_change_history", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-parallel, capability_id: CAP-PARALLEL, project_value_ref: "locations://generated", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-reconcile, capability_id: CAP-RECONCILE, project_value_ref: "mappings://decision_change_history", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-test, capability_id: CAP-TEST, project_value_ref: "mappings://operational_history", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-progress, capability_id: CAP-PROGRESS, project_value_ref: "mappings://operational_history", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-handover, capability_id: CAP-HANDOVER, project_value_ref: "mappings://operational_history", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-context, capability_id: CAP-CONTEXT, project_value_ref: "locations://index", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-ui-scope, capability_id: CAP-UI_SCOPE, project_value_ref: "mappings://ui_spec_source", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-ui-contract, capability_id: CAP-UI_CONTRACT, project_value_ref: "mappings://ui_spec_source", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-ui-gate, capability_id: CAP-UI_GATE, project_value_ref: "mappings://ui_spec_source", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-visual, capability_id: CAP-VISUAL, project_value_ref: "mappings://ui_design_derived", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-publish, capability_id: CAP-PUBLISH, project_value_ref: "mappings://project_guide_derived", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-editor, capability_id: CAP-EDITOR, project_value_ref: "variables://editor_entry", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-port, capability_id: CAP-PORT, project_value_ref: "variables://project_endpoints", activation_state: BLOCKED}
+  - {binding_id: overlay-cap-sql, capability_id: CAP-SQL, project_value_ref: "variables://delivery_convention", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-commit, capability_id: CAP-COMMIT, project_value_ref: "variables://commit_practice", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-merge, capability_id: CAP-MERGE, project_value_ref: "mappings://operational_history", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-design, capability_id: CAP-DESIGN, project_value_ref: "mappings://ui_spec_source", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-css, capability_id: CAP-CSS, project_value_ref: "mappings://ui_design_derived", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-capture, capability_id: CAP-CAPTURE, project_value_ref: "providers://page_visual_capture", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-colors, capability_id: CAP-COLORS, project_value_ref: "providers://image_palette_extraction", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-a11y, capability_id: CAP-A11Y, project_value_ref: "providers://contrast_evaluation", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-lint, capability_id: CAP-LINT, project_value_ref: "providers://design_document_lint", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-tokens, capability_id: CAP-TOKENS, project_value_ref: "providers://design_token_build", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-drift, capability_id: CAP-DRIFT, project_value_ref: "providers://design_drift_check", activation_state: INACTIVE}
+  - {binding_id: overlay-cap-export, capability_id: CAP-EXPORT, project_value_ref: "providers://design_package_export", activation_state: INACTIVE}
+coverage: {expected_capabilities: 35, accounted_capabilities: 35, missing: []}

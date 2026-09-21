@@ -1,0 +1,10 @@
+schema_version: stage13-v1
+candidate_types: [PROMPT_CHANGE, RULE_CHANGE, SKILL_CHANGE, WORKFLOW_CHANGE, CONTEXT_POLICY_CHANGE, PROVIDER_HINT, PROJECT_OVERLAY_CHANGE]
+statuses: [OBSERVED, PROPOSED, EVALUATING, EVALUATED, REJECTED, APPROVED_FOR_CHANGE, SUPERSEDED, BLOCKED]
+required_fields: [candidate_id, candidate_type, scope, evidence_refs, hypothesis, expected_benefit, risks, evaluation_ref, status, auto_apply]
+scope_default: PROJECT
+auto_apply: false
+runtime_self_modification_allowed: false
+project_to_core_requirements: [cross_project_evidence, no_project_literals, portable_semantics, independent_validation, purity_check, human_decision_gate]
+stage13_max_state: EVALUATED_OR_APPROVED_FOR_CHANGE_CANDIDATE_ONLY
+

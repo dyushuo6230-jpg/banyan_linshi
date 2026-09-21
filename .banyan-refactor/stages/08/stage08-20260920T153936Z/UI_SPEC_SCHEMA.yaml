@@ -1,0 +1,31 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields:
+- ui_spec_id
+- application_id
+- version
+- status
+- enablement
+- coverage
+- surface_scope
+- shared_component_scope
+- derived_from_prd
+- derived_from_change
+- design_evidence_refs
+- freshness
+- supersedes
+- validation_refs
+business_requirement_truth: false
+approved_invariants:
+  application_id_nonempty: true
+  enablement_explicit: true
+  prd_refs_nonempty: true
+  design_evidence_refs_nonempty: true
+  coverage_explicit: true
+  approval_evidence_required: true
+partial_approved_invariants:
+  surface_scope_nonempty: true
+  uncovered_scope_explicit: true
+  application_wide_ready_claim: false

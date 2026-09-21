@@ -1,0 +1,26 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_CONTRACT_NOT_IMPLEMENTED
+authority:
+  artifact_role: APPROVED_UI_CONTRACT_PROJECTION
+  canonical_business_truth: false
+  design_source_authority: EVIDENCE_ONLY
+  allowed_scope:
+  - ui_structure
+  - interaction_contract
+  - state_representation
+  - responsive_constraints
+  - design_evidence_interpretation
+  - implementation_facing_ui_constraints
+no_second_truth:
+  duplicate_complete_business_rules: FORBIDDEN
+  design_overrides_prd: FORBIDDEN
+  implementation_backwrites_prd: FORBIDDEN
+  application_specs_maintain_independent_business_rules: FORBIDDEN
+  violation_result: BLOCKED
+effective_contract:
+  approved_or_partial_approved_only: true
+  ambiguous_same_scope_versions: BLOCKED
+  business_permission_security_override: FORBIDDEN
+implementation_in_stage08: false

@@ -1,0 +1,104 @@
+schema_version: stage18.5-v1
+allowed_dispositions:
+- EQUIVALENT
+- IMPROVED_COMPATIBLY
+- DEFERRED_WITH_REASON
+- REMOVED_BY_EXPLICIT_DECISION
+features:
+- id: dashboard
+  label: Dashboard
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/status
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: runtime_policy
+  label: Runtime / Policy
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/policy
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: project_safety
+  label: Project Safety
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/project-safety
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: gate_blockers
+  label: Gate / Blockers
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/status
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: preflight
+  label: Preflight
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/preflight
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: commit_plan
+  label: Commit Plan
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/commit/plan
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: dry_run_result
+  label: Dry-run Result
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/commit/dry-run
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: trace_audit
+  label: Trace / Audit
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/trace
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: provenance
+  label: Provenance
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/provenance/:id
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: provider_bindings
+  label: Provider Bindings
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/providers
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: stage_run
+  label: Stage / Run
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/stages
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+- id: activation_readiness
+  label: Activation Readiness
+  disposition: EQUIVALENT
+  runtime_endpoint: /api/activation-readiness
+  authority_owned_by_ui: false
+  evidence_refs:
+  - banyan-framework/frontend/src/main.tsx
+  - GO_GIN_ROUTE_CONTRACT.yaml
+silent_loss_count: 0

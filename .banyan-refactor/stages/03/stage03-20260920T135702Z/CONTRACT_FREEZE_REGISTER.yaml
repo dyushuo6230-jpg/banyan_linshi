@@ -1,0 +1,131 @@
+schema_version: stage03-v1
+stage: '03'
+run_id: stage03-20260920T135702Z
+status: FROZEN_CONTRACT_SURFACE
+entries:
+- object_id: CANONICAL_CONTRACT_SCHEMA
+  object_type: SCHEMA
+  status: FROZEN
+  version: stage03-v1
+  hash: 152caa178bca0b10b7665d91a7525b1358c654c7539ee96cb5d70d1df7bf008d
+  evidence_refs:
+  - CANONICAL_CONTRACT_SCHEMA.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks:
+  - R02-PURITY-001
+  owner_stage: '03'
+- object_id: CAPABILITY_CONTRACT_REGISTRY
+  object_type: REGISTRY
+  status: FROZEN
+  version: stage03-v1
+  hash: 3f24e8376da7f0b16f9220fb41ef403c62616723a6ec21129fdac0da5f69ed3c
+  evidence_refs:
+  - CAPABILITY_CONTRACT_REGISTRY.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks:
+  - R02-PURITY-001
+  owner_stage: '03'
+- object_id: SOURCE_ROLE_SCHEMA
+  object_type: SCHEMA
+  status: FROZEN
+  version: stage03-v1
+  hash: 4c878ff987c153d1abc7eb5c448785cea5db3066b95e58bb1092f91e0b121a4a
+  evidence_refs:
+  - SOURCE_ROLE_SCHEMA.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: SOURCE_ROLE_REGISTRY
+  object_type: REGISTRY
+  status: FROZEN
+  version: stage03-v1
+  hash: 634b6bf9e5ec4b9b8f00e812e6d49c35219ba7e9f8e8c7d4c30e857b042cfa48
+  evidence_refs:
+  - SOURCE_ROLE_REGISTRY.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: ARTIFACT_REGISTRY_SCHEMA
+  object_type: REGISTRY
+  status: FROZEN
+  version: stage03-v1
+  hash: 80a19afb8f7306bc1a54353c35aa5899317b2eff76cde733398d764102140817
+  evidence_refs:
+  - ARTIFACT_REGISTRY_SCHEMA.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: PROVIDER_PORT_SCHEMA
+  object_type: SCHEMA
+  status: FROZEN
+  version: stage03-v1
+  hash: 4f1a4b70b3e0829db876256834e669c85a37991a5c78e2d0c0e438b21d6d6003
+  evidence_refs:
+  - PROVIDER_PORT_SCHEMA.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: PROJECT_OVERLAY_SCHEMA
+  object_type: SCHEMA
+  status: FROZEN
+  version: stage03-v1
+  hash: e0c465bb06c51a00eb2a6313bcb4c02ba4ace97ce9a755720361af03c669897e
+  evidence_refs:
+  - PROJECT_OVERLAY_SCHEMA.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: REFERENCE_INTEGRITY_CONTRACT
+  object_type: CONTRACT
+  status: FROZEN
+  version: stage03-v1
+  hash: d9fe5f32d2e742e960584051e4051d65b880a3fd3b4752920f8331d221c73c3f
+  evidence_refs:
+  - REFERENCE_INTEGRITY_CONTRACT.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: VERSION_STATUS_PROVENANCE_RULES
+  object_type: SCHEMA
+  status: FROZEN
+  version: stage03-v1
+  hash: 62790ef2cffedff22d28bd3e9148450e27dcdd366e23bdc8b06e622147d9b11d
+  evidence_refs:
+  - VERSION_STATUS_PROVENANCE_RULES.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: BOOTSTRAP_CANONICAL_STATE_CONTRACT
+  object_type: CONTRACT
+  status: FROZEN
+  version: stage03-v1
+  hash: a28cfda5b1c9fdb0e7a9cb4558235a2effc791c45035c0a87449f02869082eee
+  evidence_refs:
+  - BOOTSTRAP_CANONICAL_STATE_CONTRACT.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT
+  object_type: CONTRACT
+  status: FROZEN
+  version: stage03-v1
+  hash: e539a3000ecd6ffae4d7ca0f1c682fc4503250e8339b4b616406bf47ee9e14e7
+  evidence_refs:
+  - EXISTING_PROJECT_LAYOUT_PRESERVATION_CONTRACT.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+- object_id: AI_RUNTIME_GOVERNANCE_CONTRACT
+  object_type: CONTRACT
+  status: FROZEN
+  version: stage03-v1
+  hash: 41ba92eccffc06ec668e241d79cfbc35386693933954a15a1842537b48ac0d03
+  evidence_refs:
+  - AI_RUNTIME_GOVERNANCE_CONTRACT.yaml
+  - ../../02/stage02-20260920T131746Z/evidence/NEXT_STAGE_HANDOFF.yaml
+  open_risks: []
+  owner_stage: '03'
+semantic_contract_count: 35
+implementation_frozen: false
+provider_selection_frozen: false
+physical_layout_frozen: false

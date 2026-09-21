@@ -1,0 +1,20 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_CONTRACT_NOT_ACTIVATED
+generic_core_fields:
+  project_default_gate: REQUIRED
+  application_activation: REQUIRED
+  explicit_disable: SUPPORTED
+  coverage: REQUIRED
+allowed_enablement: [DISABLED, ENABLED, PARTIAL]
+rules:
+  missing_state: BLOCKED
+  default_state: DISABLED
+  empty_application_activation_set: ALL_DISABLED
+  unlisted_application: DISABLED
+  disabled_application_requires_ui_spec: false
+  partial_requires_explicit_surface_scope: true
+  changing_or_expanding_enablement_requires_decision_gate: true
+legacy_variable_names_in_generic_core: false
+activation_in_stage08: false

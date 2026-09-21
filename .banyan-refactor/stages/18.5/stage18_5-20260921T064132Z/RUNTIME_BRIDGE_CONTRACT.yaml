@@ -1,0 +1,29 @@
+schema_version: stage18.5-v1
+bridge:
+  mode: LOCAL_STDIO
+  implementation: Go ProcessBridge -> python3 -m banyan.control_plane.bridge
+  runtime_implementation: banyan.runtime.api.RuntimeAPI
+  runtime_language: PYTHON
+  lifecycle: ONE_LOCAL_CHILD_PROCESS_PER_REQUEST
+  timeout_semantics: 10_SECONDS_CONTEXT_DEADLINE
+  failure_semantics: TYPED_FAIL_CLOSED
+  shell_interpolation: false
+operations:
+- status
+- policy_status
+- project_safety
+- preflight
+- commit_plan
+- commit_dry_run
+- trace_query
+- provenance_query
+- provider_status
+- stage_query
+- activation_readiness
+- adapter_request
+second_runtime_allowed: false
+fallback_permission_engine_allowed: false
+permission_decision_owner: EXISTING_RUNTIME
+evidence:
+- evidence/TEST_RESULTS.txt
+- evidence/RELEASE_SMOKE_RESULTS.yaml

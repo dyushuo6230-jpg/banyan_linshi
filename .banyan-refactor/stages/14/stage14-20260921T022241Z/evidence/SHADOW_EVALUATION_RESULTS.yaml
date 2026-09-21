@@ -1,0 +1,11 @@
+schema_version: stage14-v1
+evaluator_source: 榕树ai改造落地相关文档/Stage_14_Work_Mode_Permission_Governance_Git_Safety/scripts/shadow_policy_evaluator.py
+provided_evaluator_result: PASS
+extended_case_source: evidence/SHADOW_POLICY_CASES.yaml
+extended_cases: 14
+expected_result_matches: 14
+result_counts: {ALLOW: 2, BLOCK: 9, NEEDS_INPUT: 2, NOT_APPLICABLE: 1}
+side_effects: NONE
+actions_executed: 0
+git_mutations_executed: 0
+

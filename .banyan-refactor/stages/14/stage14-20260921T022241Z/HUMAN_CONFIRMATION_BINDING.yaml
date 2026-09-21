@@ -1,0 +1,9 @@
+schema_version: stage14-v1
+source_contract: .banyan-refactor/stages/05/stage05-20260920T144623Z/HUMAN_CONFIRMATION_CONTRACT.yaml
+required_binding: [decision_id, unambiguous_question, action_id, target_id, risk_and_impact, uncertainties, explicit_confirmation, evidence_refs]
+silence_is_confirmation: false
+initial_preference_is_final_confirmation: false
+ai_recommendation_is_human_decision: false
+confirmation_for_different_action_or_target_is_valid: false
+missing_or_ambiguous_confirmation: NEEDS_INPUT
+

@@ -1,0 +1,13 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields: [semantic_id, semantic_type, source_node_refs, confidence, evidence_refs, alternatives, status, provenance]
+semantic_types: [PAGE, HEADER, SIDEBAR, TOOLBAR, FORM, TABLE, CARD, LIST, DIALOG, NAVIGATION, CONTENT_REGION, UNKNOWN]
+statuses: [SUPPORTED, INFERRED, AMBIGUOUS, UNKNOWN, REJECTED]
+rules:
+  direct_support_required_for_supported: true
+  inferred_must_be_marked: true
+  low_confidence_auto_promotes_to_design_truth: false
+  missing_evidence: UNKNOWN
+nodes: []

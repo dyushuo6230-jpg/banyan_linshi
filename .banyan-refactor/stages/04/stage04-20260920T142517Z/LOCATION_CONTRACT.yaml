@@ -1,0 +1,12 @@
+schema_version: stage04-v1
+locations:
+  runtime: {candidate_path: .banyan/runtime/, authority: NON_TRUTH_EPHEMERAL, rebuildable: true}
+  trace: {candidate_path: .banyan/trace/, authority: EVIDENCE, append_policy: APPEND_OR_IMMUTABLE}
+  index: {candidate_path: .banyan/index/, authority: NON_TRUTH_REBUILDABLE, rebuildable: true}
+  generated: {candidate_path: .banyan/generated/, authority: DERIVED, lineage_required: true}
+  migrations: {candidate_path: .banyan/migrations/, authority: MIGRATION_CONTROL, single_writable_truth: true}
+constraints:
+  paths_created_in_stage04: false
+  business_source_relocation_implied: false
+  sqlite_or_runtime_implementation_owned_here: false
+

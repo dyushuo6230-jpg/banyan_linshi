@@ -1,0 +1,37 @@
+schema_version: stage13-v1
+evaluations:
+  - evaluation_id: EVAL-13-001
+    candidate_id: LC-13-001
+    baseline_ref: UNBOUNDED_RETRIEVAL_PATTERN
+    candidate_ref: LEARNING_CANDIDATES.yaml#LC-13-001
+    test_cases:
+      - Stage 11 local change/reference/trace/history queries return typed evidence.
+      - Stage 12 CON-002 and historical-reference blockers remain present after low-token retrieval.
+    negative_cases:
+      - Missing query surface must trigger bounded evidence-on-demand rather than a guessed answer.
+      - UNKNOWN freshness must remain UNKNOWN.
+    counterexamples:
+      - A stale or incomplete index could omit a required source and requires integrity/freshness validation.
+    quality_result: PASS_FOR_PROPOSAL
+    regression_result: NO_OBSERVED_BLOCKER_OR_PROVENANCE_LOSS_IN_SHADOW_CASES
+    cost_result: LOWER_BOUNDED_READ_SURFACE
+    scope: PROJECT
+    limitations: [SINGLE_REPOSITORY, SINGLE_STAGE_RUN, NO_CROSS_PROJECT_EVIDENCE, NO_RUNTIME_BENCHMARK]
+    conclusion: EVALUATED_PROJECT_WORKFLOW_CANDIDATE_NOT_APPLIED
+  - evaluation_id: EVAL-13-002
+    candidate_id: LC-13-002
+    baseline_ref: .banyan-refactor/stages/12/stage12-20260921T014521Z/CON002_RESOLUTION_RECORD.yaml
+    candidate_ref: LEARNING_CANDIDATES.yaml#LC-13-002
+    test_cases:
+      - Conflicting PRIMARY sources without version or lineage remain blocked.
+    negative_cases:
+      - Event frequency and recent occurrence cannot select a winner.
+    counterexamples:
+      - An explicit approved supersession or human decision could permit resolution after revalidation.
+    quality_result: BLOCKED_PENDING_HUMAN_PROJECT_AUTHORITY
+    regression_result: NO_SILENT_WINNER
+    cost_result: UNKNOWN
+    scope: PROJECT
+    limitations: [MISSING_APPROVED_AUTHORITY_DECISION, MISSING_VERSION_STATUS, MISSING_SUPERSESSION]
+    conclusion: BLOCKED_NOT_APPLIED
+

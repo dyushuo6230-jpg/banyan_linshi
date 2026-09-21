@@ -1,0 +1,5 @@
+event_type: CLI_SMOKE_TEST
+action_id: trace-smoke
+occurred_at: "2026-09-21T03:17:42Z"
+result: PASS
+grants_authorization: false

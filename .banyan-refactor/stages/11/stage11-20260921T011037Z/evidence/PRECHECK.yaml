@@ -1,0 +1,20 @@
+schema_version: stage11-v1
+stage: '11'
+run_id: stage11-20260921T011037Z
+result: PASS_FOR_STAGE11_SHADOW_INDEX_TRACE_HISTORY_WITH_INHERITED_BLOCKERS
+baseline_head: 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
+upstream_stage: '10'
+upstream_run_id: stage10-20260920T161325Z
+upstream_status: COMPLETED
+structured_input_first: true
+repository_rescan: false
+git_full_history_reanalysis: false
+prior_stage_body_reload: false
+sqlite_version: 3.51.0
+canonical_runtime_path_present: false
+stage12_started: false
+inherited_blockers:
+  - CON-002 OPEN / owner Stage 12
+  - four historical missing reference targets / owner Stage 12
+  - R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, and R03-LOCAL
+

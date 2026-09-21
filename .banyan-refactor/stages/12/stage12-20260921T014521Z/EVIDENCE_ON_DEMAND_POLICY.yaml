@@ -1,0 +1,17 @@
+schema_version: stage12-v1
+policy_id: banyan.evidence.on_demand.v1
+triggers:
+  - FRESHNESS_CONFLICT_UNRESOLVED
+  - AUTHORITY_COLLISION
+  - CURRENTNESS_AMBIGUITY
+  - HANDOVER_STALENESS
+  - SUMMARY_SOURCE_GAP
+  - TOKEN_BUDGET_QUALITY_RISK
+  - REFERENCE_DISPOSITION_AMBIGUITY
+  - MISSING_EVIDENCE
+retrieval_order: [query_index, read_structured_evidence, read_targeted_source]
+requirements: [bounded_scope, explicit_purpose, access_log, source_refs, stop_condition]
+stop_conditions: [evidence_sufficient, typed_blocker_established, owner_decision_required, scope_boundary_reached]
+repository_rediscovery_allowed: false
+full_history_reanalysis_allowed: false
+

@@ -1,0 +1,21 @@
+schema_version: stage06-v1
+mandatory_checks:
+  - stable_ids
+  - inbound_and_outbound_references
+  - supersession_chain
+  - source_role_authority
+  - provenance
+  - canonical_state
+  - workspace_state
+  - derived_projection_status
+  - trace_lineage
+rules:
+  delete_referenced_artifact: forbidden_until_reference_migrated
+  reuse_id_for_new_subject: forbidden
+  overwrite_unknown_provenance: forbidden
+  regenerate_without_verified_lineage: forbidden
+  unresolved_inconsistency: RECONCILIATION_BLOCKED
+outcomes: [RECONCILED, RECONCILIATION_BLOCKED, ROLLBACK_REQUIRED]
+completion_requires_all_checks_pass: true
+silent_completion_on_partial_check: false
+

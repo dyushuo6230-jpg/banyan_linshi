@@ -1,0 +1,18 @@
+schema_version: stage11-v1
+run_id: stage11-20260921T011037Z
+status: PASS
+shadow_db: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+isolated_rebuild_db: .banyan-refactor/stages/11/stage11-20260921T011037Z/rebuild/banyan_index.rebuilt.sqlite
+structured_input_only: true
+manual_database_patch: false
+canonical_writeback: false
+primary_logical_hash: d4c1d6aa75fa9c3717b5a6e053b7bfacd817edd1e418c3c287a2885bab37b591
+rebuild_logical_hash: d4c1d6aa75fa9c3717b5a6e053b7bfacd817edd1e418c3c287a2885bab37b591
+logical_hash_match: true
+table_counts_match: true
+primary_byte_sha256: f2e10af3e5f97e872e4578b560569d0e8a50030be3749d467ad2282ee5c7a304
+rebuild_byte_sha256: f2e10af3e5f97e872e4578b560569d0e8a50030be3749d467ad2282ee5c7a304
+byte_hash_match: true
+integrity_check: ok
+foreign_key_violations: 0
+rebuild_command: python3 evidence/build_shadow_index.py

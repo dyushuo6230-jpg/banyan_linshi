@@ -1,0 +1,16 @@
+schema_version: stage17-v1
+result: PASS
+scope: CONTROL_ROOT_SIMULATION_ONLY
+created_copy: true
+files_removed: 13
+simulation_target_absent_after_rollback: true
+actual_pilot_rollback_executed: false
+actual_pilot_preserved: true
+git_reset_required: false
+legacy_restore_required: false
+actionable_actual_plan:
+- verify pilot manifest hashes
+- remove allowlisted files only
+- remove empty .banyan directories
+- verify .banyan absent
+- verify HEAD index and staged count equal checkpoint

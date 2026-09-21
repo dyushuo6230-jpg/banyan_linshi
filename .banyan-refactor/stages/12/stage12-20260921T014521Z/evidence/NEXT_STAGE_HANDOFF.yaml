@@ -1,0 +1,34 @@
+upstream_stage: '12'
+run_id: stage12-20260921T014521Z
+acceptance_result: PASS_STAGE12_CONTEXT_MEMORY_FRESHNESS_WITH_TYPED_BLOCKERS
+con002_result:
+  status: TYPED_BLOCKED
+  resolution: NO_WINNER_SELECTED
+  owner: HUMAN_PROJECT_AUTHORITY
+historical_reference_dispositions:
+  - REF-039 KEEP_UNRESOLVED_HISTORICAL
+  - REF-041 KEEP_UNRESOLVED_HISTORICAL
+  - REF-043 KEEP_UNRESOLVED_HISTORICAL
+  - REF-044 KEEP_UNRESOLVED_HISTORICAL
+  - REF-107 NOT_A_REFERENCE
+  - REF-108 NOT_A_REFERENCE
+context_contracts:
+  - CONTEXT_SELECTION_POLICY.yaml
+  - FRESHNESS_RESOLUTION_SCHEMA.yaml
+  - CONTEXT_RECOVERY_CONTRACT.yaml
+  - CURRENT_HISTORICAL_STATE_CONTRACT.yaml
+  - TOKEN_BUDGET_POLICY.yaml
+  - CONTEXT_COMPACTION_SCHEMA.yaml
+  - CACHE_REUSE_POLICY.yaml
+  - EVIDENCE_ON_DEMAND_POLICY.yaml
+memory_contracts: [MEMORY_RECORD_SCHEMA.yaml]
+stage13_query_surfaces: [STAGE13_QUERY_HANDOFF.yaml]
+carried_risks: [CON-002, REF-MISSING-HISTORICAL-4, R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, R03-LOCAL]
+next_stage_entry_gate:
+  stage: '13'
+  result: NOT_EVALUATED
+  execution_authorized: false
+  real_migration_readiness: MIGRATION_BLOCKED
+stage13_started: false
+stop_after_stage: '12'
+

@@ -1,0 +1,45 @@
+schema_version: stage03-v1
+schema_status: FROZEN
+contract_namespace: banyan.contract
+required_fields:
+- contract_id
+- capability_id
+- version
+- status
+- inputs
+- outputs
+- preconditions
+- guards
+- side_effect_policy
+- failure_semantics
+- authority
+- evidence_lineage
+- extension_points
+- compatibility
+statuses:
+- DRAFT
+- FROZEN
+- DEPRECATED
+- SUPERSEDED
+- BLOCKED
+field_rules:
+  contract_id: stable namespace-qualified identifier; never reused for another semantic subject
+  capability_id: exactly one Stage 01 high-value capability identity
+  version: semantic contract version independent from runtime state version
+  preconditions: must be explicit; unavailable inputs are not silently inferred
+  side_effect_policy: DENY_UNDECLARED; every permitted side effect is declared by an implementation profile
+  failure_semantics: must define failure class, preserved evidence, retryability, and caller-visible outcome
+  authority: resolved through SOURCE_ROLE_SCHEMA and may remain BLOCKED when precedence is ambiguous
+  evidence_lineage: source references or UNKNOWN with marked confidence; fabrication is forbidden
+  extension_points: typed provider port and project overlay only
+  compatibility: explicit adapter contract; legacy behavior cannot silently override frozen semantics
+generic_core_purity:
+  project_paths_allowed: false
+  project_names_allowed: false
+  project_ports_allowed: false
+  business_specific_policy_allowed: false
+  provider_or_model_binding_allowed: false
+  required_externalization:
+  - project overlay
+  - provider binding
+  - compatibility adapter

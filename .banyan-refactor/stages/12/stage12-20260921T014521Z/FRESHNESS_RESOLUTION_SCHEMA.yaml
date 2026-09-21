@@ -1,0 +1,22 @@
+schema_version: stage12-v1
+policy_id: banyan.freshness.resolution.v1
+resolution_order:
+  - authority
+  - explicit_version_status
+  - explicit_supersession
+  - approved_change_lineage
+  - source_role
+  - freshness_observation
+  - conflict_state
+  - human_owner_decision
+observations:
+  mtime: NON_DECISIVE_OBSERVATION_ONLY
+  file_order: NON_DECISIVE
+  path_proximity: NON_DECISIVE
+  ai_confidence: NON_DECISIVE
+allowed_results: [CURRENT, HISTORICAL, SUPERSEDED, STALE, REVIEW_REQUIRED, TYPED_BLOCKED, UNKNOWN]
+mtime_only_resolution_allowed: false
+latest_file_winner_allowed: false
+silent_winner_allowed: false
+ambiguity_rule: TYPED_BLOCKED_REQUIRES_OWNER_DECISION
+

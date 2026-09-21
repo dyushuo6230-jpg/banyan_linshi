@@ -1,0 +1,15 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+status: FROZEN_CONTRACT_NOT_INSTANTIATED
+progress_types: [CURRENT_STATUS, HISTORICAL_STATUS, WORK_LOG, DERIVED_SUMMARY]
+required_fields: [record_id, progress_type, as_of, source_refs, source_versions, evidence_refs, freshness, provenance]
+rules:
+  current_status_requires_currentness_evidence: true
+  old_progress_defaults_to_current: false
+  historical_status_may_claim_current: false
+  work_log_may_claim_completion: false
+  derived_summary_may_raise_progress: false
+  contradictory_current_records: REVIEW_REQUIRED
+  missing_as_of: UNKNOWN
+records: []

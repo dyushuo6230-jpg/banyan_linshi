@@ -1,0 +1,22 @@
+schema_version: stage04-v1
+candidate_project_instance_root: .banyan
+activation_state: NOT_CREATED
+internal_layout:
+  instance: instance/
+  mappings: mappings/
+  overlays: overlays/
+  profiles: profiles/
+  providers: providers/
+  runtime: runtime/
+  trace: trace/
+  index: index/
+  generated: generated/
+  migrations: migrations/
+constraints:
+  scope: PROJECT_INSTANCE_INTERNAL_ONLY
+  existing_project: PRESERVE_IN_PLACE
+  requires_existing_project_relayout: false
+  requires_project_sources_wrapper: false
+  recommended_layout_is_mandatory: false
+  activated_in_stage04: false
+

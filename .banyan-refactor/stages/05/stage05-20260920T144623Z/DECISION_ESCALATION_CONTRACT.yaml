@@ -1,0 +1,20 @@
+schema_version: stage05-v1
+monotonicity: risk_or_uncertainty_cannot_lower_level
+transitions:
+  - {from: L0, trigger: trace_required, to: L1}
+  - {from: L0, trigger: policy_choice, to: L2}
+  - {from: L1, trigger: material_tradeoff, to: L2}
+  - {from: L1, trigger: human_only, to: L3}
+  - {from: L2, trigger: confirmation_required, to: L3}
+  - {from: L2, trigger: policy_missing_or_conflicting, to: L4}
+  - {from: L3, trigger: authority_missing_or_conflict, to: L4}
+  - {from: any, trigger: secret_risk_or_protected_write_violation_or_missing_commit_identity, to: L4}
+deescalation:
+  allowed_only_after: [new_verified_evidence, explicit_owner_resolution, revalidation]
+  trace_required: true
+forbidden:
+  - mode_based_bypass
+  - token_budget_based_bypass
+  - silence_as_confirmation
+  - recommendation_as_user_decision
+

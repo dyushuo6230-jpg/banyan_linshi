@@ -1,0 +1,36 @@
+schema_version: stage18-v1
+run_id: stage18-20260921T062103Z
+overall: PASS
+checks:
+  C18-01: {result: PASS, check: Stage17 Gate and Pilot result consumed}
+  C18-02: {result: PASS, check: no Legacy rescan or Stage01-17 rerun}
+  C18-03: {result: PASS, check: one editor-neutral normalized request contract}
+  C18-04: {result: PASS, check: Cursor request transformation validated}
+  C18-05: {result: PASS, check: Codex request transformation validated}
+  C18-06: {result: PASS, check: Generic Editor request transformation validated}
+  C18-07: {result: PASS, check: all adapters call Control Plane and Runtime API}
+  C18-08: {result: PASS, check: no adapter imports Runtime or Git implementation directly}
+  C18-09: {result: PASS, check: adapters own no permission policy}
+  C18-10: {result: PASS, check: adapters own no canonical modification authority}
+  C18-11: {result: PASS, check: forbidden Git mutation fails closed through Runtime}
+  C18-12: {result: PASS, check: trace records all formal requests and grants no authorization}
+  C18-13: {result: PASS, check: evidence refs preserved across adapter conversion}
+  C18-14: {result: PASS, check: provenance fields preserved and UNKNOWN remains visible}
+  C18-15: {result: PASS, check: malformed and Runtime failures return typed results}
+  C18-16: {result: PASS, check: plan remains non-authorization and dry-run creates no commit}
+  C18-17: {result: PASS, check: HEAD index working tree and .banyan fingerprints unchanged}
+  C18-18: {result: PASS, check: Stage19 not started or authorized}
+hard_invariants:
+  ADAPTER_POLICY_ENGINE_CREATED: 0
+  SECOND_RUNTIME_CREATED: 0
+  RUNTIME_PERMISSION_BYPASS: 0
+  ADAPTER_CANONICAL_WRITE_AUTHORITY: 0
+  ADAPTER_DIRECT_GIT_MUTATION: 0
+  TRACE_WITH_AUTHORIZATION_GRANT: 0
+  EVIDENCE_REF_DROPPED: 0
+  UNKNOWN_PROVENANCE_AUTO_FILLED: 0
+  DOT_BANYAN_STRUCTURE_MODIFIED: 0
+  PROJECT_DOCUMENT_MIGRATION: 0
+tests: 11_OF_11_PASS
+formal_requests: 24
+trace_events: 36

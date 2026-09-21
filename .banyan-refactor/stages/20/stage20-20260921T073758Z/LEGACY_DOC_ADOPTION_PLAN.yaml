@@ -1,0 +1,28 @@
+schema_version: stage20-v1
+operation: POST_RELEASE_LEGACY_DOCUMENTATION_ADOPTION
+scope_example: docs/project and other existing documentation
+execute_in_stage20: false
+execution_status: DOCUMENTED_NOT_EXECUTED
+default_physical_relocation: false
+canonical_preserve_in_place: true
+steps:
+- DISCOVER
+- CLASSIFY
+- MAP_SOURCE_ROLE
+- ASSIGN_STABLE_ID
+- RESOLVE_AUTHORITY_VERSION_STATUS
+- CAPTURE_PROVENANCE
+- BUILD_REFERENCE_GRAPH
+- SHADOW_IMPORT
+- VALIDATE
+- SEMANTIC_ACTIVATION
+- OPTIONAL_EXPLICIT_PHYSICAL_MIGRATION
+required_controls:
+- No Secret body access without independent authorization
+- No invented target for unresolved historical references
+- Checkpoint and rollback before any physical move
+- Reference repair plan and no-loss validation
+- Human authority decision for canonical promotion
+physical_migration_authorization_required: true
+docs_project_moved: false
+guide: docs/LEGACY_DOCUMENTATION_ADOPTION_GUIDE.md

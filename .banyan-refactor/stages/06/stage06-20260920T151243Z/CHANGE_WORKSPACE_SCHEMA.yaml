@@ -1,0 +1,39 @@
+schema_version: stage06-v1
+status: FROZEN_CONTRACT_NOT_IMPLEMENTED
+workspace:
+  required:
+    - change_id
+    - project_instance_id
+    - status
+    - artifacts
+    - relationships
+    - decisions
+    - evidence_refs
+    - apply_state
+    - provider_binding_id
+  change_id:
+    authority: BANYAN_STABLE_ID
+    provider_identity_may_replace: false
+  project_instance_id: {required: true}
+  status: {ref: CHANGE_LIFECYCLE_SCHEMA.yaml}
+  artifacts: {ref: ARTIFACT_RELATIONSHIP_SCHEMA.yaml}
+  relationships: {ref: ARTIFACT_RELATIONSHIP_SCHEMA.yaml}
+  decisions: {policy_ref: "../../../05/stage05-20260920T144623Z/DECISION_POLICY_REGISTRY.yaml"}
+  evidence_refs: {required: true}
+  apply_state: {ref: CANONICAL_APPLY_CONTRACT.yaml}
+  provider_binding_id: {required: true}
+generic_operations:
+  - create
+  - inspect
+  - update_draft_artifacts
+  - relate_artifacts
+  - request_promotion
+  - request_apply_preview
+  - request_reconciliation
+  - archive_semantic_state
+authority:
+  workspace_is_canonical_truth: false
+  canonical_truth_resolved_by: [source_role, source_mapping, project_instance]
+provider_specific_fields_allowed_in_core: false
+provider_file_names_allowed_in_core: false
+

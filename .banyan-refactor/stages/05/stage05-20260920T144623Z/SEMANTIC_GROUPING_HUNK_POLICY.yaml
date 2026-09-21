@@ -1,0 +1,32 @@
+schema_version: stage05-v1
+grouping_priority:
+  - task_change_batch_relationship
+  - semantic_intent
+  - dependency_and_atomicity
+  - validation_boundary
+  - reviewability
+  - rollback_boundary
+path_or_extension_only_grouping_allowed: false
+hunk_planning:
+  same_file_may_span_groups: true
+  implementation_in_stage05: false
+  preconditions:
+    - hunks_are_semantically_independent
+    - each_group_remains_buildable_or_explicitly_qualified
+    - no context_lines_are_silently_lost
+    - review_and_rollback_rationale_is_recorded
+group_required_fields:
+  - group_id
+  - intent
+  - task_change_batch_refs
+  - included_changes
+  - excluded_changes
+  - dependencies
+  - validation
+  - rollback_review_rationale
+forbidden:
+  - mix_unrelated_for_cleanliness
+  - hide_incomplete_change
+  - stage_secret_risk
+  - execute_hunk_staging_in_stage05
+

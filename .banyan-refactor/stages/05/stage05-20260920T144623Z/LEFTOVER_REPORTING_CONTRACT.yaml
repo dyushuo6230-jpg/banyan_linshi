@@ -1,0 +1,16 @@
+schema_version: stage05-v1
+sections: [PLANNED_GROUPS, BLOCKED_GROUPS, LEFTOVERS]
+leftover_required_fields:
+  - item_id
+  - path_or_change_ref
+  - why_not_included
+  - classification
+  - risk
+  - recommended_next_action
+rules:
+  unrelated_must_be_visible: true
+  incomplete_must_be_visible: true
+  local_only_must_be_visible: true
+  secret_risk_must_be_blocked_and_visible_without_secret_body: true
+  empty_leftovers_must_be_explicit: true
+

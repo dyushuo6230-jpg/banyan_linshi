@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+stage: '09'
+run_id: stage09-20260920T155444Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields: [data_id, value_or_shape, classification, source_refs, confidence, authority, provenance]
+classifications: [DEMO_CONTENT, VERIFIED_BUSINESS_DATA, VERIFIED_API_SHAPE, UNKNOWN]
+default_for_design_text_numbers_and_records: DEMO_CONTENT
+rules:
+  demo_content_is_business_truth: false
+  demo_content_is_api_schema: false
+  demo_content_is_database_schema: false
+  verified_business_data_requires_business_evidence: true
+  verified_api_shape_requires_api_evidence: true
+  missing_support: UNKNOWN
+entries: []

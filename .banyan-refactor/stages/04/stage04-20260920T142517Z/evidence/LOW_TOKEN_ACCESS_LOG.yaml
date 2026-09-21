@@ -1,0 +1,22 @@
+mode: CONTRACT_FIRST_LOW_TOKEN
+full_repository_scan: false
+stage01_inventory_regenerated: false
+stage02_candidates_regenerated: false
+stage03_contracts_regenerated: false
+default_inputs:
+  - Stage_03_to_Stage_04_Gate_Review_v1.0.md
+  - Stage_04_低Token输入索引_v1.0.md
+  - Stage 04 pack
+  - Stage 03 NEXT_STAGE_HANDOFF.yaml
+  - indexed Stage 03 frozen surfaces
+targeted_evidence_on_demand:
+  - trigger: MISSING_BINDING
+    source: stages/02/stage02-20260920T131746Z/ARTIFACT_BOUNDARY_MAP.jsonl
+    fields_read: [source_role_candidate, path]
+    purpose: bind 9 frozen roles to preserved existing roots
+  - trigger: MISSING_BINDING
+    source: stages/01/stage01-20260920T091426Z/GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+    fields_read: [identities]
+    purpose: key contributor profiles by actual recorded Git identities
+secret_body_access: false
+

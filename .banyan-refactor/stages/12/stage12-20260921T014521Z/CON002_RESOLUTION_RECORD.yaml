@@ -1,0 +1,63 @@
+schema_version: stage12-v1
+conflict_id: CON-002
+status: TYPED_BLOCKED
+conflict_type: PROJECT_SOURCE_FRESHNESS_CONFLICT
+description: Entry and guide contain older PRD/progress statements while operational records contain different versions and progress; README also contains internally inconsistent project creation statements.
+candidates:
+  - stable_id: ASSET-ab6ff0ccef6c4f
+    locator: docs/project/README.md
+    source_role: PROJECT_CANONICAL_DOCUMENT
+    authority: PRIMARY
+    version: UNKNOWN
+    status: KEEP
+    freshness: UNKNOWN
+  - stable_id: ASSET-b6851c3fc34037
+    locator: docs/project/AI_DOCUMENTATION_GUIDE.md
+    source_role: PROJECT_CANONICAL_DOCUMENT
+    authority: PRIMARY
+    version: UNKNOWN
+    status: KEEP
+    freshness: UNKNOWN
+  - stable_id: ASSET-ecba0624d98758
+    locator: docs/project/progress/PROJECT_DASHBOARD.md
+    source_role: OPERATIONAL_HISTORY
+    authority: EVIDENTIARY_LOW
+    version: UNKNOWN
+    status: KEEP
+    freshness: UNKNOWN
+  - stable_id: ASSET-50cc39b8050a79
+    locator: docs/project/progress/PROGRESS_REGISTER.yaml
+    source_role: OPERATIONAL_HISTORY
+    authority: EVIDENTIARY_LOW
+    version: UNKNOWN
+    status: KEEP
+    freshness: UNKNOWN
+authority_analysis:
+  - Two PRIMARY canonical candidates exist, but authority alone does not resolve contradictions within or between them.
+  - Operational records are evidentiary and cannot silently replace canonical truth.
+version_status_analysis:
+  - All candidate versions and freshness values are UNKNOWN in the Stage 11 index.
+supersession_analysis:
+  - No explicit supersession record was found for this conflict.
+lineage_analysis:
+  - No approved change lineage or CON-002 decision record was found.
+freshness_observations:
+  - Recorded prose mentions differing PRD versions and progress percentages.
+  - Modification time and file recency were not used to choose a winner.
+resolution: NO_WINNER_SELECTED
+reason: Evidence does not establish a current authoritative statement; human owner decision or approved lineage is required.
+required_to_unblock:
+  - explicit scoped authority decision
+  - approved version/status or supersession record
+  - traceable change lineage
+  - freshness observation tied to that decision
+evidence_refs:
+  - .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite#entities
+  - .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite#history_events/CON-002
+  - .banyan-refactor/stages/01/stage01-20260920T091426Z/CONFLICT_GAP_REPORT.yaml#CON-002
+  - .banyan-refactor/stages/02/stage02-20260920T131746Z/CONFLICT_RISK_REGISTER.yaml#CON-002
+  - .banyan-refactor/stages/03/stage03-20260920T135702Z/CONFLICT_CARRYOVER_REGISTER.yaml#CON-002
+remaining_blockers: [MISSING_APPROVED_DECISION, MISSING_VERSION_STATUS, MISSING_SUPERSESSION, MISSING_APPROVED_CHANGE_LINEAGE]
+owner: HUMAN_PROJECT_AUTHORITY
+activation_blocked: true
+

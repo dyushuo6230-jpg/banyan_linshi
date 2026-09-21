@@ -1,0 +1,14 @@
+action_id: stage15-preflight-smoke
+action_type: inspect
+execution_scope: CURRENT_PROJECT_DRY_RUN
+target_id: current-project
+target_state: {}
+work_mode: STANDARD
+authorization_ref: USER-STAGE15-REQUEST
+precondition_results:
+  evidence_complete: true
+  impact_reviewed: true
+  authorization_valid: true
+  secret_check_passed: true
+  freshness_valid: true
+  rollback_ready: true

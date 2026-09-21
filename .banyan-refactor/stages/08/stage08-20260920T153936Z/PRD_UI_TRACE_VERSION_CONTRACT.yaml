@@ -1,0 +1,26 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_CONTRACT_NOT_IMPLEMENTED
+independent_versions:
+  prd_version: REQUIRED
+  ui_spec_version: REQUIRED
+  design_evidence_version: REQUIRED
+  implementation_baseline: REQUIRED_FOR_IMPLEMENTATION
+  validation_baseline: REQUIRED_FOR_VALIDATION
+required_trace:
+- derived_from_prd
+- derived_from_change
+- design_evidence_refs
+- application_id
+- coverage
+- freshness
+- supersedes
+- validation_refs
+freshness_effects:
+  prd_relevant_change: [STALE, REVIEW_REQUIRED]
+  design_evidence_change: [REVIEW_REQUIRED]
+  scope_change: [REVIEW_REQUIRED]
+  unknown_global_freshness: BLOCKED_BY_CON_002
+silent_validity_after_relevant_change: false
+global_freshness_algorithm_owner: '12'

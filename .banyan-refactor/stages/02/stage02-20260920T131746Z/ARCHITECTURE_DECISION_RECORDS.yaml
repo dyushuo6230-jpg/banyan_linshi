@@ -1,0 +1,83 @@
+stage: '02'
+status: DRAFT_NOT_APPROVED
+decisions:
+- decision_id: S02-ADR-001
+  title: Five-layer capability chain
+  decision: 'CANDIDATE: Keep semantic capability separate from Contract, Provider,
+    Artifact and Runtime'
+  context: Stage 01 sealed inventories and Gate Review
+  options:
+  - Extract all legacy files into one monolithic Core
+  - treat current tool paths as API
+  - separate layered candidates
+  impact: Separating layers preserves 35 behaviors while allowing provider and project
+    changes
+  risk: Stage 03 must formalize contracts; no runtime built
+  status: DRAFT
+  approval: NOT_REQUESTED_OR_GRANTED
+  execution_allowed: false
+- decision_id: S02-ADR-002
+  title: Preserve project layout
+  decision: 'CANDIDATE: Keep existing project paths and map source roles'
+  context: Stage 01 sealed inventories and Gate Review
+  options:
+  - Relayout now
+  - require one universal project-sources tree
+  - preserve in place with explicit mapping
+  impact: No migration risk during design; compatible with existing canonical references
+  risk: Stage 04 must test source mapping and explicit future migration only
+  status: DRAFT
+  approval: NOT_REQUESTED_OR_GRANTED
+  execution_allowed: false
+- decision_id: S02-ADR-003
+  title: Provider ports
+  decision: 'CANDIDATE: Keep specific tools/model/editor behind capability ports'
+  context: Stage 01 sealed inventories and Gate Review
+  options:
+  - Directly call existing scripts from Core
+  - use provider interfaces with typed failure
+  impact: Separates tool failure from governance decisions
+  risk: Stage 09/15 must verify adapter equivalence
+  status: DRAFT
+  approval: NOT_REQUESTED_OR_GRANTED
+  execution_allowed: false
+- decision_id: S02-ADR-004
+  title: Legacy compatibility
+  decision: 'CANDIDATE: Read old rules through versioned compatibility projection'
+  context: Stage 01 sealed inventories and Gate Review
+  options:
+  - Delete old prompts
+  - silently make them canonical Core
+  - versioned read-only compatibility
+  impact: Preserves user-facing behavior and avoids dual writable truth
+  risk: Stage 07/17 require regression before switching entrypoints
+  status: DRAFT
+  approval: NOT_REQUESTED_OR_GRANTED
+  execution_allowed: false
+- decision_id: S02-ADR-005
+  title: Runtime cost
+  decision: 'CANDIDATE: Route tasks by risk and evidence with budgets and four modes'
+  context: Stage 01 sealed inventories and Gate Review
+  options:
+  - One premium model for everything
+  - cheapest model for everything
+  - risk-aware routing with quality gates
+  impact: Cost visibility without weakening required evidence
+  risk: Thresholds, models and prices require later validated configuration
+  status: DRAFT
+  approval: NOT_REQUESTED_OR_GRANTED
+  execution_allowed: false
+- decision_id: S02-ADR-006
+  title: Artifact authority
+  decision: 'CANDIDATE: Maintain project canonical source, derived and operational
+    roles'
+  context: Stage 01 sealed inventories and Gate Review
+  options:
+  - Treat generated outputs as disposable
+  - treat every file as canonical
+  - preserve classified roles
+  impact: Prevents data loss and false authority
+  risk: Stage 03 formal schema and source graph required
+  status: DRAFT
+  approval: NOT_REQUESTED_OR_GRANTED
+  execution_allowed: false

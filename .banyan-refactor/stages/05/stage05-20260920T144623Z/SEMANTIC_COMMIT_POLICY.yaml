@@ -1,0 +1,33 @@
+schema_version: stage05-v1
+policy_id: banyan.semantic_commit.v1
+status: FROZEN_POLICY_NOT_IMPLEMENTED
+editor_neutral: true
+execution_clients: [Cursor, Codex, Claude, GenericEditor]
+editor_specific_policy_branch: false
+execution_in_stage05: false
+workflow:
+  - inspect_working_tree_read_only
+  - classify_changes
+  - correlate_workflow_task_change_batch
+  - group_candidate_changes
+  - create_hunk_aware_plan
+  - validate_each_group
+  - git_identity_precheck
+  - authorization_gate
+  - future_commit_executor
+  - capture_actual_commit
+  - evidence_and_trace
+  - leftover_report
+contracts:
+  classification: SEMANTIC_CHANGE_CLASSIFICATION.yaml
+  grouping_and_hunks: SEMANTIC_GROUPING_HUNK_POLICY.yaml
+  message: COMMIT_MESSAGE_POLICY.yaml
+  identity: GIT_IDENTITY_POLICY.yaml
+  authorization: COMMIT_AUTHORIZATION_BOUNDARY.yaml
+  leftovers: LEFTOVER_REPORTING_CONTRACT.yaml
+invariants:
+  secret_risk_auto_commit_path: false
+  identity_precheck_required: true
+  plan_is_execution_authorization: false
+  path_only_grouping: false
+

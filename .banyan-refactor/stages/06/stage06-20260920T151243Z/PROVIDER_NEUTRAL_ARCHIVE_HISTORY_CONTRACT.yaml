@@ -1,0 +1,18 @@
+schema_version: stage06-v1
+semantic_states: [ACTIVE, APPLIED, RECONCILED, ARCHIVED, HISTORICAL]
+archive_semantics:
+  changes_semantic_state: true
+  implies_delete: false
+  implies_move: false
+  implies_compress: false
+  implies_git_commit: false
+  preserves_identity: true
+  preserves_evidence_and_lineage: true
+physical_behavior:
+  owned_by: provider_and_later_safety_gate
+  requires_explicit_authorization: true
+  default: NO_PHYSICAL_CHANGE
+history:
+  append_only_events: true
+  provider_neutral: true
+  event_fields: [event_id, change_id, prior_state, next_state, actor_identity_or_unknown, authorization_ref, evidence_refs, timestamp_or_unknown]

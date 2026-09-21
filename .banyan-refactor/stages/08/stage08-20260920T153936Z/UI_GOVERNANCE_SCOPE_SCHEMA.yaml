@@ -1,0 +1,24 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_SCHEMA_NOT_INSTANTIATED
+required_fields:
+- application_id
+- surface_scope
+- shared_component_scope
+- design_source_scope
+- enablement
+- coverage
+- ui_spec_status
+scope_rules:
+  repository_wide_default: false
+  application_id_required: true
+  empty_or_unknown_application_id: BLOCKED
+  shared_component_scope_must_be_explicit: true
+  cross_application_inheritance_must_be_explicit: true
+  unlisted_application_is_enabled: false
+coverage:
+  allowed: [NONE, FULL, PARTIAL]
+  partial_requires_surface_scope: true
+  partial_may_claim_application_ready: false
+applications: []

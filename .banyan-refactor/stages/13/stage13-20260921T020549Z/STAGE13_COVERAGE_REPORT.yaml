@@ -1,0 +1,31 @@
+schema_version: stage13-v1
+stage: '13'
+run_id: stage13-20260921T020549Z
+overall: PASS_WITH_TYPED_BLOCKERS
+coverage:
+  evidence_record_and_chain: COMPLETE
+  impact_analysis_and_graph: COMPLETE
+  decision_and_change_evidence: COMPLETE
+  event_taxonomy_and_causality: COMPLETE
+  prompt_observation_and_outcome: COMPLETE
+  learning_candidates: COMPLETE_OFFLINE_ONLY
+  evaluation_and_counterexamples: COMPLETE
+  promotion_gate: COMPLETE_NO_APPLY
+  quality_and_cost_telemetry: COMPLETE_ABSTRACT
+  false_positive_negative_register: COMPLETE
+  stage14_governance_handoff: COMPLETE_NOT_STARTED
+hard_metrics:
+  EVIDENCE_RECORD_WITHOUT_SOURCE_REF: 0
+  EVIDENCE_RECORD_WITHOUT_PROVENANCE_OR_CLASSIFICATION: 0
+  CORRELATION_PROMOTED_TO_CAUSALITY_WITHOUT_EVIDENCE: 0
+  IMPACT_EDGE_WITHOUT_BASIS: 0
+  PROMPT_OUTCOME_WITH_SINGLE_FACTOR_ATTRIBUTION_BY_DEFAULT: 0
+  LEARNING_CANDIDATE_AUTO_APPLIED: 0
+  PROJECT_SPECIFIC_LEARNING_AUTO_PROMOTED_TO_CORE: 0
+  SECRET_OR_SECRET_DERIVED_LEARNING_RECORD: 0
+  CON002_RESOLVED_BY_LEARNING_OR_EVENT_FREQUENCY: 0
+limitations:
+  - Offline examples validate contract semantics only; no learning runtime exists.
+  - LC-13-001 has only single-repository evidence and is not eligible for Generic Core promotion.
+  - CON-002 remains TYPED_BLOCKED and requires HUMAN_PROJECT_AUTHORITY.
+

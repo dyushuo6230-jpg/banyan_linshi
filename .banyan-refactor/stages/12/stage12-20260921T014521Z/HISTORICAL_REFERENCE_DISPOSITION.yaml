@@ -1,0 +1,38 @@
+schema_version: stage12-v1
+allowed_dispositions: [KEEP_UNRESOLVED_HISTORICAL, DELETED_HISTORICAL_TARGET, EXTERNAL_HISTORICAL_TARGET, SUPERSEDED_REFERENCE, RESOLVED_WITH_EVIDENCE]
+verification_method: EXACT_LOCATOR_AND_EXACT_GIT_PATH_HISTORY_ONLY
+entries:
+  - reference_id: REF-039
+    source_ref: nunu-go-api/app/admin/web/CHANGELOG.md:642
+    missing_target_locator: nunu-go-api/app/admin/web/CONTRIBUTING.md
+    disposition: KEEP_UNRESOLVED_HISTORICAL
+    target_id: null
+    evidence_refs: [.banyan-refactor/stages/11/stage11-20260921T011037Z/UNRESOLVED_REFERENCE_REGISTRY.yaml#REF-039]
+    verification: CURRENT_PATH_ABSENT_AND_EXACT_GIT_PATH_HISTORY_EMPTY
+  - reference_id: REF-041
+    source_ref: nunu-go-api/app/admin/web/CHANGELOG.zh-CN.md:642
+    missing_target_locator: nunu-go-api/app/admin/web/CONTRIBUTING.md
+    disposition: KEEP_UNRESOLVED_HISTORICAL
+    target_id: null
+    evidence_refs: [.banyan-refactor/stages/11/stage11-20260921T011037Z/UNRESOLVED_REFERENCE_REGISTRY.yaml#REF-041]
+    verification: CURRENT_PATH_ABSENT_AND_EXACT_GIT_PATH_HISTORY_EMPTY
+  - reference_id: REF-043
+    source_ref: nunu-go-api/app/admin/web/CHANGELOG.zh-CN.md:654
+    missing_target_locator: nunu-go-api/app/admin/web/CHANGELOG.en.md
+    disposition: KEEP_UNRESOLVED_HISTORICAL
+    target_id: null
+    evidence_refs: [.banyan-refactor/stages/11/stage11-20260921T011037Z/UNRESOLVED_REFERENCE_REGISTRY.yaml#REF-043]
+    verification: CURRENT_PATH_ABSENT_AND_EXACT_GIT_PATH_HISTORY_EMPTY
+  - reference_id: REF-044
+    source_ref: nunu-go-api/app/admin/web/README.md:48
+    missing_target_locator: nunu-go-api/app/admin/web/CHANGELOG.en.md
+    disposition: KEEP_UNRESOLVED_HISTORICAL
+    target_id: null
+    evidence_refs: [.banyan-refactor/stages/11/stage11-20260921T011037Z/UNRESOLVED_REFERENCE_REGISTRY.yaml#REF-044]
+    verification: CURRENT_PATH_ABSENT_AND_EXACT_GIT_PATH_HISTORY_EMPTY
+not_a_reference:
+  - {reference_id: REF-107, disposition: NOT_A_REFERENCE, unchanged: true}
+  - {reference_id: REF-108, disposition: NOT_A_REFERENCE, unchanged: true}
+invent_target_allowed: false
+historical_sources_mutated: false
+

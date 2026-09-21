@@ -1,0 +1,18 @@
+schema_version: stage05-v1
+states: [RECEIVED, ROUTED, INSPECTED, PROPOSED, WAITING_CONFIRMATION, BLOCKED, AUTHORIZED, PLANNED, VALIDATED, READY_FOR_EXECUTOR, EXECUTED_BY_FUTURE_STAGE, EVIDENCE_CAPTURED, COMPLETED]
+transitions:
+  - {from: RECEIVED, to: ROUTED, requires: routing_inputs}
+  - {from: ROUTED, to: INSPECTED, requires: allowed_inspection}
+  - {from: INSPECTED, to: PROPOSED, requires: evidence_and_options}
+  - {from: PROPOSED, to: WAITING_CONFIRMATION, requires: L3}
+  - {from: any, to: BLOCKED, requires: typed_blocker}
+  - {from: PROPOSED, to: AUTHORIZED, requires: L0_L2_policy_or_valid_L3_confirmation}
+  - {from: AUTHORIZED, to: PLANNED, requires: scoped_plan}
+  - {from: PLANNED, to: VALIDATED, requires: group_validation}
+  - {from: VALIDATED, to: READY_FOR_EXECUTOR, requires: identity_and_authorization_precheck}
+  - {from: READY_FOR_EXECUTOR, to: EXECUTED_BY_FUTURE_STAGE, requires: future_executor}
+  - {from: EXECUTED_BY_FUTURE_STAGE, to: EVIDENCE_CAPTURED, requires: actual_result}
+  - {from: EVIDENCE_CAPTURED, to: COMPLETED, requires: leftovers_reported}
+stage05_terminal_state: READY_FOR_EXECUTOR_OR_BLOCKED
+execution_transition_implemented_in_stage05: false
+

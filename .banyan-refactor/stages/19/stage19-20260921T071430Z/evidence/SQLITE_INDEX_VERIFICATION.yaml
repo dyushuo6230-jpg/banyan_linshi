@@ -1,0 +1,59 @@
+schema_version: stage19-v1
+result: PASS
+databases:
+- path: .banyan-refactor/stages/11/stage11-20260921T011037Z/shadow/banyan_index.sqlite
+  sha256: f2e10af3e5f97e872e4578b560569d0e8a50030be3749d467ad2282ee5c7a304
+  integrity_check: ok
+  foreign_key_violations: 0
+  table_counts:
+    artifact_status_history: 425
+    artifact_versions: 425
+    artifacts: 1740
+    changes: 54
+    decisions: 130
+    entities: 1911
+    guides: 2
+    handover_records: 4
+    history_events: 324
+    index_metadata: 7
+    migration_ledger: 74
+    progress_records: 232
+    projections: 95
+    provenance: 1740
+    provider_bindings: 35
+    reference_edges: 108
+    relations: 807
+    secret_metadata: 13
+    source_roles: 9
+    trace_events: 28
+    unresolved_references: 4
+- path: .banyan-refactor/stages/11/stage11-20260921T011037Z/rebuild/banyan_index.rebuilt.sqlite
+  sha256: f2e10af3e5f97e872e4578b560569d0e8a50030be3749d467ad2282ee5c7a304
+  integrity_check: ok
+  foreign_key_violations: 0
+  table_counts:
+    artifact_status_history: 425
+    artifact_versions: 425
+    artifacts: 1740
+    changes: 54
+    decisions: 130
+    entities: 1911
+    guides: 2
+    handover_records: 4
+    history_events: 324
+    index_metadata: 7
+    migration_ledger: 74
+    progress_records: 232
+    projections: 95
+    provenance: 1740
+    provider_bindings: 35
+    reference_edges: 108
+    relations: 807
+    secret_metadata: 13
+    source_roles: 9
+    trace_events: 28
+    unresolved_references: 4
+byte_hash_match: true
+table_counts_match: true
+canonical_truth: false
+mutated: false

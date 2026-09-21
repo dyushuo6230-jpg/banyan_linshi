@@ -1,0 +1,43 @@
+schema_version: stage05-v1
+workflow_policy_id: banyan.workflow.adaptive.v1
+schema_ref: ADAPTIVE_WORKFLOW_SCHEMA.yaml
+work_mode_ref: WORK_MODE_CONTRACT.yaml
+state_transition_ref: WORKFLOW_STATE_TRANSITION_SCHEMA.yaml
+relationship_ref: TASK_CHANGE_BATCH_RELATIONSHIP_CONTRACT.yaml
+capability_impacts:
+  - {capability_id: CAP-AUTH, workflow_impact: authorization_gate}
+  - {capability_id: CAP-PROFILE, workflow_impact: routing_variables}
+  - {capability_id: CAP-INTAKE, workflow_impact: source_evidence_gate}
+  - {capability_id: CAP-PRD, workflow_impact: requirement_state_gate}
+  - {capability_id: CAP-IDP, workflow_impact: decision_levels_and_confirmation}
+  - {capability_id: CAP-ARCH, workflow_impact: design_human_gate}
+  - {capability_id: CAP-SCHEMA, workflow_impact: artifact_state_validation}
+  - {capability_id: CAP-IDREF, workflow_impact: reference_integrity_gate}
+  - {capability_id: CAP-TRACE, workflow_impact: evidence_capture}
+  - {capability_id: CAP-CHANGE, workflow_impact: change_routing}
+  - {capability_id: CAP-PARALLEL, workflow_impact: draft_isolation}
+  - {capability_id: CAP-RECONCILE, workflow_impact: batch_completion_gate}
+  - {capability_id: CAP-TEST, workflow_impact: validation_gate}
+  - {capability_id: CAP-PROGRESS, workflow_impact: evidence_based_projection}
+  - {capability_id: CAP-HANDOVER, workflow_impact: resumability_and_leftovers}
+  - {capability_id: CAP-CONTEXT, workflow_impact: recovery_routing}
+  - {capability_id: CAP-UI_SCOPE, workflow_impact: scoped_ui_gate}
+  - {capability_id: CAP-UI_CONTRACT, workflow_impact: effective_contract_gate}
+  - {capability_id: CAP-UI_GATE, workflow_impact: approval_gate}
+  - {capability_id: CAP-VISUAL, workflow_impact: bounded_iteration}
+  - {capability_id: CAP-PUBLISH, workflow_impact: projection_validation}
+  - {capability_id: CAP-EDITOR, workflow_impact: editor_neutral_execution_client}
+  - {capability_id: CAP-PORT, workflow_impact: project_overlay_precondition}
+  - {capability_id: CAP-SQL, workflow_impact: delivery_and_secret_boundary}
+  - {capability_id: CAP-COMMIT, workflow_impact: semantic_commit_policy}
+  - {capability_id: CAP-MERGE, workflow_impact: protected_git_operations}
+  - {capability_id: CAP-DESIGN, workflow_impact: provider_input_gate}
+  - {capability_id: CAP-CSS, workflow_impact: provider_validation}
+  - {capability_id: CAP-CAPTURE, workflow_impact: provider_scope_and_budget}
+  - {capability_id: CAP-COLORS, workflow_impact: derived_evidence}
+  - {capability_id: CAP-A11Y, workflow_impact: validation_evidence}
+  - {capability_id: CAP-LINT, workflow_impact: validation_evidence}
+  - {capability_id: CAP-TOKENS, workflow_impact: generated_lineage}
+  - {capability_id: CAP-DRIFT, workflow_impact: comparison_evidence}
+  - {capability_id: CAP-EXPORT, workflow_impact: output_and_lineage_gate}
+coverage: {expected: 35, accounted: 35, unaccounted: []}

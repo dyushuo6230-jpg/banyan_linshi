@@ -1,0 +1,24 @@
+schema_version: stage16-v1
+upstream_stage: "16"
+run_id: stage16-20260921T034943Z
+acceptance_result: PASS_STAGE16_CONTROL_PLANE_WEBUI_PROVENANCE_ACTIVATION_READINESS
+control_plane:
+  implemented: true
+  source: banyan-framework/src/banyan/control_plane
+  webui: banyan-framework/src/banyan/web
+  local_only: true
+  runtime_policy_bypass: false
+  current_project_capabilities: [READ_ONLY, PREFLIGHT, PLAN, DRY_RUN]
+activation_readiness:
+  state: BLOCKED
+  dot_banyan_created: false
+  report: ../ACTIVATION_READINESS_REPORT.yaml
+stage17_handoff: ../STAGE17_CURSOR_PILOT_HANDOFF.yaml
+carried_blockers:
+  - {id: CON-002, state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY}
+  - {id: STAGE17_GATE, state: REQUIRED_NOT_AUTHORIZED}
+next_stage_entry_gate:
+  stage: "17"
+  result: READY_FOR_INDEPENDENT_GATE_REVIEW_WITH_BLOCKERS
+  execution_authorized: false
+stop_after_stage: "16"

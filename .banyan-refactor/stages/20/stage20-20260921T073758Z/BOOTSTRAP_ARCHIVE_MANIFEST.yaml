@@ -1,0 +1,11 @@
+schema_version: stage20-v1
+workspace: .banyan-refactor
+classification: BOOTSTRAP_CONSTRUCTION_WORKSPACE
+snapshot_scope: PRE_STAGE20_CONTENT_EXCLUDING_CURRENT_RUN
+file_count: 1342
+total_bytes: 157725990
+manifest: evidence/BOOTSTRAP_ARCHIVE_FILE_MANIFEST.sha256
+manifest_sha256: cdb37afcaefc899b0e3c24bab3f800e2d49c303ef6041e774e7c392e1f716bb4
+archive_created: false
+deletion_executed: false
+target_state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION

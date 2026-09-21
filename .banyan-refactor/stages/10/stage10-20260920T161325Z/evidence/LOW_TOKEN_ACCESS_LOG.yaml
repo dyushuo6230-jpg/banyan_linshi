@@ -1,0 +1,21 @@
+schema_version: stage10-v1
+stage: '10'
+run_id: stage10-20260920T161325Z
+mode: KNOWLEDGE_PROJECTION_LOW_TOKEN
+repository_rediscovery: false
+full_docs_project_crawl: false
+full_plain_document_reload: false
+all_prd_adr_api_reload: false
+prior_stage_rerun: false
+inputs:
+- Stage 09 to Stage 10 Gate Review
+- Stage 10 Low Token Input Index and execution pack
+- Stage 09 handoff, Design Package, Design Truth, and provenance contracts
+- Four Stage 08 PRD/UI authority and validation contracts
+- Stage 07 governance compatibility plus six targeted capability mappings and an indexed 89-artifact summary
+- Four Stage 03 source-role, artifact, reference, and provenance contracts
+- Six targeted Legacy knowledge capability records
+- Targeted paragraphs from eight Plain Document planning files and Guide/Progress/Handover inputs
+plain_document_generated_bodies_loaded: false
+evidence_on_demand_triggers_fired: []
+sensitive_body_access: false

@@ -1,0 +1,17 @@
+schema_version: stage14-v1
+stage: '14'
+run_id: stage14-20260921T022241Z
+result: PASS_FOR_STAGE14_POLICY_FREEZE_SHADOW_EVALUATION_WITH_TYPED_BLOCKERS
+upstream:
+  stage: '13'
+  run_id: stage13-20260921T020549Z
+  acceptance: PASS_STAGE13_EVIDENCE_IMPACT_EVENT_OFFLINE_LEARNING_WITH_TYPED_BLOCKERS
+  governance_handoff: .banyan-refactor/stages/13/stage13-20260921T020549Z/STAGE14_GOVERNANCE_REQUIREMENTS.yaml
+mode: POLICY_FREEZE_SHADOW_EVALUATION_LOW_TOKEN
+repository_rescan: false
+git_full_history_reanalysis: false
+git_mutations: 0
+canonical_mutations: 0
+secret_body_reads_or_hashes: 0
+stage15_started: false
+

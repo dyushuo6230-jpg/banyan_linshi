@@ -1,0 +1,26 @@
+schema_version: stage17-v1
+authorization_id: USER-STAGE17-PILOT-REQUEST
+actor_identity_or_user: CURRENT_CODEX_USER
+action_scope: CREATE_VALIDATE_PROJECT_INSTANCE_PILOT
+target_scope: .banyan/PILOT_SHADOW_ONLY
+granted_actions:
+  - create_allowlisted_pilot_metadata
+  - validate_cursor_adapter_chain
+  - validate_runtime_integration
+constraints:
+  - no_git_mutation
+  - no_secret_body_read
+  - no_identity_write
+  - no_legacy_delete
+  - no_docs_or_project_move
+  - no_canonical_overwrite
+  - preserve_existing_project_layout
+  - con002_remains_blocked
+validity:
+  issued_at_or_unknown: 2026-09-21T05:59:11Z
+  expires_at_or_condition: END_OF_STAGE17
+  revocation_state: NOT_REVOKED
+evidence_refs:
+  - user_request_stage17_current_turn
+  - Stage_16_to_Stage_17_Gate_Review_v1.0.md
+decision_ref: stage17-explicit-gate

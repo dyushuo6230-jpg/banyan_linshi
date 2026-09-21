@@ -1,0 +1,255 @@
+stage_id: '01'
+run_id: stage01-20260920T091426Z
+mode: FINAL
+overall: PASS
+results:
+- id: V01-01
+  result: PASS
+  checks:
+    upstream_seal_58: true
+    pack_28: true
+    stage00_preserved: true
+    entry_gate: true
+  failed: []
+  evidence:
+  - evidence/UPSTREAM_INTEGRITY.json
+  - evidence/PACK_CHECK.json
+  - checkpoint/*.snapshot.yaml
+  note: Stage 00 shared-state hashes resolve through immutable pre-update snapshots;
+    original stage evidence stays unchanged.
+- id: V01-02
+  result: PASS
+  checks:
+    head_matches: true
+    precheck_pass: true
+    drift_explicit: true
+    freshness_classified: true
+  failed: []
+  evidence:
+  - evidence/RESUME_PRECHECK.json
+  - evidence/BASELINE_FRESHNESS.json
+  - evidence/EXTERNAL_ARCHIVE_DRIFT.json
+  - evidence/FINAL_SAFETY_CHECK.json
+  note: Initial resume consistent; later archive duplicate disappearance separately
+    classified, never silently called NO_DRIFT.
+- id: V01-03
+  result: PASS
+  checks:
+    universe_unique: true
+    all_reasoned: true
+    candidate_complete: true
+    governed_ignored_17: true
+    root_evidence: true
+    tracked_count: true
+  failed: []
+  evidence:
+  - DISCOVERY_COVERAGE_REPORT.yaml
+  - evidence/DISCOVERY_UNIVERSE.jsonl
+  - evidence/ROOT_COVERAGE.json
+  - evidence/CANDIDATE_RECONCILIATION.jsonl
+  note: Root-wide path/content discovery plus history; binary/excluded scopes explicitly
+    qualified.
+- id: V01-04
+  result: PASS
+  checks:
+    inherited69: true
+    approved13: true
+    zero_secret_read: true
+    metadata_only: true
+    no_secret_in_legacy: true
+    partial_recovery: true
+  failed: []
+  evidence:
+  - evidence/CONTENT_ACCESS_AUDIT.json
+  - CHECKPOINT_RECORD.yaml
+  - evidence/FINAL_SAFETY_CHECK.json
+  note: Inherited secret bodies not read/hash/copied; no content-equality assertion.
+    Added tunnel metadata-only boundary is documented separately.
+- id: V01-05
+  result: PASS
+  checks:
+    asset_isolation: true
+    artifact_isolation: true
+    capability_isolation: true
+  failed: []
+  evidence:
+  - AI_ASSET_INVENTORY.jsonl
+  - AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+  - OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+  note: Construction and upstream refactor outputs never counted as Legacy.
+- id: V01-06
+  result: PASS
+  checks:
+    ids_unique: true
+    paths_unique: true
+    types_valid: true
+    paths_locatable: true
+    evidence_resolves: true
+  failed: []
+  evidence:
+  - AI_ASSET_INVENTORY.jsonl
+  - evidence/HISTORICAL_ASSETS.jsonl
+  note: 1026 locatable current/historical assets with explicit type/action/evidence;
+    path-level roles are candidates.
+- id: V01-07
+  result: PASS
+  checks:
+    classification_complete: true
+    actions_valid: true
+    reasons_and_owners: true
+    no_execution: true
+  failed: []
+  evidence:
+  - LEGACY_CLASSIFICATION_REPORT.yaml
+  note: KEEP/MERGE/etc are proposed dispositions, not changes to legacy files.
+- id: V01-08
+  result: PASS
+  checks:
+    semantic_capabilities: true
+    unique_capabilities: true
+    source_evidence: true
+  failed: []
+  evidence:
+  - LEGACY_AI_CAPABILITY_INVENTORY.jsonl
+  note: Capability units capture behavior, guards and failures, not just source file
+    counts.
+- id: V01-09
+  result: PASS
+  checks:
+    classes_valid: true
+    source_consumer: true
+    authorship_qualified: true
+    approval_not_inferred: true
+    evidence_resolves: true
+  failed: []
+  evidence:
+  - AI_GENERATED_ARTIFACT_INVENTORY.jsonl
+  - evidence/ARTIFACT_ELIGIBILITY.jsonl
+  note: AI-assisted output candidate corpus; exact per-file authorship/replay not
+    proven. Canonical source role does not mean Approved.
+- id: V01-10
+  result: PASS
+  checks:
+    operational_complete: true
+    types_valid: true
+    owners_and_history: true
+    evidence_resolves: true
+  failed: []
+  evidence:
+  - OPERATIONAL_ARTIFACT_INVENTORY.jsonl
+  note: Preserves in-progress and user-stopped visual runs; no false success.
+- id: V01-11
+  result: PASS
+  checks:
+    high_routed: true
+    no_unexplained_blockers: true
+    all_issues_have_evidence: true
+  failed: []
+  evidence:
+  - CONFLICT_GAP_REPORT.yaml
+  - evidence/EXACT_DUPLICATES.json
+  - evidence/REFERENCE_TOKEN_SCAN.jsonl
+  note: Two HIGH issues explicitly explained/routed; Stage 01 does not resolve authority
+    conflicts or authorize migration.
+- id: V01-12
+  result: PASS
+  checks:
+    all_capabilities_mapped: true
+    no_architecture_freeze: true
+    purity_considered: true
+  failed: []
+  evidence:
+  - CORE_CANDIDATE_REPORT.yaml
+  note: No Core acceptance or fixed Reference Project directory contract is declared.
+- id: V01-13
+  result: PASS
+  checks:
+    no_capability_loss: true
+    complete_mapping: true
+    execution_disabled: true
+  failed: []
+  evidence:
+  - PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml
+  note: 35 high-value capability candidates mapped; no final owners frozen.
+- id: V01-14
+  result: PASS
+  checks:
+    no_artifact_loss: true
+    canonical_fields: true
+    op_mapping: true
+    no_drop_execution: true
+  failed: []
+  evidence:
+  - PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml
+  note: 425 generated candidates plus 289 operational mappings preserve original locations
+    and integrity risk.
+- id: V01-15
+  result: PASS
+  checks:
+    history_count: true
+    identities_exact: true
+    semantic_review_recorded: true
+    no_policy_freeze: true
+    no_alias_merge: true
+    current_identity_unchanged: true
+  failed: []
+  evidence:
+  - GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml
+  - evidence/GIT_COMMIT_METADATA.jsonl
+  - evidence/GIT_TRAILER_PARSE.json
+  note: All 477 reachable commits analyzed; 16 exact identities remain distinct; hooks
+    not executed; trailing blocks parsed separately.
+- id: V01-16
+  result: PASS
+  checks:
+    metrics_match: true
+    metrics_zero: true
+    unknowns_routed: true
+  failed: []
+  evidence:
+  - DISCOVERY_COVERAGE_REPORT.yaml
+  - evidence/CANDIDATE_RECONCILIATION.jsonl
+  note: No unregistered candidate or unexplained root; ordinary reference/provenance
+    questions retained with owner.
+- id: V01-17
+  result: PASS
+  checks:
+    nonsecret_hashes_unchanged: true
+    metadata_unchanged: true
+    original_evidence_unchanged: true
+    stage00_evidence_unchanged: true
+    head_unchanged: true
+    index_unchanged: true
+    no_tracked_changes: true
+    no_new_layout: true
+  failed: []
+  evidence:
+  - evidence/FINAL_SAFETY_CHECK.json
+  - evidence/POST_STAGE_GIT_STATUS.txt
+  - evidence/EXTERNAL_ARCHIVE_DRIFT.json
+  note: Only Stage-owned outputs/shared bootstrap written by executor. Archive disappearance
+    is external/unattributed and explicitly reported, not concealed.
+- id: V01-18
+  result: PASS
+  checks:
+    same_run: true
+    bootstrap_only: true
+    trace_added: true
+    layout_contract: true
+    secret_scope: true
+    no_stage02_execution: true
+    acceptance_exists: true
+    handoff_pass: true
+    all_actual_links: true
+  failed: []
+  evidence:
+  - ../../../MIGRATION_REGISTER.bootstrap.yaml
+  - ../../../BANYAN_REFACTOR_TRACE.bootstrap.yaml
+  - evidence/NEXT_STAGE_HANDOFF.yaml
+  - ACCEPTANCE_REPORT.md
+  note: Preflight checks handoff structure; final mode additionally checks actual
+    acceptance and gate. Stage 02 execution remains false.
+computed_metrics:
+  SILENTLY_IGNORED_ASSET: 0
+  UNSCANNED_GOVERNANCE_ROOT_WITHOUT_REASON: 0
+  HIGH_RISK_UNCLASSIFIED: 0

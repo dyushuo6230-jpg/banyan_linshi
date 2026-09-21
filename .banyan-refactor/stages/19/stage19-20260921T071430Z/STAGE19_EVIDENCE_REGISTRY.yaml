@@ -1,0 +1,70 @@
+schema_version: stage19-v1
+run_id: stage19-20260921T071430Z
+evidence_first: true
+claims:
+- id: architecture_final
+  evidence_refs:
+  - stages/18.5/stage18_5-20260921T064132Z/ADR_WEBUI_CONTROL_PLANE_STACK.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/RUNTIME_BRIDGE_CONTRACT.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/RC_SMOKE_RESULTS.yaml
+  result: PASS
+- id: generic_core_purity
+  evidence_refs:
+  - stages/19/stage19-20260921T071430Z/evidence/PURITY_ACCEPTANCE.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/PURITY_SCAN.txt
+  - stages/19/stage19-20260921T071430Z/CHECKPOINT.yaml
+  result: PASS
+- id: runtime_policy_git
+  evidence_refs:
+  - stages/15/stage15-20260921T031742Z/STAGE16_RUNTIME_API_HANDOFF.yaml
+  - stages/14/stage14-20260921T022241Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/CRITICAL_REGRESSION_RESULTS.txt
+  - stages/19/stage19-20260921T071430Z/evidence/GIT_INTEGRITY.yaml
+  result: PASS
+- id: webui_gogin_bridge
+  evidence_refs:
+  - stages/18.5/stage18_5-20260921T064132Z/FEATURE_EQUIVALENCE_MATRIX.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/GO_GIN_ROUTE_CONTRACT.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/GO_TEST_RESULTS.txt
+  - stages/19/stage19-20260921T071430Z/evidence/RC_SMOKE_RESULTS.yaml
+  result: PASS
+- id: adapters
+  evidence_refs:
+  - stages/18/stage18-20260921T062103Z/ADAPTER_VALIDATION_RESULT.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/CRITICAL_REGRESSION_RESULTS.txt
+  - stages/19/stage19-20260921T071430Z/evidence/RC_SMOKE_RESULTS.yaml
+  result: PASS
+- id: pilot_integrity
+  evidence_refs:
+  - stages/17/stage17-20260921T055911Z/ACTIVATION_RESULT.yaml
+  - stages/18.5/stage18_5-20260921T064132Z/evidence/PILOT_INTEGRITY.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/PILOT_INTEGRITY.yaml
+  result: PASS
+- id: index_trace_provenance
+  evidence_refs:
+  - stages/11/stage11-20260921T011037Z/REBUILDABILITY_REPORT.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/SQLITE_INDEX_VERIFICATION.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/TRACE_PROVENANCE_FRESHNESS.yaml
+  result: PASS
+- id: freshness_blockers
+  evidence_refs:
+  - stages/12/stage12-20260921T014521Z/FRESHNESS_RESOLUTION_SCHEMA.yaml
+  - stages/12/stage12-20260921T014521Z/evidence/VALIDATION_RESULTS.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/TRACE_PROVENANCE_FRESHNESS.yaml
+  result: PASS
+- id: noloss
+  evidence_refs:
+  - stages/07/stage07-20260920T152653Z/NOLOSS_COVERAGE_REPORT.yaml
+  - stages/11/stage11-20260921T011037Z/INDEX_IMPORT_MANIFEST.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/NOLOSS_RECONCILIATION.yaml
+  result: PASS
+- id: rc_build
+  evidence_refs:
+  - stages/18.5/stage18_5-20260921T064132Z/EMBEDDED_ASSET_MANIFEST.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/FRONTEND_BUILD_1.txt
+  - stages/19/stage19-20260921T071430Z/evidence/FRONTEND_BUILD_B.txt
+  - stages/19/stage19-20260921T071430Z/evidence/GO_TEST_RESULTS.txt
+  - stages/19/stage19-20260921T071430Z/evidence/RC_REPRODUCIBILITY.yaml
+  - stages/19/stage19-20260921T071430Z/evidence/RC_SMOKE_RESULTS.yaml
+  result: PASS
+claim_without_evidence_count: 0

@@ -1,0 +1,14 @@
+schema_version: stage06-v1
+required_fields: [rollback_id, apply_id, pre_apply_snapshot, affected_artifacts, reverse_plan, reference_restore_plan, validation, result, evidence_refs]
+preconditions:
+  snapshot_verified: true
+  affected_artifacts_enumerated: true
+  reference_graph_captured: true
+results: [NOT_NEEDED, READY, EXECUTED, VALIDATED, FAILED, BLOCKED]
+rules:
+  rollback_plan_required_before_authorization: true
+  rollback_may_not_drop_new_evidence: true
+  partial_rollback_requires_reconciliation: true
+  failed_rollback_is_L4: true
+execution_in_stage06: false
+

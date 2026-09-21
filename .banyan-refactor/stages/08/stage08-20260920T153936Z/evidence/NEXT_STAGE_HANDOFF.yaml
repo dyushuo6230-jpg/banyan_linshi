@@ -1,0 +1,36 @@
+upstream_stage: '08'
+run_id: stage08-20260920T153936Z
+acceptance_result: PASS_UI_GOVERNANCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS
+prd_ui_contracts:
+- PRD_AUTHORITY_CONTRACT.yaml
+- UI_SPEC_AUTHORITY_CONTRACT.yaml
+- UI_SPEC_SCHEMA.yaml
+- PRD_UI_TRACE_VERSION_CONTRACT.yaml
+- UI_CHANGE_INTEGRATION_CONTRACT.yaml
+ui_scope_contracts:
+- UI_GOVERNANCE_SCOPE_SCHEMA.yaml
+- UI_SPEC_ENABLEMENT_CONTRACT.yaml
+- UI_SPEC_LIFECYCLE.yaml
+design_evidence_contracts:
+- DESIGN_EVIDENCE_SCHEMA.yaml
+- UI_VALIDATION_EVIDENCE_CONTRACT.yaml
+ui_readiness_contracts:
+- UI_IMPLEMENTATION_READINESS.yaml
+compatibility_contracts:
+- V31_UI_COMPATIBILITY_MAP.yaml
+carried_blockers:
+- CON-002 OPEN / owner Stage 12
+- four historical missing reference targets / owner Stage 12
+- R03-PURITY, R03-SOURCE, R03-COST, R03-SECRET, and R03-LOCAL
+stage09_inputs:
+- Design Evidence schema
+- Approved UI_SPEC schema and authority
+- Application scope and enablement
+- Validation evidence expectations
+- Implementation readiness gate
+next_stage_entry_gate:
+  stage: '09'
+  result: NOT_EVALUATED
+  execution_authorized: false
+  real_migration_readiness: MIGRATION_BLOCKED
+stop_after_stage: '08'

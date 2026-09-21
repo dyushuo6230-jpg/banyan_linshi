@@ -1,0 +1,22 @@
+schema_version: stage17-v1
+manifest_id: project-instance-pilot-stage17
+mode: PILOT_FILE_ALLOWLIST
+roots:
+  - instance
+  - mappings
+  - overlays
+  - profiles
+  - providers
+  - runtime
+  - trace
+  - index
+  - generated
+  - migrations
+forbidden:
+  - legacy_delete
+  - docs_move
+  - project_move
+  - canonical_overwrite
+  - secret_body
+  - git_identity_write
+  - git_mutation

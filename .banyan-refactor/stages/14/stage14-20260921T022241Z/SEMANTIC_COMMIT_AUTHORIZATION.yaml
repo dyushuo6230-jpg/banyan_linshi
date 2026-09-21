@@ -1,0 +1,13 @@
+schema_version: stage14-v1
+classes:
+  READY: ELIGIBLE_ONLY_AFTER_VALIDATION_IDENTITY_AND_AUTHORIZATION
+  INCOMPLETE: HOLD_OR_BLOCK
+  UNRELATED: ISOLATE
+  LOCAL_ONLY: NEVER_COMMIT
+  SECRET_RISK: HARD_BLOCK
+required_before_commit: [semantic_group_validation, hunk_plan, identity_precheck, secret_check, leftover_report, authorization_record, commit_message_validation]
+commit_plan_is_authorization: false
+historical_author_identity_is_authorization: false
+stage14_may_stage: false
+stage14_may_commit: false
+

@@ -1,0 +1,20 @@
+schema_version: 1.0.0
+stage: '07'
+run_id: stage07-20260920T152653Z
+mode: LOW_TOKEN_NO_LOSS
+access_policy:
+  used_stage01_inventories_as_asset_source: true
+  full_repository_rescan: false
+  git_full_history_analysis: false
+  prior_stages_rerun: false
+  content_reads_limited_to_indexed_stage_inputs: true
+  sensitive_content_read: false
+inputs:
+- Stage_07_v1.10_Codex正式开始提示词.md
+- Stage_06_to_Stage_07_Gate_Review_v1.0.md
+- Stage_07_低Token输入索引_v1.0.md
+- Stage 01 inventory and reference JSONL files
+- Stage 03 capability contract registry
+- Stage 04 project instance, mapping, overlay, variable, and provider contracts
+- Stage 05 workflow, decision, and confirmation contracts
+- Stage 06 change workspace and canonical apply contracts

@@ -1,0 +1,28 @@
+schema_version: stage18.5-v1
+baseline: ANT_DESIGN_PRO_SIMPLE_MINIMAL
+root: banyan-framework/frontend
+language: TYPESCRIPT
+dependencies:
+  react: 19.3.0
+  react_dom: 19.3.0
+  antd: 5.29.3
+  pro_components: 2.8.10
+  vite: 7.3.6
+  typescript: 5.9.3
+preserved:
+- ProLayout
+- routing
+- theme
+- required ProComponents
+- error rendering
+- Banyan API client
+- typed models
+removed_or_absent:
+- demo pages
+- sample business
+- mock business services
+- sample account model
+- sample permission model
+- marketing assets
+build_command: npm ci && npm run build
+output_directory: banyan-framework/control-plane-go/internal/webassets/dist

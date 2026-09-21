@@ -1,0 +1,18 @@
+schema_version: stage06-v1
+checks:
+  - provider_revision_matches_preview
+  - canonical_target_revision_matches_preview
+  - source_role_authority_unchanged
+  - provenance_not_downgraded
+  - unresolved_conflicts_enumerated
+states: [NO_DIVERGENCE, DIVERGED, UNKNOWN, BLOCKED]
+rules:
+  unknown_freshness: BLOCKED
+  conflict_without_owner: BLOCKED
+  last_write_wins: forbidden
+  latest_file_wins: forbidden
+  ai_auto_merge: forbidden
+  con002_final_adjudication_in_stage06: false
+conflict_route: STAGE05_DECISION_GATE
+con002: {status: OPEN, owner_stage: "12"}
+

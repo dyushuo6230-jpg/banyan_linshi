@@ -1,0 +1,17 @@
+schema_version: stage04-v1
+existing_project:
+  mode: PRESERVE_IN_PLACE
+  process: [consume_frozen_roles, build_mappings, build_overlay, resolve_variables, bind_optional_providers, validate, generate_instance]
+  mapping_ready: true
+  variable_resolution_ready: true
+  provider_binding_ready: true
+  physical_relayout_required: false
+  project_sources_wrapper_required: false
+  blockers_before_activation: [CON-001, CON-002, R03-PURITY, R03-SECRET]
+new_project:
+  initialization_ready: true
+  may_create: [project_instance, recommended_template, initial_source_mappings, project_profile, provider_placeholders]
+  recommended_layout_optional: true
+  mandatory_business_layout: false
+  supports: [multi_root, monorepo, multi_repository, documentation_repository]
+

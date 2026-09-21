@@ -1,0 +1,43 @@
+schema_version: stage08-v1
+stage: '08'
+run_id: stage08-20260920T153936Z
+status: FROZEN_COMPATIBILITY_MAPPING_NOT_ACTIVATED
+entries:
+- legacy_semantic: ENABLE_UI_SPEC_GENERATION
+  generic_contract: UI_SPEC_ENABLEMENT_CONTRACT.project_default_gate
+  compatibility_binding: LEGACY_BOOLEAN_FALSE_MEANS_DISABLED
+  project_overlay: v3.1 variable binding
+  validation: DEFAULT_FALSE_PRESERVED
+- legacy_semantic: UI_SPEC_ENABLED_APPLICATIONS
+  generic_contract: UI_SPEC_ENABLEMENT_CONTRACT.application_activation
+  compatibility_binding: EMPTY_SET_MEANS_ALL_DISABLED
+  project_overlay: application slug list
+  validation: UNLISTED_APPLICATION_DISABLED
+- legacy_semantic: G9.5
+  generic_contract: UI_SPEC lifecycle and approval workflow
+  compatibility_binding: OPTIONAL_UI_GOVERNANCE_STAGE
+  project_overlay: legacy stage label only
+  validation: NO_STAGE_SKIP
+- legacy_semantic: Partial Coverage
+  generic_contract: UI_GOVERNANCE_SCOPE_SCHEMA.coverage=PARTIAL
+  compatibility_binding: DECLARED_SURFACE_SCOPE_ONLY
+  project_overlay: legacy page selection
+  validation: NO_APPLICATION_WIDE_READY
+- legacy_semantic: UI Contract Draft / Approval
+  generic_contract: UI_SPEC_LIFECYCLE
+  compatibility_binding: DRAFT_THEN_EXPLICIT_APPROVAL
+  project_overlay: legacy 28A/29 labels
+  validation: DRAFT_DOES_NOT_AUTHORIZE_IMPLEMENTATION
+- legacy_semantic: Design materials
+  generic_contract: DESIGN_EVIDENCE_SCHEMA
+  compatibility_binding: EVIDENCE_ONLY
+  project_overlay: materials locations and provider outputs
+  validation: PROVIDER_OUTPUT_NOT_APPROVED
+- legacy_semantic: Visual repair loop
+  generic_contract: UI_VALIDATION_EVIDENCE_CONTRACT
+  compatibility_binding: OPTIONAL_VALIDATION_PROCEDURE
+  project_overlay: legacy viewport and archive conventions
+  validation: NOT_A_STAGE_OR_IMPLEMENTATION_GATE
+generic_core_hardcodes_legacy_variable_names: false
+legacy_documents_mutated: false
+provider_runtime_implemented: false

@@ -1,0 +1,55 @@
+schema_version: stage03-v1
+schema_status: FROZEN
+version_kinds:
+- schema_version
+- artifact_version
+- contract_version
+- runtime_state_version
+controlled_statuses:
+  contract:
+  - DRAFT
+  - FROZEN
+  - DEPRECATED
+  - SUPERSEDED
+  - BLOCKED
+  artifact:
+  - DRAFT
+  - IN_REVIEW
+  - APPROVED
+  - BASELINED
+  - NEEDS_REVIEW
+  - SUPERSEDED
+  - DEPRECATED
+  - ARCHIVED
+  - UNKNOWN
+  runtime:
+  - PENDING
+  - RUNNING
+  - PAUSED
+  - BLOCKED
+  - SUCCEEDED
+  - FAILED
+  - CANCELLED
+  - PARTIAL
+  - UNKNOWN
+  conflict:
+  - OPEN
+  - IN_REVIEW
+  - RESOLVED
+  - ACCEPTED_RISK
+  - SUPERSEDED
+transition_rules:
+  explicit_event_required: true
+  actor_or_tool_required: true
+  timestamp_or_unknown_required: true
+  backward_transition_requires_reason: true
+provenance:
+  unknown_value: UNKNOWN
+  inference_must_be_marked: true
+  required_when_available:
+  - source
+  - timestamp
+  - input_refs
+  - generator_or_tool
+  - confidence
+  fabricated_value_forbidden: true
