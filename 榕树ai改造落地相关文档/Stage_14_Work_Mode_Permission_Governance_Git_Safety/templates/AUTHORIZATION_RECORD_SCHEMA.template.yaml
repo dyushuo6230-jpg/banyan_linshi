@@ -1,0 +1,12 @@
+schema_version: stage14-v1
+authorization:
+  authorization_id: null
+  actor_identity_or_user: null
+  action_scope: []
+  target_scope: []
+  granted_actions: []
+  constraints: []
+  validity: null
+  evidence_refs: []
+  decision_ref: null
+profile_or_editor_is_authorization: false

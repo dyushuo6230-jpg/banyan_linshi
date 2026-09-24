@@ -1,0 +1,12 @@
+schema_version: stage07-v1
+expected_capabilities: 35
+entries:
+  - capability_id: null
+    frozen_contract_id: null
+    target_layer: null
+    disposition: null
+    compatibility_required: false
+    provider_required: false
+    overlay_required: false
+    evidence_refs: []
+    blockers: []

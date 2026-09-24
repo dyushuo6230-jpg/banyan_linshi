@@ -1,0 +1,12 @@
+schema_version: stage15-v1
+execution:
+  plan_id: null
+  execution_scope: null
+  permission_result: null
+  authorization_ref: null
+  identity_precheck: null
+  staged_set_verified: false
+  actual_commit_hash: null
+  trace_event_ref: null
+  leftovers: []
+  result: null

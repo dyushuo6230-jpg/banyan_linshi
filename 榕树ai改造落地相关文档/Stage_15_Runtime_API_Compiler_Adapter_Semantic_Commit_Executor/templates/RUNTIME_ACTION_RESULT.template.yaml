@@ -1,0 +1,11 @@
+schema_version: stage15-v1
+result:
+  action_id: null
+  compiled_policy_hash: null
+  risk_class: null
+  decision_level: null
+  permission_result: null
+  failed_or_missing_preconditions: []
+  reason_codes: []
+  audit_event_ref: null
+  executed: false

@@ -1,0 +1,17 @@
+schema_version: stage13-v1
+fields:
+  - task_profile
+  - execution_mode
+  - context_class
+  - quality_result
+  - validation_result
+  - latency_class
+  - usage_units
+  - cache_hit
+  - escalation_count
+  - retry_count
+forbidden_generic_fields:
+  - vendor_name
+  - proprietary_model_name
+  - fixed_price
+  - fixed_token_percentage

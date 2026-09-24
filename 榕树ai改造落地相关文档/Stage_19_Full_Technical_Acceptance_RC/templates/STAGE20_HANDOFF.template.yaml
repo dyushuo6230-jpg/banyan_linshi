@@ -1,0 +1,17 @@
+schema_version: stage19-v1
+upstream_stage: "19"
+acceptance: null
+rc_manifest: null
+final_architecture: null
+documentation_inputs: []
+upgrade_migration_requirements:
+  bootstrap_refactor_workspace_retirement: true
+  future_framework_upgrades_use_banyan_migration_mechanism: true
+carried_blockers:
+  - id: CON-002
+    state: null
+  - id: FINAL_ACTIVATION
+    state: null
+stage20_entry_gate:
+  result: null
+  execution_authorized: false

@@ -1,0 +1,8 @@
+schema_version: stage07-v1
+entries:
+  - legacy_semantic: null
+    banyan_contract: null
+    project_overlay: null
+    compatibility_projection: null
+    migration_status: null
+    evidence_refs: []

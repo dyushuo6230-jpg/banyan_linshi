@@ -1,0 +1,140 @@
+# 应用与 UI 目录映射
+# G9.1 ADR-044：目录和映射；正式 UI_SPEC 按应用分闸见 UI-DEC-001
+document_id: DOC-G0-UI-MAP
+created: 2026-09-04
+updated: 2026-09-19
+status: Mapped
+version: "0.1.5"
+enable_ui_spec_generation: true
+ui_spec_enabled_applications:
+  - gongyi_online
+ui_constraint_mode: NONE
+note: >
+  目录和映射仍以 ADR-044 为准。UI-DEC-001 仅允许 gongyi_online 走 G9.5。
+  gongyi_online UI_SPEC 0.1.5 approved_partial（第 29 节）。Contract 0.1.5 已对齐。本同步不改代码。
+  其它应用不启用正式 UI_SPEC。不改 Element Plus / 本地生活现有 UI。
+  后台 UI 升级另议。禁止虚构 admin / miniapp slug。
+architecture_source: docs/project/architecture/OVERALL_ARCHITECTURE.md
+module_boundaries_source: docs/project/architecture/MODULE_BOUNDARIES.md
+project_structure_source: docs/project/standards/PROJECT_STRUCTURE.md
+ui_scope_map_source: docs/project/ui-design/UI_SCOPE_MAP.md
+applications:
+  - application_id: admin_web
+    application_slug: admin_web
+    repository_path: nunu-go-api/app/admin/web
+    application_type: 平台后台 SPA
+    devices:
+      - desktop
+    logical_terminals:
+      - LT-platform-web
+    prd_modules:
+      - M01-business-type
+      - M02-onboarding
+      - M03-merchant-workspace
+      - M04-goods
+      - M06-group-seckill
+      - M07-online-mall
+      - M09-auth-session
+      - M10-order-settlement
+      - M11-platform-ops
+      - M12-promoter
+    ui_stack_fact: 现码 Element Plus；本期不写设计规则
+    ui_spec_status: disabled
+    ui_dir: docs/project/ui-design/products/admin_web/
+    status: Mapped
+    version: "0.1.0"
+  - application_id: merchant_web
+    application_slug: merchant_web
+    repository_path: nunu-go-api/app/merchant/web
+    application_type: 租户后台 SPA
+    devices:
+      - desktop
+    logical_terminals:
+      - LT-merchant-web
+    prd_modules:
+      - M03-merchant-workspace
+      - M04-goods
+      - M05-local-life
+      - M06-group-seckill
+      - M07-online-mall
+      - M08-user-pool
+      - M09-auth-session
+      - M10-order-settlement
+      - M12-promoter
+    ui_stack_fact: 现码 Element Plus；本期不写设计规则
+    ui_spec_status: disabled
+    ui_dir: docs/project/ui-design/products/merchant_web/
+    status: Mapped
+    version: "0.1.0"
+  - application_id: local_life_miniapp
+    application_slug: local_life_miniapp
+    repository_path: go-uni-app
+    application_type: 众享营销 - 本地生活
+    devices:
+      - miniapp
+    logical_terminals:
+      - LT-local-life-miniapp
+    prd_modules:
+      - M05-local-life
+      - M06-group-seckill
+      - M08-user-pool
+      - M09-auth-session
+      - M10-order-settlement
+    ui_stack_fact: 现码已按设计稿写一部分页面；本期不改
+    ui_spec_status: disabled
+    ui_dir: docs/project/ui-design/products/local_life_miniapp/
+    status: Mapped
+    version: "0.1.0"
+  - application_id: gongyi_online
+    application_slug: gongyi_online
+    repository_path: go-uni-app-online
+    application_type: 众享源品 - 在线商城多端
+    devices:
+      - ios
+      - android
+      - harmony
+      - miniapp
+      - h5
+    logical_terminals:
+      - LT-gongyi-youxuan-c
+    prd_modules:
+      - M07-online-mall
+      - M08-user-pool
+      - M09-auth-session
+      - M10-order-settlement
+      - M11-platform-ops
+    ui_stack_fact: 页面以 go-uni-app-online 现码为准（DEC-008）；已写一部分设计页，本期不改
+    ui_spec_status: approved_partial
+    ui_dir: docs/project/ui-design/products/gongyi_online/
+    status: Mapped
+    version: "0.1.0"
+  - application_id: onboarding_h5
+    application_slug: onboarding_h5
+    repository_path: nunu-go-api/app/h5
+    application_type: 入驻 H5
+    devices:
+      - h5
+    logical_terminals:
+      - LT-onboarding-h5
+    prd_modules:
+      - M01-business-type
+      - M02-onboarding
+    ui_stack_fact: 现码入驻 H5；本期不写新视觉规则
+    ui_spec_status: disabled
+    ui_dir: docs/project/ui-design/products/onboarding_h5/
+    status: Mapped
+    version: "0.1.0"
+  - application_id: gongyi_h5_host
+    application_slug: gongyi_h5_host
+    repository_path: nunu-go-api/app/h5-online/web/dist
+    application_type: 众享源品 - 在线商城 H5 整包产物（进 Go embed）
+    devices:
+      - h5
+    logical_terminals: []
+    prd_modules:
+      - M07-online-mall
+    ui_stack_fact: 整包产物进 h5-online-server（本机 8036，根路径进首页）；不是第二套逛买产品；C 端页面真源是 gongyi_online
+    ui_spec_status: disabled
+    ui_dir: docs/project/ui-design/products/gongyi_h5_host/
+    status: Mapped
+    version: "0.1.0"

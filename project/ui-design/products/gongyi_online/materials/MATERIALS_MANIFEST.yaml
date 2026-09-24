@@ -1,0 +1,459 @@
+# 源品应用级 UI 素材清单
+document_id: DOC-UI-MAT-gongyi_online
+created: 2026-09-18
+updated: 2026-09-19
+status: registered
+application_slug: gongyi_online
+note: >
+  设计图真源引用 SRC-UI-003 / BATCH-003，不复制进 design-images/。
+  切图在 materials/assets/：组 A 整图作抠星来源与观感参考（禁止当选中底拉伸）；
+  星 MAT-GO-ASSET-HOME-CHIP-STAR 启用。组 B 观感参考禁止拉伸；
+  组 C/D 左栏箭头启用（画在选中金卡内，UI-DEC-006）。anydesign 产物在 design-docs/ 与 tokens/。
+  本清单不是 UI_SPEC Approved，不能当像素验收。底栏发现位按 UI-DEC-002；
+  令牌四条按 UI-DEC-003；分类页例外 DEC-071 v1.3.0 + UI-DEC-005/006；附近图文件名删除板块不做；
+  AI 视频/生图本批不做；AI 助手只抽令牌。
+source_batch: SRC-UI-003
+source_dir: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/
+items:
+  - id: MAT-GO-IMG-HOME
+    name: 公益优选-商城首页定稿.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/公益优选-商城首页定稿.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / home
+    status: Active
+    hash_sha256: 08d3b4a06275de387224450915cb8a1d1165ceea1312fe907854d4044b08c3ff
+    ingested: 2026-09-18
+    impact: 首页、顶栏、搜索条、坑位、底栏、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-CATEGORY
+    name: 分类.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/分类.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / category
+    status: Active
+    hash_sha256: 166ed70a9dd2fc95046e2f27c0fcc31c5dc1e706ebcebd3271841b9e8d6a4efe
+    ingested: 2026-09-18
+    impact: 分类页、搜索条、左栏、圆图卡片、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    overlay: DEC-071 v1.3.0 / UI-DEC-005 / UI-DEC-006（听 category.vue；不对原图米金条、外侧箭头、flex 两列）
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-LIST
+    name: 商品列表-小图.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/商品列表-小图.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / goods-list
+    status: Active
+    hash_sha256: b0f3039f6f3650c2961ccc6f703541d390e75a72433c0d671cc5d970d26f611c
+    ingested: 2026-09-18
+    impact: 商品列表、排序条、价格、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-SEARCH
+    name: 搜索1.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/搜索1.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / search
+    status: Active
+    hash_sha256: 404215adb4bc9c708d55aec46857799e06c44a071891d3c0e168d30edf953e96
+    ingested: 2026-09-18
+    impact: 搜索页、历史胶囊、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-SEARCH-LIST
+    name: 搜索-列表大图.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/搜索-列表大图.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / search-list
+    status: Active
+    hash_sha256: ba4ccf9dd8495a1beb3306f9678d443f35fddb65fe67eec031da1ab26467ed19
+    ingested: 2026-09-18
+    impact: 搜索结果大图列表、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-DETAIL-MALL
+    name: 大图详情页-电商.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/大图详情页-电商.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / goods-detail
+    status: Active
+    hash_sha256: bbfed77e379ef9ffa4e029385751fd357c5c00a7acb3a0aea92644884e598715
+    ingested: 2026-09-18
+    impact: 商城商品详情、底栏购买、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-DETAIL-LOCAL
+    name: 大图详情页-本地生活.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/大图详情页-本地生活.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / local-life-detail
+    status: Active
+    hash_sha256: 5620b4e36bfaec3fabccc0177c69c68b088a4bdd1aaaccac14bba7bdb7ee2662
+    ingested: 2026-09-18
+    impact: 附近店/本地生活详情视觉、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    overlay: DEC-073（距离/驾车本袋不验收）
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-NEARBY
+    name: 附近-2026.7.15-附近页面删除超市便利、生鲜果蔬、优选超市、美团团购、数码百货、看病买药、鲜花绿植等页面内容，也不做任何对接.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/附近-2026.7.15-附近页面删除超市便利、生鲜果蔬、优选超市、美团团购、数码百货、看病买药、鲜花绿植等页面内容，也不做任何对接.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / nearby
+    status: Active
+    hash_sha256: a56e907a74106fe25da872624fd4b8a4468e0aed6a5d2ca9692439645a9909b2
+    ingested: 2026-09-18
+    impact: 附近顶栏、搜索、灯片、CPS 两行轮播、店列表骨架；文件名点名的板块删除且不对接
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct-partial
+    overlay: 文件名删除项 + M07 CPS 两行本页轮播 + DEC-046 业态根筛选 + DEC-069 顶灯片子列表 + DEC-073 不画距离/让利；见 UI_SPEC 0.1.5 Draft 第 4 节
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-MINE
+    name: 个人页2.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/个人页2.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / mine
+    status: Active
+    hash_sha256: b071bef273cb917bf5ba2ea1857790a6cbb9dab5207b36bfafeeed8fb08b22ea
+    ingested: 2026-09-18
+    impact: 我的页、资产条、订单入口、底栏、令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-TAB
+    name: Tab Bar交互&商品底部无内容.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/Tab Bar交互&商品底部无内容.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / tab-bar / empty-end
+    status: Active
+    hash_sha256: 8254125f282fd2e68dd5aa28d568a719b980e753a1452bfc91c64887678099fc
+    ingested: 2026-09-18
+    impact: 底栏图标造型、列表到底空态；发现文案不得一比一
+    license: 项目内部设计稿，未确认对外版权
+    usage: reconstruct
+    overlay: UI-DEC-002（第四坑购物车）+ UI-DEC-003（上半侧边交互、下半列表空态，不是完整底栏）
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AI-HOME
+    name: AI助手.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI助手.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-assistant
+    status: Active
+    hash_sha256: a7bcb4ffb0b4dc9bf72eeee849ef2f877e3374809cf1b5490d0bd689787e033d
+    ingested: 2026-09-18
+    impact: 仅令牌（金顶栏）
+    license: 项目内部设计稿，未确认对外版权
+    usage: token-only
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AI-CHAT
+    name: AI助手-对话.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI助手-对话.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-assistant
+    status: Active
+    hash_sha256: 5904a78f49ed2000fa0c386becc6a67251c6603b03313a146cefc854d82dad1b
+    ingested: 2026-09-18
+    impact: 仅令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: token-only
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AI-HISTORY
+    name: AI助手-对话历史.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI助手-对话历史.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-assistant
+    status: Active
+    hash_sha256: 33d1a3e6e06aa4a71209b89d19368cfecba2fe7a0f6c7c6fae1e412c382ef73d
+    ingested: 2026-09-18
+    impact: 仅令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: token-only
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AI-NEW
+    name: AI助手-新对话.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI助手-新对话.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-assistant
+    status: Active
+    hash_sha256: 057b1a5a585ebe6dd2156b35aba6de062eb6437d7c474b8ac70641cc6faa85e4
+    ingested: 2026-09-18
+    impact: 仅令牌
+    license: 项目内部设计稿，未确认对外版权
+    usage: token-only
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AIVIDEO-GEN
+    name: AI视频-AI生图.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI视频-AI生图.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-video
+    status: Registered-excluded
+    hash_sha256: 5172e4a92b0d658067c3795409676279b30f5adb3c24311c5878b061efe12f8c
+    ingested: 2026-09-18
+    impact: 本批不做，不进换皮
+    license: 项目内部设计稿，未确认对外版权
+    usage: excluded
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AIVIDEO-GEN-UX
+    name: AI视频-AI生图交互.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI视频-AI生图交互.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-video
+    status: Registered-excluded
+    hash_sha256: 9ca8178d71d1f035d8a6916d888f5ed213176ec6c9dd0e6a6a2baca79c3233e0
+    ingested: 2026-09-18
+    impact: 本批不做，不进换皮
+    license: 项目内部设计稿，未确认对外版权
+    usage: excluded
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AIVIDEO-UX
+    name: AI视频-交互.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI视频-交互.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-video
+    status: Registered-excluded
+    hash_sha256: c1a55ecfb712c4e1ab5c5a3c5ad6a24cf1509170da888005260fac3b4c0c7d28
+    ingested: 2026-09-18
+    impact: 本批不做，不进换皮
+    license: 项目内部设计稿，未确认对外版权
+    usage: excluded
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AIVIDEO-AD
+    name: AI视频-创意广告.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI视频-创意广告.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-video
+    status: Registered-excluded
+    hash_sha256: 45ca6b9479be898eeefb8cf26991d5343fe0497ab4a52664870d46e370c2274b
+    ingested: 2026-09-18
+    impact: 本批不做，不进换皮
+    license: 项目内部设计稿，未确认对外版权
+    usage: excluded
+    copy: false
+    supersedes: null
+  - id: MAT-GO-IMG-AIVIDEO-SCENE
+    name: AI视频-场景视频.png
+    path: docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/AI视频-场景视频.png
+    type: design-png
+    version: "1.0"
+    source: SRC-UI-003
+    scope: gongyi_online / ai-video
+    status: Registered-excluded
+    hash_sha256: bd0be7256f0edfc7bcabe2f48597157ac903a44c05b98d13c14c70a4ae9b3b26
+    ingested: 2026-09-18
+    impact: 本批不做，不进换皮
+    license: 项目内部设计稿，未确认对外版权
+    usage: excluded
+    copy: false
+    supersedes: null
+  - id: MAT-GO-ASSET-HOME-CHIP-SELECTED
+    name: 首页横向分类选中背景15.png
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15@3x.png
+    type: slice-png
+    version: "1.0"
+    source: designer-export / materials/assets
+    scope: gongyi_online / home / category-chip-selected
+    status: Active
+    hash_sha256: 9fabe3fcc751ddfaf4afd556858bcd1bf9c05071c52ccf1faf21b3dd888f8b14
+    ingested: 2026-09-18
+    impact: 组 A 整图：黑底/星/尾巴的观感来源与抠星底图。UI_SPEC 0.1.2：禁止当选中 background 拉伸；实现听同盒 CSS + 独立星 + CSS 三角
+    license: 项目内部切图，未确认对外版权
+    usage: page-overlay
+    overlay: UI-DEC-004（页面覆盖，不升级 chip 令牌）
+    copy: false
+    supersedes: null
+    variants:
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15.png
+        hash_sha256: 01099292fb86fb0c40b00f728a04ccb6dbf16ce6c0609c9da7041490d7d6ada7
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15@2x.png
+        hash_sha256: 829141fd9e423215df7976c4c4a610df7368fadd115b04ebcc591f5403c11641
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15@3x.png
+        hash_sha256: 9fabe3fcc751ddfaf4afd556858bcd1bf9c05071c52ccf1faf21b3dd888f8b14
+  - id: MAT-GO-ASSET-HOME-CHIP-STAR
+    name: 首页横向分类选中星星.png
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中星星.png
+    type: slice-png
+    version: "1.0"
+    source: crop from 首页横向分类选中背景15@3x
+    scope: gongyi_online / home / category-chip-selected-star
+    status: Active
+    hash_sha256: 4b6bedefe7eb6f0ca87e542338d143bb6590fdf1cb8507ba745d5ffaeb4279ca
+    ingested: 2026-09-18
+    impact: 首页横向分类选中右上青柠星；现码 chip-star.png；UI-DEC-004 实现三件套之一
+    license: 项目内部切图，未确认对外版权
+    usage: page-overlay
+    overlay: UI-DEC-004（独立星，不拉伸组 A 整图）
+    copy: false
+    supersedes: null
+  - id: MAT-GO-ASSET-CAT-CHIP-SELECTED
+    name: 分类页横向分类选中背景.png
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景@3x.png
+    type: slice-png
+    version: "1.0"
+    source: designer-export / materials/assets
+    scope: gongyi_online / category / chip-selected
+    status: Active
+    hash_sha256: b0aeb1b2ef1fb361daae92b1537d434a3118817e1b80ed553dacc76da6ae6081
+    ingested: 2026-09-18
+    impact: 分类二级选中观感参考。禁止当选中 background 拉伸；实现听同盒 CSS 金气泡+三角
+    license: 项目内部切图，未确认对外版权
+    usage: page-overlay
+    overlay: DEC-071 v1.1.0（代码气泡，不拉伸整图）
+    copy: false
+    supersedes: null
+    variants:
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景.png
+        hash_sha256: 8395f541bf518d8f3185609afef02210ff8dcfef750b0ad6490d6d45970f12fd
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景@2x.png
+        hash_sha256: ee0fb68ed4fd5cbf0a23770533cceacecb0ccaa1f2045840f5eaca46ad5cff52
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景@3x.png
+        hash_sha256: b0aeb1b2ef1fb361daae92b1537d434a3118817e1b80ed553dacc76da6ae6081
+  - id: MAT-GO-ASSET-CAT-RAIL-ARROW-UP
+    name: 分类页左侧选中分类上方箭头.png
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类上方箭头@3x.png
+    type: slice-png
+    version: "1.0"
+    source: designer-export / materials/assets
+    scope: gongyi_online / category / rail-selected-arrow
+    status: Active
+    hash_sha256: e153951920bf0b62daaa26ac9f29caf4e840659e6fc00adc7b65da9047e2a979
+    ingested: 2026-09-18
+    impact: 分类左栏选中上箭头切图；画在选中金卡里面（UI-DEC-006），禁止改回格外
+    license: 项目内部切图，未确认对外版权
+    usage: page-overlay
+    overlay: UI-DEC-006 / DEC-071 v1.3.0
+    copy: false
+    supersedes: null
+    variants:
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类上方箭头.png
+        hash_sha256: 88f7e71aa78729358d840736657d4715cbaf26b562d72ac59a82446270be342b
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类上方箭头@2x.png
+        hash_sha256: 764f91a3a558ede3450d77819c77b319feeb48b3306b44a9f250e32ba5cca257
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类上方箭头@3x.png
+        hash_sha256: e153951920bf0b62daaa26ac9f29caf4e840659e6fc00adc7b65da9047e2a979
+  - id: MAT-GO-ASSET-CAT-RAIL-ARROW-DOWN
+    name: 分类页左侧选中分类下方箭头.png
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类下方箭头@3x.png
+    type: slice-png
+    version: "1.0"
+    source: designer-export / materials/assets
+    scope: gongyi_online / category / rail-selected-arrow
+    status: Active
+    hash_sha256: c7bcbfc721ffb856fac83d55c581c866fad61f1a7e5f01d2159848301f705239
+    ingested: 2026-09-18
+    impact: 分类左栏选中下箭头切图；画在选中金卡里面（UI-DEC-006），禁止改回格外
+    license: 项目内部切图，未确认对外版权
+    usage: page-overlay
+    overlay: UI-DEC-006 / DEC-071 v1.3.0
+    copy: false
+    supersedes: null
+    variants:
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类下方箭头.png
+        hash_sha256: 88c50ab5a0794a857f89c019de80b5c4f62731c315204e32138b51a596e96c34
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类下方箭头@2x.png
+        hash_sha256: 6290bdf97dd1c2b5f8956171b9c009822cb625ba6333b83b6bb823a2df0b3215
+      - path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类下方箭头@3x.png
+        hash_sha256: c7bcbfc721ffb856fac83d55c581c866fad61f1a7e5f01d2159848301f705239
+  - id: MAT-GO-DOC-DESIGN
+    name: design.md
+    path: docs/project/ui-design/products/gongyi_online/materials/design-docs/design.md
+    type: anydesign-design-md
+    version: "0.1.0"
+    source: anydesign / SRC-UI-003
+    scope: gongyi_online
+    status: tokens-confirmed
+    hash_sha256: 5038130900605aca37f737c28557e08197690926f0196343c806a0d752615875
+    ingested: 2026-09-18
+    impact: 令牌、组件、重建说明；须用户确认后才能 locked
+    license: 由 SRC-UI-003 推导，非独立版权
+    usage: tokens-draft
+    copy: false
+    supersedes: null
+  - id: MAT-GO-DOC-A11Y
+    name: design-a11y.md
+    path: docs/project/ui-design/products/gongyi_online/materials/design-docs/design-a11y.md
+    type: anydesign-a11y
+    version: "0.1.0"
+    source: anydesign check_contrast.py
+    scope: gongyi_online
+    status: Draft-unconfirmed
+    hash_sha256: 24f518dd57b0630840c8b31647eb74333de450a561bc603ef277a059ec816343
+    ingested: 2026-09-18
+    impact: 对比度记录，不单独当验收
+    license: 由令牌推导
+    usage: companion
+    copy: false
+    supersedes: null
+  - id: MAT-GO-TOK-DTCG
+    name: design-tokens.json
+    path: docs/project/ui-design/products/gongyi_online/materials/tokens/design-tokens.json
+    type: anydesign-tokens-dtcg
+    version: "0.1.0"
+    source: anydesign build_tokens_json.py
+    scope: gongyi_online
+    status: tokens-confirmed
+    hash_sha256: c38c099505dbd24a0909b120d63cbad6acd0082975a1333257d3331d224c29ad
+    ingested: 2026-09-18
+    impact: W3C DTCG 令牌；禁止手改 JSON
+    license: 由 design.md 导出
+    usage: tokens-draft
+    copy: false
+    supersedes: null

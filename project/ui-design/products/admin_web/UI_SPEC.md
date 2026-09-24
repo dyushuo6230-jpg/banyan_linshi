@@ -1,0 +1,15 @@
+# UI_SPEC 占位（未启用）
+
+| 字段 | 值 |
+|---|---|
+| 文档名称 | admin_web UI_SPEC 占位 |
+| 文档编号 | UI-SPEC-admin_web |
+| 版本 | 0.0.0 |
+| 状态 | Not Started |
+| 创建日期 | 2026-09-05 |
+| 更新时间 | 2026-09-05 |
+| 关联决策 | ADR-044 |
+
+`ENABLE_UI_SPEC_GENERATION=false`。本文 **不是** 正式 UI 规范，**不能** 当验收。
+
+不要在此填写颜色、间距、主题、表格密度或 Element Plus 二次封装规则。平台后台继续现码 Element Plus。后台 UI 升级另议。

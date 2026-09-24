@@ -1,0 +1,1 @@
+{"artifact_id":"OP-EXAMPLE","path":"relative/path","operational_type":"WORKLOG|HANDOVER|PROGRESS|DASHBOARD|RUNTIME_STATE|OTHER","authoritative":false,"consumer":[],"freshness":"UNKNOWN","historical_value":"UNKNOWN","candidate_owner_stage":null,"candidate_action":null,"evidence_refs":[]}

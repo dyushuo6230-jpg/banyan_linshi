@@ -1,0 +1,14 @@
+upstream_stage: "07"
+run_id: null
+acceptance_result: null
+no_loss_result: null
+capability_migration: []
+artifact_migration: []
+compatibility_contracts: []
+open_risks: []
+stage08_inputs: []
+next_stage_entry_gate:
+  stage: "08"
+  result: null
+  execution_authorized: false
+stop_after_stage: "07"

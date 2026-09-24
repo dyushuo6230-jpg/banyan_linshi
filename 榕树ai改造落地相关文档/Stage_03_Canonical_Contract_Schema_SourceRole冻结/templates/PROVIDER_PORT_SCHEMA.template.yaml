@@ -1,0 +1,11 @@
+schema_version: "stage03-v1"
+ports:
+  - port_id: null
+    capability_id: null
+    request_schema: null
+    response_schema: null
+    failure_semantics: []
+    timeout_cancel_semantics: null
+    evidence_requirements: []
+    optional_capabilities: []
+    provider_binding: null

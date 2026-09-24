@@ -1,0 +1,15 @@
+schema_version: stage18.5-v1
+frontend_stack: null
+control_plane_stack: null
+runtime_bridge: null
+embedded_distribution: null
+feature_equivalence_report: null
+api_contract_report: null
+adapter_regression_report: null
+pilot_integrity_report: null
+security_report: null
+test_summary: null
+carried_blockers: []
+stage19_entry_gate:
+  result: null
+  execution_authorized: false

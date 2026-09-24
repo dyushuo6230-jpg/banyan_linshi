@@ -1,0 +1,16 @@
+schema_version: stage06-v1
+candidate_fields:
+  - draft_group_id
+  - candidate_id
+  - intent
+  - evidence_refs
+  - impact
+  - open_questions
+  - status
+allowed_resolution:
+  - SELECT_ONE
+  - MERGE_WITH_PLAN
+  - KEEP_PARALLEL
+  - REJECT
+  - BLOCK
+silent_winner_forbidden: true

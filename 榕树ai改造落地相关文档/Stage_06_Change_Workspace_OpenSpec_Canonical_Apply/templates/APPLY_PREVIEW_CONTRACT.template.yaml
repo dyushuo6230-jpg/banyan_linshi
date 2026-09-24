@@ -1,0 +1,14 @@
+schema_version: stage06-v1
+required_outputs:
+  - target_canonical_artifacts
+  - planned_creates
+  - planned_updates
+  - planned_supersessions
+  - reference_impacts
+  - derived_impacts
+  - conflicts
+  - freshness_warnings
+  - protected_targets
+  - rollback_checkpoint
+  - required_decision_level
+  - required_authorization

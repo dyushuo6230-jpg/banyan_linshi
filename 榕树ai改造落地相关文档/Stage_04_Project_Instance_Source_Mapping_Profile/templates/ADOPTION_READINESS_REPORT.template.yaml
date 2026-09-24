@@ -1,0 +1,11 @@
+schema_version: stage04-v1
+existing_project:
+  preserve_in_place: true
+  mapping_ready: null
+  variable_resolution_ready: null
+  provider_binding_ready: null
+  blockers: []
+new_project:
+  recommended_layout_optional: true
+  initialization_ready: null
+  blockers: []

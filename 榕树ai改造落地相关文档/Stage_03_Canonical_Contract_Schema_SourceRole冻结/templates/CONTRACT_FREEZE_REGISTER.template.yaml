@@ -1,0 +1,11 @@
+schema_version: "stage03-v1"
+stage: "03"
+entries:
+  - object_id: null
+    object_type: null
+    status: DRAFT
+    version: null
+    hash: null
+    evidence_refs: []
+    open_risks: []
+    owner_stage: null

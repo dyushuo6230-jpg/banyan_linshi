@@ -1,0 +1,125 @@
+# Stage 03 execution contract.
+stage_id: "03"
+title: "Canonical Contract / Schema / Source Role 冻结"
+pack_version: "1.10"
+charter_basis:
+  base: "榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.9.1"
+  amendment: "榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.10补充变更记录"
+  note: "v1.10 为增量增强，不删除 v1.9.1 已冻结能力。"
+
+status: "NOT_STARTED"
+execution_mode: "CONTRACT_FIRST_EVIDENCE_ON_DEMAND"
+token_policy:
+  full_repository_rescan: false
+  stage01_inventory_regeneration: false
+  stage02_candidate_regeneration: false
+  default_inputs:
+    - "Stage_02_to_Stage_03_Gate_Review_v1.0.md"
+    - "Stage_03_低Token输入索引_v1.0.md"
+    - "Stage 02 evidence/NEXT_STAGE_HANDOFF.yaml"
+    - "Stage 02 CAPABILITY_MAPPING_WORKBOOK.yaml"
+    - "Stage 02 CONTRACT_CHAIN_DESIGN.md"
+    - "Stage 02 ARCHITECTURE_DECISION_RECORDS.yaml"
+    - "Stage 02 CONFLICT_RISK_REGISTER.yaml"
+    - "Stage 02 AI_RUNTIME_COST_GOVERNANCE_DESIGN.md"
+  evidence_on_demand_triggers:
+    - "CONFLICT"
+    - "LOW_CONFIDENCE"
+    - "MISSING_EVIDENCE"
+    - "SCHEMA_COLLISION"
+
+upstream:
+  stage: "02"
+  run_id: "stage02-20260920T131746Z"
+  result: "PASS_CANDIDATE_DESIGN"
+  entry_gate: "PASS_FOR_CONTRACT_DESIGN"
+
+upstream_facts:
+  capabilities: 35
+  core_candidates: 21
+  project_instance_candidates: 2
+  provider_candidates: 9
+  compatibility_candidates: 3
+  assets_mapped: 1026
+  generated_artifacts_mapped: 425
+  operational_artifacts_mapped: 289
+  carried_issues: 31
+  open_high_conflicts: 2
+
+owned_outcomes:
+  - "Canonical Contract Schema"
+  - "Capability Contract Schema"
+  - "Artifact Registry Schema"
+  - "Source Role Schema"
+  - "Reference Integrity Contract"
+  - "Provider Port Schema"
+  - "Project Overlay Schema"
+  - "Version / Status / Provenance Rules"
+  - "Bootstrap → Canonical State Schema and lineage contract"
+  - "Existing Project Layout Preservation Contract"
+  - "Contract freeze registry"
+
+not_owned:
+  - "runtime implementation"
+  - "provider implementation or provider vendor selection"
+  - "legacy migration execution"
+  - "final banyan-framework physical installation"
+  - "project directory re-layout"
+  - "semantic commit runtime"
+  - "UI provider implementation"
+  - "cost threshold tuning from real workload benchmarks"
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/03/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "业务代码、SQL、生产配置"
+    - "现有正式 PRD/DEC/ADR/CR/UI_SPEC/Guide 正文"
+    - "Legacy Prompt/Rule/Skill 正文"
+    - "13 个 SECRET_METADATA_ONLY 文件正文"
+    - "已有项目目录移动/重命名/归并"
+    - "正式 .banyan Project Instance 初始化"
+    - "最终 banyan-framework 物理落地"
+    - "Git identity 修改"
+    - "git commit/stash/reset/clean/rebase/push"
+
+inherited_constraints:
+  existing_project_layout:
+    existing_project: "PRESERVE_IN_PLACE"
+    banyan: "DISCOVER + MAP + DESIGN"
+    relayout: "EXPLICIT_MIGRATION_ONLY"
+  secret_recovery:
+    coverage: "PARTIAL_APPROVED"
+    policy: "SECRET_METADATA_ONLY / PRESERVE_IN_PLACE"
+  capability_preservation:
+    high_value_capabilities: 35
+    deletion_without_explicit_approval: false
+  refactor_evidence:
+    path: ".banyan-refactor/**"
+    class: "UPSTREAM_REFACTOR_OPERATIONAL_EVIDENCE"
+  construction_materials:
+    path: "榕树ai改造落地相关文档/**"
+    class: "REFRACTOR_CONSTRUCTION_MATERIAL"
+
+stop_conditions:
+  - "无法验证 Stage 02 Handoff / sealed candidate inputs"
+  - "需要重新全仓扫描才能完成本阶段"
+  - "必须读取 Secret 正文才能冻结 Schema"
+  - "发现 Schema 决策会隐式删除高价值能力"
+  - "发现 Candidate Boundary 与证据发生高风险冲突且无法定点追证"
+  - "尝试把物理目录布局当作 Source Role Schema"
+  - "尝试把 Project-specific 值固化进 Generic Core Schema"
+  - "尝试提前执行 migration/runtime/provider activation"
+
+exit_gate:
+  required_validation_ids: "V03-01..V03-20"
+  hard_metrics:
+    UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+    UNOWNED_SCHEMA_COLLISION: 0
+    SOURCE_ROLE_WITHOUT_AUTHORITY_RULE: 0
+    CONTRACT_WITHOUT_FAILURE_SEMANTICS: 0
+    SILENT_CAPABILITY_DROP: 0
+    PROJECT_PATH_HARDCODED_IN_CORE_SCHEMA: 0
+  next_stage: "04"

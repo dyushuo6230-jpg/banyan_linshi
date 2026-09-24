@@ -1,0 +1,13 @@
+schema_version: stage12-v1
+memory:
+  memory_id: null
+  memory_type: null
+  subject_ids: []
+  summary: null
+  source_refs: []
+  as_of: null
+  freshness: UNKNOWN
+  coverage: null
+  confidence: null
+  rebuildability: null
+canonical_truth: false

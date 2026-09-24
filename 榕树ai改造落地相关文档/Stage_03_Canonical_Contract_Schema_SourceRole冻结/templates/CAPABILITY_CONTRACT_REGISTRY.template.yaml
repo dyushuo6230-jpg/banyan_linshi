@@ -1,0 +1,13 @@
+schema_version: "stage03-v1"
+expected_capabilities: 35
+contracts:
+  - capability_id: null
+    contract_id: null
+    candidate_layer: null
+    freeze_status: null
+    owner_stage: null
+    provider_port_required: false
+    project_overlay_required: false
+    compatibility_required: false
+    evidence_refs: []
+    open_conflicts: []

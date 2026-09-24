@@ -1,0 +1,12 @@
+schema_version: stage15-v1
+surfaces:
+  - runtime_status
+  - compiled_policy_status
+  - preflight_action
+  - inspect_git
+  - plan_semantic_commit
+  - dry_run_commit_execution
+  - audit_trace_result
+  - provider_binding_status
+mutating_actions_require_runtime_enforcement: true
+control_plane_may_bypass_policy: false

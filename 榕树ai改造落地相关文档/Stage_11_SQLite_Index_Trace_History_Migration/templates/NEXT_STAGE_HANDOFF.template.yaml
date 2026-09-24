@@ -1,0 +1,16 @@
+upstream_stage: "11"
+run_id: null
+acceptance_result: null
+shadow_index:
+  path: null
+  rebuildable: null
+  canonical_truth: false
+query_surfaces: []
+unresolved_references: []
+carried_blockers: []
+stage12_inputs: []
+next_stage_entry_gate:
+  stage: "12"
+  result: null
+  execution_authorized: false
+stop_after_stage: "11"

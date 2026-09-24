@@ -1,0 +1,18 @@
+schema_version: "stage01-bootstrap-v1"
+stage_id: "01"
+summary:
+  CRITICAL: null
+  HIGH: null
+  MEDIUM: null
+  LOW: null
+  INFO: null
+issues:
+  - issue_id: null
+    type: null
+    severity: null
+    assets: []
+    description: null
+    evidence_refs: []
+    candidate_owner_stage: null
+    recommended_next_action: null
+    blocking: null

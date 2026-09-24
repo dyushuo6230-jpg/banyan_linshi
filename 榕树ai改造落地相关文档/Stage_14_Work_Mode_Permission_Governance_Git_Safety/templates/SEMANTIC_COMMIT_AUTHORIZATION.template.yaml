@@ -1,0 +1,11 @@
+schema_version: stage14-v1
+classes:
+  READY: ELIGIBLE_AFTER_VALIDATION_AND_AUTHORIZATION
+  INCOMPLETE: HOLD_OR_BLOCK
+  UNRELATED: ISOLATE
+  LOCAL_ONLY: NEVER_COMMIT
+  SECRET_RISK: HARD_BLOCK
+commit_plan_is_authorization: false
+identity_precheck_required: true
+secret_check_required: true
+leftover_report_required: true

@@ -1,0 +1,13 @@
+schema_version: stage04-v1
+mappings:
+  - mapping_id: null
+    role_id: null
+    path_kind: null
+    path_expression: null
+    authority: null
+    read_policy: null
+    write_policy: null
+    freshness_rule: null
+    conflict_rule: null
+    optional: false
+    evidence_refs: []

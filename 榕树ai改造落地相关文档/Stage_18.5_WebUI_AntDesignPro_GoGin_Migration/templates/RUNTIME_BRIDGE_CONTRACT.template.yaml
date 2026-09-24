@@ -1,0 +1,21 @@
+schema_version: stage18.5-v1
+bridge:
+  mode: null
+  runtime_implementation: null
+  runtime_language: null
+  lifecycle: null
+  timeout_semantics: null
+  failure_semantics: TYPED_FAIL_CLOSED
+operations:
+  - status
+  - policy_status
+  - project_safety
+  - preflight
+  - commit_plan
+  - commit_dry_run
+  - trace_query
+  - provenance_query
+  - provider_status
+  - activation_readiness
+second_runtime_allowed: false
+fallback_permission_engine_allowed: false

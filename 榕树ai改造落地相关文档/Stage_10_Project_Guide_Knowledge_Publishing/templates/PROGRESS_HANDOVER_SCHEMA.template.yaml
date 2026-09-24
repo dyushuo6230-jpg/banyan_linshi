@@ -1,0 +1,15 @@
+schema_version: stage10-v1
+progress_types:
+  - CURRENT_STATUS
+  - HISTORICAL_STATUS
+  - WORK_LOG
+  - DERIVED_SUMMARY
+handover_required:
+  - current_scope
+  - completed
+  - open_items
+  - blockers
+  - next_actions
+  - canonical_refs
+  - operational_refs
+  - freshness

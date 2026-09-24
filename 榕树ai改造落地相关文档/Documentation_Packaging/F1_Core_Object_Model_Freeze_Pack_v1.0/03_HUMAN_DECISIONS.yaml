@@ -1,0 +1,43 @@
+schema_version: "1.0"
+stage: F1
+topic: CORE_OBJECT_MODEL
+status: HUMAN_APPROVED
+
+decisions:
+  - id: F1-D01
+    decision: APPROVED
+    statement: "First-class core object is not equivalent to Artifact."
+
+  - id: F1-D02
+    decision: APPROVED
+    statement: "Artifact is split at the top level into DefinitionArtifact and ProjectArtifact."
+
+  - id: F1-D03
+    decision: APPROVED
+    statement: "ProjectInstance, Binding, RuntimeExecution, Context, EvidenceTrace and Infrastructure are first-class object families but are not ordinary Artifacts."
+
+  - id: F1-D04
+    decision: APPROVED
+    statement: "Definition and runtime instance are permanently separated."
+
+  - id: F1-D05
+    decision: APPROVED
+    statement: "Evidence uses a dual-layer model: EvidenceTrace is a first-class non-Artifact family for fine-grained factual evidence; EvidencePackage is a ProjectArtifact for governed formal aggregation."
+    constraints:
+      - "EvidenceTrace does not independently grant Authority."
+      - "EvidenceTrace referenced by EvidencePackage does not become Artifact automatically."
+      - "Evidence/Trace cannot change Canonical Truth merely because a record is latest."
+
+carried_scenarios:
+  - id: SCENARIO-DELIVERY-01
+    owners: [F7]
+    status: MANDATORY_FUTURE_INPUT
+  - id: SCENARIO-DELIVERY-02
+    owners: [F7, F10]
+    status: MANDATORY_FUTURE_INPUT
+  - id: SCENARIO-PROGRESS-01
+    owners: [F7, F10]
+    status: MANDATORY_FUTURE_INPUT
+  - id: SCENARIO-INTEGRATION-01
+    owners: [F7, F10]
+    status: MANDATORY_FUTURE_INPUT

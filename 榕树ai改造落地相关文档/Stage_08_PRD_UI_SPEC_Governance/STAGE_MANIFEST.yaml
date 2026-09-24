@@ -1,0 +1,83 @@
+stage_id: "08"
+title: "PRD × UI_SPEC Governance"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "UI_GOVERNANCE_LOW_TOKEN"
+
+upstream:
+  stage: "07"
+  run_id: "stage07-20260920T152653Z"
+  acceptance: "PASS_NOLOSS_SHADOW_DESIGN_WITH_TYPED_BLOCKERS"
+  design_gate: "PASS_FOR_STAGE08_PRD_UI_GOVERNANCE_DESIGN_WITH_TYPED_BLOCKERS"
+  real_migration_readiness: "MIGRATION_BLOCKED"
+
+owned_outcomes:
+  - "PRD Canonical Authority Contract"
+  - "UI_SPEC Authority / Projection Contract"
+  - "UI Governance Application Scope Schema"
+  - "UI_SPEC Enablement Contract"
+  - "PRD ↔ UI_SPEC Trace Contract"
+  - "Design Evidence Contract"
+  - "UI_SPEC Lifecycle / Approval Contract"
+  - "UI_SPEC Version / Freshness Contract"
+  - "UI_SPEC Change Integration Contract"
+  - "UI Implementation Readiness Gate"
+  - "UI Validation Evidence Contract"
+  - "Legacy v3.1 UI Governance Compatibility Map"
+
+not_owned:
+  - "AnyDesign implementation"
+  - "design intelligence provider implementation"
+  - "visual analysis runtime"
+  - "frontend code generation"
+  - "CON-002 final adjudication"
+  - "real legacy migration"
+  - "canonical apply execution"
+
+hard_invariants:
+  prd_is_business_requirement_truth: true
+  ui_spec_is_not_second_business_truth: true
+  design_source_is_evidence_not_requirement_truth: true
+  ui_spec_is_application_scoped: true
+  ui_spec_enablement_is_explicit: true
+  partial_coverage_must_be_explicit: true
+  prd_change_can_stale_ui_spec: true
+  approval_gate_required_before_implementation_ready: true
+
+token_policy:
+  repository_full_rescan: false
+  full_design_doc_reload: false
+  evidence_on_demand_triggers:
+    - PRD_UI_AUTHORITY_AMBIGUITY
+    - UI_SCOPE_COLLISION
+    - UI_SPEC_ENABLEMENT_AMBIGUITY
+    - UI_VERSION_COUPLING_GAP
+    - DESIGN_EVIDENCE_GAP
+    - APPROVAL_GATE_GAP
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/08/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical PRD / UI_SPEC mutation"
+    - "business code"
+    - "design provider implementation"
+    - "legacy v3.1 document mutation"
+    - "13 Secret bodies"
+    - "final .banyan activation"
+    - "Stage 09 execution"
+
+exit_gate:
+  validations: "V08-01..V08-20"
+  hard_metrics:
+    UI_SPEC_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+    UI_SPEC_WITHOUT_APPLICATION_SCOPE: 0
+    UI_SPEC_WITHOUT_EXPLICIT_ENABLEMENT_STATE: 0
+    APPROVED_UI_SPEC_WITHOUT_PRD_TRACE: 0
+    APPROVED_UI_SPEC_WITHOUT_DESIGN_EVIDENCE: 0
+    IMPLEMENTATION_READY_WITHOUT_APPROVAL_GATE: 0
+    PRD_RELEVANT_CHANGE_WITHOUT_UI_FRESHNESS_EFFECT: 0
+  next_stage: "09"

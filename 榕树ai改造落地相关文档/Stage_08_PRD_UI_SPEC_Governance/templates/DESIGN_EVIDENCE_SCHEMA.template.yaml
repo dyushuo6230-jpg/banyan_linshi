@@ -1,0 +1,11 @@
+schema_version: stage08-v1
+evidence:
+  - evidence_id: null
+    source_type: null
+    source_ref: null
+    version: null
+    captured_at: null
+    application_scope: []
+    confidence: null
+    authority: EVIDENCE_ONLY
+    provenance: null

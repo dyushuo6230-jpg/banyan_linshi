@@ -1,0 +1,17 @@
+schema_version: stage11-v1
+required_fields:
+  - event_id
+  - event_type
+  - subject_id
+  - stage
+  - run_id
+  - timestamp_or_unknown
+  - actor_identity_or_unknown
+  - input_refs
+  - output_refs
+  - decision_refs
+  - change_refs
+  - status
+  - result
+  - evidence_refs
+trace_grants_authorization: false

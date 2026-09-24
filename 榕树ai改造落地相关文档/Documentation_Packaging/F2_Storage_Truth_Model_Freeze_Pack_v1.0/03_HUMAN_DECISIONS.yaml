@@ -1,0 +1,229 @@
+pack_id: F2_Storage_Truth_Model_Freeze_Pack_v1.0
+stage: F2
+topic: Storage & Truth Model
+architecture_freeze: PASS
+human_decisions_total: 37
+human_approved_total: 37
+implementation_authorized: false
+rp2_implementation_authorized: false
+final_activation_authorized: false
+physical_store_topology_frozen: false
+decisions:
+  - id: F2-D01
+    status: HUMAN_APPROVED
+    decision: >-
+      Different object families may have different Authority; one semantic fact has exactly one Canonical Write
+      Target; Banyan does not use one database as total truth.
+  - id: F2-D02
+    status: HUMAN_APPROVED
+    decision: >-
+      DefinitionArtifact / ProjectArtifact formal semantics default to governed Markdown / YAML / formal files
+      as Canonical Semantic Truth; SQLite is not a second semantic truth.
+  - id: F2-D03
+    status: HUMAN_APPROVED
+    decision: >-
+      SQLite Index is a Derived / Rebuildable / Query Layer and must not be a direct canonical editing source
+      for formal Artifact semantics.
+  - id: F2-D04
+    status: HUMAN_APPROVED
+    decision: >-
+      RuntimeExecution may own Durable Operational Truth for runtime/operational state; this authority cannot
+      override Artifact Semantic Truth; physical DB technology/topology is deferred.
+  - id: F2-D05
+    status: HUMAN_APPROVED
+    decision: >-
+      EvidenceTrace requires a durable Evidence Source; a disposable/rebuildable SQLite index cannot be the
+      sole store of non-rebuildable evidence.
+  - id: F2-D06
+    status: HUMAN_APPROVED
+    decision: >-
+      Git Commit Object is canonical for Git history facts; Git author name+email is contribution identity;
+      contributor profile is optional display-only ProjectInstance data; Banyan stores semantic commit
+      relationships in durable evidence/trace and indexes them derivatively.
+  - id: F2-D07
+    status: HUMAN_APPROVED
+    decision: >-
+      One logical Artifact may consist of multiple physical components; together they form one Canonical
+      Artifact rather than multiple independent truths.
+  - id: F2-D08
+    status: HUMAN_APPROVED
+    decision: >-
+      Each semantic fact/field has exactly one Canonical Owner; duplicates elsewhere are non-editable
+      projections/generated views.
+  - id: F2-D09
+    status: HUMAN_APPROVED
+    decision: >-
+      Artifact structured metadata remains file-based Canonical Truth; SQLite only indexes it; exact front
+      matter/sidecar choice is deferred.
+  - id: F2-D10
+    status: HUMAN_APPROVED
+    decision: >-
+      Important index entries used for project-fact retrieval must resolve back to Canonical Artifact /
+      Canonical Source; search hits are source-discovery results, not standalone truth.
+  - id: F2-D11
+    status: HUMAN_APPROVED
+    decision: >-
+      SQLite may store Derived Retrieval Data for search/ranking/filtering/navigation/context selection, but
+      such data remains non-canonical.
+  - id: F2-D12
+    status: HUMAN_APPROVED
+    decision: >-
+      Critical derived index data must expose Freshness relative to Canonical Source; STALE/UNKNOWN derived
+      data cannot be treated as verified project fact; Freshness does not decide Authority.
+  - id: F2-D13
+    status: HUMAN_APPROVED
+    decision: >-
+      Index relationships must be typed, directed, provenance-aware, freshness-aware, and distinguish
+      Explicit/Derived/Inferred origins; similarity or co-occurrence must not automatically become dependency.
+  - id: F2-D14
+    status: HUMAN_APPROVED
+    decision: >-
+      F2 only freezes the data foundation for adaptive query scope; F9 owns expansion/stop/full-impact policy;
+      SQLite must not perform uncontrolled recursion.
+  - id: F2-D15
+    status: HUMAN_APPROVED
+    decision: >-
+      Canonical Apply uses an explicit logical Apply Unit; jointly required canonical writes succeed only when
+      the whole unit is written and canonically validated; no false claim of physical cross-file ACID.
+  - id: F2-D16
+    status: HUMAN_APPROVED
+    decision: >-
+      Before the first canonical mutation, Banyan must have a complete Apply Plan / Write Set and validate
+      Expected Base; drift blocks last-write-wins and requires reconcile.
+  - id: F2-D17
+    status: HUMAN_APPROVED
+    decision: >-
+      Partial Canonical failure inside one Apply Unit cannot be declared success; Runtime must attempt
+      Technical Recovery; unresolved consistency becomes RECOVERY_REQUIRED and blocks dependent Current-Truth
+      operations.
+  - id: F2-D18
+    status: HUMAN_APPROVED
+    decision: >-
+      After Canonical writes and Canonical validation succeed, Derived Layer failure does not revoke Canonical
+      Truth; affected derived layers become STALE / REBUILD_REQUIRED.
+  - id: F2-D19
+    status: HUMAN_APPROVED
+    decision: >-
+      Before the first canonical write, a durable apply/recovery journal must exist sufficient for crash
+      detection and recovery; exact medium/enum is deferred.
+  - id: F2-D20
+    status: HUMAN_APPROVED
+    decision: >-
+      Technical recovery of a failed/incomplete apply is distinct from semantic reversal; a previously
+      successful canonical state can only be changed by a new governed Change / Canonical Apply.
+  - id: F2-D21
+    status: HUMAN_APPROVED
+    decision: >-
+      Canonical Apply state, Index health, Git Commit state, branch/main integration state, and release state
+      are independent dimensions.
+  - id: F2-D22
+    status: HUMAN_APPROVED
+    decision: >-
+      Safe deterministic verifiable reversible technical recovery/rebuild/retry should be automatic; semantic
+      ambiguity, authority conflict, unsafe reconcile, possible data loss, unknown canonical consistency,
+      business-truth alteration, or protected/high-risk operations require Human Decision.
+  - id: F2-D23
+    status: HUMAN_APPROVED
+    decision: >-
+      Stable ID denotes logical object identity; ordinary edits, version changes, file moves/renames, and Git
+      commits do not automatically change it; IDs must not be reassigned to different semantic subjects.
+  - id: F2-D24
+    status: HUMAN_APPROVED
+    decision: >-
+      Version expresses evolution, but highest version/newest mtime/latest file does not automatically
+      determine Current Canonical; currentness follows Authority/Status/Supersession/Approved Change Lineage
+      and governance.
+  - id: F2-D25
+    status: HUMAN_APPROVED
+    decision: >-
+      Core Object Families use separate meaningful status domains; SQLite may index them uniformly but must
+      preserve status-domain semantics.
+  - id: F2-D26
+    status: HUMAN_APPROVED
+    decision: >-
+      Replacement/split/merge/deprecation/supersession require explicit identity lineage; old IDs must not
+      silently disappear or be reused; exact taxonomy is deferred.
+  - id: F2-D27
+    status: HUMAN_APPROVED
+    decision: >-
+      Semantics that entered Canonical/Approved/Baselined or another long-term auditable state must remain
+      traceable, explainable, and recoverable; physical per-version Markdown copies are not mandated.
+  - id: F2-D28
+    status: HUMAN_APPROVED
+    decision: >-
+      Migration requires explicit Source→Target lineage and exactly one writable truth; before cutover old
+      authority is writable and target shadow/read-only; after validated cutover target is writable and old
+      source historical/compatibility/rollback.
+  - id: F2-D29
+    status: HUMAN_APPROVED
+    decision: >-
+      Every storage class must be classified as non-rebuildable canonical/durable or rebuildable derived;
+      canonical sources, non-reconstructible evidence, and necessary runtime state must survive independently
+      of index backup.
+  - id: F2-D30
+    status: HUMAN_APPROVED
+    decision: >-
+      Runtime Operational Store and Derived Query Index are separate logical authority domains; index
+      rebuild/cleanup/migration must never destroy runtime operational truth; physical topology is deferred.
+  - id: F2-D31
+    status: HUMAN_APPROVED
+    decision: >-
+      Backup/recovery requirements follow Authority Class; canonical semantic data, non-rebuildable evidence,
+      necessary ProjectInstance state, and necessary Runtime state require real recovery strategies; derived
+      stores may be backed up for speed but correctness cannot depend on those backups.
+  - id: F2-D32
+    status: HUMAN_APPROVED
+    decision: >-
+      Derived-store rebuild success requires semantic equivalence validation including identity coverage,
+      source resolution, relationship integrity, status/version projections, freshness, unresolved references,
+      and query integrity; exact metrics/tests are deferred.
+  - id: F2-D33
+    status: HUMAN_APPROVED
+    decision: >-
+      Logical/Semantic Equivalence is the rebuild correctness criterion; byte identity may be additional
+      evidence but is not the universal long-term requirement.
+  - id: F2-D34
+    status: HUMAN_APPROVED
+    decision: >-
+      Backup/snapshot/recovery copies are NON_AUTHORITY / READ_ONLY recovery material by default; authority
+      restoration/cutover requires validation and preserves Single Writable Truth.
+  - id: F2-D35
+    status: HUMAN_APPROVED
+    decision: >-
+      F2 freezes logical Runtime-vs-Index separation but defers one-vs-many physical DB topology, DDL, WAL,
+      backup frequency, RPO/RTO, locking, and similar physical implementation choices.
+  - id: F2-D36
+    status: HUMAN_APPROVED
+    decision: >-
+      Project identity, Source Mapping, Overlay, Provider Selection, Framework Version Pin, and other durable
+      bindings/configuration form ProjectInstance Structured Truth, distinct from Artifact Semantic Truth,
+      Runtime Operational Truth, and Derived Index; exact files/schema are deferred to F8.
+  - id: F2-D37
+    status: HUMAN_APPROVED
+    decision: >-
+      AI working summaries, session memory, context cache, Project Fact Memory projections, and similar
+      memories are NON_CANONICAL by default; they must defer to higher-authority sources and require governed
+      promotion to become durable formal truth.
+
+deferred_required_decisions:
+  - id: PHYSICAL_STORE_TOPOLOGY
+    status: DEFERRED_REQUIRED_HUMAN_DECISION
+    trigger: AFTER_F8_F9_F10_ARCHITECTURE_FREEZE_BEFORE_PERSISTENT_DDL_OR_MIGRATIONS
+    minimum_options_to_compare:
+      - ONE_PHYSICAL_DB
+      - SEPARATE_RUNTIME_AND_INDEX_DBS
+      - SEPARATE_RUNTIME_INDEX_AND_EVIDENCE_TRACE_STORE_IF_JUSTIFIED
+    requires:
+      - IMPACT_ANALYSIS
+      - HUMAN_REVIEW
+      - HUMAN_DECISION
+      - PHYSICAL_TOPOLOGY_FREEZE
+
+example_policy:
+  domain_examples_are_illustrative_only: true
+  examples:
+    - Order
+    - Payment
+    - Inventory
+    - Coupon
+  note: These names do not define framework-native business modules or mandatory domain types.

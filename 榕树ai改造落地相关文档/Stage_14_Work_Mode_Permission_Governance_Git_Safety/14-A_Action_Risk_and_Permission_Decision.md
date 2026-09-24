@@ -1,0 +1,26 @@
+# 14-A Action Risk / Permission Decision
+
+Risk：
+
+```text
+READ_ONLY
+REVERSIBLE_WRITE
+CANONICAL_WRITE
+PROTECTED_WRITE
+IRREVERSIBLE_OR_EXTERNAL
+```
+
+Decision：
+
+```text
+ALLOW
+BLOCK
+NEEDS_INPUT
+NOT_APPLICABLE
+```
+
+任何 UNKNOWN blocker 默认：
+
+```text
+BLOCK / NEEDS_INPUT
+```

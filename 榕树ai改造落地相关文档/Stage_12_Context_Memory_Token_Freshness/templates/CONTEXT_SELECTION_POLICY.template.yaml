@@ -1,0 +1,14 @@
+schema_version: stage12-v1
+ranking:
+  - authority
+  - freshness
+  - relevance
+  - dependency
+  - blocker_importance
+  - provenance_quality
+  - cost
+context_classes:
+  - MANDATORY
+  - OPTIONAL
+  - ON_DEMAND
+  - EXCLUDED

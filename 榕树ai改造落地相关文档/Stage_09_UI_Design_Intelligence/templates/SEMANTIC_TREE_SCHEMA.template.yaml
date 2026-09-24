@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+nodes:
+  - semantic_id: null
+    semantic_type: null
+    source_node_refs: []
+    confidence: null
+    evidence_refs: []
+    alternatives: []
+    status: UNKNOWN
+statuses:
+  - SUPPORTED
+  - INFERRED
+  - AMBIGUOUS
+  - UNKNOWN
+  - REJECTED

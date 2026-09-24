@@ -1,0 +1,11 @@
+new_proposals: []
+# Every item must include:
+# - proposal_id
+# - proposed_artifact_type
+# - rationale
+# - why_not_supported_by_existing_sources
+# - affected_contracts
+# - semantic_change
+# - risk
+# - human_decision_required: true
+# - status: BLOCKED_PENDING_HUMAN_DECISION

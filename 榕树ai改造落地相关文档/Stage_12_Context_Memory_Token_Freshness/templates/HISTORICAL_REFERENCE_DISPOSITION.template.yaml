@@ -1,0 +1,24 @@
+schema_version: stage12-v1
+allowed_dispositions:
+  - KEEP_UNRESOLVED_HISTORICAL
+  - DELETED_HISTORICAL_TARGET
+  - EXTERNAL_HISTORICAL_TARGET
+  - SUPERSEDED_REFERENCE
+  - RESOLVED_WITH_EVIDENCE
+entries:
+  - reference_id: REF-039
+    disposition: null
+    evidence_refs: []
+  - reference_id: REF-041
+    disposition: null
+    evidence_refs: []
+  - reference_id: REF-043
+    disposition: null
+    evidence_refs: []
+  - reference_id: REF-044
+    disposition: null
+    evidence_refs: []
+not_a_reference:
+  - REF-107
+  - REF-108
+invent_target_allowed: false

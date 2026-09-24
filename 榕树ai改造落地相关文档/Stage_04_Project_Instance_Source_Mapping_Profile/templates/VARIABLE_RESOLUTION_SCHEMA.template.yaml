@@ -1,0 +1,17 @@
+schema_version: stage04-v1
+resolution_status:
+  - EXPLICIT
+  - DERIVED
+  - DEFAULTED
+  - UNKNOWN
+  - BLOCKED
+variables:
+  - variable_id: null
+    value: null
+    status: UNKNOWN
+    source: null
+    confidence: null
+    sensitivity: null
+    required_for: []
+    fallback: null
+    block_when_unknown: false

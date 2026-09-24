@@ -1,0 +1,84 @@
+stage_id: "16"
+title: "Control Plane / WebUI / Provenance"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "LOCAL_CONTROL_PLANE_IMPLEMENTATION"
+
+upstream:
+  stage: "15"
+  run_id: "stage15-20260921T031742Z"
+  acceptance: "PASS_STAGE15_RUNTIME_IMPLEMENTATION_ISOLATED_GIT_EXECUTION"
+  entry_gate: "PASS_FOR_STAGE16_CONTROL_PLANE_WEBUI_IMPLEMENTATION_WITH_RUNTIME_ENFORCEMENT"
+
+owned_outcomes:
+  - "Control Plane Backend"
+  - "Local WebUI"
+  - "Runtime Status View"
+  - "Policy Status / Hash View"
+  - "Project Safety State View"
+  - "Gate / Blocker View"
+  - "Action Preflight UI"
+  - "Semantic Commit Plan UI"
+  - "Dry-run Commit Result UI"
+  - "Trace / Audit View"
+  - "Artifact Provenance View"
+  - "Source Role / Authority View"
+  - "Reference / Freshness View"
+  - "Provider Binding View"
+  - "Stage / Run Status View"
+  - "Activation Readiness View"
+  - "Stage 17 Pilot Handoff"
+
+not_owned:
+  - "Cursor-specific adapter implementation"
+  - "pilot .banyan activation"
+  - "current-project Git mutation"
+  - "canonical/protected write"
+  - "remote/public deployment"
+  - "authentication product design"
+  - "Stage 17 execution"
+
+hard_invariants:
+  control_plane_may_bypass_runtime_policy: false
+  ui_click_is_authorization: false
+  current_project_mutation_allowed: false
+  public_bind_default_allowed: false
+  secret_body_rendering_allowed: false
+  git_identity_value_persistence_allowed: false
+  final_dot_banyan_activation: false
+  pilot_dot_banyan_activation: false
+
+write_scope:
+  allowed:
+    - "banyan-framework/**"
+    - "${REFRACTOR_CONTROL_ROOT}/stages/16/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "current project business code mutation"
+    - "canonical source mutation"
+    - "current project Git mutation"
+    - "13 Secret bodies"
+    - "final .banyan creation"
+    - "pilot .banyan activation"
+    - "Stage 17 execution"
+
+network:
+  bind_default: "127.0.0.1"
+  public_bind_allowed: false
+  outbound_side_effects_allowed: false
+
+exit_gate:
+  validations: "V16-01..V16-26"
+  hard_metrics:
+    CONTROL_PLANE_POLICY_BYPASS_PATH: 0
+    UI_CONFIRMATION_TREATED_AS_AUTHORIZATION_WITHOUT_BINDING: 0
+    CURRENT_PROJECT_MUTATION_FROM_WEBUI: 0
+    PUBLIC_BINDING_DEFAULT_PATH: 0
+    SECRET_BODY_RENDER_PATH: 0
+    GIT_IDENTITY_VALUE_PERSISTENCE_PATH: 0
+    PROVENANCE_VIEW_WITHOUT_AUTHORITY_OR_FRESHNESS: 0
+    BLOCKED_ACTION_RENDERED_AS_EXECUTABLE: 0
+    DRY_RUN_RESULT_RENDERED_AS_ACTUAL_COMMIT: 0
+    PILOT_DOT_BANYAN_ACTIVATED_IN_STAGE16: 0
+  next_stage: "17"

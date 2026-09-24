@@ -1,0 +1,12 @@
+schema_version: stage06-v1
+workspace:
+  change_id: null
+  provider_binding_id: null
+  project_instance_id: null
+  status: DRAFT
+  artifacts: []
+  relationships: []
+  decisions: []
+  evidence_refs: []
+  apply_state: null
+provider_specific_fields_allowed_in_core: false

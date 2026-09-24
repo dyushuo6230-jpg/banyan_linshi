@@ -1,0 +1,10 @@
+schema_version: stage11-v1
+entries:
+  - reference_id: null
+    source_id: null
+    relationship: null
+    missing_target_locator: null
+    status: UNRESOLVED_REFERENCE
+    owner_stage: "12"
+    evidence_ref: null
+invent_target_allowed: false

@@ -1,0 +1,48 @@
+# Bootstrap template until the final Project Instance path/schema is frozen.
+# This is the temporary writable refactor-state truth during early stages.
+schema_version: "bootstrap-v1"
+charter_version: "1.9.1"
+
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: null
+  run_id: null
+  future_canonical_path: ".banyan/migrations/MIGRATION_REGISTER.yaml"
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+  future_migration:
+    required: true
+    owner_stage: "02/04"
+    source_hash_required: true
+    target_hash_required: true
+    validation_required: true
+    bootstrap_after_migration: "READ_ONLY_ARCHIVE_OR_REFERENCE"
+
+refactor:
+  current_stage: "00"
+
+stages:
+  "00":
+    status: "NOT_STARTED"
+    baseline_commit: null
+    sub_stages:
+      "00-A": "NOT_STARTED"
+      "00-B": "NOT_STARTED"
+    planned_artifacts:
+      - "BASELINE_MANIFEST.yaml"
+      - "PROTECTED_PATHS_MANIFEST.yaml"
+      - "DISCOVERY_SCOPE_BASELINE.yaml"
+      - "CHECKPOINT_RECORD.yaml"
+      - "FILE_HASHES.sha256"
+      - "PRE_STAGE_GIT_STATUS.txt"
+      - "POST_STAGE_GIT_STATUS.txt"
+      - "BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+    actual_artifacts: []
+    validation:
+      overall: null
+      results: {}
+    rollback_point: null
+    open_risks: []
+    next_stage_handoff: null
+    next_gate: "Stage 01 Entry Gate"

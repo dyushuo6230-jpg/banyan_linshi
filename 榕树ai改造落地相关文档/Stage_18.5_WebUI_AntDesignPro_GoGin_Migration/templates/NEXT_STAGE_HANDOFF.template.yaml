@@ -1,0 +1,18 @@
+upstream_stage: "18.5"
+run_id: null
+acceptance_result: null
+architecture:
+  frontend: ANT_DESIGN_PRO_SIMPLE
+  backend: GO_GIN
+  frontend_embedded_in_go_binary: true
+runtime_contract_preserved: null
+adapter_compatibility_preserved: null
+pilot_dot_banyan_unchanged: null
+current_project_git_mutation: false
+stage19_rc_handoff: null
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "19"
+  result: null
+  execution_authorized: false
+stop_after_stage: "18.5"

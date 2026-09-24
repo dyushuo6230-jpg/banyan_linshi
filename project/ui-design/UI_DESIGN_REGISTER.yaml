@@ -1,0 +1,99 @@
+# UI 设计登记
+# 状态: 总闸开，分闸仅 gongyi_online；UI_SPEC 0.1.5 Approved Partial
+document_id: DOC-G0-UI-REG
+created: 2026-09-04
+updated: 2026-09-19
+enable_ui_spec_generation: true
+ui_spec_enabled_applications:
+  - gongyi_online
+ui_constraint_mode: NONE
+prd_status: Approved
+g55_scope_map: docs/project/ui-design/UI_SCOPE_MAP.md
+g55_trace: docs/project/ui-design/UI_TRACE_MATRIX.md
+g91_mapping: docs/project/ui-design/UI_APPLICATION_MAPPING.yaml
+g91_adr: ADR-044
+ui_decisions:
+  - UI-DEC-001
+  - UI-DEC-002
+  - UI-DEC-003
+  - UI-DEC-004
+  - UI-DEC-005
+  - UI-DEC-006
+note: >
+  UI-DEC-001：仅 gongyi_online 允许走 G9.5。
+  UI-DEC-002：第四坑购物车。UI-DEC-003：令牌四条。
+  UI-DEC-004：首页横向分类选中听切图组 A 观感（页面覆盖，不升级 chip 令牌）；实现三件套见 UI_SPEC 0.1.2。
+  2026-09-19 第 29 节：gongyi_online UI_SPEC 0.1.5 Approved Partial（附近列表入覆盖；整页 PRD 写入第 4 节）。未 Baselined。
+  底栏/首页/分类已点名换皮。附近已入 Partial，换皮/32A 须另开口令。
+  Contract 0.1.5 已对齐 Approved 0.1.5。
+  下级 devices/ 无独立 UI_SPEC，继承应用级；无端差异，不必另批、无需 Needs Review。
+  全项目 UI_CONSTRAINT_MODE 仍为 NONE，以免卡住其它批次；点名换皮时再出 EFFECTIVE_UI_CONTRACT。
+specs:
+  - id: UI-SPEC-gongyi_online
+    path: docs/project/ui-design/products/gongyi_online/UI_SPEC.md
+    version: "0.1.5"
+    status: Approved
+    coverage: Partial
+    pages: [tab-bar, home, category, nearby]
+    approved_at: 2026-09-19
+    approved_by: session-user
+    draft_history: docs/project/ui-design/products/gongyi_online/UI_SPEC-0.1.5-Draft.md
+    previous_approved: docs/project/ui-design/products/gongyi_online/UI_SPEC-0.1.4.md
+    note: 0.1.5 第 29 节批准。附近列表入 Partial。Contract 0.1.5。全局 MODE 仍 NONE。未改代码。
+materials:
+  - id: MAT-GO-DOC-DESIGN
+    path: docs/project/ui-design/products/gongyi_online/materials/design-docs/design.md
+    status: tokens-confirmed
+  - id: MAT-GO-TOK-DTCG
+    path: docs/project/ui-design/products/gongyi_online/materials/tokens/design-tokens.json
+    status: tokens-confirmed
+  - id: MAT-GO-ASSET-HOME-CHIP-SELECTED
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15@3x.png
+    status: Active
+    note: 观感参考与抠星来源；禁止当选中底拉伸
+  - id: MAT-GO-ASSET-HOME-CHIP-STAR
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中星星.png
+    status: Active
+  - id: MAT-GO-ASSET-CAT-CHIP-SELECTED
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景@3x.png
+    status: Active
+    note: 观感参考；禁止当选中底拉伸
+  - id: MAT-GO-ASSET-CAT-RAIL-ARROW-UP
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类上方箭头@3x.png
+    status: Active
+  - id: MAT-GO-ASSET-CAT-RAIL-ARROW-DOWN
+    path: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类下方箭头@3x.png
+    status: Active
+  - manifest: docs/project/ui-design/products/gongyi_online/materials/MATERIALS_MANIFEST.yaml
+versions:
+  - id: UI-SPEC-gongyi_online
+    version: "0.1.0"
+    status: Approved
+    date: 2026-09-18
+  - id: UI-SPEC-gongyi_online
+    version: "0.1.1"
+    status: Approved
+    date: 2026-09-18
+  - id: UI-SPEC-gongyi_online
+    version: "0.1.2"
+    status: Approved
+    date: 2026-09-18
+  - id: UI-SPEC-gongyi_online
+    version: "0.1.3"
+    status: Approved
+    date: 2026-09-18
+  - id: UI-SPEC-gongyi_online
+    version: "0.1.4"
+    status: Approved
+    date: 2026-09-19
+  - id: UI-SPEC-gongyi_online
+    version: "0.1.5"
+    status: Approved
+    date: 2026-09-19
+application_slugs:
+  - admin_web
+  - merchant_web
+  - local_life_miniapp
+  - gongyi_online
+  - onboarding_h5
+  - gongyi_h5_host

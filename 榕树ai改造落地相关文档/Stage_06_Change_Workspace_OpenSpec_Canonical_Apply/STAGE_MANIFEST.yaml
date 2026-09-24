@@ -1,0 +1,85 @@
+stage_id: "06"
+title: "Change Workspace Provider / OpenSpec / Canonical Apply"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "PROVIDER_NEUTRAL_LOW_TOKEN"
+
+upstream:
+  stage: "05"
+  run_id: "stage05-20260920T144623Z"
+  acceptance: "PASS_WORKFLOW_AND_SEMANTIC_COMMIT_POLICY_FREEZE"
+  entry_gate: "PASS_FOR_STAGE06_DESIGN_WITH_INHERITED_BLOCKERS"
+
+owned_outcomes:
+  - "Change Workspace Generic Contract"
+  - "Change Workspace Provider Port"
+  - "OpenSpec Provider Binding Contract"
+  - "Change Identity / Lifecycle Schema"
+  - "Draft / Parallel Draft Contract"
+  - "Change Artifact Relationship Schema"
+  - "Canonical Apply Contract"
+  - "Apply Preview / Dry-Run Contract"
+  - "Draft Promotion Contract"
+  - "Batch Reconciliation Contract"
+  - "Canonical Divergence / Conflict Contract"
+  - "Reference-Safe Apply Rules"
+  - "Apply Authorization Boundary"
+  - "Rollback / Recovery Contract"
+  - "Provider-neutral archive semantics"
+
+not_owned:
+  - "reference project legacy migration execution"
+  - "OpenSpec source code implementation"
+  - "runtime CLI/API implementation"
+  - "Git semantic commit execution"
+  - "SQLite index implementation"
+  - "Control Plane UI implementation"
+  - "CON-002 final adjudication"
+
+core_principles:
+  change_workspace_is_generic_abstraction: true
+  openspec_is_provider_binding: true
+  provider_workspace_is_not_canonical_truth: true
+  canonical_apply_is_explicit: true
+  apply_requires_reference_integrity: true
+  parallel_drafts_supported: true
+  silent_conflict_winner_forbidden: true
+  legacy_apply_execution_in_stage06: false
+
+token_policy:
+  repository_full_rescan: false
+  full_capability_reload: false
+  evidence_on_demand_triggers:
+    - CHANGE_LIFECYCLE_AMBIGUITY
+    - PROVIDER_BINDING_GAP
+    - CANONICAL_APPLY_CONFLICT
+    - REFERENCE_MIGRATION_RISK
+    - PARALLEL_DRAFT_CONFLICT
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/06/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "business code / SQL / production config"
+    - "canonical project docs mutation"
+    - "legacy OpenSpec workspace mutation"
+    - "13 Secret bodies"
+    - "real canonical apply"
+    - "archive/delete legacy change workspaces"
+    - "Git execution"
+    - "Stage 07 execution"
+
+exit_gate:
+  validations: "V06-01..V06-20"
+  hard_metrics:
+    CHANGE_WORKSPACE_WITHOUT_PROVIDER_PORT: 0
+    PROVIDER_SPECIFIC_FIELD_IN_CORE_CHANGE_SCHEMA: 0
+    CANONICAL_APPLY_WITHOUT_PREVIEW: 0
+    CANONICAL_APPLY_WITHOUT_REFERENCE_CHECK: 0
+    PARALLEL_DRAFT_WITHOUT_RECONCILIATION_PATH: 0
+    SILENT_CONFLICT_WINNER_PATH: 0
+    APPLY_PATH_WITHOUT_AUTHORIZATION_GATE: 0
+  next_stage: "07"

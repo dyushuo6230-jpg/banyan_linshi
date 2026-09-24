@@ -1,0 +1,96 @@
+stage_id: "11"
+title: "SQLite Index / Trace / History Migration"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "STRUCTURED_INPUT_SHADOW_INDEX"
+
+upstream:
+  stage: "10"
+  run_id: "stage10-20260920T161325Z"
+  acceptance: "PASS_KNOWLEDGE_PUBLISHING_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE11_SHADOW_INDEX_TRACE_HISTORY_WITH_INHERITED_BLOCKERS"
+
+owned_outcomes:
+  - "SQLite Index Schema"
+  - "Stable ID Index Contract"
+  - "Artifact / Source Role Index"
+  - "Reference Graph Index"
+  - "Projection / Guide Index"
+  - "Change / Decision Index"
+  - "Progress / Handover History Index"
+  - "Provider Binding Index"
+  - "Trace Event Schema"
+  - "History Event Schema"
+  - "Unresolved Reference Registry"
+  - "Structured Import / Rebuild Pipeline"
+  - "Index Migration Ledger"
+  - "Query Contract"
+  - "Shadow SQLite Build"
+  - "Shadow Query Validation"
+  - "Rebuildability / Integrity Report"
+  - "Stage 12 Freshness / Context Query Handoff"
+
+not_owned:
+  - "final .banyan runtime database"
+  - "canonical content writes"
+  - "CON-002 resolution"
+  - "context/memory optimization policy"
+  - "runtime CLI/API"
+  - "control plane UI"
+
+hard_invariants:
+  sqlite_is_canonical_truth: false
+  sqlite_is_rebuildable_index: true
+  trace_is_authorization: false
+  history_preserves_non_success_states: true
+  unresolved_reference_target_may_be_invented: false
+  secret_body_indexing_allowed: false
+  final_dot_banyan_creation: false
+  real_migration_activation: false
+
+token_policy:
+  repository_full_rescan: false
+  git_history_full_reanalysis: false
+  structured_input_first: true
+  evidence_on_demand_triggers:
+    - INDEX_ID_COLLISION
+    - MISSING_STABLE_ID
+    - REFERENCE_TARGET_AMBIGUITY
+    - TRACE_LINEAGE_GAP
+    - HISTORY_STATUS_AMBIGUITY
+    - SOURCE_ROLE_MISMATCH
+    - PROVENANCE_GAP
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/11/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical source mutation"
+    - "business code / SQL / production config"
+    - "legacy asset mutation"
+    - "13 Secret bodies or body hashes"
+    - "final .banyan creation"
+    - "Git commit/reset/stash/rebase/push"
+    - "Stage 12 execution"
+
+shadow_outputs:
+  sqlite_path: "shadow/banyan_index.sqlite"
+  canonical_runtime_db: false
+  rebuildable: true
+
+exit_gate:
+  validations: "V11-01..V11-24"
+  hard_metrics:
+    INDEX_RECORD_WITHOUT_STABLE_ID: 0
+    INDEX_RECORD_WITHOUT_SOURCE_ROLE_OR_CLASSIFICATION: 0
+    INDEX_AS_CANONICAL_TRUTH_PATH: 0
+    REFERENCE_EDGE_LOST_DURING_IMPORT: 0
+    UNRESOLVED_REFERENCE_WITH_INVENTED_TARGET: 0
+    HISTORY_NON_SUCCESS_STATE_NORMALIZED_TO_SUCCESS: 0
+    TRACE_EVENT_WITHOUT_LINEAGE: 0
+    SECRET_BODY_OR_HASH_INDEXED: 0
+    SHADOW_DB_NOT_REBUILDABLE_FROM_STRUCTURED_INPUTS: 0
+  next_stage: "12"

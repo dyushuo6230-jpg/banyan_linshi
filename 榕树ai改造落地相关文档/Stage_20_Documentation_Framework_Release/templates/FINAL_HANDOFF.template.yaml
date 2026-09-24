@@ -1,0 +1,15 @@
+schema_version: stage20-v1
+framework_release: null
+final_architecture: null
+project_instance_state: PILOT
+project_final_activation: NOT_AUTHORIZED
+con002: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+bootstrap_workspace:
+  state: null
+  retirement_plan: null
+legacy_doc_adoption:
+  guide: null
+  executed: false
+version_transition:
+  proposal: null
+post_stage20_required_human_actions: []

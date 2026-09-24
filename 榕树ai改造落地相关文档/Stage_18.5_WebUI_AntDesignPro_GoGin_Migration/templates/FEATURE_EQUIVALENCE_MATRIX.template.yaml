@@ -1,0 +1,19 @@
+schema_version: stage18.5-v1
+allowed_dispositions:
+  - EQUIVALENT
+  - IMPROVED_COMPATIBLY
+  - DEFERRED_WITH_REASON
+  - REMOVED_BY_EXPLICIT_DECISION
+features:
+  - {id: dashboard, disposition: null, evidence_refs: []}
+  - {id: runtime_policy, disposition: null, evidence_refs: []}
+  - {id: project_safety, disposition: null, evidence_refs: []}
+  - {id: gate_blockers, disposition: null, evidence_refs: []}
+  - {id: preflight, disposition: null, evidence_refs: []}
+  - {id: commit_plan, disposition: null, evidence_refs: []}
+  - {id: dry_run_result, disposition: null, evidence_refs: []}
+  - {id: trace_audit, disposition: null, evidence_refs: []}
+  - {id: provenance, disposition: null, evidence_refs: []}
+  - {id: provider_bindings, disposition: null, evidence_refs: []}
+  - {id: stage_run, disposition: null, evidence_refs: []}
+  - {id: activation_readiness, disposition: null, evidence_refs: []}

@@ -1,0 +1,18 @@
+schema_version: stage05-v1
+routing_inputs:
+  - task_class
+  - risk
+  - scope
+  - confidence
+  - governance_mode
+  - project_stage
+  - authorization
+  - budget_state
+  - change_state
+routing_output:
+  mode: null
+  required_gates: []
+  required_evidence: []
+  required_human_decisions: []
+  allowed_actions: []
+  blocked_actions: []

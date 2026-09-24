@@ -1,0 +1,13 @@
+schema_version: stage19-v1
+rc:
+  version: null
+  source_revision: null
+  architecture:
+    frontend: ANT_DESIGN_PRO_SIMPLE
+    web_host: GO_GIN
+    runtime_bridge: LOCAL_STDIO
+    runtime_core: PYTHON_STAGE15_RUNTIME
+  artifacts: []
+  tests: []
+  hashes: []
+  final_activation: NOT_AUTHORIZED

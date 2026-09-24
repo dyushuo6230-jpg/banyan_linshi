@@ -1,0 +1,149 @@
+schema_version: rp1-human-decisions-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+runtime_authority: false
+semantic_authority: false
+registry_authority: false
+loader_authority: false
+stage: RP1
+status: HUMAN_DECISIONS_APPROVED
+baseline_id: BANYAN-UNIQUE-REMEDIATION-BASELINE-2026-09-21-V2
+recorded_from: RP1_PRECONSTRUCTION_REVIEW_AND_IMPLEMENTATION_PREPARATION_CHAT
+principle: TOKEN_EFFICIENCY_MUST_NOT_REDUCE_GOVERNANCE_FIDELITY
+
+authority_cutover_in_rp1: false
+wheel_cutover_in_rp1: false
+loader_cutover_in_rp1: false
+registry_cutover_in_rp1: false
+cli_cutover_in_rp1: false
+dot_banyan_modification: false
+
+decisions:
+  - id: HD-RP1-001
+    value: A
+    status: APPROVED
+    summary: Single YAML; {kebab-local}.v1.yaml; frozen 9 category roots; no subdirectories; metadata + R1 record + existing contract in one file; RP1 does not change Loader / Registry / Wheel authority.
+    execute_in_rp1: true
+    notes:
+      - Physical files are NON_AUTHORITATIVE_SHADOW_MATERIALIZATION.
+      - Creating shadow files is not Canonical, Registry, Runtime, or Packaging cutover.
+
+  - id: HD-RP1-002
+    value: A
+    status: APPROVED
+    summary: Physical filenames use kebab-case; v3_1 becomes v3-1 in filenames only.
+    execute_in_rp1: true
+    notes:
+      - Filename kebab-case does not rewrite internal artifact_id, source references, provenance, or other R1 semantics.
+
+  - id: HD-RP1-003
+    value: A
+    status: APPROVED
+    summary: Full CURRENT v1.9.1 section-8 self-describing metadata model. DERIVABLE / NOT_APPLICABLE / UNKNOWN. No invented values. Do not shrink the schema.
+    execute_in_rp1: true
+    fill_rules:
+      - If R1 / CURRENT / Registry evidence exists, write the DERIVABLE value.
+      - If the field does not apply to that Artifact Type, write NOT_APPLICABLE.
+      - If no reliable fact exists, write UNKNOWN.
+      - UNKNOWN is not a default, not authorization, not allow, and not configured.
+    forbidden_invention:
+      - when_to_use
+      - when_not_to_use
+      - permissions
+      - rollback
+      - maintenance_owner
+      - last_updated
+      - supersession
+      - migration_lineage
+      - any other currently unevidenced fact
+
+  - id: HD-RP1-007
+    value: T
+    status: APPROVED
+    summary: Thin-plus-contract. Project the R1 entry and its existing contract block. Point at current registries. Do not copy whole registry bodies.
+    execute_in_rp1: true
+    forbidden_registry_body_copy:
+      - banyan-framework/src/banyan/contracts/data/workflows.yaml
+      - banyan-framework/src/banyan/contracts/data/states.yaml
+      - banyan-framework/src/banyan/contracts/data/source_roles.yaml
+      - banyan-framework/src/banyan/contracts/data/compatibility/v3_1.yaml
+      - other Framework registry collection bodies
+
+  - id: HD-RP1-006
+    value: A
+    status: APPROVED
+    summary: artifacts/** enter the Framework source tree only. Do not modify pyproject.toml, package-data, MANIFEST, wheel contents, Loader, Runtime, or CLI discovery.
+    execute_in_rp1: true
+    deferred_to_rp2:
+      - artifact packaging
+      - artifact discovery
+      - Loader alignment
+      - Registry authority cutover
+      - Runtime cutover
+
+  - id: HD-CLEANUP-001
+    value: NEED_MORE_EVIDENCE
+    status: APPROVED
+    subject: banyan-framework/control-plane-go/bin/banyan-control
+    execute_in_rp1: false
+    rp1_actions:
+      - do_not_delete
+      - do_not_move
+      - do_not_modify
+      - do_not_include_in_rp1_cleanup
+    required_future_evidence:
+      - whether the file is git-tracked
+      - whether a build or release script references it
+      - whether documentation or a run entry depends on it
+      - whether it is a reproducible build artifact
+      - whether it has platform/architecture coupling
+
+  - id: HD-CLEANUP-002
+    decision: APPROVE_LATER_HYGIENE_CLEANUP
+    status: APPROVED
+    execute_in_rp1: false
+    subject: .DS_Store repository hygiene
+    later_allowed:
+      - delete tracked .DS_Store files
+      - add or confirm .gitignore ignore rules
+    notes:
+      - RP1 must not delete .DS_Store.
+      - Repository hygiene must not be mixed into the Artifact Materialization commit.
+
+  - id: HD-CLEANUP-003
+    decision: ACCEPT_CURRENT_STATE_FOR_RP1
+    status: APPROVED
+    execute_in_rp1: false
+    subjects:
+      - src/banyan/policy/compiler.py::default_policy()
+      - policies/default-policy.yaml
+    rp1_actions:
+      - do_not_merge
+      - do_not_delete
+      - do_not_change_authority
+      - do_not_name_a_single_source_of_truth
+    carried_gap: AUTHORITY_RUNTIME_ALIGNMENT_GAP_DEFAULT_POLICY_DUAL_REPRESENTATION
+
+  - id: HD-CLEANUP-GATE
+    delete_count: 0
+    rule: ZERO_DELETE_IN_RP1
+    status: APPROVED
+    execute_in_rp1: true
+    notes:
+      - KEEP / MIGRATE / CLEANUP_CANDIDATE / UNKNOWN classifications from the pre-construction review are accepted for now.
+      - Any new cleanup candidate or UNKNOWN must stop the related cleanup action and request a Human Decision.
+
+current_semantic_authority: EXISTING_R1_REGISTRY_AND_CONTRACT_AUTHORITY
+shadow_authority_class: NON_AUTHORITATIVE_SHADOW_MATERIALIZATION
+shadow_is_not:
+  - Canonical Cutover
+  - Registry Cutover
+  - Runtime Cutover
+  - Packaging Cutover
+rp2_required_before_authority_change: true
+
+construction_evidence_root: 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+framework_maintainer_docs_policy:
+  existing_r0_r1_files: KEEP_IN_PLACE
+  new_rp1_construction_evidence: THIS_PACK_ONLY
+  do_not_create_new_rp1_files_under: banyan-framework/docs/maintainer

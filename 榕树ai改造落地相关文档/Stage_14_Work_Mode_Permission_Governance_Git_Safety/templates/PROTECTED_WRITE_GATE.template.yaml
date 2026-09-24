@@ -1,0 +1,13 @@
+schema_version: stage14-v1
+required:
+  - target_stable_id
+  - protection_class
+  - authority
+  - freshness
+  - impact_review
+  - decision_level
+  - human_confirmation_if_required
+  - authorization_record
+  - rollback_checkpoint
+  - secret_check
+unknown_or_blocked_precondition: BLOCK

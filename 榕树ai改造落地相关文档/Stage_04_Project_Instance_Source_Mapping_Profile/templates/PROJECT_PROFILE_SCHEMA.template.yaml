@@ -1,0 +1,9 @@
+schema_version: stage04-v1
+project_profile:
+  project_id: null
+  display_name: null
+  description: null
+  lifecycle_status: null
+  governance_mode: null
+  technology_hints: []
+authorization_fields_allowed: false

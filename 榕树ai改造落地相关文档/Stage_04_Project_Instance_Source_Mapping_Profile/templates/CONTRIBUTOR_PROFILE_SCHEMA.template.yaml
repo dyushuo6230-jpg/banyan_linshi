@@ -1,0 +1,14 @@
+schema_version: stage04-v1
+identity_key:
+  type: "git_author_name_plus_email"
+profiles:
+  - git_name: null
+    git_email: null
+    display_name: null
+    status: null
+    note: null
+forbidden:
+  - authorization
+  - automatic_identity_merge
+  - inferred_physical_operator
+  - permanent_role_assignment

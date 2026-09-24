@@ -1,0 +1,11 @@
+schema_version: stage14-v1
+must_classify:
+  - staged
+  - unstaged
+  - untracked
+  - ignored_governed
+  - conflicted
+  - secret_risk
+  - unrelated
+  - local_only
+blind_stage_all_allowed: false

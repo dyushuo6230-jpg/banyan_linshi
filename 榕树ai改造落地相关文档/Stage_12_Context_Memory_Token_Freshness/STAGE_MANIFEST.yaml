@@ -1,0 +1,75 @@
+stage_id: "12"
+title: "Context / Memory / Token Optimization / Freshness"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "QUERY_FIRST_CONTEXT_POLICY"
+
+upstream:
+  stage: "11"
+  run_id: "stage11-20260921T011037Z"
+  acceptance: "PASS_STAGE11_SHADOW_INDEX_TRACE_HISTORY_WITH_INHERITED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE12_CONTEXT_MEMORY_FRESHNESS_DESIGN_WITH_TYPED_OWNERSHIP"
+
+owned_outcomes:
+  - "Context Selection Contract"
+  - "Context Recovery Contract"
+  - "Memory Layer Contract"
+  - "Freshness Resolution Contract"
+  - "Source Freshness Decision Policy"
+  - "CON-002 Resolution Record"
+  - "Current / Historical State Resolution Contract"
+  - "Projection / Handover Freshness Contract"
+  - "Evidence-on-Demand Retrieval Contract"
+  - "Token Budget Gate"
+  - "Context Compaction Contract"
+  - "Cache / Reuse Contract"
+  - "Runtime Cost Context Policy"
+  - "Historical Missing Reference Disposition"
+  - "Stage 13 Evidence / Impact Query Handoff"
+
+not_owned:
+  - "impact analysis runtime"
+  - "event learning runtime"
+  - "prompt learning runtime"
+  - "final model/provider routing implementation"
+  - "runtime CLI/API"
+  - "real migration activation"
+
+hard_invariants:
+  memory_is_canonical_truth: false
+  summary_is_canonical_truth: false
+  freshness_mtime_wins: false
+  latest_file_wins: false
+  unresolved_ambiguity_may_be_guessed: false
+  context_compaction_may_drop_authority: false
+  context_compaction_may_drop_blockers: false
+  secret_body_context_allowed: false
+  proprietary_model_name_in_core_policy: false
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/12/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical source mutation"
+    - "historical document link rewrite"
+    - "business code"
+    - "13 Secret bodies"
+    - "Stage11 shadow DB canonical mutation"
+    - "final .banyan activation"
+    - "Stage 13 execution"
+
+exit_gate:
+  validations: "V12-01..V12-24"
+  hard_metrics:
+    FRESHNESS_DECISION_BY_MTIME_ONLY: 0
+    FRESHNESS_CONFLICT_WITH_SILENT_WINNER: 0
+    CONTEXT_SUMMARY_WITHOUT_SOURCE_REFS: 0
+    CONTEXT_SUMMARY_WITHOUT_AS_OF_OR_FRESHNESS: 0
+    CONTEXT_COMPACTION_DROPPED_BLOCKER: 0
+    MEMORY_PROMOTED_TO_CANONICAL_TRUTH: 0
+    TOKEN_BUDGET_BYPASSED_REQUIRED_CONTEXT: 0
+    HISTORICAL_REFERENCE_WITH_INVENTED_TARGET: 0
+    SECRET_BODY_INCLUDED_IN_CONTEXT_INDEX: 0
+  next_stage: "13"

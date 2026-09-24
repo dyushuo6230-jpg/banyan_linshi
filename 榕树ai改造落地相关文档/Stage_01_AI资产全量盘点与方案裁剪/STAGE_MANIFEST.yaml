@@ -1,0 +1,177 @@
+# Banyan Refactor Stage Manifest
+# Planning/execution contract only. It does not claim Stage 01 has been executed.
+stage_id: "01"
+title: "AI资产全量盘点与方案裁剪"
+pack_version: "1.9.1"
+charter:
+  name: "榕树AI多编辑器AI软件工程框架改造总纲指导方案"
+  version: "1.9.1"
+  freeze_status: "FINAL_FREEZE"
+
+status: "NOT_STARTED"
+activation_mode: "OFF"
+
+entry_gate:
+  required_upstream_stage: "00"
+  required_upstream_result: "PASS / PASS_WITH_ACCEPTED_RISK"
+  required_stage01_entry_gate: "PASS"
+  required_upstream_artifacts:
+    - "BASELINE_MANIFEST.yaml"
+    - "PROTECTED_PATHS_MANIFEST.yaml"
+    - "DISCOVERY_SCOPE_BASELINE.yaml"
+    - "CHECKPOINT_RECORD.yaml"
+    - "FILE_HASHES.sha256"
+    - "MIGRATION_REGISTER.bootstrap.yaml"
+    - "BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+    - "NEXT_STAGE_HANDOFF.yaml"
+    - "Stage_00_to_Stage_01_Gate_Review.md"
+  inherited_risk:
+    id: "R00-SECRET-001"
+    status: "USER_ACCEPTED"
+    recovery_coverage: "PARTIAL_APPROVED"
+    treatment: "SECRET_METADATA_ONLY / PRESERVE_IN_PLACE"
+    scope_count: 13
+
+purpose:
+  - "从真实 Repository Root 做全量 AI 资产、能力、AI 生成产物、Operational Artifact 和 Git/Commit Practice Discovery。"
+  - "形成 Stage 02 架构冻结前必须消费的初版 No-Loss Coverage。"
+  - "识别重复、冲突、缺口、Legacy、Core Candidate 与 Project/Provider 候选边界，但不在本阶段冻结最终架构。"
+  - "保证未知项进入 UNCLASSIFIED 并拥有后续处理计划，而不是静默消失。"
+
+owned_capabilities:
+  - id: "FULL-REPOSITORY-AI-ASSET-DISCOVERY"
+    target_state: "VERIFIED"
+  - id: "LEGACY-AI-CAPABILITY-DISCOVERY"
+    target_state: "VERIFIED"
+  - id: "AI-GENERATED-ARTIFACT-DISCOVERY"
+    target_state: "VERIFIED"
+  - id: "OPERATIONAL-ARTIFACT-DISCOVERY"
+    target_state: "VERIFIED"
+  - id: "PRELIMINARY-NO-LOSS-COVERAGE"
+    target_state: "VERIFIED"
+  - id: "GIT-IDENTITY-AND-COMMIT-PRACTICE-DISCOVERY"
+    target_state: "VERIFIED"
+
+non_owned_capabilities:
+  - "Framework / Project Instance 最终边界（Stage 02）"
+  - "Source Role 最终定义（Stage 02）"
+  - "Artifact/Registry/Identity Schema 最终冻结（Stage 03）"
+  - "Project Instance / Source Mapping 实施（Stage 04）"
+  - "Semantic Commit Policy（Stage 05）"
+  - "Legacy v3.1 Migration / Compatibility Execution（Stage 07）"
+  - "正式 .banyan 初始化"
+  - "banyan-framework 最终物理目录创建"
+
+authoritative_stage_documents:
+  - "01_AI资产全量盘点与方案裁剪.md"
+  - "01-A_AI_Asset_Inventory_Schema.md"
+  - "01-B_Legacy_Classification与Core_Candidate_Mapping.md"
+  - "01-C_Duplicate_Conflict_Gap_Report.md"
+  - "01-D_Reference_Project与Generic_Core边界审计.md"
+  - "01-E_AI_Generated_Artifact_Inventory.md"
+  - "01-F_AI_Capability_Discovery_Report.md"
+  - "01-G_AI_Asset_Migration_Master_Map.md"
+  - "01-H_Discovery_Coverage与NoLoss_Preliminary_Gate.md"
+  - "01-I_Git_Identity与AI提交现状盘点.md"
+
+planned_execution_artifacts:
+  - "AI_ASSET_INVENTORY.jsonl"
+  - "LEGACY_CLASSIFICATION_REPORT.yaml"
+  - "CORE_CANDIDATE_REPORT.yaml"
+  - "CONFLICT_GAP_REPORT.yaml"
+  - "LEGACY_AI_CAPABILITY_INVENTORY.jsonl"
+  - "AI_GENERATED_ARTIFACT_INVENTORY.jsonl"
+  - "OPERATIONAL_ARTIFACT_INVENTORY.jsonl"
+  - "DISCOVERY_COVERAGE_REPORT.yaml"
+  - "PRELIMINARY_AI_CAPABILITY_PRESERVATION_MATRIX.yaml"
+  - "PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml"
+  - "GIT_IDENTITY_AND_COMMIT_PRACTICE_INVENTORY.yaml"
+  - "ACCEPTANCE_REPORT.md"
+  - "evidence/**"
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/01/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "业务代码 / SQL / 生产配置"
+    - "正式 PRD / DEC / ADR / CR / UI_SPEC / Project Guide 正文"
+    - "Legacy Prompt / Rules / Skills 正文"
+    - ".cursor/.codex/.claude 等现有正式入口的业务语义改写"
+    - "13 个 Stage 00 SECRET_METADATA_ONLY 路径正文"
+    - "正式 .banyan/**"
+    - "banyan-framework/**"
+    - "既有项目目录移动、重命名、归并、整理"
+    - "Git identity 修改"
+    - "Git commit / tag / push / reset / clean / stash"
+
+inherited_constraints:
+  refactor_operational_evidence:
+    path: ".banyan-refactor/**"
+    role: "UPSTREAM_REFACTOR_OPERATIONAL_EVIDENCE"
+    legacy_inventory_eligible: false
+  construction_materials:
+    path: "榕树ai改造落地相关文档/**"
+    role: "REFRACTOR_CONSTRUCTION_MATERIAL"
+    legacy_inventory_eligible: false
+    note: "CURRENT 总纲/Stage Pack 可作为施工权威输入；ARCHIVE/AUDIT 不得误计为 Legacy 项目资产。"
+  existing_project_layout:
+    policy_for_stage01: "PRESERVE_IN_PLACE"
+    stage02_handoff_requirement: "Existing Project Layout Preservation Contract candidate must be explicitly handed off for Stage 02 architecture freeze."
+  secret_policy:
+    inherited_from_stage00: true
+    content_read_allowed: false
+    content_hash_allowed: false
+    content_copy_allowed: false
+    write_allowed: false
+
+conditional_artifacts:
+  EXECUTION_RUNBOOK.md:
+    required: true
+    reason: "Stage 01 是大规模只读 Discovery + 多矩阵生成，需明确扫描、去重、证据与退出门禁。"
+  MIGRATION_MAP.md:
+    required: false
+    status: "NOT_APPLICABLE"
+    reason: "本阶段只生成 01-G 初版迁移 Master Map / Preservation Coverage，不执行正式迁移；避免与 Stage 07 的 Migration Coordination 重复设计。"
+  COMPATIBILITY_MATRIX.md:
+    required: false
+    status: "NOT_APPLICABLE"
+    reason: "本阶段不切换 Adapter/Runtime，不做兼容切换。"
+  DATA_RECONCILIATION.md:
+    required: false
+    status: "NOT_APPLICABLE"
+    reason: "本阶段不迁移 SQLite/历史结构化数据。"
+
+exit_gate:
+  hard_metrics:
+    SILENTLY_IGNORED_ASSET: 0
+    UNSCANNED_GOVERNANCE_ROOT_WITHOUT_REASON: 0
+    HIGH_RISK_UNCLASSIFIED: 0
+  must_pass:
+    - "AI Asset Inventory 完成。"
+    - "Legacy AI Capability Discovery 完成。"
+    - "AI Generated Artifact Inventory 完成。"
+    - "Operational Artifact Inventory 完成。"
+    - "所有未知项进入 UNCLASSIFIED，并有 candidate owner / next-stage plan。"
+    - "高价值 Legacy Capability 均有 candidate_owner_stage / candidate_target_capability / candidate_action / confidence / open_question。"
+    - "Canonical Artifact 均有 candidate_source_role / keep_or_migrate / integrity_risk。"
+    - "初版 Capability Preservation Matrix 完成。"
+    - "初版 Artifact Migration Matrix 完成。"
+    - "Git Identity / Commit Practice Inventory 完成。"
+    - "Stage 01 未冻结 Stage 02/03/05/07 所属 Contract。"
+    - "无项目文件越界写；13 个 Secret 继续 metadata-only。"
+    - "Bootstrap Register/Trace 已更新。"
+    - "真实 ACCEPTANCE_REPORT.md + NEXT_STAGE_HANDOFF 已生成。"
+    - "Stage 02 Entry Gate = PASS。"
+
+stop_conditions:
+  - "Stage 00 Entry Evidence/Hash/Handoff 无法验证或已明显失效且影响安全边界。"
+  - "发现 Protected Paths 与真实 Repository 严重不一致，继续扫描可能造成 Secret/安全风险。"
+  - "发现需要读取 Secret 正文才能分类。"
+  - "发现必须移动/改写项目目录才能完成 Discovery。"
+  - "发现新的高风险治理根但无法安全读取或无法解释其边界。"
+  - "发现 Stage 01 需要执行架构冻结、Legacy 迁移或正式 .banyan 初始化才能继续。"
+  - "任何 DROP_WITH_APPROVAL 被试图自动执行。"
+
+handoff_to: "02"

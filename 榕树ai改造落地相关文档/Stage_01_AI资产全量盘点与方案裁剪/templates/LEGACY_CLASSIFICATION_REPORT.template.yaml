@@ -1,0 +1,21 @@
+schema_version: "stage01-bootstrap-v1"
+stage_id: "01"
+summary:
+  total_assets: null
+  KEEP: null
+  MERGE: null
+  SPLIT: null
+  REWRITE: null
+  REFERENCE: null
+  LEGACY: null
+  IGNORE: null
+  UNCLASSIFIED: null
+items:
+  - asset_id: null
+    path: null
+    disposition: null
+    reason: null
+    confidence: null
+    evidence_refs: []
+    candidate_owner_stage: null
+    next_stage_plan: null

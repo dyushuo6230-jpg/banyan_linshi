@@ -1,0 +1,17 @@
+schema_version: stage20-v1
+architecture:
+  frontend: ANT_DESIGN_PRO_SIMPLE
+  web_host: GO_GIN_GO_EMBED
+  runtime_bridge: LOCAL_STDIO
+  runtime_core: PYTHON_STAGE15_RUNTIME
+project_instance:
+  path: .banyan
+  state: PILOT
+bootstrap_workspace:
+  path: .banyan-refactor
+  lifecycle: TEMPORARY_BOOTSTRAP
+carried_blockers:
+  - id: CON-002
+    state: TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY
+  - id: FINAL_ACTIVATION
+    state: NOT_AUTHORIZED

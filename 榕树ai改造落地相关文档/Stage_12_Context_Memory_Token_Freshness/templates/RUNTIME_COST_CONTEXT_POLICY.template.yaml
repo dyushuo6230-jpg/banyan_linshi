@@ -1,0 +1,17 @@
+schema_version: stage12-v1
+fields:
+  - task_profile
+  - execution_mode
+  - budget_class
+  - context_priority
+  - cache_policy
+  - compaction_policy
+  - escalation_policy
+  - quality_gate
+  - usage_telemetry_fields
+forbidden_in_generic_core:
+  - vendor_name
+  - proprietary_model_name
+  - fixed_price
+  - fixed_token_percentage
+  - product_selector_name

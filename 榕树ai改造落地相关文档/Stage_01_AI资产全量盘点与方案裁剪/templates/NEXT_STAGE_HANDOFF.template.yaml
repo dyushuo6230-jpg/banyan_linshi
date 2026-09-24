@@ -1,0 +1,19 @@
+upstream_stage: "01"
+run_id: null
+acceptance_result: null
+actual_artifacts_to_consume: []
+evidence_to_trust: []
+unresolved_risks: []
+open_architecture_questions: []
+inherited_constraints:
+  secret_metadata_only_paths: "inherit from Stage 00"
+  refactor_operational_evidence: ".banyan-refactor/**"
+  construction_materials: "榕树ai改造落地相关文档/**"
+  existing_project_layout_preservation_candidate:
+    existing_project: "PRESERVE_IN_PLACE"
+    banyan: "DISCOVER + MAP + CLASSIFY"
+    relayout: "EXPLICIT_MIGRATION_ONLY"
+next_stage_entry_gate:
+  stage: "02"
+  result: null
+  reason: null

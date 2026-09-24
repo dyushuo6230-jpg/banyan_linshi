@@ -1,0 +1,16 @@
+upstream_stage: "03"
+run_id: null
+acceptance_result: null
+frozen_contracts: []
+frozen_schemas: []
+deferred_with_owner: []
+open_risks: []
+inherited_constraints:
+  existing_project: "PRESERVE_IN_PLACE"
+  secret_recovery_coverage: "PARTIAL_APPROVED"
+  refactor_evidence: ".banyan-refactor/**"
+stage04_inputs: []
+next_stage_entry_gate:
+  stage: "04"
+  result: null
+  execution_authorized: false

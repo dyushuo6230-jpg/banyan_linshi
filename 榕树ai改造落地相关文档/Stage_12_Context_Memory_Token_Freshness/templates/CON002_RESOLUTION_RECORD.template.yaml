@@ -1,0 +1,12 @@
+schema_version: stage12-v1
+conflict_id: CON-002
+status: null
+candidates: []
+authority_analysis: []
+version_status_analysis: []
+supersession_analysis: []
+lineage_analysis: []
+freshness_observations: []
+resolution: null
+evidence_refs: []
+remaining_blockers: []

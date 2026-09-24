@@ -1,0 +1,15 @@
+schema_version: stage13-v1
+entries:
+  - record_id: null
+    subject_id: null
+    classification: null
+    observed_result: null
+    expected_result: null
+    evidence_refs: []
+    disposition: null
+allowed_classifications:
+  - FALSE_POSITIVE
+  - FALSE_NEGATIVE
+  - AMBIGUOUS
+  - INSUFFICIENT_EVIDENCE
+  - EVALUATION_REGRESSION

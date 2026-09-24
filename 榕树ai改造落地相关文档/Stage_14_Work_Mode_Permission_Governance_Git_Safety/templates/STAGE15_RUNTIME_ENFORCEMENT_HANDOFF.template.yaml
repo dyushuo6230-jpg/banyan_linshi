@@ -1,0 +1,14 @@
+schema_version: stage14-v1
+required_inputs:
+  - action_risk_policy
+  - permission_decision_schema
+  - authorization_record_schema
+  - work_mode_permission_matrix
+  - protected_write_gate
+  - git_identity_safety
+  - git_worktree_safety
+  - semantic_commit_authorization
+  - git_operation_permission_matrix
+  - audit_event_requirements
+runtime_may_weaken_policy: false
+stage14_executes_actions: false

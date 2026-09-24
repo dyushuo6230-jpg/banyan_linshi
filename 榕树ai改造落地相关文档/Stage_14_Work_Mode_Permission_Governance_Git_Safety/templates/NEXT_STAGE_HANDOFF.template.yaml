@@ -1,0 +1,13 @@
+upstream_stage: "14"
+run_id: null
+acceptance_result: null
+policy_contracts: []
+git_safety_contracts: []
+protected_action_contracts: []
+stage15_runtime_enforcement_handoff: null
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "15"
+  result: null
+  execution_authorized: false
+stop_after_stage: "14"

@@ -1,0 +1,11 @@
+schema_version: stage08-v1
+applications:
+  - application_id: null
+    enablement: DISABLED
+    surface_scope: []
+    shared_component_scope: []
+    coverage: NONE
+allowed_enablement:
+  - DISABLED
+  - ENABLED
+  - PARTIAL

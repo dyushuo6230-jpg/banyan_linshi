@@ -1,0 +1,10 @@
+schema_version: stage16-v1
+preflight:
+  action_id: null
+  risk_class: null
+  permission_result: null
+  reason_codes: []
+  failed_or_missing_preconditions: []
+  evidence_refs: []
+  authorization_ref: null
+ui_may_upgrade_result: false

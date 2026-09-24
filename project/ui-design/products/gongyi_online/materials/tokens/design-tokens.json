@@ -1,0 +1,489 @@
+{
+  "color": {
+    "brand-gold": {
+      "$value": "#FFC31B",
+      "$type": "color",
+      "$description": "品牌金 / 顶栏主色",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "brand-gold-deep": {
+      "$value": "#FEC001",
+      "$type": "color",
+      "$description": "金顶略深",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "brand-gold-soft": {
+      "$value": "#FFD854",
+      "$type": "color",
+      "$description": "浅金高光",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "surface": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$description": "卡片 / 底栏 / 输入条",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "surface-page": {
+      "$value": "#F6F6F6",
+      "$type": "color",
+      "$description": "页底",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "text-primary": {
+      "$value": "#222222",
+      "$type": "color",
+      "$description": "主文案",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "text-muted": {
+      "$value": "#989898",
+      "$type": "color",
+      "$description": "次文案",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "inverse": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$description": "反白字",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "price": {
+      "$value": "#FD5800",
+      "$type": "color",
+      "$description": "现价",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "promo": {
+      "$value": "#F87000",
+      "$type": "color",
+      "$description": "促销条 / 描边 CTA",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "accent-lime": {
+      "$value": "#A6F342",
+      "$type": "color",
+      "$description": "底栏选中填色",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "accent-lime-hi": {
+      "$value": "#EAFF76",
+      "$type": "color",
+      "$description": "底栏高光",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "search-cta": {
+      "$value": "#111111",
+      "$type": "color",
+      "$description": "搜索实心按钮",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "border": {
+      "$value": "#E8E8E8",
+      "$type": "color",
+      "$description": "细分割",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    }
+  },
+  "typography": {
+    "font-family": {
+      "display": {
+        "$value": "PingFang SC, -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif",
+        "$type": "fontFamily",
+        "$description": "列表/首页双列现价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": "PingFang SC, ui-monospace, monospace",
+        "$type": "fontFamily",
+        "$description": "「已售 xx 件」、划线价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "font-size": {
+      "display": {
+        "$value": "20px",
+        "$type": "dimension",
+        "$description": "列表/首页双列现价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "title": {
+        "$value": "17px",
+        "$type": "dimension",
+        "$description": "导航标题「商品分类」",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "body": {
+        "$value": "14px",
+        "$type": "dimension",
+        "$description": "商品名、工具列表",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$description": "副标题、底栏文案",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": "11px",
+        "$type": "dimension",
+        "$description": "「已售 xx 件」、划线价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "price-xl": {
+        "$value": "28px",
+        "$type": "dimension",
+        "$description": "详情主价（UI-DEC-003）",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "font-weight": {
+      "display": {
+        "$value": 600,
+        "$type": "fontWeight",
+        "$description": "列表/首页双列现价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "title": {
+        "$value": 600,
+        "$type": "fontWeight",
+        "$description": "导航标题「商品分类」",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "body": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "商品名、工具列表",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "副标题、底栏文案",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "「已售 xx 件」、划线价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "price-xl": {
+        "$value": 600,
+        "$type": "fontWeight",
+        "$description": "详情主价（UI-DEC-003）",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "line-height": {
+      "body": {
+        "$value": 1.4,
+        "$type": "number",
+        "$description": "商品名、工具列表",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "letter-spacing": {
+      "display": {
+        "$value": 0,
+        "$type": "dimension",
+        "$description": "列表/首页双列现价",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "price-xl": {
+        "$value": 0,
+        "$type": "dimension",
+        "$description": "详情主价（UI-DEC-003）",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "4": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "8": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "12": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "24": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "32": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "48": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "64": {
+      "$value": "64px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    }
+  },
+  "radius": {
+    "sm": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "md": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "lg": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "pill": {
+      "$value": "999px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    }
+  },
+  "shadow": {
+    "card": {
+      "$value": "0 4px 16px rgba(0,0,0,0.06)",
+      "$type": "shadow",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "tab": {
+      "$value": "0 -0.5px 0 #EEEEEE",
+      "$type": "shadow",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    }
+  },
+  "$extensions": {
+    "anydesign": {
+      "source": "docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/",
+      "captured_at": "2026-09-18",
+      "method": "generated from design.md by scripts/build_tokens_json.py",
+      "spec": "W3C Design Tokens Community Group 2025.10"
+    }
+  }
+}

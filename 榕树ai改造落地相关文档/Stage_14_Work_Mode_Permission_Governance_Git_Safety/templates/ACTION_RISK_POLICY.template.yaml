@@ -1,0 +1,13 @@
+schema_version: stage14-v1
+classes:
+  READ_ONLY:
+    minimum_decision_level: L0
+  REVERSIBLE_WRITE:
+    minimum_decision_level: L1
+  CANONICAL_WRITE:
+    minimum_decision_level: L3
+  PROTECTED_WRITE:
+    minimum_decision_level: L3
+  IRREVERSIBLE_OR_EXTERNAL:
+    minimum_decision_level: L3
+unknown_risk: BLOCK_NEEDS_INPUT

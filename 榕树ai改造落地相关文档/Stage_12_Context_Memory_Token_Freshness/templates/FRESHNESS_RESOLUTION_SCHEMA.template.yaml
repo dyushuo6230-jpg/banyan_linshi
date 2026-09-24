@@ -1,0 +1,12 @@
+schema_version: stage12-v1
+resolution_order:
+  - authority
+  - explicit_version_status
+  - supersession
+  - approved_change_lineage
+  - source_role
+  - freshness_observation
+  - conflict_state
+  - human_owner_decision
+mtime_only_resolution_allowed: false
+silent_winner_allowed: false

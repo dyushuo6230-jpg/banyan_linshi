@@ -1,0 +1,8 @@
+schema_version: stage07-v1
+edges:
+  - source_artifact_id: null
+    target_artifact_id: null
+    relationship: null
+    current_validity: null
+    strategy: null
+    post_migration_validation: null

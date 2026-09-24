@@ -1,0 +1,34 @@
+schema_version: stage14-v1
+operations:
+  status:
+    risk: READ_ONLY
+    stage14_execute: false
+    stage15_executor_candidate: false
+  diff:
+    risk: READ_ONLY
+    stage14_execute: false
+    stage15_executor_candidate: false
+  add:
+    risk: REVERSIBLE_WRITE
+    stage14_execute: false
+    stage15_executor_candidate: true
+  commit:
+    risk: PROTECTED_WRITE
+    stage14_execute: false
+    stage15_executor_candidate: true
+  reset:
+    risk: PROTECTED_WRITE
+    stage14_execute: false
+    stage15_executor_candidate: true
+  stash:
+    risk: REVERSIBLE_WRITE
+    stage14_execute: false
+    stage15_executor_candidate: true
+  rebase:
+    risk: PROTECTED_WRITE
+    stage14_execute: false
+    stage15_executor_candidate: true
+  push:
+    risk: IRREVERSIBLE_OR_EXTERNAL
+    stage14_execute: false
+    stage15_executor_candidate: true

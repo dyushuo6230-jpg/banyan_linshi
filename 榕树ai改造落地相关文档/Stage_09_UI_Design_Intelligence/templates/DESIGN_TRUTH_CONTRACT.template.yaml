@@ -1,0 +1,8 @@
+schema_version: stage09-v1
+sections:
+  verified_facts: []
+  approved_interpretations: []
+  approved_constraints: []
+  known_unknowns: []
+  conflicts: []
+auto_promote_to_ui_spec: false

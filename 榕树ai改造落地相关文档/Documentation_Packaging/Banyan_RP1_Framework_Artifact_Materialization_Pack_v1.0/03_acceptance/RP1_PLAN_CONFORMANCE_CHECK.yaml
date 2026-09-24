@@ -1,0 +1,33 @@
+schema_version: rp1-plan-conformance-check-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+runtime_authority: false
+semantic_authority: false
+registry_authority: false
+stage: RP1
+baseline_id: BANYAN-UNIQUE-REMEDIATION-BASELINE-2026-09-21-V2
+EXPECTED: 43
+SHADOW_MATERIALIZED: 43
+SEMANTIC_EQUIVALENCE_FAILURE: 0
+UNAUTHORIZED_NEW_SEMANTIC: 0
+DANGLING_REFERENCE_INTRODUCED: 0
+R0_RESULT: PASS
+R1_RESULT: PASS
+RP1_TEST_RESULT: PASS
+R0_R1_AUTHORITY_CHANGED: 0
+DOT_BANYAN_CHANGED: 0
+DELETE_COUNT: 0
+LOADER_READS_ARTIFACTS: false
+WHEEL_INCLUDES_ARTIFACTS: false
+REGISTRY_CUTOVER: false
+RUNTIME_CUTOVER: false
+AUTHORITY_CUTOVER: false
+CLI_CUTOVER: false
+ARCHITECTURE_DRIFT: 0
+UNPLANNED_EQUIVALENT_SUBSTITUTION: 0
+PLAN_CONFORMANCE_CHECK: PASS
+RP1_STATUS: PASS
+notes:
+- RP1 created NON_AUTHORITATIVE_SHADOW_MATERIALIZATION files only.
+- migration_artifacts.yaml remains the R1 semantic authority until RP2.
+- This check does not authorize RP2.

@@ -1,0 +1,15 @@
+schema_version: "stage01-bootstrap-v1"
+stage_id: "01"
+candidates:
+  - capability_or_asset_id: null
+    candidate_boundary: null
+    generic_semantics: null
+    project_specific_dependencies: []
+    hardcoded_paths: []
+    business_specific_terms: []
+    cross_project_evidence: []
+    purity_risk: null
+    required_abstraction: null
+    candidate_owner_stage: "02"
+    confidence: null
+    open_questions: []

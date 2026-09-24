@@ -1,0 +1,17 @@
+upstream_stage: "16"
+run_id: null
+acceptance_result: null
+control_plane:
+  implemented: null
+  local_only: true
+  runtime_policy_bypass: false
+activation_readiness:
+  state: null
+  dot_banyan_created: false
+stage17_handoff: null
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "17"
+  result: null
+  execution_authorized: false
+stop_after_stage: "16"

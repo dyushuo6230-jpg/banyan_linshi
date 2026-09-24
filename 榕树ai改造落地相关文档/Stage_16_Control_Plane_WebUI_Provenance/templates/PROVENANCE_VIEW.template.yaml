@@ -1,0 +1,12 @@
+schema_version: stage16-v1
+provenance:
+  stable_id: null
+  classification: null
+  source_role: null
+  authority: null
+  version: null
+  status: null
+  freshness: UNKNOWN
+  provenance: UNKNOWN
+  source_refs: []
+  related_refs: []

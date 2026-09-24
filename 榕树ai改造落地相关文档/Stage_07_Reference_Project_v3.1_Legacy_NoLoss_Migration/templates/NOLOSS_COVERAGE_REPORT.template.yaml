@@ -1,0 +1,17 @@
+schema_version: stage07-v1
+coverage:
+  capabilities: null
+  canonical_artifacts: null
+  operational_artifacts: null
+  reference_edges: null
+  legacy_asset_dispositions: null
+  secret_protection: null
+hard_metrics:
+  UNMAPPED_HIGH_VALUE_CAPABILITY: null
+  UNMAPPED_CANONICAL_ARTIFACT: null
+  UNMAPPED_OPERATIONAL_ARTIFACT: null
+  REFERENCE_EDGE_WITHOUT_MIGRATION_STRATEGY: null
+  LEGACY_ASSET_WITHOUT_DISPOSITION: null
+  UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: null
+  LEGACY_DELETE_OR_RETIRE_WITHOUT_AUTHORIZATION: null
+  CANONICAL_APPLY_EXECUTED_IN_STAGE07: null

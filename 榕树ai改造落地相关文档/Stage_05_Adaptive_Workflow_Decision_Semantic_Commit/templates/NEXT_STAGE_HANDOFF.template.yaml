@@ -1,0 +1,14 @@
+upstream_stage: "05"
+run_id: null
+acceptance_result: null
+workflow_contracts: []
+decision_contracts: []
+semantic_commit_contracts: []
+con001_result: null
+open_risks: []
+stage06_inputs: []
+next_stage_entry_gate:
+  stage: "06"
+  result: null
+  execution_authorized: false
+stop_after_stage: "05"

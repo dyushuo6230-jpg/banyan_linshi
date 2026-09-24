@@ -1,0 +1,14 @@
+schema_version: stage09-v1
+node:
+  id: null
+  parent_id: null
+  type: null
+  bounds: null
+  visible: true
+  children: []
+  style: {}
+  asset_ref: null
+  source_ref: null
+  confidence: null
+  provenance: null
+provider_specific_required_fields: false

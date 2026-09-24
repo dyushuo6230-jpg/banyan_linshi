@@ -1,0 +1,105 @@
+stage_id: "07"
+title: "Reference Project v3.1 Legacy / No-Loss Migration"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "NOLOSS_SHADOW_MIGRATION_LOW_TOKEN"
+
+upstream:
+  stage: "06"
+  run_id: "stage06-20260920T151243Z"
+  acceptance: "PASS_CHANGE_WORKSPACE_AND_CANONICAL_APPLY_CONTRACT_FREEZE"
+  entry_gate: "PASS_FOR_STAGE07_REFERENCE_MIGRATION_DESIGN_WITH_INHERITED_BLOCKERS"
+
+owned_outcomes:
+  - "Legacy Capability Migration Matrix"
+  - "Legacy Artifact Migration Matrix"
+  - "Legacy Workflow Compatibility Map"
+  - "v3.1 Governance Compatibility Contract"
+  - "Reference Integrity Migration Map"
+  - "Generated / Operational Artifact Preservation Plan"
+  - "Legacy Source Role Migration Map"
+  - "Legacy Provider / Compatibility Mapping"
+  - "Shadow Project Instance Migration Model"
+  - "Shadow Canonical Apply Plan"
+  - "No-Loss Validation Report"
+  - "Rollback / Recovery Plan"
+  - "Stage 08 handoff"
+
+not_owned:
+  - "real canonical migration"
+  - "final .banyan activation"
+  - "legacy deletion or retirement"
+  - "business code migration"
+  - "provider runtime activation"
+  - "CON-002 adjudication"
+  - "PRD/UI_SPEC governance redesign (Stage 08)"
+
+hard_invariants:
+  no_loss_is_primary_gate: true
+  preserve_existing_project_in_place: true
+  delete_legacy_assets_in_stage07: false
+  regenerate_unknown_provenance_artifact: false
+  provider_workspace_is_not_canonical: true
+  final_dot_banyan_activation: false
+  real_canonical_apply: false
+  bootstrap_single_writable_truth: true
+
+allowed_migration_actions:
+  - PRESERVE_IN_PLACE
+  - MAP_TO_CORE
+  - MAP_TO_PROJECT_INSTANCE
+  - MAP_TO_PROVIDER
+  - MAP_TO_COMPATIBILITY
+  - INDEX_ONLY
+  - DERIVED_REBUILDABLE
+  - KEEP_HISTORICAL
+  - DEFER_WITH_OWNER
+
+forbidden_default_actions:
+  - DELETE
+  - RETIRE
+  - REGENERATE_CANONICAL
+  - MOVE_EXISTING_PROJECT
+  - ACTIVATE_PROVIDER
+  - SWITCH_WRITABLE_TRUTH
+
+token_policy:
+  repository_full_rescan: false
+  git_history_full_reanalysis: false
+  full_asset_body_reload: false
+  evidence_on_demand_triggers:
+    - NOLOSS_GAP
+    - REFERENCE_MAPPING_GAP
+    - LEGACY_STATUS_AMBIGUITY
+    - COMPATIBILITY_GAP
+    - DERIVED_REBUILDABILITY_UNKNOWN
+    - SOURCE_ROLE_COLLISION
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/07/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical project docs mutation"
+    - "business code / SQL / production config"
+    - "legacy prompt/rule/skill mutation"
+    - "legacy change workspace mutation"
+    - "13 Secret bodies"
+    - "final .banyan creation/activation"
+    - "Git execution"
+    - "Stage 08 execution"
+
+exit_gate:
+  validations: "V07-01..V07-22"
+  hard_metrics:
+    UNMAPPED_HIGH_VALUE_CAPABILITY: 0
+    UNMAPPED_CANONICAL_ARTIFACT: 0
+    UNMAPPED_OPERATIONAL_ARTIFACT: 0
+    REFERENCE_EDGE_WITHOUT_MIGRATION_STRATEGY: 0
+    LEGACY_ASSET_WITHOUT_DISPOSITION: 0
+    UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+    LEGACY_DELETE_OR_RETIRE_WITHOUT_AUTHORIZATION: 0
+    CANONICAL_APPLY_EXECUTED_IN_STAGE07: 0
+  next_stage: "08"

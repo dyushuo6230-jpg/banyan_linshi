@@ -1,0 +1,23 @@
+artifacts:
+  - artifact_id: ""
+    artifact_type: ""
+    origin: "" # LEGACY_MIGRATION | REFRACTOR_ADDITION | GENERALIZED | NEW_PROPOSAL
+    legacy_source: null
+    refactor_source: null
+    current_framework_source: null
+    target_authority: ""
+    target_registry: ""
+    runtime_consumer: null
+    provider_binding: null
+    project_binding: null
+    implementation_status: ""
+    compatibility_status: ""
+    semantic_change: false
+    token_context_policy:
+      registry_first: true
+      targeted_read: true
+      summary_allowed: true
+      canonical_fallback_required: false
+    validation: []
+    status: ""
+    missing_layers: []

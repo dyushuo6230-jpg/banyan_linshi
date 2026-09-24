@@ -1,0 +1,73 @@
+# Bootstrap template until Stage 03 freezes the final trace schema.
+schema_version: "bootstrap-v1"
+charter_version: "1.9.1"
+
+bootstrap:
+  bootstrap_only: true
+  refactor_control_root: null
+  run_id: null
+  future_canonical_path: ".banyan/migrations/BANYAN_REFACTOR_TRACE.yaml"
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+  canonical_writable_truth_active: false
+
+requirements:
+  - requirement_id: "BANYAN-SAFE-001"
+    description: "No migration starts before a verifiable repository safety baseline exists."
+    owner_stage: ["00"]
+    design_artifacts:
+      - "00_改造安全基线与仓库保护.md"
+    implementation_artifacts: []
+    validation_artifacts: []
+    evidence: []
+    capability_state: "DEFINED"
+    activation_mode: "OFF"
+    status: "OPEN"
+
+  - requirement_id: "BANYAN-SAFE-002"
+    description: "Business code, canonical truth and legacy governance are protected from Stage 00 writes."
+    owner_stage: ["00"]
+    design_artifacts:
+      - "00-A_Repository_Baseline与Protected_Paths.md"
+    implementation_artifacts: []
+    validation_artifacts: []
+    evidence: []
+    capability_state: "DEFINED"
+    activation_mode: "OFF"
+    status: "OPEN"
+
+  - requirement_id: "BANYAN-SAFE-003"
+    description: "Dirty worktree state has a recoverable checkpoint before refactor work."
+    owner_stage: ["00"]
+    design_artifacts:
+      - "00-B_Snapshot_Hash_Checkpoint与Rollback.md"
+    implementation_artifacts: []
+    validation_artifacts: []
+    evidence: []
+    capability_state: "DEFINED"
+    activation_mode: "OFF"
+    status: "OPEN"
+
+  - requirement_id: "BANYAN-SAFE-004"
+    description: "Early refactor state uses a bootstrap-only Register/Trace with a future lineage-preserving migration to one canonical writable truth."
+    owner_stage: ["00"]
+    design_artifacts:
+      - "00_改造安全基线与仓库保护.md"
+    implementation_artifacts: []
+    validation_artifacts: []
+    evidence: []
+    capability_state: "DEFINED"
+    activation_mode: "OFF"
+    status: "OPEN"
+
+  - requirement_id: "BANYAN-SAFE-005"
+    description: "Stage 00 does not modify Git identity and does not create automatic commits."
+    owner_stage: ["00"]
+    design_artifacts:
+      - "00-B_Snapshot_Hash_Checkpoint与Rollback.md"
+    implementation_artifacts: []
+    validation_artifacts: []
+    evidence: []
+    capability_state: "DEFINED"
+    activation_mode: "OFF"
+    status: "OPEN"

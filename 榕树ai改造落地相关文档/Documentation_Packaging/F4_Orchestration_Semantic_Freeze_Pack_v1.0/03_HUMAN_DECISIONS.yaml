@@ -1,0 +1,195 @@
+pack: F4_Orchestration_Semantic_Freeze_Pack_v1.0
+status: HUMAN_APPROVED
+architecture_freeze: PASS
+implementation_authorized: false
+decisions:
+- id: F4-D01
+  status: HUMAN_APPROVED
+  decision: Governed Goal-Oriented Orchestration; Goal/Outcome first.
+- id: F4-D02
+  status: HUMAN_APPROVED
+  decision: Semantic completeness does not require full pipeline; reuse/skip/lazy/partial
+    resolution allowed.
+- id: F4-D03
+  status: HUMAN_APPROVED
+  decision: Single semantic model with FAST/NORMAL/CONTROLLED profiles; mandatory
+    governance never bypassed.
+- id: F4-D04
+  status: HUMAN_APPROVED
+  decision: Resolution and Execution separated; Resolution produces Execution Plan.
+- id: F4-D05
+  status: HUMAN_APPROVED
+  decision: Resolved Truth/Governance precedes executable binding.
+- id: F4-D06
+  status: HUMAN_APPROVED
+  decision: Capability-oriented governed workflow graph; no fixed Skill sequence.
+- id: F4-D07
+  status: HUMAN_APPROVED
+  decision: Late-bound Role/Skill/Provider/Binding resolution.
+- id: F4-D08
+  status: HUMAN_APPROVED
+  decision: Dependency-aware partial invalidation and re-resolution.
+- id: F4-D09
+  status: HUMAN_APPROVED
+  decision: Invocation/Node/Workflow/Goal success are distinct.
+- id: F4-D10
+  status: HUMAN_APPROVED
+  decision: Resolution ownership and precedence explicit.
+- id: F4-D11
+  status: HUMAN_APPROVED
+  decision: RoleDefinition one type with planes; assignments separate.
+- id: F4-D12
+  status: HUMAN_APPROVED
+  decision: RoleAssignment binds subject/scope/time.
+- id: F4-D13
+  status: HUMAN_APPROVED
+  decision: Human/AI Agent/Git Identity/Execution Client/Provider/Tool are not automatically
+    RoleDefinitions.
+- id: F4-D14
+  status: HUMAN_APPROVED
+  decision: Functional Role is portable semantic responsibility, not job/tool/provider/technology/person.
+- id: F4-D15
+  status: HUMAN_APPROVED
+  decision: RoleAssignment scoped and non-global by default.
+- id: F4-D16
+  status: HUMAN_APPROVED
+  decision: Role/Assignment grants neither Permission nor Source Authority.
+- id: F4-D17
+  status: HUMAN_APPROVED
+  decision: Role planes = SOURCE/FUNCTIONAL/PARTICIPATION_GOVERNANCE.
+- id: F4-D18
+  status: HUMAN_APPROVED
+  decision: Capability requirements originate from Goal/Node/Governance/Validation.
+- id: F4-D19
+  status: HUMAN_APPROVED
+  decision: Functional Role↔Capability is many-to-many responsibility fit.
+- id: F4-D20
+  status: HUMAN_APPROVED
+  decision: Declared Skill capability implementation does not imply runtime eligibility.
+- id: F4-D21
+  status: HUMAN_APPROVED
+  decision: Skill eligibility is contextual.
+- id: F4-D22
+  status: HUMAN_APPROVED
+  decision: Separate responsibility, Skill and Provider resolvers.
+- id: F4-D23
+  status: HUMAN_APPROVED
+  decision: NO_ELIGIBLE_SKILL alone does not automatically block.
+- id: F4-D24
+  status: HUMAN_APPROVED
+  decision: Functional Role catalog is stable, governed, discoverable, versionable.
+- id: F4-D25
+  status: HUMAN_APPROVED
+  decision: Roles derive from responsibility/capability clusters, handoff boundary
+    and validation responsibility.
+- id: F4-D26
+  status: HUMAN_APPROVED
+  decision: Role granularity = minimal coherent responsibility boundary; no God Role.
+- id: F4-D27
+  status: HUMAN_APPROVED
+  decision: Executable Functional Node has one Primary Functional Role by default.
+- id: F4-D28
+  status: HUMAN_APPROVED
+  decision: RoleDefinition must be self-describing.
+- id: F4-D29
+  status: HUMAN_APPROVED
+  decision: Role catalog stable but governed-extensible.
+- id: F4-D30
+  status: HUMAN_APPROVED
+  decision: Explicit typed handoff when responsibility changes.
+- id: F4-D31
+  status: HUMAN_APPROVED
+  decision: Capability and Constraint are separate.
+- id: F4-D32
+  status: HUMAN_APPROVED
+  decision: Cross-cutting governance does not automatically create a Role; Standards
+    Steward may be a Role.
+- id: F4-D33
+  status: HUMAN_APPROVED
+  decision: Roles are task-responsibility concepts, not project/app/language/stack/tool/provider/person/Git/job
+    concepts.
+- id: F4-D34
+  status: HUMAN_APPROVED
+  decision: Roles workflow-independent; workflow graph dynamic.
+- id: F4-D35
+  status: HUMAN_APPROVED
+  decision: Capability Gap typed/localized; no approximate substitution/invention.
+- id: F4-D36
+  status: HUMAN_APPROVED
+  decision: Engineering Standards Steward maintains standards; ordinary tasks consume
+    applicable standards.
+- id: F4-D37
+  status: HUMAN_APPROVED
+  decision: Contextual Execution Constraint Resolution precedes node execution; mandatory
+    constraints cannot be bypassed.
+- id: F4-D38
+  status: HUMAN_APPROVED
+  decision: Missing Engineering Standards modes AUTO/CONTINUE/REQUIRE.
+- id: F4-D39
+  status: HUMAN_APPROVED
+  decision: Skill = stable reusable optional execution method.
+- id: F4-D40
+  status: HUMAN_APPROVED
+  decision: Skill qualification based on method value; Legacy may split/merge/generalize/reclassify.
+- id: F4-D41
+  status: HUMAN_APPROVED
+  decision: Capability Family architecture distinguishes functional families from
+    platform/runtime service domains.
+- id: F4-D42
+  status: HUMAN_APPROVED
+  decision: Functional Role uses dynamic capability composition, not an internal pipeline.
+- id: F4-D43
+  status: HUMAN_APPROVED
+  decision: Core Functional Role catalog baseline frozen.
+- id: F4-D44
+  status: HUMAN_APPROVED
+  decision: Skill catalog architecture/qualification/scope boundary frozen; domain
+    catalog deferred.
+- id: F4-D45
+  status: HUMAN_APPROVED
+  decision: Adaptive Workflow Graph/Node/Resolution/Handoff/Validation semantics +
+    six quality guardrails frozen.
+- id: F4-D46
+  status: HUMAN_APPROVED
+  decision: One Graph Runtime with Orchestration Kernel, Goal-Oriented Families, Reusable
+    Subworkflows.
+- id: F4-D47
+  status: HUMAN_APPROVED
+  decision: Semantic Design Coverage extends beyond Role/Capability/Skill/Workflow;
+    every Legacy value needs owner or explicit retirement reason.
+- id: F4-D48
+  status: HUMAN_APPROVED
+  decision: Engineering Standards are distinct governed semantic domain; no StandardDefinition
+    added.
+- id: F4-D49
+  status: HUMAN_APPROVED
+  decision: Workflow Atom is composition concept, not a new DefinitionArtifact.
+cross_stage_gates:
+- id: CROSS-STAGE-GATE-01
+  status: HUMAN_APPROVED
+  name: Banyan Semantic Coverage Before Full Legacy Migration
+  rule: Full Legacy Semantic Migration / Authority Cutover / Canonical Rewrite / Legacy
+    Retirement are forbidden until required semantic domains reach Architecture Freeze
+    or an explicitly approved equivalent owner-stage gate.
+  required_domains:
+  - Role
+  - Capability
+  - Skill
+  - Workflow
+  - Policy
+  - State Model
+  - Decision Protocol
+  - Template / Output Contract
+  - Provider Contract
+  - Engineering Standard
+  - Context
+  - Evidence / Trace
+  - Binding / Assignment
+  - Permission / Authority
+  - Validation / Acceptance
+  - Compatibility / Migration
+  required_zero_conditions:
+  - UNROUTED_HIGH_VALUE_SEMANTIC
+  - SEMANTIC_OWNER_GAP
+  - UNRESOLVED_HIGH_IMPACT_TYPE_MAPPING
+  - SILENT_SEMANTIC_DROP

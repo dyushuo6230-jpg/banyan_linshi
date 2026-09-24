@@ -1,0 +1,10 @@
+schema_version: stage14-v1
+identity_source:
+  - git_user_name
+  - git_user_email
+missing_or_ambiguous: BLOCK_NEEDS_INPUT
+ai_may_modify_identity: false
+ai_may_use_author_override: false
+auto_alias_merge: false
+operator_inference: false
+identity_grants_permission_role: false

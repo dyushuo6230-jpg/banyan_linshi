@@ -1,0 +1,169 @@
+# Banyan Refactor Stage Manifest
+# Stage 00 is a planning/execution contract. It does NOT claim execution has occurred.
+# Authoritative charter: 榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.9.1.md
+
+stage_id: "00"
+title: "改造安全基线与仓库保护"
+pack_version: "1.9.1"
+charter:
+  name: "榕树AI多编辑器AI软件工程框架改造总纲指导方案"
+  version: "1.9.1"
+  freeze_status: "FINAL_FREEZE"
+
+status: "NOT_STARTED"
+activation_mode: "OFF"
+
+purpose:
+  - "在任何 Banyan 迁移、架构冻结、Legacy 改写、Runtime 建设之前，建立可验证、可恢复的仓库安全基线。"
+  - "固定 Git/工作区/Repository 边界、Discovery Scope、Protected Paths、受管文件 Integrity 与 Dirty-state Checkpoint。"
+  - "在正式 .banyan Project Instance 路径尚未冻结前，建立唯一可写的 Bootstrap Register / Trace。"
+  - "为 Stage 01 全仓 AI/能力/产物盘点提供可信 Handoff。"
+
+prerequisites:
+  - "能够读取目标 Repository。"
+  - "能够执行只读 Git 命令。"
+  - "执行器能够先在 Repository 外的系统临时目录捕获 Pre-stage 状态。"
+  - "执行器能够写入一个仅用于本次改造控制产物的 REFRACTOR_CONTROL_ROOT。"
+  - "不存在 unresolved merge/rebase/cherry-pick/revert/unmerged conflict；若存在则 BLOCK。"
+
+owned_capabilities:
+  - id: "REFRACTOR-SAFETY-BASELINE"
+    target_state: "VERIFIED"
+  - id: "REPOSITORY-PROTECTION"
+    target_state: "VERIFIED"
+  - id: "DISCOVERY-SCOPE-BASELINE"
+    target_state: "VERIFIED"
+  - id: "CHECKPOINT-AND-ROLLBACK-CONTROL"
+    target_state: "VERIFIED"
+  - id: "BOOTSTRAP-REFACTOR-STATE-TRACE"
+    target_state: "VERIFIED"
+
+consumed_capabilities: []
+
+required_inputs:
+  - "Repository Root：由 git rev-parse 或等价方式发现，不由计划文档硬编码。"
+  - "当前真实 Working Tree 状态。"
+  - "Git branch / HEAD / worktree / submodule / sparse-checkout / LFS 信息（若存在）。"
+  - "现有治理/AI/文档/工具/编辑器目录，仅用于保护与 Discovery Scope 识别。"
+  - "v1.9.1 CURRENT Charter 与阶段文档生成清单。"
+
+stage_owned_write_scope:
+  - "${REFRACTOR_CONTROL_ROOT}/**"
+  - "系统临时目录中的 Stage 00 bootstrap 临时文件"
+
+forbidden_writes:
+  - "业务代码"
+  - "生产配置"
+  - "数据库 migration / SQL"
+  - "正式 PRD / DEC / ADR / CR / UI_SPEC / Project Guide 正文"
+  - "Legacy Prompt / Rules / Skills 正文"
+  - ".cursor / .codex / .claude 等现有正式编辑器入口"
+  - "目标 Banyan Core / Adapter / Runtime 实现"
+  - ".banyan/migrations/**（Stage 00 不把 Bootstrap 提前冒充正式 Canonical Path）"
+  - ".gitignore（Stage 00 不为了隐藏 Control Root 修改它）"
+  - "Git user.name / user.email / Author override"
+
+forbidden_operations:
+  - "git reset --hard"
+  - "git clean"
+  - "自动 git stash"
+  - "自动 git checkout/restore 覆盖用户改动"
+  - "自动 git commit / tag / push"
+  - "使用 --author 或临时 git identity 覆盖当前环境身份"
+  - "删除/移动 Legacy 目录"
+  - "读取、复制或回显 Secret/Credential 原值"
+  - "跟随 symlink 写入 Repository 外部"
+
+planned_guidance_artifacts:
+  - "00_改造安全基线与仓库保护.md"
+  - "00-A_Repository_Baseline与Protected_Paths.md"
+  - "00-B_Snapshot_Hash_Checkpoint与Rollback.md"
+  - "STAGE_MANIFEST.yaml"
+  - "STAGE_PLAN.md"
+  - "PRECHECK_AND_SCOPE.md"
+  - "EXECUTION_RUNBOOK.md"
+  - "VALIDATION_AND_ROLLBACK.md"
+  - "ACCEPTANCE_REPORT.template.md"
+
+planned_execution_artifacts:
+  - "BASELINE_MANIFEST.yaml"
+  - "PROTECTED_PATHS_MANIFEST.yaml"
+  - "DISCOVERY_SCOPE_BASELINE.yaml"
+  - "CHECKPOINT_RECORD.yaml"
+  - "FILE_HASHES.sha256"
+  - "PRE_STAGE_GIT_STATUS.txt"
+  - "POST_STAGE_GIT_STATUS.txt"
+  - "MIGRATION_REGISTER.bootstrap.yaml"
+  - "BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  - "checkpoint/**（按真实 Dirty 状态条件生成）"
+  - "evidence/**"
+  - "ACCEPTANCE_REPORT.md（仅真实执行后生成）"
+
+bootstrap_state_contract:
+  control_root_variable: "REFRACTOR_CONTROL_ROOT"
+  preferred_env_variable: "BANYAN_REFACTOR_CONTROL_ROOT"
+  default_if_safe: "${REPO_ROOT}/.banyan-refactor/"
+  bootstrap_only: true
+  current_writable_truth:
+    - "MIGRATION_REGISTER.bootstrap.yaml"
+    - "BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  future_canonical_paths:
+    - ".banyan/migrations/MIGRATION_REGISTER.yaml"
+    - ".banyan/migrations/BANYAN_REFACTOR_TRACE.yaml"
+  future_migration_owner: "Stage 02/04 according to frozen Project Instance path and owner contract"
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+
+conditional_artifacts:
+  EXECUTION_RUNBOOK.md:
+    required: true
+    reason: "Stage 00 涉及多步只读发现、Checkpoint、Hash、范围保护、Validation 和 Handoff。"
+  MIGRATION_MAP.md:
+    required: false
+    status: "NOT_APPLICABLE"
+    reason: "Stage 00 不迁移 Legacy 或正式 Project Instance。Bootstrap→Canonical 的未来迁移义务记录在 Bootstrap State Contract 中，由后续 Owner Stage 执行。"
+  COMPATIBILITY_MATRIX.md:
+    required: false
+    status: "NOT_APPLICABLE"
+    reason: "Stage 00 不执行 Runtime/Adapter 兼容切换。"
+  DATA_RECONCILIATION.md:
+    required: false
+    status: "NOT_APPLICABLE"
+    reason: "Stage 00 不执行结构化历史数据/SQLite 迁移。"
+
+entry_gate:
+  must_pass:
+    - "Repository 可读且 Root 可可靠确定。"
+    - "CURRENT Charter = v1.9.1 FINAL_FREEZE。"
+    - "Stage Pack stage_id=00 且 pack_version=1.9.1。"
+    - "PACK_SHA256SUMS.txt 校验通过。"
+    - "执行器能够先在 Repository 外临时目录捕获 Pre-stage 状态。"
+    - "没有 unresolved Git operation/conflict。"
+
+exit_gate:
+  must_pass:
+    - "BASELINE_MANIFEST 完整且可解析。"
+    - "PROTECTED_PATHS_MANIFEST 完整，且不存在默认全仓可写。"
+    - "DISCOVERY_SCOPE_BASELINE 对 SCAN / METADATA_ONLY / EXCLUDE_WITH_REASON 全有事实依据。"
+    - "CHECKPOINT_RECORD recovery.coverage=COMPLETE；任何例外必须显式 BLOCK 或获用户明确批准且不得伪装成无风险。"
+    - "受管非 Secret 文件的 Hash/Integrity 策略已执行并记录。"
+    - "Secret/Credential 未被正文采集、复制进普通 checkpoint 或回显。"
+    - "Stage 00 自身未修改业务代码、Canonical Truth、Legacy Governance 正文或 Git Identity。"
+    - "Bootstrap Register / Trace 已创建或更新，并声明 future canonical path、lineage obligation、single-writable-truth rule。"
+    - "V00-01～V00-15 全部满足 PASS 条件。"
+    - "真实 ACCEPTANCE_REPORT.md 已生成，且不是模板复制。"
+    - "ACCEPTANCE_REPORT.md 包含 NEXT_STAGE_HANDOFF。"
+    - "Stage 01 Entry Gate = PASS。"
+
+stop_conditions:
+  - "Repository Root / Worktree / Submodule / nested repo 边界无法可靠判断。"
+  - "仓库处于 unresolved merge/rebase/cherry-pick/revert/unmerged 状态。"
+  - "存在无法安全保存的重要未提交改动。"
+  - "重要 binary/untracked/ignored-but-governed 内容无法建立 Recovery Coverage。"
+  - "Control Root 与已有非本阶段关键数据冲突。"
+  - "必须读取或复制 Secret 明文才能完成 Checkpoint。"
+  - "必须执行破坏性 Git 操作才能继续。"
+  - "Stage Pack checksum/结构校验失败且无法解释。"
+  - "Stage 00 发现必须修改 Git Identity 才能继续；本阶段应直接 BLOCK/NEEDS_INPUT，而不是改身份。"
+
+handoff_to: "01"

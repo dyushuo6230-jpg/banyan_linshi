@@ -1,0 +1,124 @@
+contract_id: banyan.f4.orchestration.semantic.v1
+status: ARCHITECTURE_FROZEN
+human_approved: true
+implementation_authorized: false
+rp2_implementation_authorized: false
+final_activation: NOT_AUTHORIZED
+principles:
+- TOKEN_EFFICIENCY_MUST_NOT_REDUCE_GOVERNANCE_FIDELITY
+- Role != Capability != Skill != Workflow
+- Capability != Skill
+- Definition != Assignment != Binding != RuntimeExecution
+- Role != Permission != Authority != GitIdentity != Authentication
+- Provider != Skill
+- EngineeringStandard != Policy
+- Evidence != Authority
+- LearningProposal != Authorization
+- WorkflowAtom != DefinitionArtifact
+orchestration:
+  model: GOVERNED_GOAL_ORIENTED_GRAPH
+  goal_first: true
+  minimum_valid_graph: true
+  progressive_resolution: true
+  reuse_before_recompute: true
+  localized_invalidation: true
+  progressive_disclosure_ux: true
+  reliability_floor: true
+role:
+  planes:
+  - SOURCE
+  - FUNCTIONAL
+  - PARTICIPATION_GOVERNANCE
+  core_functional_roles:
+  - Requirement & Product Definition
+  - Architecture & Solution Planning
+  - Software Implementation
+  - Verification & Validation
+  - Change Reconciliation
+  - Engineering Standards Steward
+  - UI / Design Intelligence
+  - Engineering Knowledge & Continuity
+  assignment_separate: true
+  grants_permission: false
+  grants_authority: false
+capability:
+  functional_families:
+  - Requirement & Product Definition
+  - Architecture, Technical Design & Solution Planning
+  - Software Implementation
+  - Verification & Validation
+  - Change & Reconciliation
+  - Engineering Standards Stewardship
+  - UI / Design Intelligence
+  - Knowledge & Engineering Continuity
+  - Delivery Planning & Release Readiness
+  skill_required_by_default: false
+  typed_gap_required: true
+skill:
+  definition: stable reusable optional execution method
+  automatic_resolution_default: true
+  pin_exclude_require_supported: true
+  missing_skill_auto_blocks: false
+workflow:
+  runtime_model: ONE_GRAPH_RUNTIME
+  logical_layers:
+  - Adaptive Orchestration Kernel
+  - Goal-Oriented Workflow Families
+  - Reusable Cross-Cutting Subworkflows
+  node_categories:
+  - Functional Node
+  - Control Node
+  - Decision / Governance Interrupt Node
+  - Validation / Reconciliation Node
+  graph_semantics:
+  - Branch
+  - Merge
+  - Pause
+  - Resume
+  - Loop
+  - Retry
+  - Skip
+  - Replace
+  - Invalidate
+  - Partial Blocking
+  - Checkpoint
+  - Reconcile
+  - Escalation
+  - De-escalation
+  atom:
+    new_artifact_type: false
+    routes_to:
+    - Workflow Node semantic
+    - WorkflowDefinition/Subworkflow
+    - SkillDefinition
+    - Graph Control Semantics
+resolution:
+  execution_separate: true
+  execution_plan_required: true
+  skill_optional: true
+  provider_cannot_redefine_semantics: true
+  localized_reresolution: true
+validation:
+  levels:
+  - INVOCATION
+  - NODE
+  - WORKFLOW
+  - GOAL
+  skill_validation_replaces_node_or_goal: false
+engineering_standards:
+  independent_semantic_domain: true
+  new_definition_artifact_type: false
+  effective_project_truth: ProjectArtifact Canonical Semantic Truth
+cross_stage_gate:
+  id: CROSS-STAGE-GATE-01
+  required_before:
+  - Full Legacy Semantic Migration
+  - Authority Cutover
+  - Canonical Rewrite
+  - Legacy Retirement
+  - Final Binding Activation
+  required_zero_conditions:
+  - UNROUTED_HIGH_VALUE_SEMANTIC
+  - SEMANTIC_OWNER_GAP
+  - UNRESOLVED_HIGH_IMPACT_TYPE_MAPPING
+  - SILENT_SEMANTIC_DROP

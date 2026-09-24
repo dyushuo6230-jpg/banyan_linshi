@@ -1,0 +1,13 @@
+upstream_stage: "10"
+run_id: null
+acceptance_result: null
+knowledge_contracts: []
+projection_contracts: []
+guide_contracts: []
+stage11_index_requirements: []
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "11"
+  result: null
+  execution_authorized: false
+stop_after_stage: "10"

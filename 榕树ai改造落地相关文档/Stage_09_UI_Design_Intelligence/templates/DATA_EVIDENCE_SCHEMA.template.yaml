@@ -1,0 +1,13 @@
+schema_version: stage09-v1
+entries:
+  - data_id: null
+    value_or_shape: null
+    classification: DEMO_CONTENT
+    source_refs: []
+    confidence: null
+    authority: EVIDENCE_ONLY
+allowed_classifications:
+  - DEMO_CONTENT
+  - VERIFIED_BUSINESS_DATA
+  - VERIFIED_API_SHAPE
+  - UNKNOWN

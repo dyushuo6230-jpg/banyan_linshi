@@ -1,0 +1,11 @@
+schema_version: stage16-v1
+status:
+  runtime_health: null
+  compiled_policy_hash: null
+  execution_mode: null
+  current_project_mutation_allowed: false
+  open_blockers: []
+  current_stage: null
+  latest_run: null
+  provider_status: []
+  activation_state: NOT_ACTIVATED

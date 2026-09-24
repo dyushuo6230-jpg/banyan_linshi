@@ -1,0 +1,13 @@
+upstream_stage: "06"
+run_id: null
+acceptance_result: null
+change_workspace_contracts: []
+provider_contracts: []
+apply_contracts: []
+open_risks: []
+stage07_inputs: []
+next_stage_entry_gate:
+  stage: "07"
+  result: null
+  execution_authorized: false
+stop_after_stage: "06"

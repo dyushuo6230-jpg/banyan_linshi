@@ -1,0 +1,16 @@
+schema_version: stage04-v1
+instance:
+  project: {}
+  source_mappings: []
+  overlays: []
+  profiles: {}
+  variable_bindings: []
+  provider_bindings: []
+  feature_activation: {}
+  locations:
+    runtime: null
+    trace: null
+    index: null
+    generated: null
+    migrations: null
+  lineage: {}

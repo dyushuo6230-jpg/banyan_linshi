@@ -1,0 +1,25 @@
+schema_version: banyan-docs-source-v1
+framework_release: null
+runtime:
+  language: Python
+  actual_api: []
+cli:
+  actual_commands: []
+webui:
+  actual_pages: []
+adapters:
+  actual_adapters: []
+skills:
+  actual_skills: []
+workflows:
+  actual_workflows: []
+roles:
+  actual_roles: []
+statuses_and_enums: {}
+ids_and_variables: []
+document_types: []
+directories: []
+project_instance:
+  state: null
+  schema_refs: []
+source_evidence: []

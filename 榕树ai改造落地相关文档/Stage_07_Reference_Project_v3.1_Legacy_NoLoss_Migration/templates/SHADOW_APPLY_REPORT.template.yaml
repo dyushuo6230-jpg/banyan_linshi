@@ -1,0 +1,11 @@
+schema_version: stage07-v1
+mode: SIMULATED_ONLY
+preview: null
+impact: null
+reference_check: null
+freshness_warnings: []
+decision_requirement: null
+authorization_requirement: null
+reconciliation: null
+rollback: null
+real_canonical_apply: false

@@ -1,0 +1,24 @@
+# 视觉修复循环一次运行
+run_id: "20260919-gongyi_online-tabbar"
+application_slug: gongyi_online
+page_path: "/addon/shop/pages/indexPage/index"
+component: go-uni-app-online/src/addon/shop/components/tabbar/index.vue
+design_image: "docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/个人页2.png"
+design_image_secondary: "docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/Tab Bar交互&商品底部无内容.png"
+overlay: >
+  只验底栏。结构听个人页2页脚：五坑、中间抬高、白底切图。
+  第四坑文案购物车、图标用发现图（UI-DEC-002），不对个人页2「发现」。
+  中间 AI 听个人页2橙红标，不把《Tab Bar交互》当完整底栏。
+  侧边选中青柠填色听《Tab Bar交互》上半 / accent-lime。
+  安全区 env(safe-area-inset-bottom) 覆盖豁免，不对设计图 Home 条像素。
+  不改首页、分类页业务布局。
+timing: static
+viewport: 390x844
+max_rounds: 4
+tokens_path: docs/project/ui-design/products/gongyi_online/materials/tokens/design-tokens.json
+ui_contract: docs/project/delivery/ui-contracts/gongyi_online-partial-001/EFFECTIVE_UI_CONTRACT.md
+overlay_wins_over_png: true
+allowed_files:
+  - go-uni-app-online/src/addon/shop/components/tabbar/index.vue
+status: stopped
+note: 第 32A 节只点名底栏。用户判定 8rpx 与设计图不符，padding-bottom 已改回 30rpx。

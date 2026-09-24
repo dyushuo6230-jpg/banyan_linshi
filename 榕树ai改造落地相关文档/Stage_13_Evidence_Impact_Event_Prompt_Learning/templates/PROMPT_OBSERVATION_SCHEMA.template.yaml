@@ -1,0 +1,15 @@
+schema_version: stage13-v1
+observation:
+  observation_id: null
+  artifact_id: null
+  artifact_version_ref: null
+  task_profile: null
+  context_profile_ref: null
+  execution_mode: null
+  provider_binding_ref: null
+  tool_refs: []
+  human_intervention: null
+  outcome: null
+  validation_refs: []
+  usage_telemetry_ref: null
+  attribution: MULTI_FACTOR_OR_UNKNOWN

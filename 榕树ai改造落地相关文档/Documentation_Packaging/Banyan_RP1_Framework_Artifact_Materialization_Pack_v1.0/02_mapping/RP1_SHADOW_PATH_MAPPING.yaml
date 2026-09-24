@@ -1,0 +1,172 @@
+schema_version: rp1-shadow-path-mapping-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_MAPPING
+runtime_authority: false
+semantic_authority: false
+registry_authority: false
+projection_of: banyan.registry.migration_artifacts.v1
+authority_class_for_target_files: NON_AUTHORITATIVE_SHADOW_MATERIALIZATION
+status: APPROVED_FOR_RP1_IMPLEMENTATION
+filename_convention: kebab-local.v1.yaml
+filename_rule: physical_kebab_only_internal_ids_unchanged
+v3_1_filename_form: v3-1
+subdirectories_under_categories: false
+format: yaml
+body_model: thin_plus_contract
+EXPECTED: 43
+MAPPED: 43
+
+target_root: banyan-framework/artifacts
+categories:
+  - roles
+  - policies
+  - skills
+  - workflows
+  - states
+  - templates
+  - decision-protocols
+  - context-recovery
+  - compatibility
+
+artifacts:
+  - artifact_id: banyan.migration.role.source_role_model.v1
+    artifact_type: ROLE
+    target_path: banyan-framework/artifacts/roles/source-role-model.v1.yaml
+  - artifact_id: banyan.migration.policy.legacy_governance.v1
+    artifact_type: POLICY
+    target_path: banyan-framework/artifacts/policies/legacy-governance.v1.yaml
+  - artifact_id: banyan.migration.policy.adaptive_decision.v1
+    artifact_type: POLICY
+    target_path: banyan-framework/artifacts/policies/adaptive-decision.v1.yaml
+  - artifact_id: banyan.migration.policy.semantic_commit.v1
+    artifact_type: POLICY
+    target_path: banyan-framework/artifacts/policies/semantic-commit.v1.yaml
+  - artifact_id: banyan.migration.policy.permission_governance.v1
+    artifact_type: POLICY
+    target_path: banyan-framework/artifacts/policies/permission-governance.v1.yaml
+  - artifact_id: banyan.migration.skill.anydesign.v1
+    artifact_type: SKILL
+    target_path: banyan-framework/artifacts/skills/anydesign.v1.yaml
+  - artifact_id: banyan.migration.skill.visual_repair_loop.v1
+    artifact_type: SKILL
+    target_path: banyan-framework/artifacts/skills/visual-repair-loop.v1.yaml
+  - artifact_id: banyan.migration.workflow.v3_1_governance.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/v3-1-governance.v1.yaml
+  - artifact_id: banyan.migration.workflow.adaptive.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/adaptive.v1.yaml
+  - artifact_id: banyan.migration.workflow.decision.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/decision.v1.yaml
+  - artifact_id: banyan.migration.workflow.semantic_commit.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/semantic-commit.v1.yaml
+  - artifact_id: banyan.migration.workflow.change_lifecycle.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/change-lifecycle.v1.yaml
+  - artifact_id: banyan.migration.workflow.parallel_draft.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/parallel-draft.v1.yaml
+  - artifact_id: banyan.migration.workflow.batch_reconciliation.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/batch-reconciliation.v1.yaml
+  - artifact_id: banyan.migration.workflow.context_recovery.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/context-recovery.v1.yaml
+  - artifact_id: banyan.migration.workflow.knowledge_publication.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/knowledge-publication.v1.yaml
+  - artifact_id: banyan.migration.workflow.evidence_learning.v1
+    artifact_type: WORKFLOW
+    target_path: banyan-framework/artifacts/workflows/evidence-learning.v1.yaml
+  - artifact_id: banyan.migration.state.artifact.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/artifact.v1.yaml
+  - artifact_id: banyan.migration.state.workflow.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/workflow.v1.yaml
+  - artifact_id: banyan.migration.state.change.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/change.v1.yaml
+  - artifact_id: banyan.migration.state.decision.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/decision.v1.yaml
+  - artifact_id: banyan.migration.state.runtime.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/runtime.v1.yaml
+  - artifact_id: banyan.migration.state.project_pilot.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/project-pilot.v1.yaml
+  - artifact_id: banyan.migration.state.governance_release.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/governance-release.v1.yaml
+  - artifact_id: banyan.migration.state.compatibility_migration.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/compatibility-migration.v1.yaml
+  - artifact_id: banyan.migration.state.capability_lifecycle.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/capability-lifecycle.v1.yaml
+  - artifact_id: banyan.migration.state.capability_activation.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/capability-activation.v1.yaml
+  - artifact_id: banyan.migration.state.project_stage.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/project-stage.v1.yaml
+  - artifact_id: banyan.migration.state.delivery_batch.v1
+    artifact_type: STATE
+    target_path: banyan-framework/artifacts/states/delivery-batch.v1.yaml
+  - artifact_id: banyan.migration.template.artifact_instance.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/artifact-instance.v1.yaml
+  - artifact_id: banyan.migration.template.informed_decision.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/informed-decision.v1.yaml
+  - artifact_id: banyan.migration.template.change_workspace.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/change-workspace.v1.yaml
+  - artifact_id: banyan.migration.template.design_package.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/design-package.v1.yaml
+  - artifact_id: banyan.migration.template.project_guide.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/project-guide.v1.yaml
+  - artifact_id: banyan.migration.template.handover_recovery.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/handover-recovery.v1.yaml
+  - artifact_id: banyan.migration.template.evidence_record.v1
+    artifact_type: TEMPLATE
+    target_path: banyan-framework/artifacts/templates/evidence-record.v1.yaml
+  - artifact_id: banyan.migration.decision.informed_protocol.v1
+    artifact_type: DECISION_PROTOCOL
+    target_path: banyan-framework/artifacts/decision-protocols/informed-protocol.v1.yaml
+  - artifact_id: banyan.migration.decision.level_routing.v1
+    artifact_type: DECISION_PROTOCOL
+    target_path: banyan-framework/artifacts/decision-protocols/level-routing.v1.yaml
+  - artifact_id: banyan.migration.context.new_window_resume.v1
+    artifact_type: CONTEXT_RECOVERY
+    target_path: banyan-framework/artifacts/context-recovery/new-window-resume.v1.yaml
+  - artifact_id: banyan.migration.context.layered_selection.v1
+    artifact_type: CONTEXT_RECOVERY
+    target_path: banyan-framework/artifacts/context-recovery/layered-selection.v1.yaml
+  - artifact_id: banyan.migration.context.freshness_evidence.v1
+    artifact_type: CONTEXT_RECOVERY
+    target_path: banyan-framework/artifacts/context-recovery/freshness-evidence.v1.yaml
+  - artifact_id: banyan.migration.compatibility.v3_1.v1
+    artifact_type: COMPATIBILITY
+    target_path: banyan-framework/artifacts/compatibility/v3-1.v1.yaml
+  - artifact_id: banyan.migration.compatibility.boundaries.v1
+    artifact_type: COMPATIBILITY
+    target_path: banyan-framework/artifacts/compatibility/boundaries.v1.yaml
+
+counts_by_type:
+  ROLE: 1
+  POLICY: 4
+  SKILL: 2
+  WORKFLOW: 10
+  STATE: 12
+  TEMPLATE: 7
+  DECISION_PROTOCOL: 2
+  CONTEXT_RECOVERY: 3
+  COMPATIBILITY: 2
+  TOTAL: 43

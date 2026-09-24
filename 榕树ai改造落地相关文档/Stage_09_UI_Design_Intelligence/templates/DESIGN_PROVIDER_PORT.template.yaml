@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+operations:
+  - intake
+  - parse
+  - extract_scene
+  - extract_assets
+  - extract_tokens
+  - extract_states
+  - report_confidence
+  - report_failure
+requires:
+  - request
+  - response
+  - failure_semantics
+  - evidence

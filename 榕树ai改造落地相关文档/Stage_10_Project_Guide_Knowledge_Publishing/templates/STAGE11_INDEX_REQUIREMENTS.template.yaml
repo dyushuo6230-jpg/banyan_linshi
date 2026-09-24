@@ -1,0 +1,25 @@
+schema_version: stage10-v1
+entities:
+  - Artifact
+  - SourceRole
+  - Projection
+  - Guide
+  - Reference
+  - Version
+  - Status
+  - Freshness
+  - Provenance
+  - Change
+  - Decision
+  - Handover
+  - Progress
+  - ProviderBinding
+relations:
+  - projection_to_source
+  - source_to_projection
+  - artifact_references
+  - change_to_affected_artifact
+  - handover_to_canonical
+  - guide_to_canonical_source
+  - stale_projection_to_upstream_change
+index_is_canonical_truth: false

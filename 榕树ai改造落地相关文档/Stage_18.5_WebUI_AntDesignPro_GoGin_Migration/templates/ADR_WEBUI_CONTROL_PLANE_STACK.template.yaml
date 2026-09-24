@@ -1,0 +1,23 @@
+schema_version: stage18.5-v1
+decision:
+  frontend:
+    baseline: ANT_DESIGN_PRO_SIMPLE
+    language: TYPESCRIPT
+    demo_business_removed: true
+  control_plane:
+    language: GO
+    http_framework: GIN
+    policy_engine: EXTERNAL_EXISTING_RUNTIME
+  distribution:
+    frontend_production_build: true
+    embedded_in_go_binary: true
+    node_runtime_required: false
+  runtime_core:
+    default_strategy: PRESERVE_EXISTING_RUNTIME
+    full_language_rewrite_in_stage18_5: false
+  binding:
+    default_host: 127.0.0.1
+    public_default: false
+rationale: []
+tradeoffs: []
+evidence_refs: []

@@ -1,0 +1,16 @@
+upstream_stage: "15"
+run_id: null
+acceptance_result: null
+framework_source:
+  path: "banyan-framework"
+  generic_only: true
+runtime_components: []
+test_results: []
+current_project_git_mutation: false
+stage16_api_handoff: null
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "16"
+  result: null
+  execution_authorized: false
+stop_after_stage: "15"

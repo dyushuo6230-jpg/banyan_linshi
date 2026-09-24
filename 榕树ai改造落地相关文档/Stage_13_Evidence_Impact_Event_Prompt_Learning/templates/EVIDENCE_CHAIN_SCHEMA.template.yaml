@@ -1,0 +1,12 @@
+schema_version: stage13-v1
+chain:
+  chain_id: null
+  subject_id: null
+  steps:
+    - step_id: null
+      input_evidence_refs: []
+      operation: null
+      output_evidence_ref: null
+      classification: null
+      provenance: null
+  terminal_claim: null

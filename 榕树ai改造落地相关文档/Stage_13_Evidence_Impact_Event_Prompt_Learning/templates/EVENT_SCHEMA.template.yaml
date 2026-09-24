@@ -1,0 +1,16 @@
+schema_version: stage13-v1
+event_classes:
+  - OBSERVED_EVENT
+  - DERIVED_EVENT
+  - CORRELATED_EVENT
+events:
+  - event_id: null
+    event_class: null
+    event_type: null
+    subject_id: null
+    occurred_at: null
+    source_refs: []
+    actor_identity_or_unknown: UNKNOWN
+    result: null
+    evidence_refs: []
+causal_link_requires_evidence: true

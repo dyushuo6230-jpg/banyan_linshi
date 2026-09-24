@@ -1,0 +1,119 @@
+pack_id: F3_Definition_Artifact_Taxonomy_Freeze_Pack_v1.0
+stage: F3
+topic: Definition Artifact Taxonomy
+architecture_freeze: PASS
+human_decisions_total: 16
+human_approved_total: 16
+implementation_authorized: false
+rp2_implementation_authorized: false
+artifact_reclassification_authorized: false
+r1_rp1_authority_cutover_authorized: false
+top_level_definition_types:
+  - RoleDefinition
+  - CapabilityDefinition
+  - SkillDefinition
+  - WorkflowDefinition
+  - PolicyDefinition
+  - StateModelDefinition
+  - DecisionProtocolDefinition
+  - TemplateDefinition
+  - ProviderContractDefinition
+  - CompatibilitySpecDefinition
+decisions:
+  - id: F3-D01
+    status: HUMAN_APPROVED
+    decision: >-
+      DefinitionArtifact Type and Domain/Category are separate. Type answers what kind of definition an artifact
+      is; Domain/Category answers what area it serves. R1/RP1 migration categories remain valid until an explicit
+      governed mapping/migration occurs.
+  - id: F3-D02
+    status: HUMAN_APPROVED
+    decision: >-
+      CapabilityDefinition is a formal DefinitionArtifact Type. It defines what capability is required and is
+      distinct from Skill, Provider, Permission, Workflow, and runtime implementation.
+  - id: F3-D03
+    status: HUMAN_APPROVED
+    decision: >-
+      ProviderContractDefinition is a formal DefinitionArtifact Type. It defines a provider port/contract, not
+      provider selection or ProjectInstance binding.
+  - id: F3-D04
+    status: HUMAN_APPROVED
+    decision: >-
+      Accepted semantics must be preserved, but transitional structures, directories, registries, schemas, file
+      splits, or code organization may be refactored or rewritten through controlled migration with semantic no-
+      loss, lineage, reference migration, authority safety, compatibility/rollback boundaries, and required Human
+      Decisions.
+  - id: F3-D05
+    status: HUMAN_APPROVED
+    decision: >-
+      RoleDefinition is a formal DefinitionArtifact Type. It defines semantic role/responsibility boundaries and
+      is distinct from people, job titles, Git Identity, Contributor Profile, Permission, Authentication, and
+      Project Authority. Internal role taxonomy is deferred to F4.
+  - id: F3-D06
+    status: HUMAN_APPROVED
+    decision: >-
+      SkillDefinition is a formal DefinitionArtifact Type. It defines an executable method/method contract.
+      Capability does not automatically generate Skill; scripts, tools, MCPs, providers, and models do not
+      automatically become SkillDefinitions.
+  - id: F3-D07
+    status: HUMAN_APPROVED
+    decision: >-
+      WorkflowDefinition is a formal DefinitionArtifact Type and is distinct from WorkflowRun, StepRun, and
+      Checkpoint. Exact node schema and role/capability/skill binding are deferred to F4.
+  - id: F3-D08
+    status: HUMAN_APPROVED
+    decision: >-
+      PolicyDefinition is a formal DefinitionArtifact Type. It defines rules, constraints, prohibitions, safety
+      floors, and governance semantics and is distinct from runtime evaluators/enforcement.
+  - id: F3-D09
+    status: HUMAN_APPROVED
+    decision: >-
+      StateModelDefinition is a formal DefinitionArtifact Type. It defines an independent state domain and is
+      distinct from current runtime/project/artifact state. State domains remain separate.
+  - id: F3-D10
+    status: HUMAN_APPROVED
+    decision: >-
+      DecisionProtocolDefinition is a formal DefinitionArtifact Type. It defines decision phases, confirmation
+      semantics, decision levels, escalation/fallback, safety floors, evidence requirements, and decision
+      ownership boundaries. Runtime execution is deferred to F7/F10.
+  - id: F3-D11
+    status: HUMAN_APPROVED
+    decision: >-
+      TemplateDefinition is a formal DefinitionArtifact Type. It defines reusable creation scaffolding and is
+      distinct from Schema, generated instances, Canonical Project Facts, and arbitrary prompts. Template updates
+      must not silently rewrite existing Canonical instances.
+  - id: F3-D12
+    status: HUMAN_APPROVED
+    decision: >-
+      CompatibilitySpecDefinition is a formal DefinitionArtifact Type. It defines compatibility rules and semantic
+      mappings and is distinct from Migration execution/state, Adapter implementation, and test results.
+  - id: F3-D13
+    status: HUMAN_APPROVED
+    decision: >-
+      Context Recovery is a Domain/Capability Area, not a permanent top-level DefinitionArtifact Type. Existing
+      R1/RP1 CONTEXT_RECOVERY artifacts remain protected; exact long-term mapping is deferred to F9.
+  - id: F3-D14
+    status: HUMAN_APPROVED
+    decision: >-
+      Each logical DefinitionArtifact has exactly one Primary Definition Type. Cross-domain meaning is expressed
+      through Domain, Tag, Reference, Dependency, and typed relations. Mixed legacy artifacts may later be
+      decomposed through controlled migration.
+  - id: F3-D15
+    status: HUMAN_APPROVED
+    decision: >-
+      The ten DefinitionArtifact Types form a Closed-but-Extensible default taxonomy. A new top-level type
+      requires evidence that existing types plus Domain/Tag/Relation cannot express it without semantic loss, plus
+      impact analysis, versioned F3 Change Proposal, and Human Decision.
+  - id: F3-D16
+    status: HUMAN_APPROVED
+    decision: >-
+      Schemas, Registries, Manifests, and Schema Indexes are Framework Infrastructure / Contract Metadata /
+      Discovery & Validation by default, not DefinitionArtifact Types. Template and Schema remain distinct.
+context_recovery:
+  long_term_top_level_type: false
+  classification: DOMAIN_OR_CAPABILITY_AREA
+  current_r1_rp1_migration_category_preserved: true
+  exact_mapping_owner: F9
+taxonomy_policy:
+  single_primary_type_required: true
+  mode: CLOSED_BUT_EXTENSIBLE

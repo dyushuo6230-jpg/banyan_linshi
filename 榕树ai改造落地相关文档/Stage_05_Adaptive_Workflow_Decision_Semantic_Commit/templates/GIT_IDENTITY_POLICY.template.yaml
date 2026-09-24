@@ -1,0 +1,9 @@
+schema_version: stage05-v1
+identity_source:
+  - git_user_name
+  - git_user_email
+missing_identity: BLOCK_NEEDS_INPUT
+ai_may_modify_identity: false
+ai_may_use_author_override: false
+automatic_alias_merge: false
+profile_grants_authorization: false

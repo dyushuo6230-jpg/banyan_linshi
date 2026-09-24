@@ -1,0 +1,13 @@
+schema_version: stage09-v1
+token_types:
+  - SOURCE_TOKEN
+  - DERIVED_TOKEN
+  - RECOMMENDED_TOKEN
+tokens:
+  - token_id: null
+    category: null
+    value: null
+    source: null
+    confidence: null
+    authority: null
+    scope: null

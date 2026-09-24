@@ -1,0 +1,95 @@
+stage_id: "05"
+title: "Adaptive Workflow / Decision Mechanism / Semantic Commit Policy"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "POLICY_FIRST_LOW_TOKEN"
+
+upstream:
+  stage: "04"
+  run_id: "stage04-20260920T142517Z"
+  acceptance: "PASS_PROJECT_INSTANCE_DESIGN"
+  entry_gate: "PASS_FOR_STAGE05_DESIGN_WITH_INHERITED_BLOCKERS"
+
+owned_outcomes:
+  - "Adaptive Workflow Model"
+  - "Governance / Work Mode Contract"
+  - "Five-Level Decision Mechanism"
+  - "Decision Escalation Contract"
+  - "Human Confirmation Contract"
+  - "Workflow State / Transition Schema"
+  - "Task / Change / Batch Relationship Contract"
+  - "Semantic Commit Workflow"
+  - "Semantic Change Classification"
+  - "Semantic Commit Grouping Policy"
+  - "Commit Message Policy"
+  - "Git Identity Precondition Policy"
+  - "Commit Authorization Boundary"
+  - "Leftover / Unrelated / Secret-Risk Handling"
+  - "CON-001 resolution or typed carry-over with blocker"
+
+not_owned:
+  - "Git commit execution"
+  - "staging/hunk application implementation"
+  - "runtime CLI/API implementation"
+  - "Git hooks implementation"
+  - "permission enforcement runtime"
+  - "SQLite implementation"
+  - "Control Plane implementation"
+  - "cross-editor adapters"
+
+semantic_commit_lifecycle:
+  stage03_schema: "DEFINED"
+  stage05_workflow_policy: "TO_BE_FROZEN"
+  stage11_13_index_evidence: "FUTURE"
+  stage14_15_safety_execution: "FUTURE"
+  stage17_18_pilot: "FUTURE"
+  stage19_verification: "FUTURE"
+  stage20_release: "FUTURE"
+
+hard_invariants:
+  editor_neutral: true
+  contributor_identity_truth: "git author.name + author.email"
+  modify_git_identity: false
+  invent_author: false
+  use_author_override: false
+  profile_grants_authorization: false
+  automatic_identity_alias_merge: false
+  semantic_commit_execution_in_stage05: false
+  secrets_never_committed: true
+
+token_policy:
+  repository_full_rescan: false
+  git_history_full_reanalysis: false
+  stage01_inventory_regeneration: false
+  evidence_on_demand_triggers:
+    - "DECISION_POLICY_CONFLICT"
+    - "WORKFLOW_AMBIGUITY"
+    - "SEMANTIC_COMMIT_POLICY_GAP"
+    - "IDENTITY_POLICY_GAP"
+    - "MISSING_EVIDENCE"
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/05/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "business code / SQL / production config"
+    - "formal project canonical docs"
+    - "legacy prompt/rule/skill body"
+    - "13 Secret bodies"
+    - "Git identity modification"
+    - "git add/commit/reset/stash/rebase/push"
+    - "Stage 06 execution"
+
+exit_gate:
+  validations: "V05-01..V05-20"
+  hard_metrics:
+    UNACCOUNTED_HIGH_VALUE_CAPABILITY_WORKFLOW_IMPACT: 0
+    DECISION_LEVEL_WITHOUT_ESCALATION_RULE: 0
+    HUMAN_CONFIRMATION_BYPASS_PATH: 0
+    SEMANTIC_COMMIT_CLASS_WITHOUT_DISPOSITION: 0
+    COMMIT_POLICY_WITHOUT_IDENTITY_PRECHECK: 0
+    EDITOR_SPECIFIC_COMMIT_POLICY_BRANCH: 0
+    SECRET_RISK_AUTO_COMMIT_PATH: 0
+  next_stage: "06"

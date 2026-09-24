@@ -1,0 +1,8 @@
+schema_version: stage06-v1
+required_fields:
+  - rollback_id
+  - pre_apply_snapshot
+  - affected_artifacts
+  - reverse_plan
+  - validation
+  - result

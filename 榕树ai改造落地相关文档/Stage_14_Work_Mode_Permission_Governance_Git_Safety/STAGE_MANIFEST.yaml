@@ -1,0 +1,92 @@
+stage_id: "14"
+title: "Work Mode / Permission / Governance / Git Safety"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "POLICY_FREEZE_SHADOW_EVALUATION"
+
+upstream:
+  stage: "13"
+  run_id: "stage13-20260921T020549Z"
+  acceptance: "PASS_STAGE13_EVIDENCE_IMPACT_EVENT_OFFLINE_LEARNING_WITH_TYPED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE14_PERMISSION_GOVERNANCE_GIT_SAFETY_DESIGN_WITH_TYPED_BLOCKERS"
+
+owned_outcomes:
+  - "Action Risk Classification Contract"
+  - "Permission Decision Contract"
+  - "Authorization Record Contract"
+  - "Work Mode Permission Matrix"
+  - "Protected Target Contract"
+  - "Protected Write Gate"
+  - "Secret Safety Gate"
+  - "Freshness Safety Gate"
+  - "Rollback / Checkpoint Preconditions"
+  - "Decision/Human Confirmation Binding"
+  - "Editor-neutral Governance Contract"
+  - "Git Identity Safety Contract"
+  - "Git Working Tree Safety Contract"
+  - "Git Operation Permission Matrix"
+  - "Semantic Commit Authorization Contract"
+  - "Commit Plan Safety Gate"
+  - "External / Irreversible Action Gate"
+  - "Audit Event Requirement Contract"
+  - "Learning Candidate Governance Binding"
+  - "Stage 15 Runtime Enforcement Handoff"
+
+not_owned:
+  - "git add execution"
+  - "git commit execution"
+  - "git reset/stash/rebase/push execution"
+  - "runtime CLI/API implementation"
+  - "real protected write"
+  - "real canonical apply"
+  - "final .banyan activation"
+  - "CON-002 resolution"
+
+hard_invariants:
+  profile_grants_authorization: false
+  editor_grants_authorization: false
+  git_identity_grants_permission_role: false
+  evidence_grants_authorization: false
+  commit_plan_grants_commit_authorization: false
+  secret_risk_auto_commit: false
+  unknown_precondition_allows_action: false
+  ai_may_modify_git_identity: false
+  ai_may_use_author_override: false
+  stage14_executes_git_mutation: false
+
+action_risk_classes:
+  - READ_ONLY
+  - REVERSIBLE_WRITE
+  - CANONICAL_WRITE
+  - PROTECTED_WRITE
+  - IRREVERSIBLE_OR_EXTERNAL
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/14/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "business code mutation"
+    - "canonical source mutation"
+    - "13 Secret bodies"
+    - "Git identity mutation"
+    - "Git index/HEAD/history mutation"
+    - "final .banyan activation"
+    - "Stage 15 execution"
+
+exit_gate:
+  validations: "V14-01..V14-26"
+  hard_metrics:
+    ACTION_WITHOUT_RISK_CLASS: 0
+    ACTION_WITHOUT_PERMISSION_DECISION: 0
+    AUTHORIZATION_RECORD_WITHOUT_SCOPE_OR_ACTOR: 0
+    PROFILE_OR_EDITOR_USED_AS_AUTHORIZATION: 0
+    PROTECTED_WRITE_WITHOUT_FRESHNESS_CHECK: 0
+    PROTECTED_WRITE_WITHOUT_ROLLBACK_CHECKPOINT: 0
+    GIT_COMMIT_PATH_WITHOUT_IDENTITY_PRECHECK: 0
+    GIT_IDENTITY_MUTATION_PATH: 0
+    SECRET_RISK_COMMIT_PATH: 0
+    COMMIT_PLAN_TREATED_AS_AUTHORIZATION: 0
+    UNKNOWN_PRECONDITION_ALLOWED_ACTION: 0
+  next_stage: "15"

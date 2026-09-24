@@ -1,0 +1,12 @@
+schema_version: stage20-v1
+workspace: .banyan-refactor
+classification: BOOTSTRAP_CONSTRUCTION_WORKSPACE
+target_state: READY_TO_ARCHIVE_AFTER_FINAL_ACTIVATION
+preconditions:
+  - final_project_activation_authorized
+  - archive_manifest_verified
+  - rollback_evidence_preserved
+  - required_history_preserved
+blind_delete_allowed: false
+future_upgrades_recreate_bootstrap_workspace: false
+future_upgrade_mechanism: BANYAN_CHANGE_MIGRATION_VALIDATION_ROLLBACK

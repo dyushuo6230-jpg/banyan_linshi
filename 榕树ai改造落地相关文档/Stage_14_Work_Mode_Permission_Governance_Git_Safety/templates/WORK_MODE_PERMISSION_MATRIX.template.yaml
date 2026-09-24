@@ -1,0 +1,11 @@
+schema_version: stage14-v1
+modes:
+  LIGHT:
+    may_reduce_process_weight: true
+    may_weaken_safety_floor: false
+  STANDARD:
+    may_reduce_process_weight: false
+    may_weaken_safety_floor: false
+  FULL:
+    may_reduce_process_weight: false
+    may_weaken_safety_floor: false

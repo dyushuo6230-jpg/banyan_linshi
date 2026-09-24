@@ -1,0 +1,26 @@
+schema_version: "stage01-bootstrap-v1"
+stage_id: "01"
+coverage:
+  repository_root: null
+  tracked_considered: null
+  relevant_untracked_considered: null
+  governed_ignored_considered: null
+  editor_roots_considered: null
+  governance_roots_considered: null
+  tool_script_roots_considered: null
+  generated_operational_roots_considered: null
+  git_history_considered: null
+  secret_policy_preserved: null
+isolation:
+  banyan_refactor_classified_as_upstream_evidence: null
+  construction_materials_excluded_from_legacy: null
+metrics:
+  SILENTLY_IGNORED_ASSET: null
+  UNSCANNED_GOVERNANCE_ROOT_WITHOUT_REASON: null
+  HIGH_RISK_UNCLASSIFIED: null
+unclassified:
+  total: null
+  high_risk: null
+exclusions:
+  - path: null
+    reason: null

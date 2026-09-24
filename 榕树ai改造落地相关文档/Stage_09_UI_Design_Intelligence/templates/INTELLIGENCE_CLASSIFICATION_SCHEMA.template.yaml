@@ -1,0 +1,11 @@
+schema_version: stage09-v1
+classes:
+  - FACT
+  - INFERENCE
+  - RECOMMENDATION
+required_fields:
+  - classification
+  - confidence
+  - source_refs
+  - reason
+  - promotion_rule

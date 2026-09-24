@@ -1,0 +1,12 @@
+schema_version: stage07-v1
+entries:
+  - artifact_id: null
+    source_role: null
+    authority: null
+    legacy_path: null
+    target_semantic_role: null
+    disposition: null
+    reference_strategy: null
+    provenance: null
+    rebuildability: null
+    validation: null

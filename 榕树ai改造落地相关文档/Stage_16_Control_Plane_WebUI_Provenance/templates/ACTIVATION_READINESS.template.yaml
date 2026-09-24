@@ -1,0 +1,13 @@
+schema_version: stage16-v1
+states:
+  - NOT_READY
+  - READY_FOR_PILOT
+  - BLOCKED
+  - NEEDS_INPUT
+readiness:
+  state: null
+  blockers: []
+  required_preconditions: []
+  required_validations: []
+  pilot_stage: "17"
+stage16_may_activate_dot_banyan: false

@@ -1,0 +1,21 @@
+schema_version: stage13-v1
+evidence:
+  evidence_id: null
+  evidence_type: null
+  subject_id: null
+  source_refs: []
+  as_of: null
+  authority: null
+  provenance: null
+  freshness: null
+  confidence: null
+  scope: null
+  result: null
+  classification: null
+allowed_classifications:
+  - OBSERVED_FACT
+  - DERIVED_FACT
+  - INFERENCE
+  - RECOMMENDATION
+  - VALIDATION_RESULT
+  - HUMAN_DECISION

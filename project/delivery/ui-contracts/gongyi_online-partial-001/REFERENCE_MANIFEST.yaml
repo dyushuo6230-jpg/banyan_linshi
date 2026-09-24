@@ -1,0 +1,61 @@
+document_id: UIC-gongyi_online-partial-001-REF
+created: 2026-09-18
+updated: 2026-09-19
+application_slug: gongyi_online
+ui_spec: docs/project/ui-design/products/gongyi_online/UI_SPEC.md
+ui_spec_version: "0.1.5"
+tokens: docs/project/ui-design/products/gongyi_online/materials/tokens/design-tokens.json
+pages:
+  - id: tab-bar
+    code: go-uni-app-online/src/addon/shop/components/tabbar/index.vue
+    images:
+      - docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/个人页2.png
+      - docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/Tab Bar交互&商品底部无内容.png
+  - id: home
+    route: /addon/shop/pages/indexPage/index
+    code: go-uni-app-online/src/addon/shop/pages/indexPage/components/home.vue
+    images:
+      - docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/公益优选-商城首页定稿.png
+    selected_chip_impl: css-capsule-star-triangle
+    selected_chip_star: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中星星.png
+    selected_chip_look_reference: docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15@3x.png
+    selected_chip_stretch_forbidden: true
+  - id: category
+    route: /addon/shop/pages/indexPage/category
+    code: go-uni-app-online/src/addon/shop/pages/indexPage/category.vue
+    images:
+      - docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/分类.png
+    selected_chip_impl: css-gold-bubble-triangle
+    selected_chip_look_reference: docs/project/ui-design/products/gongyi_online/materials/assets/分类页横向分类选中背景@3x.png
+    selected_chip_stretch_forbidden: true
+    rail_arrow_up: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类上方箭头@3x.png
+    rail_arrow_down: docs/project/ui-design/products/gongyi_online/materials/assets/分类页左侧选中分类下方箭头@3x.png
+    rail_selected_impl: white-ring-gold-fill-internal-arrows
+    rail_side_bg_stretch_forbidden: true
+    tertiary_grid: css-grid-3
+    all_cats_panel: inner-scroll
+  - id: nearby
+    route: /addon/shop/pages/nearby/index-f
+    code: go-uni-app-online/src/addon/shop/pages/nearby/index-f.vue
+    images:
+      - docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/附近-2026.7.15-附近页面删除超市便利、生鲜果蔬、优选超市、美团团购、数码百货、看病买药、鲜花绿植等页面内容，也不做任何对接.png
+    overlay: filename-delete + M07-cps-swiper + DEC-046 + DEC-069 + DEC-073
+    tabbar_untouched: true
+overlays:
+  - UI-DEC-002
+  - UI-DEC-003
+  - UI-DEC-004
+  - UI-DEC-005
+  - UI-DEC-006
+  - DEC-071
+  - DEC-046
+  - DEC-069
+  - DEC-073
+active_assets:
+  - MAT-GO-ASSET-HOME-CHIP-STAR
+  - MAT-GO-ASSET-CAT-RAIL-ARROW-UP
+  - MAT-GO-ASSET-CAT-RAIL-ARROW-DOWN
+reference_only_assets:
+  - MAT-GO-ASSET-HOME-CHIP-SELECTED
+  - MAT-GO-ASSET-CAT-CHIP-SELECTED
+frozen_assets: []

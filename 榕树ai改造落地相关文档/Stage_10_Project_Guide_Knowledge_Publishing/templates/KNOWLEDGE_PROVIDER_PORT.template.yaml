@@ -1,0 +1,14 @@
+schema_version: stage10-v1
+operations:
+  - publish
+  - refresh
+  - validate
+  - archive
+  - resolve_navigation
+requires:
+  - request
+  - response
+  - failure_semantics
+  - provenance
+  - evidence
+provider_specific_required_fields: false

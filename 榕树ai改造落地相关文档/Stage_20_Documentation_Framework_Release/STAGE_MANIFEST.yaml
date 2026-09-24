@@ -1,0 +1,76 @@
+stage_id: "20"
+title: "Documentation / Framework Release / Final Handoff"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "DOCUMENTATION_AND_RELEASE_PREPARATION"
+
+upstream:
+  stage: "19"
+  run_id: "stage19-20260921T071430Z"
+  acceptance: "PASS_STAGE19_INDEPENDENT_TECHNICAL_ACCEPTANCE_RC_WITH_CARRIED_BLOCKERS"
+  rc: "stage19-rc.1"
+
+accepted_architecture:
+  frontend: "Ant Design Pro Simple"
+  web_host: "Go + Gin + go:embed"
+  runtime_bridge: "LOCAL_STDIO"
+  runtime_core: "Python Banyan Runtime"
+  adapters:
+    - Cursor
+    - Codex
+    - Generic Editor
+
+carried_blockers:
+  - id: "CON-002"
+    state: "TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY"
+  - id: "FINAL_ACTIVATION"
+    state: "NOT_AUTHORIZED"
+
+owned_outcomes:
+  - "Final Architecture Guide"
+  - "Installation / Build / Run Guide"
+  - "WebUI / Control Plane Guide"
+  - "Runtime / Adapter Guide"
+  - "Project Instance Guide"
+  - "Governance / Security Guide"
+  - "Upgrade / Migration Guide"
+  - "Legacy Documentation Adoption Migration Guide"
+  - "Operations / Troubleshooting Guide"
+  - "Framework Release Notes"
+  - "Framework Release Manifest"
+  - "Version Transition Proposal"
+  - "Bootstrap Refactor Retirement Plan"
+  - "Construction Documentation Retirement Plan"
+  - "Final Project Handoff"
+
+not_owned:
+  - "new features"
+  - "Runtime language rewrite"
+  - "WebUI redesign"
+  - "Legacy documentation migration execution"
+  - "CON-002 winner selection"
+  - "Project Final Activation"
+  - "project Git mutation"
+
+hard_invariants:
+  framework_release_equals_project_activation: false
+  final_project_activation_allowed: false
+  con002_may_be_auto_resolved: false
+  dot_banyan_pilot_may_be_silently_promoted: false
+  dot_banyan_refactor_may_be_blindly_deleted: false
+  version_current_pointer_may_be_silently_changed: false
+  project_docs_may_be_bulk_relocated: false
+
+exit_gate:
+  validations: "V20-01..V20-24"
+  hard_metrics:
+    FINAL_DOC_CLAIM_WITHOUT_ACCEPTED_EVIDENCE: 0
+    FRAMEWORK_RELEASE_MISSTATED_AS_PROJECT_ACTIVATION: 0
+    CON002_SILENTLY_RESOLVED: 0
+    PILOT_DOT_BANYAN_SILENTLY_PROMOTED: 0
+    BOOTSTRAP_WORKSPACE_BLIND_DELETION: 0
+    VERSION_POINTER_SILENT_TRANSITION: 0
+    LEGACY_DOC_PHYSICAL_MIGRATION_EXECUTED: 0
+    CURRENT_PROJECT_GIT_MUTATION: 0
+    SECRET_BODY_EXPOSURE_IN_DOCS: 0
+    GENERIC_DOC_PROJECT_LITERAL_LEAK: 0

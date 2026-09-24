@@ -1,0 +1,13 @@
+schema_version: "stage01-preliminary-v1"
+stage_id: "01"
+matrix:
+  - capability_id: null
+    legacy_sources: []
+    value_level: null
+    candidate_owner_stage: null
+    candidate_target_capability: null
+    candidate_action: null
+    confidence: null
+    open_question: null
+    evidence_refs: []
+    drop_approval_status: "NOT_APPLICABLE"

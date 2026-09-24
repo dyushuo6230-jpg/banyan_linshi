@@ -1,0 +1,143 @@
+# GENERATED FILE
+# DO NOT EDIT DIRECTLY AS IF IT WERE RUNTIME INPUT
+# SOURCE: RP1 Human Authority approved template from IMPLEMENTATION PREPARATION
+# REGENERATE: Only by updating this construction pack after a new Human Decision
+# DOCUMENT_ROLE: CONSTRUCTION_TEMPLATE
+# RUNTIME_AUTHORITY: false
+# SEMANTIC_AUTHORITY: false
+# REGISTRY_AUTHORITY: false
+# LOADER_AUTHORITY: false
+#
+# This file is an RP1 Implementation input template.
+# It must not be consumed by Loader, Runtime, CLI, or Registry.
+# Concrete shadow files created later under banyan-framework/artifacts/**
+# are NON_AUTHORITATIVE_SHADOW_MATERIALIZATION and also must not become
+# Canonical Source until RP2.
+
+schema_version: "1.0.0"
+document_role: CONSTRUCTION_TEMPLATE
+runtime_authority: false
+semantic_authority: false
+registry_authority: false
+loader_authority: false
+packaging_authority: false
+authority_class: NON_AUTHORITATIVE_SHADOW_MATERIALIZATION
+source_of_truth: banyan.registry.migration_artifacts.v1
+generated_or_manual: GENERATED
+body_model: thin_plus_contract
+filename_convention: kebab-local.v1.yaml
+internal_id_rewriting: forbidden
+
+fill_rules:
+  derivable: Write the evidenced value from the matching R1 registry entry, CURRENT v1.9.1 section 8, or the current Registry pointer already recorded on that R1 entry.
+  not_applicable: Write the literal NOT_APPLICABLE when the field does not apply to that Artifact Type.
+  unknown: Write the literal UNKNOWN when no reliable fact exists.
+  invented_values_forbidden: true
+  unknown_is_not_authorization: true
+  unknown_is_not_allow: true
+  unknown_is_not_configured: true
+  shrink_schema_forbidden: true
+  yaml_anchors_from_source: Expand resolved values. Do not keep cross-document anchors.
+
+forbidden_invention:
+  - when_to_use
+  - when_not_to_use
+  - permissions
+  - rollback
+  - maintenance_owner
+  - last_updated
+  - supersession
+  - migration_lineage
+
+forbidden_registry_body_copy_keys:
+  - workflows
+  - state_sets
+  - roles
+  - mappings
+  - capabilities
+  - artifact_types
+  - ports
+  - token_context_policies
+  - source_evidence
+
+instance_template:
+  schema_version: "1.0.0"
+  authority_class: NON_AUTHORITATIVE_SHADOW_MATERIALIZATION
+  source_of_truth: banyan.registry.migration_artifacts.v1
+  generated_or_manual: GENERATED
+
+  id: "<DERIVABLE: r1.artifact_id; keep the R1 value, including v3_1 where present>"
+  type: "<DERIVABLE: r1.artifact_type>"
+  version: "<DERIVABLE: v1 from the artifact_id suffix; do not invent semver>"
+  status: "<DERIVABLE: r1.status, currently MIGRATED_AS_ARTIFACT>"
+  scope: UNKNOWN
+  purpose: "<DERIVABLE: r1.purpose>"
+  when_to_use: "<SKILL only: DERIVABLE from r1.contract.triggers; else UNKNOWN>"
+  when_not_to_use: UNKNOWN
+  inputs: "<SKILL only: DERIVABLE from r1.contract.inputs; else NOT_APPLICABLE>"
+  outputs: "<SKILL only: DERIVABLE from r1.contract.outputs; else NOT_APPLICABLE>"
+  permissions: UNKNOWN
+  forbidden: "<ROLE: DERIVABLE from r1.contract.forbidden_promotions; else UNKNOWN>"
+  dependencies: "<DERIVABLE: list of r1.target_registry plus r1.references; not a copied registry body>"
+  compatibility: "<DERIVABLE: r1.compatibility_status>"
+  validation: "<DERIVABLE: r1.validation>"
+  rollback: UNKNOWN
+  maintenance_owner: UNKNOWN
+  last_updated: UNKNOWN
+
+  origin: "<DERIVABLE: r1.origin>"
+  provenance: "<DERIVABLE: r1.provenance>"
+  implementation_status: "<DERIVABLE: r1.implementation_status>"
+  compatibility_status: "<DERIVABLE: r1.compatibility_status>"
+  missing_layers: "<DERIVABLE: r1.missing_layers, may be []>"
+  references: "<DERIVABLE: r1.references>"
+  supersession: UNKNOWN
+  migration_lineage: UNKNOWN
+  token_context_policy: "<DERIVABLE: r1.token_context_policy_ref>"
+  token_context_policy_ref: "<DERIVABLE: r1.token_context_policy_ref>"
+  target_authority: "<DERIVABLE: r1.target_authority>"
+  target_registry: "<DERIVABLE: r1.target_registry>"
+  runtime_consumer: "<DERIVABLE: r1.runtime_consumer, may be null>"
+  provider_binding: "<DERIVABLE: r1.provider_binding, may be null>"
+  project_binding: "<DERIVABLE: r1.project_binding, may be null>"
+  semantic_change: "<DERIVABLE: r1.semantic_change>"
+
+  field_fill_policy:
+    unknown_is_not_authorization: true
+    unknown_is_not_allow: true
+    unknown_is_not_configured: true
+    invented_values_forbidden: true
+
+  r1_record:
+    artifact_id: "<unchanged R1 artifact_id>"
+    artifact_type: "<unchanged>"
+    origin: "<unchanged>"
+    purpose: "<unchanged>"
+    provenance: "<unchanged>"
+    target_authority: "<unchanged>"
+    target_registry: "<unchanged>"
+    runtime_consumer: "<unchanged>"
+    provider_binding: "<unchanged>"
+    project_binding: "<unchanged>"
+    implementation_status: "<unchanged>"
+    compatibility_status: "<unchanged>"
+    semantic_change: "<unchanged>"
+    token_context_policy_ref: "<unchanged>"
+    validation: "<unchanged>"
+    status: "<unchanged>"
+    missing_layers: "<unchanged>"
+    references: "<unchanged>"
+    contract: "<ONLY if present on the R1 item; omit this key entirely if R1 has no contract>"
+
+header_comments_required:
+  - GENERATED FILE
+  - DO NOT EDIT DIRECTLY
+  - SOURCE: banyan-framework/src/banyan/contracts/data/migration_artifacts.yaml
+  - SOURCE_ASSET_ID: banyan.registry.migration_artifacts.v1
+  - SOURCE_ARTIFACT_ID: "<r1 artifact_id, unchanged>"
+  - REGENERATE: RP1 shadow materialization from the R1 registry entry; do not invent semantics
+  - AUTHORITY_CLASS: NON_AUTHORITATIVE_SHADOW_MATERIALIZATION
+  - CANONICAL_SOURCE: false
+  - LOADER_AUTHORITY: false
+  - RUNTIME_AUTHORITY: false
+  - PACKAGING_AUTHORITY: false

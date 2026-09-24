@@ -1,0 +1,16 @@
+schema_version: stage13-v1
+impact_types:
+  - DIRECT
+  - TRANSITIVE
+  - POTENTIAL
+  - UNKNOWN
+  - EXCLUDED
+edges:
+  - edge_id: null
+    source_subject_id: null
+    target_subject_id: null
+    impact_type: UNKNOWN
+    basis: null
+    confidence: null
+    scope: null
+    evidence_refs: []

@@ -1,0 +1,15 @@
+schema_version: stage13-v1
+evaluation:
+  evaluation_id: null
+  candidate_id: null
+  baseline_ref: null
+  candidate_ref: null
+  test_cases: []
+  negative_cases: []
+  counterexamples: []
+  quality_result: null
+  regression_result: null
+  cost_result: null
+  scope: null
+  limitations: []
+  conclusion: null

@@ -1,0 +1,10 @@
+schema_version: stage06-v1
+checks:
+  - stable_ids
+  - references
+  - supersession_chain
+  - source_role_authority
+  - provenance
+  - derived_projection_status
+  - trace_lineage
+failure_state: RECONCILIATION_BLOCKED

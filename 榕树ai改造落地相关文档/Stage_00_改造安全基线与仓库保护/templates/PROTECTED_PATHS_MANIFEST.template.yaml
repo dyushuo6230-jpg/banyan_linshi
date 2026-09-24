@@ -1,0 +1,53 @@
+# Template only.
+schema_version: "stage00-protected-paths-v1.9.1"
+charter_version: "1.9.1"
+stage_id: "00"
+
+default_policy:
+  read: true
+  write: false
+  delete: false
+
+classes:
+  IMMUTABLE_DURING_REFACTOR:
+    read: true
+    write: false
+    delete: false
+  READ_ONLY_DISCOVERY:
+    read: true
+    write: false
+    delete: false
+  STAGE_WRITABLE:
+    read: true
+    write: true
+    delete: "stage_owned_only"
+  CONDITIONAL_WRITE_LATER:
+    read: true
+    write: false
+    delete: false
+  SECRET_METADATA_ONLY:
+    read: "metadata_only"
+    write: false
+    delete: false
+  EXCLUDED_WITH_REASON:
+    read: false
+    write: false
+    delete: false
+
+rules:
+  - path: null
+    class: null
+    discovery_mode: null     # SCAN | METADATA_ONLY | EXCLUDE_WITH_REASON
+    reason: null
+    owner_stage: null
+    source: "repository_discovery"
+    notes: null
+
+assertions:
+  whole_repo_writable: false
+  secret_values_allowed: false
+  stage00_business_code_write_allowed: false
+  stage00_canonical_truth_write_allowed: false
+  git_identity_write_allowed: false
+  future_canonical_migrations_write_allowed: false
+  bootstrap_control_root_is_only_default_repo_write_scope: true

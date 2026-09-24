@@ -1,0 +1,12 @@
+schema_version: stage20-v1
+current_governance:
+  current: v1.9.1
+  status: FINAL_FREEZE
+candidate:
+  version: v1.10
+  technical_acceptance: PASS_WITH_CARRIED_BLOCKERS
+proposal:
+  state: READY_FOR_HUMAN_APPROVAL
+  replace_current_pointer: false
+  rationale: []
+  prerequisites: []

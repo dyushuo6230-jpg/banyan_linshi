@@ -1,0 +1,46 @@
+pack_id: F2_Storage_Truth_Model_Freeze_Pack_v1.0
+stage: F2
+gate_type: ARCHITECTURE_FREEZE
+
+decision_coverage:
+  expected: 37
+  human_approved: 37
+  missing: 0
+
+hard_metrics:
+  HARD_CONFLICT: 0
+  AUTHORITY_COLLISION: 0
+  DUPLICATE_WRITABLE_TRUTH: 0
+  F1_MODEL_CONFLICT: 0
+  R0_R1_RP1_AUTHORITY_DRIFT: 0
+  PREMATURE_PHYSICAL_DB_DECISION: 0
+  UNOWNED_FUTURE_DECISION: 0
+  UNRESOLVED_F2_ARCH_DECISION: 0
+
+mandatory_deferred_gate:
+  id: PHYSICAL_STORE_TOPOLOGY
+  status: DEFERRED_REQUIRED_HUMAN_DECISION
+  trigger:
+    all:
+      - F8_ARCHITECTURE_FREEZE_PASS
+      - F9_ARCHITECTURE_FREEZE_PASS
+      - F10_ARCHITECTURE_FREEZE_PASS
+    before:
+      - PERSISTENT_RUNTIME_DDL
+      - PERSISTENT_INDEX_DDL
+      - STORAGE_MIGRATIONS
+
+implementation_boundary:
+  code_implementation_authorized: false
+  rp2_implementation_authorized: false
+  artifact_authority_cutover_authorized: false
+  project_instance_activation_authorized: false
+  physical_db_creation_authorized: false
+  ddl_authorized: false
+  migration_execution_authorized: false
+  final_activation_authorized: false
+
+exit_gate:
+  result: PASS_F2_STORAGE_TRUTH_MODEL_ARCHITECTURE_FREEZE
+  next_stage_allowed_for_discussion: F3
+  next_stage_implementation_authorized: false

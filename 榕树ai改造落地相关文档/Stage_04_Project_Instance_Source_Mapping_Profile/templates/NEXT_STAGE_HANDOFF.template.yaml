@@ -1,0 +1,14 @@
+upstream_stage: "04"
+run_id: null
+acceptance_result: null
+project_instance_contracts: []
+source_mapping_contracts: []
+profile_contracts: []
+provider_binding_contracts: []
+open_risks: []
+stage05_inputs: []
+next_stage_entry_gate:
+  stage: "05"
+  result: null
+  execution_authorized: false
+stop_after_stage: "04"

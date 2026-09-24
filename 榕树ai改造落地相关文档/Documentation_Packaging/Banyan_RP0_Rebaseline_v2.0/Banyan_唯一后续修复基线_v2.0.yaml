@@ -1,0 +1,582 @@
+schema_version: banyan-remediation-baseline-v2
+baseline_id: BANYAN-UNIQUE-REMEDIATION-BASELINE-2026-09-21-V2
+status: FROZEN_FOR_NEXT_REMEDIATION
+authority: SOLE_ACTIVE_REMEDIATION_PLANNING_BASELINE
+supersedes:
+- BANYAN-REMEDIATION-REBASELINE-2026-09-21
+- Banyan_规划现状差距盘点与后续修复总蓝图_v1.0.md
+- Banyan_后续修复基线_v1.0.yaml
+principle: TOKEN_EFFICIENCY_MUST_NOT_REDUCE_GOVERNANCE_FIDELITY
+input_snapshot:
+- id: INSTANCE_ZIP
+  uploaded_name: 1.banyan(3).zip
+  sha256: 8da4f3936f1a04472b946aa17ba6158f7034607e0b601f3d9909afb0a71c2282
+  file_count: 13
+  directory_entry_count: 11
+  role: .banyan current snapshot
+- id: PLANNING_ZIP
+  uploaded_name: 榕树ai改造落地相关文档(2).zip
+  sha256: adf63f9ec6da5a2110c4ee2d21fc27aa9a8bd556503d1ad1d4747315508a2b4d
+  file_count: 637
+  directory_entry_count: 94
+  role: planning / stage / audit corpus
+- id: FRAMEWORK_ZIP
+  uploaded_name: banyan-framework(2).zip
+  sha256: 0a04ca07da5598f13f2dbb2accc03918e6d94e187113be417ad4183b3a79b387
+  file_count: 132
+  directory_entry_count: 38
+  role: banyan-framework current snapshot
+preserved_results:
+  R0: PASS_R0_FRAMEWORK_SELF_CONTAINMENT
+  R1: PASS_R1_ARTIFACT_MIGRATION_COMPLETION
+  r1_artifact_count: 43
+  r1_new_proposals: 0
+  governance_current: v1.9.1_FINAL_FREEZE
+  framework_release: v1.10-additive.1
+  framework_release_state: RELEASED_AS_ADDITIVE_SUPPLEMENT_NOT_CURRENT
+  runtime_package_version: 0.1.0
+  final_activation: NOT_AUTHORIZED
+planning_source_roles:
+  CURRENT:
+    authority: ACTIVE_GOVERNANCE_SOURCE
+    files:
+    - 00_总纲与审计/CURRENT/榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.9.1.md
+    - 00_总纲与审计/CURRENT/榕树AI改造阶段文档生成清单_v1.9.1.md
+    rule: Current governance and stage-delivery planning authority unless explicitly superseded by a later user-approved baseline
+      delta.
+  CHANGELOG:
+    authority: ADDITIVE_DELTA_NOT_CURRENT_POINTER
+    files:
+    - 00_总纲与审计/CHANGELOG/榕树AI多编辑器AI软件工程框架改造总纲指导方案_v1.10补充变更记录.md
+    rule: Adds runtime-cost/task-routing/capability-contract/stage-mode governance; does not replace v1.9.1 CURRENT by itself.
+  AUDIT:
+    authority: ACCEPTANCE_AND_AUDIT_EVIDENCE
+    files:
+    - 00_总纲与审计/AUDIT/榕树AI_v1.9冻结一致性审计报告_结论v1.9.1.md
+    - 00_总纲与审计/AUDIT/榕树AI冻结一致性审计提示词_v1.0.md
+    rule: Audit conclusions validate/fix the frozen plan; audit prompts are procedures, not a second design authority.
+  ARCHIVE:
+    authority: HISTORICAL_ONLY
+    file_count_in_uploaded_snapshot: 0
+    rule: Never overrides CURRENT or accepted later baseline.
+fact_precedence:
+- CURRENT_IMPLEMENTATION_TREE for what is actually implemented now
+- CURRENT_PROJECT_INSTANCE_TREE for current .banyan state
+- ACCEPTED_R0_R1_REPORTS_AND_PACKAGED_CONTRACTS for preserved accepted results
+- CURRENT_v1_9_1 plus additive CHANGELOG and accepted Stage evidence for frozen design intent
+- LATEST_EXPLICIT_USER_REQUIREMENTS for future remediation deltas
+- THIS_BASELINE for future remediation sequencing and gates
+- ARCHIVE/HISTORICAL/PREVIOUS_REBASELINE only for provenance
+current_snapshot:
+  framework:
+    artifact_root: banyan-framework/artifacts
+    artifact_root_state: MISSING
+    contract_authority_root: banyan-framework/src/banyan/contracts/data
+    declared_contract_assets: 11
+    r1_artifact_registry: banyan-framework/src/banyan/contracts/data/migration_artifacts.yaml
+    r1_artifact_registry_authority: AUTHORITATIVE_R1_REGISTRY_UNTIL_CONTROLLED_CUTOVER
+    runtime_boundary: BOUNDED_IMPLEMENTED
+    natural_language_orchestration: MISSING
+    canonical_apply_executor: MISSING
+    project_entry_runtime:
+      init: MISSING
+      adopt: MISSING
+      migrate: MISSING
+      reconcile: MISSING
+    webui:
+      base_routes: 12
+      guided_setup: MISSING
+      help: MISSING
+      authority: NONE
+  project_instance:
+    root: .banyan
+    file_count: 13
+    state: PILOT_SHADOW
+    final_activation: false
+    reinit_forbidden: true
+    next_mode: RECONCILE_OR_UPGRADE
+  documentation:
+    D0: DONE
+    D1: DONE
+    D2: OUTPUTS_EXIST_BUT_UNACCEPTED
+    D3: NOT_STARTED
+    help_center: NOT_IMPLEMENTED
+  revalidation_2026_09_21:
+    r0_python_tests: PASS_16_16_CURRENT_TREE
+    r1_python_tests: PASS_22_22_CURRENT_TREE
+    go_tests: NOT_RERUN_ENVIRONMENT_BLOCKED_GO1_24_TOOLCHAIN_DOWNLOAD_UNAVAILABLE
+    note: Historical accepted Go result remains preserved; current rerun was blocked by offline environment, not by a test
+      failure.
+planning_invariants:
+- ARCHITECTURE_DRIFT=0
+- UNPLANNED_EQUIVALENT_SUBSTITUTION=0
+- CHAT_ACCEPTED_REQUIREMENT_UNTRACKED=0
+- PLANNED_ARTIFACT_WRONG_PHYSICAL_SHAPE=0 at final cutover
+- DOCUMENTED_AS_IMPLEMENTED_BUT_NOT_IMPLEMENTED=0
+- DUPLICATE_AUTHORITY=0
+- UNAUTHORIZED_NEW_SEMANTIC=0
+- Capability != Skill
+- SourceRole != CollaborationRole != BanyanRole
+- Role != Permission != GitIdentity != Authentication
+- State domains remain separate
+- Project-specific values do not enter Framework Core
+- WebUI is a Runtime API client and owns no Permission/Canonical/Git/Init truth
+- Existing .banyan is reconciled; it is never deleted and re-initialized as an upgrade strategy
+- Legacy v3.1 is not deleted before zero-runtime-dependency and migration completeness proof
+- Every RP produces PLAN_CONFORMANCE_CHECK
+- Uncertain architecture/directory/authority/migration/deletion/binding decisions require explicit user confirmation before
+  write
+target_authority_model:
+  artifact_semantic_source: banyan-framework/artifacts/**
+  registry_manifest: Discovery/index/validation/reference/lineage; no duplicate full semantic body after cutover
+  runtime_execution_authority: code + policy
+  project_instance_authority: .banyan/** for project-specific identity/bindings/state only
+  construction_evidence: .banyan-refactor/** historical/evidence only; not Runtime authority
+  transition_rule: RP1 materializes 43 files as NON_AUTHORITATIVE_SHADOW projections. RP2 performs one controlled authority
+    cutover and package/loader alignment. This prevents an intermediate dual-authority state and preserves R0 self-containment
+    until cutover is complete.
+target_artifact_root: banyan-framework/artifacts
+target_artifact_categories:
+- roles
+- policies
+- skills
+- workflows
+- states
+- templates
+- decision-protocols
+- context-recovery
+- compatibility
+r1_materialization_inventory:
+- artifact_id: banyan.migration.role.source_role_model.v1
+  artifact_type: ROLE
+  target_category: roles
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: NOT_A_COLLABORATION_ROLE_RUNTIME
+- artifact_id: banyan.migration.policy.legacy_governance.v1
+  artifact_type: POLICY
+  target_category: policies
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.policy.adaptive_decision.v1
+  artifact_type: POLICY
+  target_category: policies
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.policy.semantic_commit.v1
+  artifact_type: POLICY
+  target_category: policies
+  origin: GENERALIZED
+  implementation_status: IMPLEMENTED_BOUNDED_RUNTIME
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.policy.permission_governance.v1
+  artifact_type: POLICY
+  target_category: policies
+  origin: REFRACTOR_ADDITION
+  implementation_status: IMPLEMENTED_BOUNDED_RUNTIME
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.skill.anydesign.v1
+  artifact_type: SKILL
+  target_category: skills
+  origin: LEGACY_MIGRATION
+  implementation_status: PRESERVED_IN_PLACE_PROVIDER_OWNED
+  compatibility_status: PROVIDER_BOUNDARY_DECLARED_RUNTIME_UNBOUND
+- artifact_id: banyan.migration.skill.visual_repair_loop.v1
+  artifact_type: SKILL
+  target_category: skills
+  origin: LEGACY_MIGRATION
+  implementation_status: PRESERVED_IN_PLACE_COMPATIBILITY_LAYER
+  compatibility_status: COMPATIBILITY_ONLY
+- artifact_id: banyan.migration.workflow.v3_1_governance.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.adaptive.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.decision.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.semantic_commit.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: REFRACTOR_ADDITION
+  implementation_status: IMPLEMENTED_BOUNDED_RUNTIME
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.change_lifecycle.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.parallel_draft.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.batch_reconciliation.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.context_recovery.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.knowledge_publication.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.workflow.evidence_learning.v1
+  artifact_type: WORKFLOW
+  target_category: workflows
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.artifact.v1
+  artifact_type: STATE
+  target_category: states
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.workflow.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.change.v1
+  artifact_type: STATE
+  target_category: states
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.decision.v1
+  artifact_type: STATE
+  target_category: states
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.runtime.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: IMPLEMENTED_CODE_PROJECTION
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.project_pilot.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.governance_release.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.compatibility_migration.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.capability_lifecycle.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.capability_activation.v1
+  artifact_type: STATE
+  target_category: states
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.project_stage.v1
+  artifact_type: STATE
+  target_category: states
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.state.delivery_batch.v1
+  artifact_type: STATE
+  target_category: states
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.artifact_instance.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.informed_decision.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.change_workspace.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.design_package.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.project_guide.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.handover_recovery.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.template.evidence_record.v1
+  artifact_type: TEMPLATE
+  target_category: templates
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.decision.informed_protocol.v1
+  artifact_type: DECISION_PROTOCOL
+  target_category: decision-protocols
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.decision.level_routing.v1
+  artifact_type: DECISION_PROTOCOL
+  target_category: decision-protocols
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.context.new_window_resume.v1
+  artifact_type: CONTEXT_RECOVERY
+  target_category: context-recovery
+  origin: LEGACY_MIGRATION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.context.layered_selection.v1
+  artifact_type: CONTEXT_RECOVERY
+  target_category: context-recovery
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.context.freshness_evidence.v1
+  artifact_type: CONTEXT_RECOVERY
+  target_category: context-recovery
+  origin: REFRACTOR_ADDITION
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: PRESERVED
+- artifact_id: banyan.migration.compatibility.v3_1.v1
+  artifact_type: COMPATIBILITY
+  target_category: compatibility
+  origin: GENERALIZED
+  implementation_status: FROZEN_CONTRACT_ONLY
+  compatibility_status: FORMAL_COMPATIBILITY_MAPPING
+- artifact_id: banyan.migration.compatibility.boundaries.v1
+  artifact_type: COMPATIBILITY
+  target_category: compatibility
+  origin: REFRACTOR_ADDITION
+  implementation_status: PARTIALLY_IMPLEMENTED
+  compatibility_status: BOUNDARIES_FORMALIZED
+project_entry_modes:
+  init:
+    when: new project / no existing Banyan instance
+    effect: create new Project Instance from inspected project facts
+    must_not: treat an existing Banyan instance as new
+  adopt:
+    when: existing project first joins Banyan without governed legacy migration requirement
+    effect: preserve project layout, discover/map, create .banyan, bind only confirmed values
+    must_not: move canonical sources or rewrite project history
+  migrate:
+    when: existing project has an existing governance system that must be migrated into Banyan
+    effect: inventory -> semantic mapping -> compatibility -> migration plan -> apply -> validate -> rollback evidence
+    must_not: delete legacy before no-loss and zero-dependency proof
+  reconcile:
+    when: project already has .banyan
+    effect: read existing instance -> diff framework/contracts/bindings -> controlled migration -> validate -> result
+    must_not: delete .banyan and re-init
+  upgrade:
+    role: RECONCILE_SUBMODE
+    mapping: reconcile(mode=UPGRADE_FRAMEWORK)
+    not_a_fifth_top_level_entry: true
+guided_webui:
+  owner_stage: RP6
+  trigger: after init/adopt/migrate/reconcile returns structured result and runtime says WebUI launch is available
+  runtime_api_only: true
+  required_surfaces:
+  - Project Setup
+  - Project Identity
+  - Framework Version
+  - Source Mapping
+  - Provider Binding
+  - Workflow Binding
+  - Skill Binding
+  - Overlays
+  - Variables
+  - Git Identity Status
+  - Validation
+  - Migration Status
+  existing_instance_surfaces:
+  - Re-scan
+  - Repair
+  - Upgrade Framework
+  - Migration Status
+  - Rebuild Index
+  - Drift Check
+  forbidden:
+  - second permission engine
+  - second initialization engine
+  - second canonical truth
+  - direct Git mutation engine
+  - secret body display
+misconstruction_cleanup_protocol:
+  required_at_start_of_every_rp: true
+  classification:
+  - ACCEPTED_BASELINE
+  - PLANNED_TARGET
+  - CONFIRMED_MISCONSTRUCTION
+  - OBSOLETE_AFTER_MIGRATION
+  - HISTORICAL_EVIDENCE
+  - AMBIGUOUS
+  delete_only_if_all:
+  - classification is CONFIRMED_MISCONSTRUCTION or OBSOLETE_AFTER_MIGRATION
+  - no runtime/package/registry/reference dependency remains
+  - no accepted migration lineage or rollback evidence requires the file
+  - deletion is inside current RP write scope
+  - PLAN_CONFORMANCE_CHECK records the deletion and evidence
+  ambiguous_action: STOP_AFFECTED_DELETE_AND_ASK_USER
+  legacy_delete_blocks:
+  - MISSING_MIGRATION
+  - PARTIALLY_MIGRATED
+  - LEGACY_SOURCE_UNVERIFIED
+  - runtime_dependency_on_v3_1 != 0
+  current_known_classification:
+    banyan-framework/src/banyan/contracts/data/migration_artifacts.yaml: ACCEPTED_BASELINE_KEEP_UNTIL_RP2_CONTROLLED_CUTOVER
+    .banyan/**: ACCEPTED_PILOT_BASELINE_KEEP_RECONCILE_NOT_REINIT
+    banyan-framework/docs/user-guide/**: UNACCEPTED_DOCUMENTATION_OUTPUT_KEEP_FOR_LATER_RP10_REVIEW_NOT_DELETE_NOW
+    .banyan-refactor/**: HISTORICAL_EVIDENCE_NOT_RUNTIME_AUTHORITY_DO_NOT_DELETE_WITHOUT_RETENTION_DECISION
+    prior rebaseline v1 files: SUPERSEDED_PLANNING_OUTPUT_NOT_ACTIVE_AUTHORITY
+  confirmed_deletable_files_in_uploaded_snapshot: []
+  note: No file in the uploaded current framework/.banyan snapshot can be safely labeled deletable misconstruction from available
+    evidence alone. Future RP prechecks must classify concrete candidates; uncertainty requires user confirmation.
+human_decision_gates:
+- id: HD-RP1-001
+  stage: RP1
+  topic: Exact physical filename and file format convention for the 43 independent Artifact files
+  status: ASK_BEFORE_FIRST_WRITE_IF_NOT_ALREADY_FROZEN
+  reason: Category root is frozen; exact filename/extension convention is not explicitly frozen in current evidence.
+- id: HD-CLEANUP-001
+  stage: ALL
+  topic: Any cleanup candidate whose erroneous/obsolete status or dependency safety is ambiguous
+  status: ASK_USER
+  reason: User requires uncertainty to be escalated instead of guessed.
+roadmap:
+- id: RP0R
+  name: Full Planning Source Review / Unique Re-baseline v2
+  status: COMPLETE_WITH_THIS_BASELINE
+- id: RP1
+  name: Framework Artifact Materialization (Shadow, 43/43)
+  status: NEXT
+- id: RP2
+  name: Artifact Authority Cutover / Discovery / Registry / Package Alignment
+  status: PLANNED
+- id: RP3
+  name: Governed Orchestration Runtime
+  status: PLANNED
+- id: RP4
+  name: Change / Draft / Canonical Apply Runtime
+  status: PLANNED
+- id: RP5
+  name: Project init / adopt / migrate / reconcile Runtime
+  status: PLANNED
+- id: RP6
+  name: Guided WebUI Setup
+  status: PLANNED
+- id: RP7
+  name: Context / Index / Memory / Evidence / Impact Runtime
+  status: PLANNED
+- id: RP8
+  name: Knowledge Publishing / Project Guide / Help Center
+  status: PLANNED
+- id: RP9
+  name: Reference Project Reconcile / Legacy Retirement
+  status: PLANNED
+- id: RP10
+  name: Documentation Re-baseline / Final Alignment
+  status: PLANNED
+stage_exit_gates:
+  RP1:
+  - 43/43 shadow materialized
+  - semantic equivalence with R1 registry
+  - self-describing contract satisfied
+  - 0 unauthorized semantics
+  - 0 dangling refs introduced
+  - 0 .banyan changes
+  - R0/R1 authority remains intact
+  - PLAN_CONFORMANCE_CHECK=PASS
+  RP2:
+  - artifact files become sole Artifact Semantic Source
+  - migration_artifacts.yaml reduced/reframed to migration lineage/index role without duplicate semantic body
+  - loader/list/show/validate/refs work
+  - wheel/package includes artifacts
+  - clean-room artifact discovery passes
+  - runtime_dependency_on_v3_1=0
+  - DUPLICATE_AUTHORITY=0
+  - R0 self-containment revalidated
+  - PLAN_CONFORMANCE_CHECK=PASS
+  RP5:
+  - init/adopt/migrate/reconcile are distinct typed modes
+  - safe automatic binding only
+  - ambiguous/high-impact binding => NEEDS_INPUT
+  - structured result returned
+  - existing .banyan never reinitialized
+  - rollback/acceptance evidence present
+  RP6:
+  - Guided setup consumes same Runtime API
+  - no UI-owned permission/init/canonical/git engine
+  - remaining bindings/configuration are explainable and typed
+  - existing Banyan shows reconcile/repair/upgrade surfaces
+  RP9:
+  - Reference project reconciled without deleting .banyan
+  - legacy retirement only after migration completeness + zero runtime dependency
+  - rollback rehearsal passed
+  - no valuable legacy capability unmapped
+universal_stage_outputs:
+- Acceptance Report
+- PLAN_CONFORMANCE_CHECK
+- Gap Delta
+- Changed Files
+- Cleanup Delta
+- Regression Result
+- New Proposals / Human Decisions
+- Rollback Plan
+- Next-stage Handoff
+next_stage: RP1_FRAMEWORK_ARTIFACT_MATERIALIZATION_SHADOW
+old_direct_r2_entry: CANCELLED

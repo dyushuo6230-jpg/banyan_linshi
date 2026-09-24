@@ -1,0 +1,10 @@
+schema_version: stage12-v1
+surfaces:
+  - authoritative_current_context
+  - stale_or_conflicted_context
+  - decision_blockers
+  - change_affected_context
+  - reference_neighborhood
+  - trace_neighborhood
+  - historical_transitions
+  - evidence_gaps

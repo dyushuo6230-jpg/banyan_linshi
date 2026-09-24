@@ -1,0 +1,17 @@
+schema_version: stage18.5-v1
+routes:
+  - {method: GET, path: /api/status, operation: status}
+  - {method: GET, path: /api/policy, operation: policy_status}
+  - {method: GET, path: /api/project-safety, operation: project_safety}
+  - {method: POST, path: /api/preflight, operation: preflight}
+  - {method: POST, path: /api/commit/plan, operation: commit_plan}
+  - {method: POST, path: /api/commit/dry-run, operation: commit_dry_run}
+  - {method: GET, path: /api/trace, operation: trace_query}
+  - {method: GET, path: /api/provenance/:id, operation: provenance_query}
+  - {method: GET, path: /api/providers, operation: provider_status}
+  - {method: GET, path: /api/activation-readiness, operation: activation_readiness}
+static:
+  spa_fallback_excludes:
+    - /api/
+    - /events/
+policy_logic_in_handler_allowed: false

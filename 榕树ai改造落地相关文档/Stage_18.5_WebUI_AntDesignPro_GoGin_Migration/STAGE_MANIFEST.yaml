@@ -1,0 +1,94 @@
+stage_id: "18.5"
+title: "WebUI Ant Design Pro Simple + Go/Gin Architecture Migration"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "TARGETED_ARCHITECTURE_MIGRATION"
+
+upstream:
+  stage: "18"
+  run_id: "stage18-20260921T062103Z"
+  acceptance: "PASS_STAGE18_MULTI_EDITOR_ADAPTER_COMPATIBILITY"
+  entry_gate: "PASS_FOR_STAGE18_5_WEBUI_GOGIN_ARCHITECTURE_MIGRATION_WITH_PRESERVED_RUNTIME_CONTRACTS"
+
+target_stack:
+  frontend:
+    framework: "Ant Design Pro Simple"
+    language: "TypeScript"
+    component_system: "Ant Design / ProComponents"
+  control_plane:
+    language: "Go"
+    http_framework: "Gin"
+  distribution:
+    frontend_static_build: true
+    go_embed: true
+    node_required_at_runtime: false
+    local_only_default: true
+
+owned_outcomes:
+  - "WebUI Current-State Inventory"
+  - "Frontend Feature Equivalence Matrix"
+  - "Ant Design Pro Simple Banyan Baseline"
+  - "Banyan WebUI Feature Migration"
+  - "Go/Gin Control Plane"
+  - "Runtime Bridge Contract"
+  - "HTTP Contract Compatibility"
+  - "Embedded Frontend Asset Pipeline"
+  - "SPA Routing / Static Fallback"
+  - "Local-only Server Safety"
+  - "Trace / Provenance Rendering Equivalence"
+  - "Project Safety / Git UI Equivalence"
+  - "Adapter Compatibility Regression"
+  - "Pilot .banyan Integrity Regression"
+  - "Stage 19 RC Handoff"
+
+not_owned:
+  - "Stage15 Runtime Core full language rewrite"
+  - "Stage14 policy redesign"
+  - "Stage17 pilot remigration"
+  - "Stage18 adapter redesign"
+  - "project document migration"
+  - "final activation"
+  - "Stage19 execution"
+
+hard_invariants:
+  runtime_contract_preserved: true
+  second_permission_engine_allowed: false
+  gin_handler_policy_engine_allowed: false
+  ui_click_is_authorization: false
+  current_project_git_mutation_allowed: false
+  pilot_dot_banyan_structure_change_allowed: false
+  secret_body_render_allowed: false
+  public_bind_default_allowed: false
+  node_required_for_release_runtime: false
+  frontend_assets_embedded_in_go_release: true
+
+write_scope:
+  allowed:
+    - "banyan-framework/**"
+    - "${REFRACTOR_CONTROL_ROOT}/stages/18.5/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "project business code"
+    - "project canonical documents"
+    - "pilot .banyan structure/data mutation"
+    - "current project Git mutation"
+    - "13 Secret bodies"
+    - "Stage19 execution"
+
+exit_gate:
+  validations: "V18_5-01..V18_5-30"
+  hard_metrics:
+    FEATURE_LOST_WITHOUT_TYPED_DISPOSITION: 0
+    CONTROL_PLANE_CONTRACT_BREAK_WITHOUT_ADAPTER: 0
+    SECOND_PERMISSION_ENGINE_CREATED: 0
+    GIN_HANDLER_POLICY_REIMPLEMENTATION: 0
+    UI_AUTHORIZATION_BYPASS_PATH: 0
+    CURRENT_PROJECT_GIT_MUTATION: 0
+    PILOT_DOT_BANYAN_MUTATION: 0
+    SECRET_BODY_RENDER_OR_API_PATH: 0
+    PUBLIC_BIND_DEFAULT_PATH: 0
+    RELEASE_REQUIRES_NODE_TO_SERVE_UI: 0
+    EMBEDDED_ASSET_WITHOUT_HASH_MANIFEST: 0
+    ADAPTER_COMPATIBILITY_REGRESSION: 0
+  next_stage: "19"

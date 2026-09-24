@@ -1,0 +1,13 @@
+# 视觉修复循环一次运行
+run_id: "{{YYYYMMDD}-{application}-{page}}"
+application_slug: gongyi_online
+page_path: ""
+design_image: ""
+timing: static  # static | acceptance
+viewport: 390x844
+max_rounds: 4
+tokens_path: NONE  # 或 products/{slug}/materials/tokens/design-tokens.json
+ui_contract: docs/project/delivery/ui-contracts/gongyi_online-partial-001/EFFECTIVE_UI_CONTRACT.md
+overlay_wins_over_png: true
+allowed_files: []
+status: not_started  # not_started | in_progress | passed | failed | stopped

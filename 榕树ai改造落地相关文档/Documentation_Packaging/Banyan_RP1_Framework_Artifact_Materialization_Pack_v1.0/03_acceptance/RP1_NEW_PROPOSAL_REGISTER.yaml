@@ -1,0 +1,14 @@
+schema_version: rp1-new-proposal-register-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+runtime_authority: false
+semantic_authority: false
+stage: RP1
+new_proposals: []
+summary:
+  count: 0
+  unauthorized_promotions: 0
+  human_decision_required: 0
+notes:
+- RP1 did not invent Artifact semantics.
+- Any future proposal remains non-authoritative until a Human Decision promotes it.

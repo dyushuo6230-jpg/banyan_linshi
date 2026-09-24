@@ -1,0 +1,57 @@
+# Template only.
+schema_version: "stage00-checkpoint-v1.9.1"
+charter_version: "1.9.1"
+stage_id: "00"
+
+checkpoint_id: null
+run_id: null
+created_at: null
+
+baseline:
+  head: null
+  branch: null
+  working_tree_dirty: null
+
+artifacts:
+  staged_patch:
+    required: null
+    path: null
+    sha256: null
+    binary_capable: true
+  unstaged_patch:
+    required: null
+    path: null
+    sha256: null
+    binary_capable: true
+  untracked_backup:
+    required: null
+    path: null
+    sha256: null
+    relative_paths_preserved: null
+  ignored_governed_backup:
+    required: null
+    path: null
+    sha256: null
+    relative_paths_preserved: null
+
+secret_recovery:
+  mode: "METADATA_ONLY"
+  user_managed_paths: []
+  content_copied_to_checkpoint: false
+
+recovery:
+  coverage: null            # COMPLETE | PARTIAL_APPROVED | INCOMPLETE
+  destructive_auto_restore_allowed: false
+  instructions:
+    - "Create a restore plan against the then-current working tree."
+    - "Detect post-baseline user work before restoring."
+    - "Do not overwrite post-baseline user work."
+    - "Require confirmation before destructive recovery."
+
+validation:
+  patch_artifacts_hashed: null
+  backup_artifacts_hashed: null
+  binary_changes_covered: null
+  recovery_instructions_present: true
+
+notes: []

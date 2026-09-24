@@ -1,0 +1,65 @@
+# Template only — populate from real Repository execution.
+schema_version: "stage00-baseline-v1.9.1"
+charter_version: "1.9.1"
+stage_id: "00"
+
+baseline_id: null
+run_id: null
+generated_at: null
+
+repository:
+  root: null
+  topology: null            # SINGLE_REPO | MONOREPO | NESTED_REPOSITORIES | WORKTREE | OTHER
+  branch: null
+  head: null
+  detached: null
+  git_operation: null       # NONE | MERGE | REBASE | CHERRY_PICK | REVERT | CONFLICT | OTHER
+  dirty: null
+  upstream_present: null
+  worktrees: []
+  submodules: []
+  nested_repositories: []
+  sparse_checkout: null
+  lfs:
+    available: null
+    files_detected: null
+
+working_tree:
+  staged_count: null
+  unstaged_count: null
+  untracked_count: null
+  ignored_governed_count: null
+  deleted_count: null
+  renamed_count: null
+  binary_changed_count: null
+  unmerged_count: null
+
+control:
+  refactor_control_root: null
+  stage_root: null
+  bootstrap_only: true
+  stage_owned_write_only: true
+
+bootstrap_state:
+  migration_register: "MIGRATION_REGISTER.bootstrap.yaml"
+  refactor_trace: "BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  future_canonical_paths:
+    - ".banyan/migrations/MIGRATION_REGISTER.yaml"
+    - ".banyan/migrations/BANYAN_REFACTOR_TRACE.yaml"
+  lineage_required: true
+  dual_writable_truth_forbidden: true
+
+discovery_scope_ref: "DISCOVERY_SCOPE_BASELINE.yaml"
+protected_paths_ref: "PROTECTED_PATHS_MANIFEST.yaml"
+checkpoint_ref: "CHECKPOINT_RECORD.yaml"
+file_hashes_ref: "FILE_HASHES.sha256"
+
+git_identity_policy:
+  identity_modified_by_stage00: false
+  commit_created_by_stage00: false
+
+secret_policy:
+  content_captured: false
+  note: "Record metadata only; never serialize secret values."
+
+notes: []

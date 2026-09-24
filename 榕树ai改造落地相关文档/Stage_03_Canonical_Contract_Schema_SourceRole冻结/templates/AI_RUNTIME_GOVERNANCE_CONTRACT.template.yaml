@@ -1,0 +1,24 @@
+schema_version: "stage03-v1"
+execution_modes:
+  - FULL_AUDIT
+  - ENGINEERING
+  - BATCH_WORKER
+  - HUMAN_DECISION
+model_capability_classes:
+  - LOW_COST_WORKER
+  - STANDARD_ENGINEERING
+  - HIGH_REASONING
+  - MAX_REASONING
+fields:
+  - task_class
+  - execution_mode
+  - model_capability_class
+  - budget_policy
+  - batchability
+  - cacheability
+  - context_strategy
+  - escalation_condition
+  - quality_gate
+  - telemetry
+provider_or_model_name_frozen: false
+numeric_budget_threshold_frozen: false

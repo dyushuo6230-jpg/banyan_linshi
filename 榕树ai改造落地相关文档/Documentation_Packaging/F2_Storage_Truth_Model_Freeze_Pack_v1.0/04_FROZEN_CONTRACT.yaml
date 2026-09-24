@@ -1,0 +1,106 @@
+contract_id: banyan.f2.storage_truth_model.v1
+contract_status: FROZEN_FOR_DOWNSTREAM_ARCHITECTURE
+architecture_freeze: PASS
+implementation_authorized: false
+
+invariants:
+  authority:
+    one_semantic_fact_one_canonical_write_target: true
+    total_truth_database: false
+    duplicate_writable_truth_forbidden: true
+
+  artifact_truth:
+    semantic_truth: GOVERNED_FILE_BASED_CANONICAL_SOURCE
+    composite_artifact_allowed: true
+    exclusive_field_ownership: true
+    sqlite_may_be_canonical: false
+
+  project_instance_truth:
+    type: PROJECTINSTANCE_STRUCTURED_TRUTH
+    durable: true
+    non_derived: true
+    sqlite_projection_only: true
+    exact_layout_owner: F8
+
+  runtime_truth:
+    type: DURABLE_OPERATIONAL_TRUTH
+    may_override_artifact_semantic_truth: false
+
+  evidence_truth:
+    durable_source_required: true
+    rebuildable_index_may_be_sole_source: false
+
+  context_memory:
+    canonical: false
+    may_override_higher_authority_source: false
+    promotion_requires_governed_authority_target: true
+
+  derived_index:
+    canonical: false
+    rebuildable: true
+    query_layer: true
+    source_resolution_required: true
+    freshness_required: true
+    typed_relationship_graph_required: true
+
+  adaptive_query_scope:
+    data_foundation_owner: F2
+    expansion_policy_owner: F9
+    uncontrolled_recursive_expansion_forbidden: true
+
+  identity_version_status:
+    stable_id_independent_of_path: true
+    stable_id_independent_of_filename: true
+    stable_id_independent_of_git_commit: true
+    id_reuse_for_new_semantic_subject_forbidden: true
+    status_domains_typed: true
+
+  canonical_apply:
+    logical_apply_unit_required: true
+    predeclared_write_set_required: true
+    expected_base_validation_required: true
+    durable_apply_journal_before_first_write: true
+    partial_canonical_success_claim_forbidden: true
+    technical_recovery_required_on_partial_failure: true
+
+  recovery:
+    semantic_reversal_requires_new_governed_change: true
+    deterministic_safe_recovery_default: AUTO
+    ambiguous_or_high_risk_recovery: HUMAN_DECISION
+
+  migration:
+    source_target_lineage_required: true
+    one_controlled_authority_cutover: true
+    long_term_dual_writable_truth_forbidden: true
+    recovery_copy_is_authority: false
+
+  rebuild:
+    file_created_equals_success: false
+    semantic_equivalence_required: true
+    byte_identity_required: false
+
+  logical_store_separation:
+    runtime_operational_store: DURABLE_OPERATIONAL_TRUTH
+    derived_query_index: NON_CANONICAL_REBUILDABLE_PROJECTION
+    index_rebuild_may_destroy_runtime_truth: false
+
+deferred_required_decision:
+  id: PHYSICAL_STORE_TOPOLOGY
+  decision_owner_gate: STORAGE_IMPLEMENTATION_FREEZE
+  prerequisites:
+    - F8_ARCHITECTURE_FREEZE_PASS
+    - F9_ARCHITECTURE_FREEZE_PASS
+    - F10_ARCHITECTURE_FREEZE_PASS
+  must_happen_before:
+    - PERSISTENT_RUNTIME_DDL
+    - PERSISTENT_INDEX_DDL
+    - STORAGE_MIGRATIONS
+  requires_human_decision: true
+
+illustrative_examples:
+  business_domain_names_are_framework_contracts: false
+  names:
+    - Order
+    - Payment
+    - Inventory
+    - Coupon

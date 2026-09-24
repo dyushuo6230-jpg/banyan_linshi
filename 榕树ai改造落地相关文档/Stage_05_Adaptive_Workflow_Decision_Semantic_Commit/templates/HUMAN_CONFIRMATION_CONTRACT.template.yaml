@@ -1,0 +1,12 @@
+schema_version: stage05-v1
+required_fields:
+  - decision_id
+  - question
+  - context
+  - options
+  - neutral_summary
+  - impacts
+  - reversible
+  - default_if_no_answer
+  - blocking
+  - evidence_refs

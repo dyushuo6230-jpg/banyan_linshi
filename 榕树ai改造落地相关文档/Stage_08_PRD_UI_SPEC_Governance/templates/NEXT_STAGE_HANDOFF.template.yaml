@@ -1,0 +1,14 @@
+upstream_stage: "08"
+run_id: null
+acceptance_result: null
+prd_ui_contracts: []
+ui_scope_contracts: []
+design_evidence_contracts: []
+ui_readiness_contracts: []
+carried_blockers: []
+stage09_inputs: []
+next_stage_entry_gate:
+  stage: "09"
+  result: null
+  execution_authorized: false
+stop_after_stage: "08"

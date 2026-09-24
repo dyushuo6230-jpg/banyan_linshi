@@ -1,0 +1,15 @@
+schema_version: stage10-v1
+guide:
+  guide_id: null
+  sections:
+    - overview
+    - applications_services
+    - canonical_source_map
+    - how_to_work
+    - change_decision
+    - ui_governance
+    - testing_delivery
+    - progress_handover
+    - knowledge_navigation
+    - freshness_notice
+second_truth_allowed: false

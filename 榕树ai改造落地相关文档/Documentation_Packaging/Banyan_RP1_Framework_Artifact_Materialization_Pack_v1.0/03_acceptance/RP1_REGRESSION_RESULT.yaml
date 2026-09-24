@@ -1,0 +1,101 @@
+schema_version: rp1-regression-result-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+stage: RP1
+environment:
+  python: Python 3.9.6
+  go_host: go version go1.26.5 darwin/arm64
+  go_mod: go 1.24
+  cwd: banyan-framework
+  PYTHONPATH: src
+commands:
+- command: PYTHONPATH=src python3 tests/run_r0_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 16
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; cwd=banyan-framework
+  notes: Preserved R0 runner. 16/16.
+- command: PYTHONPATH=src python3 tests/run_r1_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 22
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; cwd=banyan-framework
+  notes: Preserved R1 runner. 22/22.
+- command: PYTHONPATH=src python3 tests/run_rp1_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 44
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; cwd=banyan-framework
+  notes: Additive RP1 runner executes preserved R0/R1 suites plus V-01 through V-22. 16+6+22=44.
+- command: 'PYTHONPATH=src python3 -m banyan.cli contracts validate --root .   # via banyan.cli.main([''contracts'',''validate'',''--root'',''.''])'
+  result: PASS
+  exit_code: 0
+  passed: 1
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; cwd=banyan-framework
+  notes: valid=true; asset_count=11; capability_count=35; provider_port_count=35; reference_count=263.
+- command: PYTHONPATH=src python3 tests/run_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 21
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; BANYAN_FIXTURE_ROOT=<temp>; cwd=banyan-framework
+  notes: Stage 15 runner. test_executor_integration requires BANYAN_FIXTURE_ROOT; a temporary fixture directory was supplied
+    without modifying tests. First import without the env var raises KeyError and is not a code failure.
+- command: PYTHONPATH=src python3 tests/run_stage16_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 12
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; BANYAN_TEST_REPOSITORY=<temp git repo>; cwd=banyan-framework
+  notes: Temporary git repository supplied through the existing env-var interface. Tests were not modified.
+- command: PYTHONPATH=src python3 tests/run_stage17_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 10
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; BANYAN_TEST_REPOSITORY=<temp git repo>; BANYAN_STAGE17_SHADOW=<temp copy of .banyan>;
+    cwd=banyan-framework
+  notes: Used a copy of .banyan as the Stage 17 shadow so the real Project Instance was not written.
+- command: PYTHONPATH=src python3 tests/run_stage18_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 11
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; BANYAN_TEST_REPOSITORY=<temp git repo>; cwd=banyan-framework
+  notes: null
+- command: PYTHONPATH=src python3 tests/run_stage18_5_tests.py
+  result: PASS
+  exit_code: 0
+  passed: 5
+  failed: 0
+  environment: Python 3.9.6; PYTHONPATH=src; BANYAN_TEST_REPOSITORY=<temp git repo>; cwd=banyan-framework
+  notes: null
+- command: go test ./...
+  result: PASS
+  exit_code: 0
+  passed: 3
+  failed: 0
+  environment: cwd=banyan-framework/control-plane-go; host go1.26.5 darwin/arm64; go.mod requires go 1.24; network available
+    for module download
+  notes: 'cmd/banyan-control has no test files. Packages ok: internal/controlplane/http, internal/runtimebridge, internal/webassets.
+    go.mod was not modified. Historical RP0 sandbox block (Go 1.24 toolchain download unavailable) did not recur in this environment.'
+authority_regression:
+  manifest_assets: 11
+  migration_artifacts_yaml_sha256: 40252e863411173b73e37d0562c9a128b6d14ebad32efdcc9d9f6d885ec4c1c6
+  manifest_yaml_sha256: dbd835b3110a01909c3beb92d14d0b3dad7f6fadc1cbd5259f1c647fc61e28a1
+  schema_index_yaml_sha256: 91e28273b7382438dc46cb14e936e7d469db2ba286741feb60fd783cb5777d78
+  loader_py_sha256: 15f4a4c42ecd67026fdda2306b4154b4bb5be8bb72ddfa1beb2adab3e59b8d74
+  cli_py_sha256: 905a0d01b5e3a11a3016bb9a80156d2c665b40ee568d003556ab38bc8ba7c9e2
+  pyproject_toml_sha256: 5e3dde4ac4c38ce684dc6461f990463c11e9d9edce73567266f88411f37c943d
+  loader_reads_artifacts: false
+  wheel_package_data_includes_artifacts: false
+  cli_has_artifact_list_show_validate_refs: false
+  dot_banyan_tree_sha256: 6e4b8d69d1f9df8651cd990f25aa3a4d6bf36ad64412615c0d094ad9efab9c56
+  dot_banyan_file_count: 13
+  current_governance: v1.9.1_FINAL_FREEZE
+  final_activation: NOT_AUTHORIZED
+  legacy_v3_1_changed: false

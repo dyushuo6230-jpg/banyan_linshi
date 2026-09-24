@@ -1,0 +1,15 @@
+schema_version: "stage03-v1"
+expected_high_value_capabilities: 35
+metrics:
+  UNMAPPED_HIGH_VALUE_CAPABILITY: null
+  UNOWNED_SCHEMA_COLLISION: null
+  SOURCE_ROLE_WITHOUT_AUTHORITY_RULE: null
+  CONTRACT_WITHOUT_FAILURE_SEMANTICS: null
+  SILENT_CAPABILITY_DROP: null
+  PROJECT_PATH_HARDCODED_IN_CORE_SCHEMA: null
+coverage:
+  capability_contracts: null
+  source_roles: null
+  provider_ports: null
+  project_overlays: null
+  compatibility_contracts: null

@@ -1,0 +1,32 @@
+schema_version: stage19-v1
+claims:
+  - id: architecture_final
+    evidence_refs: []
+    result: null
+  - id: generic_core_purity
+    evidence_refs: []
+    result: null
+  - id: runtime_policy_git
+    evidence_refs: []
+    result: null
+  - id: webui_gogin_bridge
+    evidence_refs: []
+    result: null
+  - id: adapters
+    evidence_refs: []
+    result: null
+  - id: pilot_integrity
+    evidence_refs: []
+    result: null
+  - id: index_trace_provenance
+    evidence_refs: []
+    result: null
+  - id: freshness_blockers
+    evidence_refs: []
+    result: null
+  - id: noloss
+    evidence_refs: []
+    result: null
+  - id: rc_build
+    evidence_refs: []
+    result: null

@@ -1,0 +1,11 @@
+schema_version: stage06-v1
+provider_id: openspec
+binding:
+  change_identity_map: {}
+  artifact_role_map: {}
+  lifecycle_map: {}
+  apply_operation_map: {}
+constraints:
+  may_bypass_banyan_decision_gate: false
+  may_directly_become_canonical: false
+  auto_delete_after_apply: false

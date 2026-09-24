@@ -1,0 +1,11 @@
+schema_version: stage04-v1
+bindings:
+  - binding_id: null
+    port_id: null
+    provider_id: null
+    scope: null
+    configuration_ref: null
+    capability_declaration: []
+    activation_state: INACTIVE
+    fallback_policy: null
+    health_policy: null

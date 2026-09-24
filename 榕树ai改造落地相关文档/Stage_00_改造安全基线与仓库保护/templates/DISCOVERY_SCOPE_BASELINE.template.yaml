@@ -1,0 +1,35 @@
+# Template only.
+schema_version: "stage00-discovery-scope-v1.9.1"
+charter_version: "1.9.1"
+stage_id: "00"
+
+repository_root: null
+
+roots:
+  - path: null
+    mode: null              # SCAN | METADATA_ONLY | EXCLUDE_WITH_REASON
+    reason: null
+    governed: null
+    git_state: null         # TRACKED | UNTRACKED | IGNORED | MIXED
+    protection_class: null
+    follow_symlinks: false
+    notes: null
+
+coverage:
+  tracked_considered: false
+  untracked_considered: false
+  ignored_governed_considered: false
+  submodules_considered: false
+  nested_repositories_considered: false
+  worktrees_considered: false
+  symlinks_considered: false
+  secret_candidates_considered: false
+
+exclusions:
+  - path: null
+    reason: null
+
+assertions:
+  silently_ignored_governance_root_count: null
+  unexplained_exclusion_count: null
+  external_symlink_target_scanned_count: 0

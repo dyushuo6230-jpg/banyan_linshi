@@ -1,0 +1,471 @@
+schema_version: d1.5-v1
+audit_id: BANYAN-D1.5-IMPLEMENTATION-RECONCILIATION
+audit_date: 2026-09-21
+source_registry: .banyan-refactor/stages/03/stage03-20260920T135702Z/CAPABILITY_CONTRACT_REGISTRY.yaml
+source_migration_matrix: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_CAPABILITY_MIGRATION_MATRIX.yaml
+accounting_warning: 35/35 frozen and mapped does not mean 35/35 implemented.
+capabilities:
+  - capability_id: CAP-AUTH
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/project/AI_DOCUMENTATION_GUIDE.md]
+    frozen_contract: banyan.contract.action_authorization.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: [banyan-framework/policies/default-policy.yaml, banyan-framework/src/banyan/policy/compiler.py, banyan-framework/src/banyan/runtime/evaluator.py]
+    provider_binding: .banyan/providers/bindings.yaml#runtime-permission
+    project_overlay: Required by contract; no populated overlay binding.
+    runtime_consumer: banyan.runtime.api.RuntimeAPI.evaluate_action/preflight_action
+    tests: [banyan-framework/tests/test_policy_runtime.py, banyan-framework/tests/test_stage18_adapters.py]
+    docs: [banyan-framework/docs/DOCUMENTATION_INVENTORY.md, banyan-framework/docs/reference/STATUS_AND_ENUM_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [shipped contract registry entry, populated project authority overlay, full legacy authorization-scope resolution]
+
+  - capability_id: CAP-PROFILE
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/project/PROJECT_VARIABLES.md]
+    frozen_contract: banyan.contract.variable_resolution.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: [.banyan/profiles/project.yaml, .banyan/profiles/contributor.yaml, .banyan/instance/project-instance.yaml]
+    provider_binding: none
+    project_overlay: Shadow Pilot profiles exist; six of seven Stage 04 variables remain UNKNOWN or BLOCKED.
+    runtime_consumer: none
+    tests: [banyan-framework/tests/test_stage17_pilot.py]
+    docs: [banyan-framework/docs/reference/KEY_IDS_AND_VARIABLES_REFERENCE.md]
+    status: PROJECT_OVERLAY_BOUND
+    missing_layers: [variable resolver, framework schema/registry, runtime consumer]
+
+  - capability_id: CAP-INTAKE
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.source_intake.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/KEY_DOCUMENT_TYPES_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [registry, source intake service, project mapping consumer, tests]
+
+  - capability_id: CAP-PRD
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.requirement_lifecycle.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/KEY_DOCUMENT_TYPES_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [artifact registry, PRD lifecycle engine, decision/apply integration, tests]
+
+  - capability_id: CAP-IDP
+    legacy_source: [.cursor/rules/collaboration-judgment.mdc, docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md]
+    frozen_contract: banyan.contract.decision_session.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: Permission preflight is narrower and is not a decision-session consumer.
+    tests: []
+    docs: [banyan-framework/docs/user-guide/09_Change与Decision使用说明.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [decision session state machine, informed confirmation, controlled decision apply, registry, tests]
+
+  - capability_id: CAP-ARCH
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.design_gate.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: design_gate is UNKNOWN in the Pilot variable bindings.
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [gate registry, project binding, runtime evaluator, tests]
+
+  - capability_id: CAP-SCHEMA
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.artifact_status_and_identity.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: Control Plane provenance renders fields but does not validate the frozen artifact schema.
+    tests: [banyan-framework/tests/test_stage16_control_plane.py]
+    docs: [banyan-framework/docs/reference/STATUS_AND_ENUM_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [artifact registry/schema in release, validator, loader, full lifecycle tests]
+
+  - capability_id: CAP-IDREF
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/project/decisions/ADR-049.md]
+    frozen_contract: banyan.contract.reference_integrity.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/KEY_IDS_AND_VARIABLES_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [reference graph, ID allocator/validator, supersession enforcement, tests]
+
+  - capability_id: CAP-TRACE
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/project/acceptance/TRACE_MATRIX.md]
+    frozen_contract: banyan.contract.evidence_trace.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: [banyan-framework/src/banyan/trace/emitter.py, banyan-framework/src/banyan/runtime/api.py, .banyan/trace/pilot-events.jsonl]
+    provider_binding: none
+    project_overlay: Pilot trace location exists.
+    runtime_consumer: RuntimeAPI.emit_audit/query_trace; ControlPlaneService.trace
+    tests: [banyan-framework/tests/test_trace_provider.py, banyan-framework/tests/test_stage18_adapters.py]
+    docs: [banyan-framework/docs/DOCUMENTATION_INVENTORY.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [full evidence lineage/reference integration, shipped contract registry, canonical trace-index integration]
+
+  - capability_id: CAP-CHANGE
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md]
+    frozen_contract: banyan.contract.change_application.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: .banyan/overlays/bindings.yaml has canonical_apply disabled and no bindings.
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/user-guide/09_Change与Decision使用说明.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [change workspace, lifecycle executor, canonical apply, rollback/reconciliation runtime, tests]
+
+  - capability_id: CAP-PARALLEL
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md, docs/project/changes/变更稿模式.md]
+    frozen_contract: banyan.contract.draft_promotion.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/user-guide/11_多人研发与变更稿协作.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [draft workspace, promotion executor, conflict resolution, tests]
+
+  - capability_id: CAP-RECONCILE
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md]
+    frozen_contract: banyan.contract.batch_reconciliation.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [reconciliation engine, canonical/artifact graph integration, tests]
+
+  - capability_id: CAP-TEST
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md]
+    frozen_contract: banyan.contract.test_integrity.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: Framework tests validate current code, but they do not implement the TestIntegrity capability.
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [acceptance-scope model, test evidence consumer, completeness validator]
+
+  - capability_id: CAP-PROGRESS
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/project/progress/PROGRESS_REGISTER.yaml]
+    frozen_contract: banyan.contract.progress_projection.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [evidence-driven progress projector, index/query integration, freshness handling]
+
+  - capability_id: CAP-HANDOVER
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, docs/project/progress/HANDOVER_REGISTER.md]
+    frozen_contract: banyan.contract.operational_handover.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [handover builder, freshness resolver, context/evidence consumer, tests]
+
+  - capability_id: CAP-CONTEXT
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md, docs/project/progress/PROJECT_DASHBOARD.md]
+    frozen_contract: banyan.contract.context_recovery.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [context selector, recovery runtime, memory/freshness/index integrations, tests]
+
+  - capability_id: CAP-UI_SCOPE
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.uiapplication_scope.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: design_gate is UNKNOWN; no UI application scope binding exists.
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/KEY_DOCUMENT_TYPES_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [scope registry, project application mapping, workflow consumer, tests]
+
+  - capability_id: CAP-UI_CONTRACT
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.effective_uicontract.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/KEY_DOCUMENT_TYPES_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [UI merge/precedence engine, batch contract builder, artifact registry integration]
+
+  - capability_id: CAP-UI_GATE
+    legacy_source: [.cursor/rules/ui-spec-gate.mdc, docs/governance/common_prd_v3.1/通用文档提示词v3.1.md]
+    frozen_contract: banyan.contract.uiapproval_gate.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [material-to-draft gate, approval state machine, named restyling executor, tests]
+
+  - capability_id: CAP-VISUAL
+    legacy_source: [.cursor/skills/visual-repair-loop/SKILL.md, docs/project/ui-design/visual-loop]
+    frozen_contract: banyan.contract.visual_repair_run.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: [.cursor/skills/visual-repair-loop/SKILL.md]
+    provider_binding: none in .banyan/providers/bindings.yaml
+    project_overlay: legacy project artifacts preserved in place
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: COMPATIBILITY_ONLY
+    missing_layers: [framework skill registration, provider binding, runtime consumer, framework tests]
+
+  - capability_id: CAP-PUBLISH
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md, docs/project/plain-spec/白话文档生成方案.md, docs/project/progress/PLAIN_SYNC.yaml]
+    frozen_contract: banyan.contract.knowledge_projection.v1
+    target_layer: BANYAN_CORE_CANDIDATE
+    current_implementation: []
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/user-guide/13_文档_Source_Mapping与知识管理.md]
+    status: FROZEN_CONTRACT_ONLY
+    missing_layers: [publisher, source mapping/index consumer, freshness/conflict accounting, tests]
+
+  - capability_id: CAP-EDITOR
+    legacy_source: [.cursor/rules/collaboration-judgment.mdc, tools/anydesign/PROJECT_INSTALL.md]
+    frozen_contract: banyan.contract.editor_entry_compatibility.v1
+    target_layer: COMPATIBILITY_LAYER_CANDIDATE
+    current_implementation: [banyan-framework/src/banyan/editor/adapters.py, banyan-framework/src/banyan/editor/protocol.py, banyan-framework/src/banyan/cursor/adapter.py]
+    provider_binding: .banyan/providers/bindings.yaml#cursor-pilot-adapter
+    project_overlay: Pilot-only Cursor binding
+    runtime_consumer: AdapterGateway -> ControlPlaneService -> RuntimeAPI
+    tests: [banyan-framework/tests/test_stage18_adapters.py, banyan-framework/tests/test_stage17_pilot.py]
+    docs: [banyan-framework/docs/user-guide/03_在Codex_Cursor中使用Banyan.md]
+    status: IMPLEMENTED
+    missing_layers: []
+
+  - capability_id: CAP-PORT
+    legacy_source: [.cursor/rules/port-binding.mdc]
+    frozen_contract: banyan.contract.project_endpoint_map.v1
+    target_layer: PROJECT_INSTANCE_CANDIDATE
+    current_implementation: [.banyan/profiles/project.yaml]
+    provider_binding: none
+    project_overlay: CON-002 remains TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY.
+    runtime_consumer: none
+    tests: [banyan-framework/tests/test_stage17_pilot.py]
+    docs: [banyan-framework/docs/reference/KEY_IDS_AND_VARIABLES_REFERENCE.md]
+    status: PROJECT_OVERLAY_BOUND
+    missing_layers: [resolved project authority, endpoint map binding, runtime consumer]
+
+  - capability_id: CAP-SQL
+    legacy_source: [docs/开发指导.md]
+    frozen_contract: banyan.contract.project_delivery_convention.v1
+    target_layer: PROJECT_INSTANCE_CANDIDATE
+    current_implementation: [.banyan/profiles/project.yaml]
+    provider_binding: none
+    project_overlay: delivery_convention remains UNKNOWN.
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/KEY_IDS_AND_VARIABLES_REFERENCE.md]
+    status: PROJECT_OVERLAY_BOUND
+    missing_layers: [resolved delivery convention binding, validator/consumer, tests]
+
+  - capability_id: CAP-COMMIT
+    legacy_source: [docs/governance/common_prd_v3.1/通用文档提示词v3.1.md, nunu-go-api/app/admin/web/.husky/commit-msg, nunu-go-api/app/admin/web/commitlint.config.cjs]
+    frozen_contract: banyan.contract.commit_practice_compatibility.v1
+    target_layer: COMPATIBILITY_LAYER_CANDIDATE
+    current_implementation: [banyan-framework/src/banyan/commit/planner.py, banyan-framework/src/banyan/commit/executor.py, banyan-framework/src/banyan/git/adapter.py]
+    provider_binding: Runtime/Git adapters are internal implementations.
+    project_overlay: commit_practice remains UNKNOWN; message format is request-overridable.
+    runtime_consumer: RuntimeAPI.plan_commit/execute_commit/dry_run_commit
+    tests: [banyan-framework/tests/test_adapters_planner.py, banyan-framework/tests/test_executor_integration.py]
+    docs: [banyan-framework/docs/user-guide/10_Git与语义化分批提交.md]
+    status: IMPLEMENTED
+    missing_layers: []
+
+  - capability_id: CAP-MERGE
+    legacy_source: [docs/temp/SassDesign/合并代码指导.md]
+    frozen_contract: banyan.contract.legacy_collaboration_reference.v1
+    target_layer: COMPATIBILITY_LAYER_CANDIDATE
+    current_implementation: [docs/temp/SassDesign/合并代码指导.md]
+    provider_binding: none
+    project_overlay: preserve-in-place legacy reference
+    runtime_consumer: none
+    tests: []
+    docs: [banyan-framework/docs/reference/WORKFLOW_REFERENCE.md]
+    status: COMPATIBILITY_ONLY
+    missing_layers: [framework compatibility registry entry, loader/consumer, provenance link]
+
+  - capability_id: CAP-DESIGN
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/references/element-copy.md]
+    frozen_contract: banyan.contract.design_analysis.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/SKILL.md, tools/anydesign/scripts]
+    provider_binding: No AnyDesign binding in .banyan/providers/bindings.yaml.
+    project_overlay: none
+    runtime_consumer: none
+    tests: Legacy tool-local only; no Framework integration test.
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, Stage 09 port adapter, Runtime consumer, Framework integration tests]
+
+  - capability_id: CAP-CSS
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/extract_css_vars.py]
+    frozen_contract: banyan.contract.css_token_extraction.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/extract_css_vars.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-CAPTURE
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/capture_site.py]
+    frozen_contract: banyan.contract.page_visual_capture.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/capture_site.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-COLORS
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/extract_colors.py]
+    frozen_contract: banyan.contract.image_palette_extraction.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/extract_colors.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-A11Y
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/check_contrast.py]
+    frozen_contract: banyan.contract.contrast_evaluation.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/check_contrast.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-LINT
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/lint_design_md.py]
+    frozen_contract: banyan.contract.design_document_lint.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/lint_design_md.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-TOKENS
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/build_tokens_json.py]
+    frozen_contract: banyan.contract.design_token_build.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/build_tokens_json.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-DRIFT
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/verify_design.py]
+    frozen_contract: banyan.contract.design_drift_check.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/verify_design.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+  - capability_id: CAP-EXPORT
+    legacy_source: [tools/anydesign/SKILL.md, tools/anydesign/scripts/export_for_claude_design.py]
+    frozen_contract: banyan.contract.design_package_export.v1
+    target_layer: PROVIDER_CANDIDATE
+    current_implementation: [tools/anydesign/scripts/export_for_claude_design.py]
+    provider_binding: none
+    project_overlay: none
+    runtime_consumer: none
+    tests: no Framework integration test
+    docs: [banyan-framework/docs/reference/SKILL_REFERENCE.md]
+    status: PARTIALLY_MIGRATED
+    missing_layers: [provider binding, adapter, Runtime consumer, Framework tests]
+
+summary:
+  total: 35
+  IMPLEMENTED: 2
+  PARTIALLY_MIGRATED: 11
+  PROJECT_OVERLAY_BOUND: 3
+  COMPATIBILITY_ONLY: 2
+  FROZEN_CONTRACT_ONLY: 17
+  implementation_ratio_note: The count is an audit classification, not a release acceptance metric.
+  core_finding: Only CAP-EDITOR and CAP-COMMIT satisfy their bounded current implementation paths end to end; other implemented fragments do not satisfy every frozen layer.

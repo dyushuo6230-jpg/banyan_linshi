@@ -1,0 +1,17 @@
+schema_version: stage15-v1
+plan:
+  plan_id: null
+  repository_scope: null
+  identity_presence_state: null
+  groups:
+    - group_id: null
+      intent: null
+      classifications: []
+      paths: []
+      hunks: []
+      validation: []
+      dependencies: []
+      authorization_required: true
+  blocked_items: []
+  leftovers: []
+plan_is_authorization: false

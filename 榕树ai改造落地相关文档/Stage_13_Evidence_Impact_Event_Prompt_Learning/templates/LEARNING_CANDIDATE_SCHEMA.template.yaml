@@ -1,0 +1,29 @@
+schema_version: stage13-v1
+candidate_types:
+  - PROMPT_CHANGE
+  - RULE_CHANGE
+  - SKILL_CHANGE
+  - WORKFLOW_CHANGE
+  - CONTEXT_POLICY_CHANGE
+  - PROVIDER_HINT
+  - PROJECT_OVERLAY_CHANGE
+statuses:
+  - OBSERVED
+  - PROPOSED
+  - EVALUATING
+  - EVALUATED
+  - REJECTED
+  - APPROVED_FOR_CHANGE
+  - SUPERSEDED
+  - BLOCKED
+candidate:
+  candidate_id: null
+  candidate_type: null
+  scope: PROJECT
+  evidence_refs: []
+  hypothesis: null
+  expected_benefit: null
+  risks: []
+  evaluation_ref: null
+  status: PROPOSED
+auto_apply: false

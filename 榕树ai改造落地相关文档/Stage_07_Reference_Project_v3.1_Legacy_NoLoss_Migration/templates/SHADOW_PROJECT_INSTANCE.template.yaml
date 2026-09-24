@@ -1,0 +1,10 @@
+schema_version: stage07-v1
+mode: SHADOW_ONLY
+project_instance:
+  source_mappings: []
+  overlays: []
+  profiles: []
+  provider_bindings: []
+  artifact_registry: []
+  workflow_relations: []
+activate_final_dot_banyan: false

@@ -1,0 +1,9 @@
+schema_version: stage20-v1
+framework_release:
+  version: null
+  source_rc: stage19-rc.1
+  release_state: null
+  artifacts: []
+  hashes: []
+  documentation: []
+project_final_activation: NOT_AUTHORIZED

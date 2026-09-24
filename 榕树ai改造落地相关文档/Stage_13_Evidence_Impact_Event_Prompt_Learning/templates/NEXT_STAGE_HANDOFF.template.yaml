@@ -1,0 +1,14 @@
+upstream_stage: "13"
+run_id: null
+acceptance_result: null
+evidence_contracts: []
+impact_contracts: []
+event_contracts: []
+learning_contracts: []
+stage14_governance_requirements: []
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "14"
+  result: null
+  execution_authorized: false
+stop_after_stage: "13"

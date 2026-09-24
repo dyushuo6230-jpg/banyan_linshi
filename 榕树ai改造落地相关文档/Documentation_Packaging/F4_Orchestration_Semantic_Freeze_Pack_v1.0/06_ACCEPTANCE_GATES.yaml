@@ -1,0 +1,80 @@
+gate_id: F4_ARCHITECTURE_ACCEPTANCE
+status: PASS
+architecture_freeze: PASS
+implementation_authorized: false
+checks:
+- id: F4-G01
+  status: PASS
+- id: F4-G02
+  status: PASS
+- id: F4-G03
+  status: PASS
+- id: F4-G04
+  status: PASS
+- id: F4-G05
+  status: PASS
+- id: F4-G06
+  status: PASS
+- id: F4-G07
+  status: PASS
+- id: F4-G08
+  status: PASS
+- id: F4-G09
+  status: PASS
+- id: F4-G10
+  status: PASS
+- id: F4-G11
+  status: PASS
+- id: F4-G12
+  status: PASS
+- id: F4-G13
+  status: PASS
+- id: F4-G14
+  status: PASS
+hard_invariants:
+- TOKEN_EFFICIENCY_MUST_NOT_REDUCE_GOVERNANCE_FIDELITY
+- Role != Capability != Skill != Workflow
+- Capability != Skill
+- Role != Permission != Authority != GitIdentity != Authentication
+- Definition != Assignment != Binding != RuntimeExecution
+- Provider != Skill
+- EngineeringStandard != Policy
+- Evidence != Authority
+- LearningProposal != Authorization
+- WorkflowAtom != DefinitionArtifact
+cross_stage_gate:
+  id: CROSS-STAGE-GATE-01
+  status: HUMAN_APPROVED_NOT_YET_SATISFIED_FOR_FULL_LEGACY_MIGRATION
+  required_semantic_domains:
+  - Role
+  - Capability
+  - Skill
+  - Workflow
+  - Policy
+  - State Model
+  - Decision Protocol
+  - Template / Output Contract
+  - Provider Contract
+  - Engineering Standard
+  - Context
+  - Evidence / Trace
+  - Binding / Assignment
+  - Permission / Authority
+  - Validation / Acceptance
+  - Compatibility / Migration
+  zero_conditions_required:
+  - UNROUTED_HIGH_VALUE_SEMANTIC=0
+  - SEMANTIC_OWNER_GAP=0
+  - UNRESOLVED_HIGH_IMPACT_TYPE_MAPPING=0
+  - SILENT_SEMANTIC_DROP=0
+  forbidden_until_pass:
+  - Full Legacy Semantic Migration
+  - Authority Cutover
+  - Canonical Rewrite
+  - Legacy Retirement / deletion
+  - Final Binding Activation
+next_stage:
+  id: F5
+  name: PRD Generation & Governance
+  entry_allowed_after: Human confirmation of this Freeze Pack
+  implementation_allowed: false

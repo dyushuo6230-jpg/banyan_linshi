@@ -1,0 +1,11 @@
+schema_version: stage05-v1
+conflict_id: CON-001
+status: null
+generic_core:
+  decision_semantics: null
+project_overlay:
+  configurable_parameters: []
+non_overridable_safety_floor: []
+evidence_refs: []
+remaining_blockers: []
+owner_stage: "05"

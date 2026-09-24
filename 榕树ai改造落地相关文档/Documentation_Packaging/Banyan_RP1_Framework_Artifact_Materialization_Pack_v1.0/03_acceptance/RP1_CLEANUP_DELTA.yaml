@@ -1,0 +1,45 @@
+schema_version: rp1-cleanup-delta-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+stage: RP1
+gate: ZERO_DELETE_IN_RP1
+deleted: []
+delete_count: 0
+not_executed_cleanup_candidates:
+- path: banyan-framework/.DS_Store
+  classification: CLEANUP_CANDIDATE
+  decision: HD-CLEANUP-002
+  rp1_action: not_deleted
+- path: banyan-framework/docs/.DS_Store
+  classification: CLEANUP_CANDIDATE
+  decision: HD-CLEANUP-002
+  rp1_action: not_deleted
+- path: banyan-framework/src/banyan/contracts/.DS_Store
+  classification: CLEANUP_CANDIDATE
+  decision: HD-CLEANUP-002
+  rp1_action: not_deleted
+not_executed_unknowns:
+- path: banyan-framework/control-plane-go/bin/banyan-control
+  classification: UNKNOWN
+  decision: HD-CLEANUP-001
+  status: NEED_MORE_EVIDENCE
+  rp1_action: not_deleted_not_moved_not_modified
+- path: banyan-framework/src/banyan/policy/compiler.py#default_policy
+  classification: UNKNOWN
+  decision: HD-CLEANUP-003
+  status: ACCEPT_CURRENT_STATE_FOR_RP1
+  rp1_action: not_merged_not_deleted
+- path: .banyan/mappings/source-mappings.yaml#unofficial_roles
+  classification: UNKNOWN
+  rp1_action: dot_banyan_not_modified
+- path: Banyan_规划现状差距盘点与后续修复总蓝图_v1.0.md
+  classification: UNKNOWN
+  rp1_action: not_hunted_or_deleted
+- path: Banyan_后续修复基线_v1.0.yaml
+  classification: UNKNOWN
+  rp1_action: not_hunted_or_deleted
+- path: .banyan/migrations/rollback.yaml#verify_dot_banyan_absent
+  classification: UNKNOWN
+  rp1_action: dot_banyan_not_modified
+new_cleanup_candidates_discovered_this_round: []
+new_unknowns_discovered_this_round: []

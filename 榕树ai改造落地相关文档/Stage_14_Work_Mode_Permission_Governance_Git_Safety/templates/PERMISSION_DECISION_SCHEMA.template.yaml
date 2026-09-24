@@ -1,0 +1,20 @@
+schema_version: stage14-v1
+results:
+  - ALLOW
+  - BLOCK
+  - NEEDS_INPUT
+  - NOT_APPLICABLE
+required_fields:
+  - decision_id
+  - action_id
+  - target_id
+  - risk_class
+  - work_mode
+  - evidence_refs
+  - impact_ref
+  - decision_level
+  - authorization_ref
+  - preconditions
+  - result
+  - reason
+unknown_precondition_result: BLOCK_NEEDS_INPUT

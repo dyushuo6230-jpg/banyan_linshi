@@ -1,0 +1,13 @@
+schema_version: stage06-v1
+statuses:
+  - DISCUSSION
+  - DRAFT
+  - PROPOSED
+  - IN_REVIEW
+  - APPROVED_FOR_APPLY
+  - APPLY_PLANNED
+  - APPLIED
+  - RECONCILING
+  - RECONCILED
+  - ARCHIVED
+  - BLOCKED

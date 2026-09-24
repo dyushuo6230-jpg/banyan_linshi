@@ -1,0 +1,18 @@
+schema_version: stage05-v1
+levels:
+  - id: L0
+    name: AUTO_SAFE
+  - id: L1
+    name: AUTO_WITH_TRACE
+  - id: L2
+    name: PROPOSE_AND_CONTINUE_IF_POLICY_ALLOWS
+  - id: L3
+    name: HUMAN_CONFIRMATION_REQUIRED
+  - id: L4
+    name: BLOCKED_OR_OWNER_DECISION_REQUIRED
+required_fields:
+  - entry_criteria
+  - allowed_actions
+  - evidence_requirements
+  - escalation_rule
+  - fallback

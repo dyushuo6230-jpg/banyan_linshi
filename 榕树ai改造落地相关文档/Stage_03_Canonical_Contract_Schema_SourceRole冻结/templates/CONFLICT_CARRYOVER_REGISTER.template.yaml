@@ -1,0 +1,12 @@
+schema_version: "stage03-v1"
+conflicts:
+  - conflict_id: null
+    severity: null
+    subjects: []
+    authority_candidates: []
+    freshness: null
+    precedence_rule: null
+    blocking_before_activation: null
+    owner_stage: null
+    resolution_status: OPEN
+    evidence_refs: []

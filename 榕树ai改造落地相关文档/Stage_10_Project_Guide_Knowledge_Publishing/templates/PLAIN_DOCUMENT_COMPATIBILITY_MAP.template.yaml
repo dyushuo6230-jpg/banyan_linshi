@@ -1,0 +1,8 @@
+schema_version: stage10-v1
+entries:
+  - legacy_projection: null
+    generic_projection_type: null
+    source_roles: []
+    one_way_sync: true
+    canonical_truth: false
+    refresh_policy: null

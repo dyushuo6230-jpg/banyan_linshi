@@ -1,0 +1,14 @@
+schema_version: stage12-v1
+must_preserve:
+  - stable_ids
+  - authority
+  - freshness
+  - provenance
+  - blocker_state
+  - decision_state
+  - unknowns
+may_compact:
+  - prose
+  - irrelevant_history
+  - distant_reference_graph
+  - redundant_projection_text

@@ -1,0 +1,11 @@
+schema_version: stage18.5-v1
+frontend_build:
+  command: null
+  output_directory: null
+assets:
+  - path: null
+    sha256: null
+go_embed:
+  source_directory: null
+  binary_path: null
+node_required_to_serve_release_ui: false

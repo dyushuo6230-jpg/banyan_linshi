@@ -1,0 +1,27 @@
+stage_id: "17"
+title: "Cursor Pilot / Project Instance Pilot Activation"
+version: "1.10"
+
+status: NOT_STARTED
+
+allowed:
+  - create pilot .banyan
+  - create project instance shadow
+  - validate runtime integration
+  - validate cursor adapter contract
+
+forbidden:
+  - full migration
+  - legacy deletion
+  - canonical overwrite
+  - secret access
+  - bypass runtime policy
+  - automatic activation without gate
+
+activation:
+  mode: PILOT_ONLY
+  final_activation: false
+
+exit:
+  validations: V17-01..V17-28
+  next_stage: "18"

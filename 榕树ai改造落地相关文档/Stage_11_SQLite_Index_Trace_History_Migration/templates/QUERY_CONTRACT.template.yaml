@@ -1,0 +1,22 @@
+schema_version: stage11-v1
+queries:
+  - artifact_by_stable_id
+  - current_locator_by_stable_id
+  - incoming_references
+  - outgoing_references
+  - unresolved_references
+  - source_role_and_authority
+  - version_status_history
+  - change_affected_artifacts
+  - decision_evidence
+  - projection_sources
+  - source_projections
+  - stale_projections
+  - handover_canonical_refs
+  - progress_current_historical
+  - trace_by_stage_run_subject
+query_results_require:
+  - stable_identity
+  - authority_or_classification
+  - freshness_or_unknown
+  - provenance_or_unknown

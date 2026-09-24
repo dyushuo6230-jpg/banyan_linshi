@@ -1,0 +1,850 @@
+schema_version: 1
+updated: 2026-09-17
+project_name: 多业态租户入驻系统
+project_stage: IMPLEMENTATION
+repository_role: CURRENT_BASELINE
+allow_code_changes: true
+materials_frozen: true
+materials_frozen_at: 2026-09-04
+frozen_batches:
+  - BATCH-001
+  - BATCH-002
+unique_batch: false
+supplementary_registered: BATCH-002
+supplementary_frozen: true
+
+progress:
+  document: 69
+  document_formula: "11790 / 170"
+  development: 0
+  delivery: N/A
+  test_pass_rate: N/A
+
+git:
+  branch: feature/multiple_business_model
+  commit: dc326a30
+  pr: null
+
+owners:
+  product: TBD
+  tech: TBD
+  project: TBD
+
+milestones:
+  - id: G0
+    name: 文档初始化
+    status: COMPLETED
+  - id: G1
+    name: 资料投放
+    status: COMPLETED
+  - id: G2
+    name: 来源和决策基线
+    status: COMPLETED
+  - id: G3
+    name: PRD 准入审计
+    status: PASS
+  - id: G4
+    name: PRD Draft
+    status: COMPLETED
+  - id: G5
+    name: PRD 评审和批准
+    status: COMPLETED
+  - id: "G5.5"
+    name: 根据 PRD 同步 UI 逻辑范围
+    status: COMPLETED
+  - id: G6
+    name: 总体技术架构
+    status: COMPLETED
+  - id: G7
+    name: 技术模块划分
+    status: COMPLETED
+  - id: G8
+    name: 模块详细技术设计
+    status: COMPLETED
+  - id: G9
+    name: API、数据和编码规范
+    status: COMPLETED
+  - id: "G9.1"
+    name: 正式 UI 应用目录
+    status: COMPLETED
+  - id: G10
+    name: 开发批次和有效 UI Contract
+    status: DRAFT
+
+planned_documents:
+  - id: SRC_REG
+    path: docs/project/sources/SOURCE_REGISTER.md
+    weight: 5
+    status: Draft
+  - id: BATCH_001
+    path: docs/project/sources/batches/BATCH-001.md
+    weight: 3
+    status: Draft
+  - id: BATCH_002
+    path: docs/project/sources/batches/BATCH-002.md
+    weight: 0
+    status: Draft
+  - id: BASE_01
+    path: docs/project/baseline/01_SOURCE_INVENTORY.md
+    weight: 8
+    status: Draft
+  - id: BASE_02
+    path: docs/project/baseline/02_DECISION_BASELINE.md
+    weight: 10
+    status: Draft
+  - id: BASE_03
+    path: docs/project/baseline/03_VERSION_DIFF.md
+    weight: 6
+    status: Draft
+  - id: BASE_04
+    path: docs/project/baseline/04_CONFLICT_MATRIX.md
+    weight: 8
+    status: Draft
+  - id: BASE_05
+    path: docs/project/baseline/05_PENDING_QUESTIONS.md
+    weight: 10
+    status: Draft
+  - id: BASE_06
+    path: docs/project/baseline/06_REQUIREMENT_ALIGNMENT_AUDIT.md
+    weight: 8
+    status: Draft
+  - id: PRODUCT_PRD
+    path: docs/project/prd/PRODUCT_PRD.md
+    weight: 25
+    status: Approved
+  - id: PRD_MODULES
+    path: docs/project/prd/modules/
+    weight: 15
+    status: Approved
+  - id: TRACE
+    path: docs/project/acceptance/TRACE_MATRIX.md
+    weight: 5
+    status: Approved
+  - id: ARCH
+    path: docs/project/architecture/OVERALL_ARCHITECTURE.md
+    weight: 15
+    status: Baselined
+  - id: MOD_BOUND
+    path: docs/project/architecture/MODULE_BOUNDARIES.md
+    weight: 8
+    status: Baselined
+  - id: TECH_DES
+    path: docs/project/design/modules/
+    weight: 12
+    status: Baselined
+  - id: API
+    path: docs/project/api/
+    weight: 8
+    status: Baselined
+  - id: DB
+    path: docs/project/database/
+    weight: 8
+    status: Baselined
+  - id: STD
+    path: docs/project/standards/
+    weight: 6
+    status: Baselined
+  - id: DEV_BATCH
+    path: docs/project/delivery/DEVELOPMENT_BATCHES.md
+    weight: 10
+    status: Draft
+
+work_items:
+  - id: DEV-001
+    name: 业态树与抽佣挂点
+    status: In Progress
+    weight: 8
+  - id: DEV-002
+    name: 租户四套菜单
+    status: In Progress
+    weight: 8
+  - id: DEV-003
+    name: 入驻与审店
+    status: In Progress
+    weight: 10
+  - id: DEV-004
+    name: 登录会话与口令
+    status: In Progress
+    weight: 12
+  - id: DEV-005
+    name: 用户分池
+    status: In Progress
+    weight: 6
+  - id: DEV-006
+    name: 商品与审核
+    status: In Progress
+    weight: 12
+  - id: DEV-007
+    name: 本地生活履约
+    status: In Progress
+    weight: 10
+  - id: DEV-008
+    name: 本地生活拼团秒杀
+    status: Planned
+    weight: 8
+  - id: DEV-009
+    name: 订单支付结算
+    status: In Progress
+    weight: 12
+  - id: DEV-010
+    name: 众享源品 - 在线商城独立进程与逛买
+    status: In Progress
+    weight: 12
+  - id: DEV-011
+    name: 平台运营收口
+    status: In Progress
+    weight: 2
+  - id: DEV-012
+    name: ToB 营销独立端
+    status: Planned
+    weight: 0
+  - id: DEV-013
+    name: 源品 C 端闭口、商城拼团秒杀、板块
+    status: In Progress
+    weight: 0
+  - id: DEV-014
+    name: 本地生活店资料先置
+    status: In Progress
+    weight: 0
+blockers: []
+
+open_questions: []
+
+applied_decisions:
+  - id: DEC-001
+    question: QUESTION-001
+    choice: A
+    status: APPLIED
+  - id: DEC-002
+    question: QUESTION-003
+    choice: A
+    status: APPLIED
+  - id: DEC-003
+    question: QUESTION-002
+    choice: A
+    status: APPLIED
+  - id: DEC-004
+    question: QUESTION-004
+    choice: A
+    status: APPLIED
+  - id: DEC-005
+    question: QUESTION-005
+    choice: A
+    status: APPLIED
+  - id: DEC-006
+    question: QUESTION-006
+    choice: A
+    status: APPLIED
+  - id: DEC-007
+    question: QUESTION-007
+    choice: A
+    status: APPLIED
+  - id: DEC-008
+    question: QUESTION-008
+    choice: A
+    status: APPLIED
+  - id: DEC-009
+    question: QUESTION-009
+    choice: A
+    status: APPLIED
+  - id: DEC-010
+    question: QUESTION-010
+    choice: A
+    status: APPLIED
+  - id: DEC-011
+    question: QUESTION-011
+    choice: A
+    status: APPLIED
+  - id: DEC-012
+    question: QUESTION-012
+    choice: A
+    status: APPLIED
+  - id: DEC-013
+    question: QUESTION-013
+    choice: A
+    status: APPLIED
+  - id: DEC-014
+    question: QUESTION-014
+    choice: A
+    status: APPLIED
+  - id: DEC-015
+    question: G5-PRD-APPROVE
+    choice: A
+    status: APPLIED
+  - id: ADR-001
+    question: G6-ARCH-001
+    choice: A
+    status: APPLIED
+  - id: ADR-002
+    question: G6-ARCH-002
+    choice: A
+    status: APPLIED
+  - id: ADR-003
+    question: G6-ARCH-003
+    choice: A
+    status: APPLIED
+  - id: ADR-004
+    question: G6-ARCH-004
+    choice: A
+    status: APPLIED
+  - id: ADR-005
+    question: G6-ARCH-005
+    choice: A
+    status: APPLIED
+  - id: ADR-006
+    question: G6-DRAFT
+    choice: A
+    status: APPLIED
+  - id: ADR-007
+    question: G7-BOUND-001
+    choice: A
+    status: APPLIED
+  - id: DEC-016
+    question: QUESTION-015
+    choice: A
+    status: APPLIED
+  - id: CR-001
+    question: QUESTION-015
+    choice: A
+    status: APPLIED
+  - id: DEC-017
+    question: QUESTION-016
+    choice: A
+    status: APPLIED
+  - id: CR-002
+    question: QUESTION-016
+    choice: A
+    status: APPLIED
+  - id: DEC-018
+    question: QUESTION-017
+    choice: A
+    status: APPLIED
+  - id: CR-003
+    question: QUESTION-017
+    choice: A
+    status: APPLIED
+  - id: DEC-019
+    question: QUESTION-018
+    choice: A
+    status: APPLIED
+  - id: CR-004
+    question: QUESTION-018
+    choice: A
+    status: APPLIED
+  - id: DEC-020
+    question: QUESTION-019
+    choice: A
+    status: APPLIED
+  - id: DEC-021
+    question: DEC-012-IMPL
+    choice: A
+    status: APPLIED
+  - id: CR-005
+    question: QUESTION-019
+    choice: A
+    status: APPLIED
+  - id: CR-006
+    question: DEC-012-IMPL
+    choice: A
+    status: APPLIED
+  - id: DEC-022
+    question: MENU-LOGISTICS
+    choice: A
+    status: APPLIED
+  - id: DEC-023
+    question: MENU-ROUND-2
+    choice: A
+    status: APPLIED
+  - id: DEC-024
+    question: MENU-FINANCE
+    choice: A
+    status: APPLIED
+  - id: DEC-025
+    question: PROC-001
+    choice: A
+    status: APPLIED
+  - id: DEC-026
+    question: LOOP-Q0
+    choice: A
+    status: APPLIED
+  - id: CR-007
+    question: LOOP-Q0
+    choice: A
+    status: APPLIED
+  - id: DEC-027
+    question: LOOP-Q1
+    choice: A
+    status: APPLIED
+  - id: DEC-028
+    question: LOOP-Q2
+    choice: A
+    status: APPLIED
+  - id: DEC-029
+    question: DELIVERY-STD
+    choice: A
+    status: APPLIED
+  - id: CR-008
+    question: LOOP-Q2
+    choice: A
+    status: APPLIED
+  - id: CR-009
+    question: DELIVERY-STD
+    choice: A
+    status: APPLIED
+  - id: CR-010
+    question: DELIVERY-STD
+    choice: A
+    status: APPLIED
+  - id: DEC-030
+    question: LOOP-Q3
+    choice: A
+    status: APPLIED
+  - id: CR-011
+    question: LOOP-Q3
+    choice: A
+    status: APPLIED
+  - id: DEC-031
+    question: LOOP-Q4
+    choice: A
+    status: APPLIED
+  - id: CR-012
+    question: LOOP-Q4
+    choice: A
+    status: APPLIED
+  - id: DEC-032
+    question: LOOP-Q5
+    choice: A
+    status: APPLIED
+  - id: CR-013
+    question: LOOP-Q5
+    choice: A
+    status: APPLIED
+  - id: DEC-033
+    question: LOOP-Q6
+    choice: A
+    status: APPLIED
+  - id: CR-014
+    question: LOOP-Q6
+    choice: A
+    status: APPLIED
+  - id: DEC-034
+    question: LOOP-Q7
+    choice: A
+    status: APPLIED
+  - id: CR-015
+    question: LOOP-Q7
+    choice: A
+    status: APPLIED
+  - id: DEC-035
+    question: LOOP-Q8
+    choice: A
+    status: APPLIED
+  - id: CR-016
+    question: LOOP-Q8
+    choice: A
+    status: APPLIED
+  - id: DEC-036
+    question: LOOP-Q9
+    choice: B
+    status: APPLIED
+  - id: DEC-037
+    question: LOOP-Q10
+    choice: A
+    status: APPLIED
+  - id: CR-017
+    question: LOOP-Q10
+    choice: A
+    status: APPLIED
+  - id: DEC-038
+    question: LOOP-Q11
+    choice: A
+    status: APPLIED
+  - id: CR-018
+    question: LOOP-Q11
+    choice: A
+    status: APPLIED
+  - id: DEC-039
+    question: LOOP-Q12
+    choice: B
+    status: APPLIED
+  - id: CR-019
+    question: LOOP-Q12
+    choice: B
+    status: APPLIED
+  - id: DEC-040
+    question: PROC-002
+    choice: A
+    status: APPLIED
+  - id: DEC-041
+    question: PROC-003
+    choice: A
+    status: APPLIED
+  - id: DEC-042
+    question: PROC-004
+    choice: A
+    status: APPLIED
+  - id: DEC-043
+    question: R1-R5a-R7-SELF
+    choice: A
+    status: APPLIED
+  - id: DEC-044
+    question: R2-R6
+    choice: A
+    status: APPLIED
+  - id: DEC-045
+    question: DEV005-Q1
+    choice: A
+    status: APPLIED
+  - id: CR-020
+    question: R2-R6
+    choice: A
+    status: APPLIED
+  - id: ADR-008
+    question: G7-BOUND-002
+    choice: A
+    status: APPLIED
+  - id: ADR-009
+    question: G7-BOUND-003
+    choice: A
+    status: APPLIED
+  - id: ADR-049
+    question: G7-BOUND-004
+    choice: A
+    status: APPLIED
+    relocated_from: ADR-010
+  - id: ADR-011
+    question: G7-BOUND-005
+    choice: A
+    status: APPLIED
+  - id: ADR-012
+    question: G7-BOUND-006
+    choice: A
+    status: APPLIED
+  - id: ADR-013
+    question: G7-BOUND-007
+    choice: A
+    status: APPLIED
+  - id: ADR-014
+    question: G7-BOUND-008
+    choice: A
+    status: APPLIED
+  - id: ADR-015
+    question: G7-BOUND-009
+    choice: A
+    status: APPLIED
+  - id: ADR-016
+    question: G7-BOUND-010
+    choice: A
+    status: APPLIED
+  - id: ADR-017
+    question: G7-BOUND-011
+    choice: A
+    status: APPLIED
+  - id: ADR-018
+    question: G7-DRAFT
+    choice: A
+    status: APPLIED
+  - id: ADR-019
+    question: G7-APPROVE
+    choice: A
+    status: APPLIED
+  - id: ADR-020
+    question: G8-001
+    choice: A
+    status: APPLIED
+  - id: ADR-021
+    question: G8-002
+    choice: A
+    status: APPLIED
+  - id: ADR-022
+    question: G8-003
+    choice: A
+    status: APPLIED
+  - id: ADR-023
+    question: G8-004
+    choice: A
+    status: APPLIED
+  - id: ADR-024
+    question: G8-005
+    choice: A
+    status: APPLIED
+  - id: ADR-025
+    question: G8-006
+    choice: A
+    status: APPLIED
+  - id: ADR-026
+    question: G8-007
+    choice: A
+    status: APPLIED
+  - id: ADR-027
+    question: G8-008
+    choice: A
+    status: APPLIED
+  - id: ADR-028
+    question: G8-009
+    choice: A
+    status: APPLIED
+  - id: ADR-029
+    question: G8-010
+    choice: A
+    status: APPLIED
+  - id: ADR-030
+    question: G8-011
+    choice: A
+    status: APPLIED
+  - id: ADR-031
+    question: G8-012
+    choice: A
+    status: APPLIED
+  - id: ADR-032
+    question: G8-013
+    choice: A
+    status: APPLIED
+  - id: ADR-033
+    question: G8-014
+    choice: A
+    status: APPLIED
+  - id: ADR-034
+    question: G8-015
+    choice: A
+    status: APPLIED
+  - id: ADR-035
+    question: G8-016
+    choice: A
+    status: APPLIED
+  - id: ADR-036
+    question: G8-017
+    choice: A
+    status: APPLIED
+  - id: ADR-037
+    question: G8-018
+    choice: A
+    status: APPLIED
+  - id: ADR-038
+    question: G8-019
+    choice: A
+    status: APPLIED
+  - id: ADR-039
+    question: G8-020
+    choice: A
+    status: APPLIED
+  - id: ADR-040
+    question: G6-APPROVE
+    choice: A
+    status: APPLIED
+  - id: ADR-041
+    question: G8-FOLDER
+    choice: A
+    status: APPLIED
+  - id: ADR-042
+    question: G9-DRAFT
+    choice: A
+    status: APPLIED
+  - id: ADR-043
+    question: G9-APPROVE
+    choice: A
+    status: APPLIED
+  - id: ADR-044
+    question: G9.1-DRAFT
+    choice: A
+    status: APPLIED
+  - id: ADR-045
+    question: G10-DRAFT
+    choice: A
+    status: APPLIED
+  - id: ADR-046
+    question: NEXT-GATE
+    choice: A
+    status: APPLIED
+  - id: ADR-047
+    question: TECH_BASELINE
+    choice: v0.1.5
+    status: APPLIED
+  - id: ADR-048
+    question: CODE-GATE
+    choice: A
+    status: APPLIED
+  - id: DEC-046
+    question: LOCAL-ADD-WHEN
+    choice: A
+    status: APPLIED
+  - id: CR-021
+    question: LOCAL-ADD-WHEN
+    choice: A
+    status: APPLIED
+  - id: DEC-047
+    question: LOCAL-CLONE-SRC
+    choice: A
+    status: APPLIED
+  - id: CR-022
+    question: LOCAL-CLONE-SRC
+    choice: A
+    status: APPLIED
+  - id: DEC-048
+    question: R8
+    choice: A
+    status: APPLIED
+  - id: CR-023
+    question: R8
+    choice: A
+    status: APPLIED
+  - id: DEC-049
+    question: MALL-ONLINE-PORT
+    choice: A
+    status: APPLIED
+  - id: DEC-050
+    question: S2-D1
+    choice: A
+    status: APPLIED
+  - id: CR-024
+    question: S2-D1
+    choice: A
+    status: APPLIED
+  - id: DEC-051
+    question: ORD-D1
+    choice: A
+    status: APPLIED
+  - id: CR-025
+    question: ORD-D1
+    choice: A
+    status: APPLIED
+  - id: CR-026
+    question: ORD-D1
+    choice: A
+    status: APPLIED
+  - id: DEC-052
+    question: ORD-NO-40
+    choice: A
+    status: APPLIED
+  - id: CR-027
+    question: ORD-NO-40
+    choice: A
+    status: APPLIED
+  - id: DEC-053
+    question: CR-028
+    choice: A
+    status: APPLIED
+  - id: CR-028
+    question: CR-028
+    choice: A
+    status: APPLIED
+  - id: DEC-054
+    question: ORD-UI-ALIGN
+    choice: A
+    status: APPLIED
+  - id: CR-029
+    question: ORD-UI-ALIGN
+    choice: A
+    status: APPLIED
+  - id: DEC-055
+    question: GOODS-CAT-PICK
+    choice: A
+    status: APPLIED
+  - id: CR-030
+    question: GOODS-CAT-PICK
+    choice: A
+    status: APPLIED
+  - id: DEC-056
+    question: PRD_APPROVAL-v0.1.30
+    choice: A
+    status: APPLIED
+  - id: DEC-057
+    question: OPEN-01～05
+    choice: A/A/A/B/B
+    status: APPLIED
+  - id: CR-031
+    question: OPEN-01～05
+    choice: A
+    status: APPLIED
+  - id: DEC-058
+    question: OPEN-06～09
+    choice: A/A/A/A
+    status: APPLIED
+  - id: CR-032
+    question: OPEN-06～09
+    choice: A
+    status: APPLIED
+  - id: DEC-059
+    question: PRD_APPROVAL-v0.1.32
+    choice: A
+    status: APPLIED
+  - id: DEC-060
+    question: UX-D1
+    choice: A
+    status: APPLIED
+  - id: DEC-061
+    question: UX-D2
+    choice: A
+    status: APPLIED
+  - id: CR-033
+    question: CR-033
+    choice: A
+    status: APPLIED
+  - id: CR-034
+    question: UX-D3
+    choice: A
+    status: APPLIED
+  - id: CR-035
+    question: DOC-36A-1
+    choice: B
+    status: APPLIED
+  - id: CR-036
+    question: TERM-TENANT
+    choice: A
+    status: APPLIED
+  - id: DEC-062
+    question: PWD-001
+    choice: A
+    status: APPLIED
+  - id: CR-037
+    question: PWD-001
+    choice: A
+    status: APPLIED
+  - id: DEC-063
+    question: PWD-002
+    choice: A
+    status: APPLIED
+  - id: CR-038
+    question: PWD-002
+    choice: A
+    status: APPLIED
+  - id: DEC-064
+    question: ADM-001
+    choice: A
+    status: APPLIED
+  - id: CR-039
+    question: ADM-001
+    choice: A
+    status: APPLIED
+  - id: DEC-065
+    question: SUP-001
+    choice: A
+    status: APPLIED
+  - id: CR-040
+    question: SUP-001
+    choice: A
+    status: APPLIED
+  - id: DEC-066
+    question: AFL-001
+    choice: A
+    status: APPLIED
+  - id: CR-041
+    question: AFL-001
+    choice: A
+    status: APPLIED
+
+flags:
+  enable_ui_spec_generation: false
+  ui_constraint_mode: NONE
+  informed_decision_mode: MANDATORY
+  architecture_participation_mode: MANDATORY
+  architecture_decision_review_status: COMPLETED
+  architecture_decision_apply_status: COMPLETED
+  allow_architecture_draft_with_tbd: false
+  module_boundary_participation_mode: INHERIT
+  module_boundary_decision_review_status: COMPLETED
+  module_boundary_decision_apply_status: COMPLETED
+  allow_module_boundaries_draft_with_tbd: false
+  module_design_participation_mode: INHERIT
+  module_design_first_module: tree
+  module_design_current_module: platform-ops

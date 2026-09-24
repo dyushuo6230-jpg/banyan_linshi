@@ -1,0 +1,13 @@
+schema_version: "stage03-v1"
+bootstrap:
+  writable_truth: ".banyan-refactor/*bootstrap*"
+canonical:
+  future_path: ".banyan/**"
+migration_requirements:
+  - source_hash
+  - source_run_lineage
+  - target_hash
+  - schema_validation
+  - semantic_reconciliation
+  - bootstrap_read_only_archive
+dual_writable_truth_forbidden: true

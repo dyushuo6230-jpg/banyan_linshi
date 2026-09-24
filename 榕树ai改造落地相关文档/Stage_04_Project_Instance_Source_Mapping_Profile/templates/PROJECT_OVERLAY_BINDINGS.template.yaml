@@ -1,0 +1,7 @@
+schema_version: stage04-v1
+bindings:
+  - binding_id: null
+    contract_id: null
+    project_value_ref: null
+    activation_state: null
+    may_weaken_core_safety: false

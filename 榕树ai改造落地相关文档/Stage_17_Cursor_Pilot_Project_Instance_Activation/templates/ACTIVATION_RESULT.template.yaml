@@ -1,0 +1,7 @@
+activation:
+  mode: PILOT
+  dot_banyan_created: false
+  activated: false
+  checkpoint: null
+  validation: null
+  rollback_ready: false

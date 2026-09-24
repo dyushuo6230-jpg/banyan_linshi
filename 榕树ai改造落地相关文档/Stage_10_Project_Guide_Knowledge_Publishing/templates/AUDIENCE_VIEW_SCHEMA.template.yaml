@@ -1,0 +1,15 @@
+schema_version: stage10-v1
+audiences:
+  - BUSINESS
+  - PRODUCT
+  - DEVELOPER
+  - TESTER
+  - OPERATOR
+  - NEW_CONTRIBUTOR
+  - AI_AGENT
+allowed_transformations:
+  - FILTER
+  - SUMMARIZE
+  - REORGANIZE
+  - LINK
+separate_truth_per_audience: false

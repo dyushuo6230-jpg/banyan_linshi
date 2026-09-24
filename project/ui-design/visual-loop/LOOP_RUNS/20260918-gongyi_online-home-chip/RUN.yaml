@@ -1,0 +1,20 @@
+# 视觉修复循环一次运行
+run_id: "20260918-gongyi_online-home-chip"
+application_slug: gongyi_online
+page_path: "/addon/shop/pages/indexPage/index"
+design_image: "docs/project/ui-design/products/gongyi_online/materials/assets/首页横向分类选中背景15@3x.png"
+page_reference: "docs/project/sources/inbox/BATCH-003/在线商城前端页面UI/公益优选-商城首页定稿.png"
+overlay: >
+  首页横向分类选中听切图组 A（黑底、星、下箭头尾巴）。
+  不得按定稿浅金胶囊或系统 chip 令牌改回。
+  顶区仍听红框：轮播铺满、搜索与购物袋悬浮。不得还原金顶+独立 KV。
+  不启用组 B/C/D；不恢复好友助力或发现。
+timing: static
+viewport: 390x844
+max_rounds: 4
+tokens_path: docs/project/ui-design/products/gongyi_online/materials/tokens/design-tokens.json
+allowed_files:
+  - go-uni-app-online/src/addon/shop/pages/indexPage/components/home.vue
+  - go-uni-app-online/src/addon/shop/static/home/chip-selected.png
+status: passed
+note: UI-DEC-004 / UI_SPEC 0.1.1；步骤 6。分类页不改。

@@ -1,0 +1,15 @@
+schema_version: stage09-v1
+behaviors:
+  - behavior_id: null
+    state: null
+    trigger: null
+    transition: null
+    response: null
+    source_refs: []
+    confidence: null
+    status: UNKNOWN
+statuses:
+  - SUPPORTED
+  - INFERRED
+  - UNKNOWN
+  - CONFLICTED

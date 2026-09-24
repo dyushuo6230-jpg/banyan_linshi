@@ -1,0 +1,73 @@
+schema_version: "1.0"
+contract_id: banyan.f1.core_object_model.v1
+status: FROZEN_ARCHITECTURE_CONTRACT
+human_approved: true
+
+first_class_object_families:
+  - ARTIFACT
+  - PROJECT_INSTANCE
+  - BINDING
+  - RUNTIME_EXECUTION
+  - CONTEXT
+  - EVIDENCE_TRACE
+  - INFRASTRUCTURE
+
+artifact:
+  top_level_kinds:
+    - DEFINITION_ARTIFACT
+    - PROJECT_ARTIFACT
+  subtype_taxonomy_status: DEFERRED_TO_F3
+
+definition_runtime_separation:
+  required: true
+  examples:
+    - "WorkflowDefinition != WorkflowRun"
+    - "StateModelDefinition != RuntimeState"
+    - "SkillDefinition != SkillInvocation"
+    - "DecisionProtocolDefinition != DecisionSession"
+
+project_instance:
+  artifact: false
+binding:
+  artifact: false
+runtime_execution:
+  artifact: false
+context:
+  artifact: false
+
+evidence:
+  trace:
+    family: EVIDENCE_TRACE
+    artifact: false
+    authority_granting: false
+    latest_record_is_canonical: false
+  package:
+    family: ARTIFACT
+    artifact_kind: PROJECT_ARTIFACT
+    purpose: [ACCEPTANCE, REVIEW, RELEASE, ARCHIVE, LONG_TERM_TRACEABILITY]
+
+infrastructure:
+  artifact: false
+  examples:
+    - Registry
+    - Loader
+    - Manifest
+    - SchemaRegistry
+    - SQLiteIndex
+    - ReferenceGraph
+    - Cache
+
+protected_semantic_boundaries:
+  - "Capability != Skill"
+  - "Role != Permission"
+  - "Role != GitIdentity"
+  - "SourceRole != CollaborationRole"
+  - "StateDomainsRemainSeparate"
+  - "Infrastructure != SemanticArtifact"
+
+future_change_rule:
+  silent_reclassification_forbidden: true
+  top_level_family_change_requires:
+    - IMPACT_ANALYSIS
+    - HUMAN_DECISION
+    - VERSIONED_F1_CHANGE_PROPOSAL

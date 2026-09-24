@@ -1,0 +1,6 @@
+schema_version: stage09-v1
+drift_types:
+  - SOURCE_DRIFT
+  - UI_SPEC_DRIFT
+  - IMPLEMENTATION_DRIFT
+  - VALIDATION_BASELINE_DRIFT

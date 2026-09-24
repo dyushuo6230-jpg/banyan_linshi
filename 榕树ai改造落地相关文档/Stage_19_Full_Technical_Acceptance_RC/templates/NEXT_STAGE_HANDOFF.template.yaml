@@ -1,0 +1,13 @@
+upstream_stage: "19"
+run_id: null
+acceptance_result: null
+rc_result: null
+hard_metrics_all_zero: null
+current_project_git_mutation: false
+pilot_dot_banyan_mutation: false
+carried_blockers: []
+next_stage_entry_gate:
+  stage: "20"
+  result: null
+  execution_authorized: false
+stop_after_stage: "19"

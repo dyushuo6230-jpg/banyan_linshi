@@ -1,0 +1,12 @@
+schema_version: stage16-v1
+project_safety:
+  branch: null
+  head: null
+  staged_count: null
+  unstaged_count: null
+  untracked_count: null
+  conflicted_count: null
+  identity_present: null
+  identity_ambiguous: null
+  identity_values_exposed: false
+  execution_mode: DRY_RUN_ONLY

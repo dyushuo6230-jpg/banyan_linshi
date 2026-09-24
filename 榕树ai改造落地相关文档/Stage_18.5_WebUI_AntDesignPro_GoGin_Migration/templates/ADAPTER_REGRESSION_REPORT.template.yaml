@@ -1,0 +1,14 @@
+schema_version: stage18.5-v1
+adapters:
+  cursor: null
+  codex: null
+  generic_editor: null
+checks:
+  single_runtime: null
+  permission_fail_closed: null
+  typed_failures: null
+  trace_continuity: null
+  evidence_refs: null
+  unknown_provenance_preserved: null
+  dry_run_boundary: null
+  git_mutation: null

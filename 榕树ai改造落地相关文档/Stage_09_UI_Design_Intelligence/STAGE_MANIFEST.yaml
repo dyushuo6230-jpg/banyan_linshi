@@ -1,0 +1,89 @@
+stage_id: "09"
+title: "UI Design Intelligence"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "DESIGN_INTELLIGENCE_LOW_TOKEN"
+
+upstream:
+  stage: "08"
+  run_id: "stage08-20260920T153936Z"
+  acceptance: "PASS_UI_GOVERNANCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE09_UI_DESIGN_INTELLIGENCE_DESIGN_WITH_INHERITED_BLOCKERS"
+
+owned_outcomes:
+  - "Design Source Intake Contract"
+  - "Design Provider Port"
+  - "Normalized Scene Schema"
+  - "Layer / Geometry Schema"
+  - "Semantic Tree Schema"
+  - "Design Truth Contract"
+  - "Design Token Contract"
+  - "Behavior Evidence Contract"
+  - "Data Evidence Contract"
+  - "Confidence / Provenance Contract"
+  - "Fact / Inference / Recommendation Contract"
+  - "Implementation IR Input Contract"
+  - "Visual Validation Input Contract"
+  - "Design Drift Contract"
+  - "Design Package Contract"
+  - "Legacy UI Design Intelligence Compatibility Map"
+
+not_owned:
+  - "UI_SPEC approval policy redesign"
+  - "frontend code generation runtime"
+  - "visual repair executor"
+  - "design provider implementation"
+  - "AnyDesign implementation"
+  - "Control Plane UI"
+  - "real migration"
+  - "CON-002 adjudication"
+
+hard_invariants:
+  design_source_authority: "EVIDENCE_ONLY"
+  normalized_scene_provider_neutral: true
+  inference_must_be_marked: true
+  recommendation_must_be_marked: true
+  static_design_does_not_prove_interaction: true
+  observed_geometry_does_not_imply_fixed_css: true
+  ui_spec_approval_required_for_implementation_truth: true
+
+token_policy:
+  repository_full_rescan: false
+  full_design_corpus_reload: false
+  full_image_analysis: false
+  evidence_on_demand_triggers:
+    - DESIGN_SOURCE_AMBIGUITY
+    - SCENE_SCHEMA_GAP
+    - SEMANTIC_CONFIDENCE_GAP
+    - BEHAVIOR_EVIDENCE_GAP
+    - DATA_EVIDENCE_GAP
+    - LAYOUT_INFERENCE_CONFLICT
+    - PROVIDER_PORT_GAP
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/09/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical PRD/UI_SPEC mutation"
+    - "business code"
+    - "frontend implementation"
+    - "legacy design doc mutation"
+    - "13 Secret bodies"
+    - "final .banyan activation"
+    - "Stage 10 execution"
+
+exit_gate:
+  validations: "V09-01..V09-22"
+  hard_metrics:
+    PROVIDER_SPECIFIC_FIELD_IN_NORMALIZED_SCENE: 0
+    UNMARKED_INFERENCE_AS_FACT: 0
+    UNMARKED_RECOMMENDATION_AS_FACT: 0
+    STATIC_IMAGE_INTERACTION_ASSUMPTION: 0
+    OBSERVED_GEOMETRY_FORCED_TO_FIXED_LAYOUT: 0
+    DESIGN_OUTPUT_AUTO_PROMOTED_TO_UI_SPEC: 0
+    DESIGN_ARTIFACT_WITHOUT_PROVENANCE: 0
+    DESIGN_PROVIDER_PORT_WITHOUT_FAILURE_SEMANTICS: 0
+  next_stage: "10"

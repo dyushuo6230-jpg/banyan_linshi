@@ -1,0 +1,15 @@
+schema_version: "stage03-v1"
+version_kinds:
+  - schema_version
+  - artifact_version
+  - contract_version
+  - runtime_state_version
+provenance:
+  unknown_value: "UNKNOWN"
+  inference_must_be_marked: true
+  required_when_available:
+    - source
+    - timestamp
+    - input_refs
+    - generator_or_tool
+    - confidence

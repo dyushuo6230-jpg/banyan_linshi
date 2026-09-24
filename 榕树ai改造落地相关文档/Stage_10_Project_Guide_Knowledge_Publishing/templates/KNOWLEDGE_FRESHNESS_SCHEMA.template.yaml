@@ -1,0 +1,12 @@
+schema_version: stage10-v1
+freshness_states:
+  - FRESH
+  - STALE
+  - REVIEW_REQUIRED
+  - BLOCKED
+  - UNKNOWN
+rebuildability_states:
+  - REBUILDABLE
+  - PARTIALLY_REBUILDABLE
+  - NOT_PROVEN_REBUILDABLE
+  - HUMAN_MAINTAINED

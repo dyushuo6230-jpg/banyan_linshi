@@ -1,0 +1,12 @@
+schema_version: stage10-v1
+required_fields:
+  - projection_id
+  - source_refs
+  - source_versions
+  - projection_rule
+  - generated_at
+  - generator
+  - coverage
+  - confidence
+  - freshness
+unknown_generator_value: UNKNOWN

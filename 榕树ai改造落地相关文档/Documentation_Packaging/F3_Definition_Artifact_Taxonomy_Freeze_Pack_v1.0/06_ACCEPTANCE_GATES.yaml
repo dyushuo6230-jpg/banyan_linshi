@@ -1,0 +1,45 @@
+pack_id: F3_Definition_Artifact_Taxonomy_Freeze_Pack_v1.0
+stage: F3
+gate_type: ARCHITECTURE_FREEZE
+
+decision_coverage:
+  expected: 16
+  human_approved: 16
+  missing: 0
+
+taxonomy:
+  expected_top_level_types: 10
+  actual_top_level_types: 10
+
+audit:
+  HARD_CONFLICT: 0
+  TYPE_OVERLAP_BLOCKER: 0
+  MISSING_REQUIRED_TYPE: 0
+  DUPLICATE_PRIMARY_TYPE: 0
+  R1_SEMANTIC_LOSS: 0
+  RP1_UNAUTHORIZED_RECLASSIFICATION: 0
+  F1_MODEL_CONFLICT: 0
+  F2_AUTHORITY_CONFLICT: 0
+  PREMATURE_IMPLEMENTATION_DECISION: 0
+
+guardrails:
+  single_primary_type_required: true
+  type_domain_separated: true
+  taxonomy_closed_but_extensible: true
+  schema_registry_manifest_are_infrastructure: true
+  context_recovery_is_domain_not_top_level_type: true
+  semantic_preservation_does_not_require_structural_preservation: true
+
+implementation_boundary:
+  code_implementation_authorized: false
+  rp2_implementation_authorized: false
+  artifact_reclassification_authorized: false
+  artifact_relocation_authorized: false
+  artifact_deletion_authorized: false
+  authority_cutover_authorized: false
+  final_activation_authorized: false
+
+exit_gate:
+  result: PASS_F3_DEFINITION_ARTIFACT_TAXONOMY_ARCHITECTURE_FREEZE
+  next_stage_allowed_for_discussion: F4
+  next_stage_implementation_authorized: false

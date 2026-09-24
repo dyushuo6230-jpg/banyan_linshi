@@ -1,0 +1,17 @@
+schema_version: stage20-v1
+operation: POST_RELEASE_LEGACY_DOCUMENTATION_ADOPTION
+execute_in_stage20: false
+default_physical_relocation: false
+canonical_preserve_in_place: true
+steps:
+  - DISCOVER
+  - CLASSIFY
+  - MAP_SOURCE_ROLE
+  - ASSIGN_STABLE_ID
+  - RESOLVE_AUTHORITY_VERSION_STATUS
+  - CAPTURE_PROVENANCE
+  - BUILD_REFERENCE_GRAPH
+  - SHADOW_IMPORT
+  - VALIDATE
+  - SEMANTIC_ACTIVATION
+  - OPTIONAL_EXPLICIT_PHYSICAL_MIGRATION

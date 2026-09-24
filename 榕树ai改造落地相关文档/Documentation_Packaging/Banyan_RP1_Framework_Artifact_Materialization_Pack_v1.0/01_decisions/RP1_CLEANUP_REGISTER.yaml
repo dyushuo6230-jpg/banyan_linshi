@@ -1,0 +1,810 @@
+schema_version: rp1-cleanup-register-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+runtime_authority: false
+semantic_authority: false
+registry_authority: false
+stage: RP1
+source: RP1_PRECONSTRUCTION_REVIEW_SECTION_E
+status: ACCEPTED_FOR_RP1_NO_DELETE
+gate:
+  id: HD-CLEANUP-GATE
+  rule: ZERO_DELETE_IN_RP1
+  delete_count: 0
+safe_to_delete_now_for_all_current_candidates: false
+new_candidate_rule: STOP_AND_REQUEST_HUMAN_DECISION
+notes:
+  - Classifications below are the pre-construction review inventory.
+  - They are accepted for RP1 tracking only.
+  - No file in this register may be deleted during RP1.
+  - HD-CLEANUP-001 remains NEED_MORE_EVIDENCE.
+  - HD-CLEANUP-002 later hygiene is not part of RP1.
+  - HD-CLEANUP-003 accepts the current dual policy representation for RP1.
+
+entries:
+  - path: banyan-framework/src/banyan/contracts/data/migration_artifacts.yaml
+    classification: KEEP
+    reason: R1 accepted authority until RP2 controlled cutover.
+    current_role: R1 Artifact Registry and current semantic body
+    current_authority: AUTHORITATIVE_R1_UNTIL_RP2
+    references:
+      - banyan-framework/src/banyan/contracts/data/manifest.yaml
+      - banyan-framework/src/banyan/contracts/data/schema_index.yaml
+      - banyan-framework/tests/test_r1_artifact_migration.py
+      - banyan-framework/docs/maintainer/R1_ARTIFACT_MIGRATION_MATRIX.yaml
+    dependencies:
+      - Loader
+      - Validator
+      - CLI contracts commands
+    migration_dependency: RP2 body-to-lineage reframing only
+    compatibility_dependency: all 43 R1 provenance chains
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. RP1 may only project it.
+
+  - path: banyan-framework/src/banyan/contracts/data/manifest.yaml
+    classification: KEEP
+    reason: R0/R1 packaged contract discovery root.
+    current_role: Framework contract manifest
+    current_authority: AUTHORITATIVE
+    references:
+      - banyan-framework/src/banyan/contracts/loader.py
+    dependencies:
+      - packaged contract assets
+    migration_dependency: RP2 relationship to artifacts/**
+    compatibility_dependency: none as deletion
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not modify in RP1.
+
+  - path: banyan-framework/src/banyan/contracts/data/schema_index.yaml
+    classification: KEEP
+    reason: Machine-readable contract shape index.
+    current_role: schema index
+    current_authority: AUTHORITATIVE
+    references:
+      - banyan-framework/src/banyan/contracts/validator.py
+    dependencies:
+      - manifest assets
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not modify in RP1.
+
+  - path: banyan-framework/src/banyan/contracts/data/capabilities.yaml
+    classification: KEEP
+    reason: 35 Capability contracts. Capability is not Skill.
+    current_role: Capability registry
+    current_authority: AUTHORITATIVE
+    references:
+      - banyan-framework/src/banyan/contracts/validator.py
+    dependencies:
+      - provider_ports.yaml
+    migration_dependency: none in RP1
+    compatibility_dependency: Skill capability_refs
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/contracts/data/artifacts.yaml
+    classification: KEEP
+    reason: Document artifact types (PRD/UI_SPEC/etc.), not the R1 43 migration artifacts.
+    current_role: Artifact type registry
+    current_authority: AUTHORITATIVE
+    references:
+      - banyan-framework/src/banyan/contracts/data/manifest.yaml
+    dependencies: []
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not confuse with R1 43.
+
+  - path: banyan-framework/src/banyan/contracts/data/source_roles.yaml
+    classification: KEEP
+    reason: Nine semantic Source Roles. Not collaboration roles.
+    current_role: Source Role registry
+    current_authority: AUTHORITATIVE
+    references:
+      - banyan.migration.role.source_role_model.v1
+    dependencies: []
+    migration_dependency: RP2 alignment with artifacts/roles
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not copy the whole body into the Role shadow file.
+
+  - path: banyan-framework/src/banyan/contracts/data/workflows.yaml
+    classification: KEEP
+    reason: Workflow contract registry, including implemented runtime-request projection.
+    current_role: Workflow registry
+    current_authority: AUTHORITATIVE_AND_CODE_PROJECTION
+    references:
+      - R1 WORKFLOW artifacts
+    dependencies: []
+    migration_dependency: RP2
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not copy the collection body into shadow files.
+
+  - path: banyan-framework/src/banyan/contracts/data/states.yaml
+    classification: KEEP
+    reason: State-set registry. 12 R1 STATE domains must remain unmerged.
+    current_role: State registry
+    current_authority: AUTHORITATIVE_AND_CODE_PROJECTION
+    references:
+      - R1 STATE artifacts
+    dependencies: []
+    migration_dependency: RP2
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not copy the collection body into shadow files.
+
+  - path: banyan-framework/src/banyan/contracts/data/provider_ports.yaml
+    classification: KEEP
+    reason: 35 Framework Provider Ports, unbound by default.
+    current_role: Provider Port registry
+    current_authority: AUTHORITATIVE
+    references:
+      - capabilities.yaml
+    dependencies:
+      - capabilities.yaml
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/contracts/data/project_overlay.yaml
+    classification: KEEP
+    reason: Overlay shape. Values remain Project Instance owned.
+    current_role: Project overlay contract
+    current_authority: AUTHORITATIVE
+    references:
+      - .banyan
+    dependencies: []
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/contracts/data/compatibility/v3_1.yaml
+    classification: KEEP
+    reason: Formal v3.1 compatibility mapping (22 mappings). Target of one R1 COMPATIBILITY artifact.
+    current_role: compatibility mapping
+    current_authority: AUTHORITATIVE
+    references:
+      - banyan.migration.compatibility.v3_1.v1
+    dependencies: []
+    migration_dependency: RP2
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not copy the whole mappings collection into the shadow file.
+
+  - path: banyan-framework/src/banyan/contracts/data/versioning.yaml
+    classification: KEEP
+    reason: Distinct version dimensions.
+    current_role: versioning registry
+    current_authority: AUTHORITATIVE_AND_CODE_PROJECTION
+    references:
+      - pyproject.toml
+    dependencies: []
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/contracts/loader.py
+    classification: KEEP
+    reason: Current contract discovery. RP1 must not make it read artifacts/**.
+    current_role: Registry loader
+    current_authority: RUNTIME_EXECUTION for discovery
+    references:
+      - banyan-framework/src/banyan/cli.py
+    dependencies:
+      - contracts/data
+    migration_dependency: RP2
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged in RP1.
+
+  - path: banyan-framework/src/banyan/contracts/validator.py
+    classification: KEEP
+    reason: Current contract validator. Shadow validation is a separate additive test.
+    current_role: contract validator
+    current_authority: RUNTIME_EXECUTION for validation
+    references:
+      - tests/test_framework_contracts.py
+    dependencies:
+      - loader.py
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged in RP1.
+
+  - path: banyan-framework/pyproject.toml
+    classification: KEEP
+    reason: Current wheel boundary excludes artifacts/**.
+    current_role: package metadata
+    current_authority: PYTHON_PACKAGE
+    references:
+      - HD-RP1-006
+    dependencies:
+      - banyan.contracts.data package-data
+    migration_dependency: RP2
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged in RP1.
+
+  - path: banyan-framework/src/banyan/cli.py
+    classification: KEEP
+    reason: Current CLI. No artifact list/show/validate/refs in RP1.
+    current_role: CLI
+    current_authority: RUNTIME
+    references:
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    dependencies:
+      - contracts
+      - runtime
+      - policy
+    migration_dependency: RP2
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged in RP1.
+
+  - path: banyan-framework/policies/default-policy.yaml
+    classification: KEEP
+    reason: Runtime permission file source. Dual representation with default_policy() is HD-CLEANUP-003.
+    current_role: default runtime policy file
+    current_authority: RUNTIME_EXECUTION
+    references:
+      - banyan-framework/docs/maintainer/FRAMEWORK_CONTRACTS.md
+    dependencies:
+      - evaluator
+      - compiler
+    migration_dependency: later authority alignment, not RP1
+    compatibility_dependency: permission policy artifact
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/runtime
+    classification: KEEP
+    reason: Bounded implemented runtime.
+    current_role: execution
+    current_authority: RUNTIME_EXECUTION
+    references:
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    dependencies:
+      - policy
+    migration_dependency: none in RP1
+    compatibility_dependency: semantic commit / permission artifacts
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/commit
+    classification: KEEP
+    reason: Bounded semantic commit implementation.
+    current_role: commit planner/executor
+    current_authority: RUNTIME_EXECUTION
+    references:
+      - banyan.migration.workflow.semantic_commit.v1
+    dependencies:
+      - runtime
+      - policy
+    migration_dependency: none in RP1
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/src/banyan/policy
+    classification: KEEP
+    reason: Policy compiler, including default_policy(). Accepted as-is for RP1.
+    current_role: policy compilation
+    current_authority: RUNTIME_EXECUTION
+    references:
+      - HD-CLEANUP-003
+    dependencies:
+      - policies/default-policy.yaml
+    migration_dependency: later dual-source alignment
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. Do not merge or choose a single source in RP1.
+
+  - path: banyan-framework/frontend
+    classification: KEEP
+    reason: Current WebUI source. UI has no authority.
+    current_role: 12 base pages
+    current_authority: NONE
+    references:
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    dependencies:
+      - Go embed dist
+    migration_dependency: RP6
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/control-plane-go
+    classification: KEEP
+    reason: Current Go/Gin host and embed sources, excluding a final verdict on bin/.
+    current_role: HTTP host and embed
+    current_authority: transport only
+    references:
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    dependencies:
+      - Python runtime bridge
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep source. See UNKNOWN entry for bin/banyan-control.
+
+  - path: .banyan
+    classification: KEEP
+    reason: Accepted Pilot Instance. Reconcile later. Never delete-and-reinit.
+    current_role: Project Instance shadow
+    current_authority: PILOT_SHADOW, not Canonical
+    references:
+      - .banyan/pilot.yaml
+      - .banyan/instance/project-instance.yaml
+    dependencies:
+      - Stage 17 schema
+    migration_dependency: RP5 reconcile
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. RP1 must not modify.
+
+  - path: banyan-framework/docs/maintainer/R0_FRAMEWORK_SELF_CONTAINMENT_ACCEPTANCE_REPORT.md
+    classification: KEEP
+    reason: Accepted R0 evidence. Existing R0/R1 maintainer files stay in place.
+    current_role: acceptance evidence
+    current_authority: historical accepted result, not a second design authority
+    references: []
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep in place. Do not move or delete.
+
+  - path: banyan-framework/docs/maintainer/R1_ARTIFACT_MIGRATION_ACCEPTANCE_REPORT.md
+    classification: KEEP
+    reason: Accepted R1 evidence.
+    current_role: acceptance evidence
+    current_authority: historical accepted result
+    references:
+      - banyan-framework/docs/maintainer/R1_ARTIFACT_MIGRATION_MATRIX.yaml
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep in place.
+
+  - path: banyan-framework/docs/maintainer/R1_ARTIFACT_MIGRATION_MATRIX.yaml
+    classification: KEEP
+    reason: Complete audit projection of the R1 registry. Not a second authority.
+    current_role: audit projection
+    current_authority: NON_AUTHORITATIVE_PROJECTION
+    references:
+      - banyan.registry.migration_artifacts.v1
+    dependencies:
+      - migration_artifacts.yaml
+    migration_dependency: none in RP1
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/docs/maintainer/R1_NEW_PROPOSAL_REGISTER.yaml
+    classification: KEEP
+    reason: Empty non-authoritative new-proposal register.
+    current_role: new proposal register
+    current_authority: NON_AUTHORITATIVE
+    references: []
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: banyan-framework/docs/maintainer/R1_HANDOVER_CHECKPOINT.md
+    classification: KEEP
+    reason: R1 handover evidence. Sequencing sentence naming old R2/R3 is superseded by the v2.0 baseline, but the file remains R1 evidence.
+    current_role: R1 handover
+    current_authority: historical evidence
+    references: []
+    dependencies: []
+    migration_dependency: documentation alignment later
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep the file. Do not follow its old R2/R3 next-step sentence.
+
+  - path: banyan-framework/docs/maintainer/FRAMEWORK_CONTRACTS.md
+    classification: KEEP
+    reason: Maintainer projection of current contract authority. Not rewritten in RP1.
+    current_role: maintainer guide
+    current_authority: human-readable projection
+    references:
+      - contracts/data
+    dependencies: []
+    migration_dependency: later documentation alignment
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged in RP1.
+
+  - path: banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    classification: KEEP
+    reason: D0 fact inventory. Updating artifact_root_state is not RP1 construction evidence.
+    current_role: documentation fact inventory
+    current_authority: DOCUMENTATION_FACT
+    references: []
+    dependencies: []
+    migration_dependency: RP10 carried gap
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged in RP1.
+
+  - path: docs/governance/common_prd_v3.1
+    classification: KEEP
+    reason: Highest-priority Legacy canonical source, v3.1.15.
+    current_role: Legacy v3.1.15
+    current_authority: LEGACY_CANONICAL priority 1
+    references:
+      - migration_artifacts.yaml legacy_canonical_source
+    dependencies:
+      - all LEGACY_MIGRATION artifacts
+    migration_dependency: RP9 zero-dependency proof before any retirement
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep.
+
+  - path: tools/anydesign/SKILL.md
+    classification: KEEP
+    reason: Provider-owned AnyDesign Skill, preserve in place.
+    current_role: provider-owned skill
+    current_authority: not Framework Core
+    references:
+      - banyan.migration.skill.anydesign.v1
+    dependencies:
+      - CAP-* design ports
+    migration_dependency: none in RP1
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep in place. Do not copy the Skill body into Framework Core.
+
+  - path: .cursor/skills/visual-repair-loop/SKILL.md
+    classification: KEEP
+    reason: Compatibility-layer visual repair skill, preserve in place.
+    current_role: compatibility skill
+    current_authority: not Framework Core
+    references:
+      - banyan.migration.skill.visual_repair_loop.v1
+    dependencies:
+      - CAP-VISUAL
+      - CAP-UI_CONTRACT
+    migration_dependency: none in RP1
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep in place.
+
+  - path: banyan-framework/tests/test_framework_contracts.py
+    classification: KEEP
+    reason: R0/R1 contract tests.
+    current_role: regression
+    current_authority: test projection
+    references:
+      - tests/run_r0_tests.py
+      - tests/run_r1_tests.py
+    dependencies:
+      - contracts package
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep. RP1 adds new test files later; does not edit these.
+
+  - path: banyan-framework/tests/test_r1_artifact_migration.py
+    classification: KEEP
+    reason: R1 acceptance tests.
+    current_role: R1 regression
+    current_authority: test projection
+    references:
+      - tests/run_r1_tests.py
+    dependencies:
+      - migration_artifacts.yaml
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep unchanged.
+
+  - path: banyan-framework/src/banyan/contracts/data/migration_artifacts.yaml#semantic_body_role
+    classification: MIGRATE
+    reason: At RP2 the semantic body role moves to artifacts/**; this file becomes lineage/index.
+    current_role: current R1 semantic body
+    current_authority: currently AUTHORITATIVE
+    references:
+      - 43 R1 artifacts
+    dependencies:
+      - Loader
+    migration_dependency: RP2 only
+    compatibility_dependency: all 43
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not demote in RP1. Project only.
+
+  - path: banyan-framework/src/banyan/contracts/data/workflows.yaml#overlapping_bodies
+    classification: MIGRATE
+    reason: Overlapping workflow contract bodies must later align with artifacts/workflows without dual canonical body.
+    current_role: workflow registry bodies
+    current_authority: AUTHORITATIVE_AND_CODE_PROJECTION
+    references:
+      - R1 WORKFLOW artifacts
+    dependencies:
+      - Validator known_ids
+    migration_dependency: RP2
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Unchanged in RP1.
+
+  - path: banyan-framework/src/banyan/contracts/data/states.yaml#overlapping_bodies
+    classification: MIGRATE
+    reason: Overlapping state contract bodies must later align with artifacts/states.
+    current_role: state registry bodies
+    current_authority: AUTHORITATIVE_AND_CODE_PROJECTION
+    references:
+      - R1 STATE artifacts
+    dependencies:
+      - Validator known_ids
+    migration_dependency: RP2
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Unchanged in RP1.
+
+  - path: banyan-framework/docs/user-guide
+    classification: MIGRATE
+    reason: D2 outputs exist but are unaccepted.
+    current_role: unaccepted user documentation
+    current_authority: not final user-doc authority
+    references:
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    dependencies: []
+    migration_dependency: RP10
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep for later RP10 review. Do not delete now.
+
+  - path: banyan-framework/docs/maintainer/R1_HANDOVER_CHECKPOINT.md#old_r2_r3_sequencing
+    classification: MIGRATE
+    reason: Old "stop before R2/R3" sequencing is superseded by the v2.0 RP route. The file itself is KEEP evidence.
+    current_role: superseded sequencing sentence inside KEEP evidence
+    current_authority: historical evidence
+    references:
+      - Banyan_唯一后续修复基线_v2.0.yaml
+    dependencies: []
+    migration_dependency: later documentation note
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep the file. Follow v2.0 sequencing, not the old R2/R3 sentence.
+
+  - path: banyan-framework/README.md
+    classification: MIGRATE
+    reason: Primary start instruction still names Python banyan-control-plane; current accepted host is Go banyan-control.
+    current_role: human onboarding
+    current_authority: not contract authority
+    references:
+      - banyan-framework/docs/user-guide/08_CLI使用入门.md
+    dependencies:
+      - Python control plane still implemented
+    migration_dependency: RP10
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Unchanged in RP1.
+
+  - path: banyan-framework/src/banyan/control_plane
+    classification: MIGRATE
+    reason: Implemented legacy Python Control Plane. Documented as legacy entry, not misconstruction.
+    current_role: Stage 16 Python host
+    current_authority: transport; UI authority NONE
+    references:
+      - banyan-framework/src/banyan/web
+      - pyproject.toml script banyan-control-plane
+    dependencies:
+      - Stage 16 tests
+    migration_dependency: later RP6/RP10 alignment
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep as legacy. Do not delete as misconstruction.
+
+  - path: banyan-framework/src/banyan/web
+    classification: MIGRATE
+    reason: Static assets for the legacy Python Control Plane. WEB_ROOT still points here.
+    current_role: Stage 16 static UI
+    current_authority: NONE
+    references:
+      - banyan-framework/src/banyan/control_plane/server.py
+    dependencies:
+      - Python control plane
+    migration_dependency: later host alignment
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Keep as legacy.
+
+  - path: .banyan-refactor
+    classification: MIGRATE
+    reason: Historical construction evidence. Not Runtime authority.
+    current_role: HISTORICAL_EVIDENCE
+    current_authority: none as runtime
+    references:
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    dependencies:
+      - Stage provenance referenced by R1
+    migration_dependency: RP9 archive
+    compatibility_dependency: true as provenance locators
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not delete. Do not treat as Runtime.
+
+  - path: banyan-framework/.DS_Store
+    classification: CLEANUP_CANDIDATE
+    reason: OS junk. Not a governance asset. HD-CLEANUP-002 allows later hygiene only.
+    current_role: none
+    current_authority: none
+    references: []
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not delete in RP1. Later separate hygiene commit only.
+
+  - path: banyan-framework/docs/.DS_Store
+    classification: CLEANUP_CANDIDATE
+    reason: OS junk. HD-CLEANUP-002 later hygiene only.
+    current_role: none
+    current_authority: none
+    references: []
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not delete in RP1.
+
+  - path: banyan-framework/src/banyan/contracts/.DS_Store
+    classification: CLEANUP_CANDIDATE
+    reason: OS junk. HD-CLEANUP-002 later hygiene only.
+    current_role: none
+    current_authority: none
+    references: []
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not delete in RP1.
+
+  - path: banyan-framework/control-plane-go/bin/banyan-control
+    classification: UNKNOWN
+    reason: About 20MB arm64 executable. Framework tests did not reference this path. May be a local build artifact or an accepted run entry. HD-CLEANUP-001 = NEED_MORE_EVIDENCE.
+    current_role: possible Go Control Plane binary
+    current_authority: no contract authority
+    references:
+      - D0 names banyan-control as a command, not this exact bin path
+    dependencies: unknown
+    migration_dependency: unknown
+    compatibility_dependency: unknown
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not delete, move, or modify. Gather required evidence later.
+
+  - path: banyan-framework/src/banyan/policy/compiler.py#default_policy
+    classification: UNKNOWN
+    reason: Same policy_id as policies/default-policy.yaml. Dual representation. HD-CLEANUP-003 accepts current state for RP1 without choosing a single source.
+    current_role: builtin default policy
+    current_authority: RUNTIME together with the YAML file
+    references:
+      - tests using default_policy()
+      - policies/default-policy.yaml
+    dependencies:
+      - evaluator
+    migration_dependency: later authority/runtime alignment
+    compatibility_dependency: true
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not merge, delete, or designate a unique source in RP1.
+
+  - path: .banyan/mappings/source-mappings.yaml#unofficial_roles
+    classification: UNKNOWN
+    reason: Uses LEGACY_PROJECT_ROOT and LEGACY_DOCUMENTATION_ROOT, which are not among the nine Framework Source Roles. Pilot mapping names vs incorrect role promotion cannot be guessed.
+    current_role: pilot source mapping
+    current_authority: PILOT; docs root authority UNKNOWN
+    references:
+      - .banyan/mappings/source-mappings.yaml
+    dependencies: []
+    migration_dependency: RP5/RP9
+    compatibility_dependency: possible
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: RP1 must not modify .banyan.
+
+  - path: Banyan_规划现状差距盘点与后续修复总蓝图_v1.0.md
+    classification: UNKNOWN
+    reason: Superseded by v2.0 baseline. Not found in the pre-construction workspace search.
+    current_role: if present, superseded planning
+    current_authority: not Active Baseline
+    references:
+      - Banyan_唯一后续修复基线_v2.0.yaml supersedes
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not hunt-and-delete. Classify if the files later appear.
+
+  - path: Banyan_后续修复基线_v1.0.yaml
+    classification: UNKNOWN
+    reason: Superseded by v2.0 baseline. Not found in the pre-construction workspace search.
+    current_role: if present, superseded planning
+    current_authority: not Active Baseline
+    references:
+      - Banyan_唯一后续修复基线_v2.0.yaml supersedes
+    dependencies: []
+    migration_dependency: none
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: Do not hunt-and-delete.
+
+  - path: .banyan/migrations/rollback.yaml#verify_dot_banyan_absent
+    classification: UNKNOWN
+    reason: Stage 17 pilot rollback simulation contains verify_dot_banyan_absent, which conflicts with the current forbid-reinit rule. Cannot guess whether this is historical simulation only.
+    current_role: pilot rollback script
+    current_authority: not Runtime
+    references:
+      - .banyan/migrations/rollback.yaml
+    dependencies: []
+    migration_dependency: RP5
+    compatibility_dependency: false
+    safe_to_delete: false
+    safe_to_delete_now: false
+    recommended_action: RP1 must not modify .banyan.
+
+summary:
+  keep: accepted
+  migrate: accepted
+  cleanup_candidate: accepted_and_not_deleted
+  unknown: accepted_and_not_deleted
+  confirmed_deletable_now: []
+  delete_count_allowed_in_rp1: 0

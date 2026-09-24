@@ -1,0 +1,8 @@
+schema_version: stage07-v1
+blockers:
+  - blocker_id: null
+    subject_id: null
+    reason: null
+    owner_stage: null
+    evidence_needed: []
+    blocking_before_real_migration: true

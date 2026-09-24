@@ -1,0 +1,91 @@
+stage_id: "10"
+title: "Project Guide / Knowledge Publishing"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "KNOWLEDGE_PROJECTION_LOW_TOKEN"
+
+upstream:
+  stage: "09"
+  run_id: "stage09-20260920T155444Z"
+  acceptance: "PASS_DESIGN_INTELLIGENCE_CONTRACT_FREEZE_WITH_INHERITED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE10_KNOWLEDGE_PUBLISHING_DESIGN_WITH_INHERITED_BLOCKERS"
+
+owned_outcomes:
+  - "Knowledge Source Authority Contract"
+  - "Knowledge Projection Contract"
+  - "Project Guide Contract"
+  - "Knowledge Audience / View Schema"
+  - "Knowledge Map / Navigation Contract"
+  - "Projection Freshness Contract"
+  - "Projection Rebuildability Contract"
+  - "Generated Knowledge Provenance Contract"
+  - "Plain Document Compatibility Contract"
+  - "Progress / Worklog Projection Contract"
+  - "Handover / Context Projection Contract"
+  - "Architecture Diagram Projection Contract"
+  - "Discussion / Meeting Pack Contract"
+  - "Knowledge Publish / Refresh Lifecycle"
+  - "Knowledge Publishing Provider Port"
+  - "Stage 11 Index Requirement Contract"
+
+not_owned:
+  - "SQLite index implementation"
+  - "history database implementation"
+  - "trace query runtime"
+  - "full-text search runtime"
+  - "knowledge retrieval runtime"
+  - "canonical PRD/ADR/UI_SPEC mutation"
+  - "CON-002 adjudication"
+  - "real migration"
+
+hard_invariants:
+  projection_is_not_canonical_truth: true
+  guide_is_not_second_prd: true
+  plain_document_is_projection: true
+  derived_projection_cannot_overwrite_canonical: true
+  stale_projection_cannot_claim_current: true
+  rebuildability_must_be_explicit: true
+  unknown_provenance_remains_unknown: true
+  audience_views_share_same_underlying_truth: true
+
+token_policy:
+  repository_full_rescan: false
+  full_docs_project_crawl: false
+  full_plain_document_reload: false
+  evidence_on_demand_triggers:
+    - KNOWLEDGE_AUTHORITY_AMBIGUITY
+    - PROJECTION_SOURCE_GAP
+    - PROJECTION_FRESHNESS_GAP
+    - REBUILDABILITY_UNKNOWN
+    - AUDIENCE_VIEW_COLLISION
+    - PROGRESS_CURRENTNESS_CONFLICT
+    - HANDOVER_CONTEXT_GAP
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/10/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical project docs mutation"
+    - "business code"
+    - "legacy plain-document mutation"
+    - "project guide canonical replacement"
+    - "13 Secret bodies"
+    - "SQLite/runtime implementation"
+    - "final .banyan activation"
+    - "Stage 11 execution"
+
+exit_gate:
+  validations: "V10-01..V10-22"
+  hard_metrics:
+    KNOWLEDGE_PROJECTION_WITHOUT_SOURCE_AUTHORITY: 0
+    GUIDE_BUSINESS_TRUTH_DUPLICATION_PATH: 0
+    STALE_PROJECTION_CLAIMING_CURRENT: 0
+    GENERATED_KNOWLEDGE_WITHOUT_PROVENANCE: 0
+    UNKNOWN_REBUILDABILITY_AUTO_REGENERATED: 0
+    AUDIENCE_VIEW_WITH_SEPARATE_TRUTH: 0
+    PLAIN_DOCUMENT_PROMOTED_TO_CANONICAL: 0
+    PROGRESS_PROJECTION_WITHOUT_CURRENTNESS_STATE: 0
+  next_stage: "11"

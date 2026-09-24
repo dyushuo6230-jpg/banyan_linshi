@@ -1,0 +1,14 @@
+schema_version: stage08-v1
+results:
+  - READY
+  - PARTIAL_READY
+  - BLOCKED
+  - NOT_APPLICABLE
+requirements:
+  explicit_enablement: true
+  application_scope: true
+  required_coverage: true
+  approved_ui_spec: true
+  valid_prd_trace: true
+  valid_design_evidence: true
+  no_blocking_conflict: true

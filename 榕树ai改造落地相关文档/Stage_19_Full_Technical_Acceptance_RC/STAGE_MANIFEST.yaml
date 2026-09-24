@@ -1,0 +1,79 @@
+stage_id: "19"
+title: "Full Technical Acceptance / Release Candidate"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "EVIDENCE_DRIVEN_INDEPENDENT_ACCEPTANCE"
+
+upstream:
+  stage: "18.5"
+  run_id: "stage18_5-20260921T064132Z"
+  acceptance: "PASS_STAGE18_5_ANT_DESIGN_PRO_GOGIN_ARCHITECTURE_MIGRATION"
+
+final_architecture:
+  frontend: "Ant Design Pro Simple + TypeScript + Ant Design/ProComponents"
+  web_host: "Go + Gin + go:embed"
+  runtime_bridge: "LOCAL_STDIO"
+  runtime_core: "Stage15 Python Banyan Runtime"
+  adapters:
+    - Cursor
+    - Codex
+    - Generic Editor
+
+carried_blockers:
+  - id: "CON-002"
+    state: "TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY"
+  - id: "FINAL_ACTIVATION"
+    state: "NOT_AUTHORIZED"
+
+owned_outcomes:
+  - "Independent architecture acceptance"
+  - "Generic Core purity acceptance"
+  - "Runtime/Policy acceptance"
+  - "Semantic Commit/Git safety acceptance"
+  - "WebUI/GoGin/Bridge acceptance"
+  - "Adapter compatibility acceptance"
+  - "Pilot Project Instance acceptance"
+  - "Index/Trace/Provenance acceptance"
+  - "Freshness/blocker acceptance"
+  - "No-Loss acceptance"
+  - "Release Candidate build/reproducibility"
+  - "Stage20 release handoff"
+
+not_owned:
+  - "new framework feature implementation"
+  - "Legacy rediscovery"
+  - "project documentation migration"
+  - "Runtime language rewrite"
+  - "WebUI redesign"
+  - "new adapter implementation"
+  - "final activation"
+  - "Stage20 execution"
+
+hard_invariants:
+  current_project_git_mutation_allowed: false
+  pilot_dot_banyan_migration_allowed: false
+  canonical_project_write_allowed: false
+  secret_body_access_allowed: false
+  silent_acceptance_repair_allowed: false
+  final_activation_allowed: false
+
+exit_gate:
+  validations: "V19-01..V19-32"
+  hard_metrics:
+    ACCEPTANCE_CLAIM_WITHOUT_EVIDENCE: 0
+    GENERIC_CORE_PROJECT_LITERAL_LEAK: 0
+    SECOND_PERMISSION_ENGINE_PRESENT: 0
+    POLICY_HARD_BLOCK_REGRESSION: 0
+    RUNTIME_FAIL_OPEN_PATH: 0
+    GOGIN_POLICY_REIMPLEMENTATION: 0
+    RUNTIME_BRIDGE_FAIL_OPEN_PATH: 0
+    WEBUI_FEATURE_REGRESSION: 0
+    ADAPTER_COMPATIBILITY_REGRESSION: 0
+    CURRENT_PROJECT_GIT_MUTATION: 0
+    PILOT_DOT_BANYAN_MUTATION: 0
+    SECRET_BODY_ACCESS_OR_EXPOSURE: 0
+    TRACE_WITHOUT_EVIDENCE_LINK_WHEN_REQUIRED: 0
+    PROVENANCE_UNKNOWN_SYNTHESIZED: 0
+    NOLOSS_COVERAGE_REGRESSION: 0
+    RC_REPRODUCIBILITY_FAILURE: 0
+  next_stage: "20"

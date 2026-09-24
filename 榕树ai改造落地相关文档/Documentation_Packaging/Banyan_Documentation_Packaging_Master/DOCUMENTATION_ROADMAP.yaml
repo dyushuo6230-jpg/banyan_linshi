@@ -1,0 +1,13 @@
+schema_version: banyan-docs-v1
+workstream: DOCUMENTATION_PACKAGING
+changes_core_runtime: false
+phases:
+  - {id: D0, name: Source of Truth}
+  - {id: D1, name: Foundation}
+  - {id: D2, name: User Guide}
+  - {id: D3, name: Scenario Cookbook}
+  - {id: D4, name: Reference Manual}
+  - {id: D5, name: Maintainer Packaging}
+  - {id: D6, name: Documentation Gap Check}
+  - {id: D7, name: WebUI Help Center}
+  - {id: D8, name: Final Documentation Acceptance}

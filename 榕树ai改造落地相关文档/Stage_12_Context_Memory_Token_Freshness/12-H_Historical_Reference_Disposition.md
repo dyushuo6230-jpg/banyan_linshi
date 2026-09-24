@@ -1,0 +1,24 @@
+# 12-H Historical Reference Disposition
+
+处理：
+
+```text
+REF-039
+REF-041
+REF-043
+REF-044
+```
+
+允许结果：
+
+```text
+KEEP_UNRESOLVED_HISTORICAL
+DELETED_HISTORICAL_TARGET
+EXTERNAL_HISTORICAL_TARGET
+SUPERSEDED_REFERENCE
+RESOLVED_WITH_EVIDENCE
+```
+
+仅 exact-locator / exact-history evidence。
+
+REF-107 / REF-108 保持 NOT_A_REFERENCE。

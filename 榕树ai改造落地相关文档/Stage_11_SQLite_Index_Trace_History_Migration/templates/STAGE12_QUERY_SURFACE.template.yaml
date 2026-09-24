@@ -1,0 +1,24 @@
+schema_version: stage11-v1
+surfaces:
+  freshness:
+    - entity_freshness
+    - source_version_history
+    - conflict_state
+  context:
+    - current_progress
+    - latest_handover_with_as_of
+    - related_canonical_refs
+    - related_operational_refs
+  history:
+    - subject_state_history
+    - reverted_failed_stopped_events
+  reference:
+    - unresolved_references
+    - incoming_outgoing_edges
+  projection:
+    - projection_to_sources
+    - source_to_projections
+  trace:
+    - subject_trace
+    - run_trace
+con002_resolved_in_stage11: false

@@ -1,0 +1,11 @@
+schema_version: stage08-v1
+statuses:
+  - NOT_ENABLED
+  - DRAFT
+  - IN_REVIEW
+  - APPROVED
+  - PARTIAL_APPROVED
+  - STALE
+  - REVIEW_REQUIRED
+  - SUPERSEDED
+  - BLOCKED

@@ -1,0 +1,11 @@
+schema_version: stage13-v1
+required_surfaces:
+  - action_risk_class
+  - required_evidence_class
+  - impact_scope
+  - decision_level
+  - protected_target_state
+  - learning_proposal_state
+  - event_audit_requirement
+  - authorization_preconditions
+stage13_grants_authorization: false

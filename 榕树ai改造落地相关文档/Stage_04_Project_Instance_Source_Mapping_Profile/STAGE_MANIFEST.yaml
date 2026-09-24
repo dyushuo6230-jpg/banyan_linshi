@@ -1,0 +1,92 @@
+stage_id: "04"
+title: "Project Instance / Source Mapping / Profile"
+pack_version: "1.10"
+status: "NOT_STARTED"
+
+upstream:
+  stage: "03"
+  run_id: "stage03-20260920T135702Z"
+  acceptance: "PASS_CONTRACT_FREEZE"
+  entry_gate: "PASS_FOR_IMPLEMENTATION_DESIGN"
+
+execution_mode: "CONTRACT_FIRST_LOW_TOKEN"
+token_policy:
+  repository_full_rescan: false
+  stage01_inventory_regeneration: false
+  stage02_candidate_regeneration: false
+  stage03_contract_regeneration: false
+  default_inputs:
+    - "Stage_03_to_Stage_04_Gate_Review_v1.0.md"
+    - "Stage_04_低Token输入索引_v1.0.md"
+    - "Stage 03 evidence/NEXT_STAGE_HANDOFF.yaml"
+    - "Stage 03 frozen contract/schema surfaces"
+  evidence_on_demand_triggers:
+    - "CONTRACT_AMBIGUITY"
+    - "MISSING_BINDING"
+    - "PROJECT_MAPPING_COLLISION"
+    - "PROVIDER_PORT_GAP"
+    - "ACTIVATION_BLOCKER"
+
+owned_outcomes:
+  - "Project Instance Schema"
+  - "Project Instance Layout Contract"
+  - "Source Mapping Schema"
+  - "Source Mapping Registry"
+  - "Source Role Binding Rules"
+  - "Project Overlay Binding Rules"
+  - "Project Profile Schema"
+  - "Contributor Profile Schema"
+  - "Variable Resolution Binding Schema"
+  - "Provider Binding Schema"
+  - "Existing Project Adoption Contract"
+  - "New Project Initialization Contract"
+  - "Bootstrap to Canonical Project Instance Migration Plan"
+  - "Framework Distribution vs Project Instance Boundary"
+
+not_owned:
+  - "adaptive workflow / five-level decision policy"
+  - "semantic commit policy definition"
+  - "Change Workspace Provider implementation"
+  - "legacy migration execution"
+  - "runtime API / CLI implementation"
+  - "Control Plane / WebUI implementation"
+  - "provider implementation"
+  - "cross-project final portability acceptance"
+
+hard_invariants:
+  existing_project: "PRESERVE_IN_PLACE"
+  banyan_behavior: "DISCOVER + MAP + CLASSIFY/DESIGN"
+  relayout: "EXPLICIT_MIGRATION_ONLY"
+  generic_core_must_not_contain_project_specific_content: true
+  source_mapping_is_logical_not_physical_wrapper: true
+  project_sources_wrapper_required: false
+  final_banyan_framework_creation_required: false
+  final_dot_banyan_activation_required: false
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/04/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "业务代码 / SQL / 生产配置"
+    - "正式 PRD / DEC / ADR / CR / UI_SPEC 正文"
+    - "Legacy prompt/rule/skill 正文"
+    - "13 Secret 正文"
+    - "现有项目目录移动、重命名、归并"
+    - "正式 .banyan Project Instance 激活"
+    - "最终 banyan-framework 物理创建"
+    - "统一 project-sources 目录"
+    - "Git identity 修改"
+    - "Git commit/stash/reset/clean/rebase/push"
+
+exit_gate:
+  validation_ids: "V04-01..V04-20"
+  hard_metrics:
+    UNMAPPED_SOURCE_ROLE: 0
+    SOURCE_MAPPING_WITHOUT_ROLE: 0
+    PROJECT_SPECIFIC_VALUE_IN_GENERIC_CORE_SCHEMA: 0
+    PHYSICAL_RELAYOUT_REQUIRED_BY_DEFAULT: 0
+    PROFILE_FIELD_USED_AS_AUTHORIZATION: 0
+    UNKNOWN_VARIABLE_SILENTLY_DEFAULTED: 0
+  next_stage: "05"

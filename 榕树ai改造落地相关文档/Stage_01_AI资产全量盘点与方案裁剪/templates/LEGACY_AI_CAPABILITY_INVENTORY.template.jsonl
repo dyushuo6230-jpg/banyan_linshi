@@ -1,0 +1,1 @@
+{"capability_id":"CAP-EXAMPLE","name":"template","description":"template only","legacy_sources":[],"behaviors":[],"inputs":[],"outputs":[],"guards":[],"failure_semantics":[],"evidence_refs":[],"value_level":"UNKNOWN","candidate_owner_stage":null,"candidate_target_capability":null,"candidate_action":null,"confidence":"LOW","open_question":"template"}

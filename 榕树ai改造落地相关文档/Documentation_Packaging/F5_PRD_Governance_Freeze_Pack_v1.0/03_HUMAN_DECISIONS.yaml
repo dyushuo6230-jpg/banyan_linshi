@@ -1,0 +1,101 @@
+pack: F5_PRD_Governance_Freeze_Pack_v1.0
+stage: F5
+status: HUMAN_APPROVED
+architecture_freeze: PASS
+implementation_authorized: false
+decisions:
+- id: F5-G01
+  status: HUMAN_APPROVED
+  title: Low-Friction Governed Product Experience
+  decision: User expresses intent in natural language; Banyan absorbs routine governance cost; human attention is reserved
+    for ambiguity, semantic conflict, high impact, authority, safety, irreversible action, meaningful trade-off, and critical
+    missing information.
+- id: F5-G02
+  status: HUMAN_APPROVED
+  title: Progressive Requirement Closure
+  decision: Requirement completeness is separate from development readiness; gaps are classified as SAFE_AUTO_COMPLETE / WORKING_ASSUMPTION
+    / DECISION_REQUIRED / DEFERRABLE_UNCERTAINTY / BLOCKING_GAP with localized blocking and preserved lineage.
+- id: F5-G03
+  status: HUMAN_APPROVED
+  title: User-Controlled Requirement Shaping Before Development
+  decision: Shape-Before-Build creates an IMPLEMENTATION HOLD when the user asks to analyze/settle requirements before coding;
+    readiness may become READY while development entry remains HOLD.
+- id: F5-D01
+  status: HUMAN_APPROVED
+  title: Requirement and Product Definition
+  decision: Requirement is a stable product semantic unit; PRD/Product Definition is the canonical aggregate; new input is
+    reconciled before classification; AI may structure candidates but may not invent approved business meaning.
+- id: F5-D02
+  status: HUMAN_APPROVED
+  title: Maturity / Lifecycle / Readiness / Closure
+  decision: Requirement uncertainty, PRD lifecycle, development readiness, approval, baseline and closure are separate dimensions;
+    Draft→In Review→Approved→Baselined remains a product lifecycle distinction.
+- id: F5-D03
+  status: HUMAN_APPROVED
+  title: Gap Classification / Decision Routing
+  decision: Gap classification and provisional progression are explicit; high-risk authority/safety/security/critical-money/irreversible/core-contract
+    matters cannot be downgraded for speed.
+- id: F5-D04
+  status: HUMAN_APPROVED
+  title: Decision / Approval / Development Entry / Apply
+  decision: User Intent, Human Decision, Approval Evidence, Development Readiness, Development Entry Authorization, Authority
+    and Canonical Apply are distinct; clear natural language may be sufficient evidence when authority/policy is satisfied;
+    Role does not grant Decision Authority.
+- id: F5-D05
+  status: HUMAN_APPROVED
+  title: Addressable Requirement / Canonical Product Semantics
+  decision: Requirement is addressable without requiring a standalone artifact file; governed PRD/Product Definition owns
+    canonical semantics; same semantic fact has one canonical write target; index/projection/workspace are noncanonical.
+- id: F5-D06
+  status: HUMAN_APPROVED
+  title: Reconciliation-first Product Definition Pipeline
+  decision: Product definition work is reconciliation-first and incremental; produce the smallest valid Product Definition
+    Delta; adaptive communication is optional; Meeting Packs are derived; OpenSpec is a provider, not authority.
+- id: F5-D07
+  status: HUMAN_APPROVED
+  title: Requirement Evolution / Change / CR
+  decision: New Requirement, Requirement Delta, Change, CR, Decision and Canonical Apply are distinct; approved/baselined
+    semantic modifications use governed Change when applicable; code cannot silently become Product Truth; F7 owns apply mechanics.
+- id: F5-D08
+  status: HUMAN_APPROVED
+  title: Progressive Requirement Trace
+  decision: Requirement is a stable semantic anchor with applicability-driven progressive linkage to provenance/decision/UI/architecture/API/data/test/batch/implementation;
+    downstream artifacts and evidence do not gain Product Authority.
+- id: F5-D09
+  status: HUMAN_APPROVED
+  title: Version / Baseline / Freshness / Supersession
+  decision: Latest != Current Effective; Approved != Baselined; Lifecycle Status != Freshness; Baseline != Copy of Truth;
+    historical revisions and supersession remain traceable; F9/F10 own later query/enforcement mechanics.
+- id: F5-D10
+  status: HUMAN_APPROVED
+  title: AI Modification Boundary & Product Governance Authority
+  decision: AI has no intrinsic Product Semantic Decision / Approval / Apply Authority, but may act as an authorized executor.
+    AI modification is separated into deterministic non-semantic automation, governed noncanonical semantic writing, authority-required
+    semantic decision/approval, and governed canonical apply execution. Product Semantic Mutation requires valid authority.
+    Clear bounded natural language may be sufficient decision/approval evidence. Approved/Baselined/Current Effective semantics
+    are not free-editable. Evidence may challenge but not silently redefine Product Truth. Source Authority, Product Decision
+    Authority, Product Approval Authority, Canonical Apply Authorization, and Runtime Execution Permission are distinct.
+- id: CROSS-STAGE-DECISION-01
+  status: HUMAN_APPROVED
+  title: Adaptive Informed Decision Protocol
+  decision: A single compatible decision semantic is used across stages; low-risk sufficiently explained decisions may complete
+    in one clear natural-language interaction; high-impact/irreversible/authority-sensitive decisions may require stronger
+    confirmation; recommendation is never human decision.
+- id: CROSS-STAGE-COMM-01
+  status: HUMAN_APPROVED
+  title: Adaptive Meeting & Review Communication
+  decision: Meeting/Review packs are optional, adaptive, derived human-facing projections; small/local changes do not require
+    them; conclusions that alter product semantics must return to Requirement/Change/Decision/Canonical Apply.
+- id: CROSS-STAGE-GOVERNANCE-01
+  status: HUMAN_APPROVED
+  title: Revision Authority & Reconciliation Precedence
+  decision: Still-valid Human Decision/Confirmation outranks current frozen contract, then historical confirmed requirements,
+    Legacy no-loss, accepted evidence, and current reality checks; new conflicting decisions require explicit reconciliation
+    and supersession, never silent overwrite.
+global_authorization_state:
+  implementation: false
+  rp2: false
+  authority_cutover: NOT_AUTHORIZED
+  full_legacy_migration: NOT_AUTHORIZED
+  legacy_retirement_delete: NOT_AUTHORIZED
+  final_activation: NOT_AUTHORIZED

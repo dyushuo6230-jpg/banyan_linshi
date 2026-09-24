@@ -1,0 +1,14 @@
+schema_version: stage08-v1
+ui_spec:
+  ui_spec_id: null
+  application_id: null
+  version: null
+  status: DRAFT
+  coverage: null
+  prd_refs: []
+  change_refs: []
+  design_evidence_refs: []
+  supersedes: null
+  freshness: null
+  validation_refs: []
+business_requirement_truth: false

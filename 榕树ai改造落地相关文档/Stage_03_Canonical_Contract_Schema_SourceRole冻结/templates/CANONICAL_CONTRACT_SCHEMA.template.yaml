@@ -1,0 +1,17 @@
+schema_version: "stage03-v1"
+required_fields:
+  - contract_id
+  - capability_id
+  - version
+  - status
+  - inputs
+  - outputs
+  - preconditions
+  - guards
+  - side_effect_policy
+  - failure_semantics
+  - authority
+  - evidence_lineage
+  - extension_points
+  - compatibility
+statuses: [DRAFT, FROZEN, DEPRECATED, SUPERSEDED, BLOCKED]

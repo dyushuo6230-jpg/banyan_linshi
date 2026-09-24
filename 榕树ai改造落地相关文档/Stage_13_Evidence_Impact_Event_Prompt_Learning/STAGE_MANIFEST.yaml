@@ -1,0 +1,94 @@
+stage_id: "13"
+title: "Evidence / Impact / Event / Prompt Learning"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "QUERY_FIRST_OFFLINE_LEARNING_DESIGN"
+
+upstream:
+  stage: "12"
+  run_id: "stage12-20260921T014521Z"
+  acceptance: "PASS_STAGE12_CONTEXT_MEMORY_FRESHNESS_WITH_TYPED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE13_EVIDENCE_IMPACT_EVENT_PROMPT_LEARNING_DESIGN_WITH_TYPED_BLOCKERS"
+
+owned_outcomes:
+  - "Evidence Record Contract"
+  - "Evidence Bundle / Chain Contract"
+  - "Impact Analysis Contract"
+  - "Impact Graph Contract"
+  - "Change-to-Artifact Impact Contract"
+  - "Decision Evidence Contract"
+  - "Event Schema / Taxonomy"
+  - "Event Correlation / Causality Boundary"
+  - "Prompt Observation Contract"
+  - "Prompt Outcome / Attribution Contract"
+  - "Prompt Learning Candidate Contract"
+  - "Prompt Policy Improvement Proposal Contract"
+  - "Learning Evaluation / Counterexample Contract"
+  - "False Positive / False Negative Register"
+  - "Quality / Cost Telemetry Contract"
+  - "Learning Promotion / Approval Gate"
+  - "Stage 14 Governance Requirement Handoff"
+
+not_owned:
+  - "self-modifying prompt runtime"
+  - "automatic rule/skill mutation"
+  - "permission runtime"
+  - "Git commit safety runtime"
+  - "action authorization enforcement"
+  - "runtime CLI/API"
+  - "CON-002 resolution"
+  - "real migration activation"
+
+hard_invariants:
+  evidence_requires_source: true
+  evidence_grants_authorization: false
+  correlation_is_causality: false
+  inference_may_be_recorded_as_fact: false
+  prompt_learning_auto_applies_change: false
+  runtime_self_modification_allowed: false
+  project_specific_learning_auto_promoted_to_core: false
+  secret_learning_allowed: false
+  con002_may_be_resolved_by_event_frequency: false
+
+token_policy:
+  repository_full_rescan: false
+  full_prompt_corpus_reload: false
+  full_git_history_reanalysis: false
+  full_conversation_mining: false
+  evidence_on_demand_triggers:
+    - EVIDENCE_SOURCE_GAP
+    - IMPACT_EDGE_AMBIGUITY
+    - CAUSALITY_AMBIGUITY
+    - PROMPT_OUTCOME_ATTRIBUTION_GAP
+    - LEARNING_CANDIDATE_CONFLICT
+    - EVALUATION_COUNTEREXAMPLE
+    - PROVENANCE_GAP
+    - MISSING_EVIDENCE
+
+write_scope:
+  allowed:
+    - "${REFRACTOR_CONTROL_ROOT}/stages/13/${RUN_ID}/**"
+    - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+    - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+  forbidden:
+    - "canonical Prompt/Rule/Skill mutation"
+    - "canonical PRD/ADR/UI_SPEC mutation"
+    - "business code"
+    - "13 Secret bodies"
+    - "Stage11 Shadow DB canonical mutation"
+    - "final .banyan activation"
+    - "Stage 14 execution"
+
+exit_gate:
+  validations: "V13-01..V13-24"
+  hard_metrics:
+    EVIDENCE_RECORD_WITHOUT_SOURCE_REF: 0
+    EVIDENCE_RECORD_WITHOUT_PROVENANCE_OR_CLASSIFICATION: 0
+    CORRELATION_PROMOTED_TO_CAUSALITY_WITHOUT_EVIDENCE: 0
+    IMPACT_EDGE_WITHOUT_BASIS: 0
+    PROMPT_OUTCOME_WITH_SINGLE_FACTOR_ATTRIBUTION_BY_DEFAULT: 0
+    LEARNING_CANDIDATE_AUTO_APPLIED: 0
+    PROJECT_SPECIFIC_LEARNING_AUTO_PROMOTED_TO_CORE: 0
+    SECRET_OR_SECRET_DERIVED_LEARNING_RECORD: 0
+    CON002_RESOLVED_BY_LEARNING_OR_EVENT_FREQUENCY: 0
+  next_stage: "14"

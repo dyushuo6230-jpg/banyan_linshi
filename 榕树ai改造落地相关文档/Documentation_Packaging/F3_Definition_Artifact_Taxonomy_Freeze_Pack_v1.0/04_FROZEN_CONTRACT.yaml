@@ -1,0 +1,57 @@
+contract_id: banyan.f3.definition_artifact_taxonomy.v1
+contract_status: FROZEN_FOR_DOWNSTREAM_ARCHITECTURE
+architecture_freeze: PASS
+implementation_authorized: false
+
+definition_artifact_taxonomy:
+  mode: CLOSED_BUT_EXTENSIBLE
+  top_level_types:
+    - RoleDefinition
+    - CapabilityDefinition
+    - SkillDefinition
+    - WorkflowDefinition
+    - PolicyDefinition
+    - StateModelDefinition
+    - DecisionProtocolDefinition
+    - TemplateDefinition
+    - ProviderContractDefinition
+    - CompatibilitySpecDefinition
+
+classification:
+  primary_type:
+    cardinality: EXACTLY_ONE
+  domain:
+    cardinality: ZERO_OR_MORE
+  tag:
+    cardinality: ZERO_OR_MORE
+  typed_relation:
+    cardinality: ZERO_OR_MORE
+
+invariants:
+  capability_is_skill: false
+  role_is_permission: false
+  workflow_definition_is_workflow_run: false
+  state_model_is_current_state: false
+  decision_protocol_is_decision_session: false
+  template_is_schema: false
+  template_is_instance: false
+  provider_contract_is_provider_binding: false
+  compatibility_spec_is_migration_run: false
+  context_recovery_is_top_level_type: false
+  schema_is_definition_artifact_type: false
+  registry_is_definition_artifact_type: false
+  manifest_is_definition_artifact_type: false
+  accepted_semantics_must_be_preserved: true
+  old_structure_must_be_permanent: false
+
+taxonomy_change_gate:
+  new_type_requires_versioned_change_proposal: true
+  new_type_requires_impact_analysis: true
+  new_type_requires_human_decision: true
+
+migration_protection:
+  r1_rp1_categories_remain_valid: true
+  physical_reclassification_in_f3: false
+  relocation_in_f3: false
+  deletion_in_f3: false
+  authority_cutover_in_f3: false

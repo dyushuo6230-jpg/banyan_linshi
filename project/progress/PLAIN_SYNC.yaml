@@ -1,0 +1,895 @@
+# 对外白话对照表。不进开会包。
+# 状态: planned | synced | stale
+# planned 行的 prd_version / git_commit 为空；没有基线不得走差异同步。
+# 现码看允许第一批写正文时再补全。白话路径必须与总树一致。
+schema_version: 1
+created: "2026-09-10"
+plain_root: docs/project/plain-document/
+entries:
+  - id: MAP-文档地图
+    白话: doc-map.md
+    规则从: []
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: OV-怎么读
+    白话: doc-desc/总览/怎么读这套说明.md
+    规则从: []
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: OV-项目总说明
+    白话: doc-desc/总览/项目总说明.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/系统上下文.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: OV-名词对照
+    白话: doc-desc/总览/名词对照.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: OV-五端与角色
+    白话: doc-desc/总览/五端与角色.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/系统上下文.md
+      - architecture-diagram/静态架构/应用架构.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: OV-主流程
+    白话: doc-desc/总览/主流程怎么走.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/入驻与审核/入驻与审核-泳道.md
+      - architecture-diagram/场景流程/商品/本地生活发品-泳道.md
+      - architecture-diagram/场景流程/商品/在线商城发品与审核-泳道.md
+      - architecture-diagram/场景流程/本地生活履约/餐饮扫桌到出餐-泳道.md
+      - architecture-diagram/场景流程/众享源品逛买/浏览到下未付单-泳道.md
+      - architecture-diagram/场景流程/订单支付与结算/本地生活支付到店-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: OV-钱和券
+    白话: doc-desc/总览/钱和券怎么算.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+      - docs/project/prd/modules/M01-business-type.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/本地生活支付到店-泳道.md
+      - architecture-diagram/场景流程/订单支付与结算/众享源品支付-泳道.md
+      - architecture-diagram/场景流程/订单支付与结算/本地生活结算对账-泳道.md
+      - architecture-diagram/场景流程/订单支付与结算/在线商城抽佣结算-泳道.md
+      - architecture-diagram/场景流程/营销周边/优惠券-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: OV-本期边界
+    白话: doc-desc/总览/本期做什么和不做什么.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.44"
+    git_commit: ""
+
+  - id: FN-业态抽佣
+    白话: doc-desc/功能需求/业态经营类目与抽佣.md
+    规则从:
+      - docs/project/prd/modules/M01-business-type.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/本地生活结算对账-泳道.md
+      - architecture-diagram/场景流程/订单支付与结算/在线商城抽佣结算-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-入驻审核
+    白话: doc-desc/功能需求/租户入驻与审核.md
+    规则从:
+      - docs/project/prd/modules/M02-onboarding.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/入驻与审核/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-租户菜单
+    白话: doc-desc/功能需求/租户后台与菜单.md
+    规则从:
+      - docs/project/prd/modules/M03-merchant-workspace.md
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.44"
+    git_commit: ""
+
+  - id: FN-商品审核
+    白话: doc-desc/功能需求/商品类目与审核.md
+    规则从:
+      - docs/project/prd/modules/M04-goods.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/商品/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-本地履约
+    白话: doc-desc/功能需求/本地生活怎么履约.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/本地生活履约/
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: FN-拼团秒杀
+    白话: doc-desc/功能需求/拼团与秒杀.md
+    规则从:
+      - docs/project/prd/modules/M06-group-seckill.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/拼团秒杀-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: FN-源品逛买
+    白话: doc-desc/功能需求/众享源品怎么逛买.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+    现码看:
+      - go-uni-app-online/src/pages.json
+      - go-uni-app-online/src/components/tabbar/tabbar.vue
+    图:
+      - architecture-diagram/场景流程/众享源品逛买/
+    状态: synced
+    prd_version: "0.1.44"
+    git_commit: ""
+
+  - id: FN-用户池
+    白话: doc-desc/功能需求/用户账号与用户池.md
+    规则从:
+      - docs/project/prd/modules/M08-user-pool.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/账号与登录/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-登录会话
+    白话: doc-desc/功能需求/登录会话与口令.md
+    规则从:
+      - docs/project/prd/modules/M09-auth-session.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/账号与登录/
+    状态: synced
+        prd_version: "0.1.39"
+    git_commit: "a5a34328"
+
+  - id: FN-订单结算
+    白话: doc-desc/功能需求/订单支付与结算.md
+    规则从:
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-优惠券
+    白话: doc-desc/功能需求/优惠券.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M11-platform-ops.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/优惠券-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-周边到店
+    白话: doc-desc/功能需求/周边与到店服务.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M11-platform-ops.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/周边与CPS-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-售后退款
+    白话: doc-desc/功能需求/售后与退款.md
+    规则从:
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/售后与评价/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: FN-平台运营
+    白话: doc-desc/功能需求/平台运营与现码保留.md
+    规则从:
+      - docs/project/prd/modules/M11-platform-ops.md
+      - docs/project/prd/modules/M12-promoter.md
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: PG-平台后台
+    白话: doc-desc/分端页面/平台后台.md
+    规则从:
+      - docs/project/prd/PRODUCT_PRD.md
+      - docs/project/prd/modules/M03-merchant-workspace.md
+      - docs/project/prd/modules/M11-platform-ops.md
+    现码看:
+      - nunu-go-api/app/admin/cmd/migration/seed_admin_menu.go
+      - nunu-go-api/app/admin/web/src/views/merchant/apply.vue
+      - nunu-go-api/app/admin/web/src/views/merchant/category.vue
+      - nunu-go-api/app/admin/web/src/views/merchant/menu.vue
+      - nunu-go-api/app/admin/web/src/views/goods/audit.vue
+    图:
+      - architecture-diagram/场景流程/入驻与审核/
+      - architecture-diagram/场景流程/商品/
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: PG-租户本地
+    白话: doc-desc/分端页面/租户后台（本地生活）.md
+    规则从:
+      - docs/project/prd/modules/M03-merchant-workspace.md
+      - docs/project/prd/modules/M05-local-life.md
+    现码看:
+      - nunu-go-api/deploy/sql/05-merchant-menu-templates.sql
+      - nunu-go-api/deploy/sql/06-merchant-menu-prune.sql
+      - nunu-go-api/deploy/sql/09-merchant-menu-dec027-028-039.sql
+      - nunu-go-api/app/merchant/web/src/views/goods/edit.vue
+    图:
+      - architecture-diagram/场景流程/商品/本地生活发品-泳道.md
+      - architecture-diagram/场景流程/本地生活履约/
+    状态: synced
+    prd_version: "0.1.44"
+    git_commit: ""
+
+  - id: PG-租户商城
+    白话: doc-desc/分端页面/租户后台（在线商城）.md
+    规则从:
+      - docs/project/prd/modules/M03-merchant-workspace.md
+      - docs/project/prd/modules/M07-online-mall.md
+    现码看:
+      - nunu-go-api/deploy/sql/05-merchant-menu-templates.sql
+      - nunu-go-api/deploy/sql/06-merchant-menu-prune.sql
+      - nunu-go-api/deploy/sql/09-merchant-menu-dec027-028-039.sql
+      - nunu-go-api/app/merchant/web/src/views/goods/edit.vue
+    图:
+      - architecture-diagram/场景流程/商品/在线商城发品与审核-泳道.md
+      - architecture-diagram/场景流程/订单支付与结算/商城发货与确认收货-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: PG-租户入驻
+    白话: doc-desc/分端页面/租户入驻.md
+    规则从:
+      - docs/project/prd/modules/M02-onboarding.md
+    现码看:
+      - go-uni-app/src/addon/merchant_site/pages/submit_approval/index.vue
+      - nunu-go-api/app/admin/web/src/views/merchant/apply.vue
+    图:
+      - architecture-diagram/场景流程/入驻与审核/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: PG-本地生活
+    白话: doc-desc/分端页面/众享营销-本地生活.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+    现码看:
+      - go-uni-app/src/addon/fang_catering/pages/new_order/list.vue
+      - go-uni-app/src/addon/fang_catering/pages/merchant/index.vue
+      - go-uni-app/src/app/pages/verify/verify.vue
+      - go-uni-app/src/addon/fang_catering/pages/member/index.vue
+    图:
+      - architecture-diagram/场景流程/账号与登录/本地生活登录-泳道.md
+      - architecture-diagram/场景流程/本地生活履约/
+      - architecture-diagram/场景流程/订单支付与结算/本地生活支付到店-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: PG-源品商城
+    白话: doc-desc/分端页面/众享源品-在线商城.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/components/tabbar/index.vue
+      - go-uni-app-online/src/addon/shop/pages/indexPage/index.vue
+      - go-uni-app-online/src/addon/shop/pages/category/detail-commodity.vue
+      - go-uni-app-online/src/addon/shop/pages/mine/index-w.vue
+      - go-uni-app-online/src/addon/shop/pages/auth/login.vue
+    图:
+      - architecture-diagram/场景流程/账号与登录/众享源品登录-泳道.md
+      - architecture-diagram/场景流程/众享源品逛买/
+      - architecture-diagram/场景流程/订单支付与结算/众享源品支付-泳道.md
+    状态: synced
+    prd_version: "0.1.44"
+    git_commit: ""
+
+  - id: TD-系统怎么拆
+    白话: doc-desc/技术设计/横切/系统怎么拆.md
+    规则从:
+      - docs/project/architecture/OVERALL_ARCHITECTURE.md
+      - docs/project/architecture/MODULE_BOUNDARIES.md
+    现码看:
+      - nunu-go-api/app/admin
+      - nunu-go-api/app/mall
+      - nunu-go-api/app/mall-online
+      - nunu-go-api/app/merchant
+    图:
+      - architecture-diagram/静态架构/
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: TD-两套C端
+    白话: doc-desc/技术设计/横切/两套C端与独立打包.md
+    规则从:
+      - docs/project/architecture/OVERALL_ARCHITECTURE.md
+      - docs/project/architecture/DEPLOYMENT_ARCHITECTURE.md
+    现码看:
+      - go-uni-app
+      - go-uni-app-online
+      - nunu-go-api/app/h5-online
+      - nunu-go-api/app/mall-online
+    图:
+      - architecture-diagram/静态架构/应用架构.md
+      - architecture-diagram/静态架构/部署架构.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-账号登录
+    白话: doc-desc/技术设计/横切/账号用户池与登录会话.md
+    规则从:
+      - docs/project/prd/modules/M08-user-pool.md
+      - docs/project/prd/modules/M09-auth-session.md
+      - docs/project/design/modules/user.md
+      - docs/project/design/modules/auth-session.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/pages/auth/login.vue
+      - go-uni-app-online/src/addon/shop/pages/mine/index-w.vue
+    图:
+      - architecture-diagram/场景流程/账号与登录/
+    状态: synced
+        prd_version: "0.1.39"
+    git_commit: "a5a34328"
+
+  - id: TD-权限菜单
+    白话: doc-desc/技术设计/横切/权限与菜单模板.md
+    规则从:
+      - docs/project/prd/modules/M03-merchant-workspace.md
+      - docs/project/architecture/SECURITY_ARCHITECTURE.md
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.39"
+    git_commit: "a5a34328"
+
+  - id: TD-数据快照
+    白话: doc-desc/技术设计/横切/数据金额与快照.md
+    规则从:
+      - docs/project/prd/modules/M01-business-type.md
+      - docs/project/prd/modules/M10-order-settlement.md
+      - docs/project/database/DATA_MODEL.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/数据架构.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-支付资金
+    白话: doc-desc/技术设计/横切/支付结算与资金流向.md
+    规则从:
+      - docs/project/prd/modules/M10-order-settlement.md
+      - docs/project/design/modules/trade.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/pages/order/payment.vue
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-安全边界
+    白话: doc-desc/技术设计/横切/安全边界.md
+    规则从:
+      - docs/project/architecture/SECURITY_ARCHITECTURE.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/账号与登录/两套登录隔离-时序.md
+    状态: synced
+        prd_version: "0.1.39"
+    git_commit: "a5a34328"
+
+  - id: TD-部署环境
+    白话: doc-desc/技术设计/横切/部署与环境.md
+    规则从:
+      - docs/project/architecture/DEPLOYMENT_ARCHITECTURE.md
+    现码看:
+      - nunu-go-api/config/mall-online
+      - nunu-go-api/app/h5-online
+      - go-uni-app-online
+    图:
+      - architecture-diagram/静态架构/部署架构.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-测试怎么做
+    白话: doc-desc/技术设计/横切/测试怎么做.md
+    规则从:
+      - docs/project/acceptance/TEST_STRATEGY.md
+      - docs/project/prd/PRODUCT_PRD.md
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: TD-业态入驻
+    白话: doc-desc/技术设计/能力怎么落地/业态树与入驻.md
+    规则从:
+      - docs/project/design/modules/tree.md
+      - docs/project/design/modules/onboarding.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/入驻与审核/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-商品两种
+    白话: doc-desc/技术设计/能力怎么落地/商品两种流程.md
+    规则从:
+      - docs/project/design/modules/goods.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/商品/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-履约核销
+    白话: doc-desc/技术设计/能力怎么落地/履约扫桌与核销.md
+    规则从:
+      - docs/project/design/modules/fulfillment.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/本地生活履约/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: TD-拼团落地
+    白话: doc-desc/技术设计/能力怎么落地/拼团秒杀怎么落地.md
+    规则从:
+      - docs/project/design/modules/group-seckill.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/拼团秒杀-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: TD-订单售后
+    白话: doc-desc/技术设计/能力怎么落地/订单状态与售后.md
+    规则从:
+      - docs/project/design/modules/trade.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/
+      - architecture-diagram/场景流程/售后与评价/
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-图怎么读
+    白话: architecture-diagram/图怎么读.md
+    规则从: []
+    现码看: []
+    图: []
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-系统上下文
+    白话: architecture-diagram/静态架构/系统上下文.md
+    规则从:
+      - docs/project/architecture/SYSTEM_CONTEXT.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/系统上下文.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-应用架构
+    白话: architecture-diagram/静态架构/应用架构.md
+    规则从:
+      - docs/project/architecture/OVERALL_ARCHITECTURE.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/应用架构.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: DG-数据架构
+    白话: architecture-diagram/静态架构/数据架构.md
+    规则从:
+      - docs/project/database/DATA_MODEL.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/数据架构.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-部署架构
+    白话: architecture-diagram/静态架构/部署架构.md
+    规则从:
+      - docs/project/architecture/DEPLOYMENT_ARCHITECTURE.md
+    现码看: []
+    图:
+      - architecture-diagram/静态架构/部署架构.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-入驻泳道
+    白话: architecture-diagram/场景流程/入驻与审核/入驻与审核-泳道.md
+    规则从:
+      - docs/project/prd/modules/M02-onboarding.md
+    现码看:
+      - go-uni-app/src/addon/merchant_site/pages/submit_approval/index.vue
+      - nunu-go-api/app/admin/web/src/views/merchant/apply.vue
+    图:
+      - architecture-diagram/场景流程/入驻与审核/入驻与审核-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-入驻时序
+    白话: architecture-diagram/场景流程/入驻与审核/入驻与审核-时序.md
+    规则从:
+      - docs/project/prd/modules/M02-onboarding.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/入驻与审核/入驻与审核-时序.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-本地登录
+    白话: architecture-diagram/场景流程/账号与登录/本地生活登录-泳道.md
+    规则从:
+      - docs/project/prd/modules/M08-user-pool.md
+      - docs/project/prd/modules/M09-auth-session.md
+    现码看:
+      - go-uni-app/src/app/pages/auth/login.vue
+      - go-uni-app/src/hooks/useLogin.ts
+    图:
+      - architecture-diagram/场景流程/账号与登录/本地生活登录-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-源品登录
+    白话: architecture-diagram/场景流程/账号与登录/众享源品登录-泳道.md
+    规则从:
+      - docs/project/prd/modules/M08-user-pool.md
+      - docs/project/prd/modules/M09-auth-session.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/pages/auth/login.vue
+    图:
+      - architecture-diagram/场景流程/账号与登录/众享源品登录-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-登录隔离
+    白话: architecture-diagram/场景流程/账号与登录/两套登录隔离-时序.md
+    规则从:
+      - docs/project/prd/modules/M08-user-pool.md
+      - docs/project/prd/modules/M09-auth-session.md
+    现码看:
+      - go-uni-app/src/app/pages/auth/login.vue
+      - go-uni-app-online/src/addon/shop/pages/auth/login.vue
+    图:
+      - architecture-diagram/场景流程/账号与登录/两套登录隔离-时序.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-本地发品
+    白话: architecture-diagram/场景流程/商品/本地生活发品-泳道.md
+    规则从:
+      - docs/project/prd/modules/M04-goods.md
+    现码看:
+      - nunu-go-api/app/merchant/web/src/views/goods/edit.vue
+      - nunu-go-api/app/merchant/web/src/views/goods/category.vue
+      - nunu-go-api/app/merchant/web/src/views/goods/list.vue
+    图:
+      - architecture-diagram/场景流程/商品/本地生活发品-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-商城发品
+    白话: architecture-diagram/场景流程/商品/在线商城发品与审核-泳道.md
+    规则从:
+      - docs/project/prd/modules/M04-goods.md
+    现码看:
+      - nunu-go-api/app/merchant/web/src/views/goods/edit.vue
+      - nunu-go-api/app/admin/web/src/views/goods/audit.vue
+    图:
+      - architecture-diagram/场景流程/商品/在线商城发品与审核-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-商城审品
+    白话: architecture-diagram/场景流程/商品/商城审品-时序.md
+    规则从:
+      - docs/project/prd/modules/M04-goods.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/商品/商城审品-时序.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-扫桌出餐
+    白话: architecture-diagram/场景流程/本地生活履约/餐饮扫桌到出餐-泳道.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+    现码看:
+      - go-uni-app/src/addon/fang_catering/pages/ordering_food/settlement.vue
+      - go-uni-app/src/addon/fang_catering/pages/merchant/index.vue
+    图:
+      - architecture-diagram/场景流程/本地生活履约/餐饮扫桌到出餐-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-美发核销
+    白话: architecture-diagram/场景流程/本地生活履约/美发商超核销-泳道.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+    现码看:
+      - go-uni-app/src/app/pages/verify/index.vue
+      - nunu-go-api/app/merchant/web/src/views/order/list.vue
+    图:
+      - architecture-diagram/场景流程/本地生活履约/美发商超核销-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-核销时序
+    白话: architecture-diagram/场景流程/本地生活履约/核销-时序.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/本地生活履约/核销-时序.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-下未付单
+    白话: architecture-diagram/场景流程/众享源品逛买/浏览到下未付单-泳道.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/pages/indexPage/index.vue
+      - go-uni-app-online/src/addon/shop/pages/category/detail-commodity.vue
+      - go-uni-app-online/src/addon/shop/pages/order/payment.vue
+    图:
+      - architecture-diagram/场景流程/众享源品逛买/浏览到下未付单-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: DG-超时关单
+    白话: architecture-diagram/场景流程/众享源品逛买/未付超时关单-泳道.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/pages/order/list.vue
+      - go-uni-app-online/src/addon/shop/pages/order/detail.vue
+      - go-uni-app/src/addon/fang_catering/pages/new_order/list.vue
+    图:
+      - architecture-diagram/场景流程/众享源品逛买/未付超时关单-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-本地支付
+    白话: architecture-diagram/场景流程/订单支付与结算/本地生活支付到店-泳道.md
+    规则从:
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看:
+      - go-uni-app/src/components/pay/pay.vue
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/本地生活支付到店-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-源品支付
+    白话: architecture-diagram/场景流程/订单支付与结算/众享源品支付-泳道.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看:
+      - go-uni-app-online/src/addon/shop/pages/order/payment.vue
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/众享源品支付-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-支付回调
+    白话: architecture-diagram/场景流程/订单支付与结算/两种支付回调-时序.md
+    规则从:
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/两种支付回调-时序.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-发货收货
+    白话: architecture-diagram/场景流程/订单支付与结算/商城发货与确认收货-泳道.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/商城发货与确认收货-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-本地结算
+    白话: architecture-diagram/场景流程/订单支付与结算/本地生活结算对账-泳道.md
+    规则从:
+      - docs/project/prd/modules/M01-business-type.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/本地生活结算对账-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-商城结算
+    白话: architecture-diagram/场景流程/订单支付与结算/在线商城抽佣结算-泳道.md
+    规则从:
+      - docs/project/prd/modules/M01-business-type.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/订单支付与结算/在线商城抽佣结算-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-整单退款
+    白话: architecture-diagram/场景流程/售后与评价/整单退款-泳道.md
+    规则从:
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/售后与评价/整单退款-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-真评价
+    白话: architecture-diagram/场景流程/售后与评价/真评价-泳道.md
+    规则从:
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M10-order-settlement.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/售后与评价/真评价-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-拼团秒杀
+    白话: architecture-diagram/场景流程/营销周边/拼团秒杀-泳道.md
+    规则从:
+      - docs/project/prd/modules/M06-group-seckill.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/拼团秒杀-泳道.md
+    状态: synced
+    prd_version: "0.1.41"
+    git_commit: "2071d0dc"
+
+  - id: DG-优惠券
+    白话: architecture-diagram/场景流程/营销周边/优惠券-泳道.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M11-platform-ops.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/优惠券-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"
+
+  - id: DG-周边CPS
+    白话: architecture-diagram/场景流程/营销周边/周边与CPS-泳道.md
+    规则从:
+      - docs/project/prd/modules/M05-local-life.md
+      - docs/project/prd/modules/M07-online-mall.md
+      - docs/project/prd/modules/M11-platform-ops.md
+    现码看: []
+    图:
+      - architecture-diagram/场景流程/营销周边/周边与CPS-泳道.md
+    状态: synced
+    prd_version: "0.1.34"
+    git_commit: "a5a34328"

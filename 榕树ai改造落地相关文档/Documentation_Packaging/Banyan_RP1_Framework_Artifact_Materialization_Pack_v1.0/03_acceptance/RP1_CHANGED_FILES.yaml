@@ -1,0 +1,70 @@
+schema_version: rp1-changed-files-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+stage: RP1
+created:
+- banyan-framework/artifacts/roles/source-role-model.v1.yaml
+- banyan-framework/artifacts/policies/legacy-governance.v1.yaml
+- banyan-framework/artifacts/policies/adaptive-decision.v1.yaml
+- banyan-framework/artifacts/policies/semantic-commit.v1.yaml
+- banyan-framework/artifacts/policies/permission-governance.v1.yaml
+- banyan-framework/artifacts/skills/anydesign.v1.yaml
+- banyan-framework/artifacts/skills/visual-repair-loop.v1.yaml
+- banyan-framework/artifacts/workflows/v3-1-governance.v1.yaml
+- banyan-framework/artifacts/workflows/adaptive.v1.yaml
+- banyan-framework/artifacts/workflows/decision.v1.yaml
+- banyan-framework/artifacts/workflows/semantic-commit.v1.yaml
+- banyan-framework/artifacts/workflows/change-lifecycle.v1.yaml
+- banyan-framework/artifacts/workflows/parallel-draft.v1.yaml
+- banyan-framework/artifacts/workflows/batch-reconciliation.v1.yaml
+- banyan-framework/artifacts/workflows/context-recovery.v1.yaml
+- banyan-framework/artifacts/workflows/knowledge-publication.v1.yaml
+- banyan-framework/artifacts/workflows/evidence-learning.v1.yaml
+- banyan-framework/artifacts/states/artifact.v1.yaml
+- banyan-framework/artifacts/states/workflow.v1.yaml
+- banyan-framework/artifacts/states/change.v1.yaml
+- banyan-framework/artifacts/states/decision.v1.yaml
+- banyan-framework/artifacts/states/runtime.v1.yaml
+- banyan-framework/artifacts/states/project-pilot.v1.yaml
+- banyan-framework/artifacts/states/governance-release.v1.yaml
+- banyan-framework/artifacts/states/compatibility-migration.v1.yaml
+- banyan-framework/artifacts/states/capability-lifecycle.v1.yaml
+- banyan-framework/artifacts/states/capability-activation.v1.yaml
+- banyan-framework/artifacts/states/project-stage.v1.yaml
+- banyan-framework/artifacts/states/delivery-batch.v1.yaml
+- banyan-framework/artifacts/templates/artifact-instance.v1.yaml
+- banyan-framework/artifacts/templates/informed-decision.v1.yaml
+- banyan-framework/artifacts/templates/change-workspace.v1.yaml
+- banyan-framework/artifacts/templates/design-package.v1.yaml
+- banyan-framework/artifacts/templates/project-guide.v1.yaml
+- banyan-framework/artifacts/templates/handover-recovery.v1.yaml
+- banyan-framework/artifacts/templates/evidence-record.v1.yaml
+- banyan-framework/artifacts/decision-protocols/informed-protocol.v1.yaml
+- banyan-framework/artifacts/decision-protocols/level-routing.v1.yaml
+- banyan-framework/artifacts/context-recovery/new-window-resume.v1.yaml
+- banyan-framework/artifacts/context-recovery/layered-selection.v1.yaml
+- banyan-framework/artifacts/context-recovery/freshness-evidence.v1.yaml
+- banyan-framework/artifacts/compatibility/v3-1.v1.yaml
+- banyan-framework/artifacts/compatibility/boundaries.v1.yaml
+- banyan-framework/tests/test_rp1_shadow_materialization.py
+- banyan-framework/tests/run_rp1_tests.py
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_SHADOW_MATERIALIZATION_ACCEPTANCE_REPORT.md
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_PLAN_CONFORMANCE_CHECK.yaml
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_GAP_DELTA.yaml
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_CHANGED_FILES.yaml
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_CLEANUP_DELTA.yaml
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_REGRESSION_RESULT.yaml
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_NEW_PROPOSAL_REGISTER.yaml
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_ROLLBACK_PLAN.md
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_HANDOVER_CHECKPOINT.md
+- 榕树ai改造落地相关文档/Documentation_Packaging/Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0/03_acceptance/RP1_SEMANTIC_EQUIVALENCE_REPORT.yaml
+created_counts:
+  shadow_artifacts: 43
+  tests: 2
+  acceptance: 10
+  total: 55
+modified_existing: []
+deleted: []
+notes:
+- No existing Framework, Registry, Loader, CLI, wheel, CURRENT, Legacy, or .banyan files were modified.
+- Python bytecode and Go module cache, if created by tests, are not RP1 construction outputs and were not added to this inventory.

@@ -1,0 +1,13 @@
+schema_version: stage10-v1
+projection:
+  projection_id: null
+  projection_type: null
+  audience: []
+  source_refs: []
+  source_versions: []
+  coverage: null
+  freshness: UNKNOWN
+  rebuildability: NOT_PROVEN_REBUILDABLE
+  provenance: null
+  generated_at: null
+canonical_truth: false

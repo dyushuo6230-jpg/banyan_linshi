@@ -1,0 +1,21 @@
+schema_version: stage05-v1
+execution_in_stage05: false
+classes:
+  READY: CANDIDATE_FOR_GROUP
+  INCOMPLETE: HOLD_BY_DEFAULT
+  UNRELATED: ISOLATE
+  LOCAL_ONLY: NEVER_COMMIT
+  SECRET_RISK: BLOCK
+workflow:
+  - inspect
+  - classify
+  - correlate
+  - group
+  - hunk_plan
+  - validate
+  - identity_precheck
+  - authorization_gate
+  - future_execution
+  - capture
+  - evidence
+  - leftover_report

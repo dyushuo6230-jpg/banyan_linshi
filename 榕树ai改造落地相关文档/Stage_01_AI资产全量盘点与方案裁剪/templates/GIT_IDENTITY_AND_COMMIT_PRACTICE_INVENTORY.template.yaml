@@ -1,0 +1,31 @@
+schema_version: "stage01-bootstrap-v1"
+stage_id: "01"
+current_effective_identity:
+  name: null
+  email: null
+  modified_by_stage01: false
+history_analysis:
+  mode: null
+  commit_count_total_seen: null
+  analysis_window: null
+  limitations: []
+identities:
+  - name: null
+    email: null
+    commit_count: null
+    first_seen: null
+    last_seen: null
+commit_messages:
+  common_patterns: []
+  type_scope_patterns: []
+  trailer_patterns: []
+hooks_and_checks:
+  hooks: []
+  ci_checks: []
+ai_commit_assets:
+  prompts: []
+  rules: []
+  skills: []
+  scripts: []
+  commands: []
+semantic_commit_policy_frozen: false

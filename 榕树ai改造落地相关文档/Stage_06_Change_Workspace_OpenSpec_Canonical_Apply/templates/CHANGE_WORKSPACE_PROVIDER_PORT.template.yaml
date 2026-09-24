@@ -1,0 +1,18 @@
+schema_version: stage06-v1
+operations:
+  - create_workspace
+  - load_workspace
+  - list_artifacts
+  - write_draft_artifact
+  - read_artifact
+  - resolve_provider_identity
+  - preview_apply
+  - record_apply_result
+  - archive_workspace
+operation_contract_requires:
+  - request
+  - response
+  - failure_semantics
+  - timeout_cancel_semantics
+  - evidence
+  - side_effects

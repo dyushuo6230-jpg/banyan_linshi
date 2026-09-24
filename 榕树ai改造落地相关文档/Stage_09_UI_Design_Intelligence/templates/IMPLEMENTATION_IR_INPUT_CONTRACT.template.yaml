@@ -1,0 +1,11 @@
+schema_version: stage09-v1
+inputs:
+  - normalized_scene
+  - semantic_tree
+  - design_truth
+  - design_tokens
+  - behavior_evidence
+  - data_evidence
+  - layout_evidence
+  - project_ui_constraints
+framework_specific_output_in_stage09: false

@@ -1,0 +1,14 @@
+upstream_stage: "09"
+run_id: null
+acceptance_result: null
+design_intelligence_contracts: []
+provider_contracts: []
+scene_semantic_contracts: []
+validation_contracts: []
+carried_blockers: []
+stage10_inputs: []
+next_stage_entry_gate:
+  stage: "10"
+  result: null
+  execution_authorized: false
+stop_after_stage: "09"

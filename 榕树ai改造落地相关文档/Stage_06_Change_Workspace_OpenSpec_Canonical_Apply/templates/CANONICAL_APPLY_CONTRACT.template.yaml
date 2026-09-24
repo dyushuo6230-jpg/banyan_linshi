@@ -1,0 +1,19 @@
+schema_version: stage06-v1
+states:
+  - PREVIEWED
+  - READY_FOR_DECISION
+  - AUTHORIZED
+  - APPLYING
+  - APPLIED
+  - VALIDATED
+  - RECONCILED
+  - FAILED
+  - ROLLED_BACK
+requirements:
+  preview: true
+  reference_check: true
+  freshness_check: true
+  authorization_gate: true
+  post_validation: true
+  reconciliation: true
+execution_in_stage06: false

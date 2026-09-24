@@ -1,0 +1,82 @@
+stage_id: "15"
+title: "CLI / Runtime API / Policy Compiler / Adapter / Semantic Commit Executor"
+pack_version: "1.10"
+status: "NOT_STARTED"
+execution_mode: "IMPLEMENTATION_WITH_ISOLATED_EXECUTION"
+
+upstream:
+  stage: "14"
+  run_id: "stage14-20260921T022241Z"
+  acceptance: "PASS_STAGE14_PERMISSION_GOVERNANCE_GIT_SAFETY_POLICY_FREEZE_WITH_TYPED_BLOCKERS"
+  entry_gate: "PASS_FOR_STAGE15_RUNTIME_IMPLEMENTATION_IN_ISOLATED_MODE_WITH_TYPED_BLOCKERS"
+
+owned_outcomes:
+  - "Generic Framework Source Candidate"
+  - "Policy Compiler"
+  - "Permission Runtime Evaluator"
+  - "Runtime API"
+  - "CLI"
+  - "Filesystem Adapter"
+  - "Git CLI Adapter"
+  - "Semantic Commit Planner"
+  - "Semantic Commit Executor"
+  - "Hunk-aware Staging Abstraction"
+  - "Git Index Checkpoint / Verification"
+  - "Audit / Trace Emitter"
+  - "Provider Binding Loader"
+  - "Dry-run Execution Mode"
+  - "Isolated Git Fixture Integration Tests"
+  - "Stage 16 Runtime API Handoff"
+
+allowed_framework_write:
+  - "banyan-framework/**"
+
+allowed_control_write:
+  - "${REFRACTOR_CONTROL_ROOT}/stages/15/${RUN_ID}/**"
+  - "${REFRACTOR_CONTROL_ROOT}/MIGRATION_REGISTER.bootstrap.yaml"
+  - "${REFRACTOR_CONTROL_ROOT}/BANYAN_REFACTOR_TRACE.bootstrap.yaml"
+
+forbidden:
+  - "current-project git index mutation"
+  - "current-project commit/history mutation"
+  - "current-project canonical source mutation"
+  - "13 Secret bodies"
+  - "final .banyan activation"
+  - "network push"
+  - "Stage 16 implementation"
+
+git_execution_scope:
+  current_project:
+    mode: READ_ONLY_OR_DRY_RUN
+    mutating_commands_allowed: false
+  isolated_fixture:
+    root: "${REFRACTOR_CONTROL_ROOT}/stages/15/${RUN_ID}/fixtures"
+    mutating_commands_allowed: true
+    network_allowed: false
+
+hard_invariants:
+  runtime_may_weaken_stage14_policy: false
+  unknown_policy_field_rejected: true
+  commit_plan_is_authorization: false
+  current_project_git_mutation_by_stage15_pack: false
+  fixture_git_identity_may_escape_fixture: false
+  blind_stage_all_allowed: false
+  secret_risk_commit_allowed: false
+  ai_may_modify_current_project_git_identity: false
+  final_dot_banyan_activation: false
+
+exit_gate:
+  validations: "V15-01..V15-28"
+  hard_metrics:
+    POLICY_HARD_BLOCK_LOST_IN_COMPILATION: 0
+    UNKNOWN_POLICY_FIELD_ACCEPTED_SILENTLY: 0
+    RUNTIME_ALLOW_WITH_FAILED_PRECONDITION: 0
+    CURRENT_PROJECT_GIT_MUTATION: 0
+    BLIND_STAGE_ALL_PATH: 0
+    SECRET_RISK_EXECUTION_PATH: 0
+    COMMIT_EXECUTION_WITHOUT_IDENTITY_PRECHECK: 0
+    COMMIT_EXECUTION_WITHOUT_AUTHORIZATION: 0
+    COMMIT_CAPTURE_WITHOUT_TRACE: 0
+    FIXTURE_IDENTITY_LEAK_TO_PROJECT: 0
+    NETWORK_GIT_ACTION_IN_TESTS: 0
+  next_stage: "16"

@@ -1,0 +1,11 @@
+schema_version: "stage03-v1"
+roles:
+  - role_id: null
+    semantic_purpose: null
+    authority_level: null
+    canonicality: null
+    writable_policy: null
+    freshness_rule: null
+    conflict_rule: null
+    provenance_required: true
+    mapping_strategy: null

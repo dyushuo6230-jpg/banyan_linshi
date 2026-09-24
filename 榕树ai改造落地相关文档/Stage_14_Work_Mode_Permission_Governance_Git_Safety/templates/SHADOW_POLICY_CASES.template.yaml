@@ -1,0 +1,14 @@
+schema_version: stage14-v1
+cases:
+  - case_id: READ_ONLY_METADATA
+    expected: ALLOW_OR_NOT_APPLICABLE
+  - case_id: MISSING_GIT_IDENTITY_FOR_COMMIT
+    expected: BLOCK_NEEDS_INPUT
+  - case_id: SECRET_RISK_COMMIT
+    expected: BLOCK
+  - case_id: PROTECTED_WRITE_WITHOUT_FRESHNESS
+    expected: BLOCK
+  - case_id: LEARNING_CANDIDATE_WITHOUT_AUTHORIZATION
+    expected: BLOCK
+  - case_id: UNKNOWN_PRECONDITION
+    expected: BLOCK_NEEDS_INPUT

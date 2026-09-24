@@ -1,0 +1,15 @@
+schema_version: stage04-v1
+source: ".banyan-refactor"
+target: ".banyan"
+execute_now: false
+steps:
+  - snapshot_source
+  - record_source_hashes
+  - create_isolated_target
+  - validate_schema
+  - validate_semantics
+  - record_target_hashes
+  - switch_single_writable_truth
+  - archive_or_mark_source_read_only
+  - retain_rollback
+dual_writable_truth_forbidden: true

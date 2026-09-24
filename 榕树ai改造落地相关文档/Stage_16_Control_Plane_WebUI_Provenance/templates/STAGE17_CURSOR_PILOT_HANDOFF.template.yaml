@@ -1,0 +1,14 @@
+schema_version: stage16-v1
+required_inputs:
+  - control_plane_api
+  - runtime_status_surface
+  - project_safety_surface
+  - preflight_surface
+  - semantic_commit_plan_surface
+  - dry_run_surface
+  - trace_provenance_surface
+  - activation_readiness
+  - pilot_activation_preconditions
+  - cursor_adapter_port_requirements
+stage16_implements_cursor_adapter: false
+pilot_dot_banyan_activation_stage: "17"

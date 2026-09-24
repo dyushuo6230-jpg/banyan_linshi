@@ -1,0 +1,67 @@
+schema_version: rp1-gap-delta-v1
+pack_id: Banyan_RP1_Framework_Artifact_Materialization_Pack_v1.0
+document_role: CONSTRUCTION_EVIDENCE
+stage: RP1
+rp1_closed:
+- Independent banyan-framework/artifacts/** physical form was missing; 43/43 shadow files now exist.
+- RP1 filename/format/metadata/thin-plus-contract Human Decisions were executed, not re-asked.
+carried_gaps:
+- id: HD-CLEANUP-001
+  title: Go binary evidence gap
+  path: banyan-framework/control-plane-go/bin/banyan-control
+  status: NEED_MORE_EVIDENCE
+  rp1_resolved: false
+  notes: 'Still UNKNOWN. Not deleted, moved, or modified. Required future evidence remains: git tracking, build/release references,
+    docs/run entry, reproducibility, platform coupling.'
+- id: HD-CLEANUP-003
+  title: default_policy dual representation gap
+  subjects:
+  - src/banyan/policy/compiler.py::default_policy()
+  - policies/default-policy.yaml
+  status: ACCEPT_CURRENT_STATE_FOR_RP1
+  rp1_resolved: false
+  carried_gap: AUTHORITY_RUNTIME_ALIGNMENT_GAP_DEFAULT_POLICY_DUAL_REPRESENTATION
+  notes: RP1 did not merge, delete, or name a single source of truth.
+- id: HD-CLEANUP-002
+  title: .DS_Store repository hygiene
+  status: APPROVE_LATER_HYGIENE_CLEANUP
+  execute_in_rp1: false
+  rp1_resolved: false
+  notes: Three .DS_Store files remain. Not mixed into Artifact Materialization.
+- id: D0-ARTIFACT-ROOT-STATE
+  title: Documentation fact inventory still records artifact_root as missing
+  path: banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+  status: CARRIED_TO_RP10
+  rp1_resolved: false
+  notes: RP1 must not rewrite maintainer/D0 documentation. Physical files now exist as shadows; documentation alignment waits.
+- id: DUAL-REGISTRY-BODY
+  title: Legal current dual body between R1 registry and workflows/states/source_roles/compatibility YAML
+  status: DEFERRED_TO_RP2
+  rp1_resolved: false
+  notes: RP1 projected; it did not pick a winner or cut over authority.
+- id: DUAL-CONTROL-PLANE-WEBUI
+  title: Python Control Plane + src/banyan/web remain alongside Go host + frontend
+  status: CARRIED
+  rp1_resolved: false
+- id: R1-HANDOVER-OLD-SEQUENCE
+  title: R1 handover still names cancelled R2/R3 stop sentence
+  path: banyan-framework/docs/maintainer/R1_HANDOVER_CHECKPOINT.md
+  status: CARRIED
+  rp1_resolved: false
+  notes: File kept as R1 evidence. Future construction follows v2.0 RP route.
+- id: README-PYTHON-CONTROL-PLANE
+  title: README still leads with Python banyan-control-plane
+  status: CARRIED_TO_RP10
+  rp1_resolved: false
+- id: UNACCEPTED-USER-GUIDE
+  title: D2 user-guide outputs exist but remain unaccepted
+  status: CARRIED_TO_RP10
+  rp1_resolved: false
+- id: DOT-BANYAN-UNOFFICIAL-ROLES
+  title: .banyan source-mappings unofficial role names
+  status: OUT_OF_RP1
+  rp1_resolved: false
+new_gaps_this_round: []
+notes:
+- RP1 PASS does not close HD-CLEANUP-001 or HD-CLEANUP-003.
+- Independent Artifact files remain SHADOW, not Canonical.

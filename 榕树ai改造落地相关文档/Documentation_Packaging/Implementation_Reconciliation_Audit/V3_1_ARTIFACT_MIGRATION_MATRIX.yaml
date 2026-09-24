@@ -1,0 +1,262 @@
+schema_version: d1.5-v1
+audit_id: BANYAN-D1.5-IMPLEMENTATION-RECONCILIATION
+audit_date: 2026-09-21
+mode: READ_ONLY
+legacy_source_available: true
+legacy_sources:
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+  - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+stage_evidence:
+  stage01_artifact_matrix: .banyan-refactor/stages/01/stage01-20260920T091426Z/PRELIMINARY_AI_ARTIFACT_MIGRATION_MATRIX.yaml
+  stage02_mapping_workbook: .banyan-refactor/stages/02/stage02-20260920T131746Z/CAPABILITY_MAPPING_WORKBOOK.yaml
+  stage03_contract_registry: .banyan-refactor/stages/03/stage03-20260920T135702Z/CAPABILITY_CONTRACT_REGISTRY.yaml
+  stage05_workflow_contracts: .banyan-refactor/stages/05/stage05-20260920T144623Z
+  stage07_artifact_matrix: .banyan-refactor/stages/07/stage07-20260920T152653Z/LEGACY_ARTIFACT_MIGRATION_MATRIX.jsonl
+  stage07_compatibility_map: .banyan-refactor/stages/07/stage07-20260920T152653Z/V31_GOVERNANCE_COMPATIBILITY_MAP.yaml
+stage07_no_loss_context:
+  capability_accounting: 35/35
+  legacy_asset_accounting: 1026/1026
+  preserved_artifacts: 425/425
+  real_apply_readiness: MIGRATION_BLOCKED
+  activation: OFF
+  interpretation: Accounting and design mapping are not implementation proof.
+allowed_statuses:
+  - IMPLEMENTED
+  - MIGRATED_AS_ARTIFACT
+  - GENERALIZED_TO_POLICY
+  - GENERALIZED_TO_CAPABILITY
+  - GENERALIZED_TO_RUNTIME_API
+  - PROVIDER_BOUND
+  - PROJECT_OVERLAY_BOUND
+  - COMPATIBILITY_ONLY
+  - FROZEN_CONTRACT_ONLY
+  - PARTIALLY_MIGRATED
+  - MISSING_MIGRATION
+  - SUPERSEDED_WITH_EVIDENCE
+  - NOT_APPLICABLE
+artifacts:
+  - category: ROLE
+    legacy_source:
+      - .cursor/rules/collaboration-judgment.mdc
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+    stage01_02_destination: Generic Core decision/authorization semantics plus project-specific authority binding.
+    frozen_contract:
+      - banyan.contract.action_authorization.v1
+      - Stage 05 Decision Policy / Decision Gate
+    current_framework_files: []
+    registry_entry: false
+    registry_evidence: Role names exist only in documentation references; there is no framework runtime role registry or binding schema.
+    loader_or_consumer: null
+    runtime_path: null
+    tests: []
+    documentation_only:
+      - banyan-framework/docs/reference/ROLE_REFERENCE.md
+      - banyan-framework/docs/DOCUMENTATION_SOURCE_OF_TRUTH.yaml
+    supersede_or_generalize_evidence: Human Project Authority is used as a governance concept, but the four collaboration roles were not generalized into executable bindings.
+    status: MISSING_MIGRATION
+
+  - category: POLICY
+    legacy_source:
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+      - .cursor/rules/collaboration-judgment.mdc
+      - .cursor/rules/ui-spec-gate.mdc
+      - .cursor/rules/port-binding.mdc
+    stage01_02_destination: Generic Core policy with Project Instance overlays and provider ports.
+    frozen_contract:
+      - Stage 05 policy registries
+      - Stage 14 POLICY_REGISTRY.yaml
+      - Stage 14 permission and Git safety schemas
+    current_framework_files:
+      - banyan-framework/policies/default-policy.yaml
+      - banyan-framework/src/banyan/policy/compiler.py
+      - banyan-framework/src/banyan/runtime/evaluator.py
+    registry_entry: true
+    registry_evidence: A deployable default policy exists; the complete frozen policy registry remains in the construction evidence tree.
+    loader_or_consumer:
+      - banyan.policy.compiler.PolicyCompiler
+      - banyan.runtime.evaluator.PermissionEvaluator
+    runtime_path: CLI/editor -> Control Plane -> RuntimeAPI -> PermissionEvaluator
+    tests:
+      - banyan-framework/tests/test_policy_runtime.py
+      - banyan-framework/tests/test_stage18_adapters.py
+    documentation_only: []
+    supersede_or_generalize_evidence: Stage 15 acceptance proves deterministic compilation and fail-closed evaluation for the implemented subset.
+    status: GENERALIZED_TO_POLICY
+
+  - category: SKILL
+    legacy_source:
+      - .cursor/skills/visual-repair-loop/SKILL.md
+      - tools/anydesign/SKILL.md
+      - tools/anydesign/scripts
+    stage01_02_destination: Provider capability or compatibility layer; no one-skill-per-capability requirement was frozen.
+    frozen_contract:
+      - banyan.contract.visual_repair_run.v1
+      - banyan.contract.design_analysis.v1
+      - eight Stage 09 design Provider Port contracts
+    current_framework_files: []
+    registry_entry: false
+    registry_evidence: No Framework-native Skill catalog or provider skill reference registry exists in banyan-framework.
+    loader_or_consumer: null
+    runtime_path: null
+    tests: []
+    documentation_only:
+      - banyan-framework/docs/reference/SKILL_REFERENCE.md
+    supersede_or_generalize_evidence: Legacy skill/tool files remain executable outside the Framework, while Stage 09 explicitly states that no AnyDesign adapter or visual runtime was produced.
+    status: PARTIALLY_MIGRATED
+
+  - category: WORKFLOW
+    legacy_source:
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+    stage01_02_destination: Generic, adaptive Workflow Policy with project overlay inputs.
+    frozen_contract:
+      - .banyan-refactor/stages/05/stage05-20260920T144623Z/ADAPTIVE_WORKFLOW_SCHEMA.yaml
+      - .banyan-refactor/stages/05/stage05-20260920T144623Z/WORKFLOW_STATE_TRANSITION_SCHEMA.yaml
+    current_framework_files: []
+    registry_entry: false
+    registry_evidence: Frozen workflow definitions are not shipped in banyan-framework.
+    loader_or_consumer: null
+    runtime_path: null
+    tests: []
+    documentation_only:
+      - banyan-framework/docs/reference/WORKFLOW_REFERENCE.md
+      - banyan-framework/docs/user-guide/06_Banyan如何自动选择工作流.md
+    supersede_or_generalize_evidence: Stage 05 ended at READY_FOR_EXECUTOR_OR_BLOCKED and did not implement an executor.
+    status: FROZEN_CONTRACT_ONLY
+
+  - category: STATE
+    legacy_source:
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+      - docs/project/PROJECT_VARIABLES.md
+    stage01_02_destination: Typed contract state plus Project Instance runtime state.
+    frozen_contract:
+      - Stage 03 version/status/provenance rules
+      - Stage 05 workflow transitions
+      - Stage 06 change lifecycle
+    current_framework_files:
+      - banyan-framework/src/banyan/runtime/models.py
+      - .banyan/runtime/status.yaml
+      - .banyan/pilot.yaml
+    registry_entry: false
+    registry_evidence: Runtime enums and Pilot state exist, but the complete frozen state catalog is external to the release.
+    loader_or_consumer:
+      - banyan.runtime.api.RuntimeAPI
+      - banyan.control_plane.service.ControlPlaneService
+    runtime_path: Implemented only for action permission, dry-run, trace, and Pilot status surfaces.
+    tests:
+      - banyan-framework/tests/test_policy_runtime.py
+      - banyan-framework/tests/test_stage17_pilot.py
+    documentation_only:
+      - banyan-framework/docs/reference/STATUS_AND_ENUM_REFERENCE.md
+    supersede_or_generalize_evidence: No evidence that the complete v3.1 document/workflow/change state system was superseded by the narrow runtime enums.
+    status: PARTIALLY_MIGRATED
+
+  - category: TEMPLATE
+    legacy_source:
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+      - docs/project templates and canonical document skeletons inventoried by Stage 01
+    stage01_02_destination: Preserve project artifacts in place; represent reusable shapes through Artifact Registry and schemas.
+    frozen_contract:
+      - Stage 03 Artifact Registry Schema
+      - Stage 07 preserve-in-place disposition
+    current_framework_files: []
+    registry_entry: false
+    registry_evidence: Neither reusable templates nor an Artifact Registry are shipped in banyan-framework.
+    loader_or_consumer: null
+    runtime_path: null
+    tests: []
+    documentation_only:
+      - banyan-framework/docs/reference/KEY_DOCUMENT_TYPES_REFERENCE.md
+    supersede_or_generalize_evidence: Stage 07 preserves templates and canonical artifacts in their legacy/project locations; it does not migrate them into the Framework.
+    status: MISSING_MIGRATION
+
+  - category: DECISION_PROTOCOL
+    legacy_source:
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1.md
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+      - .cursor/rules/collaboration-judgment.mdc
+    stage01_02_destination: Generic Decision Session and Decision Gate capability.
+    frozen_contract:
+      - banyan.contract.decision_session.v1
+      - Stage 05 Decision Policy Registry
+    current_framework_files:
+      - banyan-framework/src/banyan/runtime/evaluator.py
+      - banyan-framework/src/banyan/control_plane/service.py
+    registry_entry: false
+    registry_evidence: Permission decisions are implemented; the full informed-review, confirmation, and apply protocol registry is not shipped.
+    loader_or_consumer:
+      - banyan.runtime.evaluator.PermissionEvaluator
+    runtime_path: Preflight returns ALLOW/BLOCK/NEEDS_INPUT but does not conduct v3.1 informed decision sessions.
+    tests:
+      - banyan-framework/tests/test_policy_runtime.py
+      - banyan-framework/tests/test_stage16_control_plane.py
+    documentation_only:
+      - banyan-framework/docs/user-guide/09_Change与Decision使用说明.md
+    supersede_or_generalize_evidence: Action authorization is generalized, but it is narrower than v3.1 INFORMED_REVIEW -> INFORMED_CONFIRMATION -> DECISION_APPLY.
+    status: PARTIALLY_MIGRATED
+
+  - category: "CONTEXT / RECOVERY"
+    legacy_source:
+      - docs/governance/common_prd_v3.1/通用文档提示词v3.1完整使用说明.md
+      - docs/project/progress/PROJECT_DASHBOARD.md
+    stage01_02_destination: Generic context recovery capability backed by index, freshness, memory, and evidence references.
+    frozen_contract:
+      - banyan.contract.context_recovery.v1
+      - .banyan-refactor/stages/12/stage12-20260921T014521Z/CONTEXT_RECOVERY_CONTRACT.yaml
+    current_framework_files: []
+    registry_entry: false
+    registry_evidence: Definitions and acceptance evidence remain in .banyan-refactor only.
+    loader_or_consumer: null
+    runtime_path: null
+    tests: []
+    documentation_only:
+      - banyan-framework/docs/reference/WORKFLOW_REFERENCE.md
+    supersede_or_generalize_evidence: Stage 12 accepted contract design and typed blockers, not a Framework runtime.
+    status: FROZEN_CONTRACT_ONLY
+
+  - category: COMPATIBILITY
+    legacy_source:
+      - .cursor/rules
+      - .cursor/skills
+      - tools/anydesign
+      - docs/governance/common_prd_v3.1
+      - docs/temp/SassDesign/合并代码指导.md
+    stage01_02_destination: Editor, provider, project and Legacy compatibility boundaries outside Generic Core authority.
+    frozen_contract:
+      - banyan.contract.editor_entry_compatibility.v1
+      - banyan.contract.commit_practice_compatibility.v1
+      - banyan.contract.legacy_collaboration_reference.v1
+      - Stage 07 V31_GOVERNANCE_COMPATIBILITY_MAP.yaml
+    current_framework_files:
+      - banyan-framework/src/banyan/editor/adapters.py
+      - banyan-framework/src/banyan/editor/protocol.py
+      - banyan-framework/src/banyan/cursor/adapter.py
+    registry_entry: false
+    registry_evidence: Editor adapters exist, while the v3.1 compatibility map remains external to the Framework release.
+    loader_or_consumer:
+      - banyan.editor.protocol.AdapterGateway
+      - banyan.control_plane.service.ControlPlaneService
+    runtime_path: Cursor/Codex/Generic Editor -> AdapterGateway -> Control Plane -> RuntimeAPI
+    tests:
+      - banyan-framework/tests/test_stage18_adapters.py
+      - banyan-framework/tests/test_stage17_pilot.py
+    documentation_only:
+      - banyan-framework/docs/reference/WORKFLOW_REFERENCE.md
+    supersede_or_generalize_evidence: Stage 18 proves editor transport compatibility only; legacy workflow, skill, template, and governance semantics are not wholly superseded.
+    status: PARTIALLY_MIGRATED
+
+summary:
+  IMPLEMENTED: 0
+  MIGRATED_AS_ARTIFACT: 0
+  GENERALIZED_TO_POLICY: 1
+  GENERALIZED_TO_CAPABILITY: 0
+  GENERALIZED_TO_RUNTIME_API: 0
+  PROVIDER_BOUND: 0
+  PROJECT_OVERLAY_BOUND: 0
+  COMPATIBILITY_ONLY: 0
+  FROZEN_CONTRACT_ONLY: 2
+  PARTIALLY_MIGRATED: 4
+  MISSING_MIGRATION: 2
+  SUPERSEDED_WITH_EVIDENCE: 0
+  NOT_APPLICABLE: 0
+conclusion: Legacy v3.1 is available and design-accounted, but the Framework does not contain or execute the complete artifact system.

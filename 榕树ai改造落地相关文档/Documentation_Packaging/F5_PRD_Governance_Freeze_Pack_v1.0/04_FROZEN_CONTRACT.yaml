@@ -1,0 +1,239 @@
+schema_version: f5-prd-governance-freeze-v1
+pack_id: F5_PRD_Governance_Freeze_Pack_v1.0
+stage: F5
+status: ARCHITECTURE_FREEZE_PASS
+human_approved: true
+implementation_authorized: false
+product_semantics:
+  requirement:
+    kind: stable_addressable_traceable_product_semantic_entity
+    standalone_file_required: false
+    granularity: minimum_coherent_product_semantic_boundary
+    top_level_f1_object: false
+    f3_definition_artifact: false
+  canonical_product_definition:
+    owner: governed_PRD_or_Product_Definition
+    canonical_truth: true
+    one_semantic_fact_one_canonical_write_target: true
+    physical_multi_file_allowed: true
+    logical_authority_unique: true
+    index_is_truth: false
+    workspace_is_truth: false
+    meeting_pack_is_truth: false
+    code_is_truth: false
+    ui_spec_is_product_truth: false
+pipeline:
+- INTENT_INTAKE
+- SCOPE_RESOLUTION
+- CURRENT_STATE_RECONCILIATION
+- REQUIREMENT_SEMANTIC_ANALYSIS
+- GAP_DECISION_ROUTING
+- PRODUCT_DEFINITION_DELTA
+- COMMUNICATION_ROUTING
+- REVIEW_APPROVAL_READINESS
+- CANONICAL_APPLY_HANDOFF
+- POST_APPLY_OR_POST_DEVELOPMENT_RECONCILIATION
+gap_classes:
+- SAFE_AUTO_COMPLETE
+- WORKING_ASSUMPTION
+- DECISION_REQUIRED
+- DEFERRABLE_UNCERTAINTY
+- BLOCKING_GAP
+gap_rules:
+  safe_auto_complete_requires_no_new_business_meaning: true
+  working_assumption_must_be:
+  - explicit
+  - scoped
+  - reversible
+  - low_risk
+  - distinguished_from_approved
+  blocking_default: affected_scope_only
+  cannot_downgrade_for_speed:
+  - AUTHORITY
+  - SAFETY
+  - SECURITY
+  - CRITICAL_MONEY
+  - IRREVERSIBLE_DATA
+  - CORE_EXTERNAL_CONTRACT
+lifecycle:
+  prd:
+  - DRAFT
+  - IN_REVIEW
+  - APPROVED
+  - BASELINED
+  distinct_dimensions:
+  - STABLE_IDENTITY
+  - REVISION_VERSION
+  - LIFECYCLE_STATUS
+  - APPROVAL
+  - DEVELOPMENT_READINESS
+  - DEVELOPMENT_ENTRY_AUTHORIZATION
+  - BASELINE
+  - CURRENT_EFFECTIVE
+  - FRESHNESS
+  - APPLICABILITY
+  - SUPERSESSION
+  - HISTORY
+  rules:
+  - LATEST_NE_CURRENT_EFFECTIVE
+  - APPROVED_NE_BASELINED
+  - LIFECYCLE_STATUS_NE_FRESHNESS
+  - BASELINE_NE_COPY_OF_TRUTH
+decision_governance:
+  distinct:
+  - USER_INTENT
+  - HUMAN_DECISION
+  - APPROVAL_EVIDENCE
+  - DEVELOPMENT_READINESS
+  - DEVELOPMENT_ENTRY_AUTHORIZATION
+  - AUTHORITY
+  - CANONICAL_APPLY
+  clear_natural_language_may_be_evidence: true
+  silence_is_confirmation: false
+  cancellation_is_confirmation: false
+  ai_recommendation_is_human_decision: false
+  ambiguous_preference_is_final_confirmation: false
+  ordinary_decision_prefer_single_clear_interaction: true
+  high_impact_may_require_stronger_confirmation: true
+  role_grants_decision_authority: false
+shape_before_build:
+  implementation_hold_supported: true
+  readiness_may_be_ready_while_entry_on_hold: true
+  hold_forbids:
+  - BUSINESS_CODE_MUTATION
+  - FORMAL_DB_MUTATION
+  - FORMAL_API_CONTRACT_MUTATION
+  - CANONICAL_APPLY
+  - ACTUAL_IMPLEMENTATION
+change_governance:
+  distinct:
+  - NEW_REQUIREMENT
+  - REQUIREMENT_DELTA
+  - CHANGE
+  - CR
+  - DECISION
+  - CANONICAL_APPLY
+  initial_requirement_requires_cr: false
+  approved_or_baselined_semantic_modification_requires_governed_change_when_applicable: true
+  change_workspace_is_truth: false
+  code_may_silently_become_product_truth: false
+  canonical_reconciliation_debt_blocks: affected_scope_governance_closeout_release_baselining
+  f5_owns: product_semantic_evolution_rules
+  f7_owns:
+  - change_workspace_execution
+  - canonical_apply
+  - rollback
+  - reference_safe_mutation
+trace:
+  requirement_is_semantic_anchor: true
+  source_evidence_grants_product_authority: false
+  applicability_driven: true
+  not_applicable_distinct_from_required_but_missing: true
+  bidirectional_navigation_requires_duplicate_canonical_write: false
+  change_triggers_scoped_downstream_impact: true
+  development_ready_gate_distinct_from_governance_closeout_gate: true
+communication:
+  meeting_pack_required: false
+  meeting_pack_is_product_truth: false
+  discussion_pack: semantics_may_still_change
+  final_review_pack: semantics_stable_enough_for_implementation_coordination
+  meeting_semantic_change_returns_to:
+  - REQUIREMENT
+  - CHANGE
+  - DECISION
+  - CANONICAL_APPLY
+  openspec:
+    role: first_reference_change_workspace_provider
+    core_dependency: false
+    core_authority: false
+    product_truth: false
+    decision_authority: false
+ai_modification_boundary:
+  intrinsic_authority: false
+  may_be_authorized_executor: true
+  conceptual_bands:
+  - DETERMINISTIC_NON_SEMANTIC_AUTOMATION
+  - GOVERNED_NONCANONICAL_SEMANTIC_WRITING
+  - AUTHORITY_REQUIRED_SEMANTIC_DECISION_APPROVAL
+  - GOVERNED_CANONICAL_APPLY_EXECUTION
+  bands_are_runtime_enum: false
+  product_semantic_mutation_definition: creates_changes_deletes_expands_reduces_or_reinterprets_product_meaning
+  product_meaning_domains:
+  - PRODUCT_BEHAVIOR
+  - BUSINESS_RULE
+  - ACCEPTANCE_INTENT
+  - RIGHTS_OBLIGATIONS
+  - MONEY_SETTLEMENT
+  - PERMISSION_DATA_SCOPE
+  - LIFECYCLE_STATE_MEANING
+  - DATA_OWNERSHIP
+  - CORE_EXTERNAL_CONTRACT
+  - USER_VISIBLE_BEHAVIOR
+  approved_baselined_current_effective_free_edit_allowed: false
+  candidate_assumption_deferred_auto_record_allowed: true
+  co_location_grants_equal_authority: false
+  evidence_may_challenge_truth: true
+  evidence_may_silently_redefine_truth: false
+authority_layers:
+- SOURCE_AUTHORITY
+- PRODUCT_SEMANTIC_DECISION_AUTHORITY
+- PRODUCT_APPROVAL_AUTHORITY
+- CANONICAL_APPLY_AUTHORIZATION
+- RUNTIME_EXECUTION_PERMISSION
+authority_rules:
+  write_permission_grants_decision_authority: false
+  approval_grants_apply_authorization: false
+  runtime_allow_is_product_decision: false
+  evidence_is_authority: false
+  role_is_authority: false
+stage_ownership:
+  F5: product_semantic_governance
+  F6: ui_spec_design_truth_visual_governance
+  F7: governed_change_and_canonical_apply
+  F8: project_instance_binding_and_reconciliation
+  F9: context_index_memory_evidence_freshness_query
+  F10: runtime_permission_enforcement_provider_adapter_execution
+  F11: webui_help_control_plane
+  F12: legacy_reconciliation_and_retirement
+invariants:
+- AI_ASSISTANCE_NE_AI_AUTHORITY
+- AI_EXECUTION_NE_AI_SELF_AUTHORIZATION
+- AI_RECOMMENDATION_NE_HUMAN_DECISION
+- CANDIDATE_NE_APPROVED
+- WORKING_ASSUMPTION_NE_APPROVED_PRODUCT_RULE
+- PERMISSION_TO_WRITE_NE_AUTHORITY_TO_DECIDE
+- ROLE_NE_PERMISSION_NE_AUTHORITY
+- APPROVAL_NE_CANONICAL_APPLY_AUTHORIZATION
+- RUNTIME_ALLOW_NE_PRODUCT_DECISION
+- EVIDENCE_NE_AUTHORITY
+- COLOCATION_NE_EQUAL_AUTHORITY
+- LATEST_NE_CURRENT_EFFECTIVE
+- APPROVED_NE_BASELINED
+- LIFECYCLE_STATUS_NE_FRESHNESS
+- ONE_SEMANTIC_FACT_ONE_CANONICAL_WRITE_TARGET
+- REALITY_MAY_CHALLENGE_BUT_NOT_SILENTLY_REDEFINE_PRODUCT_TRUTH
+deferred_to_implementation_or_later_stages:
+- EXACT_SCHEMA
+- EXACT_ENUMS
+- EXACT_L0_L4_MAPPING
+- SQLITE_DDL
+- PHYSICAL_PRD_LAYOUT
+- VERSION_SYNTAX
+- AUTHORIZATION_RECORD_FIELDS
+- CANONICAL_APPLY_API
+- RUNTIME_API
+- CLI
+- WEBUI
+- RBAC_ABAC_IMPLEMENTATION
+- GIT_MECHANICS
+- APPLY_TRANSACTION
+- ROLLBACK_IMPLEMENTATION
+- OPENSPEC_PHYSICAL_REPRESENTATION
+- CON002_CONCRETE_AUTHORITY_WINNER
+global_authorization:
+  implementation: false
+  rp2: false
+  authority_cutover: false
+  full_legacy_migration: false
+  legacy_retirement_delete: false
+  final_activation: false

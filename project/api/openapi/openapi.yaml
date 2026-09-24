@@ -1,0 +1,129 @@
+openapi: 3.0.3
+info:
+  title: x-shop G9 API planning
+  version: 0.1.0-draft
+  description: |
+    G9 Approved (ADR-043). Not Baselined. Not an implementation.
+    Unchanged existing /api/v1 routes stay in process routers.
+    TBD must not be invented (Redis db, jwt.expire, etc.). Password min length is closed as unspecified (DEC-039).
+servers:
+  - url: http://127.0.0.1:8031
+    description: admin (existing)
+  - url: http://127.0.0.1:8032
+    description: mall (existing)
+  - url: http://127.0.0.1:8033
+    description: merchant (existing)
+  - url: http://127.0.0.1:8035
+    description: mall-online suggested; process not created; port freeze TBD
+tags:
+  - name: tree
+  - name: onboarding
+  - name: goods
+  - name: trade
+  - name: auth-session
+  - name: user
+security:
+  - cookieAuth: []
+  - bearerAuth: []
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: session
+      description: Admin/merchant Cookie+CSRF. Not Header-ticket first.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: C-end Header ticket. mall and mall-online tickets must not be interchangeable.
+    csrf:
+      type: apiKey
+      in: header
+      name: X-CSRF-Token
+  schemas:
+    BusinessTypeCode:
+      type: string
+      enum: [catering, hair, supermarket, online-mall]
+    TreeNode:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        parent_id: { type: integer, format: int64, nullable: true }
+        code: { type: string }
+        name: { type: string }
+        level: { type: integer }
+        rate:
+          type: integer
+          description: Current commission in basis points candidate; snapshot belongs to trade
+        status: { type: string, enum: [enabled, disabled] }
+    ErrorBody:
+      type: object
+      description: Envelope follows existing code; numeric codes are not invented here
+      properties:
+        message: { type: string }
+        error_semantic:
+          type: string
+          enum:
+            - UNAUTHENTICATED
+            - FORBIDDEN
+            - WRONG_POOL
+            - NO_COMMISSION_LEVEL
+            - APPLY_NOT_PENDING
+            - PAY_CHANNEL_MISMATCH
+paths:
+  /api/v1/business-tree:
+    get:
+      tags: [tree]
+      summary: Read business category tree
+      description: Four roots required. Write only on admin.
+      responses:
+        "200":
+          description: Tree or children
+  /api/v1/business-tree/nodes:
+    post:
+      tags: [tree]
+      summary: Create child node
+      description: Primary path hangs under online-mall. Fifth business-type root must fail.
+      responses:
+        "200": { description: Created }
+  /api/v1/business-tree/nodes/{id}:
+    put:
+      tags: [tree]
+      summary: Update name, sort, or rate
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer, format: int64 }
+      responses:
+        "200": { description: Updated }
+  /api/v1/business-tree/nodes/{id}/commission-level:
+    get:
+      tags: [tree]
+      summary: Resolve online-mall commission level-1
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer, format: int64 }
+      responses:
+        "200":
+          description: Level-1 node or empty if missing
+  /api/v1/goods/audit/batch:
+    post:
+      tags: [goods]
+      summary: Batch approve or reject
+      description: Per-item results required. Whole-batch rollback TBD.
+      responses:
+        "200": { description: Per-item results }
+  /api/v1/orders:
+    post:
+      tags: [trade]
+      summary: Place order on the owning process
+      description: |
+        mall = shop-account channel and shop pool.
+        mall-online = platform merchant channel and gongyi pool.
+        Missing commission level must fail. No cross-process 2PC.
+      responses:
+        "200": { description: Order created }
+        "409": { description: NO_COMMISSION_LEVEL or WRONG_POOL }

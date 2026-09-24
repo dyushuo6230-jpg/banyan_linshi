@@ -1,0 +1,14 @@
+upstream_stage: "12"
+run_id: null
+acceptance_result: null
+con002_result: null
+historical_reference_dispositions: []
+context_contracts: []
+memory_contracts: []
+stage13_query_surfaces: []
+carried_risks: []
+next_stage_entry_gate:
+  stage: "13"
+  result: null
+  execution_authorized: false
+stop_after_stage: "12"
