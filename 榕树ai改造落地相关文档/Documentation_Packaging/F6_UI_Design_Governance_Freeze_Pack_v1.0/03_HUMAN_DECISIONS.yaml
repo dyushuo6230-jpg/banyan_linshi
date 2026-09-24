@@ -1,0 +1,139 @@
+schema_version: f6-human-decisions-v1
+pack_id: F6_UI_Design_Governance_Freeze_Pack_v1.0
+stage: F6
+stage_name: UI_SPEC / Design Truth / Visual Governance
+status: HUMAN_APPROVED
+architecture_freeze: PASS
+stage_closure: PASS
+pack_grants_implementation_authority: false
+decisions:
+- id: F6-D01
+  status: HUMAN_APPROVED
+  owner: material_intake_reconciliation_design_input
+  title: Design Input / Material Reconciliation / Design Package Input Contract
+- id: F6-D02
+  status: HUMAN_APPROVED
+  owner: rule_profile_index_context_governance
+  title: Rule / Implementation Knowledge Governance
+  subdecisions:
+  - F6-D02-01 Frontend Rule System
+  - F6-D02-02 Rule Strength / Authority / Scope / Applicability / Conflict
+  - F6-D02-03 Rule Module Governance
+  - F6-D02-04 Material → Rule Entry Extraction & Reconciliation
+  - F6-D02-05 Module Index + Rule Association Index
+  - F6-D02-06 Frontend Profile + Effective Frontend Rule Set
+  - F6-D02-07 UI Design Rule System
+  - F6-D02-08 UI Design Profile + Rule Resolution + Effective Design Context
+  - F6-D02-09 Design → Implementation Semantic Bridge + Effective Implementation Context
+  - F6-D02-10 Rule / Module Lifecycle + Version + Freshness + Supersession + Impact
+  closure_mappings:
+  - FC-01 D02-10 extends D02-03 lifecycle governance
+  - FC-02 implementation feedback re-enters D02-04 rule formation path
+  - FC-03 rule coverage gap reuses upstream missing-standards governance
+  - FC-04 unresolved rule relation is not eligible for autonomous resolution
+  - FC-05 project→shared promotion is cross-stage and does not grant D02 apply authority
+  - FC-06 F6 owns context semantic contract; F9 owns retrieval/index/cache/rebuild mechanics
+- id: F6-D03
+  status: HUMAN_APPROVED
+  owner: design_source_scene_semantic_evidence
+  title: Design Source / Scene / Semantic Tree / Design Truth
+- id: F6-D04
+  status: HUMAN_APPROVED
+  owner: visual_property_token_shared_foundation
+  title: Visual Property / Design Token / Shared Foundation
+- id: F6-D05
+  status: HUMAN_APPROVED
+  owner: behavior_state_interaction
+  title: Behavior / State / Interaction Evidence
+- id: F6-D06
+  status: HUMAN_APPROVED
+  owner: ui_data_semantic_fixture
+  title: Data Evidence / UI Data Semantics / Demo Fixture
+- id: F6-D07
+  status: HUMAN_APPROVED
+  owner: design_package_ui_spec_effective_ui_contract
+  title: Design Package / UI_SPEC Governance
+- id: F6-D08
+  status: HUMAN_APPROVED
+  owner: implementation_guidance_ir_pack
+  title: Implementation Guidance / Implementation IR / Implementation Pack
+- id: F6-D09
+  status: HUMAN_APPROVED
+  owner: ui_conformance_validation
+  title: UI Conformance Validation / Design Drift / Interaction Regression
+  groups:
+    G01: Session Trigger / Lifecycle / D09-D10 Boundary
+    G02: Target Resolution
+    G03: Validation Scope / Actual Observation / Evidence / Coverage
+    G04: Difference / Drift / Legal Alternative / Approved Deviation / Acceptable Difference
+    G05: Protected Functional Baseline / Regression
+    G06: Validation Result / Report / D10 Handoff
+  closure:
+  - D10 necessary local revalidation belongs to D10 and does not reopen D09
+  - Acceptable Difference is distinct from Legal Alternative / Expected Variation / Approved Deviation
+  - Final Report closes the session
+- id: F6-D10
+  status: HUMAN_APPROVED
+  owner: governed_repair_mutation_revalidation_closure
+  title: Governed Correction / Mutation Authority / Repair Governance
+  groups:
+    G01: Repair Entry / Modification Authority / Authorization Envelope
+    G02: Mutation Target / Allowed Mutation Scope / Impact Boundary
+    G03: Repair Plan / Repair Strategy
+    G04: Mutation Execution / Auto Repair Governance
+    G05: Post-Repair Revalidation / Regression / Synchronization
+    G06: Repair Result / Closure / Audit / Escalation
+  closure:
+    C01: Effective Execution Authorization State is derived, not a manually maintained Core truth
+    C02: Authority Conflict / Override Resolution
+    C03: Authorization Freshness / Automatic Revalidation
+    C04: Bounded Retry / Retry Policy
+    C05: Escalation / Suspension / Resume-or-Fork
+stage_closure_decisions:
+- id: F6-STAGE-C01
+  status: HUMAN_APPROVED
+  decision: Historical status fields are approval/execution snapshots; Effective Execution Authorization State is resolved
+    from current context.
+- id: F6-STAGE-C02
+  status: HUMAN_APPROVED
+  decision: D01～D10 formal Owner Matrix is frozen; earlier broad reference does not override later specialized owner.
+- id: F6-STAGE-C03
+  status: HUMAN_APPROVED
+  decision: Four-Source Reconciliation is historical reference discovery; Material Reconciliation is current input reconciliation;
+    neither creates authority.
+- id: F6-STAGE-C04
+  status: HUMAN_APPROVED
+  decision: Governed does not mean manual every time; deterministic policy-resolvable work should automate, while authority/conflict/high-risk
+    gates escalate.
+- id: F6-STAGE-C05
+  status: HUMAN_APPROVED
+  decision: D09 explicit trigger is a specialized full-conformance-session gate, not a global automation pattern.
+- id: F6-STAGE-C06
+  status: HUMAN_APPROVED
+  decision: Derived / Effective / Index / Result objects do not become Canonical Authority through repeated consumption.
+cross_stage_approved:
+- id: CROSS-STAGE-GOVERNANCE-02
+  status: HUMAN_APPROVED
+  meaning: Cross-rule relationships and conflict/override semantics must be defined before execution; AI must not guess undefined
+    relations.
+- id: CROSS-STAGE-AUTONOMY-01
+  status: HUMAN_APPROVED
+  meaning: Bounded autonomous resolution is allowed only inside already-authorized, low-risk, reversible, verifiable, rule-resolved
+    alternatives.
+global_design_constraints:
+  status: HUMAN_APPROVED
+  principles:
+  - FLEXIBLE_COMPOSABLE_NOT_HARD_CODE_STRUCTURE
+  - CLEAR_OBJECT_RESPONSIBILITY_LAYER_INPUT_OUTPUT_STATE_BOUNDARIES
+  - EXTENSIBLE_MODULE_RULE_PROVIDER_TECH_STACK_WITHOUT_CORE_REWRITE
+  - SCOPE_PROFILE_INDEX_TARGETED_LOADING
+  - FACT_RULE_IMPLEMENTATION_INFERENCE_AUTHORITY_STATE_SEPARATION
+  - DETERMINISTIC_WORK_AUTOMATIC_CONFLICT_HIGH_RISK_HUMAN
+  - RULE_COMPATIBILITY_AND_OVERRIDE_RELATION_DEFINED_BEFORE_RUNTIME
+  - AI_AUTONOMOUS_LEARNING_OPTIMIZATION_DEFERRED
+explicit_non_decisions:
+- No exact physical schema/DDL/API/field names are frozen by F6 Architecture Freeze.
+- No actual project source-code mutation is authorized by this pack alone.
+- No RP2 entry is authorized by this pack alone.
+- No Final Activation is authorized by this pack alone.
+- No AI autonomous learning/rule promotion/framework optimization is implemented or authorized.

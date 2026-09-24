@@ -1,0 +1,344 @@
+schema_version: f6-frozen-contract-v1
+pack_id: F6_UI_Design_Governance_Freeze_Pack_v1.0
+architecture_freeze: PASS
+contract_scope: UI_DESIGN_GOVERNANCE
+pack_authority:
+  grants_architecture_contract: true
+  grants_actual_project_mutation: false
+  grants_rp2: false
+  grants_final_activation: false
+  runtime_effective_authorization: RESOLVED_FROM_SCOPE_PROFILE_RULE_AUTHORITY_CONTEXT_GATE_REVISION
+core_model:
+  pipeline:
+  - MATERIAL
+  - MATERIAL_RECONCILIATION
+  - RULE_PROFILE_INDEX_CONTEXT_RESOLUTION
+  - DESIGN_SOURCE_EVIDENCE
+  - DESIGN_SEMANTIC_FORMATION
+  - VISUAL_BEHAVIOR_UI_DATA_SEMANTICS
+  - DESIGN_PACKAGE
+  - UI_SPEC
+  - EFFECTIVE_UI_CONTRACT
+  - IMPLEMENTATION_GUIDANCE
+  - IMPLEMENTATION_IR
+  - IMPLEMENTATION_PACK
+  - FRAMEWORK_ADAPTER
+  - CURRENT_IMPLEMENTATION_REALITY
+  - CONFORMANCE_VALIDATION
+  - GOVERNED_REPAIR
+  owner_matrix:
+    F6-D01: MATERIAL_INTAKE_RECONCILIATION_ROUTING
+    F6-D02: RULE_PROFILE_INDEX_RESOLUTION_CONTEXT_CONTRACT
+    F6-D03: DESIGN_SOURCE_SCENE_SEMANTIC_EVIDENCE
+    F6-D04: VISUAL_PROPERTY_TOKEN_SHARED_FOUNDATION
+    F6-D05: UI_STATE_INTERACTION_BEHAVIOR
+    F6-D06: UI_DATA_SEMANTIC_FIXTURE
+    F6-D07: DESIGN_PACKAGE_UI_SPEC_EFFECTIVE_UI_CONTRACT
+    F6-D08: IMPLEMENTATION_GUIDANCE_IR_PACK
+    F6-D09: VALIDATION_DRIFT_REGRESSION_REPORT
+    F6-D10: REPAIR_AUTHORITY_MUTATION_REVALIDATION_CLOSURE
+authority_model:
+  design_source_is_authority: false
+  current_code_is_design_truth: false
+  index_is_authority: false
+  effective_context_is_canonical_truth: false
+  validation_result_is_canonical_truth: false
+  repair_result_is_canonical_truth: false
+  ai_may_derive_effective_state: true
+  ai_may_invent_authority: false
+  effective_state_model:
+    inputs:
+    - SCOPE
+    - PROFILE
+    - RULE
+    - AUTHORITY
+    - CONTEXT
+    - GATE
+    - REVISION
+    resolver_output_examples:
+    - AUTHORIZED
+    - NOT_AUTHORIZED
+    - BLOCKED
+    - REVIEW_REQUIRED
+    - STALE
+    - UNRESOLVED
+    physical_enum_deferred: true
+  hard_rules:
+  - STATE_DERIVATION_NE_AUTHORITY_CREATION
+  - AUTOMATIC_NE_UNGOVERNED
+  - GOVERNED_NE_MANUAL_EVERY_TIME
+  - HARD_GOVERNANCE_INVARIANT_CANNOT_BE_BYPASSED_BY_ORDINARY_GRANT
+material_and_reconciliation:
+  historical_four_source_reconciliation:
+    role: HISTORICAL_REFERENCE_DISCOVERY
+    creates_authority: false
+  material_reconciliation:
+    role: CURRENT_INPUT_REGISTER_CLASSIFY_DEDUP_DELTA_CONFLICT_GAP_ROUTE
+    creates_authority: false
+  material_is_truth: false
+  unknown_must_remain_unknown: true
+rule_governance:
+  systems:
+  - UI_DESIGN_RULE_SYSTEM
+  - FRONTEND_DEVELOPMENT_RULE_SYSTEM
+  structure:
+  - RULE_MODULE
+  - RULE_ENTRY
+  module_classification_hardcoded_by_core: false
+  stable_identity: true
+  versioned: true
+  split_merge_supersession_supported: true
+  resolution_dimensions:
+  - STRENGTH
+  - AUTHORITY
+  - SCOPE
+  - APPLICABILITY
+  - VERSION_FRESHNESS
+  - OVERRIDE_POLICY
+  - RULE_RELATION
+  rule_relations:
+  - COMPOSE
+  - SPECIALIZE
+  - DEPENDENCY
+  - ALTERNATIVE
+  - OVERRIDE
+  - EXCLUDE
+  - CONFLICT
+  unresolved_relation_autonomy_eligible: false
+  index:
+    roles:
+    - DISCOVER_MODULE_CANDIDATE
+    - DISCOVER_RULE_CANDIDATE
+    decides_applicability: false
+    decides_authority: false
+    index_miss_means_rule_absent: false
+  profile:
+    role: COMPOSE_BIND_SCOPE_VERSION_OVERRIDE_REFERENCE
+    copies_rule_body: false
+    ordering_is_priority: false
+    shared_latest_auto_upgrades_project: false
+  effective_context:
+    design_context: DERIVED_REBUILDABLE_TASK_SCOPED_MINIMUM_SUFFICIENT
+    implementation_context: DERIVED_REBUILDABLE_TASK_SCOPED_MINIMUM_SUFFICIENT
+    compiler_redecides_authority: false
+design_evidence:
+  design_source: EVIDENCE
+  provider_output: EVIDENCE
+  scene_layers_rebuildable: true
+  scene_always_required: false
+  provider_replaceable: true
+  normalizer_replaceable: true
+  interpreter_replaceable: true
+  existing_ui_role: CURRENT_IMPLEMENTATION_REALITY_EVIDENCE
+visual_model:
+  observed_visual_property_is_token: false
+  token_requires_governed_semantic_reuse: true
+  token_scope_extensible: true
+  shared_foundation_role: SHARED_DESIGN_WHAT
+  shared_foundation_is_css: false
+  framework_theme_is_design_authority: false
+behavior_model:
+  visible_state_ne_behavior: true
+  behavior_ne_business_state_transition: true
+  static_design_may_create_business_condition: false
+  interaction_identity_may_create_business_action: false
+  behavior_model_is_product_business_logic: false
+ui_data_model:
+  design_value_default_role: EVIDENCE_OR_FIXTURE
+  ui_data_semantic_is_business_truth: false
+  fixture_is_production_data: false
+  binding_requires_upstream_reconciliation: true
+ui_contract_model:
+  design_package: CONCRETE_DESIGN_TARGET
+  ui_spec: APPROVED_UI_CONSTRUCTION_CONTRACT
+  effective_ui_contract: TASK_OR_BATCH_CURRENT_EFFECTIVE_UI_SNAPSHOT
+  prd_ne_ui_spec: true
+  design_package_ne_ui_spec: true
+  latest_ne_current_effective: true
+  approved_ne_current_effective: true
+implementation_model:
+  ui_contract_owns: WHAT
+  implementation_owns: HOW
+  geometry_ne_css: true
+  implementation_guidance_is_ui_truth: false
+  implementation_pack_is_ui_spec: false
+  implementation_ir_framework_neutral: true
+  framework_adapter_is_design_authority: false
+  core_framework_names_hardcoded: false
+validation_model:
+  owner: F6-D09
+  full_session_trigger: SPECIALIZED_EXPLICIT_GATE
+  full_session_trigger_is_global_automation_pattern: false
+  target_default: CURRENT_EFFECTIVE_UI_CONTRACT
+  latest_ne_current_effective: true
+  existing_reality_ne_design_truth: true
+  scope_explicit: true
+  scope_dimensions:
+  - APPLICATION
+  - PAGE
+  - REGION
+  - COMPONENT
+  - STATE
+  - INTERACTION
+  - VIEWPORT_DEVICE
+  - DATA_SCENARIO
+  unobserved_ne_pass: true
+  partial_pass_ne_whole_scope_pass: true
+  observation_is_target_authority: false
+  difference_ne_drift: true
+  pixel_diff_ne_visual_correctness: true
+  difference_classifications_extensible: true
+  legal_alternative_distinct: true
+  expected_variation_distinct: true
+  approved_deviation_distinct: true
+  acceptable_difference_distinct: true
+  regression_scope: IMPACT_DRIVEN_MINIMUM_SUFFICIENT
+  risk_ne_authority: true
+  finding_ne_repair_instruction: true
+  handoff_ne_mutation_authorization: true
+  final_report_closes_session: true
+  d10_local_revalidation_reopens_d09: false
+repair_model:
+  owner: F6-D10
+  eligible_ne_authorized: true
+  authorization_sources:
+  - EXPLICIT_HUMAN_AUTHORIZATION
+  - PRE_APPROVED_REPAIR_POLICY
+  preapproved_policy_may_be_ai_inferred: false
+  authorization: BOUNDED_CAPABILITY
+  scope:
+    requested_ne_authorized: true
+    effective_subset_of_authorized: true
+    not_forbidden_ne_authorized: true
+    impact_ne_authorized: true
+    local_authorization_ne_shared_mutation_authorization: true
+    necessary_ne_authorized: true
+  repair_plan_is_mutation_authority: false
+  repair_strategy: MINIMUM_SUFFICIENT_REPAIR
+  implementation_repair_authority_ne_canonical_truth_mutation_authority: true
+  opportunity_to_improve_ne_authority_to_change: true
+  low_risk_ne_auto_repair_permission: true
+  auto_repair_requires_applicable_policy_or_authority: true
+  post_repair_revalidation_required: true
+  repair_success_requires_regression_pass: true
+  new_issue_ne_current_mutation_authority: true
+  retry:
+    unbounded: false
+    requires_finite_budget: true
+    requires_stop_conditions: true
+    budget_is_core_global_constant: false
+  synchronization_change_either_side_freely: false
+  escalation:
+    first_action: SUSPEND_AFFECTED_MUTATION
+    after_resolution:
+    - RESUME_ALLOWED
+    - FORK_NEW_REPAIR_INSTANCE
+    material_boundary_change_requires_fork: true
+performance_model:
+  default_loading:
+  - SCOPE
+  - PROFILE
+  - INDEX
+  - TARGETED_CANONICAL_READ
+  full_scan_default: false
+  minimum_sufficient_context: true
+  token_efficiency_may_reduce_governance_fidelity: false
+  localized_invalidation: true
+  impact_driven_revalidation: true
+ai_learning_boundary:
+  implemented: false
+  autonomous_rule_promotion: false
+  autonomous_framework_optimization: false
+  autonomous_authority_creation: false
+  future_extension_allowed_without_core_rewrite: true
+cross_stage_owners:
+  F7:
+  - CANONICAL_APPLY
+  - GOVERNED_CHANGE_EXECUTION
+  - ROLLBACK
+  - REFERENCE_SAFE_MUTATION
+  - PROMOTION_APPLY
+  F8:
+  - PROJECT_INSTANCE
+  - BINDING
+  - PROFILE_INSTANCE
+  - PROVIDER_SELECTION
+  - VERSION_PIN
+  - PROJECT_RECONCILE
+  F9:
+  - SQLITE_INDEX
+  - SEARCH_RETRIEVAL
+  - FINGERPRINT
+  - CACHE
+  - FRESHNESS_ENGINE
+  - IMPACT_QUERY
+  - REBUILD
+  F10:
+  - RUNTIME_PERMISSION
+  - AUTHORIZATION_VALIDATION
+  - PROVIDER_RUNTIME
+  - ADAPTER_EXECUTION
+  - PAUSE_RESUME_RETRY_ENFORCEMENT
+  F11:
+  - WEBUI_CONTROL_PLANE
+  - RULE_PROFILE_IMPACT_DECISION_UX
+  F12:
+  - LEGACY_RECONCILIATION
+  - MIGRATION
+  - RETIREMENT_GATES
+  FUTURE:
+  - AI_AUTONOMOUS_LEARNING
+invariants:
+- MATERIAL_NE_AUTHORITY
+- HISTORICAL_EVIDENCE_NE_CURRENT_AUTHORITY
+- DESIGN_SOURCE_NE_DESIGN_TRUTH
+- CURRENT_CODE_NE_DESIGN_TRUTH
+- INDEX_MATCH_NE_RULE_EFFECTIVENESS
+- PROFILE_ORDER_NE_RULE_PRIORITY
+- LATEST_NE_CURRENT_EFFECTIVE
+- PRD_NE_UI_SPEC
+- DESIGN_PACKAGE_NE_UI_SPEC
+- UI_SPEC_NE_IMPLEMENTATION_PACK
+- GEOMETRY_NE_CSS
+- VISIBLE_STATE_NE_BEHAVIOR
+- BEHAVIOR_NE_BUSINESS_STATE_TRANSITION
+- UI_DATA_SEMANTIC_NE_BUSINESS_DATA_TRUTH
+- OBSERVATION_NE_TARGET_AUTHORITY
+- UNOBSERVED_NE_PASS
+- DIFFERENCE_NE_DRIFT
+- RISK_NE_AUTHORITY
+- FINDING_NE_REPAIR_INSTRUCTION
+- D09_HANDOFF_NE_MUTATION_AUTHORIZATION
+- ELIGIBLE_NE_AUTHORIZED
+- REQUESTED_SCOPE_NE_AUTHORIZED_SCOPE
+- EFFECTIVE_SCOPE_SUBSET_AUTHORIZED_SCOPE
+- IMPACT_NE_AUTHORIZATION
+- NECESSARY_NE_AUTHORIZED
+- REPAIR_PLAN_NE_MUTATION_AUTHORITY
+- IMPLEMENTATION_REPAIR_AUTHORITY_NE_CANONICAL_TRUTH_MUTATION_AUTHORITY
+- LOW_RISK_NE_AUTO_REPAIR_PERMISSION
+- NEW_ISSUE_NE_CURRENT_MUTATION_AUTHORITY
+- RETRY_ALLOWED_NE_RETRY_UNTIL_SUCCESS
+- REPAIR_RESULT_NE_CANONICAL_TRUTH
+- EFFECTIVE_STATE_NE_AUTHORITY_FACT
+- STATE_DERIVATION_NE_AUTHORITY_CREATION
+- AI_MAY_DERIVE_STATE_NE_AI_MAY_INVENT_AUTHORITY
+- GOVERNED_NE_MANUAL_EVERY_TIME
+- AUTOMATIC_NE_UNGOVERNED
+- DERIVED_EFFECTIVE_INDEX_RESULT_NE_CANONICAL_AUTHORITY
+deferred:
+- EXACT_DIRECTORY
+- EXACT_FILE_SCHEMA
+- EXACT_ENUMS
+- SQLITE_DDL
+- VECTOR_EMBEDDING_MECHANICS
+- EXACT_PROVIDER_API
+- EXACT_FRAMEWORK_ADAPTER_API
+- EXACT_CONTEXT_STORAGE
+- EXACT_FINGERPRINT_ALGORITHM
+- CLI
+- WEBUI
+- RUNTIME_PERMISSION_IMPLEMENTATION
+- CANONICAL_APPLY_IMPLEMENTATION
+- MIGRATION_ROLLBACK_IMPLEMENTATION
+- AI_LEARNING_IMPLEMENTATION
