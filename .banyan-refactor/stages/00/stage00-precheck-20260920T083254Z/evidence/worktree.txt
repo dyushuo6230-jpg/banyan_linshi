@@ -1,4 +1,0 @@
-worktree /Users/mac/MYCODES/AICODE/x_shop_server/x_shop_server
-HEAD 9a52349e6bcb6ee44e3039dd87ede56e3e0a3ec7
-branch refs/heads/feature/huanpipro
-
