@@ -1,0 +1,70 @@
+schema_version: f7-human-decisions-v1
+pack_id: F7_Change_Canonical_Apply_Freeze_Pack_v1.0
+stage: F7
+status: ARCHITECTURE_FREEZE_PASS
+human_approved: true
+decisions:
+- id: F7-D01
+  title: Change Identity / Change Case / Change Workspace
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D02
+  title: Base State / Reconciliation / Change Delta
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D03
+  title: Draft / Candidate / Working Revision
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D04
+  title: Decision / Approval / Apply Authorization
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D05
+  title: Apply Scope / Expected Base / Write Set / Apply Plan
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D06
+  title: Freshness / Conflict / Impact / Reference Check
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D07
+  title: Canonical Apply / Atomicity / Partial Failure Recovery
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D08
+  title: Stable ID / Revision / Reference Integrity / Supersession
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D09
+  title: Concurrent Change / Stale Draft / Reconciliation
+  status: HUMAN_APPROVED
+  frozen: true
+- id: F7-D10
+  title: Rollback / Recovery / History / Apply Result / Closeout
+  status: HUMAN_APPROVED
+  frozen: true
+stage_closure:
+  id: F7-FREEZE-CLOSURE-01
+  title: Cross-Decision Consistency / Ownership / Runtime Handoff
+  status: HUMAN_APPROVED
+  frozen: true
+  stage_architecture_freeze: PASS
+cross_stage_dependencies:
+- id: CROSS-STAGE-BOUNDARY-01
+  status: HUMAN_APPROVED
+  frozen: true
+- id: CROSS-STAGE-GOVERNANCE-02
+  status: HUMAN_APPROVED
+  frozen: true
+- id: CROSS-STAGE-DECISION-02
+  status: HUMAN_APPROVED
+  frozen: true
+global_authorization:
+  implementation: false
+  rp2: false
+  authority_cutover: false
+  real_canonical_apply_execution: false
+  full_legacy_migration: false
+  legacy_retirement_delete: false
+  final_activation: false

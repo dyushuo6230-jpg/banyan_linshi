@@ -1,0 +1,261 @@
+schema_version: f7-change-canonical-apply-freeze-v1
+pack_id: F7_Change_Canonical_Apply_Freeze_Pack_v1.0
+stage: F7
+status: ARCHITECTURE_FREEZE_PASS
+human_approved: true
+implementation_authorized: false
+core_pipeline:
+- CHANGE_INTAKE
+- CHANGE_IDENTITY_AND_WORKSPACE
+- BASE_RECONCILIATION_AND_SEMANTIC_DELTA
+- DRAFT_CANDIDATE_WORKING_REVISION
+- DECISION_APPROVAL_AUTHORIZATION_RESOLUTION
+- APPLY_PLAN_EXPECTED_BASE_WRITE_SET
+- FRESHNESS_CONFLICT_IMPACT_REFERENCE_VALIDATION
+- STABLE_ID_REVISION_REFERENCE_SUPERSESSION_RESOLUTION
+- CANONICAL_APPLY_GOVERNANCE
+- RUNTIME_EXECUTION_HANDOFF
+- CONCURRENT_CHANGE_RECONCILIATION
+- APPLY_RESULT_HISTORY_ROLLBACK_CLOSEOUT
+change_model:
+  change_case_is_semantic_governed_change: true
+  stable_banyan_change_id_required: true
+  provider_id_may_replace_change_id: false
+  workspace_is_canonical_truth: false
+  one_change_case_one_logical_workspace: true
+  default_active_provider_bindings_max: 1
+  openspec_role: FIRST_REFERENCE_CHANGE_WORKSPACE_PROVIDER
+  registration_grants_decision: false
+  registration_grants_approval: false
+  registration_grants_apply_authorization: false
+base_and_delta:
+  change_base_ne_current_state: true
+  change_base_ne_apply_expected_base: true
+  multi_target_base_binding_supported: true
+  absent_unknown_unresolved_distinct: true
+  semantic_delta_ne_text_diff: true
+  not_mentioned_ne_delete: true
+  gap_discovery_grants_authority: false
+  boundary_crossing_grants_permission: false
+draft_candidate:
+  draft_is_canonical_truth: false
+  candidate_is_human_decision: false
+  working_revision_is_canonical_revision: false
+  draft_generation_is_decision: false
+  ai_recommendation_is_human_decision: false
+  selected_candidate_grants_apply_authorization: false
+  rejected_or_superseded_history_retained: true
+decision_authorization:
+  distinct:
+  - DECISION
+  - APPROVAL
+  - APPLY_AUTHORIZATION
+  - RUNTIME_PERMISSION
+  clear_natural_language_may_be_evidence: true
+  silence_is_confirmation: false
+  cancellation_is_rejection: false
+  ambiguous_preference_is_apply_authorization: false
+  role_is_authority: false
+  write_permission_is_decision_authority: false
+  approval_grants_apply_authorization: false
+  runtime_allow_is_product_decision: false
+  apply_policy_is_semantic_decision_authority: false
+apply_plan:
+  change_scope_ne_apply_scope: true
+  apply_scope_ne_authorization_scope: true
+  apply_scope_subset_change_scope: true
+  apply_scope_subset_valid_authorization_envelope: true
+  expected_base_per_target: true
+  create_expected_base_absent_supported: true
+  semantic_delta_ne_write_set: true
+  write_set_ne_impact_set: true
+  hidden_write_forbidden: true
+  apply_plan_is_apply_authorization: false
+  apply_plan_is_canonical_apply: false
+  provider_neutral: true
+  partial_apply_requires_minimum_coherent_apply_boundary: true
+validation:
+  freshness_is_mtime: false
+  divergence_is_conflict: false
+  divergence_requires_human_decision: false
+  unknown_is_no_impact: false
+  unknown_requires_immediate_human: false
+  potential_is_direct: false
+  deterministic_reconciliation_may_auto: true
+  unresolved_semantic_auto_merge: false
+  last_write_wins: false
+  latest_file_wins: false
+  auto_replan_is_auto_reauthorize: false
+  conflict_must_route_owner: true
+canonical_apply:
+  canonical_apply_is_file_write: false
+  canonical_apply_is_git_commit: false
+  canonical_apply_is_db_transaction: false
+  apply_plan_ne_apply_attempt: true
+  attempt_binds_exact_plan_revision: true
+  final_pre_mutation_guard_required: true
+  checkpoint_precedes_reversible_protected_mutation: true
+  default_apply_plan_semantic_atomicity_boundary: true
+  provider_capability_must_satisfy_atomicity: true
+  actual_mutation_set_must_match_resolved_write_set: true
+  mutation_completed_is_apply_succeeded: false
+  physical_mutation_is_canonical_acceptance: false
+  post_mutation_validation_required: true
+  retry_creates_new_attempt: true
+  unbounded_retry: false
+identity_revision_reference:
+  stable_id_is_semantic_subject_identity: true
+  stable_id_ne_revision: true
+  path_change_is_subject_change: false
+  provider_change_is_subject_change: false
+  subject_change_requires_new_stable_id: true
+  stable_id_reuse_for_new_subject: false
+  accepted_canonical_revision_silent_rewrite_allowed: false
+  latest_ne_current_effective: true
+  revision_lineage_ne_supersession: true
+  superseded_ne_deleted: true
+  reference_is_authority: false
+  historical_reference_is_broken_reference: false
+  reference_mutation_requires_write_set: true
+  index_sqlite_trace_are_reference_truth: false
+concurrency:
+  concurrent_change_is_conflict: false
+  stale_is_invalid: false
+  stale_requires_human_decision: false
+  reconciliation_is_semantic_merge: false
+  auto_rebase_is_auto_reauthorize: false
+  multiple_candidates_require_informed_decision: false
+  global_project_change_lock_required: false
+  provider_lock_is_semantic_authority: false
+  unresolved_semantic_auto_merge: false
+  deterministic_rebase_may_auto: true
+rollback_closeout:
+  technical_recovery_ne_semantic_rollback: true
+  semantic_rollback_ne_compensating_change: true
+  semantic_rollback_ne_data_restoration: true
+  semantic_rollback_is_restore_old_bytes: false
+  rollback_erases_history: false
+  rollback_revokes_decision_automatically: false
+  rollback_revokes_approval_automatically: false
+  attempt_result_ne_apply_result: true
+  apply_result_ne_change_result: true
+  executor_success_is_canonical_acceptance: false
+  canonical_acceptance_is_whole_change_closed: false
+  closed_ne_archived: true
+  archive_ne_delete: true
+  post_close_semantic_rollback_requires_new_change_case: true
+  closeout_may_auto_when_obligations_resolved: true
+closure_locks:
+- D_NUMBER_NE_RUNTIME_CALL_ORDER
+- F9_FRESHNESS_IMPACT_EVIDENCE_NE_F7_APPLY_GOVERNANCE
+- F8_PROJECT_RECONCILE_NE_F7_CHANGE_RECONCILE
+- F7_CANONICAL_APPLY_GOVERNANCE_NE_F10_RUNTIME_EXECUTION
+- EXECUTION_ROLLBACK_POLICY_NE_SEMANTIC_ROLLBACK_DECISION_AUTHORITY
+- POST_CLOSE_SEMANTIC_ROLLBACK_REQUIRES_NEW_CHANGE_CASE
+- PRE_CLOSE_SAME_OBLIGATION_ROLLBACK_MAY_REMAIN_IN_CHANGE
+- REACTIVATE_PRIOR_REVISION_NE_REWRITE_HISTORY
+- CURRENT_EFFECTIVE_TRANSITION_TRACEABLE
+- F7_STATE_RESULT_DERIVED_FROM_GOVERNED_FACTS
+- CROSS_PLAN_TARGET_COORDINATION_DECLARED_BEFORE_EXECUTION
+- CROSS_STAGE_OWNER_MATRIX_GOVERNS_HANDOFF
+cross_stage_owners:
+  F5:
+  - PRODUCT_MEANING_AUTHORITY
+  F6:
+  - UI_DESIGN_TRUTH_AUTHORITY
+  F7:
+  - GOVERNED_CHANGE
+  - CANONICAL_APPLY_GOVERNANCE
+  - ROLLBACK_GOVERNANCE
+  - REFERENCE_SAFE_MUTATION
+  F8:
+  - PROJECT_INSTANCE
+  - BINDING
+  - PROFILE_INSTANCE
+  - PROVIDER_SELECTION
+  - VERSION_PIN
+  - PROJECT_RECONCILE
+  F9:
+  - INDEX
+  - SEARCH_RETRIEVAL
+  - FINGERPRINT
+  - CACHE
+  - FRESHNESS_EVIDENCE
+  - IMPACT_QUERY
+  - REBUILD
+  F10:
+  - RUNTIME_PERMISSION
+  - AUTHORIZATION_VALIDATION
+  - PROVIDER_RUNTIME
+  - ADAPTER_EXECUTION
+  - PAUSE_RESUME_RETRY_ENFORCEMENT
+  F11:
+  - WEBUI_CONTROL_PLANE
+  - GOVERNANCE_UX
+  F12:
+  - LEGACY_RECONCILIATION
+  - MIGRATION
+  - RETIREMENT_GATES
+invariants:
+- CHANGE_WORKSPACE_NE_CANONICAL_TRUTH
+- AI_RECOMMENDATION_NE_HUMAN_DECISION
+- DECISION_NE_APPROVAL_NE_APPLY_AUTHORIZATION_NE_RUNTIME_PERMISSION
+- CHANGE_SCOPE_NE_APPLY_SCOPE_NE_AUTHORIZATION_SCOPE
+- CHANGE_BASE_NE_APPLY_EXPECTED_BASE
+- SEMANTIC_DELTA_NE_WRITE_SET_NE_IMPACT_SET
+- APPLY_PLAN_NE_APPLY_AUTHORIZATION_NE_CANONICAL_APPLY
+- FRESHNESS_NE_MTIME
+- DIVERGENCE_NE_CONFLICT
+- UNKNOWN_NE_NO_IMPACT
+- LAST_WRITE_WINS_FORBIDDEN
+- LATEST_FILE_WINS_FORBIDDEN
+- HIDDEN_WRITE_FORBIDDEN
+- CANONICAL_APPLY_NE_FILE_WRITE_NE_GIT_COMMIT_NE_DB_TRANSACTION
+- MUTATION_COMPLETED_NE_CANONICAL_APPLY_SUCCEEDED
+- TECHNICAL_RECOVERY_NE_SEMANTIC_ROLLBACK
+- STABLE_ID_NE_REVISION
+- LATEST_REVISION_NE_CURRENT_EFFECTIVE_REVISION
+- REVISION_LINEAGE_NE_SUPERSESSION
+- SUPERSEDED_NE_DELETED
+- REFERENCE_NE_AUTHORITY
+- CONCURRENT_CHANGE_NE_CONFLICT
+- STALE_NE_INVALID
+- AUTO_REBASE_NE_AUTO_REAUTHORIZE
+- APPLY_ATTEMPT_RESULT_NE_APPLY_RESULT_NE_CHANGE_RESULT
+- CANONICAL_APPLY_ACCEPTED_NE_WHOLE_CHANGE_CLOSED
+- CLOSED_NE_ARCHIVED
+- ARCHIVE_NE_DELETE
+- CAPABILITY_NE_AUTHORITY
+- RUNTIME_EXECUTOR_NE_DECISION_AUTHORITY
+- STATE_DERIVATION_NE_AUTHORITY_CREATION
+- AUTOMATIC_NE_UNGOVERNED
+- GOVERNED_NE_MANUAL_EVERY_TIME
+global_authorization:
+  implementation: false
+  rp2: false
+  authority_cutover: false
+  real_canonical_apply_execution: false
+  full_legacy_migration: false
+  legacy_retirement_delete: false
+  final_activation: false
+deferred:
+- EXACT_SCHEMAS
+- EXACT_ENUMS
+- EXACT_DIRECTORY_LAYOUT
+- CHANGE_WORKSPACE_PHYSICAL_STORAGE
+- CANONICAL_APPLY_API
+- TRANSACTION_IMPLEMENTATION
+- LOCK_LEASE_CAS_IMPLEMENTATION
+- REFERENCE_GRAPH_STORAGE
+- STABLE_ID_FORMAT
+- REVISION_NUMBERING_ALGORITHM
+- ROLLBACK_RUNTIME_API
+- HISTORY_STORAGE
+- CLOSEOUT_ENUMS
+- F8_PROJECT_INSTANCE_IMPLEMENTATION
+- F9_INDEX_FRESHNESS_ENGINE_IMPLEMENTATION
+- F10_RUNTIME_EXECUTION_IMPLEMENTATION
+- CLI
+- WEBUI
+- LEGACY_MIGRATION_EXECUTION
+- AI_AUTONOMOUS_LEARNING
