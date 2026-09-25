@@ -1,0 +1,139 @@
+schema_version: f8-acceptance-gates-v1
+pack_id: F8_Project_Instance_Governance_Freeze_Pack_v1.0
+architecture_freeze:
+  required: true
+  result: PASS
+  gates:
+  - id: F8-AF-01
+    name: PRE_VAR_44_OF_44_RECONCILED
+    result: PASS
+  - id: F8-AF-02
+    name: D01_TO_D10_HUMAN_APPROVED
+    result: PASS
+  - id: F8-AF-03
+    name: FREEZE_CLOSURE_HUMAN_APPROVED
+    result: PASS
+  - id: F8-AF-04
+    name: PROJECT_IDENTITY_INSTANCE_SEPARATED
+    result: PASS
+  - id: F8-AF-05
+    name: SOURCE_ROLE_MAPPING_LOCATION_SEPARATED
+    result: PASS
+  - id: F8-AF-06
+    name: PROFILE_FACT_AUTHORITY_SEPARATED
+    result: PASS
+  - id: F8-AF-07
+    name: PROVIDER_CAPABILITY_HEALTH_FALLBACK_SEPARATED
+    result: PASS
+  - id: F8-AF-08
+    name: VERSION_PIN_COMPATIBILITY_EFFECTIVE_VERSION_SEPARATED
+    result: PASS
+  - id: F8-AF-09
+    name: FEATURE_ACTIVATION_GATE_RUNTIME_PERMISSION_SEPARATED
+    result: PASS
+  - id: F8-AF-10
+    name: EXISTING_PROJECT_PRESERVE_IN_PLACE
+    result: PASS
+  - id: F8-AF-11
+    name: OBSERVATION_DRIFT_REFRESH_MUTATION_SEPARATED
+    result: PASS
+  - id: F8-AF-12
+    name: D09_NO_DUPLICATE_REVISION_GOVERNANCE
+    result: PASS
+  - id: F8-AF-13
+    name: D10_NO_DUPLICATE_REBINDING_HISTORY_RUNTIME_SYSTEM
+    result: PASS
+  - id: F8-AF-14
+    name: FINAL_OWNER_MAP_UNAMBIGUOUS
+    result: PASS
+  - id: F8-AF-15
+    name: STALE_D09_D10_OWNER_REFERENCES_RESOLVED
+    result: PASS
+  - id: F8-AF-16
+    name: F7_F9_F10_F11_F12_BOUNDARIES_RESOLVED
+    result: PASS
+  - id: F8-AF-17
+    name: NO_DUAL_WRITABLE_TRUTH
+    result: PASS
+  - id: F8-AF-18
+    name: NO_CRITICAL_UNKNOWN_SILENT_DEFAULT
+    result: PASS
+  - id: F8-AF-19
+    name: NO_EVIDENCE_TO_AUTHORITY_PROMOTION
+    result: PASS
+  - id: F8-AF-20
+    name: NO_RUNTIME_ALLOW_TO_SEMANTIC_DECISION
+    result: PASS
+  - id: F8-AF-21
+    name: NO_PREMATURE_IMPLEMENTATION_OR_ACTIVATION
+    result: PASS
+  - id: F8-AF-22
+    name: CROSS_STAGE_GOVERNANCE_COMPATIBLE
+    result: PASS
+no_loss_metrics:
+  legacy_variables_total: 44
+  legacy_variables_mapped: 44
+  legacy_variables_unmapped: 0
+  silently_dropped_legacy_variable: 0
+  competing_writable_truth: 0
+  duplicate_project_instance_authority: 0
+  duplicate_revision_governance: 0
+  duplicate_rebinding_governance: 0
+  critical_unknown_silent_default: 0
+  evidence_promoted_to_authority: 0
+  runtime_permission_promoted_to_semantic_authority: 0
+  blocking_f8_architecture_conflict: 0
+  owner_ambiguity: 0
+  cross_stage_boundary_leakage: 0
+  implementation_leakage: 0
+  final_activation_leakage: 0
+stage17_reality:
+  pilot_shadow: true
+  shadow_validated: true
+  final_activation: false
+  formal_migration_complete: false
+  canonical_replacement: false
+  canonical_write: BLOCKED
+future_implementation_acceptance_requirements:
+- NO_PROJECT_NAME_OR_PATH_AS_STABLE_ID
+- NO_PATH_TO_SOURCE_ROLE_COLLAPSE
+- NO_MAPPING_TO_CANONICAL_TRUTH_PROMOTION
+- NO_PROFILE_OR_OVERLAY_TO_AUTHORITY_PROMOTION
+- NO_PROVIDER_SELECTION_TO_SEMANTIC_AUTHORITY
+- NO_LATEST_TO_CURRENT_EFFECTIVE
+- NO_VALIDATION_PASS_TO_ACTIVATION
+- NO_PILOT_SUCCESS_TO_FINAL_ACTIVATION
+- NO_OBSERVATION_TO_CANONICAL_MUTATION
+- NO_DRIFT_TO_HUMAN_DECISION_BY_DEFAULT
+- NO_RUNTIME_SELF_HEALING_CANONICAL_REWRITE
+- NO_INDEX_TO_CANONICAL_TRUTH
+- NO_EVIDENCE_TO_AUTHORITY
+- NO_RUNTIME_ALLOW_TO_PROJECT_INSTANCE_SEMANTIC_DECISION
+- PROTECTED_DURABLE_BINDING_CHANGE_VIA_F7
+- SCOPE_TARGETED_LOADING
+- MINIMUM_SUFFICIENT_CONTEXT
+- PRESERVE_EXISTING_PROJECT_LAYOUT
+- CRITICAL_UNKNOWN_REMAINS_EXPLICIT
+- NO_AI_AUTONOMOUS_LEARNING_OR_POLICY_PROMOTION
+implementation_entry_gate:
+  result: NOT_GRANTED_BY_THIS_PACK
+  requires_resolution_of:
+  - APPLICABLE_IMPLEMENTATION_PLAN
+  - IMPLEMENTATION_FREEZE
+  - CURRENT_AUTHORITY_FACTS
+  - CURRENT_BOUNDARY
+  - CURRENT_GATE
+  - CURRENT_PROJECT_EVIDENCE
+  - APPLICABLE_F9_CONTRACTS
+  - APPLICABLE_F10_CONTRACTS
+  - SLICE_SPECIFIC_ACCEPTANCE_CRITERIA
+  - EXECUTION_AUTHORIZATION_WHERE_REQUIRED
+stage_closure:
+  result: PASS
+  architecture_freeze: PASS
+  blocking_architecture_gap: 0
+  blocking_conflict: 0
+  duplicate_authority: 0
+  competing_truth: 0
+  implicit_ai_guess_path: 0
+  premature_implementation_authorization: 0

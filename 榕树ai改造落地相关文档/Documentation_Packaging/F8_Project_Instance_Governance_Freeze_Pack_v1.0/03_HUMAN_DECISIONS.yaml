@@ -1,0 +1,72 @@
+schema_version: f8-human-decisions-v1
+pack_id: F8_Project_Instance_Governance_Freeze_Pack_v1.0
+stage: F8
+status: ARCHITECTURE_FREEZE_PASS
+decisions:
+- id: F8-PRE-VAR-01
+  title: Legacy v3.1 Project Variables No-Loss Reconciliation
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D01
+  title: Project Identity × Project Instance × Instance Boundary
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D02
+  title: Project Source Mapping × Canonical Binding × Location Binding
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D03
+  title: Project Profile Instance × Overlay × Project Fact × Variable Resolution
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D04
+  title: Provider Selection × Provider Binding × Capability × Health × Fallback
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D05
+  title: Version Pin × Compatibility × Effective Version Resolution
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D06
+  title: Feature Activation × Effective Instance State × Gate Resolution
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D07
+  title: Existing Project Adoption × New Project Initialization × Preserve-in-Place
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D08
+  title: Project Reconciliation × Binding Drift × Instance Refresh
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D09
+  title: Project Instance Evolution × Optional Validation × Effective Result Boundary
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-D10
+  title: Project Instance Runtime Handoff × Stage Closeout Boundary
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+- id: F8-FREEZE-CLOSURE-01
+  title: D09 / D10 Final Owner Remap × Stale Reference Supersession
+  status: HUMAN_APPROVED
+  freeze: FROZEN
+cross_stage_dependencies:
+- CROSS-STAGE-BOUNDARY-01
+- CROSS-STAGE-GOVERNANCE-02
+- CROSS-STAGE-DECISION-02
+stage_result:
+  architecture_freeze: PASS
+  blocking_architecture_conflict: 0
+  owner_ambiguity: 0
+  dual_writable_truth_conflict: 0
+  cross_stage_boundary_leakage: 0
+  implementation_leakage: 0
+  final_activation_leakage: 0
+authorization:
+  implementation: false
+  rp2: false
+  authority_cutover: false
+  final_activation: false
+  canonical_replacement: false
+  legacy_retirement: false

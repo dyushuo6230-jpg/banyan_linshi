@@ -1,0 +1,106 @@
+schema_version: f8-frozen-contract-v1
+pack_id: F8_Project_Instance_Governance_Freeze_Pack_v1.0
+stage: F8
+architecture_freeze: PASS
+core_invariants:
+- Project Identity != Project Instance
+- Project Instance != .banyan Directory
+- Source Role != Path / Location
+- Mapping != Canonical Truth
+- Binding != Effective Binding
+- Project Profile Instance != Authority
+- Overlay != Authority Override
+- Project Fact != Product / Design / Engineering Truth
+- Capability != Provider
+- Provider != Skill
+- Provider Binding != Runtime Permission
+- Retry != Fallback
+- Stable Identity != Version
+- Version != Revision
+- Latest != Current Effective
+- Version Pin != Effective Version
+- Feature Definition != Feature Activation Binding
+- Feature Activation Binding != Effective Feature Activation
+- Gate PASS != Authority Granted
+- PILOT_CONNECTED != FINAL_ACTIVATED
+- SHADOW_VALIDATED != FINAL_ACTIVATED
+- Instance Active != Canonical Replacement
+- Observation != Canonical Project Instance Truth
+- Drift != Conflict != Error != Change Case
+- Drift Detected != Human Decision Required
+- Detection != Mutation Authorization
+- Refresh != Canonical Rewrite
+- Ordinary Project Instance Change != New Project Instance Identity
+- Shadow / Pilot = Optional Validation Modes
+- Shadow / Pilot != Mandatory Lifecycle
+- Same Semantic Fact + Same Applicable Scope -> One Current Effective Result
+- Validation PASS != Current Effective
+- AI Recommendation != Current Effective
+- Model Confidence != Authority
+- Rebinding != Independent Governance Domain
+- Runtime Handoff != Canonical Truth Copy
+- Runtime Observation != Project Instance Truth
+- Runtime Result != Binding Authority
+- Runtime ALLOW != Project Instance Semantic Decision
+- Index != Canonical Truth
+- Index != Authority
+- Trace != Authority
+- Generated != Canonical Truth by default
+- State Derivation != Authority Creation
+- Evidence != Authority
+owner_map:
+  project_identity: F8-D01
+  source_mapping_location_binding: F8-D02
+  profile_overlay_project_fact: F8-D03
+  provider_selection_binding: F8-D04
+  version_pin_compatibility: F8-D05
+  feature_gate_effective_state: F8-D06
+  adoption_initialization: F8-D07
+  observation_drift_project_reconciliation: F8-D08
+  project_instance_evolution_boundary: F8-D09
+  runtime_handoff_stage_closeout: F8-D10
+  stable_id_revision_history_supersession_canonical_apply: F7
+  index_search_freshness_impact: F9
+  runtime_permission_provider_runtime_execution: F10
+  control_plane_ux: F11
+  legacy_reconciliation_migration_retirement: F12
+stale_reference_supersession:
+  old_d09_canonical_cutover_owner: SUPERSEDED
+  old_d10_history_rebinding_owner: SUPERSEDED
+  interpretation_authority:
+  - Final F8-D09
+  - Final F8-D10
+  - F8-FREEZE-CLOSURE-01
+stage17_boundary:
+  dot_banyan_mode: PILOT_SHADOW
+  status: SHADOW_VALIDATED
+  final_activation: false
+  canonical_replacement: false
+  canonical_write: BLOCKED
+  protected_business_write: BLOCKED
+forbidden_promotions:
+- PROJECT_NAME_TO_STABLE_ID
+- PATH_TO_SOURCE_ROLE
+- MAPPING_TO_CANONICAL_TRUTH
+- PROFILE_TO_AUTHORITY
+- OVERLAY_TO_AUTHORITY_OVERRIDE
+- DETECTED_REALITY_TO_ARCHITECTURE_DECISION
+- CAPABILITY_TO_PROVIDER_ELIGIBILITY_WITHOUT_GOVERNANCE
+- PROVIDER_SELECTION_TO_SEMANTIC_AUTHORITY
+- LATEST_TO_CURRENT_EFFECTIVE
+- VALIDATION_PASS_TO_ACTIVATION
+- PILOT_SUCCESS_TO_FINAL_ACTIVATION
+- OBSERVATION_TO_CANONICAL_MUTATION
+- DRIFT_TO_HUMAN_DECISION_BY_DEFAULT
+- INDEX_TO_CANONICAL_TRUTH
+- EVIDENCE_TO_AUTHORITY
+- RUNTIME_ALLOW_TO_PROJECT_INSTANCE_SEMANTIC_DECISION
+- ARCHITECTURE_FREEZE_TO_IMPLEMENTATION_AUTHORIZATION
+- ARCHITECTURE_FREEZE_TO_FINAL_ACTIVATION
+authorization:
+  implementation: false
+  rp2: false
+  authority_cutover: false
+  final_activation: false
+  canonical_replacement: false
+  legacy_retirement: false
