@@ -1,0 +1,128 @@
+{
+  "package": "PreF9_Architecture_Integrity_Review",
+  "version": "v3.0",
+  "batch1": "CLOSED",
+  "batch2": "CLOSED",
+  "files": [
+    {
+      "path": "00_AUDIT_GOVERNANCE_AND_PACKAGING_PROTOCOL.md",
+      "size": 1392,
+      "sha256": "6bd73c9b202b9e27d5edd9d1068f9d85f039314edfceaaed16264710340fada7"
+    },
+    {
+      "path": "01_BATCH01_WORKING_CORRECTION_PROPOSAL.md",
+      "size": 4738,
+      "sha256": "6c7add9b4f8d29ab8d790f1fc7c257ac3862be4035b59b4e8abee5fe5365cd9e"
+    },
+    {
+      "path": "02_B1_PATCH01_APPROVAL_DRAFT.md",
+      "size": 7179,
+      "sha256": "ca7284545104fb745463485063eedb278dfd45c631ce38275030c0542ae0cc84"
+    },
+    {
+      "path": "03_B1_PATCH02_APPROVAL_DRAFT.md",
+      "size": 14155,
+      "sha256": "4a3c0d54b4efd52da4ac0e8fbcc233f1b98da672cc45d1e024c151cb77665dba"
+    },
+    {
+      "path": "04_B1_PATCH02_SUP01_MAINTENANCE_RESPONSIBILITY_CANDIDATE.md",
+      "size": 5332,
+      "sha256": "ddcb6ae69b32fc114382815cfd29df7d298f423baa9b808fb975380b6be99e90"
+    },
+    {
+      "path": "05_B1_PATCH03_APPROVAL_DRAFT.md",
+      "size": 19283,
+      "sha256": "218dcf39d8c6e8614bd2c35cf87eb9d2d556ff9326a2a6bd922d51f58e377b04"
+    },
+    {
+      "path": "06_B1_PATCH04_APPROVAL_DRAFT.md",
+      "size": 24052,
+      "sha256": "8da902d3157feb25be0f6b2880c7938c1b6c4f8df42947d2ebd0412db1e42e7f"
+    },
+    {
+      "path": "07_B1_PATCH05_APPROVAL_DRAFT.md",
+      "size": 22053,
+      "sha256": "ac150da70c32ae1a046a6a2df14c809c4def16e9ffef8c2268c20a121c08692e"
+    },
+    {
+      "path": "08_BATCH01_FINAL_CLOSEOUT.md",
+      "size": 3727,
+      "sha256": "9d39385057c44c6f64fbb2c72c057ac3649f9775515056999390560b3704f6b1"
+    },
+    {
+      "path": "09_BATCH02_FINAL_CLOSEOUT.md",
+      "size": 5794,
+      "sha256": "0aa6881f968d5b477e7be62382093e4b48c18a7a841966f8f9b3aa97009af5d0"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-001_Assignment_Binding_Resolution.md",
+      "size": 13253,
+      "sha256": "5b4bb6541c73ec6877fd67c4e8aeb36994356f657660bebcf5e6c38239e788ff"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-002-SUP-01_Configuration_Profile_Maintenance_Responsibility.md",
+      "size": 8632,
+      "sha256": "0f39e2374176803a45c7a486c3e5ec5abd5cacf6bc015b842fa2dc7f7e8598f8"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-002_Configuration_Profile.md",
+      "size": 13613,
+      "sha256": "bfc8abe1f51968a4b0283591b985570328e921bbab957f06d94f8f2658a56253"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-003_StableID_Revision_Version_CurrentEffective.md",
+      "size": 17611,
+      "sha256": "acd4f10db6b9a493b306ad82ee045a214fe8877b577eabc47d01a63cd1742e7c"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-004_Rule_Policy_Module_Engineering_Standard.md",
+      "size": 25357,
+      "sha256": "6a6372cbf20be03ceca9b6446db9a13e94b0a3e955a2313cda65916e9b1a55f5"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-005_Dynamic_Workflow_Choice_Informed_Decision.md",
+      "size": 23502,
+      "sha256": "93df4d2c2d021c318aed5339783de3d5b22783237712fba090eda345015439f9"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-006_Engineering_Standard_Canonical_Truth_Current_Effective.md",
+      "size": 5884,
+      "sha256": "fad6a4ed25bb6c3423629ad806dd97f9abe392b91a69155ad2f0732d8dffa38a"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-007_Adaptive_Gate_Development_Entry_Cross_Stage_Handoff.md",
+      "size": 7727,
+      "sha256": "203baf9ae98ba020334cb5124c486edbd7f9b7f0a538a278b58764087bf5be9b"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-008_Upstream_Semantic_Change_Downstream_Effective_State_ReResolution.md",
+      "size": 8164,
+      "sha256": "58da3f244faddc13bd48847b69ab1af274b5fa07d6ffa82a66c6362c615119ee"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-009_Project_Authority_Binding_Effective_Authority_Resolution.md",
+      "size": 10206,
+      "sha256": "e6eb976e0fd72fe741abc9c0700be1a672ae26c9e5079f7103c9dfd7ce817f8c"
+    },
+    {
+      "path": "10_HUMAN_APPROVED_PATCHES/AUDIT-PATCH-010_Reconciliation_Precedence_Authority_Canonical_Transition.md",
+      "size": 10015,
+      "sha256": "8a363e3f29b8ffd1028e85cd0a6ef2be2ba37564022c3b2aba9ce30f5126e137"
+    },
+    {
+      "path": "99_NEXT_WINDOW_START_HERE.md",
+      "size": 4166,
+      "sha256": "a3f3ca6e45e9ee25244eb247e615ee4a96b1e1b2abba4c77e42c46cb9e5e555f"
+    },
+    {
+      "path": "PACKAGE_MANIFEST_v3.0.md",
+      "size": 3499,
+      "sha256": "2bee53143ded10863331a9106b05674ab8981a27b0021bf804712d7fab2c0bf3"
+    },
+    {
+      "path": "README.md",
+      "size": 2673,
+      "sha256": "b99d855327942695c8b2947f74d6e15a274bc74355b77f51621224e1d598b8bf"
+    }
+  ]
+}
