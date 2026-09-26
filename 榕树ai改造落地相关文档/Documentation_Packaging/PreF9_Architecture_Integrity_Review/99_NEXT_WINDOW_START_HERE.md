@@ -1,4 +1,4 @@
-# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v3.0
+# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v4.0
 
 ## 1. 当前状态
 
@@ -7,8 +7,8 @@ F1～F8 v1.0 = Original Frozen Baseline / UNCHANGED
 Phase 0 = COMPLETE
 Audit Batch 1 = CLOSED
 Audit Batch 2 = CLOSED
-Final Completeness Sweep = PASS
-Current Next = Audit Batch 3 — Product / Design / Change Chain
+Audit Batch 3 = CLOSED
+Current Next = Resolve next Audit Batch from formal audit plan / repository evidence
 ```
 
 禁止提前进入 Implementation / RP2 / Authority Cutover / Canonical Replacement / Final Activation / Legacy Retirement。
@@ -17,139 +17,157 @@ Current Next = Audit Batch 3 — Product / Design / Change Chain
 
 ## 2. 恢复顺序
 
-新窗口继续工作时，按以下顺序读取：
+新窗口继续工作时按顺序读取：
 
 1. GitHub F1～F8 v1.0 Freeze Packs；
 2. `00_AUDIT_GOVERNANCE_AND_PACKAGING_PROTOCOL.md`；
 3. `08_BATCH01_FINAL_CLOSEOUT.md`；
 4. `09_BATCH02_FINAL_CLOSEOUT.md`；
-5. `10_HUMAN_APPROVED_PATCHES/` 中 AUDIT-PATCH-001 ～ AUDIT-PATCH-010；
-6. 本文件 `99_NEXT_WINDOW_START_HERE.md`。
+5. `11_BATCH03_FINAL_CLOSEOUT.md`；
+6. `10_HUMAN_APPROVED_PATCHES/` 中全部正式 Patch，当前到 `AUDIT-PATCH-011`；
+7. `12_BATCH03_WORKING_HANDOVER_CHECKPOINT.md`；
+8. 本文件 `99_NEXT_WINDOW_START_HERE.md`。
 
-F1～F8 v1.0 原文件不能被 Audit Patch 直接覆盖；Patch 是后续 Consolidation 的输入。
-
----
-
-## 3. Batch 1 已批准正式 Patch
-
-- AUDIT-PATCH-001 — Assignment / Binding / Resolution
-- AUDIT-PATCH-002 — Configuration Profile
-- AUDIT-PATCH-002-SUP-01 — Configuration Profile Maintenance Responsibility
-- AUDIT-PATCH-003 — Stable ID / Revision / Version / Current Effective
-- AUDIT-PATCH-004 — Rule / Policy / Module / Engineering Standard
-- AUDIT-PATCH-005 — Dynamic Workflow Composition × Workflow Choice Preference × Informed Decision
+F1～F8 v1.0 原文件不能被 Audit Patch 直接覆盖；Patch 只作为后续 Consolidation（整合）的输入。
 
 ---
 
-## 4. Batch 2 已批准正式 Patch
-
-### AUDIT-PATCH-006 / B2-PATCH-01
-Engineering Standard Canonical Truth × Project Current Effective Resolution Boundary
-
-核心：
+## 3. Batch 1 / Batch 2
 
 ```text
-Canonical Standard Semantics = Canonical Truth
-Project Current Effective Standards = Derived Resolution Result
+Audit Batch 1 = CLOSED
+Audit Batch 2 = CLOSED
 ```
 
-### AUDIT-PATCH-007 / B2-PATCH-02
-Adaptive Gate Governance × Development Entry Authorization × Cross-stage Gate Handoff
+正式 Patch：
 
-核心：
+- AUDIT-PATCH-001 ～ AUDIT-PATCH-005；
+- AUDIT-PATCH-002-SUP-01；
+- AUDIT-PATCH-006 ～ AUDIT-PATCH-010。
+
+`CON-002 = ARCHITECTURALLY_RESOLVED`（由 AUDIT-PATCH-009 收口）。
+
+不要重做 B1 / B2。
+
+---
+
+## 4. Batch 3
+
+主题：
 
 ```text
-Gate Applies != Human Must Be Asked
-Development Ready != Development Entry Authorized
-HOLD != REVIEW_REQUIRED
+Product / Design / Change Chain
 ```
 
-### AUDIT-PATCH-008 / B2-PATCH-03
-Upstream Semantic Change × Downstream Effective State Invalidation × Re-resolution Routing
-
-核心：
+完成：
 
 ```text
-Upstream Change
-→ scoped freshness / impact evaluation
-→ domain-owner re-resolution
+Four-Source Reconciliation = COMPLETE
+Main Chain Map = COMPLETE
+Final Completeness Sweep = PASS
 ```
 
-同时：
+唯一新增 Finding：
 
 ```text
-Auto Re-resolution != Auto Reauthorization
+B3-CHAIN-01
+Requirement / Product Semantic Anchor
+× Design / UI Contract Typed Semantic Linkage
+× Impact Applicability
+GAP / P1
 ```
 
-### AUDIT-PATCH-009 / B2-PATCH-04
-Project Authority Binding × Effective Authority Resolution × Governed Override / Exception Eligibility
-
-核心：
+通过：
 
 ```text
-Authority Fact / Binding = Governed Input
-Effective Authority = Derived Resolution Result
+B3-PATCH-01 HUMAN_APPROVED
 ```
 
-并将：
+正式归档为：
 
 ```text
-CON-002 = ARCHITECTURALLY_RESOLVED
+AUDIT-PATCH-011_Product_Design_Typed_Semantic_Linkage_and_Impact_Applicability.md
 ```
 
-### AUDIT-PATCH-010 / B2-PATCH-05
-Reconciliation Precedence × Authority Validation × Canonical Transition Boundary
-
-核心：
+结论：
 
 ```text
-Reconciliation Precedence != Authority Precedence
-Target Semantic != Current Canonical Semantic
-Reconciliation != Canonical Apply
+B3-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+B3-PATCH-02 = NOT REQUIRED
+Audit Batch 3 = CLOSED
 ```
 
 ---
 
-## 5. B2 Final Sweep
+## 5. Batch 3 核心冻结
+
+```text
+Requirement Change != Automatic UI Change
+UI Change != Automatic Product Change
+
+Product Change Affecting UI → F6 Re-resolution
+Design Change Crossing Product Boundary → F5 Resolution
+
+Semantic Link != Authority
+Trace Link != Duplicate Product Truth
+
+SQLite != Canonical Truth
+SQLite != Authority
+Indexed Relation != Confirmed Material Impact
+
+Automatic != Ungoverned
+Governed != Manual Every Time
+```
+
+Product ↔ Design/UI 第一版核心关系：
+
+```text
+REALIZES（承载 / 实现）
+REPRESENTS（呈现 / 表达）
+INVOKES（触发）
+CONSTRAINED_BY（受约束）
+ACCEPTANCE_COVERS（覆盖验收意图）
+```
+
+---
+
+## 6. Batch 3 Final Sweep
 
 ```text
 Blocking Architecture Gap = 0
 Blocking Conflict = 0
-Duplicate Authority = 0
-Competing Canonical Truth = 0
-Implicit Last / Latest Winner = 0
-Unknown Authority Silent Default = 0
-Gate Bypass Path = 0
+Competing Product Truth = 0
+Competing UI / Design Truth = 0
 Cross-stage Owner Leakage = 0
+Canonical Apply Bypass Path = 0
+Current Effective Silent Replacement Path = 0
+Historical Trace Loss Path = 0
+Index / SQLite Authority Promotion Path = 0
 ```
-
-因此 Batch 2 已正式 Closeout。
 
 ---
 
-## 6. Explicit Deferred
+## 7. Explicit Deferred
 
-以下不算 B2 未完成：
+以下不是 Batch 3 未完成项：
 
-- F2 Physical Store Topology；
-- SQLite DDL / Storage Implementation Freeze；
-- F9 SQLite / Relation / Freshness / Impact physical index design；
-- Authority Binding physical schema / RBAC / ABAC；
-- F10 / F11 具体实现。
-
-用户已特别确认：未来 Banyan 大量关系可进入 SQLite 等派生索引层以快速查询，但 SQLite 不是 Canonical Truth / Authority；该专题留给 F9 / Storage Owner Stage 系统讨论。
+- SQLite DDL / Relation Physical Schema；
+- Graph Physical Schema；
+- F9 Relation / Freshness / Impact physical index design；
+- F10 runtime authorization implementation；
+- F11 governance UX；
+- migration tooling；
+- autonomous AI learning。
 
 ---
 
-## 7. 下一步固定指令
+## 8. 下一步固定指令
 
-下一步直接进入：
+不要自动发明 `Audit Batch 4` 的主题或 Finding ID。
 
-```text
-Audit Batch 3 — Product / Design / Change Chain
-```
+先从仓库中的正式 Audit Plan / Review Scope / Handover 证据中解析下一 Batch；如果正式资料没有定义下一 Batch，则先做审计计划续接，而不是凭空编号。
 
-仍按：
+确定下一 Batch 后继续固定流程：
 
 ```text
 四源对账
@@ -157,14 +175,23 @@ Audit Batch 3 — Product / Design / Change Chain
 → KEEP / GAP / DEFECT / OPTIMIZATION
 → 修正设计
 → 完整审批稿
-→ 用户明确 `<PATCH-ID> HUMAN_APPROVED`
+→ 用户明确 <PATCH-ID> HUMAN_APPROVED
 → 正式独立 Markdown
+→ Batch Closeout
 ```
 
-每份完整审批稿末尾必须提供可直接复制的批准提示词，例如：
+不得把“好的 / 下一步 / 继续 / 按建议”自动解释成 HUMAN_APPROVED。
+
+---
+
+## 9. 固定禁止事项
 
 ```text
-B3-PATCH-01 HUMAN_APPROVED
+Implementation = NOT_AUTHORIZED
+RP2 = NOT_AUTHORIZED
+Authority Cutover = NOT_AUTHORIZED
+Canonical Replacement = NOT_AUTHORIZED
+Final Activation = NOT_AUTHORIZED
+Legacy Retirement = NOT_AUTHORIZED
+SQLite Physical Schema = NOT_FROZEN
 ```
-
-不得把“好的 / 下一步”自动解释成 HUMAN_APPROVED。
