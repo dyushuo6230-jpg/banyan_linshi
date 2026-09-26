@@ -1,4 +1,4 @@
-# Banyan / 榕树 AI — Pre-F9 Architecture Integrity Review 工作包 v5.0
+# Banyan / 榕树 AI — Pre-F9 Architecture Integrity Review 工作包 v6.0
 
 ## 当前状态
 
@@ -9,143 +9,147 @@ Audit Batch 1 = CLOSED
 Audit Batch 2 = CLOSED
 Audit Batch 3 = CLOSED
 Audit Batch 4 = CLOSED
+Audit Batch 5 = CLOSED
+Formal Patch Range = AUDIT-PATCH-001 ～ AUDIT-PATCH-015
 ```
 
-当前仍处于 Audit Patch Layer（审计补丁层），不是 Implementation Freeze（实现冻结）。
+当前仍处于 Audit Patch Layer，不是 Implementation Freeze。
 
 ---
 
-## Batch 1 — HUMAN_APPROVED / CLOSED
-
-正式 Patch：AUDIT-PATCH-001～005，含 `AUDIT-PATCH-002-SUP-01`。  
-Closeout：`08_BATCH01_FINAL_CLOSEOUT.md`
-
----
-
-## Batch 2 — HUMAN_APPROVED / CLOSED
-
-正式 Patch：AUDIT-PATCH-006～010。  
-Closeout：`09_BATCH02_FINAL_CLOSEOUT.md`
+## Batch 1～4
 
 ```text
-CON-002 = ARCHITECTURALLY_RESOLVED
+Batch 1 = CLOSED
+Batch 2 = CLOSED
+Batch 3 = CLOSED
+Batch 4 = CLOSED
 ```
+
+历史正式 Patch、Closeout、Handover 继续保留，不重写。
 
 ---
 
-## Batch 3 — HUMAN_APPROVED / CLOSED
+## Batch 5 — HUMAN_APPROVED / CLOSED
 
 主题：
 
 ```text
-Product / Design / Change Chain
+Cross-stage State / Exception Semantics
 ```
 
 正式 Patch：
 
-- `AUDIT-PATCH-011_Product_Design_Typed_Semantic_Linkage_and_Impact_Applicability.md`
+- `AUDIT-PATCH-014_Typed_State_Domain_Cross_Stage_Projection_ReResolution.md`
+- `AUDIT-PATCH-015_Cross_Stage_Exception_Failure_Recovery_Governance_Boundary.md`
 
-Closeout：`11_BATCH03_FINAL_CLOSEOUT.md`  
-Working Handover：`12_BATCH03_WORKING_HANDOVER_CHECKPOINT.md`
+Closeout：
+
+- `15_BATCH05_FINAL_CLOSEOUT.md`
+
+Working Handover：
+
+- `16_BATCH05_WORKING_HANDOVER_CHECKPOINT.md`
+
+最终：
 
 ```text
-B3-CHAIN-01 = ARCHITECTURALLY_RESOLVED
-B3-PATCH-02 = NOT REQUIRED
+B5-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+B5-CHAIN-02 = ARCHITECTURALLY_RESOLVED
+B5-PATCH-01 = HUMAN_APPROVED
+B5-PATCH-02 = HUMAN_APPROVED
+B5-PATCH-03 = NOT REQUIRED
 Final Completeness Sweep = PASS
+Audit Batch 5 = CLOSED
 ```
 
 ---
 
-## Batch 4 — HUMAN_APPROVED / CLOSED
-
-主题：
+## Batch 5 核心冻结 — State
 
 ```text
-Project Instance / Binding Chain
-```
-
-正式 Patch：
-
-- `AUDIT-PATCH-012_Project_Binding_Multi_Resolution_Conflict_Current_Effective.md`
-- `AUDIT-PATCH-013_Cross_Target_Resolution_Dependency_Cycle_Convergence_Informed_Decision.md`
-
-Closeout：`13_BATCH04_FINAL_CLOSEOUT.md`  
-Working Handover：`14_BATCH04_WORKING_HANDOVER_CHECKPOINT.md`
-
-```text
-B4-CHAIN-01 = ARCHITECTURALLY_RESOLVED
-B4-CHAIN-02 = ARCHITECTURALLY_RESOLVED
-B4-PATCH-01 = HUMAN_APPROVED
-B4-PATCH-02 = HUMAN_APPROVED
-B4-PATCH-03 = NOT REQUIRED
-Final Completeness Sweep = PASS
+State Domains Remain Separate
+One Subject != One Global Status
+State Domain != Stage
+Same State Label != Same State Domain != Same Semantic Meaning
+State Projection != State Copy
+State Projection != Authority Transfer
+State Consumer != State Owner
+Cross-domain State Change != Direct State Mutation
+Current Effective != Lifecycle State != Freshness
+Local State Block != Global Project Block
 ```
 
 ---
 
-## Batch 4 核心结果
-
-Multi-Binding：
+## Batch 5 核心冻结 — Exception / Failure
 
 ```text
-Multiple Applicable Bindings != Binding Conflict
-Binding Resolution Target
-One Current Effective Result != One Constituent Binding
-Scope Match != Precedence
-Project Local != Automatic Override
+Operational Exception != Governed Exception
+Bare Exception Label = Semantically Ambiguous
+Error != Failure
+Attempt Failure != Final Operation Failure
+Retry != Fallback
+Fallback != Governed Exception
 Runtime Fallback != Durable Rebinding
+Technical Recovery != Semantic Rollback != Compensating Change != Data Restoration
+Recovery Success != Original Operation Success
+Recovery Success != Canonical Acceptance
+Operational Failure != Semantic Conflict
+Governance Block != Operational Failure
+Operational Failure != Human Decision Required
+Failure Owner != Semantic Authority Owner
+Error Handler != Authority
 ```
 
-Cross-target Dependency：
+---
+
+## 统一自动化原则
 
 ```text
-Workflow Loop != Resolution Dependency Cycle
-Reference != Resolution Dependency
-Dependency Order != Governance Precedence
-Implicit Cyclic Resolution = FORBIDDEN
-Unbounded Resolution Oscillation = FORBIDDEN
-Cached Result != Automatic Cycle Breaker
+Reliable Automatic Routing
+× Minimum Human Decision Governance
 ```
 
-Human Governance：
+即：
 
 ```text
-Cycle Detected != Human Decision Required
-UNKNOWN != Human Decision Required
-Missing Evidence != Human Decision Required
 Deterministically Resolvable → Automatic
+Missing Evidence → UNKNOWN
+Governance Block → BLOCKED / HOLD
+Semantic Conflict → Owner / Governance
 Multiple Legitimate Material Semantic Choices → Informed Decision
-Valid Informed Decision != Automatic Dependency Mutation
 ```
 
 ---
 
 ## 三层治理模型
 
-1. Original Frozen Baseline — F1～F8 v1.0，永久保留，不直接改；
-2. Audit Patch Layer — 当前 B1/B2/B3/B4 HUMAN_APPROVED Patch；
-3. Consolidated Freeze Baseline — 完整 Pre-F9 审计结束后才生成 F1～F8 v1.1 Candidate，经 No-Loss + Final Audit + Human Approval 后形成。
+1. `F1～F8 v1.0` — Original Frozen Baseline，不直接改；
+2. `Audit Patch Layer` — 当前 HUMAN_APPROVED Patch 到 015；
+3. `Consolidated Freeze Baseline` — 完整审计后形成 F1～F8 v1.1 Candidate，经 No-Loss / Final Review / Human Approval 后成为新基线。
 
 ---
 
 ## Explicit Deferred
 
-- SQLite DDL；
-- Binding / Dependency / Relation Physical Schema；
-- Graph Physical Schema；
-- F9 index / relation / dependency / freshness / impact physical design；
-- F10 runtime authorization implementation；
-- F11 governance UX implementation；
-- Fixed-Point Solver；
-- migration tooling；
-- autonomous AI learning。
-
-SQLite / Index 继续保持：
-
 ```text
-NON_CANONICAL
-REBUILDABLE
+SQLite DDL / physical schema
+State / Exception / Failure exact enums
+Fault / Incident exact taxonomy
+Root-cause correlation implementation
+Retry / Backoff / Circuit Breaker
+Observability / Telemetry
+Provider SDK error mapping
+Recovery implementation
+F9 physical index / graph
+F10 runtime API implementation
+F11 governance UX
+Bulk legacy migration
+Autonomous AI learning / optimization
 ```
+
+这些不是 Batch 5 blocking gaps。
 
 ---
 
@@ -167,4 +171,11 @@ SQLite Physical Schema = NOT_FROZEN
 
 读取 `99_NEXT_WINDOW_START_HERE.md`。
 
-下一 Audit Batch 的正式主题必须从正式审计计划 / 仓库证据中解析，不自行发明编号或主题。
+正式下一批：
+
+```text
+Audit Batch 6
+— Deferred / Future Owner / Boundary
+```
+
+启动 Batch 6 时仍必须先做四源对账，不可因为主题已知而跳过 reconciliation。

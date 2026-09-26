@@ -1,25 +1,29 @@
-# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v5.0
+# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v6.0
 
 ## 1. 当前状态
 
 ```text
 F1～F8 v1.0 = Original Frozen Baseline / UNCHANGED
+
 Phase 0 = COMPLETE
+
 Audit Batch 1 = CLOSED
 Audit Batch 2 = CLOSED
 Audit Batch 3 = CLOSED
 Audit Batch 4 = CLOSED
-Current Formal Patch Range = AUDIT-PATCH-001 ～ AUDIT-PATCH-013
-Current Next = Resolve next Audit Batch from formal audit plan / repository evidence
+Audit Batch 5 = CLOSED
+
+Current Formal Patch Range
+= AUDIT-PATCH-001 ～ AUDIT-PATCH-015
 ```
 
-禁止提前进入 Implementation / RP2 / Authority Cutover / Canonical Replacement / Final Activation / Legacy Retirement。
+当前仍是 Audit Patch Layer。
 
 ---
 
 ## 2. 恢复顺序
 
-新窗口继续工作时按顺序读取：
+新窗口依次读取：
 
 1. GitHub F1～F8 v1.0 Freeze Packs；
 2. `00_AUDIT_GOVERNANCE_AND_PACKAGING_PROTOCOL.md`；
@@ -27,149 +31,147 @@ Current Next = Resolve next Audit Batch from formal audit plan / repository evid
 4. `09_BATCH02_FINAL_CLOSEOUT.md`；
 5. `11_BATCH03_FINAL_CLOSEOUT.md`；
 6. `13_BATCH04_FINAL_CLOSEOUT.md`；
-7. `10_HUMAN_APPROVED_PATCHES/` 中全部正式 Patch，当前到 `AUDIT-PATCH-013`；
-8. `14_BATCH04_WORKING_HANDOVER_CHECKPOINT.md`；
-9. 本文件 `99_NEXT_WINDOW_START_HERE.md`。
+7. `15_BATCH05_FINAL_CLOSEOUT.md`；
+8. `10_HUMAN_APPROVED_PATCHES/` 全部正式 Patch，当前到 `AUDIT-PATCH-015`；
+9. `16_BATCH05_WORKING_HANDOVER_CHECKPOINT.md`；
+10. 本文件。
 
-F1～F8 v1.0 原文件不能被 Audit Patch 直接覆盖；Patch 只作为后续 Consolidation 输入。
-
----
-
-## 3. 已关闭批次
-
-```text
-Audit Batch 1 = CLOSED
-Audit Batch 2 = CLOSED
-Audit Batch 3 = CLOSED
-Audit Batch 4 = CLOSED
-```
-
-不要重做或重新审批 B1～B4 已批准 Patch。
+不要重做或重新审批 Batch 1～5。
 
 ---
 
-## 4. Batch 3
+## 3. Batch 5 已冻结
+
+### AUDIT-PATCH-014
 
 ```text
-AUDIT-PATCH-011 = HUMAN_APPROVED
-B3-CHAIN-01 = ARCHITECTURALLY_RESOLVED
-B3-PATCH-02 = NOT REQUIRED
+Typed State Domain Identity
+× Cross-stage State Projection
+× Transition / Re-resolution Boundary
+```
+
+状态：
+
+```text
+HUMAN_APPROVED
+B5-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+```
+
+核心：
+
+```text
+One Subject != One Global Status
+State Domain != Stage
+Same State Label != Same State Domain != Same Semantic Meaning
+State Projection != State Copy
+State Consumer != State Owner
+Cross-domain State Change != Direct State Mutation
+Current Effective != Lifecycle State != Freshness
+```
+
+### AUDIT-PATCH-015
+
+```text
+Cross-stage Exception Classification
+× Operational Failure Routing
+× Recovery / Governance Boundary
+```
+
+状态：
+
+```text
+HUMAN_APPROVED
+B5-CHAIN-02 = ARCHITECTURALLY_RESOLVED
+```
+
+核心：
+
+```text
+Operational Exception != Governed Exception
+Error != Failure
+Retry != Fallback
+Runtime Fallback != Durable Rebinding
+Technical Recovery != Semantic Rollback
+Recovery Success != Canonical Acceptance
+Operational Failure != Semantic Conflict
+Failure != Human Decision Required
+Failure Owner != Semantic Authority Owner
 ```
 
 ---
 
-## 5. Batch 4
-
-### B4-CHAIN-01
-
-```text
-Project Binding Resolution Target
-× Multi-Binding Composition / Conflict
-× Current Effective Determinism
-
-B4-PATCH-01 HUMAN_APPROVED
-→ AUDIT-PATCH-012 HUMAN_APPROVED
-→ ARCHITECTURALLY_RESOLVED
-```
-
-### B4-CHAIN-02
-
-```text
-Cross-Target Resolution Dependency
-× Cycle Detection
-× Deterministic Convergence
-× Informed Decision Escalation Boundary
-
-B4-PATCH-02 HUMAN_APPROVED
-→ AUDIT-PATCH-013 HUMAN_APPROVED
-→ ARCHITECTURALLY_RESOLVED
-```
-
-Final：
+## 4. Batch 5 Final Result
 
 ```text
 Final Completeness Sweep = PASS
 Additional Blocking Gap = 0
-B4-PATCH-03 = NOT REQUIRED
-Audit Batch 4 = CLOSED
+Additional Blocking Conflict = 0
+B5-PATCH-03 = NOT REQUIRED
+Audit Batch 5 = CLOSED
 ```
 
----
-
-## 6. Batch 4 核心冻结
+以下是 Deferred，不重新开 Batch 5 Finding：
 
 ```text
-Multiple Applicable Bindings != Binding Conflict
-One Current Effective Result != One Constituent Binding
-Scope Match != Precedence
-Project Local != Automatic Override
-Runtime Fallback != Durable Rebinding
-
-Workflow Loop != Resolution Dependency Cycle
-Reference != Resolution Dependency
-Dependency Order != Governance Precedence
-Evaluation Order != Semantic Priority
-Implicit Cyclic Resolution = FORBIDDEN
-Local Resolution Cycle != Global Project Invalidation
-Unbounded Resolution Oscillation = FORBIDDEN
-Cached Result != Automatic Cycle Breaker
-STALE Result cannot silently satisfy Current Dependency
-
-Cycle Detected != Human Decision Required
-UNRESOLVED != Human Decision Required
-UNKNOWN != Human Decision Required
-Missing Evidence != Human Decision Required
-Deterministically Resolvable → must not escalate to human
-Valid Informed Decision != Automatic Dependency Mutation
+Fault / Incident exact taxonomy
+Root-cause correlation implementation
+Exact error / failure enum
+Retry / backoff / circuit breaker implementation
+Observability / telemetry
+Go error interface
+Recovery algorithm
+F9 physical indexes
+F10 runtime API
+F11 exception UX
 ```
 
 ---
 
-## 7. Owner Boundary
+## 5. 下一阶段
+
+下一阶段：
 
 ```text
-Project Binding / Effective Project Resolution → F8
-Durable Protected Mutation / Revision / Canonical Apply → F7
-Index / Dependency Lookup / Freshness / Impact → F9
-Runtime Permission / Execution → F10
-Informed Decision Protocol → existing AUDIT-PATCH-005 governance
+Audit Batch 6
+— Deferred / Future Owner / Boundary
+— 延期项 / 未来 Owner / 边界审计
 ```
 
-F8 不建立 Universal Resolver / Global Dependency Authority。
+Batch 6 不等于开始 Implementation。
+
+Batch 6 目标是审查 F1～F8 中所有：
+
+```text
+Deferred
+Future Owner
+Future Stage
+Implementation-owned
+Migration-owned
+Runtime-owned
+Index-owned
+UX-owned
+Unresolved-but-explicitly-deferred
+```
+
+是否都有明确：
+
+```text
+why deferred
+who owns it later
+when it becomes applicable
+what it must not do before activation
+whether it leaves an architecture hole
+```
+
+仍然必须先四源对账后再登记 Finding。
 
 ---
 
-## 8. Explicit Deferred
-
-以下不是 Batch 4 未完成项：
-
-- Binding / Dependency physical schema；
-- SQLite DDL；
-- Graph DB；
-- exact relation enum；
-- cycle / SCC / topological-sort implementation；
-- retry count；
-- Fixed-Point Solver；
-- runtime exact enum；
-- F9 physical index；
-- F10 implementation；
-- F11 UX；
-- migration tooling；
-- autonomous AI learning。
-
----
-
-## 9. 下一步固定规则
-
-下一 Audit Batch 的主题必须从正式 Audit Plan / Review Scope / Repository Evidence 中解析。
-
-如果正式资料没有定义下一 Batch，则先做审计计划续接，不凭空发明主题。
-
-确定下一 Batch 后继续：
+## 6. 固定工作方式
 
 ```text
 四源对账
-→ 系统说明（白话 + 例子）
+→ 系统讲清（白话 + 例子）
 → KEEP / GAP / DEFECT / OPTIMIZATION
 → 完整修正设计
 → 完整审批稿
@@ -179,11 +181,11 @@ F8 不建立 Universal Resolver / Global Dependency Authority。
 → Batch Closeout
 ```
 
-普通“好的 / 下一步 / 继续 / 按建议”不得自动解释成 HUMAN_APPROVED。
+普通“好的 / 下一步 / 继续 / 按建议”不等于审批。
 
 ---
 
-## 10. 固定禁止事项
+## 7. 固定禁止事项
 
 ```text
 Implementation = NOT_AUTHORIZED
