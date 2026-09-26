@@ -1,4 +1,4 @@
-# Banyan / 榕树 AI — Pre-F9 Architecture Integrity Review 工作包 v4.0
+# Banyan / 榕树 AI — Pre-F9 Architecture Integrity Review 工作包 v5.0
 
 ## 当前状态
 
@@ -8,6 +8,7 @@ Phase 0 = COMPLETE
 Audit Batch 1 = CLOSED
 Audit Batch 2 = CLOSED
 Audit Batch 3 = CLOSED
+Audit Batch 4 = CLOSED
 ```
 
 当前仍处于 Audit Patch Layer（审计补丁层），不是 Implementation Freeze（实现冻结）。
@@ -16,32 +17,19 @@ Audit Batch 3 = CLOSED
 
 ## Batch 1 — HUMAN_APPROVED / CLOSED
 
-正式 Patch：
-
-- `AUDIT-PATCH-001_Assignment_Binding_Resolution.md`
-- `AUDIT-PATCH-002_Configuration_Profile.md`
-- `AUDIT-PATCH-002-SUP-01_Configuration_Profile_Maintenance_Responsibility.md`
-- `AUDIT-PATCH-003_StableID_Revision_Version_CurrentEffective.md`
-- `AUDIT-PATCH-004_Rule_Policy_Module_Engineering_Standard.md`
-- `AUDIT-PATCH-005_Dynamic_Workflow_Choice_Informed_Decision.md`
-
+正式 Patch：AUDIT-PATCH-001～005，含 `AUDIT-PATCH-002-SUP-01`。  
 Closeout：`08_BATCH01_FINAL_CLOSEOUT.md`
 
 ---
 
 ## Batch 2 — HUMAN_APPROVED / CLOSED
 
-正式 Patch：
-
-- `AUDIT-PATCH-006_Engineering_Standard_Canonical_Truth_Current_Effective.md`
-- `AUDIT-PATCH-007_Adaptive_Gate_Development_Entry_Cross_Stage_Handoff.md`
-- `AUDIT-PATCH-008_Upstream_Semantic_Change_Downstream_Effective_State_ReResolution.md`
-- `AUDIT-PATCH-009_Project_Authority_Binding_Effective_Authority_Resolution.md`
-- `AUDIT-PATCH-010_Reconciliation_Precedence_Authority_Canonical_Transition.md`
-
+正式 Patch：AUDIT-PATCH-006～010。  
 Closeout：`09_BATCH02_FINAL_CLOSEOUT.md`
 
-`CON-002 = ARCHITECTURALLY_RESOLVED`。
+```text
+CON-002 = ARCHITECTURALLY_RESOLVED
+```
 
 ---
 
@@ -53,58 +41,81 @@ Closeout：`09_BATCH02_FINAL_CLOSEOUT.md`
 Product / Design / Change Chain
 ```
 
-唯一新增正式 Patch：
+正式 Patch：
 
 - `AUDIT-PATCH-011_Product_Design_Typed_Semantic_Linkage_and_Impact_Applicability.md`
 
-Source Finding：
-
-```text
-B3-CHAIN-01 = GAP / P1
-```
-
-Source Approval：
-
-```text
-B3-PATCH-01 HUMAN_APPROVED
-```
-
-Closeout：`11_BATCH03_FINAL_CLOSEOUT.md`
-
+Closeout：`11_BATCH03_FINAL_CLOSEOUT.md`  
 Working Handover：`12_BATCH03_WORKING_HANDOVER_CHECKPOINT.md`
-
-Batch 3 Final Completeness Sweep：`PASS`。
 
 ```text
 B3-CHAIN-01 = ARCHITECTURALLY_RESOLVED
 B3-PATCH-02 = NOT REQUIRED
+Final Completeness Sweep = PASS
 ```
 
 ---
 
-## Batch 3 核心结果
+## Batch 4 — HUMAN_APPROVED / CLOSED
 
-正式补齐 Product Semantic Anchor（产品语义锚点）与 Design / UI Semantic Anchor（设计 / UI 语义锚点）之间的 Minimum Sufficient Typed Semantic Linkage（最小充分类型化语义关联）。
-
-第一版核心关系：
-
-- REALIZES（承载 / 实现）；
-- REPRESENTS（呈现 / 表达）；
-- INVOKES（触发）；
-- CONSTRAINED_BY（受约束）；
-- ACCEPTANCE_COVERS（覆盖验收意图）。
-
-关键边界：
+主题：
 
 ```text
-Requirement Change != Automatic UI Change
-UI Change != Automatic Product Change
-Product Change Affecting UI → F6 Re-resolution
-Design Change Crossing Product Boundary → F5 Resolution
-Semantic Link != Authority
-Trace Link != Duplicate Product Truth
-SQLite != Canonical Truth
-SQLite != Authority
+Project Instance / Binding Chain
+```
+
+正式 Patch：
+
+- `AUDIT-PATCH-012_Project_Binding_Multi_Resolution_Conflict_Current_Effective.md`
+- `AUDIT-PATCH-013_Cross_Target_Resolution_Dependency_Cycle_Convergence_Informed_Decision.md`
+
+Closeout：`13_BATCH04_FINAL_CLOSEOUT.md`  
+Working Handover：`14_BATCH04_WORKING_HANDOVER_CHECKPOINT.md`
+
+```text
+B4-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+B4-CHAIN-02 = ARCHITECTURALLY_RESOLVED
+B4-PATCH-01 = HUMAN_APPROVED
+B4-PATCH-02 = HUMAN_APPROVED
+B4-PATCH-03 = NOT REQUIRED
+Final Completeness Sweep = PASS
+```
+
+---
+
+## Batch 4 核心结果
+
+Multi-Binding：
+
+```text
+Multiple Applicable Bindings != Binding Conflict
+Binding Resolution Target
+One Current Effective Result != One Constituent Binding
+Scope Match != Precedence
+Project Local != Automatic Override
+Runtime Fallback != Durable Rebinding
+```
+
+Cross-target Dependency：
+
+```text
+Workflow Loop != Resolution Dependency Cycle
+Reference != Resolution Dependency
+Dependency Order != Governance Precedence
+Implicit Cyclic Resolution = FORBIDDEN
+Unbounded Resolution Oscillation = FORBIDDEN
+Cached Result != Automatic Cycle Breaker
+```
+
+Human Governance：
+
+```text
+Cycle Detected != Human Decision Required
+UNKNOWN != Human Decision Required
+Missing Evidence != Human Decision Required
+Deterministically Resolvable → Automatic
+Multiple Legitimate Material Semantic Choices → Informed Decision
+Valid Informed Decision != Automatic Dependency Mutation
 ```
 
 ---
@@ -112,22 +123,29 @@ SQLite != Authority
 ## 三层治理模型
 
 1. Original Frozen Baseline — F1～F8 v1.0，永久保留，不直接改；
-2. Audit Patch Layer — 当前 B1/B2/B3 HUMAN_APPROVED Patch；
-3. Consolidated Freeze Baseline — 整个 Pre-F9 审计结束后才生成 F1～F8 v1.1 Candidate，经 No-Loss + Final Audit + Human Approval 后形成。
+2. Audit Patch Layer — 当前 B1/B2/B3/B4 HUMAN_APPROVED Patch；
+3. Consolidated Freeze Baseline — 完整 Pre-F9 审计结束后才生成 F1～F8 v1.1 Candidate，经 No-Loss + Final Audit + Human Approval 后形成。
 
 ---
 
 ## Explicit Deferred
 
 - SQLite DDL；
-- Relation / Graph Physical Schema；
-- F9 index / relation / freshness / impact physical design；
+- Binding / Dependency / Relation Physical Schema；
+- Graph Physical Schema；
+- F9 index / relation / dependency / freshness / impact physical design；
 - F10 runtime authorization implementation；
 - F11 governance UX implementation；
+- Fixed-Point Solver；
 - migration tooling；
 - autonomous AI learning。
 
-SQLite / Index 可以承担 Banyan 大量关系的高速派生投影，但继续保持 `NON_CANONICAL / REBUILDABLE`。
+SQLite / Index 继续保持：
+
+```text
+NON_CANONICAL
+REBUILDABLE
+```
 
 ---
 
