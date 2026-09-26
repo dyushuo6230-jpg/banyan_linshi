@@ -1,4 +1,4 @@
-# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v6.0
+# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v7.0
 
 ## 1. 当前状态
 
@@ -12,18 +12,19 @@ Audit Batch 2 = CLOSED
 Audit Batch 3 = CLOSED
 Audit Batch 4 = CLOSED
 Audit Batch 5 = CLOSED
+Audit Batch 6 = CLOSED
 
-Current Formal Patch Range
-= AUDIT-PATCH-001 ～ AUDIT-PATCH-015
+Formal Audit Patch Range
+= AUDIT-PATCH-001 ～ AUDIT-PATCH-016
 ```
 
-当前仍是 Audit Patch Layer。
+当前仍为 Audit Patch Layer。
 
 ---
 
-## 2. 恢复顺序
+## 2. 新窗口恢复顺序
 
-新窗口依次读取：
+依次读取：
 
 1. GitHub F1～F8 v1.0 Freeze Packs；
 2. `00_AUDIT_GOVERNANCE_AND_PACKAGING_PROTOCOL.md`；
@@ -32,142 +33,155 @@ Current Formal Patch Range
 5. `11_BATCH03_FINAL_CLOSEOUT.md`；
 6. `13_BATCH04_FINAL_CLOSEOUT.md`；
 7. `15_BATCH05_FINAL_CLOSEOUT.md`；
-8. `10_HUMAN_APPROVED_PATCHES/` 全部正式 Patch，当前到 `AUDIT-PATCH-015`；
-9. `16_BATCH05_WORKING_HANDOVER_CHECKPOINT.md`；
-10. 本文件。
+8. `17_BATCH06_FINAL_CLOSEOUT.md`；
+9. `10_HUMAN_APPROVED_PATCHES/` 全部正式 Patch，当前到 `AUDIT-PATCH-016`；
+10. `18_BATCH06_WORKING_HANDOVER_CHECKPOINT.md`；
+11. 本文件。
 
-不要重做或重新审批 Batch 1～5。
+不要重做或重新审批 Batch 1～6。
 
 ---
 
-## 3. Batch 5 已冻结
+## 3. Batch 6 已冻结
 
-### AUDIT-PATCH-014
+### AUDIT-PATCH-016
 
 ```text
-Typed State Domain Identity
-× Cross-stage State Projection
-× Transition / Re-resolution Boundary
+Deferred Obligation Identity
+× Future Owner Resolution
+× Trigger / Activation Boundary
+× Closure / Supersession
 ```
 
 状态：
 
 ```text
 HUMAN_APPROVED
-B5-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+B6-CHAIN-01 = ARCHITECTURALLY_RESOLVED
 ```
 
 核心：
 
 ```text
-One Subject != One Global Status
-State Domain != Stage
-Same State Label != Same State Domain != Same Semantic Meaning
-State Projection != State Copy
-State Consumer != State Owner
-Cross-domain State Change != Direct State Mutation
-Current Effective != Lifecycle State != Freshness
-```
+Deferred != Forgotten
+Deferred != Unowned
+Deferred != Authorized
 
-### AUDIT-PATCH-015
+Future Owner != Current Authorization
+Trigger Reached != Work Authorized
 
-```text
-Cross-stage Exception Classification
-× Operational Failure Routing
-× Recovery / Governance Boundary
-```
+DEFERRED != UNKNOWN
+DEFERRED != UNRESOLVED
 
-状态：
+Must-Happen-Before reached
+→ cannot remain silently Deferred
 
-```text
-HUMAN_APPROVED
-B5-CHAIN-02 = ARCHITECTURALLY_RESOLVED
-```
+Deferred Resolved != Implementation Completed
+Implementation Completed != Activated
 
-核心：
+Future Extension Point != Roadmap Commitment
+Future Capability Reserved != Current Capability
 
-```text
-Operational Exception != Governed Exception
-Error != Failure
-Retry != Fallback
-Runtime Fallback != Durable Rebinding
-Technical Recovery != Semantic Rollback
-Recovery Success != Canonical Acceptance
-Operational Failure != Semantic Conflict
-Failure != Human Decision Required
-Failure Owner != Semantic Authority Owner
+Premature Deferred Activation = FORBIDDEN
 ```
 
 ---
 
-## 4. Batch 5 Final Result
+## 4. Batch 6 Final Result
 
 ```text
 Final Completeness Sweep = PASS
 Additional Blocking Gap = 0
 Additional Blocking Conflict = 0
-B5-PATCH-03 = NOT REQUIRED
-Audit Batch 5 = CLOSED
-```
 
-以下是 Deferred，不重新开 Batch 5 Finding：
-
-```text
-Fault / Incident exact taxonomy
-Root-cause correlation implementation
-Exact error / failure enum
-Retry / backoff / circuit breaker implementation
-Observability / telemetry
-Go error interface
-Recovery algorithm
-F9 physical indexes
-F10 runtime API
-F11 exception UX
+B6-PATCH-02 = NOT REQUIRED
+Audit Batch 6 = CLOSED
 ```
 
 ---
 
-## 5. 下一阶段
-
-下一阶段：
+## 5. Future Boundary State
 
 ```text
-Audit Batch 6
-— Deferred / Future Owner / Boundary
-— 延期项 / 未来 Owner / 边界审计
+Physical Store Topology
+→ future F2 Storage Implementation Freeze Gate
+
+Authority Cutover
+→ RP2 Controlled Cutover
+→ NOT_AUTHORIZED
+
+Final Activation
+→ future explicit proposal + applicable gates + Human Governance
+→ NOT_AUTHORIZED
+
+Legacy Retirement
+→ F12 / RP9
+→ NOT_AUTHORIZED
+
+AI Autonomous Learning
+→ Future Capability Reserved
+→ NOT_IMPLEMENTED
 ```
-
-Batch 6 不等于开始 Implementation。
-
-Batch 6 目标是审查 F1～F8 中所有：
-
-```text
-Deferred
-Future Owner
-Future Stage
-Implementation-owned
-Migration-owned
-Runtime-owned
-Index-owned
-UX-owned
-Unresolved-but-explicitly-deferred
-```
-
-是否都有明确：
-
-```text
-why deferred
-who owns it later
-when it becomes applicable
-what it must not do before activation
-whether it leaves an architecture hole
-```
-
-仍然必须先四源对账后再登记 Finding。
 
 ---
 
-## 6. 固定工作方式
+## 6. 下一阶段
+
+下一阶段**不是普通 Audit Batch 7**。
+
+进入：
+
+```text
+Final Cross-stage Review
+```
+
+---
+
+## 7. Final Cross-stage Review 任务
+
+将：
+
+```text
+F1～F8 v1.0 Original Frozen Baseline
++
+AUDIT-PATCH-001～016
+```
+
+视作一张完整架构网，重新执行四源对账和跨阶段完整性检查。
+
+重点不是重复单阶段审计。
+
+重点寻找：
+
+```text
+A is locally correct
+B is locally correct
+but A → B composition is ambiguous / conflicting / authority-leaking
+```
+
+---
+
+## 8. 必查链路
+
+```text
+Authority Chain
+Canonical Truth Chain
+Owner Chain
+State / Effective State Chain
+Binding Chain
+Decision / Approval / Authorization Chain
+Gate Chain
+Change / Apply Chain
+Freshness / Re-resolution Chain
+Exception / Failure Chain
+Deferred / Future-owner Chain
+Runtime Handoff Chain
+Migration / Cutover / Final Activation Chain
+```
+
+---
+
+## 9. 固定流程
 
 ```text
 四源对账
@@ -176,16 +190,43 @@ whether it leaves an architecture hole
 → 完整修正设计
 → 完整审批稿
 → exact <PATCH-ID> HUMAN_APPROVED
-→ 正式独立 Markdown
+→ 正式独立 Audit Patch
 → Final Completeness Sweep
-→ Batch Closeout
+→ Final Cross-stage Review Closeout
 ```
 
-普通“好的 / 下一步 / 继续 / 按建议”不等于审批。
+普通：
+
+```text
+好的 / 下一步 / 继续 / 按建议
+```
+
+不等于 Human Approval。
 
 ---
 
-## 7. 固定禁止事项
+## 10. Review 完成后
+
+进入：
+
+```text
+F1～F8 v1.1 Consolidated Candidate
+```
+
+然后：
+
+```text
+No-Loss Reconciliation
+→ Final Consolidated Freeze Review
+→ Explicit Human Approval
+→ New Freeze Baseline
+```
+
+仍不自动进入 Implementation。
+
+---
+
+## 11. 固定禁止事项
 
 ```text
 Implementation = NOT_AUTHORIZED
