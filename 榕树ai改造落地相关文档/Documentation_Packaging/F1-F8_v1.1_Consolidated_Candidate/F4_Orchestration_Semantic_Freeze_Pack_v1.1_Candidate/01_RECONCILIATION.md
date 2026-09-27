@@ -35,6 +35,8 @@ F4 freezes Role / Capability / Skill / Workflow semantics and their boundaries w
 ### F3
 Exactly ten DefinitionArtifact types remain frozen: RoleDefinition, CapabilityDefinition, SkillDefinition, WorkflowDefinition, PolicyDefinition, StateModelDefinition, DecisionProtocolDefinition, TemplateDefinition, ProviderContractDefinition, CompatibilitySpecDefinition. F4 adds no new type.
 
+Candidate supersession (AUDIT-PATCH-002): the ten-type sentence is the retained v1.0 F3 baseline. The current Candidate taxonomy has eleven types and adds `ConfigurationProfileDefinition`. F4 still adds no further type. FAST, NORMAL, and CONTROLLED remain execution-intensity values, and their current name is Execution Governance Mode, not Configuration Profile. Historical F4-D03 stays under `source_baseline`.
+
 ## Legacy / R1 preservation
 
 R1 preserved 43 migrated artifacts across Role, Policy, Skill, Workflow, State, Template, Decision Protocol, Context Recovery and Compatibility. F4 preserves these invariants:

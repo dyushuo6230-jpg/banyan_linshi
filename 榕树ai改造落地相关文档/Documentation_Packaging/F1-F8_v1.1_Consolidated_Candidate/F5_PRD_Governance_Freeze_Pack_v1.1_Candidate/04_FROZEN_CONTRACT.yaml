@@ -260,6 +260,12 @@ deferred_to_implementation_or_later_stages:
 - ROLLBACK_IMPLEMENTATION
 - OPENSPEC_PHYSICAL_REPRESENTATION
 - CON002_CONCRETE_AUTHORITY_WINNER
+con_002:
+  historical_deferral_label_retained: CON002_CONCRETE_AUTHORITY_WINNER
+  architecture_status: ARCHITECTURALLY_RESOLVED
+  concrete_authority_winner_still_required: false
+  architecture_answer: Project Authority Binding + Authority Envelope + Effective Authority Resolution + Governed Conflict Override Exception Resolution
+  remaining_deferral: physical_idp_rbac_schema_api_webui_runtime_representation
 global_authorization:
   implementation: false
   rp2: false
@@ -267,3 +273,24 @@ global_authorization:
   full_legacy_migration: false
   legacy_retirement_delete: false
   final_activation: false
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false

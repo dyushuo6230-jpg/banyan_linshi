@@ -142,9 +142,13 @@ rule_governance:
     index_miss_means_rule_absent: false
   profile:
     role: COMPOSE_BIND_SCOPE_VERSION_OVERRIDE_REFERENCE
+    historical_role_label_retained: true
+    profile_definition_owns_project_adoption: false
+    profile_binding_is_adoption_relation: true
     copies_rule_body: false
     ordering_is_priority: false
     shared_latest_auto_upgrades_project: false
+  rule_relation_labels_are_not_binding_relation_labels: true
   effective_context:
     design_context: DERIVED_REBUILDABLE_TASK_SCOPED_MINIMUM_SUFFICIENT
     implementation_context: DERIVED_REBUILDABLE_TASK_SCOPED_MINIMUM_SUFFICIENT
@@ -378,3 +382,24 @@ deferred:
 - CANONICAL_APPLY_IMPLEMENTATION
 - MIGRATION_ROLLBACK_IMPLEMENTATION
 - AI_LEARNING_IMPLEMENTATION
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false

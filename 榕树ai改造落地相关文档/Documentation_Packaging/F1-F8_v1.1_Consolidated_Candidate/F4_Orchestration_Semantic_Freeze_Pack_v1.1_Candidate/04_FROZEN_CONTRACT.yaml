@@ -130,6 +130,18 @@ workflow:
   adaptive_gate:
     applicability_separate_from_human_interaction: true
     hold_requires_authorized_release: true
+    expressible_states: [PASS, BLOCKED, HOLD, REVIEW_REQUIRED, UNRESOLVED, STALE]
+    unresolved_is_peer_gate_state: true
+    hold_equals_review_required: false
+    missing_required_qualifier_is_pass: false
+    point_of_use_revalidation_equals_full_reresolution: false
+    execution_governance_mode_values: [FAST, NORMAL, CONTROLLED]
+    fast_normal_controlled_are_configuration_profiles: false
+    preference_disables_validation: false
+    dynamic_composition_is_code_development_mode_selector: false
+    cycle_equals_semantic_conflict: false
+    global_handoff_authority_forbidden: true
+    gate_definition_top_level_type_added: false
 resolution:
   execution_separate: true
   execution_plan_required: true
@@ -167,3 +179,24 @@ cross_stage_gate:
   handoff_preserves_governance_critical_qualifiers: true
   point_of_use_revalidation_required_when_basis_material: true
   missing_required_qualifier_is_pass: false
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false

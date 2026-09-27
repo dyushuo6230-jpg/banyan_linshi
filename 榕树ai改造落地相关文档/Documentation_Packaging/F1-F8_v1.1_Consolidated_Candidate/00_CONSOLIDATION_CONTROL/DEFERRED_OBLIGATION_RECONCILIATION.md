@@ -34,12 +34,13 @@ For each row, `Still Deferred` means the current Candidate has no valid resoluti
 - **Dependencies / output / guard:** Cross-stage architecture and F12 migration planning; expected governed migration plan and owner-resolved exception proposals. Current guard allows inventory, discovery, classification, mapping, shadow work, compatibility and dry-run only.
 - **Validity:** Safe **YES**; owner-resolvable **YES**; bounded **YES**; future-recoverable **YES** (named gate and permitted preparatory scope). **VALID_DEFERRED**.
 
-### 5. F5 / CON-002_CONCRETE_AUTHORITY_WINNER — Required Future Decision
+### 5. F5 / CON-002 physical authority representation — Required Future Decision
 
-- **Source / declaring owner / future owner:** F5 `04_FROZEN_CONTRACT.yaml:245–262`, `01_RECONCILIATION.md:241`; F5 Product Authority declaration → applicable human Project Authority governance, with F8 project binding/reconciliation. Status **Still Deferred**; Owner Changed **NO**; Boundary Changed **NO**.
-- **Trigger / must-before / forbidden:** When the concrete CON-002 project authority is needed for an applicable project action; resolve before projecting that project's authority as PASS or enabling protected work. No guessed concrete winner.
-- **Dependencies / output / guard:** Specific project authority evidence and F8 scoped binding; expected governed project authority decision. Current guard is `TYPED_BLOCKED_HUMAN_PROJECT_AUTHORITY`, not a claim that F5 Product Semantic Architecture is undefined. The existing future human gate does not require a new decision in this correction pass.
-- **Validity:** Safe **YES** (the affected action stays blocked); owner-resolvable **YES**; bounded **YES**; future-recoverable **YES** (explicit carried blocker). **VALID_DEFERRED**.
+- **Source / declaring owner / future owner:** F5 `04_FROZEN_CONTRACT.yaml` `con_002` and the retained historical label `CON002_CONCRETE_AUTHORITY_WINNER`; F5 Product Authority declaration → later physical owner for identity provider, RBAC/ABAC, schema, API, WebUI, and runtime representation, with F8 project binding mechanics. Status **Still Deferred**; Owner Changed **NO**; Boundary Changed **YES**.
+- **Why the boundary changed:** HUMAN_APPROVED AUDIT-PATCH-009 §13 sets `CON-002 = ARCHITECTURALLY_RESOLVED`. The architecture answer is Project Authority Binding, Authority Envelope, Effective Authority Resolution, and governed conflict, override, and exception resolution. The historical winner label stays in `source` text and is not an open architecture question. `concrete_authority_winner_still_required: false`.
+- **Trigger / must-before / forbidden:** When a project action needs the physical authority representation; resolve that representation before projecting the project's authority as PASS or enabling the protected work. Do not invent a concrete architecture winner and do not guess unknown authority.
+- **Dependencies / output / guard:** Patch 009 architecture answer, specific project authority evidence, and F8 scoped binding; expected physical representation under the later owner. Current guard remains typed blocked human project authority for the unresolved physical form. Product semantic architecture is not undefined.
+- **Validity:** Safe **YES** (the affected action stays blocked); owner-resolvable **YES**; bounded **YES**; future-recoverable **YES**. **VALID_DEFERRED**. Not an architecture gap.
 
 ### 6. F6 / AI_AUTONOMOUS_LEARNING — Future Capability Reserved
 
@@ -110,7 +111,7 @@ For each row, `Still Deferred` means the current Candidate has no valid resoluti
 |---|---:|
 | Material Deferred reviewed | 14 |
 | Still Deferred / Resolved / Superseded / Not Applicable | 14 / 0 / 0 / 0 |
-| Owner Changed / Boundary Changed | 0 / 0 |
+| Owner Changed / Boundary Changed | 0 / 1 |
 | VALID_DEFERRED / BLOCKING_GAP | 14 / 0 |
 
 Each still-deferred item can leave the present architecture correct and safe because its protected action remains barred until a specific future trigger and gate. This is a consolidation evidence finding, not a future implementation design, human decision, Final Review PASS, freeze or activation. The per-item status and history remain in the domain-owned source contracts; future F9 discovery may aid retrieval but cannot replace those sources.

@@ -81,6 +81,38 @@ core_invariants:
 - "DependencyCycle != WorkflowLoop"
 - "HandoffAccepted != BasisValidForever"
 - "MissingRequiredQualifier != PASS"
+- "Cycle != Semantic Conflict"
+- "Index Match != Candidate Eligibility != Effective Binding"
+- "Selection Policy != Semantic Authority"
+- "Composition != Conflict"
+- "UNRESOLVED != CONFLICTED"
+- "Scope Match != Precedence"
+- "Project Local != Automatic Override"
+- "Handoff Composition != Authority Merge"
+- "GlobalHandoffAuthority = FORBIDDEN"
+- "UniversalBindingResolver = FORBIDDEN"
+- "Cached Result != Automatic Cycle Breaker"
+- "Provider Failure != Provider Binding Invalid"
+- "Technical Recovery != Reconciliation != Re-resolution"
+- "Declaring Owner != Future Resolution Owner"
+- "Deferred Guard != Authority"
+- "Runtime-owned != Runtime Activated"
+- "Handoff Accepted != Basis Valid Forever"
+binding_relations:
+- COMPOSE
+- ALTERNATIVE
+- FALLBACK
+- OVERRIDE
+- CONSTRAINT
+- MUTUALLY_EXCLUSIVE
+binding_winner_forbidden:
+- LATEST
+- FILE_ORDER
+- LAST_WRITE
+- SPECIFICITY
+- CONFIDENCE
+- AI_GUESS
+profile_definition_name: ConfigurationProfileDefinition
 owner_map:
   project_identity: F8-D01
   source_mapping_location_binding: F8-D02
@@ -142,3 +174,24 @@ authorization:
   final_activation: false
   canonical_replacement: false
   legacy_retirement: false
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false
