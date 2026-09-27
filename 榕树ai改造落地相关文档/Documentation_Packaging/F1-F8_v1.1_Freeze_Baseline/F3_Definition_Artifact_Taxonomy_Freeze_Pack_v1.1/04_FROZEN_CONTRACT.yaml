@@ -1,0 +1,115 @@
+candidate_metadata:
+  version: "1.1"
+  pack_name: F3_Definition_Artifact_Taxonomy_Freeze_Pack_v1.1
+  stage: F3
+  lifecycle_state: FROZEN_ARCHITECTURE_CONTRACT
+  human_approved: true
+  architecture_freeze_granted: true
+  freeze_baseline_established: true
+  authorization:
+    implementation: NOT_AUTHORIZED
+    rp2: NOT_AUTHORIZED
+    authority_cutover: NOT_AUTHORIZED
+    canonical_replacement: NOT_AUTHORIZED
+    final_activation: NOT_AUTHORIZED
+    legacy_retirement: NOT_AUTHORIZED
+    sqlite_physical_schema: NOT_FROZEN
+
+source_baseline:
+  version: "1.0"
+  identity_interpretation: SOURCE_BASELINE_REFERENCE_NOT_REVERSIONED
+  historical_metadata:
+    contract_id: banyan.f3.definition_artifact_taxonomy.v1
+    contract_status: FROZEN_FOR_DOWNSTREAM_ARCHITECTURE
+    architecture_freeze: PASS
+    implementation_authorized: false
+
+
+definition_artifact_taxonomy:
+  mode: CLOSED_BUT_EXTENSIBLE
+  top_level_types:
+    - RoleDefinition
+    - CapabilityDefinition
+    - SkillDefinition
+    - WorkflowDefinition
+    - PolicyDefinition
+    - StateModelDefinition
+    - DecisionProtocolDefinition
+    - TemplateDefinition
+    - ProviderContractDefinition
+    - CompatibilitySpecDefinition
+    - ConfigurationProfileDefinition
+
+  configuration_profile_semantics: REUSABLE_GOVERNED_COMPOSITION
+  profile_definition_is_project_instance: false
+  workflow_choice_adds_type: false
+  rule_or_standard_adds_type: false
+classification:
+  primary_type:
+    cardinality: EXACTLY_ONE
+  domain:
+    cardinality: ZERO_OR_MORE
+  tag:
+    cardinality: ZERO_OR_MORE
+  typed_relation:
+    cardinality: ZERO_OR_MORE
+
+invariants:
+  capability_is_skill: false
+  role_is_permission: false
+  workflow_definition_is_workflow_run: false
+  state_model_is_current_state: false
+  decision_protocol_is_decision_session: false
+  template_is_schema: false
+  template_is_instance: false
+  provider_contract_is_provider_binding: false
+  compatibility_spec_is_migration_run: false
+  context_recovery_is_top_level_type: false
+  schema_is_definition_artifact_type: false
+  registry_is_definition_artifact_type: false
+  manifest_is_definition_artifact_type: false
+  accepted_semantics_must_be_preserved: true
+  old_structure_must_be_permanent: false
+
+  profile_binding_is_definition: false
+  effective_profile_is_canonical_truth: false
+  profile_derived_maintenance_default: AUTOMATIC_UNDER_GOVERNANCE
+  profile_canonical_mutation_owner: F7
+  typed_state_domain_required: true
+  rule_entry_canonical_primary_module_cardinality: EXACTLY_ONE
+  rule_entry_canonical_write_target_cardinality: EXACTLY_ONE
+  policy_or_rule_system_reference_grants_rule_entry_ownership: false
+  policy_minimum_coherent_governance_purpose: true
+  rule_definition_top_level_type_added: false
+taxonomy_change_gate:
+  new_type_requires_versioned_change_proposal: true
+  new_type_requires_impact_analysis: true
+  new_type_requires_human_decision: true
+
+migration_protection:
+  r1_rp1_categories_remain_valid: true
+  physical_reclassification_in_f3: false
+  relocation_in_f3: false
+  deletion_in_f3: false
+  authority_cutover_in_f3: false
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false

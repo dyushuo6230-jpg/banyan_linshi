@@ -1,0 +1,202 @@
+candidate_metadata:
+  version: "1.1"
+  pack_name: F4_Orchestration_Semantic_Freeze_Pack_v1.1
+  stage: F4
+  lifecycle_state: FROZEN_ARCHITECTURE_CONTRACT
+  human_approved: true
+  architecture_freeze_granted: true
+  freeze_baseline_established: true
+  authorization:
+    implementation: NOT_AUTHORIZED
+    rp2: NOT_AUTHORIZED
+    authority_cutover: NOT_AUTHORIZED
+    canonical_replacement: NOT_AUTHORIZED
+    final_activation: NOT_AUTHORIZED
+    legacy_retirement: NOT_AUTHORIZED
+    sqlite_physical_schema: NOT_FROZEN
+
+source_baseline:
+  version: "1.0"
+  identity_interpretation: SOURCE_BASELINE_REFERENCE_NOT_REVERSIONED
+  historical_metadata:
+    contract_id: banyan.f4.orchestration.semantic.v1
+    status: ARCHITECTURE_FROZEN
+    human_approved: true
+    implementation_authorized: false
+    rp2_implementation_authorized: false
+    final_activation: NOT_AUTHORIZED
+
+principles:
+- TOKEN_EFFICIENCY_MUST_NOT_REDUCE_GOVERNANCE_FIDELITY
+- Role != Capability != Skill != Workflow
+- Capability != Skill
+- Definition != Assignment != Binding != RuntimeExecution
+- Role != Permission != Authority != GitIdentity != Authentication
+- Provider != Skill
+- EngineeringStandard != Policy
+- Evidence != Authority
+- LearningProposal != Authorization
+- WorkflowAtom != DefinitionArtifact
+orchestration:
+  model: GOVERNED_GOAL_ORIENTED_GRAPH
+  goal_first: true
+  minimum_valid_graph: true
+  progressive_resolution: true
+  reuse_before_recompute: true
+  localized_invalidation: true
+  progressive_disclosure_ux: true
+  reliability_floor: true
+role:
+  planes:
+  - SOURCE
+  - FUNCTIONAL
+  - PARTICIPATION_GOVERNANCE
+  core_functional_roles:
+  - Requirement & Product Definition
+  - Architecture & Solution Planning
+  - Software Implementation
+  - Verification & Validation
+  - Change Reconciliation
+  - Engineering Standards Steward
+  - UI / Design Intelligence
+  - Engineering Knowledge & Continuity
+  assignment_separate: true
+  grants_permission: false
+  grants_authority: false
+capability:
+  functional_families:
+  - Requirement & Product Definition
+  - Architecture, Technical Design & Solution Planning
+  - Software Implementation
+  - Verification & Validation
+  - Change & Reconciliation
+  - Engineering Standards Stewardship
+  - UI / Design Intelligence
+  - Knowledge & Engineering Continuity
+  - Delivery Planning & Release Readiness
+  skill_required_by_default: false
+  typed_gap_required: true
+skill:
+  definition: stable reusable optional execution method
+  automatic_resolution_default: true
+  pin_exclude_require_supported: true
+  missing_skill_auto_blocks: false
+workflow:
+  runtime_model: ONE_GRAPH_RUNTIME
+  logical_layers:
+  - Adaptive Orchestration Kernel
+  - Goal-Oriented Workflow Families
+  - Reusable Cross-Cutting Subworkflows
+  node_categories:
+  - Functional Node
+  - Control Node
+  - Decision / Governance Interrupt Node
+  - Validation / Reconciliation Node
+  graph_semantics:
+  - Branch
+  - Merge
+  - Pause
+  - Resume
+  - Loop
+  - Retry
+  - Skip
+  - Replace
+  - Invalidate
+  - Partial Blocking
+  - Checkpoint
+  - Reconcile
+  - Escalation
+  - De-escalation
+  atom:
+    new_artifact_type: false
+    routes_to:
+    - Workflow Node semantic
+    - WorkflowDefinition/Subworkflow
+    - SkillDefinition
+    - Graph Control Semantics
+  candidate_choice:
+    governed_dynamic_composition: true
+    validity_filter_before_choice: true
+    materially_distinct_choice_modes: [AUTO, ASK_WHEN_MULTIPLE_VALID]
+    explicit_user_choice_intent_task_override: ASK_WHEN_MULTIPLE_VALID
+    explicit_user_auto_intent_task_override: AUTO
+    task_override_precedes_project_preference_precedes_user_default: true
+    preference_precedence_is_governance_authority_priority: false
+    informed_decision_requires_multiple_valid_materially_distinct_candidates_and_ask: true
+    task_auto_bypasses_policy_authority_validation_reliability_gate_or_scope: false
+    task_auto_approves_later_canonical_semantic_change: false
+    choice_preference_is_governance_mode: false
+    auto_scope_expansion: false
+  adaptive_gate:
+    applicability_separate_from_human_interaction: true
+    hold_requires_authorized_release: true
+    expressible_states: [PASS, BLOCKED, HOLD, REVIEW_REQUIRED, UNRESOLVED, STALE]
+    unresolved_is_peer_gate_state: true
+    hold_equals_review_required: false
+    missing_required_qualifier_is_pass: false
+    point_of_use_revalidation_equals_full_reresolution: false
+    execution_governance_mode_values: [FAST, NORMAL, CONTROLLED]
+    fast_normal_controlled_are_configuration_profiles: false
+    preference_disables_validation: false
+    dynamic_composition_is_code_development_mode_selector: false
+    cycle_equals_semantic_conflict: false
+    global_handoff_authority_forbidden: true
+    gate_definition_top_level_type_added: false
+resolution:
+  execution_separate: true
+  execution_plan_required: true
+  skill_optional: true
+  provider_cannot_redefine_semantics: true
+  localized_reresolution: true
+  cross_target_hard_dependency_graph: ACTIVE_SCOPE_CONTEXT_AWARE
+  cycle_or_oscillation_requires_typed_termination: true
+  resolution_creates_authority: false
+validation:
+  levels:
+  - INVOCATION
+  - NODE
+  - WORKFLOW
+  - GOAL
+  skill_validation_replaces_node_or_goal: false
+engineering_standards:
+  independent_semantic_domain: true
+  new_definition_artifact_type: false
+  effective_project_result: SCOPED_DERIVED_REBUILDABLE_RESOLUTION
+  effective_project_result_is_canonical_truth: false
+cross_stage_gate:
+  id: CROSS-STAGE-GATE-01
+  required_before:
+  - Full Legacy Semantic Migration
+  - Authority Cutover
+  - Canonical Rewrite
+  - Legacy Retirement
+  - Final Binding Activation
+  required_zero_conditions:
+  - UNROUTED_HIGH_VALUE_SEMANTIC
+  - SEMANTIC_OWNER_GAP
+  - UNRESOLVED_HIGH_IMPACT_TYPE_MAPPING
+  - SILENT_SEMANTIC_DROP
+  handoff_preserves_governance_critical_qualifiers: true
+  point_of_use_revalidation_required_when_basis_material: true
+  missing_required_qualifier_is_pass: false
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false

@@ -1,0 +1,177 @@
+candidate_metadata:
+  version: "1.1"
+  pack_name: F2_Storage_Truth_Model_Freeze_Pack_v1.1
+  stage: F2
+  lifecycle_state: FROZEN_ARCHITECTURE_CONTRACT
+  human_approved: true
+  architecture_freeze_granted: true
+  freeze_baseline_established: true
+  authorization:
+    implementation: NOT_AUTHORIZED
+    rp2: NOT_AUTHORIZED
+    authority_cutover: NOT_AUTHORIZED
+    canonical_replacement: NOT_AUTHORIZED
+    final_activation: NOT_AUTHORIZED
+    legacy_retirement: NOT_AUTHORIZED
+    sqlite_physical_schema: NOT_FROZEN
+
+source_baseline:
+  version: "1.0"
+  identity_interpretation: SOURCE_BASELINE_REFERENCE_NOT_REVERSIONED
+  historical_metadata:
+    contract_id: banyan.f2.storage_truth_model.v1
+    contract_status: FROZEN_FOR_DOWNSTREAM_ARCHITECTURE
+    architecture_freeze: PASS
+    implementation_authorized: false
+
+
+invariants:
+  authority:
+    one_semantic_fact_one_canonical_write_target: true
+    total_truth_database: false
+    duplicate_writable_truth_forbidden: true
+
+  artifact_truth:
+    semantic_truth: GOVERNED_FILE_BASED_CANONICAL_SOURCE
+    composite_artifact_allowed: true
+    exclusive_field_ownership: true
+    sqlite_may_be_canonical: false
+
+  project_instance_truth:
+    type: PROJECTINSTANCE_STRUCTURED_TRUTH
+    durable: true
+    non_derived: true
+    sqlite_projection_only: true
+    exact_layout_owner: F8
+
+  runtime_truth:
+    type: DURABLE_OPERATIONAL_TRUTH
+    may_override_artifact_semantic_truth: false
+
+  evidence_truth:
+    durable_source_required: true
+    rebuildable_index_may_be_sole_source: false
+
+  context_memory:
+    canonical: false
+    may_override_higher_authority_source: false
+    promotion_requires_governed_authority_target: true
+
+  derived_index:
+    canonical: false
+    rebuildable: true
+    query_layer: true
+    source_resolution_required: true
+    freshness_required: true
+    typed_relationship_graph_required: true
+
+  adaptive_query_scope:
+    data_foundation_owner: F2
+    expansion_policy_owner: F9
+    uncontrolled_recursive_expansion_forbidden: true
+
+  identity_version_status:
+    stable_id_independent_of_path: true
+    stable_id_independent_of_filename: true
+    stable_id_independent_of_git_commit: true
+    id_reuse_for_new_semantic_subject_forbidden: true
+    status_domains_typed: true
+
+  canonical_apply:
+    logical_apply_unit_required: true
+    predeclared_write_set_required: true
+    expected_base_validation_required: true
+    durable_apply_journal_before_first_write: true
+    partial_canonical_success_claim_forbidden: true
+    technical_recovery_required_on_partial_failure: true
+
+  recovery:
+    semantic_reversal_requires_new_governed_change: true
+    deterministic_safe_recovery_default: AUTO
+    ambiguous_or_high_risk_recovery: HUMAN_DECISION
+
+  migration:
+    source_target_lineage_required: true
+    one_controlled_authority_cutover: true
+    long_term_dual_writable_truth_forbidden: true
+    recovery_copy_is_authority: false
+
+  rebuild:
+    file_created_equals_success: false
+    semantic_equivalence_required: true
+    byte_identity_required: false
+
+  logical_store_separation:
+    runtime_operational_store: DURABLE_OPERATIONAL_TRUTH
+    derived_query_index: NON_CANONICAL_REBUILDABLE_PROJECTION
+    index_rebuild_may_destroy_runtime_truth: false
+
+  candidate_standard_truth:
+    project_current_effective_standard_set_is_derived: true
+    cached_effective_result_is_canonical_truth: false
+  candidate_freshness:
+    material_dependency_and_scope_required_for_invalidation: true
+    stale_deletes_history: false
+  candidate_recovery:
+    operational_exception_is_governed_exception: false
+    technical_recovery_is_semantic_rollback: false
+deferred_required_decision:
+  id: PHYSICAL_STORE_TOPOLOGY
+  subject: PERSISTENT_RUNTIME_INDEX_AND_OPTIONAL_EVIDENCE_STORE_TOPOLOGY
+  question: ONE_DB_VS_SEPARATE_RUNTIME_INDEX_AND_JUSTIFIED_EVIDENCE_STORE
+  rationale: PRESERVE_RUNTIME_TRUTH_AND_REBUILDABLE_INDEX_BOUNDARY
+  declaring_owner: F2_STORAGE_TRUTH_MODEL
+  future_owner: STORAGE_IMPLEMENTATION_FREEZE
+  decision_owner_gate: STORAGE_IMPLEMENTATION_FREEZE
+  trigger: AFTER_F8_F9_F10_ARCHITECTURE_FREEZE_BEFORE_PERSISTENT_DDL_OR_MIGRATION
+  prerequisites:
+    - F8_ARCHITECTURE_FREEZE_PASS
+    - F9_ARCHITECTURE_FREEZE_PASS
+    - F10_ARCHITECTURE_FREEZE_PASS
+  dependencies:
+    - F8_ARCHITECTURE_FREEZE_PASS
+    - F9_ARCHITECTURE_FREEZE_PASS
+    - F10_ARCHITECTURE_FREEZE_PASS
+  must_happen_before:
+    - PERSISTENT_RUNTIME_DDL
+    - PERSISTENT_INDEX_DDL
+    - STORAGE_MIGRATIONS
+  forbidden_before_resolution:
+    - PERSISTENT_RUNTIME_DDL
+    - PERSISTENT_INDEX_DDL
+    - STORAGE_MIGRATIONS
+  expected_resolution_output: HUMAN_APPROVED_PHYSICAL_STORE_TOPOLOGY_DECISION
+  requires_human_decision: true
+  logical_status: DEFERRED
+  status_history_required: true
+  provenance: F2_TARGET_DESIGN_SECTION_14_AND_AUDIT_PATCH_016
+  closure_or_supersession_history_required: true
+
+illustrative_examples:
+  business_domain_names_are_framework_contracts: false
+  names:
+    - Order
+    - Payment
+    - Inventory
+    - Coupon
+
+approved_clause_closure:
+  detection_direction_equals_authority_direction: false
+  missing_required_qualifier_is_pass: false
+  handoff_accepted_means_basis_valid_forever: false
+  point_of_use_revalidation_equals_full_reresolution: false
+  later_consumer_is_higher_authority: false
+  upstream_stale_may_silently_become_current: false
+  global_handoff_authority_forbidden: true
+  global_exception_manager_forbidden: true
+  universal_resolver_forbidden: true
+  bare_exception_label_is_ambiguous: true
+  unbounded_retry_forbidden: true
+  event_equals_state: false
+  state_projection_equals_authority_transfer: false
+  state_consumer_equals_state_owner: false
+  deferred_guard_equals_authority: false
+  declaring_owner_equals_future_resolution_owner: false
+  runtime_owned_equals_runtime_activated: false
+  future_extensibility_equals_current_authorization: false
+  index_miss_equals_absence: false
