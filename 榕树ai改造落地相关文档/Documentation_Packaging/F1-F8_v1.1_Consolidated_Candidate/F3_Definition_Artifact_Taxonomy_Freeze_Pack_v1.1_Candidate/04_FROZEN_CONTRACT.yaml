@@ -1,19 +1,29 @@
-# v1.1 CONSOLIDATED CANDIDATE — AWAITING_FINAL_CONSOLIDATED_FREEZE_REVIEW
-# Historical v1.0 approval/freeze fields below describe the source contract only.
-# They do not approve or freeze this candidate.
-candidate_status: AWAITING_FINAL_CONSOLIDATED_FREEZE_REVIEW
-candidate_authorization:
-  implementation: NOT_AUTHORIZED
-  rp2: NOT_AUTHORIZED
-  authority_cutover: NOT_AUTHORIZED
-  canonical_replacement: NOT_AUTHORIZED
-  final_activation: NOT_AUTHORIZED
-  legacy_retirement: NOT_AUTHORIZED
-  sqlite_physical_schema: NOT_FROZEN
-contract_id: banyan.f3.definition_artifact_taxonomy.v1
-contract_status: FROZEN_FOR_DOWNSTREAM_ARCHITECTURE
-architecture_freeze: PASS
-implementation_authorized: false
+candidate_metadata:
+  version: "1.1"
+  pack_name: F3_Definition_Artifact_Taxonomy_Freeze_Pack_v1.1_Candidate
+  stage: F3
+  lifecycle_state: AWAITING_FINAL_CONSOLIDATED_FREEZE_REVIEW
+  human_approved: false
+  architecture_freeze_granted: false
+  freeze_baseline_established: false
+  authorization:
+    implementation: NOT_AUTHORIZED
+    rp2: NOT_AUTHORIZED
+    authority_cutover: NOT_AUTHORIZED
+    canonical_replacement: NOT_AUTHORIZED
+    final_activation: NOT_AUTHORIZED
+    legacy_retirement: NOT_AUTHORIZED
+    sqlite_physical_schema: NOT_FROZEN
+
+source_baseline:
+  version: "1.0"
+  identity_interpretation: SOURCE_BASELINE_REFERENCE_NOT_REVERSIONED
+  historical_metadata:
+    contract_id: banyan.f3.definition_artifact_taxonomy.v1
+    contract_status: FROZEN_FOR_DOWNSTREAM_ARCHITECTURE
+    architecture_freeze: PASS
+    implementation_authorized: false
+
 
 definition_artifact_taxonomy:
   mode: CLOSED_BUT_EXTENSIBLE
