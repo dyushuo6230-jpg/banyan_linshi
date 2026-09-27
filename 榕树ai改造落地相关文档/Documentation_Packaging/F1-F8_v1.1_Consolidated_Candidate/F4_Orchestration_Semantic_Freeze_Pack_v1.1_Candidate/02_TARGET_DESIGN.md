@@ -164,6 +164,8 @@ Handoff is a typed transition contract, not necessarily a dedicated node. It can
 ### Candidate integration — handoff integrity
 
 A material handoff preserves the qualifiers needed for its purpose: source owner, consumer, subject, scope/context, typed result, authority and resolution basis, revision/version, freshness/applicability, state/gate/decision qualifiers, blockers, unknowns, holds, provenance, deferred guards and downstream obligations where applicable. Minimum sufficient context can omit irrelevant data, not governing qualifiers. Handoff acceptance is not perpetual validity: at point of use, validate relevant basis and context; mismatch routes to owner re-resolution and does not give the consumer mutation authority. Missing required qualifier never means PASS. Future F9 supplies evidence and F10 consumes under its own runtime permission boundary.
+
+When this envelope carries a Material Deferred, it additionally preserves the deferred topic, frozen boundary, specific resolution trigger, dependencies, forbidden-before-resolution actions, expected future resolution, applicable must-happen-before and current guard, with owner, scope and provenance. This is the Patch 016 deferred payload within the Patch 017 general handoff, not a separate transport. Deferred Handoff != Current Authority Transfer; Deferred Handoff != Implementation Authorization; receipt grants no current canonical-mutation or runtime permission.
 ## 9. Validation
 
 Keep separate: Invocation Success / Node Success / Workflow Success / Goal Success. Skill validation does not replace Node or Goal validation.

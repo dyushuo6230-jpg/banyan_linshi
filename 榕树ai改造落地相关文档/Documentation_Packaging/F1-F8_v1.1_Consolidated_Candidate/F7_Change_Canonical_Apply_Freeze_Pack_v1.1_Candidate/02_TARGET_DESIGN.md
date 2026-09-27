@@ -422,6 +422,8 @@ Runtime Executor != Decision Authority
 ### Candidate integration — handoff qualifiers
 
 The handoff preserves purpose, source owner, consumer, target, scope, authority and resolution basis, expected base/revision, freshness, typed state, UNKNOWN/BLOCKED/HOLD, provenance, downstream checks and active deferred guard. Acceptance of a handoff does not freeze its basis forever. Future F9 provides discovery evidence and F10 independently checks runtime permission; neither gains F7 or domain authority.
+
+When this envelope carries a Material Deferred, it additionally preserves the deferred topic, frozen boundary, specific resolution trigger, dependencies, forbidden-before-resolution actions, expected future resolution, applicable must-happen-before and current guard, with owner, scope and provenance. This is the Patch 016 deferred payload within the Patch 017 general handoff, not a separate transport. Deferred Handoff != Current Authority Transfer; Deferred Handoff != Implementation Authorization; receipt grants no current canonical-mutation or runtime permission.
 ## 15. Performance Model
 
 Normal path:

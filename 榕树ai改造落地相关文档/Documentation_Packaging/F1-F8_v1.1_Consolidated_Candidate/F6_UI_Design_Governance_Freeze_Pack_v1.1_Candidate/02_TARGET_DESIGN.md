@@ -1068,6 +1068,8 @@ Those belong to Implementation Freeze or F7～F12 owner stages.
 ### Candidate integration — cross-stage envelope
 
 F6 sends F5/F7/F8 or future F9/F10 only purpose-relevant UI semantics with product link basis, scope/applicability, design authority reference, revision/freshness, typed state, UNKNOWN/BLOCKED/HOLD and deferred guard when applicable. Context compression cannot strip these qualifiers; recipient order gives no authority priority. Missing required qualifier cannot be projected as PASS.
+
+When this envelope carries a Material Deferred, it additionally preserves the deferred topic, frozen boundary, specific resolution trigger, dependencies, forbidden-before-resolution actions, expected future resolution, applicable must-happen-before and current guard, with owner, scope and provenance. This is the Patch 016 deferred payload within the Patch 017 general handoff, not a separate transport. Deferred Handoff != Current Authority Transfer; Deferred Handoff != Implementation Authorization; receipt grants no current canonical-mutation or runtime permission.
 ## 16. Final Architecture Statement
 
 F6 final architecture can be summarized as:

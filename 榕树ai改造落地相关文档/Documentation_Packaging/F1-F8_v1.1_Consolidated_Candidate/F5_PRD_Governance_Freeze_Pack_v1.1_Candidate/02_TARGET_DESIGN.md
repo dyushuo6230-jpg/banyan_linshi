@@ -384,6 +384,8 @@ F7 不创造 Product Decision；F10 `ALLOW` 不创造 Product Authority。
 ### Candidate integration — qualified handoff
 
 F5 sends downstream the purpose, product subject, applicable scope, development-entry/approval state and its owner, authority basis, revision/freshness, product/design linkage, unresolved decisions, HOLD/BLOCKED/UNKNOWN and deferred guards where relevant. The consumer checks these at point of use; a compressed `AUTHORIZED` label alone is governance-incomplete. F7 owns protected mutation; future F10 consumes entry only for development-driving actions and independently owns runtime permission.
+
+When this envelope carries a Material Deferred, it additionally preserves the deferred topic, frozen boundary, specific resolution trigger, dependencies, forbidden-before-resolution actions, expected future resolution, applicable must-happen-before and current guard, with owner, scope and provenance. This is the Patch 016 deferred payload within the Patch 017 general handoff, not a separate transport. Deferred Handoff != Current Authority Transfer; Deferred Handoff != Implementation Authorization; receipt grants no current canonical-mutation or runtime permission.
 ## 12. Core Invariants
 
 ```text
