@@ -1,10 +1,9 @@
-# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v7.0
+# Banyan / 榕树 AI — Pre-F9 下一窗口从这里开始 v8.0
 
-## 1. 当前状态
+## 1. 当前正式状态
 
 ```text
 F1～F8 v1.0 = Original Frozen Baseline / UNCHANGED
-
 Phase 0 = COMPLETE
 
 Audit Batch 1 = CLOSED
@@ -14,217 +13,116 @@ Audit Batch 4 = CLOSED
 Audit Batch 5 = CLOSED
 Audit Batch 6 = CLOSED
 
+Final Cross-stage Review = CLOSED
+
 Formal Audit Patch Range
-= AUDIT-PATCH-001 ～ AUDIT-PATCH-016
+= AUDIT-PATCH-001 ～ AUDIT-PATCH-017
 ```
 
-当前仍为 Audit Patch Layer。
+## 2. 恢复顺序
 
----
-
-## 2. 新窗口恢复顺序
-
-依次读取：
+新窗口依次读取：
 
 1. GitHub F1～F8 v1.0 Freeze Packs；
 2. `00_AUDIT_GOVERNANCE_AND_PACKAGING_PROTOCOL.md`；
-3. `08_BATCH01_FINAL_CLOSEOUT.md`；
-4. `09_BATCH02_FINAL_CLOSEOUT.md`；
-5. `11_BATCH03_FINAL_CLOSEOUT.md`；
-6. `13_BATCH04_FINAL_CLOSEOUT.md`；
-7. `15_BATCH05_FINAL_CLOSEOUT.md`；
-8. `17_BATCH06_FINAL_CLOSEOUT.md`；
-9. `10_HUMAN_APPROVED_PATCHES/` 全部正式 Patch，当前到 `AUDIT-PATCH-016`；
-10. `18_BATCH06_WORKING_HANDOVER_CHECKPOINT.md`；
-11. 本文件。
+3. Batch 1～6 Final Closeout；
+4. `19_FINAL_CROSS_STAGE_REVIEW_CLOSEOUT.md`；
+5. `10_HUMAN_APPROVED_PATCHES/` 全部正式 Patch，当前到 `AUDIT-PATCH-017`；
+6. `20_FINAL_CROSS_STAGE_WORKING_HANDOVER_CHECKPOINT.md`；
+7. 本文件。
 
-不要重做或重新审批 Batch 1～6。
+不要重做或重新审批 Batch 1～6 / Final Cross-stage Review。
 
----
-
-## 3. Batch 6 已冻结
-
-### AUDIT-PATCH-016
+## 3. Final Cross-stage Review 已完成
 
 ```text
-Deferred Obligation Identity
-× Future Owner Resolution
-× Trigger / Activation Boundary
-× Closure / Supersession
+AUDIT-PATCH-017 = HUMAN_APPROVED
+FCR-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+FCR-PATCH-02 = NOT REQUIRED
+Final Cross-stage Whole-chain Sweep = PASS
+Final Cross-stage Review = CLOSED
 ```
 
-状态：
+## 4. 下一阶段
+
+正式进入：
 
 ```text
-HUMAN_APPROVED
-B6-CHAIN-01 = ARCHITECTURALLY_RESOLVED
+F1～F8 v1.1 Consolidation / No-Loss Reconciliation
 ```
 
-核心：
+不是继续增加 Audit Batch。
 
-```text
-Deferred != Forgotten
-Deferred != Unowned
-Deferred != Authorized
-
-Future Owner != Current Authorization
-Trigger Reached != Work Authorized
-
-DEFERRED != UNKNOWN
-DEFERRED != UNRESOLVED
-
-Must-Happen-Before reached
-→ cannot remain silently Deferred
-
-Deferred Resolved != Implementation Completed
-Implementation Completed != Activated
-
-Future Extension Point != Roadmap Commitment
-Future Capability Reserved != Current Capability
-
-Premature Deferred Activation = FORBIDDEN
-```
-
----
-
-## 4. Batch 6 Final Result
-
-```text
-Final Completeness Sweep = PASS
-Additional Blocking Gap = 0
-Additional Blocking Conflict = 0
-
-B6-PATCH-02 = NOT REQUIRED
-Audit Batch 6 = CLOSED
-```
-
----
-
-## 5. Future Boundary State
-
-```text
-Physical Store Topology
-→ future F2 Storage Implementation Freeze Gate
-
-Authority Cutover
-→ RP2 Controlled Cutover
-→ NOT_AUTHORIZED
-
-Final Activation
-→ future explicit proposal + applicable gates + Human Governance
-→ NOT_AUTHORIZED
-
-Legacy Retirement
-→ F12 / RP9
-→ NOT_AUTHORIZED
-
-AI Autonomous Learning
-→ Future Capability Reserved
-→ NOT_IMPLEMENTED
-```
-
----
-
-## 6. 下一阶段
-
-下一阶段**不是普通 Audit Batch 7**。
-
-进入：
-
-```text
-Final Cross-stage Review
-```
-
----
-
-## 7. Final Cross-stage Review 任务
-
-将：
+## 5. Consolidation Input
 
 ```text
 F1～F8 v1.0 Original Frozen Baseline
 +
-AUDIT-PATCH-001～016
+AUDIT-PATCH-001～017 HUMAN_APPROVED
 ```
 
-视作一张完整架构网，重新执行四源对账和跨阶段完整性检查。
+Repository Implementation Reality 可作为 Evidence，但不能自动成为 Consolidation Truth。
 
-重点不是重复单阶段审计。
-
-重点寻找：
+## 6. Consolidation Required Work
 
 ```text
-A is locally correct
-B is locally correct
-but A → B composition is ambiguous / conflicting / authority-leaking
-```
-
----
-
-## 8. 必查链路
-
-```text
-Authority Chain
-Canonical Truth Chain
-Owner Chain
-State / Effective State Chain
-Binding Chain
-Decision / Approval / Authorization Chain
-Gate Chain
-Change / Apply Chain
-Freshness / Re-resolution Chain
-Exception / Failure Chain
-Deferred / Future-owner Chain
-Runtime Handoff Chain
-Migration / Cutover / Final Activation Chain
-```
-
----
-
-## 9. 固定流程
-
-```text
-四源对账
-→ 系统讲清（白话 + 例子）
-→ KEEP / GAP / DEFECT / OPTIMIZATION
-→ 完整修正设计
-→ 完整审批稿
-→ exact <PATCH-ID> HUMAN_APPROVED
-→ 正式独立 Audit Patch
-→ Final Completeness Sweep
-→ Final Cross-stage Review Closeout
-```
-
-普通：
-
-```text
-好的 / 下一步 / 继续 / 按建议
-```
-
-不等于 Human Approval。
-
----
-
-## 10. Review 完成后
-
-进入：
-
-```text
-F1～F8 v1.1 Consolidated Candidate
-```
-
-然后：
-
-```text
+Patch-to-Baseline Integration Mapping
+Per-stage Merge Plan
+Supersession / Compatibility Matrix
 No-Loss Reconciliation
-→ Final Consolidated Freeze Review
-→ Explicit Human Approval
-→ New Freeze Baseline
+Duplicate / Contradiction Detection
+Cross-stage Invariant Reconciliation
+F1～F8 v1.1 Candidate Pack Generation
+Final Consolidated Freeze Review
+Explicit Human Approval
 ```
 
-仍不自动进入 Implementation。
+## 7. No Historical Rewrite
 
----
+```text
+F1～F8 v1.0
+= immutable historical Original Frozen Baseline
+```
+
+不得原地修改 v1.0。
+
+AUDIT-PATCH-001～017 继续独立保留。
+
+## 8. Candidate Boundary
+
+```text
+F1～F8 v1.1 Candidate
+!= New Freeze Baseline
+```
+
+只有 Final Consolidated Freeze Review + Explicit Human Approval 后才成为新 Freeze Baseline。
+
+## 9. Human Decision Boundary
+
+确定性 Mapping / Merge / Dedup / No-Loss Reconciliation 默认自动。
+
+只有：
+
+```text
+real semantic conflict
+authority conflict
+material supersession ambiguity
+multiple legitimate incompatible consolidation outcomes
+```
+
+才进入 Human Decision。
+
+## 10. 下一步启动方式
+
+先执行四源对账，然后从：
+
+```text
+Patch-to-Baseline Integration Mapping
+```
+
+开始。
+
+不要直接生成 v1.1 Freeze Pack。
 
 ## 11. 固定禁止事项
 
