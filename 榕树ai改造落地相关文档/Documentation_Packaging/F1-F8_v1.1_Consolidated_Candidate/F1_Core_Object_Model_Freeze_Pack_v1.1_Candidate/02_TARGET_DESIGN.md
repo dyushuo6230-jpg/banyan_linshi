@@ -81,6 +81,8 @@ Represents how one concrete project participates in Banyan:
 
 Stable ID identifies the same semantic subject across path, provider and ordinary physical changes. Revision identifies an accepted semantic change to that subject; Version identifies an explicitly governed release target and is not required for every object or every revision. `Latest != Current Effective`; current effectiveness is resolved for scope and context from governed inputs.
 
+Version is a governed release coordinate, not its Version Scheme or SemVer; Revision is not a patch version. A published exact Version must remain bound to its published Release Target, either one exact Revision or a coherent immutable release set. The same exact Version may not silently point to different content later. Governance-relevant `Latest` must name its ordering domain (for example Latest Revision, Latest Canonical Revision, Latest Published Version, Latest Compatible Version or Latest Observed State); these are distinct and none alone is Current Effective. Physical version strings, numbering algorithms and SemVer policy remain deferred.
+
 `Assignment` is a separate first-class object family: subject + responsibility + scope + lifetime. A RoleAssignment may be project, task or run scoped and may be explicit or resolved. It allocates responsibility; it grants neither authority nor runtime permission. It is distinct from Definition, Binding and RuntimeExecution.
 ## 5. Binding
 

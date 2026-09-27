@@ -99,6 +99,11 @@ protected_semantic_boundaries:
   - "Infrastructure != SemanticArtifact"
 
   - "StableID != Revision != Version != CurrentEffective"
+  - "Version != VersionScheme"
+  - "Version != SemVer"
+  - "Revision != PatchVersion"
+  - "PublishedExactVersion -> ImmutableReleaseTarget"
+  - "UnqualifiedGovernanceLatest != ValidResolutionInput"
   - "Assignment != Binding != Resolution != RuntimeExecution"
   - "StateConsumer != StateOwner"
 future_change_rule:

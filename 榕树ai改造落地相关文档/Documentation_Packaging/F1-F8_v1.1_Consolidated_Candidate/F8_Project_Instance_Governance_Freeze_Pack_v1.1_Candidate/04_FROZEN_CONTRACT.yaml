@@ -41,6 +41,11 @@ core_invariants:
 - Version != Revision
 - Latest != Current Effective
 - Version Pin != Effective Version
+- Version Constraint != Effective Version
+- Exact Version Reference != Version Constraint Reference
+- Published Exact Version != Mutable Release Target
+- New Latest Published Version != Automatic Project Current Effective Upgrade
+- Unqualified Governance LATEST != Valid Resolution Input
 - Feature Definition != Feature Activation Binding
 - Feature Activation Binding != Effective Feature Activation
 - Gate PASS != Authority Granted
@@ -70,12 +75,12 @@ core_invariants:
 - Generated != Canonical Truth by default
 - State Derivation != Authority Creation
 - Evidence != Authority
-  - "Assignment != Binding != EffectiveResolution != RuntimeExecution"
-  - "EffectiveAuthority != SecondAuthorityTruth"
-  - "CurrentEffective = ScopeContextAwareDerivedResult"
-  - "DependencyCycle != WorkflowLoop"
-  - "HandoffAccepted != BasisValidForever"
-  - "MissingRequiredQualifier != PASS"
+- "Assignment != Binding != EffectiveResolution != RuntimeExecution"
+- "EffectiveAuthority != SecondAuthorityTruth"
+- "CurrentEffective = ScopeContextAwareDerivedResult"
+- "DependencyCycle != WorkflowLoop"
+- "HandoffAccepted != BasisValidForever"
+- "MissingRequiredQualifier != PASS"
 owner_map:
   project_identity: F8-D01
   source_mapping_location_binding: F8-D02

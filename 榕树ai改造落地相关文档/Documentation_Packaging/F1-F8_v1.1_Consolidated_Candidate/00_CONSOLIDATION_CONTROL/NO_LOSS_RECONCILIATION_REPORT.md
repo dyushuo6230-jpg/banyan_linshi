@@ -7,9 +7,9 @@ Candidate status: `AWAITING_FINAL_CONSOLIDATED_FREEZE_REVIEW`. `PASS` below mean
 | 001 | F1 `02_TARGET_DESIGN.md` §§4–5 and `04_FROZEN_CONTRACT.yaml` object/binding; F4 §§2,4,7; F8 §§4–5; F7 §2 | Assignment added; generic bindings retired by semantic mapping; resolution and execution stay separate. PASS |
 | 002 | F3 `02_TARGET_DESIGN.md` Type semantics and taxonomy YAML; F4 §5; F6 §4; F8 §§4–5 | Eleventh type, definition/binding/instance/result, composition and adoption preserved. PASS |
 | 002-SUP-01 | F3 Type semantics/YAML; F6 §4; F8 §§4,7 | Derived upkeep and candidates are automatic under governance; canonical mutation remains F7 and shared upgrade is not automatic. PASS |
-| 003 | F1 §4; F2 §§2,6–7; F3 type gate; F7 §7; F8 §§4–5; F6 §9 | Stable subject, semantic revision, optional release version, scoped effective result and reference lineage kept distinct. PASS |
-| 004 | F3 Type semantics; F4 §10; F6 §4; F8 §4 | Rule entry/kinds, module/system, Policy and Engineering Standard Pack remain distinct. The specific truth error is corrected by 006. PASS |
-| 005 | F3 Type semantics; F4 §§5,7; F5 §5; F7 §3 | Candidate filtering, equivalence/dominance, AUTO/ASK, scoped preference and informed decision retained; selection confers no approval. PASS |
+| 003 | F1 §4 and `04_FROZEN_CONTRACT.yaml`; F2 §§2,6–7; F3 type gate; F7 §7 and `04_FROZEN_CONTRACT.yaml`; F8 §§4–5 and `04_FROZEN_CONTRACT.yaml`; F6 §9 | FCFR-001 correction restores immutable published exact-version target, exact versus constraint reference, qualified Latest and scope-aware effectiveness without freezing a version scheme. PASS after Correction Pass 01. |
+| 004 | F3 Type semantics and `04_FROZEN_CONTRACT.yaml`; F4 §10; F6 §4 and `04_FROZEN_CONTRACT.yaml`; F8 §4 | FCFR-002 correction restores one primary Rule Module/owner/write target per Rule Entry, reference-only Policy/Rule System consumption and minimum coherent Policy purpose. Engineering Standard effective truth remains derived under 006. PASS after Correction Pass 01. |
+| 005 | F3 Type semantics; F4 §§5,7 and `04_FROZEN_CONTRACT.yaml`; F5 §5; F7 §3 | FCFR-003 correction maps explicit user choice/auto intent to task override, retaining preference precedence, mandatory governance and informed-decision threshold. PASS after Correction Pass 01. |
 | 006 | F2 §2; F4 §10; F6 §4; F8 §4; candidate YAML truth clauses | Canonical standard body and derived project-effective set have distinct owners and truth classes. PASS |
 | 007 | F4 §5; F5 §4; F7 §9; F8 §9 | Gate applicability separated from human interaction; Development Entry, HOLD and bounded batch continuation remain scoped. PASS |
 | 008 | F2 §6; F5 §8; F6 §9; F7 §5; F8 §7 | Relevant delta/dependency before stale, owner re-resolution, preserved history, no automatic reauthorization or scope expansion. PASS |
@@ -20,7 +20,7 @@ Candidate status: `AWAITING_FINAL_CONSOLIDATED_FREEZE_REVIEW`. `PASS` below mean
 | 013 | F4 §7; F8 §5; F7 §5 | Active hard dependency, cycle/oscillation detection, deterministic convergence/typed termination and restricted informed choice. PASS |
 | 014 | F1 §5; F2 §§2,6; F3 Type semantics; F4 §§5,7; F5 §4; F6 §9; F7 §§5,9; F8 §5 | Typed state with owner/basis, same-label separation and protected STALE/UNKNOWN/BLOCKED/HOLD projection. PASS |
 | 015 | F1 §8; F2 §9; F4 §9; F5 §5; F6 §§11–12; F7 §12; F8 §7 | Operational/governed exception, bounded retry, pre-governed fallback, technical recovery and semantic rollback separated. PASS |
-| 016 | All eight `05_IMPLEMENTATION_BOUNDARY.md`; F2 §14 existing physical gate; F8 §§9,11 | Material deferred obligation retains owner/trigger/preconditions/guard/output/closure; future ownership grants no current authorization. PASS |
+| 016 | All eight `05_IMPLEMENTATION_BOUNDARY.md`; F2 §14 and `04_FROZEN_CONTRACT.yaml` physical gate; F8 §§9,11 | FCFR-004 correction restores rationale, dependencies, status/history, explicit/deterministic future owner, `FUTURE != Owner`, and Future Capability Reserved limits. PASS after Correction Pass 01. |
 | 017 | F4 §8; F5 §11; F6 §15; F7 §§9,14; F8 §9, with candidate YAML gate/handoff constraints | Cross-stage qualifiers and point-of-use check survive F4→F5/F6→F7→F8 and future F9/F10 consumption. PASS |
 
 ## Semantic preservation sweep
@@ -31,4 +31,4 @@ Candidate status: `AWAITING_FINAL_CONSOLIDATED_FREEZE_REVIEW`. `PASS` below mean
 - **Product / design:** 011 links only semantic anchors, retains five relation kinds and does not collapse F5 Product Truth into F6 Design Truth.
 - **Failure / deferred / handoff:** 015 separates operational recovery from governed exception/rollback; 016 retains future obligation without activation; 017 carries all material qualifiers to point of use.
 
-Result: **Candidate integration coverage PASS — 17/17 formal patches, plus 002-SUP-01.** Missing mapped patch: **0**. Explicit candidate consolidation blocker found: **0**. Final approval remains pending human Final Consolidated Freeze Review.
+The original version of this report overstated completeness for 003, 004, 005 and 016; the first [Final Consolidated Freeze Review](FINAL_CONSOLIDATED_FREEZE_REVIEW.md) identified those omissions and the F8 machine-contract defect. The independent [FCFR Correction Pass 01](FCFR_CORRECTION_PASS_01.md) records the actual restorations and YAML parse evidence. Its repair coverage is **5/5**, with **0 remaining known FCFR-001～005 blockers**. This is a correction-pass finding; the historical Final Review remains **BLOCKED** until a separate rerun. Candidate approval and freeze remain pending.

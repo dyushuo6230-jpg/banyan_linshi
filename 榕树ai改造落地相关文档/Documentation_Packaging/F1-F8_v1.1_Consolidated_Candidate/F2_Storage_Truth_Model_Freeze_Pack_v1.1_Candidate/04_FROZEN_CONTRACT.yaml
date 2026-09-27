@@ -117,8 +117,18 @@ invariants:
     technical_recovery_is_semantic_rollback: false
 deferred_required_decision:
   id: PHYSICAL_STORE_TOPOLOGY
+  subject: PERSISTENT_RUNTIME_INDEX_AND_OPTIONAL_EVIDENCE_STORE_TOPOLOGY
+  question: ONE_DB_VS_SEPARATE_RUNTIME_INDEX_AND_JUSTIFIED_EVIDENCE_STORE
+  rationale: PRESERVE_RUNTIME_TRUTH_AND_REBUILDABLE_INDEX_BOUNDARY
+  declaring_owner: F2_STORAGE_TRUTH_MODEL
+  future_owner: STORAGE_IMPLEMENTATION_FREEZE
   decision_owner_gate: STORAGE_IMPLEMENTATION_FREEZE
+  trigger: AFTER_F8_F9_F10_ARCHITECTURE_FREEZE_BEFORE_PERSISTENT_DDL_OR_MIGRATION
   prerequisites:
+    - F8_ARCHITECTURE_FREEZE_PASS
+    - F9_ARCHITECTURE_FREEZE_PASS
+    - F10_ARCHITECTURE_FREEZE_PASS
+  dependencies:
     - F8_ARCHITECTURE_FREEZE_PASS
     - F9_ARCHITECTURE_FREEZE_PASS
     - F10_ARCHITECTURE_FREEZE_PASS
@@ -126,7 +136,16 @@ deferred_required_decision:
     - PERSISTENT_RUNTIME_DDL
     - PERSISTENT_INDEX_DDL
     - STORAGE_MIGRATIONS
+  forbidden_before_resolution:
+    - PERSISTENT_RUNTIME_DDL
+    - PERSISTENT_INDEX_DDL
+    - STORAGE_MIGRATIONS
+  expected_resolution_output: HUMAN_APPROVED_PHYSICAL_STORE_TOPOLOGY_DECISION
   requires_human_decision: true
+  logical_status: DEFERRED
+  status_history_required: true
+  provenance: F2_TARGET_DESIGN_SECTION_14_AND_AUDIT_PATCH_016
+  closure_or_supersession_history_required: true
 
 illustrative_examples:
   business_domain_names_are_framework_contracts: false

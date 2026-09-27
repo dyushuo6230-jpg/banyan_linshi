@@ -101,6 +101,11 @@ material_and_reconciliation:
   material_is_truth: false
   unknown_must_remain_unknown: true
 rule_governance:
+  rule_entry_canonical_primary_module_cardinality: EXACTLY_ONE
+  primary_module_owns_rule_entry_write_target_and_maintenance: true
+  policy_rule_system_reference_grants_rule_entry_ownership: false
+  policy_minimum_coherent_governance_purpose: true
+  policy_copies_referenced_rule_body: false
   systems:
   - UI_DESIGN_RULE_SYSTEM
   - FRONTEND_DEVELOPMENT_RULE_SYSTEM

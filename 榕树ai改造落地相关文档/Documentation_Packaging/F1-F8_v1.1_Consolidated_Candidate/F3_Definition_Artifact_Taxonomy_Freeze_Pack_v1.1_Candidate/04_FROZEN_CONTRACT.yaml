@@ -76,6 +76,11 @@ invariants:
   profile_derived_maintenance_default: AUTOMATIC_UNDER_GOVERNANCE
   profile_canonical_mutation_owner: F7
   typed_state_domain_required: true
+  rule_entry_canonical_primary_module_cardinality: EXACTLY_ONE
+  rule_entry_canonical_write_target_cardinality: EXACTLY_ONE
+  policy_or_rule_system_reference_grants_rule_entry_ownership: false
+  policy_minimum_coherent_governance_purpose: true
+  rule_definition_top_level_type_added: false
 taxonomy_change_gate:
   new_type_requires_versioned_change_proposal: true
   new_type_requires_impact_analysis: true

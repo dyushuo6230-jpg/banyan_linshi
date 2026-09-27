@@ -118,6 +118,13 @@ workflow:
     governed_dynamic_composition: true
     validity_filter_before_choice: true
     materially_distinct_choice_modes: [AUTO, ASK_WHEN_MULTIPLE_VALID]
+    explicit_user_choice_intent_task_override: ASK_WHEN_MULTIPLE_VALID
+    explicit_user_auto_intent_task_override: AUTO
+    task_override_precedes_project_preference_precedes_user_default: true
+    preference_precedence_is_governance_authority_priority: false
+    informed_decision_requires_multiple_valid_materially_distinct_candidates_and_ask: true
+    task_auto_bypasses_policy_authority_validation_reliability_gate_or_scope: false
+    task_auto_approves_later_canonical_semantic_change: false
     choice_preference_is_governance_mode: false
     auto_scope_expansion: false
   adaptive_gate:

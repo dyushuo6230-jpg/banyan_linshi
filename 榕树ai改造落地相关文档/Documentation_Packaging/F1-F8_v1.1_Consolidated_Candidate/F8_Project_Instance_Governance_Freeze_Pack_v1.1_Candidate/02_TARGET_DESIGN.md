@@ -237,6 +237,8 @@ Binding is a scoped governed relation by purpose; Assignment allocates responsib
 Project Authority Binding is a governed fact with principal, kind, domain, scope, decision/action class, constraints, validity and provenance. Effective Authority is a derived result, not a second authority fact. RoleAssignment, login identity and more-specific scope do not automatically win. Valid bounded delegation and compound authority are supported; unresolved mutually incompatible applicable authority decisions route to human governance.
 
 Authority revision, supersession, expiry and revocation affect only the relevant envelope; an expired exception no longer applies and may stale dependent state for owner re-resolution. Exception approval cannot enlarge its authority envelope or bypass hard governance. Multiple authorities can jointly satisfy a compound requirement without being a conflict.
+
+A Version Pin or Version Constraint is a governed resolution input; Effective Version is the scope/context-aware result after compatibility, applicability, authority, gate, policy, availability and freshness checks. `Stable ID + Exact Version` and `Stable ID + Version Constraint` are different reference intentions. A published exact Version must not silently rebind to another Release Target (one exact Revision or coherent immutable release set). A new Latest Published Version is not an automatic Project Current Effective upgrade. `Latest` in governance must name its ordering domain; Latest Revision, Latest Published Version and Latest Compatible Version are different from each other and from Current Effective.
 ## 5. Effective Resolution
 
 F8 不把所有状态写成静态 bool。

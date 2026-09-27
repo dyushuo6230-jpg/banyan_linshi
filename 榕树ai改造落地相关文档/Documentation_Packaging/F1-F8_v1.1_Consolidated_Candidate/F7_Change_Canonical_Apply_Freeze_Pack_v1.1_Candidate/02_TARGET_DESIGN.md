@@ -238,6 +238,8 @@ Accepted Canonical Revision history may not be silently rewritten.
 ### Candidate integration — references and links
 
 Stable ID remains subject identity across path changes; Revision is accepted semantic evolution; Version is a governed release target, distinct from both. Product/design typed links and binding lifecycle relations retain reference identity, scope, provenance and explicit split/merge/supersession. Relation existence does not imply impact or authorization.
+
+Version is not a Version Scheme, SemVer, or a patch-number alias for Revision. Not every accepted Revision is published as a Version and not every object needs a Version. Once published, an exact Version must keep its precise Release Target—one exact Revision or a coherent immutable release set. Repointing the same exact Version to another target silently would break historical reproducibility; a new Version or governed supersession is required. Governance-relevant `Latest` must be qualified by ordering domain; Latest Revision, Latest Canonical Revision, Latest Published Version, Latest Compatible Version and Latest Observed State are not interchangeable or Current Effective.
 ## 8. Reference Model
 
 Core supports at least:
@@ -248,6 +250,12 @@ Semantic Reference
 
 Revision-Pinned Reference
 → Stable ID + exact revision
+
+Version Reference
+→ Stable ID + exact published version
+
+Version Constraint Reference
+→ Stable ID + governed version constraint
 ```
 
 Reference relationships are semantic and evidence-backed.

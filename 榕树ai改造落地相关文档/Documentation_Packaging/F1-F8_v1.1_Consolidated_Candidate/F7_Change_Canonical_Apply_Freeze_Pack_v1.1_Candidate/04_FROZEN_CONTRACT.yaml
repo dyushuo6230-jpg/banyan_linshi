@@ -139,6 +139,16 @@ identity_revision_reference:
   stable_id_reuse_for_new_subject: false
   accepted_canonical_revision_silent_rewrite_allowed: false
   latest_ne_current_effective: true
+  version_is_version_scheme_or_semver: false
+  revision_is_patch_version: false
+  every_revision_requires_published_version: false
+  every_object_requires_version: false
+  published_exact_version_silent_release_target_rebinding_allowed: false
+  published_release_target_forms: [EXACT_REVISION, COHERENT_IMMUTABLE_RELEASE_SET]
+  governance_latest_requires_explicit_ordering_domain: true
+  exact_version_reference: STABLE_ID_PLUS_EXACT_VERSION
+  version_constraint_reference: STABLE_ID_PLUS_VERSION_CONSTRAINT
+  exact_version_reference_ne_version_constraint_reference: true
   revision_lineage_ne_supersession: true
   superseded_ne_deleted: true
   reference_is_authority: false
