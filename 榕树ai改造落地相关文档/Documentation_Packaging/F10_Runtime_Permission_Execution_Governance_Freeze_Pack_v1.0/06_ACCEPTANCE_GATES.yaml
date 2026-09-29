@@ -1,0 +1,72 @@
+schema_version: f10-acceptance-gates-v1
+pack_id: F10_Runtime_Permission_Execution_Governance_Freeze_Pack_v1.0
+
+architecture_freeze:
+  required: true
+  result: PASS
+  human_approved: true
+  approval_phrase: "F10 FINAL ARCHITECTURE FREEZE HUMAN_APPROVED"
+
+approved_decisions:
+  F10-G01: HUMAN_APPROVED
+  F10-D01: HUMAN_APPROVED
+  F10-D02: HUMAN_APPROVED
+  F10-D03: HUMAN_APPROVED
+  F10-D04: HUMAN_APPROVED
+  F10-D05: HUMAN_APPROVED
+  F10-D06: HUMAN_APPROVED
+  F10-D07: HUMAN_APPROVED
+  F10-D08: HUMAN_APPROVED
+  F10-D09: HUMAN_APPROVED
+
+closure_metrics:
+  blocking_architecture_gap: 0
+  blocking_architecture_conflict: 0
+  duplicate_runtime_authority: 0
+  competing_runtime_truth: 0
+  owner_ambiguity: 0
+  evidence_to_authority_promotion_path: 0
+  trace_to_authorization_path: 0
+  runtime_allow_to_semantic_decision_path: 0
+  provider_binding_to_runtime_permission_collapse: 0
+  provider_success_to_canonical_acceptance_path: 0
+  failure_to_human_by_default_path: 0
+  unknown_to_pass_silent_projection_path: 0
+  blocked_hold_loss_across_handoff: 0
+  parallel_action_shared_permission_path: 0
+  parallel_execution_atomicity_bypass: 0
+  f11_direct_protected_mutation_bypass: 0
+  stage_exit_to_implementation_authorization_leakage: 0
+  stage_exit_to_final_activation_leakage: 0
+
+current_authorization:
+  implementation: NOT_AUTHORIZED
+  rp2: NOT_AUTHORIZED
+  authority_cutover: NOT_AUTHORIZED
+  canonical_replacement: NOT_AUTHORIZED
+  final_activation: NOT_AUTHORIZED
+  legacy_retirement: NOT_AUTHORIZED
+  sqlite_physical_schema: NOT_FROZEN
+
+implementation_entry_gate:
+  result: NOT_GRANTED_BY_THIS_PACK
+  requires:
+    - APPLICABLE_IMPLEMENTATION_PLAN
+    - IMPLEMENTATION_FREEZE_OR_ENTRY_DECISION
+    - CURRENT_AUTHORITY_FACTS
+    - CURRENT_BOUNDARY
+    - CURRENT_GATE
+    - CURRENT_PROJECT_EVIDENCE
+    - APPLICABLE_F9_F10_CONTRACTS
+    - SLICE_SPECIFIC_ACCEPTANCE_CRITERIA
+    - EXECUTION_AUTHORIZATION_WHERE_REQUIRED
+
+stage_closure:
+  result: PASS
+  architecture_freeze: PASS
+  final_human_approval: PASS
+  additional_architecture_patch_required: false
+
+deferred_obligations:
+  implementation_details: NON_BLOCKING
+  f9_repository_pack_discoverability: NON_BLOCKING_PACKAGING_OBLIGATION

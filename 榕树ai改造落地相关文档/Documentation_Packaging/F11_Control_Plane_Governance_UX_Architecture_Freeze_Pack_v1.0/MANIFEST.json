@@ -1,0 +1,112 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "a13d745b376460f8a0693a8a6eed9ed13ea140a55fbc90a51929d4f973f9ff5b",
+    "bytes": 1363
+  },
+  {
+    "path": "closure/F11_AUTHORITY_OWNER_MATRIX.md",
+    "sha256": "9968d6324c25dc4eed999a3f54c636ee57382eaf916490eabaf55328ea56850e",
+    "bytes": 1837
+  },
+  {
+    "path": "closure/F11_CORE_INVARIANTS.md",
+    "sha256": "022751ba124da11170863c4e9b1014983e48ed226af4997a3f0c0db08475a251",
+    "bytes": 1920
+  },
+  {
+    "path": "closure/F11_CROSS_DECISION_CONSISTENCY_REVIEW.md",
+    "sha256": "f1284ca87897e7e6f428fb53e2c1078f270907ecc57955755c1d13ddad34576e",
+    "bytes": 755
+  },
+  {
+    "path": "closure/F11_DEFERRED_OBLIGATIONS.md",
+    "sha256": "5823e385c2360b942f2284e5a0270bae826f359f7f0cbff38fd2aed4ed0fac15",
+    "bytes": 1480
+  },
+  {
+    "path": "closure/F11_FINAL_ARCHITECTURE_FREEZE_HUMAN_APPROVED.md",
+    "sha256": "c467ca013767e2e999517ddb8d4c1ddc0e67c6a3ec182b0a25837b69e94c31c1",
+    "bytes": 4633
+  },
+  {
+    "path": "closure/F11_FINAL_STATUS_SUMMARY.md",
+    "sha256": "e771c58d64a84ef398b2884ec3b5cc5986e6c651397eb9216552a81b27c19f37",
+    "bytes": 923
+  },
+  {
+    "path": "decisions/F11-D01_Control_Plane_Core_Object_Responsibility_Model_HUMAN_APPROVED.md",
+    "sha256": "9d516e3dc3c75f4610614dba1a15f61b7a8402fdea144a3edd4959daa453aada",
+    "bytes": 34653
+  },
+  {
+    "path": "decisions/F11-D02_Runtime_Projection_State_Presentation_HUMAN_APPROVED.md",
+    "sha256": "2c3ee3f51592543827733e46b0805de388ed236510069d3b3a3c4ab2499b8da8",
+    "bytes": 33118
+  },
+  {
+    "path": "decisions/F11-D03_Control_Intent_Point_of_Use_Revalidation_Handoff_HUMAN_APPROVED.md",
+    "sha256": "e2c548bb2ca5144a234f0c9e76561b9416aa593e34c3d746b244c5fa9cea76fe",
+    "bytes": 36449
+  },
+  {
+    "path": "decisions/F11-D04_Human_Decision_UX_Informed_Decision_Interaction_HUMAN_APPROVED.md",
+    "sha256": "fa9b2102ea9ed90ea3951c2185155743e59983fbcdc56f2b00f9589ec66f5af5",
+    "bytes": 47618
+  },
+  {
+    "path": "decisions/F11-D05_Reason_Blocker_Explanation_Model_HUMAN_APPROVED.md",
+    "sha256": "106f2003dc9f3dfb9f130f4ad93fd7561746aa16b4676f39f13d35b43e0e24b0",
+    "bytes": 34787
+  },
+  {
+    "path": "decisions/F11-D06_Result_Trace_Evidence_Provenance_Presentation_HUMAN_APPROVED.md",
+    "sha256": "65e76ffccd313d7d1e6bd876e0b5b52b9c4b35061ecb85194403c395131677b9",
+    "bytes": 32378
+  },
+  {
+    "path": "decisions/F11-D07_Notification_Human_Attention_Governance_HUMAN_APPROVED.md",
+    "sha256": "c102d2987889dc73aa19fc4387d44af141990feb4bfa455f52e59f5bb162ea45",
+    "bytes": 8218
+  },
+  {
+    "path": "decisions/F11-D08_Multi-Surface_Session_Delivery_Consistency_HUMAN_APPROVED.md",
+    "sha256": "605629358f2c3c7095dd66fec8d21a887097d5176cb4fdb1f7a1c7466f216e8b",
+    "bytes": 21069
+  },
+  {
+    "path": "decisions/F11-D09_Visibility_Sensitive_Data_Presentation_Safety_HUMAN_APPROVED.md",
+    "sha256": "d12133e86899cc89ff1e5d6f19d8e009368bd871c9785622464fa698030fa7e8",
+    "bytes": 27339
+  },
+  {
+    "path": "decisions/F11-D10_Handoff_Implementation_Boundary_Stage_Closure_HUMAN_APPROVED.md",
+    "sha256": "6dde358eb7ff21fc51fb698a160dc6781cf39110866f8be9afe58bf78250d7cf",
+    "bytes": 10392
+  },
+  {
+    "path": "decisions/F11-G01_Stage_Charter_Authority_Boundary_HUMAN_APPROVED.md",
+    "sha256": "28dcd083a51cc3c021d1357a7e9395c437dbbd77b051fd42f62d5e2468da6927",
+    "bytes": 27275
+  },
+  {
+    "path": "handoff/F11_IMPLEMENTATION_HANDOFF_CONTRACT.md",
+    "sha256": "a9c6ef83fcd7cd725e53a08a9a6f4bf96f29feafe65ce5cc72cf02da80e9c6a9",
+    "bytes": 2267
+  },
+  {
+    "path": "handoff/F11_POST_FREEZE_NEXT_WINDOW_PROMPT.md",
+    "sha256": "ebdb1646a9009f358b78602cfcba37233f51c545682955dd74f3bbfe44f80f2b",
+    "bytes": 3095
+  },
+  {
+    "path": "handoff/F11_POST_FREEZE_NEXT_WINDOW_START_HERE.md",
+    "sha256": "32ed8bf12f61c82def064750fe8a07abf0d57d070cc574d25f03b56f7609bef8",
+    "bytes": 886
+  },
+  {
+    "path": "handoff/F11_TO_POST_F11_FORMAL_HANDOFF.md",
+    "sha256": "f840c6887c725eb2f6c818a663c2b7639d39da9f4f26aa7debee90da892acb36",
+    "bytes": 1837
+  }
+]
